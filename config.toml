@@ -1,0 +1,35 @@
+baseURL = "https://Jim-Zenn.github.io/"
+languageCode = "en-us"
+title = "Jim Zenn"
+author = "Jim Zenn"
+theme = "zealoft"
+
+[params]
+  my_name = "Jim Zenn"
+  my_education = "University of California, Los Angeles"
+  email = "zenn@ucla.edu"
+  my_major = "Applied Mathematics"
+  github = "https://github.com/Jim-Zenn"
+  CV = "https://github.com/Jim-Zenn"
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 999
+
+  # [[menu.main]]
+  #   identifier = "volumes"
+  #   name = "Volumes"
+  #   url = "/volumes/"
+  #   weight = 1
+  [[menu.main]]
+    identifier = "publications"
+    name = "Publications"
+    url = "/volumes/publications/"
+    weight = 2
+
+[taxonomies]
+  category = "volumes"
+  tag = "keywords"
