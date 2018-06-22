@@ -1,3 +1,7 @@
-[submodule "themes/natrium"]
-	path = themes/natrium
-	url = https://github.com/mobybit/hugo-natrium-theme
+[submodule "public"]
+	path = public
+	url = git@github.com:Jim-Zenn/Jim-Zenn.github.io.git
+	branch = master
+[submodule "themes/zealoft"]
+	path = themes/zealoft
+	url = git@github.com:Jim-Zenn/hugo-theme-zealoft.git
