@@ -15,7 +15,7 @@ theme = "zealoft"
 [menu]
   [[menu.main]]
     identifier = "about"
-    name = "About"
+    name = "About Me"
     url = "/about/"
     weight = 999
 
