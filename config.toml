@@ -10,7 +10,7 @@ theme = "zealoft"
   email = "zenn@ucla.edu"
   my_major = "Applied Mathematics"
   github = "https://github.com/Jim-Zenn"
-  CV = "https://github.com/Jim-Zenn"
+  CV = "/CV.pdf"
 
 [menu]
   [[menu.main]]
