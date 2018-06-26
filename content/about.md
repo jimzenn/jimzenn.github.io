@@ -5,7 +5,7 @@ hide: true
 about: true
 ---
 
-I am a student of UCLA, majoring in Applied Mathematics.
+I am a student of UCLA majoring in Applied Mathematics.
 
  I currently work with AI Frontiers Conference. I am responsible for all of the conference's web development and digital marketing.
 

@@ -6,7 +6,9 @@ volumes: ["Journey"]
 ---
 I am not trying to accuse anyone. Here, I only want to talk about my memories of her.
 
-I am a firm materialist. I cannot say for sure that one's spirit does not exist after they die, but based on what human beings can tell one's mind only exists with a brain. Therefore, I always find tombs are not necessary. The dead need no place to rest. Death is instant, void, and eternal.
+I am a firm materialist. Hence, I always find tombs are not necessary since one's spirit is unlikely to exist after their decease. The dead need no places to rest. Death is void and eternal.
+
+<!--more-->
 
 ## One
 
