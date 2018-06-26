@@ -18,7 +18,7 @@ She wasn't like that.
 
 ## Two
 
-She has accompanied me, more or less, my whole life until she passed away. She looked after me when I was very young. I vaguely remember going to the kindergarten with her to pick my cousin up with her. I remember she bought breakfast for us sometime. She did other chores: washing clothes, cleaning the floor, and other things. These things are her whole life. Her husband, my grandfather left her when she was young. Ever since then, her life is about looking after her three children. I don't remember much of her after that, because I was taken back to be looked after by my parents. There was then, a long blank period after that. She seemingly was not there in my memory. What was she doing? I do not know.
+She has accompanied me, more or less, my whole life until she passed away. She looked after me when I was very young. I vaguely remember going to the kindergarten to pick up my cousin with her. I remember she bought breakfast for us sometime. She did other chores: washing clothes, cleaning the floor, and other things. These things are her whole life. Her husband, my grandfather left her when she was young. Ever since then, her life is about looking after her three children. I don't remember much of her after that, because I was taken back to be looked after by my parents. There was then, a long blank period after that. She seemingly was not there in my memory. What was she doing? I do not know.
 
 The moment when she reappears in my memory was a long time after that, when she gradually became a statue on the sofa, staring at the TV.
 
