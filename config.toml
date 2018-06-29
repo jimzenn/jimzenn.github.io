@@ -19,11 +19,12 @@ theme = "zealoft"
     url = "/about/"
     weight = 999
 
-  # [[menu.main]]
-  #   identifier = "volumes"
-  #   name = "Volumes"
-  #   url = "/volumes/"
-  #   weight = 1
+  [[menu.main]]
+    identifier = "math-170A"
+    name = "Math 170A"
+    url = "/posts/math-170a-master/"
+    weight = 1
+
   [[menu.main]]
     identifier = "publications"
     name = "Publications"

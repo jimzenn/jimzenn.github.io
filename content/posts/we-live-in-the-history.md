@@ -29,4 +29,3 @@ The dilema, I guess, is that there is simply not enough resources for everyone.
 Even though the technology has leaped forward, it is still not advanced enough. In some parts of the world, people still suffers from famine.
 
 Africa, North Korea?
-
