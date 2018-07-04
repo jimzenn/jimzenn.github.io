@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "Jim Zenn"
 author = "Jim Zenn"
 theme = "zealoft"
+googleAnalytics = "UA-83942334-3"
 
 [params]
   my_name = "Jim Zenn"
@@ -18,6 +19,12 @@ theme = "zealoft"
     name = "About Me"
     url = "/about/"
     weight = 999
+
+  [[menu.main]]
+    identifier = "math-115A"
+    name = "Math 115A"
+    url = "/posts/math-115a-master/"
+    weight = 1
 
   [[menu.main]]
     identifier = "math-170A"
