@@ -12,17 +12,17 @@ hide: true
 <!--more-->
 
 <div class="latex-macros">
-  {{< latexdef "\R" "\mathbb{R}" >}}
-  {{< latexdef "\Q" "\mathbb{Q}" >}}
-  {{< latexdef "\Z" "\mathbb{Z}" >}}
-  {{< latexdef "\N" "\mathbb{N}" >}}
   {{< raw >}}
-    $\def\set#1{{\{#1\}}}$
-    $\def\emptyset{{\varnothing}}$
-    $\def\union{{\cup}}$  
-    $\def\intercept{{\cap}}$  
-    $\def\abs#1{{|#1|}}$  
-    $\def\t#1{{\text#1}}$  
+    $\newcommand\R{{\mathbb{R}}}$
+    $\newcommand\Q{{\mathbb{Q}}}$
+    $\newcommand\Z{{\mathbb{Z}}}$
+    $\newcommand\N{{\mathbb{N}}}$
+    $\newcommand\set#1{{\{#1\}}}$
+    $\newcommand\emptyset{{\varnothing}}$
+    $\newcommand\union{{\cup}}$  
+    $\newcommand\intercept{{\cap}}$  
+    $\newcommand\abs#1{{|#1|}}$  
+    $\newcommand\t#1{{\text#1}}$  
   {{< /raw >}}
 </div>
 
