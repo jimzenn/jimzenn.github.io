@@ -6,7 +6,7 @@ volumes: ["Journey"]
 ---
 I am not trying to accuse anyone. Here, I only want to talk about my memories of her.
 
-I am a firm materialist. Hence, I always find tombs are not necessary since one's spirit is unlikely to exist after their decease. The dead need no places to rest. Death is void and eternal.
+I am a firm materialist. Hence, I always find tombs unnecessary since one's spirit is unlikely to exist after their decease. The dead need no places to rest. Death is void and eternal.
 
 <!--more-->
 
