@@ -13,16 +13,16 @@ hide: true
 
 <div class="latex-macros">
   {{< raw >}}
-    $\newcommand\R{{\mathbb{R}}}$
-    $\newcommand\Q{{\mathbb{Q}}}$
-    $\newcommand\Z{{\mathbb{Z}}}$
-    $\newcommand\N{{\mathbb{N}}}$
-    $\newcommand\set#1{{\{#1\}}}$
-    $\newcommand\emptyset{{\varnothing}}$
-    $\newcommand\union{{\cup}}$  
-    $\newcommand\intercept{{\cap}}$  
-    $\newcommand\abs#1{{|#1|}}$  
-    $\newcommand\t#1{{\text#1}}$  
+    $\newcommand{\R}{\mathbb{R}}$
+    $\newcommand{\Q}{\mathbb{Q}}$
+    $\newcommand{\Z}{\mathbb{Z}}$
+    $\newcommand{\N}{\mathbb{N}}$
+    $\newcommand{\set}[1]{\{#1\}}$
+    $\newcommand{\emptyset}{\varnothing}$
+    $\newcommand{\union}{\cup}$  
+    $\newcommand{\intercept}{\cap}$  
+    $\newcommand{\abs}[1]{|#1|}$  
+    $\newcommand{\t#1}{\text}[1]$  
   {{< /raw >}}
 </div>
 

@@ -13,21 +13,21 @@ hide: true
 
 <div class="latex-macros">
   {{< raw >}}
-    $\newcommand\R{{\mathbb{R}}}$
-    $\newcommand\Q{{\mathbb{Q}}}$
-    $\newcommand\Z{{\mathbb{Z}}}$
-    $\newcommand\N{{\mathbb{N}}}$
-    $\newcommand\C{{\mathbb{C}}}$
-    $\newcommand\P{{\mathbb{P}}}$
-    $\newcommand\F{{\mathcal{F}}}$
-    $\newcommand\set#1{{\{#1\}}}$
-    $\newcommand\emptyset{{\varnothing}}$
-    $\newcommand\union{{\cup}}$  
-    $\newcommand\intercept{{\cap}}$  
-    $\newcommand\abs#1{{|#1|}}$  
-    $\newcommand\t#1{{\text#1}}$  
-    $\newcommand\head{{\text H}}$  
-    $\newcommand\tail{{\text T}}$  
+    $\newcommand{\R}{\mathbb{R}}$
+    $\newcommand{\Q}{\mathbb{Q}}$
+    $\newcommand{\Z}{\mathbb{Z}}$
+    $\newcommand{\N}{\mathbb{N}}$
+    $\newcommand{\C}{\mathbb{C}}$
+    $\newcommand{\P}{\mathbb{P}}$
+    $\newcommand{\F}{\mathcal{F}}$
+    $\newcommand{\set}[1]{\{#1\}}$
+    $\newcommand{\emptyset}{\varnothing}$
+    $\newcommand{\union}{\cup}$  
+    $\newcommand{\intercept}{\cap}$  
+    $\newcommand{\abs}[1]{|#1|}$  
+    $\newcommand{\t#1}{\text}[1]$  
+    $\newcommand{\head}{\text H}$  
+    $\newcommand{\tail}{\text T}$  
   {{< /raw >}}
 </div>
 $$
