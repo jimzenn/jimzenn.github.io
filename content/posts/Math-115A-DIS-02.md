@@ -267,14 +267,14 @@ $(1, 1, -1) \neq (0, 0, 0)$
 {{% example name="1.5.14" %}} 
 
 $S$ is linearly dependent
-$\iff S = {0} or \exists distinct vectors v_1, u_1, u_2, ... , u_n \in S$ s.t. v si a linear combination of $u_1, u_2, ..., u_n$
+$\iff S = {0}$ or $\exists$ distinct vectors $v_1, u_1, u_2, ... , u_n \in S$ s.t. $v$ is a linear combination of $u_1, u_2, ..., u_n$
 
 {{% proof name="$\impliedby$" %}} 
 if S = {0} ,ok
 if ...,
-$v = a_1u_1 + ... + a_nu_n$ for same $a_1\in F$
+$v = a\_1u\_1 + ... + a\_nu\_n$ for same $a\_1\in F$
 
-a_1u_1 + ... + a_n u_n + (-1) v = 0 linearly dependent by definition
+$a_1u_1 + ... + a_n u_n + (-1) v = 0$ linearly dependent by definition
 
 {{% /proof %}}
 
@@ -284,18 +284,18 @@ if $S \neq \set{0}$ we need to prove
 
 Because $S$  is linearly dependent.
 
-There are distince vectors $u_1, u_2, ..., u_n \in S, a_1 \in F $ s.t. 
+There are distince vectors $u\_1, u\_2, ..., u\_n \in S, a\_1 \in F $ s.t. 
 
 
-$a_1u_1 + ... + a_nu_n = 0, and (a_1, ..., a_n) \neq (0, ..., 0)
+$a\_1u\_1 + ... + a\_nu\_n = 0$, and $(a\_1, ..., a\_n) \neq (0, ..., 0)$
 
-without loss of generality assume a_n \neq =
+without loss of generality assume 
 
-$-a_n u_n = a_1u_1 + ... + a_{n-1}u_{n-1}$
+$a\_n \neq =-a\_n u\_n = a\_1u\_1 + ... + a\_{n-1}u\_{n-1}$
 
-Because a_n \neq 0 we have
+Because $a_n \neq 0$ we have
 
-$u_n = (-\frac{a_1}{a_n}u_1) + ... + (-\frac{a_{n-1}}{a_n}) u_{n-1}$
+$u\_n = (-\frac{a\_1}{a\_n}u\_1) + ... + (-\frac{a\_{n-1}}{a\_n}) u\_{n-1}$
 
 {{% /proof %}}
 

@@ -52,12 +52,9 @@ To declare, finish following 10 courses.
 | Physics   | 1C<sup>⚬</sup>  | [Physics for Scientists and Engineers: Electrodynamics, Optics, and Special Relativity](http://catalog.registrar.ucla.edu/ucla-catalog2017-768.html) | 4      |
 | **Total** |                 |                                                              | **43** |
 
-<small><sup>*</sup> this course is one of the *mathematics sequenced courses (MSC)*.</small>
-
-<small><sup>⚬</sup> <u>only one</u> of the courses is required.</small>
-
-<small><sup>1</sup> All preparation courses for any of the mathematics majors must be passed with a <u>"C" or better and an overall 2.5 GPA</u>. </small>
-
+<small><sup>*</sup> this course is one of the *mathematics sequenced courses (MSC)*.</small><br>
+<small><sup>⚬</sup> <u>only one</u> of the courses is required.</small><br>
+<small><sup>1</sup> All preparation courses for any of the mathematics majors must be passed with a <u>"C" or better and an overall 2.5 GPA</u>. </small><br>
 <small><sup>2</sup> All students must declare a math major <u>before completing 160.0 units</u> (minus AP credit). </small>
 
 ## Major Courses (12)
@@ -71,10 +68,8 @@ To declare, finish following 10 courses.
 | Math      | 142                                                          | [Mathematical Modeling](https://www.math.ucla.edu/ugrad/courses/math/142) | 4      |
 | **Total** |                                                              |                                                              | **17** |
 
-<small>(H) this course has a honors version. </small>
-
-<small><sup>+</sup> this course must be completed with “C–“ or better. It is strongly recommended that students take Math 115A as one of their first upper division courses before Math 131A.</small>
-
+<small>(H) this course has a honors version. </small><br>
+<small><sup>+</sup> this course must be completed with “C–“ or better. It is strongly recommended that students take Math 115A as one of their first upper division courses before Math 131A.</small><br>
 <small><sup>⚬</sup> you only need to choose one of the two courses.</small>
 
 Choose <u>2</u> sequences from the following 3 categories:

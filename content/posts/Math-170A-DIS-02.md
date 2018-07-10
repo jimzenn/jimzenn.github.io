@@ -1,14 +1,14 @@
 ---
 title: "Discussion"
 date: 2018-07-03T9:03:48+08:00
-author: "Jim Zenn"
+author: "Tyler Arant"
 volumes: ["Math 170A"]
 issue: D2
 hide: true
 
 ---
 
-Inference, bayes law.
+Properties of prababilistic laws, conditional probability, tests, and indipendence.
 
 <!--more-->
 
@@ -118,7 +118,7 @@ $P(A|D^c)=\frac{P(A\cap D^c)}{P(D^c)} = \frac{\frac{11}{36}-\frac{1}{36}}{1-\fra
 A new test has been developed for determining whether a student is overstressed. The test is $95\%$ accurate if the student is not overstressed; and $85\%$ if the student is.<br>
 We know that $99.5\%$ of students are overstressed. Given that a particular student tests negative, what is the probability that the test is accurate?
 
-**TREE DIAGRAM**
+![Test Problem Partition](/images/test-problems.png)
 
 $N = P(\text{test negative})$,<br>
 $A = P(\text{test accurate})$,<br>

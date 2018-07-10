@@ -1,7 +1,7 @@
 ---
 title: "Discussion"
 date: 2018-06-25T9:03:48+08:00
-author: "Jim Zenn"
+author: "Tyler Arant"
 volumes: ["Math 170A"]
 issue: "D1"
 draft: true
