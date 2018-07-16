@@ -1,0 +1,532 @@
+---
+title: "Bases and Dimensions"
+date: 2018-07-05T11:03:48+08:00
+author: "Jim Zenn"
+volumes: ["MATH 115A"]
+layout: "note"
+issue: 1.6
+
+
+---
+
+Basis, theorem 1.8, theorem 1.9, theorem 1.10.
+
+<!--more-->
+
+<div class="latex-macros">
+  {{< raw >}}
+    $\newcommand{\R}{\mathbb{R}}$
+    $\newcommand{\Q}{\mathbb{Q}}$
+    $\newcommand{\Z}{\mathbb{Z}}$
+    $\newcommand{\N}{\mathbb{N}}$
+    $\newcommand{\C}{\mathbb{C}}$
+    $\newcommand{\P}{\mathbb{P}}$
+    $\newcommand{\F}{\mathbb{F}}$
+    $\newcommand{\B}{\beta}$
+    $\newcommand{\spa}[1]{\text{span}(#1)}$
+    $\newcommand{\set}[1]{\{#1\}}$
+    $\newcommand{\emptyset}{\varnothing}$
+    $\newcommand{\union}{\cup}$
+    $\newcommand{\intercept}{\cap}$
+    $\newcommand{\abs}[1]{|#1|}$
+    $\newcommand{\t#1}{\text}[1]$
+    $\newcommand{\head}{\text H}$
+    $\newcommand{\tail}{\text T}$
+  {{< /raw >}}
+</div>
+
+{{% definition name="Basis" %}}
+
+$V/F$, a subset $\B\subseteq V$ is called a **basis** of $V$ if
+
+1. $\B$ generates $V$, i.e. $\spa{\B}=V$.
+2. $\B$ is linearly independent.
+
+{{% /definition %}}
+
+{{% example name="" %}}
+Prove that $\B=\set{(1,0), (0,1)}$ is a basis of $\R^2$.
+
+{{% proof name="" %}}
+
+1. need to prove $\B$ generates $V$.<br>
+$\forall (a,b) \in \R^2,$<br>
+$(a, b)=a(1,0)+b(0,1)$ i.e. $\spa{\B}=\R^2$.
+
+2. need to prove $\B$ is linearly independent.<br>
+$x(1,0) + y(0,1) = (0,0)$<br>
+$(x,y) = (0,0)$<br>
+$x = 0, y = 0$
+
+$\therefore$ $\B$ is a basis of $\R^2$.
+
+{{% /proof %}}
+
+{{% /example %}}
+
+{{% example name="" %}}
+$e_1=(1,0,0,...)$,
+$e_2=(0,1,0, ...)$,
+$e_3=(0,0,1, ...)$, <br>
+$e_n=(0,0,...,1, 0, ...)$. <br>
+Is $S= \set{e_1, e_2, e_3, ...}$abasis of $\R^\infty$?
+
+{{% proof name="" %}}
+
+**No.** it is not.
+
+Let $e = (1, 1, 1, 1, ...)$, $e \in \R^\infty$. <br>
+
+$e \notin \spa{S}$, but $e \in \R^\infty$.
+
+$\spa{\B} \neq R^\infty$ i.e. $\spa{\B}$ cannot generate $\R^\infty$.
+
+Hence, $\B$ is not a basis of $\R$.
+
+{{% /proof %}}
+
+{{% remarks name="" %}}
+  $R^\infty$ does have a basis, although we don't know what it is.<br>
+  **Every vector space have a basis.**
+
+{{% /remarks %}}
+
+
+{{% /example %}}
+
+{{% example name="$\R^n/\R$" %}}
+$e_1=(1,0,0,...)$,
+$e_2=(0,1,0, ...)$,
+$e_3=(0,0,1, ...)$, <br>
+$e_n=(0,0,...,1, ..., 0)$.<br>
+$S= \set{e_1, e_2, e_3, ..., e_n}$ is a basis of $\R^n$.
+
+{{% proof name="" %}}
+1. need to prove that $S$ generates $\R^n$. <br>
+$( a\_1, a\_2, ..., a\_{n} ) \in \R^n$ <br>
+$( a\_1, a\_2, ..., a\_{n} ) = a\_1e\_1 + a\_2e\_2 + ... + a\_{n} e\_{n}$ <br>
+$\spa{S} = R $ i.e. $S$ generates $\R^n$.
+
+2. need to prove $S$ is linearly independent. <br>
+$a\_1e\_1 + a\_2e\_2 + ... + a\_{n} e\_{n} = 0$ <br>
+$( a\_1, a\_2, ..., a\_{n} ) = 0$ <br>
+$ a\_i = 0,  i = 1, 2, ..., n $
+$\therefore, S$ linearly independent.
+
+{{% /proof %}}
+
+{{% /example %}}
+
+{{% example name="$\P_n(X)/\R$" %}}
+$\B = \set{1, x, x^2, ..., x^n}$ is a basis of $P_n(X)$ over $\R$.
+
+{{% /example %}}
+
+{{% example name="$\P(X)/\R$" %}}
+Prove that $\B = \set{1, x, x^2, ...}$ is a basis of $\P(x) / \R$.
+
+1. need to prove that $\B$ generates $\P(x) $. <br>
+$ a\_0 + a\_1x + a\_2x^2 + ... + a\_{n} x^{n} \in \P(x)$
+$\spa{ \B } = \P(x) $
+
+2. need to prove that $\B$ is linearly independent. <br>
+<small>To prove an infinite set is linearly independent, we only need to prove its every finite subset's only solution is the trivial representation.</small> <br>
+
+{{% /example %}}
+
+{{% remarks name="the basis of $\set{0}/F$" %}}
+The empty set $\emptyset$ is the basis of $V=\set{0}/F$.
+
+{{% proof index="" name="" %}}
+1. need to prove that $\emptyset$ generates $\set{0}$. <br>
+Trivial. It is defined that $\spa{ \emptyset } = \set{0}$.
+2. need to prove that $\emptyset $ is linearly independent. <br>
+Trivial.
+
+{{% /proof %}}
+
+
+
+{{% /remarks %}}
+
+{{% theorem name="uniqueness of linear combination with bases" index="1.8" %}}
+$\B \subseteq V$, <br>
+$\B$ is a basis of $V \iff $
+$\forall v \in V, \exists v\_1, v\_2, ..., v\_n \in \B$ and <u>unique</u> $a\_1, a\_2, ..., a\_n \in F$ s.t.
+$$v = \sum^n\_{i=1}a\_iv\_i$$
+
+{{% proof name="by contradiction" %}}
+$\implies$
+
+$\spa{\B} = V$, since $\B$ is a basis of $V$.
+
+Assume that for $v\in V, \exists a_1, a_2, ..., a_n, b_1, b_2, ..., b_n$ s.t.
+
+$$v = \sum\_{i=1}^na\_iv\_i= \sum\_{i=1}^nb\_iv\_i$$
+
+then we have
+
+$$\sum\_{i=1}^n(a\_i-b\_i)v\_i= 0$$
+
+$\because \B$ linearly independent $\therefore a\_i-b\_i = 0, \forall i = 1 ... n$.
+
+$\therefore \forall i, a\_i=b\_i$, the coefficients are unique.
+
+$\impliedby$
+
+1. need to prove $\spa{\B} = V$.<br>
+Since $\forall v \in V, v \in \spa{\B}$, $V\subseteq \spa{\B}$.<br>
+$\B \subseteq V \implies \spa{\B} \subseteq V$.<br>
+$\therefore V = \spa{\B}$.
+
+2. need to prove $\B$ is linearly independent.<br>
+Choose $v = 0$, then
+$\forall v_1, v_2, ..., v_k (k \leq n)$, there exist unique $a_1, a_2, ..., a_k$ s.t.<br>
+$$a_1v_1 + a_2v_2 + ... + a_kv_k = 0$$<br>
+then $a_i$ must be all zero. Hence $\B$ is linearly dependent.
+
+$\therefore$ by definition, $\B$ is a basis of $V$.
+
+{{% /proof %}}
+{{% /theorem %}}
+
+{{% theorem name="Deletion Theorem" index="1.9" %}}
+$V/F$, $S$ is a <u>finite</u> generating subset of $V$. Then $\exists T \subseteq S$, $T$ is a basis of $V$.
+
+{{% proof name="" %}}
+**case 1**:
+If $S=\emptyset$ or $S= \set{0}$, then $\spa{S} = \set{0} = V.$
+
+Then $\emptyset \subseteq S$ is the basis of $V = \set{0}, T = \emptyset.$
+
+<br>
+
+**case 2**:
+If $S \neq \emptyset$ and $S \neq \set{0}$, then $\exists v_1 \in S$, s.t. $v_1 \neq 0, \set{v_1}$ linearly independent.
+
+Step 1: Is $\spa{{v_1}} = V$?
+
+If yes, then stop and set $T=\set{v_1}$.
+
+Otherwise, we claim that  $S \setminus \spa{\set{v_1}} \neq \emptyset$
+
+<br>
+
+Indeed $S\setminus \spa{\set{v_1}} \neq \emptyset$.
+
+Assume that $S\setminus \spa{\set{v_1}} = \emptyset$.
+
+then $S \subseteq \spa{v_1}$
+
+then $\spa{S} \subseteq \spa{v_1}$
+
+then $V \subseteq \spa{v_1}$
+
+<br>
+
+$v_2\in V \setminus \spa{\set{v_1}}$. Thus $\set{v_1,v_2} = \set{v_1}\cup\set{v_2}$ linearly independent by Theorem 1.7.
+
+<br>
+
+Step 2: check if $\spa{\set{v_1, v_2}} = V$?
+If yes, then stop...
+otherwise ....
+
+Repeat this way after finitely many steps  (since S is a finite) we will get a set $T=\set{v_1, v_2, ..., v_k}$ s.t. $T$ is linearly independent $\subset S$ and $\spa{T} = V$.
+
+{{% /proof %}}
+
+{{% /theorem %}}
+
+{{% theorem name="Replacement Theorem" index="1.10" %}}
+Let $V/F$ and $\B = \set{v_1, v_2, ..., v_n}$ be a basis of $V$.
+
+Let $v \in V$ be a non-zero vector and $v=c\_1v\_1 + c\_2v\_2 + ... + c\_jv\_j + ... + a\_nv\_n$ s.t. $c\_j \neq 0$ Then $\set{v\_1, v\_2, ..., v\_{j-1}, v, v\_{j+1}, ..., v\_n}$ is a basis of $V$. i.e. the $j$th vector of $\B$ can be replaced by $v$.
+
+{{% proof name="" %}}
+
+Denote $\set{v\_1, v\_2, ..., v\_{j-1}, v, v\_{j+1}, ..., v\_n}$ by $\B'$.
+
+want to prove: $\spa{\B'} = V, \B'$ is linearly independent.
+
+let $u \in V, since \B = \set{v_1, v_2, ..., v_j, ..., v_n}$ is a basis of $V$, $\exists a_1, a_2, a_n \in F$ s.t. $u = \set{v\_1, v\_2, ..., v\_{j} ..., v\_n}$
+
+
+We are given that $v = c\_1v\_1+ c\_2v\_2+ ...+ c\_jv\_j, ...+ c\_nv\_n$, and $c\_j \neq 0$
+
+Solve for $v\_j$:
+$c\_jv\_j = c\_1v\_1 + ... + c\_{j-1}v\_{j-1} -v + c\_{j+1}v\_{j+1} + ... + c\_nv\_n$
+
+$\because c\_j \neq 0, \frac1{c\_j}$ exists
+
+$v\_j = \sum^n\_{i=1}(-\frac{-c\_i}{c\_j}v\_i + \frac{1}{c\_j} v)   (i\neq j)$
+
+
+$u = \sum^n\_{i=1}a_iv\_i + \sum^n\_{i=1}(-\frac{-c\_i}{c\_j})a_jv\_i + \frac{1}{c\_j} a_jv (i\neq j)$
+
+$u = \sum^n\_{i=1}(a_i-\frac{-c\_i}{c\_j}c\_i)v\_i + \frac{1}{c\_j} v (i\neq j)$
+
+$b_1v_1 +b_2v_2 + ... + b_{j-1}v_{j-1} + bv + b{j+1}v_{j+1} + ... + b_nv_n = 0
+
+$b_1v_1 +b_2v_2 + ... + b_{j-1}v_{j-1} + b(c_1v_1 + ... + c_nv_n) + b{j+1}v_{j+1} + ... + b_nv_n = 0
+
+$(b_1 + bc_1)v_1 +(b_2 + bc_2)v_2 + ... + (b_{j-1} + bc_{j-1})v_{j-1}  + bc_jv_j + ...+ (b_n + bc_n) v_n = 0
+
+(c_j \neq 0)$
+
+since $\B = \set {v_1, v_2, ..., v_j, ..., v_n}$ is a basis. It is linearly dependent.
+
+$\therefore b_c_j = 0 \implies b = 0,c .....
+
+lol, cant catch up
+
+
+{{% /proof %}}
+{{% /theorem %}}
+
+{{% example name="$\R^3$" %}}
+$\B= \set{e_1,e_2,e_3}$, standard basis.
+
+$u = (-1, 0, \frac12) = -1e\_1 + 0e\_2+ \frac12 e\_3$
+
+$\B' = \set{u, e\_2, e\_3}$ is a basis.
+
+{{% /example %}}
+
+{{% corollary name="of theorem 1.10" index="1" %}}
+
+$V/F$, $V$ is finite-dimensional,
+
+Then any two basis of $V$ has exactly same number of elements, namely, $\dim V$.
+
+{{% proof name="" %}}
+let $\B = \set{v_1, v_2, ..., v_n}$ and $\gamma = \set{u_1, u_2, ..., u_n}$ be two basis of $V$.
+
+need to prove $\abs{\beta} \geq \abs{\gamma}$ and $\abs{\gamma} \geq \abs{\beta}$
+
+$u_1 \neq 0$
+
+write $u_1 = a_1v_1 + a_2v_2 + ... + a_mv_m$ one of the $a_i$ is  non-zero without loss of generality we may assume that $a_1 \neq 0$. Then by the replacement theorem, $\set{v_1,v_2, ..., v_n}$ is a basis of $V$.
+$\delta_1 = \set{u_1, v_2, v_3, ..., v_m}$ is a basis of V.
+
+write $u_2 \in \delta$ is a linear combination from $\delta$,
+i.e. $u_2 = b_1u_1 + b_2v_2 + b_3v_3 + ... = b_mv_m$
+
+$u_2 \neq 0$
+
+Claim At least that one of $b_2, b_3, ..., b_m$ is non-zero
+
+If not,  then assume they are all zeor i.e. b_2=b_3=...= b_m =0
+
+Then u_2= b_1u_1 = $\set{u_1, u_2}$ is linearly dependent.
+This is a contradiction since \delta is a basis if $b_i \neq 0$
+
+
+Aussume W.L.G. that $b2 \neq = 0$.
+
+Then by Reprlacement theorem applied to $\delta_1, \delta_2 = \set{u_1, u_2, v_3, v_n, ..., v_m}$ is a basis.
+
+Continue this way until $\set{u\_1, u\_2, u\_3, ..., u\_n, v\_{n+1}, v\_{n+2}, ...,  v\_m}$
+Similarly, $\abs{m}\leq n$
+
+{{% /proof %}}
+
+{{% /corollary %}}
+
+{{% definition name="" %}}
+
+$V/F$. If $V$ is generated by a finite subset, then $V$ is called a **finite-dimensional vector space**. In this case the number of vectors in a basis of $V$ is called the **dimension** of $V$ denoted by $\dim V$.
+
+If $V$ is NOT a finite-dimensional vector space, or alternatively if there exists an infinite linearly independent subset $S$ of $V$, i.e. $\abs{S} = \infty$ and $S$ is linearly independent, Then $V$ is called an **infinite-dimensional** vector space, and we write $\dim V = \infty$.
+
+{{% /definition %}}
+
+{{% example name="$P(x) / \R$" %}}
+
+$\B = \set{1, x, x^2, x^3, ... }$
+
+$\dim_\R \P(x) = \infty$
+
+{{% /example %}}
+
+{{% example name="$\R^\infty/\R$" %}}
+
+$\dim_\R \R^\infty = \infty$
+
+{{% /example %}}
+
+{{% example name="$\R^n/\R$" %}}
+
+$e_1 = (1, 0, ..., 0)$
+
+$e_2 = (0, 1, ..., 0)$
+
+$e_n = (0, 1, ..., n)$
+
+$\B = \set{e\_1, e\_2, ..., e\_n}, \dim\_\R R^n = n$.
+
+{{% /example %}}
+
+{{% example name="$M\_{m\times n}(\R)$" %}}
+
+$\dim\_\R M\_{m\times n} = mn$
+
+{{% /example %}}
+
+{{% example name="$W \subseteq M_{2\times 2}(\R)$" %}}
+
+$W = \set{A \in M_{2\times 2}(\R) | tr(A) = 0}$
+
+$\dim\_\R W = 3$
+
+{{% /example %}}
+
+{{% example name="$\R/\R$" %}}
+
+$\dim\_\R \R = 1$
+
+In fact,
+
+$\dim\_F F = 1$
+
+{{% /example %}}
+
+{{% example name="$\C/\R$" %}}
+
+$\dim\_\C \R = 2$
+
+{{% /example %}}
+
+{{% example name="$\C^2/\R$" %}}
+
+2. $V = \C^2, \F = \C, \dim_\C \C^2 = 1$<br>
+$\B_1 = \set{(1, 0), (0, 1)}/\C$
+1. $V = \C^2, \F = \R, \dim_\R \C^2 = 2$<br>
+$\B_2 = \set{(1, 0), (i, 0), (0, 1), (0, -i)}/\C$
+2. $V = \C^n, \F = \R, \dim_\R \C^2 = 2n$<br>
+{{% /example %}}
+
+{{% remarks name="$\R/\Q$" %}}
+
+$\dim_\Q \R = \infty$(will be useful in MATH 131A)
+
+{{% /remarks %}}
+
+{{% corollary name="of theorem 1.9 & 1.10" index="2" %}}
+
+Let $V$ be a $n$ dimension vector space over field $F$.
+
+i.e. $\dim V = n$
+
+1. (a) Any finite generating set of $V$ must contain at least $n$ elements.<br>
+$\forall S \subseteq V, \spa{S} = V \implies \abs{S} \geq n.$<br>
+(b) Any finite generating set of $V$ containing exactly $n$ elements is a basis.<br>
+$\forall S \subseteq V, \spa{S} = V, \abs{S} = n \implies S$ is a basis of $V$.
+
+2. Any linearly independent subset of $V$ containing exactly $n$ elements is a basis.<br>
+$\forall S \subseteq V, S$ is linearly independent, $\abs{S} = n \implies S$ is a basis of $V$.
+
+3. Every linearly independent subset of $V$ can be extended to a basis of $V$.
+
+{{% proof index="1(a)" name="by contradiction" %}}
+
+Let $S$ be a finite set and $\spa{S} = V$.
+
+**On the contrary**, assume that $\abs{S} < n$.
+
+Since $S$ is finite and $\spa{S} = V$, <br>
+by possibly remaining same vector from $S$, let $T$ be a subset of $S$ s.t. $T$ is a basis. (theorem 1.9)
+
+$\dim V = \abs{T} \leq \abs{S} < n = \dim V$. **Contradiction**.
+
+$\therefore \abs{S} \geq \dim V. $
+
+{{% /proof %}}
+
+{{% proof index="1(b)" name="by contradiction" %}}
+
+$\abs{S} = n$ and $\spa{S} = V$. We try to prove that $S$ is not a basis.
+
+**On the contrary** assume that $S$ is not a basis. Then, $S$ must be linearly dependent.
+
+Let $T \subset S$ s.t. $T$ is a basis.
+
+Then $\dim V = \abs{T} < \abs{S} = n = \dim{V}$. **Contradiction**.
+
+$\therefore S $ must be a basis.
+
+{{% /proof %}}
+
+{{% proof index="2" name="" %}}
+Let $S$ be a linearly independent, $\abs{S} = n = \dim V$.
+
+Let $\B = \set{v_1, v_2, ..., v_n}$ be a basis of $V$.
+
+Let $S = \set{u_1, u_2, ..., u_n}$. Since $S$ is linearly independent. $u_i \neq 0, \forall i = 1, 2, ..., n$.
+
+Then by theorem 1.10,
+we can replace $v_1, v_2, v_3, ..., v_n$ with $u_1, u_2, ..., u_n$  one by one.
+
+$\therefore u_1, u_2, ..., u_n$ is a basis.
+
+{{% /proof %}}
+
+{{% proof name="3" %}}
+Let $S = {v_1, v_2, ..., v_k}$ be a linearly independent set in $V$.
+
+if $span(S) = V$, then $S$ is already a basis. (definition of basis)<br>
+
+If not, there exist a vector $w\_{k+1} \in V \setminus S$ s.t.
+
+$T\_{k + 1} = S \cup \set{w\_{k+1}}$ is linearly independent.
+
+Check if $\spa{T\_{k+1}} = V$?
+
+If yes, then stop. and $T\_{k + 1}$ is a basis.
+
+If not, continue is a basis.
+
+Continuing this way, we will stop after a finitely many steps and with $T\_n = S \cup \set{w\_{k+1}, w\_{k+2}, w\_{k+3}, ...  w\_{n}}$   since $\dim V = n$.
+
+
+{{% /proof %}}
+
+{{% /theorem %}}
+
+{{% theorem name="" index="" %}}
+
+Let $V$ be a finite dimension vector space over a field $F$, and $W$ a subspace of $V$, then $\dim W \leq \dim V$.
+
+Moreover, if $\dim W = \dim V$, then $W = V$.
+
+{{% proof name="" %}}
+
+DOUBLE CHECK
+
+let $\dim V = n \geq 0$,
+
+If  $W = \set{0}, \dim W = 0 \leq n = \dim V$<br>
+so assume that $W \neq \set{0}$.
+
+Then $\exists w_1 \in w$ s.t.  $w_1 \neq 0$
+
+continuing this way, let $\set{w_1, w_2, ..., w_k}$ be a linearly independent subset of $W$ s.t. if $w$ is any other vector in $W$ s.t. $w \notin \set{w_1, w_2, ..., w_k}$, then $\set{w_1, w_2, ..., w_k}\cup \set{w}$ is linearly dependent.
+
+But $w_1, w_2, ..., w_k$ is also linearly independent in V, since $W \subseteq V \implies$
+
+{{% /proof %}}
+
+{{% proof name="" %}}
+Assume that $\dim W = \dim V = n$
+let #\B = \set{w\_1, w\_2, ..., \_n}# be a basis of $W$.
+Then $\spa{\B} = W$
+and $w_1, w_2, ..., w_n$ is a linearly independent set in $V$, since $W\subseteq V$.
+This implies that $w_1, w_2, ..., w_n$ is a bais of $V$, since $\dim V = n$, \therefore, $\spa{w_1, w_2, ..., w_n}= V$
+i.e. $\spa{\B} = V$
+We get $W=V$
+
+
+{{% /proof %}}
+
+{{% /corollary %}}
+

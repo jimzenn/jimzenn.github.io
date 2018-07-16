@@ -1,0 +1,183 @@
+---
+title: "Conditional Probability"
+date: 2018-06-28T9:03:48+08:00
+author: "Olga Turanova"
+volumes: ["MATH 170A"]
+layout: "note"
+issue: 1.3
+
+
+---
+
+Conditional probability, total probability theorem, partition.
+
+<!--more-->
+
+<div class="latex-macros">
+  {{< raw >}}
+    $\newcommand{\R}{\mathbb{R}}$
+    $\newcommand{\Q}{\mathbb{Q}}$
+    $\newcommand{\Z}{\mathbb{Z}}$
+    $\newcommand{\N}{\mathbb{N}}$
+    $\newcommand{\set}[1]{\{#1\}}$
+    $\newcommand{\emptyset}{\varnothing}$
+    $\newcommand{\union}{\cup}$  
+    $\newcommand{\intercept}{\cap}$  
+    $\newcommand{\abs}[1]{|#1|}$  
+    $\newcommand{\t#1}{\text}[1]$  
+    $\newcommand{\head}{\text{H}}$  
+    $\newcommand{\tail}{\text{T}}$  
+  {{< /raw >}}
+</div>
+
+
+Toss a fair coin 3 times:
+
+1. Probability that we get more $\head$ than $\tail$?
+2. Given that the 1st one is $\head$, probability of getting more $\head$ than $\tail$?
+
+$$
+\begin{align\*}
+\Omega & = \set{A_1 A_2 A_3| A_1 A_2 A_3 \in \set{\head, \tail}} \\\\\
+       & = \set{\text{HHH, HHT, HTH, HTT, TTT,TTH, THT, THH}}
+\end{align\*}
+$$
+
+1. $P(\text{more H than T})=P(\text{HHH, HHT, HTH, THH})= \frac 12 $
+2. $P(\text{given 1st is H, more H than T})=P(\text{HHH, HHT, HTH})= \frac 34 $
+
+More generally, we are given a sample space $\Omega$, a probility law $P$, suppose $B \subseteq \Omega, P(B) > 0, P(B) > 0.$
+
+In our example, let $A =\set{\text{more H than T}}, B = \set{\text{1st one is H}}$. We found, by counting $|B|=4$, and $|A\cap B| = 3$. Note $\frac{3}{4}=\frac{P(A\cap B)}{P(B)}$.
+
+
+{{% definition name="Conditional Probability" %}}
+
+We denote the <strong>conditional probability of $A$ given $B$</strong> by $P(A|B)$.
+
+$$P(A|B)=\frac{P(A\cap B)}{P(B)}$$
+
+{{% /definition %}}
+
+{{% example name="Roll a Fair Die" %}}
+
+Roll a fair die. Suppose we know the outcome is  even. What is the probability that outcome is 6?
+
+$$\Omega = \set{1, 2, 3, 4, 5, 6}, A = \set{6}, B=\set{2,4,6}$$
+$P(A|B)=\frac{P(A\cap B)}{P(B)}=\frac{P(\set{6})}{P(B)}= \frac{\frac16}{\frac36}=\frac13$
+
+Note: If $P(B) = 0$, then $P(A\cap B) = 0, $ since $P(A\cap B) \subset P(B)$
+
+So in this case, $P(A\cap B) = P(A|B) P(B)​$ since both are zero.
+
+So $P(A\cap B) = P(A|B)P(B), \forall A, B \subset \Omega$.
+
+{{% /example %}}
+
+For $B$ with $P(B)>0, P(X|B)$ is a probability law on $\Omega$.
+
+{{% proof %}}
+
+1. possitivity: $P(A|B) =\frac{P(A\cap B)}{P(B)}\geq 0,  \forall A$ 
+2. addtivity: let $A, C$ be disjoint, $P((A\cup C)| B)=\frac{P((A\cup C)\cap B)}{P(B)}=\frac{P((A\cap B)\cup (C\cap B)}{P(B)} = \frac{P(A\cap B)+ P(C \cap B)}{P(B)}=P(A|B)+P(A|C)$
+3. normalization??
+
+{{% /proof %}}
+
+
+{{% example name="Fair 4-sided die " %}}
+
+We roll a fair, 4 sided die twice. let $x$ denote result of 1st roll, let $y$ denote result of 2nd roll. Let $B$ be the event $B=\set{(x,y)\in\Omega|\text{min}(x,y)=2}$. Determine $P(A_n| B)$, where for $n = \set{1, 2, 3, 4}$, $A_n$ is the event $A_n=\set{max(x,y) = n}$.
+
+$B=\set{(2,2),(2,3),(3,2),(2,4),(4,2)}, P(B)=\frac5{16}$
+
+$P(A_1|B)=\frac{P(A_1\cap B))}{P(B)}=\frac{0}{P(B)}=0$
+
+$P(A_2|B)=\frac{P(A_2\cap B))}{P(B)}=\frac{1/ 16}{5/ 16}=1/ 5$
+
+$P(A_3|B)=\frac{P(A_3\cap B))}{P(B)}=\frac{2/ 16}{5/ 16}=2/ 5$
+
+$P(A_4|B)=\frac{P(A_4\cap B))}{P(B)}=\frac{2/ 16}{5/ 16}=2/ 5$
+
+{{% /example %}}
+
+ 
+{{% theorem name=" Simplified version of Total Probability Theorem" %}}
+
+let $B \subset \Omega$, for any event $A$ , $A\cap B$ and $A\cap B^c$ are **disjoint**. $$P(A) = P(A\cap B) + P(A\cap B^c)=P(A|B)P(B)+P(A|B^c)P(B^c)$$
+
+{{% /theorem %}}
+
+{{% example name="yogurt" %}}
+
+At the store there are two flavours of yogurt, apple and berry. There are 100 Apple yogurts and 20% of which are expired; there are 200 Berry yogurts and 10% of which are expired.
+<br>
+I choose a yogurt at random. What's the chance that it's expired?
+
+Let $E$ denote the event that yogurt I get is expired. <br>
+Let $A$ and $B$ respectively denote the events that I get Apple or Berry yogurt.
+
+$P(E) = P(E|A)P(A)+P(E|B)P(B)=P(E|A)P(A)+P(E|A^c)P(A^c)$
+
+$=20\%\times\frac{100}{300}+10\%\times\frac{200}{300}$
+
+$=\frac{2}{15}$
+
+{{% /example %}}
+
+
+{{% example name="yogurt2" %}}
+
+A different store has same selection of apple and berry (same \% are expired) plus 300 Cherry yogurts, 5% of which are expired.
+
+$P(E) = P(E|A)P(A)+P(E|B)P(B)+ P(E|C)P(C )$
+
+$=20\%\times\frac{100}{600}+10\%\times\frac{200}{600}+5\%\times\frac{300}{600}$
+
+$=\frac{11}{120}$
+
+
+
+{{% /example %}}
+
+{{% definition name="Partition" %}}
+
+We say $B_1, B_2...$, are partitions of $\Omega,$ if $B_i \cap B_j = \emptyset$ for $ i\neq j$ and $\underset i \cup B_i = \Omega$.
+
+{{% /definition %}}
+
+ {{% theorem name=" Total Probability Theorem" %}}
+
+If $B_1,B_2,... $ partitions $\Omega$ and $A\subset \Omega$, then  A = $\underset i \cup(A\cap B_i)$ and this is a disjoint union. Thus, 
+$$P(A) = \underset i \Sigma P(A|B_i)P(B_i)$$
+
+ {{% /theorem %}}
+
+{{% example name="Stack of Cards" %}}
+
+Standard deck of 52 cards (4 suits, each suite has 13 cards, 2-10, J, Q, K, A). 
+
+> I draw a card at random. 
+
+$P(\text{not a heart}) = \frac34$
+
+> Draw 2 cards (without replacement). $P(\text{neither is a heart}) = ?$
+
+let $A_i$ be the event that $i$th card is not a heart.
+
+$P(\text{neither is a heart}) = P(A_1\cap A_2)$
+
+$P(A_1\cap A_2)=P(A_2 | A_1)P(A_1)= \frac{38}{51}\times \frac{39}{52}$
+
+$P(A_1\cap A_2\cap A_3) =?$
+
+In general, let $B_1, B_2, ..., B_n$ be events of positive probability. Note the telescoping product:
+
+$P(\underset {i=1}{\overset n \cap} B_i)=P(B_1)\frac{P(B_1\cap B_2)}{P(B_1)}\frac{P(B_1\cap B_2 \cap B_3)}{P(B_1\cap B_2)}...\frac{P(\underset {i=1}{\overset n \cap} B_i)}{P(\underset {i=1}{\overset {n-1} \cap} B_i)}$
+
+$P(\underset {i=1}{\overset n \cap} B_i)=P(B_1)P(B_2|B_1)P(B_3|B_1\cap B_2)...P(B_n|\underset {i=1}{\overset {n-1} \cap} B_i)$
+
+$P(A_1\cap A_2\cap A_3) =P(A_1)\cdot P(A_2|A_1)\cdot P(A_3|A_1 \cap A_2)=\frac{39}{52}\cdot \frac{38}{51} \cdot \frac{37}{50}$
+
+{{% /example %}}
+

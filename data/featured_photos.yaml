@@ -14,10 +14,10 @@
   device: "Nexus 5X"
   url: "/images/featured/view-from-los-angeles-city-hall.jpg"
 -
-  title: "Royce Hall at UCLA"
+  title: "Royce Hall of UCLA"
   author: "Jim Zenn"
   device: "Pixel XL"
-  url: "/images/featured/royce-hall-at-ucla.jpg"
+  url: "/images/featured/royce-hall-of-UCLA.jpg"
 -
   title: "The Broad"
   author: "Jim Zenn"
@@ -74,12 +74,57 @@
   device: "Pixel XL"
   url: "/images/featured/lake-merrit-bart-station.jpg"
 -
-  title: "Still Life"
+  title: "Union Square"
   author: "Jim Zenn"
-  device: "Pixel XL"
-  url: "/images/featured/still-life-1.jpg"
+  device: "Nexus 6X"
+  url: "/images/featured/union-square.jpg"
 -
   title: "Sunset at Berkeley"
   author: "Jim Zenn"
   device: "Pixel XL"
   url: "/images/featured/sunset-at-berkeley.jpg"
+-
+  title: "Frostmourne"
+  author: "Jim Zenn"
+  device: "minecraft"
+  url: "/images/featured/minecraft-frostmourne.jpg"
+-
+  title: "Red Sea"
+  author: "Jim Zenn"
+  device: "minecraft"
+  url: "/images/featured/minecraft-red-sea.jpg"
+-
+  title: "Home"
+  author: "Jim Zenn"
+  device: "minecraft"
+  url: "/images/featured/minecraft-home.jpg"
+-
+  title: "Home and Toby"
+  author: "Jim Zenn"
+  device: "minecraft"
+  url: "/images/featured/minecraft-home-with-toby.jpg"
+-
+  title: "Inside the Pyramid"
+  author: "Jim Zenn"
+  device: "minecraft"
+  url: "/images/featured/minecraft-inside-the-pyramid.jpg"
+-
+  title: "The Stone Tower"
+  author: "Jim Zenn"
+  device: "minecraft"
+  url: "/images/featured/minecraft-the-stone-tower.jpg"
+-
+  title: "Temple"
+  author: "Jim Zenn"
+  device: "minecraft"
+  url: "/images/featured/minecraft-temple.jpg"
+-
+  title: "San Francisco Museum of Modern Art"
+  author: "Jim Zenn"
+  device: "Pixel XL"
+  url: "/images/featured/SFMoMA-1.jpg"
+-
+  title: "Powell Library of UCLA"
+  author: "Jim Zenn"
+  device: "Pixel XL"
+  url: "/images/featured/powell-library-of-UCLA.jpg"

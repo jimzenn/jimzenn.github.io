@@ -1,0 +1,96 @@
+-
+  course-number: "MATH 115A"
+  course-title: "Linear Algebra"
+  course-introduction: "Math 115A is a core mathematics course required of all the various mathematics majors. The course material can be regarded as an elaboration of the linear algebra already covered in Math 33A. However, the level of abstraction and the emphasis on proof technique make this a difficult course for many students. Successful students emerge from the experience not only with a better understanding of linear algebra, but also with a higher level of mathematical maturity, better equipped to deal with abstract concepts."
+  course-info:
+    -
+      field: "Instructor"
+      value: "Omprokash Das"
+      url: "https://www.math.ucla.edu/~das/"
+      icon: "external"
+    -
+      field: "Teaching Assistant"
+      value: "Young Hak Kwon"
+      url: "https://www.math.ucla.edu/people/grad/yhkwon"
+      icon: "external"
+    -
+      field: "Classroom"
+      value: "Mathematical Sciences Building, 6627"
+      url: "https://goo.gl/maps/9Qe3J5EGu4p"
+      icon: "map"
+    -
+      field: "Time"
+      value: "Mon - Thurs, 11am - 12:50pm"
+      icon: "calendar"
+  navigation:
+    -
+      name: "Course info"
+      url: "#"
+    -
+      name: "Syllabus"
+      url: "#syllabus"
+    -
+      name: "Resources"
+      url: "#resources"
+  resources:
+    -
+      title: "Lecture Note, sample exams, and solutions"
+      author: "Terence Tao"
+      source: "UCLA MATH 115A - Fall 2002 course site"
+      url: "http://www.math.ucla.edu/~tao/resource/general/115a.3.02f/"
+    -
+      title: "Outline of lectures, and homework"
+      author: "Michael Andrews"
+      source: "UCLA MATH 115A - Winter 2018 course site"
+      url: "http://www.math.ucla.edu/~mjandr/Math115A/index.html"
+
+-
+  course-number: "MATH 170A"
+  course-title: "Probability Theory"
+  course-introduction: "Probability and stochastic processes are used to create and analyze models in a broad range of fields, including statistics, economics, finance, engineering, biology and physics. Mathematics 170AB and 171 are designed to give a firm foundation in this area for students who will work and/or do graduate work in one of these fields. They also provide an excellent background for graduate work in probability and related areas of mathematics."
+  course-info:
+    -
+      field: "Instructor"
+      value: "Olga Turanova"
+      url: "http://www.math.ucla.edu/~turanova/"
+      icon: "external"
+    -
+      field: "Teaching Assistant"
+      value: "Tyler Arant"
+      url: "http://www.math.ucla.edu/~tylerarant/"
+      icon: "external"
+    -
+      field: "Classroom"
+      value: "Franz Hall, 2258A"
+      url: "https://goo.gl/maps/PaTo41ArirD2"
+      icon: "map"
+    -
+      field: "Time"
+      value: "Mon - Thurs, 9am - 10:50pm"
+      icon: "calendar"
+  navigation:
+    -
+      name: "Course info"
+      url: "#"
+    -
+      name: "Syllabus"
+      url: "#syllabus"
+    -
+      name: "Resources"
+      url: "#resources"
+  resources:
+    -
+      title: "Supplementary problems"
+      url: "http://www.athenasc.com/prob-supp.html"
+    -
+      title: "Homework 01"
+      url: "/Math-170A/HW01.pdf"
+    -
+      title: "Homework 02"
+      url: "/Math-170A/HW02.pdf"
+    -
+      title: "Homework 03"
+      url: "/Math-170A/HW03.pdf"
+    -
+      title: "Homework 04"
+      url: "/Math-170A/HW04.pdf"

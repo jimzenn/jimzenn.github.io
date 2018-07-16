@@ -1,0 +1,286 @@
+---
+title: "Discrete Random Variable"
+date: 2018-07-09T10:03:48+08:00
+author: "Olga Turanova"
+volumes: ["MATH 170A"]
+layout: "note"
+issue: 2.1
+
+
+---
+
+Discrete random variable.
+
+<!--more-->
+
+<div class="latex-macros">
+  {{< raw >}}
+    $\newcommand{\R}{\mathbb{R}}$
+    $\newcommand{\Q}{\mathbb{Q}}$
+    $\newcommand{\Z}{\mathbb{Z}}$
+    $\newcommand{\N}{\mathbb{N}}$
+    $\newcommand{\set}[1]{\{#1\}}$
+    $\newcommand{\emptyset}{\varnothing}$
+    $\newcommand{\union}{\cup}$
+    $\newcommand{\intercept}{\cap}$
+    $\newcommand{\abs}[1]{|#1|}$
+    $\newcommand{\t#1}{\text}[1]$
+    $\newcommand{\head}{\text H}$
+    $\newcommand{\tail}{\text T}$
+  {{< /raw >}}
+</div>
+
+
+{{% definition name="random variable" %}}
+
+A **random variable** is a real-valued function of the outcome of an experiment.
+
+It is **discrete** if its range is finite or countably infinite.
+
+Notation: we use upper case letters $X, Y$, etc. to denote random variables, and lowercase letters $x,y$, etc. to denote possible numerical values.
+
+{{% /definition %}}
+
+{{% definition name="discrete random variable" %}}
+A **discrete random variable** $X$ is a function from $\Omega$ to a countable subset $D$ of the real number $S$.
+
+A random variable is a real-valued function of the experiment outcome.
+
+{{% /definition %}}
+
+
+{{% example name="" %}}
+A random variable $X$ is called **Bernoulli** with parameter $p$ if $X$ takes only the values $0$ and $1$ with probability $p$ and $1-p$.
+
+{{% /example %}}
+
+If $x$ is a possible value of $X$, how likely is it?
+
+# Probability Mass Functions
+
+{{% definition name="Probability Mass Functions" %}}
+If $x$ is a real number, the **probability mass** of $x$ denoted $p\\_X(x)$ is given by
+$$p_X(x) = P({\omega \in \Omega | X(\omega) = x})$$
+
+{{% /definition %}}
+
+{{% example name="(continued)" %}}
+
+$p_X(0)=p, p_X(1)=1-p$
+
+{{% /example %}}
+
+{{% note name="Short Hand" %}}
+$P_X(x) = P(\set{\omega \in \Omega | X(\omega) = x}) = P(X=x)$
+
+if $S \subset R$,
+$P_X(x) = P(\set{\omega \in \Omega | X(\omega) \in S}) = P(X\in S)$
+
+{{% /note %}}
+
+{{% definition name="" %}}
+$p_X(\cdot)$ is aclled the probability mass function of $X$.
+
+{{% /definition %}}
+
+{{% example name="Binomial random variable" %}}
+Coin is tossed $n$ times, $\head$ with probability $p$. Let $y$ be number of heads in the $n$ tosses. $y$ is called the binomial random variable with parameters, $n$ and $p$. For $k=0, ..., n$
+
+$$
+\begin{align\*}
+p_y(k) &= P(\set{\omega \in \Omega|y(\omega)= k})
+       &= P(\text{heads})
+\end{align*}
+$$
+
+{{% /example %}}
+
+{{% note name="" %}}
+
+$\sum_xp_X(x) = 1$ where x in the sum ranges over all possible value of $X$, because {\omega \in \Omega | X(\omega) = x} is a partition of $\Omega$.
+
+and note that $p_X(x) \geq 0, \forall x \in R$.
+
+{{% /note %}}
+
+{{% example name="" %}}
+
+Let $X$ be the outcome of one roll of a fair six-sided die.
+
+$x$ takes values from $1, 2, ..., 6$.
+
+$
+\\[
+p_X(x) = \left\{
+\begin{array}{ll}
+\frac16 \\\\\
+0
+\end{array}
+\right
+\\]
+.$
+
+$\Omega = {i| i = 1,2, ..., 6}$
+
+and so:
+
+$$
+\begin{align\*}
+p_X(4)&=P(\set{\omega \in \Omega| X(\omega) = 4}) \\\\\
+&=p({4}) \\\\\
+&=\frac16
+\end{align*}
+$$
+
+$$
+\begin{align\*}
+p_X(25.5)&=P(\set{\omega \in \Omega| X(\omega) = 25.5}) \\\\\
+&=0
+\end{align*}
+$$
+
+{{% /example %}}
+
+{{% definition name="uniform random variable" %}}
+
+Let X be a RV value $1, ..., n$ s.t. $p_X(x)=\frac1n$ for $x=1,...,n$. This is called the **uniform random variable** on ${1,...,n}$.
+
+{{% /definition %}}
+
+{{% definition name="geometric random variable" %}}
+We are doing independent trials, chance of success at each trial is $P$ until you succeed for 1st time. $X$ is called **geometric random variable**.
+
+For $k = 1, 2, 3, ... ,$
+
+$$
+\begin{align\*}
+p_X(k) &= P({\omega \in \Omega | X(\omega) = k})\\\\\
+&= P((Fail, Fail, Fail, Succeed))\\\\\
+&=(1-p)^{k-1}p
+\end{align*}
+$$
+
+For any other $k \in \R, k \notin \N, p_X(k) = 0$
+
+{{% /definition %}}
+
+{{% note name="geometric series" %}}
+
+$\sum^N_{k=0}r^k = \frac{1-r^N}{1-r}$, let $r \in (0,1)$.
+
+In Particular,
+
+$\sum^\infty\_{k=0} r^k = \lim\_{N\to\infty}\frac{1-r^N}{1-r}=\frac{1}{1-r}$.
+
+{{% proof name="" %}}
+
+$(1 + r + r^2 + ... + r^{N-1})(1-r)$
+
+$= (1 + r + r^2 + ... + r^{N-1})-(r + r^2 + r^3 ... + r^N)$
+
+$1=r^N$
+
+
+{{% /proof %}}
+
+$\sum^\infty\_{k=1} p_X( k)= \sum^\infty\_{k=1} (1-p)^{k-1} p = \sum^\infty\_{k=0} (1-p)^k p$.
+
+{{% /note %}}
+
+# Functions of Random Variables
+
+{{% example name="" %}}
+
+let $X$ be temperature in $℃$.
+
+Let $g(x) = 1.8 x + 32$, let $y = g(X)$.
+
+then $y$ represents temperature in $$.
+
+In general, if $y=g(X)$, where $g: \R \to \R$, then $y$ is also a random variable.
+
+{{% /example %}}
+
+{{% theorem name="" index="" %}}
+
+if $y = g(X)$ then p_Y(y) = \sum p_X(x) {x| g(x) = y}
+
+{{% /theorem %}}
+
+{{% example name="" %}}
+Let $X$ take values in ${-4, -3, ..., 4}$, each equally likely, let $y = |X|$, let's find $p_X$ & $p_Y$.
+$$p_X(k) = \\[\left\\{
+\begin{array}{ll}
+\frac19 \\\\\
+0
+\end{array}
+\right\\].$$
+
+$p_Y(0) = P(X=0) = \frac19$
+
+$p_Y(2) = P(X=-2, X=2) = \frac29$
+
+According to theorem, (here $g(x)=\abs{x}$),
+
+$p\_Y(2) = \sum\_{\set{x|\abs{x}=2}} p\_X(x) $
+
+$= \sum\_{\set{x|x=2, x=-2}} p\_X(x) = p_X(2) + p_X(-2) = \frac29$
+
+{{% /example %}}
+
+# Expectation, Mean, and Variance
+
+Heuristic: the expectation of a random variable is your best guess for its outcome.
+
+Less heuristiccally: average of possible values of your random variable are weighed by their probabilities.
+
+{{% definition name="Expectation" %}}
+Let $X$ be a discrete random variable. Its **expected value**, $E[X]=\sum_{x}xp_X(x)$.
+
+Also called, "mean", "average", etc.
+
+Thi definition holds for random variable such that $\sum_x\abs{x}p_X(x) < \infty$.
+
+All examples in this course satisfy this.
+{{% /definition %}}
+
+{{% example name="" %}}
+
+Let $X$ take values in ${-4, -3, ..., 4}$, each equally likely, let $y = |X|$, let's find $p\_X$ & $p\_Y$.
+
+$E[X] = \sum\_{k=-4}^4 k\cdot \frac{1}{9} = \frac19 \cdot \sum ^4\_{k=-4} k = 0$
+
+$E[Y] = \sum\_{k=0}^4 k\cdot p_Y(y)= \frac{20}{9}$
+
+We can use this to find $E[Y]$ as follows.
+
+$$
+\begin{align\*}
+E[\abs{X}] &= \sum^4\_{k=-4} \abs{k} \cdot \frac19 \\\\\
+&= \frac19 \sum^4\_{k=-4} \abs{k}
+\end{align*}
+$$
+
+{{% /example %}}
+
+{{% theorem name="" index="" %}}
+Let $X$ be a discrete random variable, let $g: \R \to \R$. Then
+
+$$E[g(X)]=\sum\_xg(x)p\_X(x)$$
+
+{{% /theorem %}}
+
+{{% definition name="Variance" %}}
+
+The **varience** of X, denoted var(X) is defined as
+
+$$var(X) = E[(X-E[X])^2]$$
+
+{{% /definition %}}
+
+{{% definition name="Stadard deviation" %}}
+
+$\sigma_x = \sqrt{var(X)}$ is the **standard deviation** of $X$.
+
+{{% /definition %}}
+
