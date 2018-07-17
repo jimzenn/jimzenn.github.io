@@ -1,6 +1,6 @@
 ---
 title: "Discussion"
-date: 2018-07-05T11:03:48+08:00
+date: 2018-07-10T11:03:48+08:00
 author: "Jim Zenn"
 volumes: ["MATH 115A"]
 layout: "note"

@@ -9,7 +9,7 @@ issue: 2.2
 
 ---
 
-Probability mass function.
+Probability mass function, binomial random variable
 
 <!--more-->
 

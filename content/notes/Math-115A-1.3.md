@@ -21,24 +21,24 @@ Subspaces, theorem 1.3: properties of subspaces
     $\newcommand{\N}{\mathbb{N}}$
     $\newcommand{\set}[1]{\{#1\}}$
     $\newcommand{\emptyset}{\varnothing}$
-    $\newcommand{\abs}[1]{|#1|}$  
-    $\newcommand{\tr}[1]{\text{tr}(#1)}$  
+    $\newcommand{\abs}[1]{|#1|}$
+    $\newcommand{\tr}[1]{\text{tr}(#1)}$
   {{< /raw >}}
 </div>
 
-{{% definition name="Subspaces" %}} 
+{{% definition name="Subspaces" %}}
 
 A subset $W$ of a vector space $V$ over a Field $F$ is called a **subspace** if $W$ is a vector space over $F$ is a vector space, denoted by $W \leq V$.
 
 {{% /definition %}}
 
-{{% note name="" %}} 
+{{% note name="" %}}
 
 In any vector space $V$, $V$ itself and $\set{0}$ are subspaces. The latter is called the **zero subspace** of $V$.
 
 {{% /note %}}
 
-{{% theorem name="Properties of subspaces" index="1.3" %}} 
+{{% theorem name="Properties of subspaces" index="1.3" %}}
 
 Additionally, a subset $W$ of a vector space $V$ is a subspace of $V$ if and only if the following three properties hold.
 
@@ -46,7 +46,7 @@ Additionally, a subset $W$ of a vector space $V$ is a subspace of $V$ if and onl
 2. $x + y \in W$ whenever $x\in W$ and $y \in W$. ($W$ is **closed under addition**)
 3. $cx \in W$ whenever $c \in F$ and $x \in W$. ($W$ is **closed under scalar multiplication**)
 
-{{% proof name="" %}} 
+{{% proof name="" %}}
 
 <u>Assume that $W$ is a subspace.</u>
 
@@ -70,11 +70,11 @@ This implies from the definition of subspace that $W$ itself is a vector space o
 
 {{% /theorem %}}
 
-{{% example name="$ \R^2/\R=$ XY-plane" %}} 
+{{% example name="$ \R^2/\R=$ XY-plane" %}}
 
 {{% /example %}}
 
-{{% example name="X-axis" %}} 
+{{% example name="X-axis" %}}
 
 W=$\{(a,0)|a\in\R\}$
 
@@ -89,7 +89,7 @@ Any straight line in $\R^2$ that passes througth the origin is a subspace of $\R
 
 {{% /example %}}
 
-{{% examples name="" %}} 
+{{% examples name="" %}}
 
 $W = \set{A\in M_{n\times n}(\R)|A^T=A}=$ Set of all symentric matrices is a subspace.
 
@@ -109,7 +109,7 @@ $\R^n$, hyperplanes that passes through the origin $a_1x_1+a_2x_2+...+a_nx_n=0$ 
 
 {{% /examples %}}
 
-{{% example name="$\R^5$" %}} 
+{{% example name="$\R^5$" %}}
 $\R^5, W =\set{(x_1, x_2,x_3,x_4,x_5)\in \R^5 | x_1-x_2+x_5=0, 2x_3+7x_4=0}$. subspace.
 
 1. (0,0,0,0,0) \in W, since <br>
@@ -124,11 +124,11 @@ $(1)+(3) = 0, (2)+(4) = 0$
 
 {{% /example %}}
 
-{{% theorem name="" index="1.4" %}} 
+{{% theorem name="" index="1.4" %}}
 The intersection of any number (incountable is also included) of subspaces of $V$ is again a subspace of $V$.
 {{% /theorem %}}
 
-{{% remarks name="" %}} 
+{{% remarks name="" %}}
 Union of TWO subspaces may not be a subspace in general.
 
 Union is a subspace iff. one subspace is the subset of the other.

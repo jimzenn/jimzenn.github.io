@@ -1,5 +1,5 @@
 ---
-title: "Theorems of Vector Spaces; Field"
+title: "Vector Spaces"
 date: 2018-06-25T11:03:48+08:00
 author: "Jim Zenn"
 volumes: ["MATH 115A"]
@@ -9,7 +9,7 @@ issue: 1.2
 
 ---
 
-Theorem 1.1: cancellation law for vector addition, theorem 1.2, null vector's uniqueness, fields.
+A vector space must have a null object.
 
 <!--more-->
 
@@ -17,154 +17,175 @@ Theorem 1.1: cancellation law for vector addition, theorem 1.2, null vector's un
   {{< raw >}}
     $\newcommand{\R}{\mathbb{R}}$
     $\newcommand{\Q}{\mathbb{Q}}$
-    $\newcommand{\C}{\mathbb{C}}$
     $\newcommand{\Z}{\mathbb{Z}}$
     $\newcommand{\N}{\mathbb{N}}$
+    $\newcommand{\P}{\mathbb{P}}$
     $\newcommand{\set}[1]{\{#1\}}$
     $\newcommand{\emptyset}{\varnothing}$
-    $\newcommand{\union}{\cup}$  
-    $\newcommand{\intercept}{\cap}$  
-    $\newcommand{\abs}[1]{|#1|}$  
-    $\newcommand{\t#1}{\text}[1]$  
+    $\newcommand{\union}{\cup}$
+    $\newcommand{\intercept}{\cap}$
+    $\newcommand{\abs}[1]{|#1|}$
+    $\newcommand{\t#1}{\text}[1]$
   {{< /raw >}}
 </div>
 
-{{% theorem name="Cancellation Law for Vector Addition" index="1.1" %}}
+{{% definition name="Space" %}}
+In mathematics, a space is a set with some added structure.
+{{% /definition %}}
 
-$x,y,z \in V$, if $x + z = y+z$, then $x= y$.
+{{% definition name="Vector Space" %}}
+A **vector space** (or **linear space**) $V$ over a field $F$ consists of a set where two operations (**vector addition** and **scalar multiplication**) are defined and satisfies the following properties:
 
-{{% proof %}}
+1. $\forall x, y \in V, x + y = y + x$
+<br> (commutativity of addition)
+2. $\forall x, y, z \in V, (x + y) + z = x + (y + z)$
+<br> (associativity of addition)
+3. $\exists 0 \in V$ s.t. $\forall x \in V, x + 0 = x$
+<br> (existence of identity element for addition, i.e null vector)
+4. $\forall x \in V, \exists y \in V $ s.t. $x + y = 0$
+<br> (existence of inversion for addition)
+5. $\forall x \in V, 1x=x$
+<br> (existence of identity element for multiplication)
+6. $\forall a,b \in F, \forall x \in V, (ab)x=a(bx)$
+7. $\forall a \in F, \forall x, y\in V, a(x+y)=ax+ay$
+8. $\forall a,b \in F, \forall x \in V, (a+b)x = ax+ bx$
 
-$\exists v \in V $ s.t. $z+v = 0$   (VS4)
+$x+y$ is called the **sum** of $x$ and $y$;
+$ax$ the **product** of $a$ and $x$.
 
-$
-\begin{align\*}
-x &= x+0 \\\\\\ 
- &= x + (z+ v) \\\\\\ 
-&= (x+ z) + v \\\\\\
-&= (y + z) + v \\\\\\
-&= y + (z + v) \\\\\\ 
-&= y + 0 = y
-\end{align*}
-$
-
-{{% /proof %}}
-
-{{% /theorem %}}
-
-
-{{% corollary index="1" %}}
-
-The **zero vector** (or **null vector**) $0$ described in VS3 is <u>unique</u>.
-
-i.e. if $0, 0'$ both satisfy (VS3) then $0=0'$.
-
-i.e. $\forall x \in V, x + 0=x, x + 0'=x$, then $0=0'$.
-
-{{% proof %}}
-
-let $x = 0, y = 0' $
-
-$0 + x = x \implies 0 + 0 = 0$
-
-$0 + y = y \implies 0 + 0' = 0$
-
-$\therefore 0 + 0 = 0 + 0'$
-
-$0 = 0'$ (cancellation law)
-
-{{% /proof %}}
-
-{{% proof %}}
-
-$0=0+0'=0'+0=0'$, so $0=0'$
-
-{{% /proof %}}
-
-{{% /corollary %}}
-
-
-{{% corollary index="2" %}}
-
-The **addtictive inverse** (vector) described in VS4 is <u>unique</u>.
-
-The additive inverse of $x$ can be denoted by $-x$.
-
-{{% /corollary %}}
-
-{{% theorem name="" index="1.2" %}} 
-In any vector space $V$, the following statements are true:
-
-1. $\forall x \in V, 0 \in F, 0x = 0.$
-2. $\forall a \in F, \forall x \in V, (-a) x = -(ax) = a(-x).$
-3. $\forall a \in F, 0 \in V, a0=0$.
-
-<small>Please be careful what is the symbol '0' is referring to. When $0 \in F$, it is a scalar; when $0 \in V$, it is a vector.</small>
-
-{{% /theorem %}}
-
-{{% definition name="Field" %}} 
-
-A **field** $F$ is a set on which two operations **addition** $+$ and **multiplication** $\cdot$ are defined so that following conditions are satisfied
-
-1. $a+b=b+a$ , $a\cdot b= b\cdot a$
-<br> (commutativity of addition and multiplication)
-2. $(a+b)+c=a+(b+c), (a\cdot b)\cdot c = a\cdot (b\cdot c)$
-<br> (associativity of addition and multiplication)
-3. $ \exists 0 \in F, 1\in F$ s.t. $\forall a, 0+a=a, 1\cdot a = a$
-<br> (existence of identity elements for addition and multiplication)
-4. $a\in F, \exists c \in F$ s.t. $a+c=0$<br>
-$b \in F, b \neq 0, \exists d \in F$ s.t. $b\cdot d = 1$
-<br> (existence of inversion for addition and multipliation)
-1. $a \cdot (b+c) = a\cdot b + a\cdot c$
-<br> (distributivity of multiplication over addition)
-
-
-<small>
-The elements $x + y$ and $x \cdot y$ are called the **sum** and **product**, respectively of $x$ and $y$. 
-<br>
-The elements $0$ and $1$ are called **identity elements** for addition and multiplication, respectively. 
-<br>
-The elements  elements $c$ and $d$ referred to in (F 4) are called an **additive inverse** for $a$ and a **multiplicative inverse** for $b$, respectively.
-</small>
+Elements of the field $F$ are called **scalars**;<br>
+elements of the vector space $V$ are called **vectors**.
 
 {{% /definition %}}
 
-{{% examples name="" %}} 
+{{% example name="$\R^n/\R$" %}}
 
-$\R$ is a field.
-$\C$ is a field.
-$\Q$ is a fkeld.
+Prove that $\R^n / \R$ is a vector space. Notice that $\R^\infty$ is not included in this case, $\R^\infty$ is the set of **sequences**.
 
-$\Z$ is NOT a field.  (F4)
+Proof scratch:
 
-{{% /examples %}}
+1.$\vec{v}+\vec{u}=\vec{u}+\vec{v}$
 
-{{% corollary name="" index="" %}} 
-Every field is a vector space over itself.
-{{% /corollary %}}
+2.$(\vec{u}+\vec{v})+\vec{w} = \vec{u}+(\vec{v}+\vec{w}) $
 
-{{% examples name="" %}} 
-$\C$ is a vector space over $\C$.
+3.$\exists \vec{0},\vec{u}+\vec{0}=\vec{u}$
 
-$\C$ is also a vector space over $\R$, $\R \subset \C$.
+4.$1\in \R, 1 \cdot \vec{u}=\vec{u}$
 
-$\R$ is also a vector space over $\Q$, $\Q \subset \R$.
-{{% /examples %}}
+5.$a, b \in \R, a(b\vec{u})= (ab)\vec{u}$
 
-{{% example name="$F_2$, a field of characteristic 2" %}}
-$F = \set{0, 1}.$<br>
-addition is defined as xor, i.e.:<br>
-$0 + 0 = 0$,
-$0 + 1 = 1$.<br>
-multiplication is defined as:<br>
-$0 \cdot 1 = 0$,
-$1 \cdot 1 = 1$.
+6.$a,b \in \R, (a+b)\vec{u}=a\vec{u}+b\vec{u}$
+
+7.$a\in \R, \vec{u},\vec{v}, a(\vec{u} + \vec{v})=a\vec{u} + a\vec{v}$
+
+8.$\vec{u},-\vec{u}, \vec{u} + \vec{v}=\vec{0}$
+
 {{% /example %}}
 
-{{% example name="the prime field" %}} 
-$\forall$ prime number $p$, $F_p = \set{0, 1, 2, ..., p - 1}$
+{{% example name="Arbitrary Polynomial" %}}
 
-> ... The sum, the difference and the product are computed by taking the remainder by p of the integer result. The multiplicative inverse of an element may be computed by using the extended Euclidean algorithm ...
+$\mathbb{P}_n(x)=$set of all polynomials of degree$\leq n$ with real coefficient and in variable $x$.
+
+**vector addition**:
+
+With $f(x), g(x) \in \mathbb{P}_n(x)$
+
+$f(x) = a_0+ a_1x+ ... + a_nx^n,$
+
+$g(x) = b_0 +b_1x+ ... + b_nx^n.$
+
+$f(x)+g(x):=(a_0+b_0)+(a_1 +b_1)x+...+(a_n+b_n)x^n$
+
+**scalar multiplication**:
+
+$c\in F = \R, cf(x) := ca_0 + (ca_1)x + ... + (ca_n)x^n$
+
+we claim $\mathbb{P}_n(x)$ is a vector space on $\R$ with respect to these two operations, because all the properties stands with defined vector addition and scalar multiplicaiton.
+
+{{% /example %}}
+
+{{% remarks name="what is the degree of zero polynomial: $f(x)=0$ ?" %}}
+
+{{% definition name="Degree of Polynomial" %}}
+
+The highest term's index with <u>non-zero</u> coefficient.
+
+{{% /definition %}}
+
+What is the degree of zero polynomial?<br>
+**undefined** (some book states that the degree of zero polynomial is $-1$)
+
+what can you fill in the boxes below so that the equation stands?
+$0=\square x^\square$
+
+{{% /remarks %}}
+
+{{% example name="Real Sequence (!IMPORTANT)" %}}
+
+$\R^\infty=\set{a_1, a_2, a_3,..|a_i \in \R}=\set{(a_n)\_{n\geq1}, a_n\in \R}$<br>
+$(a_n) + (b_n) = (a_n+b_n)$<br>
+$\lambda \in \R, \lambda (a_n) = (\lambda a_n)$
+
+$\R^\infty/\R$ is a vector space.
+
+{{% /example %}}
+
+{{% example name="Real Matrix (!IMPORTANT)" %}}
+
+$M_{m\times n}(\R)$ = set of all $m \times n$ matrices with real entries.<br>
+$A, B \in M\_{m \times n}(\R), A=(a\_{ij})\_{m\times n}, B=(b\_{ij})\_{m\times n}$<br>
+$A+B=(a\_{ij}+b\_{ij})\_{m\times n}$<br>
+$\lambda \in \R,\lambda A =(\lambda a\_{ij})\_{m\times n}$
+
+$M_{m\times n}(\R)/\R$ is a vector space.
+
+Why matrix multiplication works that way?
+
+{{% /example %}}
+
+
+{{% example name="\"Bad Mutiplication\"" %}}
+
+$\R^2 / \R$<br>
+$(a_1, a_2)+(b_1, b_2) = (a_1+b_1, a_2+b_2)$<br>
+$\lambda (a_1, a_2) = (\lambda a_1, -a_2)$<br>
+
+$1(a_1, a_2) \neq (a_1, a_2)$
+(VS 5 does not stand)
+
+**NOT A VECTOR SPACE**
+
+{{% /example %}}
+
+{{% example %}}
+$\R^4 / \R$<br>
+$(a_1, a_2)+(b_1, b_2) = (a_1+b_1+1, a_2+b_2)$<br>
+$\lambda (a_1, a_2) = (\lambda a_1, \lambda a_2)$
+
+$\begin{align\*}\lambda ((a_1, a_2) + (b_1, b_2)) &= \lambda(a_1 + b_1 + 1, a_2 + b_2) \\\\\\ &= (\lambda a_1 + \lambda b_1 + \lambda, \lambda a_1 + \lambda b_1)\end{align*}$
+$\lambda(a_1, a_2) + \lambda(b_1, b_2) = (\lambda a_1 + \lambda b_1 + 1, \lambda b_1 + \lambda b_2)$
+
+(VS 7 does not stand)
+
+**NOT A VECTOR SPACE**
+
+{{% /example %}}
+
+{{% example %}}
+$V=\set{a}, F=\R$<br>
+$a+a=a$<br>
+$\lambda a = a$
+
+**Oui! C'est un vector space!**
+
+Same as $V=\set{0}, F=\R$. Isomorphism.
+
+$\P_n(x) = \set{\text{polynomial of degree} \leq n}$ is a vector space over $\R$.
+
+$\P(x) = \set{\text{all polynomials of every possible degree}}$ is a vector space over $\R$.
+
+Infinity is not a valid degree. As we discussed before, degree must be a number, but infinity is not.
+
+$P(x)$ is also a vector space
 
 {{% /example %}}

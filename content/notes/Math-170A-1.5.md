@@ -1,6 +1,6 @@
 ---
-title: "Counting"
-date: 2018-07-05T9:03:48+08:00
+title: "Independence"
+date: 2018-06-29T9:03:48+08:00
 author: "Olga Turanova"
 volumes: ["MATH 170A"]
 layout: "note"
@@ -9,7 +9,7 @@ issue: 1.5
 
 ---
 
-Counting, permutations, combinations, binomial formula
+Independence.
 
 <!--more-->
 
@@ -21,103 +21,185 @@ Counting, permutations, combinations, binomial formula
     $\newcommand{\N}{\mathbb{N}}$
     $\newcommand{\set}[1]{\{#1\}}$
     $\newcommand{\emptyset}{\varnothing}$
-    $\newcommand{\union}{\cup}$  
-    $\newcommand{\intercept}{\cap}$  
-    $\newcommand{\abs}[1]{|#1|}$  
-    $\newcommand{\t#1}{\text}[1]$  
-    $\newcommand{\head}{\text H}$  
-    $\newcommand{\tail}{\text T}$  
+    $\newcommand{\union}{\cup}$
+    $\newcommand{\intercept}{\cap}$
+    $\newcommand{\abs}[1]{|#1|}$
+    $\newcommand{\t#1}{\text}[1]$
+    $\newcommand{\head}{\text H}$
+    $\newcommand{\tail}{\text T}$
   {{< /raw >}}
 </div>
 
-{{% definition name="Counting" %}} 
-Number of ways to select $k$ objects from a collection of n objects.
+# Independence
 
-- if order matters: "permutation"
-- of order doesn't matter: "combination"
+{{% definition name="Independence" %}}
+Let $A,B \subset \Omega$, we say $A$ \& $B$ are independent to mean $P(A\cap B)=P(A)P(B)$
 
+Notice if $A, B$ are independent, then $P(A|B)=P(A)$.
 {{% /definition %}}
 
 
-Recall: $m != m(m-1)(m-2) ... 3 \cdot 2 \cdot 1$
-Convention: $0!=1$
+{{% example name="Roll two 6-sided dice" %}}
+$\Omega= \set{(i, j) |i, j \in \set{1,...,6}}$,<br>
+let $A=\set{\text{1st die shows 1}}$, $B=\set{\text{2nd die shows 1}}$,<br>
+Are $A$ & $B$ independent?
 
-{{% definition name="Permutation" %}} 
+$P(A)=\frac{\abs{A}}{\abs{\Omega}}=\frac6{36} = \frac16$
 
-Let $k, n$ be integers, $k \leq n$. We have $n$ distince objects, we wish to count number of ways to pick $k$ of these and arrange them in a sequence.
-i.e. number of sequences of length $k$ made up of the $n$ objects.
+$P(B) = \frac16$
 
-$$
-\begin{align\*}
-total &= n(n-1)(n-2)...n-(k-1) \\\\\\
-&=\frac{n(n-1) ... (n-k+1)(n-k) ... 2 \cdot 1}{(n-k)(n-k-1)...2\cdot 1} \\\\\\
-&=\frac{n!}{(n-k)!}
-\end{align*}
-$$
-
-In particular, if $k = n$, number of ways to arrange n objects is $n!$.
-{{% /definition %}}
-
-{{% definition name="Combinations" %}}
-Let $\binom{n}{k}$ denote number of ways to form a $k$-elements subset from $n$ objects.
-
-$\binom{n}{k}$ is called **binomial coefficient**.
-
-$\binom{n}{k} = \frac{n!}{k!(n-k)!}$
-
-or
-
-$n! = \binom{n}{k}k!(n-k)!$
-
-{{% /definition %}}
-
-{{% example name="Toss a coin $n$ times" %}} 
-$\Omega=\set{(x_1, ..., x_n)| x_i\in\set{\head, \tail}}$
-
-We have $\binom{n}{k} =$ number of distince outcomes in $\Omega$ (i.e. n-toss sequences) that contains exactly $k$ heads.
+$P(A\cap B) =P((1,1)) = \frac{1}{36} = P(A)P(B)$
 
 {{% /example %}}
 
-{{% theorem name="Binomial Formula" %}} 
-$$\sum_{k=1}^n\binom{n}{k}p^k(1-p)^{n-k} = 1$$
+{{% example name="Roll two 6-sided dice, again" %}}
+Let $A=\set{\text{1st die shows 1}}$,  $C=\set{\text{sum of the rolls is 7}}$,
+are $A$ and $C$ independent?
+
+$C=\set{(i, 7-i)|i \in {1,...,6}}$
+
+so $P\(C) = \frac{|C|}{\abs{\Omega}} = \frac 16$
+
+$P(A\cap C) = P((1,6)) = \frac{1}{36} = P(A)P\(C)$
+
+so yes, $A$ & $C$ are independent.
+
+{{% /example %}}
+
+{{% example name="one more" %}}
+Let $A=\set{\text{1st die shows 1}}$,  $D=\set{\text{sum of the rolls is 11}}$,
+$D=\set{(i, 11-i)|i \in {5,...,6}}$
+
+$P(D)=\frac{2}{36}$
+
+$P(A\cap D) = P(\emptyset) = 0 \neq \frac{2}{36} \times \frac16$
+
+So $A, D$ aren't independent.
+
+{{% /example %}}
 
 
-{{% proof name="" %}} 
-For $0 \leq p \leq 1$, and for $0 \leq p \leq 1$.
+In general, if $P(A) > 0, P(B) > 0$, and $A \cap B = \emptyset$, then $A, B$ aren't independent, $P(A \cap B) = 0 \neq P(A)P(B)$.
 
-Say we have a coin that  comes up $\head$ with probability $p$. We toss it $n$ times, the tosses are independent (as usual). Let $A_k$ be the event that $\head$ compes up exactly $k$ times.
+let $C\subset\Omega, P\(C) > 0.$
+Recall $P(\cdot | C)$ is a probability law on $\Omega$.
 
-$\abs{A_k} = \binom{n}{k}$
+{{% definition name="" %}}
+
+Let $C$ be an event with $P\(C) > 0$, $A, B \subset \Omega$ are **conditionally independent with respect to C** means
+
+$$P(A\cap B | C) = P(A|C)P(B|C)$$
+
+{{% /definition %}}
+
+{{% example name="Toss a fair coin twice" %}}
+
+Toss a fair coin twice. <br>
+$\head_1 =\set{\text{1st toss is }\head}$,
+$\head_2 =\set{\text{2nd toss is }\head}$ <br>
+$S= \set{\text{the two tosses have same outcome}}$ <br>
+(Here $\Omega = \set{\head\head, \head\tail, \tail\head, \tail\tail}$, all equally likely)
+
+Are $\head_1, \head_2$ conditionally independent given S?
+
+$P(\head_1|S)= \frac{P(\head_1 \cap S)}{P(S)} = \frac{P(\head\head)}{P(\tail\tail, \head\head)} = \frac{1 /4}{2 /4} =  \frac12 $
+$P(\head_2|S) = \frac 12A$
+
+$P(\head_1 \cap \head_2 |S) = \frac{\head_1 \cap \head_2 \cap S}{P(S)}= \frac{P(\head\head)}{P(S)} = \frac12 \neq \frac12\frac12 = P(\head_1|S)P(\head_2|S)$
+
+$\therefore$ No.
+
+
+{{% /example %}}
+
+
+{{% example name="two coins" %}}
+Coin 1 comes up $\head$ $80%$ of the time.<br>
+Coin 2 comes up $\head$ $10%$ of the time.<br>
+look the same pick are at random, toss it. Then toss it again.<br>
+Let $A$ be the event that coin 1 was picked.<br>
+Let $H_i$ be the event that $i$th toss was $\head$, $i = 1,2$.<br>
+<small>By our set up, $\head_1$ & $\head_2$ are conditionally independent given $A$, also conditionally independent given $A^c$.</small>
+
+$P(H_i|A) = 0.8$, for $i=1,2$
+
+$P(H_i|A^c) = 0.1$, for $i=1,2$
+
+But, $\head_1$ and $\head_2$ ARE NOT independent!
+
+let's verify this.
 
 $$
 \begin{align\*}
-P(A_k) &=\binom{n}{k} \underset{k\text{ times i.e. # heads}}{p ... p}\cdot\underset{n-k\text{ times i.e. # tails}}{(1-p)...(1-p)} \\\\\\
-&=\binom{n}{k} p^k(1-p)^{n-k}\\\\\\
+P(\head_1) &= P(\head_1|A)P(A) + P(\head_1|A^c)P(A^c) \\\\\\
+&= \frac8{10} \cdot \frac12 + \frac{1}{10}\cdot\frac12 \\\\\\
+&=\frac12 \cdot \frac 9 {10} \\\\\\
+&= \frac9{20}
 \end{align*}
 $$
 
-{{% /proof %}}
+$P(\head_2) = \frac 9 {20}$
 
-{{% /theorem %}}
+$$
+\begin{align\*}
+P(\head_1 \cap \head_2) &= P(\head_1 \cap \head_2 | A) |P(A) + P(\head_1 \cap \head_2|A^c)P(A^c) \\\\\\
+&= P(\head_1|A)P(\head_2|A) \cdot \frac12 + P(\head_1|A^c)P(\head_2|A^c) \cdot \frac12 \\\\\\
+&= \frac 12 (\frac 8{10}\frac{8}{10} + \frac{1}{10} \frac{1}{10}) \\\\\\
+&= \frac{65}{200}\\\\\\
+\end{align*}
+$$
 
-{{% example name="Draw 7 cards" %}} 
-Draw 7 cards (w/o replacement) from standard 52 card deck.
-Let $A$ be the event you get exactly 3 aces.
-Let $B$ be the event you get exactly 2 kings.
+$$P(\head_1 \cap \head_2) \neq P(\head_1)\cap P(\head_2)$$
 
-$P(A\cup B) = P(A) + P(B) - P(A\cap B)$
+Not independent.
 
-Number of ways to choose 7 cards: $\binom{52}{7}$
+{{% /example %}}
 
-let's find $P(A)$:
-Think of deck as "aces" and "non-aces". <br>
-7 cards = exactly 3 aces (out of 4) + 4 other cards. <br>
-so total number ways is $\binom{4}{3}\binom{48}{4}$.
-$P(A) = \frac{\abs{A}}{\abs{\Omega}} = \frac{\binom{4}{3}\binom{48}{4}}{\binom{52}{7}}$
+{{% definition name="independence of multiple events" %}}
 
-Similarly,
-$P(B) = \frac{\abs{A}}{\abs{\Omega}} = \frac{\binom{4}{2}\binom{48}{5}}{\binom{52}{7}}$
+We say $A_1, ..., A_n$ are independent if for any subset $S$ of ${1,...,n}$
 
-$P(A\cap B) = \frac{\abs{A}}{\abs{\Omega}} = \frac{\binom{4}{3}\binom{4}{2}\binom{44}{2}}{\binom{52}{7}}$
+$$P(\underset {i\in S} \cap A_i) = \prod\_{i\in S}{A\_i}$$
+
+{{% /definition %}}
+
+{{% example name="Back to Fair Coin" %}}
+Toss a fair coin twice.<br>
+$\head_1$ 1st toss $\head$,
+$\head_2$ 2st toss $\head$,<br>
+$S = \set{\text{same outcome}}$,<br>
+we saw $\head_1, \head_2$ are independent.
+
+$P(S) = \frac12 = P(\head_1) = P(\head_2)$
+
+$P(S\cap \head_1 \cap \head_2) = P(\head\head) = \frac14 \neq \frac12\frac12\frac12$
+
+so $\head_1$, $\head_2$, $S$ are NOT independent.
+
+Are $\head_1$ & $S$ independent?
+
+$P(\head_1 \cap S) = P(\head\head) = \frac14 = P(\head_1)P(S)$
+
+similarly $\head_2, S$ are independent.
+
+{{% /example %}}
+
+Here, $\head_1, \head_2, S$ are pairwise independent (i.e. any 2 of them are independent) but not independent.
+
+{{% example name="Roll 2 Fair 6-sided Die" %}}
+$A = \set{1\text{st roll is }1, 2, 3}$
+$B = \set{2\text{nd roll is }3, 4, 6}$
+$C = \set{\text{sum is 9}}= \set{(6,3), (3,6), (4,5), (5,4)}$
+
+$P(A\cap B \cap C)=P(\set{(3,6)} = \frac 1 {36}$
+
+$\abs{A} = 3 \cdot 6, P(A) = \frac{3\cdot 6}{36} = \frac36 =\frac 12 = P(B)$
+
+$P\(C) = \frac{4}{36} = \frac19$
+
+$\frac{1}{36} = \frac19 \cdot \frac12 \cdot \frac12$, so $P(A\cap B \cap C) = P(A)P(B)P\(C)$
+
+$P(B\cap C) = \frac{3}{36} \neq P(B)P\(C) = \frac12 \frac19 = \frac{1}{18} = \frac{3}{3\cdot 18}$
+
 
 {{% /example %}}

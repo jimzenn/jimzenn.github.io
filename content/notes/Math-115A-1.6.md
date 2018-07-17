@@ -5,8 +5,6 @@ author: "Jim Zenn"
 volumes: ["MATH 115A"]
 layout: "note"
 issue: 1.6
-
-
 ---
 
 Basis, theorem 1.8, theorem 1.9, theorem 1.10.

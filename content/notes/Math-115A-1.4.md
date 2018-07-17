@@ -1,5 +1,5 @@
 ---
-title: "Linear Combination and Spans"
+title: "Linear Combinations and Systems of Linear Equations"
 date: 2018-07-02T11:03:48+08:00
 author: "Jim Zenn"
 volumes: ["MATH 115A"]
@@ -132,7 +132,7 @@ $(a, b) = a(1,0) + b(0,1).$
 
 $\R^2 \subseteq \spa{S}$.
 
-Also, $\spa{S} \subseteq \R^2$, since $S \subseteq R^2$ (Theorem 1.5)
+Also, $\spa{S} \subseteq \R^2$, since $S \subseteq R^2$(Theorem 1.5)
 
 $\spa{S} = \R^2$, i.e. $S$ generates $\R^2$.
 
@@ -166,7 +166,7 @@ $(a,b) \in \spa{T}$
 
 $\R^2 \subseteq \spa{T}$
 
-$T \subseteq \R^2$, then $\spa{T} \subseteq \R^2$ (Theorem 1.5)
+$T \subseteq \R^2$, then $\spa{T} \subseteq \R^2$(Theorem 1.5)
 
 $\therefore \spa{T} = \R^2 $ i.e. $T$ generates $\R^2 $.
 
