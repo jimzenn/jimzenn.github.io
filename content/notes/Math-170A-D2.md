@@ -21,27 +21,27 @@ Properties of prababilistic laws, conditional probability, tests, and indipenden
     $\newcommand{\N}{\mathbb{N}}$
     $\newcommand{\set}[1]{\{#1\}}$
     $\newcommand{\emptyset}{\varnothing}$
-    $\newcommand{\union}{\cup}$  
-    $\newcommand{\intercept}{\cap}$  
-    $\newcommand{\abs}[1]{|#1|}$  
-    $\newcommand{\t#1}{\text}[1]$  
-    $\newcommand{\head}{\text H}$  
-    $\newcommand{\tail}{\text T}$  
+    $\newcommand{\union}{\cup}$
+    $\newcommand{\intercept}{\cap}$
+    $\newcommand{\abs}[1]{|#1|}$
+    $\newcommand{\t#1}{\text}[1]$
+    $\newcommand{\head}{\text H}$
+    $\newcommand{\tail}{\text T}$
   {{< /raw >}}
 </div>
 
-{{% example name="" %}} 
+{{% example name="" %}}
 $\Omega$ is a sample space, $A, B \subset \Omega$ are events. We know $P(A)=0.55$, $P(B^c)=0.35$, and $P(A\cup B) = 0.75$.
 
 $P(B) = 1-P(B^c)=1-0.35=0.65$
 
-$P(A\cup B) = P(A)+P(B)-P(A\cap B)$ 
+$P(A\cup B) = P(A)+P(B)-P(A\cap B)$
 
-$0.75 = 0.55+0.65-P(A\cap B)$ 
+$0.75 = 0.55+0.65-P(A\cap B)$
 
 {{% /example %}}
 
-{{% example name="Magical 4-sided die" %}} 
+{{% example name="Magical 4-sided die" %}}
 
 A magical 4-sided die is rolled twice. Let $S$ be the sum of the two rolls.
 We are told that the probability that $S=k$ is proportional to $k$ , for $k = 2,3,4,5,6,7,8$.<br>
@@ -84,7 +84,7 @@ $P(\text{rolling doubles})= ...$
 
 {{% /example %}}
 
-{{% example name="Conditional probability" %}} 
+{{% example name="Conditional probability" %}}
 
 we roll 2 fair six-sided die.
 
@@ -114,7 +114,7 @@ $P(A|D^c)=\frac{P(A\cap D^c)}{P(D^c)} = \frac{\frac{11}{36}-\frac{1}{36}}{1-\fra
 
 {{% /example %}}
 
-{{% example name="Tests" %}} 
+{{% example name="Tests" %}}
 
 A new test has been developed for determining whether a student is overstressed. The test is $95\%$ accurate if the student is not overstressed; and $85\%$ if the student is.<br>
 We know that $99.5\%$ of students are overstressed. Given that a particular student tests negative, what is the probability that the test is accurate?
@@ -129,7 +129,7 @@ $P(A|N) = \frac{P(A\cap N)}{P(N)} = \frac{P(A\cap N)}{P(N|B)P(B)+P(N|B^c)P(B^c)}
 
 {{% /example %}}
 
-{{% example name="Independence" %}} 
+{{% example name="Independence" %}}
 A source  transmits a signal through a noisy channel. each simbol is a $0$ or a $1$ with probabilities $p$ and $1-p$, and is recieved incorrectly with probabilities $\epsilon_0$ and $\epsilon_1$ respectively. Transmissions and errors all independent.
 
 (a) What is the probabilities that the $k$th symbol is accurately received. (call it event A)
@@ -172,7 +172,7 @@ P(\text{zero received}) &= P(000) + P(100) + P(010) + P(001) \\\\\\
 
 {{% /example %}}
 
-{{% example name="" %}} 
+{{% example name="" %}}
 Let $A$ and $B$ be events with $A\subset B$. Can $A$ and $B$ be independent?
 
 Yes, if $B = \Omega$, then
@@ -180,7 +180,7 @@ Yes, if $B = \Omega$, then
 $P(A\cap \Omega) = P(A) - P(A) \cdot 1 = P(A) \cdot P(\Omega)$
 {{% /example %}}
 
-{{% example name="" %}} 
+{{% example name="" %}}
 We know that $A$ and $B$ are independent, and that $A$ and $C$ are independent. Does it follow that $A$ and $B\cup C$ are independent?
 
 No, it does not follow.
@@ -200,10 +200,10 @@ and similarly for A and C.
 
 {{% /example %}}
 
-{{% example name="" %}} 
+{{% example name="" %}}
 Suppose $A,B, C$ are mutually independent, show that A and $B\cup C$ are independent (contrast this with previous example, we have a stronger hypothesis here!)
 
-{{% definition name="Mutually independent" %}} 
+{{% definition name="Mutually independent" %}}
 
 $A, B, C$ are mutually independent if<br>
 1.The pairs$(A,B),(A,C),(B,C)$ all independent

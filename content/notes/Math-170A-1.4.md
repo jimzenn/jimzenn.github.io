@@ -76,16 +76,16 @@ We say $B_1, B_2...$, are partitions of $\Omega,$ if $B_i \cap B_j = \emptyset$ 
 
  {{% theorem name=" Total Probability Theorem" %}}
 
-If $B_1,B_2,... $ partitions $\Omega$ and $A\subset \Omega$, then  A = $\underset i \cup(A\cap B_i)$ and this is a disjoint union. Thus, 
+If $B_1,B_2,... $ partitions $\Omega$ and $A\subset \Omega$, then  A = $\underset i \cup(A\cap B_i)$ and this is a disjoint union. Thus,
 $$P(A) = \underset i \Sigma P(A|B_i)P(B_i)$$
 
  {{% /theorem %}}
 
 {{% example name="Stack of Cards" %}}
 
-Standard deck of 52 cards (4 suits, each suite has 13 cards, 2-10, J, Q, K, A). 
+Standard deck of 52 cards (4 suits, each suite has 13 cards, 2-10, J, Q, K, A).
 
-> I draw a card at random. 
+> I draw a card at random.
 
 $P(\text{not a heart}) = \frac34$
 

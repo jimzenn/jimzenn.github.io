@@ -6,7 +6,6 @@ volumes: ["MATH 170A"]
 layout: "note"
 issue: 2.3
 
-
 ---
 
 Probability mass function.
@@ -117,12 +116,12 @@ $E[X|A] = \sum\_{ i=1 }^{n} E[X|A_i \cap B]P(A_i|B)$
 
 $$
 \begin{align\*}
-& \sum\_{n}^{ i=1 }  \sum\_{x}^{  } P(X=x | A_i \cap B)P(A_i | B) \\\\\
+& \sum\_{n}^{ i=1 }  \sum\_{x} P(X=x | A_i \cap B)P(A_i | B) \\\\\
 &= \sum\_{ i=1 }^{n}  \sum\_{x} x \frac{ P(X=x \cap A \cap B) }{ P(A_i \cap B) } \cdot \frac{ P(A_i \cap B) }{ P(B) } \\\\\
-&= \sum\_{x}^{  } \sum\_{ i=1 }^{n} x \frac{ P(X=x \cap A_i \cap B) }{ P(B) } \\\\\
-&= \sum\_{x}^{  } \frac{x}{ P(B) } \sum\_{ i=1 }^{n} P(X=x \cap A_i \cap B) \\\\\
-&= \sum\_{x}^{  } \frac{x}{ P(B) } P(X=x \cap B) \\\\\
-&= \sum\_{x}^{  } xP(X=x |B) = E[X|B]
+&= \sum\_{x} \sum\_{ i=1 }^{n} x \frac{ P(X=x \cap A_i \cap B) }{ P(B) } \\\\\
+&= \sum\_{x} \frac{x}{ P(B) } \sum\_{ i=1 }^{n} P(X=x \cap A_i \cap B) \\\\\
+&= \sum\_{x} \frac{x}{ P(B) } P(X=x \cap B) \\\\\
+&= \sum\_{x} xP(X=x |B) = E[X|B]
 \end{align*}
 $$
 {{% /proof %}}
@@ -165,9 +164,9 @@ $E[X_iX_2X_3] = E[X_1]E[X_2]E[X_3]=(3.5)^3$
 
 $$
 \begin{align\*}
-E[XY] &= \sum\_{x}^{  } \sum\_{y}^{  } P(X=x, Y=y) \\\\\
+E[XY] &= \sum\_{x} \sum\_{y} P(X=x, Y=y) \\\\\
 &=\sum\_{x}^{y} x y P(X=x)P(Y=y) \\\\\
-&= \sum\_{x}^{  } x P(X=x) \sum\_{y}^{  } yP(Y=y) \\\\
+&= \sum\_{x} x P(X=x) \sum\_{y} yP(Y=y) \\\\
 &=E[X] E[Y]
 \end{align*}
 $$

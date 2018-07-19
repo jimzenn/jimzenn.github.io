@@ -21,7 +21,7 @@ Sets, countability, subset, supset, set operations, algebra of sets, demorgan's 
     $\newcommand{\N}{\mathbb{N}}$
     $\newcommand{\set}[1]{\{#1\}}$
     $\newcommand{\emptyset}{\varnothing}$
-    $\newcommand{\abs}[1]{|#1|}$  
+    $\newcommand{\abs}[1]{|#1|}$
   {{< /raw >}}
 </div>
 
@@ -85,7 +85,7 @@ We may want to consider the set $S$ of all $x$ that satisfy a certain property $
 
 $\set{x|x>0, \frac{x}{2}\in \N}=\set{2,4,6,8,...}$
 
-Both can describe the set of even natural numbers $S$. 
+Both can describe the set of even natural numbers $S$.
 
 {{% /examples %}}
 
@@ -99,7 +99,7 @@ $S \subseteq T, T \supseteq S\iff S = T$.
 
 {{% examples %}}
 
-- $S=\set{1, 2}$ 
+- $S=\set{1, 2}$
 - $\set{1, 2}\subset S, \set{1,2,3}\not\subset S, 1 \in S, \set{1} \not\in S$
 - $\set{5}\in\set{\set{5}, 7, \text{cat}}$
 - $\set{5} \subset\set{\set{5}, 7, \text{cat}}$
@@ -116,7 +116,7 @@ The <u>complement</u> of $S$ is: $S^c=\set{x\in\Omega|x\not\in S}$.
 
 The <u>union</u> of $S$ & $T$ is: $S\cup T = \set{x\in\Omega | x \in S \text{ or } x \in T}$.
 
-The <u>intersection</u> of $S$ & $T$ is: $S\cap T = \set{x\in\Omega|x \in S \text{ and } x \in T}$. 
+The <u>intersection</u> of $S$ & $T$ is: $S\cap T = \set{x\in\Omega|x \in S \text{ and } x \in T}$.
 
 (make sure to use "or" or "and", do not use comma.)
 

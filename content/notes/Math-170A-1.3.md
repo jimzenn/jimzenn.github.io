@@ -9,7 +9,7 @@ issue: 1.3
 
 ---
 
-Conditional probability. 
+Conditional probability.
 
 <!--more-->
 
@@ -21,12 +21,12 @@ Conditional probability.
     $\newcommand{\N}{\mathbb{N}}$
     $\newcommand{\set}[1]{\{#1\}}$
     $\newcommand{\emptyset}{\varnothing}$
-    $\newcommand{\union}{\cup}$  
-    $\newcommand{\intercept}{\cap}$  
-    $\newcommand{\abs}[1]{|#1|}$  
-    $\newcommand{\t#1}{\text}[1]$  
-    $\newcommand{\head}{\text{H}}$  
-    $\newcommand{\tail}{\text{T}}$  
+    $\newcommand{\union}{\cup}$
+    $\newcommand{\intercept}{\cap}$
+    $\newcommand{\abs}[1]{|#1|}$
+    $\newcommand{\t#1}{\text}[1]$
+    $\newcommand{\head}{\text{H}}$
+    $\newcommand{\tail}{\text{T}}$
   {{< /raw >}}
 </div>
 
@@ -78,7 +78,7 @@ For $B$ with $P(B)>0, P(X|B)$ is a probability law on $\Omega$.
 
 {{% proof %}}
 
-1. possitivity: $P(A|B) =\frac{P(A\cap B)}{P(B)}\geq 0,  \forall A$ 
+1. possitivity: $P(A|B) =\frac{P(A\cap B)}{P(B)}\geq 0,  \forall A$
 2. addtivity: let $A, C$ be disjoint, $P((A\cup C)| B)=\frac{P((A\cup C)\cap B)}{P(B)}=\frac{P((A\cap B)\cup (C\cap B)}{P(B)} = \frac{P(A\cap B)+ P(C \cap B)}{P(B)}=P(A|B)+P(A|C)$
 3. normalization??
 
@@ -101,5 +101,5 @@ $P(A_4|B)=\frac{P(A_4\cap B))}{P(B)}=\frac{2/ 16}{5/ 16}=2/ 5$
 
 {{% /example %}}
 
- 
+
 

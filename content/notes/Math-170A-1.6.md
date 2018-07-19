@@ -21,16 +21,16 @@ Counting, permutations, combinations, binomial formula
     $\newcommand{\N}{\mathbb{N}}$
     $\newcommand{\set}[1]{\{#1\}}$
     $\newcommand{\emptyset}{\varnothing}$
-    $\newcommand{\union}{\cup}$  
-    $\newcommand{\intercept}{\cap}$  
-    $\newcommand{\abs}[1]{|#1|}$  
-    $\newcommand{\t#1}{\text}[1]$  
-    $\newcommand{\head}{\text H}$  
-    $\newcommand{\tail}{\text T}$  
+    $\newcommand{\union}{\cup}$
+    $\newcommand{\intercept}{\cap}$
+    $\newcommand{\abs}[1]{|#1|}$
+    $\newcommand{\t#1}{\text}[1]$
+    $\newcommand{\head}{\text H}$
+    $\newcommand{\tail}{\text T}$
   {{< /raw >}}
 </div>
 
-{{% definition name="Counting" %}} 
+{{% definition name="Counting" %}}
 Number of ways to select $k$ objects from a collection of n objects.
 
 - if order matters: "permutation"
@@ -42,7 +42,7 @@ Number of ways to select $k$ objects from a collection of n objects.
 Recall: $m != m(m-1)(m-2) ... 3 \cdot 2 \cdot 1$
 Convention: $0!=1$
 
-{{% definition name="Permutation" %}} 
+{{% definition name="Permutation" %}}
 
 Let $k, n$ be integers, $k \leq n$. We have $n$ distince objects, we wish to count number of ways to pick $k$ of these and arrange them in a sequence.
 i.e. number of sequences of length $k$ made up of the $n$ objects.
@@ -71,18 +71,18 @@ $n! = \binom{n}{k}k!(n-k)!$
 
 {{% /definition %}}
 
-{{% example name="Toss a coin $n$ times" %}} 
+{{% example name="Toss a coin $n$ times" %}}
 $\Omega=\set{(x_1, ..., x_n)| x_i\in\set{\head, \tail}}$
 
 We have $\binom{n}{k} =$ number of distince outcomes in $\Omega$ (i.e. n-toss sequences) that contains exactly $k$ heads.
 
 {{% /example %}}
 
-{{% theorem name="Binomial Formula" %}} 
+{{% theorem name="Binomial Formula" %}}
 $$\sum_{k=1}^n\binom{n}{k}p^k(1-p)^{n-k} = 1$$
 
 
-{{% proof name="" %}} 
+{{% proof name="" %}}
 For $0 \leq p \leq 1$, and for $0 \leq p \leq 1$.
 
 Say we have a coin that  comes up $\head$ with probability $p$. We toss it $n$ times, the tosses are independent (as usual). Let $A_k$ be the event that $\head$ compes up exactly $k$ times.
@@ -100,7 +100,7 @@ $$
 
 {{% /theorem %}}
 
-{{% example name="Draw 7 cards" %}} 
+{{% example name="Draw 7 cards" %}}
 Draw 7 cards (w/o replacement) from standard 52 card deck.
 Let $A$ be the event you get exactly 3 aces.
 Let $B$ be the event you get exactly 2 kings.

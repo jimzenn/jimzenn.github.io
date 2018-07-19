@@ -60,26 +60,26 @@ If $x$ is a possible value of $X$, how likely is it?
 
 {{% definition name="Probability Mass Functions" %}}
 If $x$ is a real number, the **probability mass** of $x$ denoted $p\\_X(x)$ is given by
-$$p_X(x) = P({\omega \in \Omega | X(\omega) = x})$$
+$$p\_X(x) = P({\omega \in \Omega | X(\omega) = x})$$
 
 {{% /definition %}}
 
 {{% example name="(continued)" %}}
 
-$p_X(0)=p, p_X(1)=1-p$
+$p\_X(0)=p, p\_X(1)=1-p$
 
 {{% /example %}}
 
 {{% note name="Short Hand" %}}
-$P_X(x) = P(\set{\omega \in \Omega | X(\omega) = x}) = P(X=x)$
+$P\_X(x) = P(\set{\omega \in \Omega | X(\omega) = x}) = P(X=x)$
 
 if $S \subset R$,
-$P_X(x) = P(\set{\omega \in \Omega | X(\omega) \in S}) = P(X\in S)$
+$P\_X(x) = P(\set{\omega \in \Omega | X(\omega) \in S}) = P(X\in S)$
 
 {{% /note %}}
 
 {{% definition name="" %}}
-$p_X(\cdot)$ is aclled the probability mass function of $X$.
+$p\_X(\cdot)$ is aclled the probability mass function of $X$.
 
 {{% /definition %}}
 
@@ -88,7 +88,7 @@ Coin is tossed $n$ times, $\head$ with probability $p$. Let $y$ be number of hea
 
 $$
 \begin{align\*}
-p_y(k) &= P(\set{\omega \in \Omega|y(\omega)= k})
+p\_y(k) &= P(\set{\omega \in \Omega|y(\omega)= k})
        &= P(\text{heads})
 \end{align*}
 $$
@@ -97,9 +97,9 @@ $$
 
 {{% note name="" %}}
 
-$\sum_xp_X(x) = 1$ where x in the sum ranges over all possible value of $X$, because {\omega \in \Omega | X(\omega) = x} is a partition of $\Omega$.
+$\sum\_xp\_X(x) = 1$ where x in the sum ranges over all possible value of $X$, because {\omega \in \Omega | X(\omega) = x} is a partition of $\Omega$.
 
-and note that $p_X(x) \geq 0, \forall x \in R$.
+and note that $p\_X(x) \geq 0, \forall x \in R$.
 
 {{% /note %}}
 
@@ -111,7 +111,7 @@ $x$ takes values from $1, 2, ..., 6$.
 
 $
 \\[
-p_X(x) = \left\{
+p\_X(x) = \left\{
 \begin{array}{ll}
 \frac16 \\\\\
 0
@@ -126,7 +126,7 @@ and so:
 
 $$
 \begin{align\*}
-p_X(4)&=P(\set{\omega \in \Omega| X(\omega) = 4}) \\\\\
+p\_X(4)&=P(\set{\omega \in \Omega| X(\omega) = 4}) \\\\\
 &=p({4}) \\\\\
 &=\frac16
 \end{align*}
@@ -134,7 +134,7 @@ $$
 
 $$
 \begin{align\*}
-p_X(25.5)&=P(\set{\omega \in \Omega| X(\omega) = 25.5}) \\\\\
+p\_X(25.5)&=P(\set{\omega \in \Omega| X(\omega) = 25.5}) \\\\\
 &=0
 \end{align*}
 $$
@@ -143,7 +143,7 @@ $$
 
 {{% definition name="uniform random variable" %}}
 
-Let X be a RV value $1, ..., n$ s.t. $p_X(x)=\frac1n$ for $x=1,...,n$. This is called the **uniform random variable** on ${1,...,n}$.
+Let X be a RV value $1, ..., n$ s.t. $p\_X(x)=\frac1n$ for $x=1,...,n$. This is called the **uniform random variable** on ${1,...,n}$.
 
 {{% /definition %}}
 
@@ -154,19 +154,19 @@ For $k = 1, 2, 3, ... ,$
 
 $$
 \begin{align\*}
-p_X(k) &= P({\omega \in \Omega | X(\omega) = k})\\\\\
+p\_X(k) &= P({\omega \in \Omega | X(\omega) = k})\\\\\
 &= P((Fail, Fail, Fail, Succeed))\\\\\
 &=(1-p)^{k-1}p
 \end{align*}
 $$
 
-For any other $k \in \R, k \notin \N, p_X(k) = 0$
+For any other $k \in \R, k \notin \N, p\_X(k) = 0$
 
 {{% /definition %}}
 
 {{% note name="geometric series" %}}
 
-$\sum^N_{k=0}r^k = \frac{1-r^N}{1-r}$, let $r \in (0,1)$.
+$\sum^N\_{k=0}r^k = \frac{1-r^N}{1-r}$, let $r \in (0,1)$.
 
 In Particular,
 
@@ -183,7 +183,7 @@ $1=r^N$
 
 {{% /proof %}}
 
-$\sum^\infty\_{k=1} p_X( k)= \sum^\infty\_{k=1} (1-p)^{k-1} p = \sum^\infty\_{k=0} (1-p)^k p$.
+$\sum^\infty\_{k=1} p\_X( k)= \sum^\infty\_{k=1} (1-p)^{k-1} p = \sum^\infty\_{k=0} (1-p)^k p$.
 
 {{% /note %}}
 
@@ -203,28 +203,28 @@ In general, if $y=g(X)$, where $g: \R \to \R$, then $y$ is also a random variabl
 
 {{% theorem name="" index="" %}}
 
-if $y = g(X)$ then p_Y(y) = \sum p_X(x) {x| g(x) = y}
+if $y = g(X)$ then p\_Y(y) = \sum p\_X(x) {x| g(x) = y}
 
 {{% /theorem %}}
 
 {{% example name="" %}}
-Let $X$ take values in ${-4, -3, ..., 4}$, each equally likely, let $y = |X|$, let's find $p_X$ & $p_Y$.
-$$p_X(k) = \\[\left\\{
+Let $X$ take values in ${-4, -3, ..., 4}$, each equally likely, let $y = |X|$, let's find $p\_X$ & $p\_Y$.
+$$p\_X(k) = \\[\left\\{
 \begin{array}{ll}
 \frac19 \\\\\
 0
 \end{array}
 \right\\].$$
 
-$p_Y(0) = P(X=0) = \frac19$
+$p\_Y(0) = P(X=0) = \frac19$
 
-$p_Y(2) = P(X=-2, X=2) = \frac29$
+$p\_Y(2) = P(X=-2, X=2) = \frac29$
 
 According to theorem, (here $g(x)=\abs{x}$),
 
 $p\_Y(2) = \sum\_{\set{x|\abs{x}=2}} p\_X(x) $
 
-$= \sum\_{\set{x|x=2, x=-2}} p\_X(x) = p_X(2) + p_X(-2) = \frac29$
+$= \sum\_{\set{x|x=2, x=-2}} p\_X(x) = p\_X(2) + p\_X(-2) = \frac29$
 
 {{% /example %}}
 
@@ -235,11 +235,11 @@ Heuristic: the expectation of a random variable is your best guess for its outco
 Less heuristiccally: average of possible values of your random variable are weighed by their probabilities.
 
 {{% definition name="Expectation" %}}
-Let $X$ be a discrete random variable. Its **expected value**, $E[X]=\sum_{x}xp_X(x)$.
+Let $X$ be a discrete random variable. Its **expected value**, $E[X]=\sum\_{x}xp\_X(x)$.
 
 Also called, "mean", "average", etc.
 
-Thi definition holds for random variable such that $\sum_x\abs{x}p_X(x) < \infty$.
+Thi definition holds for random variable such that $\sum\_x\abs{x}p\_X(x) < \infty$.
 
 All examples in this course satisfy this.
 {{% /definition %}}
@@ -250,16 +250,14 @@ Let $X$ take values in ${-4, -3, ..., 4}$, each equally likely, let $y = |X|$, l
 
 $E[X] = \sum\_{k=-4}^4 k\cdot \frac{1}{9} = \frac19 \cdot \sum ^4\_{k=-4} k = 0$
 
-$E[Y] = \sum\_{k=0}^4 k\cdot p_Y(y)= \frac{20}{9}$
+$E[Y] = \sum\_{k=0}^4 k\cdot p\_Y(y)= \frac{20}{9}$
 
 We can use this to find $E[Y]$ as follows.
 
-$$
-\begin{align\*}
+$\begin{align\*}
 E[\abs{X}] &= \sum^4\_{k=-4} \abs{k} \cdot \frac19 \\\\\
 &= \frac19 \sum^4\_{k=-4} \abs{k}
-\end{align*}
-$$
+\end{align*}$
 
 {{% /example %}}
 
@@ -280,7 +278,7 @@ $$var(X) = E[(X-E[X])^2]$$
 
 {{% definition name="Stadard deviation" %}}
 
-$\sigma_x = \sqrt{var(X)}$ is the **standard deviation** of $X$.
+$\sigma\_x = \sqrt{var(X)}$ is the **standard deviation** of $X$.
 
 {{% /definition %}}
 

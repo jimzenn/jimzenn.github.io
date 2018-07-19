@@ -6,7 +6,6 @@ volumes: ["MATH 115A"]
 layout: "note"
 issue: D3
 
-
 ---
 
 <!--more-->

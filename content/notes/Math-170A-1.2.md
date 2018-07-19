@@ -21,16 +21,16 @@ Sample spaces, outcomes, events, probability law, probability law axioms, discre
     $\newcommand{\N}{\mathbb{N}}$
     $\newcommand{\set}[1]{\{#1\}}$
     $\newcommand{\emptyset}{\varnothing}$
-    $\newcommand{\union}{\cup}$  
-    $\newcommand{\intercept}{\cap}$  
-    $\newcommand{\abs}[1]{|#1|}$  
-    $\newcommand{\t#1}{\text}[1]$  
+    $\newcommand{\union}{\cup}$
+    $\newcommand{\intercept}{\cap}$
+    $\newcommand{\abs}[1]{|#1|}$
+    $\newcommand{\t#1}{\text}[1]$
   {{< /raw >}}
 </div>
 
 # Probabilistic Models
 
-{{% definition name="Probabilistic Model" %}} 
+{{% definition name="Probabilistic Model" %}}
 A probabilistic model is a mathematical description of an uncertain situation.
 
 A probabilistic model have two main ingredients: a **sample space** and a **probability law**.
@@ -42,7 +42,7 @@ A **sample space** $\Omega$ is a the set of **outcomes** of an experiment.
 
 {{% /definition %}}
 
-{{% definition name="Probability Law" %}} 
+{{% definition name="Probability Law" %}}
 The **probability law** assigns a set $A$ of possible outcomes (also called an **event**) a nonnegative number $P(A)$ (called the **probability** of $A$).
 
 The probability law should encode our knowledge or belief about the collective "likelihood" of the elements of $A$.
@@ -81,7 +81,7 @@ $\text{HH}$ is an **outcome**, $\set{\text{HH}, \text{TT}}$ is an **event** i.e.
 
 {{% examples %}}
 
-One fair coin toss $\Omega=\set{H, T}, P(\set{H})=P(\set{T})=0.5$	
+One fair coin toss $\Omega=\set{H, T}, P(\set{H})=P(\set{T})=0.5$
 
 {{% /examples %}}
 
@@ -122,7 +122,7 @@ If a sample space consists of $n$ possible outcomes which are equally likely, th
 Consider a probability law, and let $A$, $B$, and $C$ be events.
 
 1. if $A \subset B$, then $P(A) \leq P(B)$.
-2. $P(\emptyset)=0$ 
+2. $P(\emptyset)=0$
 3. $P(A^c) = 1 - P(A)$
 4. $P(A\cup B) = P(A) + P(B) - P(A\cap B)$
 
@@ -187,9 +187,9 @@ $\Omega=\set{RR, RG, GG}$ is a correct sample space. However, we cannot use this
 
 We use $\Omega = \set{1, ..., n, n+1, ..., 2n} $
 
-$= \set{(i,j)| i\neq j, i, j \in\set{1, ..., 2n}}$ as our sample space. 
+$= \set{(i,j)| i\neq j, i, j \in\set{1, ..., 2n}}$ as our sample space.
 
-**Step 2**: In this sample space, all outcomes are equally likely. 
+**Step 2**: In this sample space, all outcomes are equally likely.
 
 $\abs\Omega = 2n \times (2n-1)$
 
@@ -206,7 +206,7 @@ $=\frac{n^2}{2n(2n-1)} + \frac{n^2}{2n(2n-1)} = \frac{n}{2(2n-1)}$
 
 Romeo & Juliet have a date. Each will arrive between midnight and 1 am (all times are equally likely). The 1st to arrive will wait 15 minutes for the other and then leave. Probability they meet?
 
-$\Omega = [0, 1] \times [0, 1]$ 
+$\Omega = [0, 1] \times [0, 1]$
 
 > This is an example of a model of a continuous sample space. Note $\Omega$ is uncountable. Note $P(\set{x, y}) = 0$
 
