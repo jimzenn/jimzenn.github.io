@@ -39,11 +39,11 @@ $\exists v \in V $ s.t. $z+v = 0$   (VS4)
 
 $
 \begin{align\*}
-x &= x+0 \\\\\\
- &= x + (z+ v) \\\\\\
-&= (x+ z) + v \\\\\\
-&= (y + z) + v \\\\\\
-&= y + (z + v) \\\\\\
+x &= x+0 \br
+ &= x + (z+ v) \br
+&= (x+ z) + v \br
+&= (y + z) + v \br
+&= y + (z + v) \br
 &= y + 0 = y
 \end{align*}
 $

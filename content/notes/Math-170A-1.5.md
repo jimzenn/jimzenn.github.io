@@ -131,9 +131,9 @@ let's verify this.
 
 $$
 \begin{align\*}
-P(\head_1) &= P(\head_1|A)P(A) + P(\head_1|A^c)P(A^c) \\\\\\
-&= \frac8{10} \cdot \frac12 + \frac{1}{10}\cdot\frac12 \\\\\\
-&=\frac12 \cdot \frac 9 {10} \\\\\\
+P(\head_1) &= P(\head_1|A)P(A) + P(\head_1|A^c)P(A^c) \br
+&= \frac8{10} \cdot \frac12 + \frac{1}{10}\cdot\frac12 \br
+&=\frac12 \cdot \frac 9 {10} \br
 &= \frac9{20}
 \end{align*}
 $$
@@ -142,10 +142,10 @@ $P(\head_2) = \frac 9 {20}$
 
 $$
 \begin{align\*}
-P(\head_1 \cap \head_2) &= P(\head_1 \cap \head_2 | A) |P(A) + P(\head_1 \cap \head_2|A^c)P(A^c) \\\\\\
-&= P(\head_1|A)P(\head_2|A) \cdot \frac12 + P(\head_1|A^c)P(\head_2|A^c) \cdot \frac12 \\\\\\
-&= \frac 12 (\frac 8{10}\frac{8}{10} + \frac{1}{10} \frac{1}{10}) \\\\\\
-&= \frac{65}{200}\\\\\\
+P(\head_1 \cap \head_2) &= P(\head_1 \cap \head_2 | A) |P(A) + P(\head_1 \cap \head_2|A^c)P(A^c) \br
+&= P(\head_1|A)P(\head_2|A) \cdot \frac12 + P(\head_1|A^c)P(\head_2|A^c) \cdot \frac12 \br
+&= \frac 12 (\frac 8{10}\frac{8}{10} + \frac{1}{10} \frac{1}{10}) \br
+&= \frac{65}{200}\br
 \end{align*}
 $$
 

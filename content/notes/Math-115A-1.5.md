@@ -127,7 +127,7 @@ $(a+2b,a-3b) = (0,0)$
 
 $$
 \begin{align\*}
-a+2b=0 \\\\\
+a+2b=0 \br
 a-3b=0
 \end{align*}
 $$

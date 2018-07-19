@@ -49,8 +49,8 @@ i.e. number of sequences of length $k$ made up of the $n$ objects.
 
 $$
 \begin{align\*}
-total &= n(n-1)(n-2)...n-(k-1) \\\\\\
-&=\frac{n(n-1) ... (n-k+1)(n-k) ... 2 \cdot 1}{(n-k)(n-k-1)...2\cdot 1} \\\\\\
+total &= n(n-1)(n-2)...n-(k-1) \br
+&=\frac{n(n-1) ... (n-k+1)(n-k) ... 2 \cdot 1}{(n-k)(n-k-1)...2\cdot 1} \br
 &=\frac{n!}{(n-k)!}
 \end{align*}
 $$
@@ -91,8 +91,8 @@ $\abs{A_k} = \binom{n}{k}$
 
 $$
 \begin{align\*}
-P(A_k) &=\binom{n}{k} \underset{k\text{ times i.e. # heads}}{p ... p}\cdot\underset{n-k\text{ times i.e. # tails}}{(1-p)...(1-p)} \\\\\\
-&=\binom{n}{k} p^k(1-p)^{n-k}\\\\\\
+P(A_k) &=\binom{n}{k} \underset{k\text{ times i.e. # heads}}{p ... p}\cdot\underset{n-k\text{ times i.e. # tails}}{(1-p)...(1-p)} \br
+&=\binom{n}{k} p^k(1-p)^{n-k}\br
 \end{align*}
 $$
 

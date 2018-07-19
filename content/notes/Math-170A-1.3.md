@@ -38,7 +38,7 @@ Toss a fair coin 3 times:
 
 $$
 \begin{align\*}
-\Omega & = \set{A_1 A_2 A_3| A_1 A_2 A_3 \in \set{\head, \tail}} \\\\\
+\Omega & = \set{A_1 A_2 A_3| A_1 A_2 A_3 \in \set{\head, \tail}} \br
        & = \set{\text{HHH, HHT, HTH, HTT, TTT,TTH, THT, THH}}
 \end{align\*}
 $$

@@ -195,7 +195,7 @@ $\therefore T \circ (U\_1 + U\_2) = TU\_1 + TU\_2$
 
 {{% note name="" %}}
 
-This is special to linearly transformation and does not apply to general functions.
+This is special to linear transformation and does not apply to general functions.
 
 e.g. $f(x) = x^2, g\_1(x) = x^3, g\_2(x)=x^4$
 
@@ -270,7 +270,7 @@ Follws from the previous computation
 
 {{% definition name="" %}}
 
-A linearly transformation $T: V \to W$ is called invertible if
+A linear transformation $T: V \to W$ is called invertible if
 
 $\exists$ a function $U: W \to V$ s.t. $TU = I\_W$ and $UT = I\_V$.
 

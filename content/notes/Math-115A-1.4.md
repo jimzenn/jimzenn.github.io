@@ -153,7 +153,7 @@ $(a,b) = x(1, -1) + y (2,3) = (x+2y, -x+ 3y)$
 
 $$
 \begin{align}
-x+2y = a \\\\\
+x+2y = a \br
 -x+3y = b
 \end{align}
 $$
@@ -182,9 +182,9 @@ $S= \set{1, x-x^2, x^2, x^3+x^2}$
 
 $$
 \begin{align\*}
-f(x) &= ax^3 + bx^2 + cx + d \\\\\\
-&= z_1 \cdot 1 + z_2 \cdot (x-x^2) + z_3 \cdot x^2 + z_4 (x^3+  x) ,z_1, z_2, z_3, z_4 \in R \\\\\\
-&= z_1+z_2x-z_2x^2 + z_3x^2+z_4x^3+z_4x^2 \\\\\\
+f(x) &= ax^3 + bx^2 + cx + d \br
+&= z_1 \cdot 1 + z_2 \cdot (x-x^2) + z_3 \cdot x^2 + z_4 (x^3+  x) ,z_1, z_2, z_3, z_4 \in R \br
+&= z_1+z_2x-z_2x^2 + z_3x^2+z_4x^3+z_4x^2 \br
 &= z_4x^3 + (z_4+z_3-z_2) x^2 +z_2x+z_1
 \end{align*}
 $$

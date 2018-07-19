@@ -1,10 +1,10 @@
 ---
 title: "Discussion"
-date: 2018-07-10T11:03:48+08:00
+date: 2018-07-17T11:03:48+08:00
 author: "Jim Zenn"
 volumes: ["MATH 115A"]
 layout: "note"
-issue: D3
+issue: D4
 
 ---
 
@@ -92,11 +92,11 @@ for each $z \in W$ there is $x$ in $V$ s.t. $T\_x = z$.
 
 {{% example name="2.1.37" %}}
 
-$T:V \to W$ T not a linearly transformation, additive if T(x+y) = T(x) + T(y).
+$T:V \to W$ T not a linear transformation, additive if T(x+y) = T(x) + T(y).
 
 $V, W$ vector space over P.
 
-Then any additive function T is a linearly transformation.
+Then any additive function T is a linear transformation.
 
 we have to prove $T(x) = cTx \forall c \in R, x \in V$.
 
@@ -230,12 +230,12 @@ prove that $ [T]^\gamma\_\beta $ is diagonal.
 
 {{% example name="2.2.13 extra" %}}
 $V, W$ is $T, U: V \to W$
-$T, U $ nonzero linearly transformation,
+$T, U $ nonzero linear transformation,
 If $R(T) \cap R(U) = \set{0}$ prove:
 $\set{ T, U }$ is a linearly independent subset of $L(V, W)$
 
 
-Note $L(V, W)$ is the collection of all linearly transformation from $V$ to $W$.
+Note $L(V, W)$ is the collection of all linear transformation from $V$ to $W$.
 
 {{% proof index="" name="" %}}
 Assume $ aT + bU = 0 $ for some $a,b$

@@ -113,7 +113,7 @@ $
 \\[
 p\_X(x) = \left\{
 \begin{array}{ll}
-\frac16 \\\\\
+\frac16 \br
 0
 \end{array}
 \right
@@ -126,15 +126,15 @@ and so:
 
 $$
 \begin{align\*}
-p\_X(4)&=P(\set{\omega \in \Omega| X(\omega) = 4}) \\\\\
-&=p({4}) \\\\\
+p\_X(4)&=P(\set{\omega \in \Omega| X(\omega) = 4}) \br
+&=p({4}) \br
 &=\frac16
 \end{align*}
 $$
 
 $$
 \begin{align\*}
-p\_X(25.5)&=P(\set{\omega \in \Omega| X(\omega) = 25.5}) \\\\\
+p\_X(25.5)&=P(\set{\omega \in \Omega| X(\omega) = 25.5}) \br
 &=0
 \end{align*}
 $$
@@ -154,8 +154,8 @@ For $k = 1, 2, 3, ... ,$
 
 $$
 \begin{align\*}
-p\_X(k) &= P({\omega \in \Omega | X(\omega) = k})\\\\\
-&= P((Fail, Fail, Fail, Succeed))\\\\\
+p\_X(k) &= P({\omega \in \Omega | X(\omega) = k})\br
+&= P((Fail, Fail, Fail, Succeed))\br
 &=(1-p)^{k-1}p
 \end{align*}
 $$
@@ -211,7 +211,7 @@ if $y = g(X)$ then p\_Y(y) = \sum p\_X(x) {x| g(x) = y}
 Let $X$ take values in ${-4, -3, ..., 4}$, each equally likely, let $y = |X|$, let's find $p\_X$ & $p\_Y$.
 $$p\_X(k) = \\[\left\\{
 \begin{array}{ll}
-\frac19 \\\\\
+\frac19 \br
 0
 \end{array}
 \right\\].$$
@@ -255,7 +255,7 @@ $E[Y] = \sum\_{k=0}^4 k\cdot p\_Y(y)= \frac{20}{9}$
 We can use this to find $E[Y]$ as follows.
 
 $\begin{align\*}
-E[\abs{X}] &= \sum^4\_{k=-4} \abs{k} \cdot \frac19 \\\\\
+E[\abs{X}] &= \sum^4\_{k=-4} \abs{k} \cdot \frac19 \br
 &= \frac19 \sum^4\_{k=-4} \abs{k}
 \end{align*}$
 

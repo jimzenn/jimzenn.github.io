@@ -31,8 +31,8 @@ issue: D2
 </div>
 $$
 \begin{bmatrix}
-x\_{11} & x\_{12} \\\\\
-x\_{21} & x\_{22} \\\\\
+x\_{11} & x\_{12} \br
+x\_{21} & x\_{22} \br
 \end{bmatrix}
 $$
 

@@ -154,8 +154,8 @@ We seek $P(A|B)$ by Bayes' Law.
 
 $$
 \begin{align\*}
-P(A|B) &= \frac{P(B|A)P(A)}{P(B|A)P(A) + P(B|A^c)P(A^c)} \\\\\
-&= \frac{0.95\times 0.001}{0.95\times 0.001 + 0.05 \times 0.999} \\\\\
+P(A|B) &= \frac{P(B|A)P(A)}{P(B|A)P(A) + P(B|A^c)P(A^c)} \br
+&= \frac{0.95\times 0.001}{0.95\times 0.001 + 0.05 \times 0.999} \br
 &= 0.0187 = 1.8\%
 \end{align*}
 $$

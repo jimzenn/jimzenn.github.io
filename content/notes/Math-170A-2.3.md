@@ -66,8 +66,8 @@ Let $B \subset \Omega, P(B) > 0$
 
 $$
 \begin{align\*}
-E[X] &= \sum\_{x} xP(X=x)\\\\\
- &= \sum\_{x} xP(X=x|B)P(B) + P(X=x|B^c)P(B^c)\\\\\
+E[X] &= \sum\_{x} xP(X=x)\br
+ &= \sum\_{x} xP(X=x|B)P(B) + P(X=x|B^c)P(B^c)\br
  &= P(B)\sum\_{x} xP(X=x|B) + P(B^c) \sum\_{x} xP(X=x|B^c)
 \end{align*}
 $$
@@ -95,10 +95,10 @@ $E[X|X>1] = 1 + E[X]$
 
 $$
 \begin{align\*}
-E[X] &= p + (1+E[X])(1-p) \\\\\\
-&= p + 1 - p + (1-p)E[X] \\\\\\
-p \cdot E[X] &= 1 \\\\\\
-E[X] &= \frac{1}{p} \\\\\\
+E[X] &= p + (1+E[X])(1-p) \br
+&= p + 1 - p + (1-p)E[X] \br
+p \cdot E[X] &= 1 \br
+E[X] &= \frac{1}{p} \br
 \end{align*}
 $$
 
@@ -116,11 +116,11 @@ $E[X|A] = \sum\_{ i=1 }^{n} E[X|A_i \cap B]P(A_i|B)$
 
 $$
 \begin{align\*}
-& \sum\_{n}^{ i=1 }  \sum\_{x} P(X=x | A_i \cap B)P(A_i | B) \\\\\
-&= \sum\_{ i=1 }^{n}  \sum\_{x} x \frac{ P(X=x \cap A \cap B) }{ P(A_i \cap B) } \cdot \frac{ P(A_i \cap B) }{ P(B) } \\\\\
-&= \sum\_{x} \sum\_{ i=1 }^{n} x \frac{ P(X=x \cap A_i \cap B) }{ P(B) } \\\\\
-&= \sum\_{x} \frac{x}{ P(B) } \sum\_{ i=1 }^{n} P(X=x \cap A_i \cap B) \\\\\
-&= \sum\_{x} \frac{x}{ P(B) } P(X=x \cap B) \\\\\
+& \sum\_{n}^{ i=1 }  \sum\_{x} P(X=x | A_i \cap B)P(A_i | B) \br
+&= \sum\_{ i=1 }^{n}  \sum\_{x} x \frac{ P(X=x \cap A \cap B) }{ P(A_i \cap B) } \cdot \frac{ P(A_i \cap B) }{ P(B) } \br
+&= \sum\_{x} \sum\_{ i=1 }^{n} x \frac{ P(X=x \cap A_i \cap B) }{ P(B) } \br
+&= \sum\_{x} \frac{x}{ P(B) } \sum\_{ i=1 }^{n} P(X=x \cap A_i \cap B) \br
+&= \sum\_{x} \frac{x}{ P(B) } P(X=x \cap B) \br
 &= \sum\_{x} xP(X=x |B) = E[X|B]
 \end{align*}
 $$
@@ -164,8 +164,8 @@ $E[X_iX_2X_3] = E[X_1]E[X_2]E[X_3]=(3.5)^3$
 
 $$
 \begin{align\*}
-E[XY] &= \sum\_{x} \sum\_{y} P(X=x, Y=y) \\\\\
-&=\sum\_{x}^{y} x y P(X=x)P(Y=y) \\\\\
+E[XY] &= \sum\_{x} \sum\_{y} P(X=x, Y=y) \br
+&=\sum\_{x}^{y} x y P(X=x)P(Y=y) \br
 &= \sum\_{x} x P(X=x) \sum\_{y} yP(Y=y) \\\\
 &=E[X] E[Y]
 \end{align*}
@@ -181,10 +181,10 @@ If $X, Y$ are independent, then
 
 $$
 \begin{align\*}
-var(X+Y) &= E[(X+Y)^2] - (E[X + Y])^2 \\\\\
-&= E[X^2 +2XY + Y^2] - (E[X] + E[Y])^2 \\\\\
-&= E[X^2] + 2E[X]E[Y] + E[Y^2] - (E[x]^2 + 2E[X]E[Y] + E[Y]^2) \\\\\
-&= (E[X^2] - E[x]^2) + (E[Y^2] - E[Y]^2) \\\\\
+var(X+Y) &= E[(X+Y)^2] - (E[X + Y])^2 \br
+&= E[X^2 +2XY + Y^2] - (E[X] + E[Y])^2 \br
+&= E[X^2] + 2E[X]E[Y] + E[Y^2] - (E[x]^2 + 2E[X]E[Y] + E[Y]^2) \br
+&= (E[X^2] - E[x]^2) + (E[Y^2] - E[Y]^2) \br
 &= var(X) + var(Y)
 \end{align*}
 $$
@@ -204,9 +204,9 @@ since the $y_i$s are independent.
 
 $$
 \begin{align\*}
-var(X) &= \sum\_{ i=1 }^{n} var(y_i) \\\\\
-&= n[E[y_1^2] - E[y_1]]^2 \\\\\
-&= n[1^2p + 0(1-p) - p^2] \\\\\
+var(X) &= \sum\_{ i=1 }^{n} var(y_i) \br
+&= n[E[y_1^2] - E[y_1]]^2 \br
+&= n[1^2p + 0(1-p) - p^2] \br
 &= n(p-p^2)
 \end{align*}
 $$

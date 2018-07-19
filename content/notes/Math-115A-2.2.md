@@ -114,7 +114,7 @@ $nullity(T) + rank(T) = \dim V$
 
 {{% theorem name="" index="" %}}
 
-Let $V$ and $W$ be two vector space over field F. Let $\dim V = n $(not infinity) and $\set{ x\_1, x\_2, ..., x\_{n} }$ is a basis of $ V_0 $ Let $\set{ w\_1, w\_2, ..., w\_{n} }$ be a set of <u>any vectors</u> in $W$. Then there exists a <u>unique</u> linearly transformation $T: V \to W$ s.t. $T(x_i) = w_i, \forall i = 1,2, ..., n$.
+Let $V$ and $W$ be two vector space over field F. Let $\dim V = n $(not infinity) and $\set{ x\_1, x\_2, ..., x\_{n} }$ is a basis of $ V_0 $ Let $\set{ w\_1, w\_2, ..., w\_{n} }$ be a set of <u>any vectors</u> in $W$. Then there exists a <u>unique</u> linear transformation $T: V \to W$ s.t. $T(x_i) = w_i, \forall i = 1,2, ..., n$.
 
 Analysis:
 
@@ -126,7 +126,7 @@ T: $\B \subseteq V \to \gamma \subseteq W$
 
 You want to extend $T$ to $V \to W$
 
-* Define a linearly transformation $\R^3$ to $\R^2$ whose image is the line $y = x$ in $\R^2$.
+* Define a linear transformation $\R^3$ to $\R^2$ whose image is the line $y = x$ in $\R^2$.
 
 $y = x$
 
@@ -155,7 +155,7 @@ $\exists$ unique scalars $a\_1, a\_2, ..., a\_{n}$ s.t. $x = \sum\_{ i=1 }^{n} a
 
 We define $T(x)$ as $T(x) := \sum\_{ i=1 }^{n} a_i w_i$(\*)
 
-$T$ is linearly transformation.
+$T$ is linear transformation.
 
 {{% proof index="" name="" %}}
 
@@ -170,7 +170,7 @@ by definition
 $T(x+y) = \sum\_{ i=1 }^{n}(a_i + b_i) w_i$
 $= c \sum\_{ i=1 }^{n} a_i w_i + \sum\_{ i=1 }^{n} b_iw_i$
 
-so $T$ is a linearly transformation.
+so $T$ is a linear transformation.
 
 need to choose $T(x_i) = w_i \forall i$
 
@@ -184,7 +184,7 @@ Remark: Defining T from basis to entire V is called extending T linearly.
 
 {{% proof index="" name="uniquness" %}}
 
-Assume that: there is another linearly transformation $U: V \to W$ s.t. $U(n_i) = w_i, v_i = 1,2, ..., n$.
+Assume that: there is another linear transformation $U: V \to W$ s.t. $U(n_i) = w_i, v_i = 1,2, ..., n$.
 
 We need to show that $U(x) = T(x) \forall x in V$
 
@@ -208,7 +208,7 @@ let $\set{ x_i, ..., x_N }$ be a basis of $V$.
 
 and  $\set{ w\_1, w\_2, ..., w\_{n} }$ any subset in $W$.
 
-If $T: V \to W$ and $U:V \to W$ and  two linearly transformation s.t.
+If $T: V \to W$ and $U:V \to W$ and  two linear transformation s.t.
 
 $T(x_i) = w_i$ and $U(x_i) = w_i \forall i = 1, ..., n$
 
@@ -216,11 +216,11 @@ i.e. $T(x_i) = U(x_i), \forall i = 1, ..., n$
 
 Then $T(x) = U(x) \forall x \in V$
 
-i.e. $T$ and $U$ are the same linearly transformation.
+i.e. $T$ and $U$ are the same linear transformation.
 
 {{% remarks name="" %}}
 
-If two linearly transformation from $V$\to $W$ coincide on a basis of V, then they coincide everywhere else.
+If two linear transformation from $V$\to $W$ coincide on a basis of V, then they coincide everywhere else.
 
 {{% /remarks %}}
 
@@ -232,7 +232,7 @@ It follows from the uniqueness of the previous theorem.
 
 {{% /corollary %}}
 
-Find a linearly transformation from $\R^3$ to $\R^2$ s.t. $T(1, 0, 0) = (-1, 5)$ and $T(1,1, 0) = (2,3)$
+Find a linear transformation from $\R^3$ to $\R^2$ s.t. $T(1, 0, 0) = (-1, 5)$ and $T(1,1, 0) = (2,3)$
 
 $\set{ (1, 0, 0) , (1,1, 0), (0, 0, 1)}$ is a basis of $\R^3$
 

@@ -162,7 +162,7 @@ $\R^4 / \R$<br>
 $(a_1, a_2)+(b_1, b_2) = (a_1+b_1+1, a_2+b_2)$<br>
 $\lambda (a_1, a_2) = (\lambda a_1, \lambda a_2)$
 
-$\begin{align\*}\lambda ((a_1, a_2) + (b_1, b_2)) &= \lambda(a_1 + b_1 + 1, a_2 + b_2) \\\\\\ &= (\lambda a_1 + \lambda b_1 + \lambda, \lambda a_1 + \lambda b_1)\end{align*}$
+$\begin{align\*}\lambda ((a_1, a_2) + (b_1, b_2)) &= \lambda(a_1 + b_1 + 1, a_2 + b_2) \br &= (\lambda a_1 + \lambda b_1 + \lambda, \lambda a_1 + \lambda b_1)\end{align*}$
 $\lambda(a_1, a_2) + \lambda(b_1, b_2) = (\lambda a_1 + \lambda b_1 + 1, \lambda b_1 + \lambda b_2)$
 
 (VS 7 does not stand)

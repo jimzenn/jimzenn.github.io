@@ -57,9 +57,9 @@ because all these events forms a partition of the sample space,
 
 $$
 \begin{align\*}
-P(\Omega) &= P(s=2) + P(2=3) + ... + P(s=8) \\\\\\
-1 &= 2c+3c+... +8c \\\\\\
-1 &= 35c \\\\\\
+P(\Omega) &= P(s=2) + P(2=3) + ... + P(s=8) \br
+1 &= 2c+3c+... +8c \br
+1 &= 35c \br
 c &= \frac1{35}
 \end{align*}
 $$
@@ -138,7 +138,7 @@ $z = k$th transmitted symbol is 0
 
 $$
 \begin{align\*}
-P(A) &= P(A|z)P(z) + P(A|z^c)P(z^c) \\\\\\
+P(A) &= P(A|z)P(z) + P(A|z^c)P(z^c) \br
 &=(1-\epsilon)p + (1-\epsilon)(1-p)
 \end{align*}
 $$
@@ -156,8 +156,8 @@ $P(\text{0 is correctly received}) = 1\epsilon_0$
 
 $$
 \begin{align\*}
-&P(\text{1011 correctly received}) \\\\\\
-&= P(\text{1 is correctly received})^3P(\text{0 is correctly received}) \\\\\\\
+&P(\text{1011 correctly received}) \br
+&= P(\text{1 is correctly received})^3P(\text{0 is correctly received}) \br
 &= (1-\epsilon_1)^3(1-\epsilon)
 \end{align*}
 $$
@@ -166,7 +166,7 @@ $$
 What is the probability that a zero is correctly recieved.
 
 \begin{align\*}
-P(\text{zero received}) &= P(000) + P(100) + P(010) + P(001) \\\\\\
+P(\text{zero received}) &= P(000) + P(100) + P(010) + P(001) \br
 &= (1-\epsilon_0)^3 + 3\epsilon_0(1-\epsilon_0)^2
 \end{align*}
 
