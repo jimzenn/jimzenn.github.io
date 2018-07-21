@@ -25,13 +25,13 @@ googleAnalytics = "UA-83942334-3"
   [[menu.main]]
     identifier = "math-115A"
     name = "Math 115A"
-    url = "/courses/math-115a/"
+    url = "/math-115a/"
     weight = 1
 
   [[menu.main]]
     identifier = "math-170A"
     name = "Math 170A"
-    url = "/courses/math-170a/"
+    url = "/math-170a/"
     weight = 1
 
   # [[menu.main]]
