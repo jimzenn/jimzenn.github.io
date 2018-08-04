@@ -83,11 +83,11 @@
   author: "Jim Zenn"
   device: "Pixel XL"
   url: "/images/featured/webp/sunset-at-berkeley.webp"
--
-  title: "Frostmourne"
-  author: "Jim Zenn"
-  device: "minecraft"
-  url: "/images/featured/webp/minecraft-frostmourne.webp"
+# -
+#   title: "Frostmourne"
+#   author: "Jim Zenn"
+#   device: "minecraft"
+#   url: "/images/featured/webp/minecraft-frostmourne.webp"
 -
   title: "Red Sea"
   author: "Jim Zenn"
@@ -98,11 +98,11 @@
   author: "Jim Zenn"
   device: "minecraft"
   url: "/images/featured/webp/minecraft-home.webp"
--
-  title: "Home and Toby"
-  author: "Jim Zenn"
-  device: "minecraft"
-  url: "/images/featured/webp/minecraft-home-with-toby.webp"
+# -
+#   title: "Home and Toby"
+#   author: "Jim Zenn"
+#   device: "minecraft"
+#   url: "/images/featured/webp/minecraft-home-with-toby.webp"
 -
   title: "Inside the Pyramid"
   author: "Jim Zenn"

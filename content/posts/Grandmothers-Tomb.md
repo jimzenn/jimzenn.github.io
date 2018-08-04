@@ -1,7 +1,7 @@
 ---
 title: "Grandmother's Tomb"
 date: 2018-06-10T18:36:22+08:00
-author: "Jim Zenn"
+
 volumes: ["Journey"]
 ---
 I am not trying to accuse anyone. Here, I only want to talk about my memories of her.

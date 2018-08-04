@@ -2,8 +2,7 @@
 title: "Course Info and Resources"
 menu\_title: "MATH 115A - Linear Algebra (Summer 2018)"
 date: 2018-06-25T9:03:48+08:00
-author: "Jim Zenn"
-volumes: ["temp"]
+hide: true
 content-only: true
 
 ---

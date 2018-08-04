@@ -1,11 +1,13 @@
 ---
-title: "Functions of Random Variables"
-date: 2018-07-18T10:03:48+08:00
-volumes: ["2"]
+title: "Discussion"
+date: 2018-06-25T11:03:48+08:00
+menuTitle: "Linear Algebra"
+volumes: ["D"]
 layout: "note"
-issue: 4
+issue: 1
 
 ---
+
 
 <!--more-->
 
@@ -33,7 +35,6 @@ issue: 4
     $\newcommand{\t}[1]{\text{ #1 }}$
     $\newcommand{\head}{\text H}$
     $\newcommand{\tail}{\text T}$
-    $\newcommand{\d}{\text d}$
     $\newcommand{\inv}[1]{{#1}^{-1}}$
     $\newcommand{\nullity}[1]{\text{nullity}(#1)}$
     $\newcommand{\rank}[1]{\text{rank}(#1)}$
@@ -69,60 +70,27 @@ issue: 4
   {{< /raw >}}
 </div>
 
-In order for $f\_{X, Y} $ to be a valid joint PDF, we need to choose $c $ so that previous line holds. i.e. <br>
-1 =
+{{% examples name="" %}}
+$\C$ is a vector space over $\C$.
 
-{{% definition name="Conditional PDF" %}}
+$\C$ is also a vector space over $\R, \R \subset \C$.
 
-Let A be an event with $P(A) > 0$. The conditional PDF of a continuous random variable $X $ given $A $ is the non-negative function $f\_{X \mid A}$ that satisfies for any $B \subseteq \R$:
+$\R$ is also a vector space over $\Q, \Q \subset \R$.
+{{% /examples %}}
 
-$P(X \in B \mid A) = \int\_{ B } f\_{X \mid A} (x) \d x$
+{{% example name="$F\_2$, a field of characteristic 2" %}}
+$F = \set{0, 1}.$<br>
+addition is defined as xor, i.e.:<br>
+$0 + 0 = 0$,
+$0 + 1 = 1$.<br>
+multiplication is defined as:<br>
+$0 \cdot 1 = 0$,
+$1 \cdot 1 = 1$.
+{{% /example %}}
 
-Special case: condition of $X \in E $, where $E \subseteq \R $.
+{{% example name="the prime field" %}}
+$\forall$ prime number $p, F\_p = \set{0, 1, 2, ..., p - 1}$
 
-Claim:
+> ... The sum, the difference and the product are computed by taking the remainder by p of the integer result. The multiplicative inverse of an element may be computed by using the extended Euclidean algorithm ...
 
-$$f\_{X \mid X \in E}(x) = \begin{cases}
-\frac{ f\_X(x)}{ P(X \in E)}, \if x \in E \br
-0, \if x \notin E
-\end{cases}$$
-
-{{% proof index="" name="" %}}
-Let $f(x) = \begin{cases}
-\frac{ f\_X(x)}{ P(X \in E)} \if x \in E \br
-0 if x \notin E
-\end{cases}$
-
-We aim to show that for any $B \subseteq \R $
-
-$\begin{align\*}
-\int\_{ B } f(x) \d x &= P(X \in B \mid X \in E) \br
-&= \int\_{ B }  f\_{X \mid X \in E}(x) \d x
-\end{align*}$
-
-
-$\begin{align\*}
-\int\_{ B } f(x) \d x &= \int\_{ E \cap B }  \frac{ f\_X(x)}{ P(X \in E)} \d x
-\end{align*}$
-
-On the other hand,
-
-$\begin{align\*}
-P(X \in B \mid X \in E) &= \frac{ P(X \in B \cap E)}{ P(X \in E)} \br
-&= \frac{ P(X \in B \cap E)}{ P(X \in E)} \br
-&= \int\_{ B \cap E } \frac{ f\_X(x)}{ P(x \in E)} \d x \br
-&= \int\_{ B } f(x \d x)
-\end{align\*}$
-
-
-{{% /proof %}}
-
-{{% /definition %}}
-
-{{% definition name="" %}}
-
-The conditional expectation of a random variable $X$ given an event $A$ with $P(A) > 0$ is
-
-$$E[X|A] = \int\_{ - \infty }^{ + \infty } f\_{X \mid A}(x) \d x$$
-
-{{% /definition %}}
+{{% /example %}}

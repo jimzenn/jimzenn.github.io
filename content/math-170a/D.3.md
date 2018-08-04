@@ -1,15 +1,13 @@
 ---
 title: "Disucission"
 date: 2018-07-10T10:03:48+08:00
-author: "Olga Turanova"
-volumes: ["MATH 170A"]
+volumes: ["D"]
 layout: "note"
-issue: D3
+issue: 3
 
 
 ---
 
-Discrete random variable.
 
 <!--more-->
 

@@ -1,7 +1,7 @@
 ---
 title: "UCLA Applied Mathematics Infosheet"
 date: 2018-05-13T19:10:15-07:00
-author: "Jim Zenn"
+
 volumes: ["Notes"]
 ---
 

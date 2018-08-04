@@ -1,7 +1,7 @@
 ---
 title: "Notes and Why"
 date: 2018-05-29T17:11:48+08:00
-author: "Jim Zenn"
+
 volumes: ["Journey"]
 draft: true
 ---

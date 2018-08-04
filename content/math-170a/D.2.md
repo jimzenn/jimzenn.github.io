@@ -1,15 +1,13 @@
 ---
 title: "Discussion"
 date: 2018-07-03T9:03:48+08:00
-author: "Tyler Arant"
-volumes: ["MATH 170A"]
+volumes: ["D"]
 layout: "note"
-issue: D2
+issue: 2
 
 
 ---
 
-Properties of prababilistic laws, conditional probability, tests, and indipendence.
 
 <!--more-->
 

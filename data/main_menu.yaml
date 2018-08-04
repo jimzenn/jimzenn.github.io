@@ -1,0 +1,11 @@
+-
+  name: "Courses"
+  menu:
+    -
+      name: "MATH 170A"
+      menu: "/math-115a/"
+    -
+      name: "MATH 115A"
+-
+  name: "About Me"
+  url: "/about/"

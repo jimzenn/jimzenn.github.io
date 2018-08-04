@@ -2,8 +2,8 @@
 title: "Course Info and Resources"
 menu_title: "MATH 170A - Probability Theory (Summer 2018)"
 date: 2018-06-25T9:03:48+08:00
-author: "Olga Turanova"
-volumes: ["temp"]
+hide: true
+volumes: ["MATH 170A"]
 content-only: true
 
 ---

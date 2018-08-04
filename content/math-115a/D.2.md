@@ -1,10 +1,10 @@
 ---
 title: "Discussion"
 date: 2018-07-03T11:03:48+08:00
-author: "Jim Zenn"
-volumes: ["MATH 115A"]
+menuTitle: "Linear Algebra"
+volumes: ["D"]
 layout: "note"
-issue: D2
+issue: 2
 
 ---
 
@@ -12,23 +12,65 @@ issue: D2
 
 <div class="latex-macros">
   {{< raw >}}
+    $\newcommand{\br}{\\}$
+
     $\newcommand{\R}{\mathbb{R}}$
     $\newcommand{\Q}{\mathbb{Q}}$
     $\newcommand{\Z}{\mathbb{Z}}$
     $\newcommand{\N}{\mathbb{N}}$
     $\newcommand{\C}{\mathbb{C}}$
     $\newcommand{\P}{\mathbb{P}}$
-    $\newcommand{\F}{\mathcal{F}}$
+    $\newcommand{\F}{\mathbb{F}}$
+    $\newcommand{\L}{\mathcal{L}}$
+    $\newcommand{\spa}[1]{\text{span}(#1)}$
     $\newcommand{\set}[1]{\{#1\}}$
     $\newcommand{\emptyset}{\varnothing}$
+    $\newcommand{\otherwise}{\text{ otherwise }}$
+    $\newcommand{\if}{\text{ if }}$
     $\newcommand{\union}{\cup}$
     $\newcommand{\intercept}{\cap}$
-    $\newcommand{\abs}[1]{|#1|}$
-    $\newcommand{\t#1}{\text}[1]$
+    $\newcommand{\abs}[1]{| #1 |}$
+    $\newcommand{\pare}[1]{\left\(#1\right\)}$
+    $\newcommand{\t}[1]{\text{ #1 }}$
     $\newcommand{\head}{\text H}$
     $\newcommand{\tail}{\text T}$
+    $\newcommand{\d}{\text d}$
+    $\newcommand{\inv}[1]{{#1}^{-1}}$
+    $\newcommand{\nullity}[1]{\text{nullity}(#1)}$
+    $\newcommand{\rank}[1]{\text{rank}(#1)}$
+    $\newcommand{\nullity}[1]{\text{nullity}(#1)}$
+    $\newcommand{\oto}{\text{ one-to-one }}$
+    $\newcommand{\ot}{\text{ onto }}$
+
+
+    $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$
+    $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$
+    $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$
+    $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$
+    $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$
+    $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$
+
+    $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$
+    $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$
+    $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$
+    $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$
+
+    $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$
+    $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$
+
+    $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$
+    $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$
+    $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$
+    $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$
+    $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$
+    $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$
   {{< /raw >}}
 </div>
+
 $$
 \begin{bmatrix}
 x\_{11} & x\_{12} \br
@@ -220,12 +262,12 @@ $v = v\_1 + v\_2$ s.t. $v\_i\in Span(S\_i)$
 
 $W \subseteq V, V$ is vector space
 
-$W$ is a subspace $\iff$ \spa{W} = W
+$W$ is a subspace $\iff$\spa{W} = W
 
 {{% proof name="" %}}
 $(\implies)$
 
-if $ W = \spa{W}$
+if $W = \spa{W}$
 because span of a set is a vector space,
 $W = \spa{W}$ is a vector space
 
@@ -341,7 +383,7 @@ $a\_1u\_1 + ... + a\_ku\_k + a\_{k+1}u\_{k+1} + ...+ a\_nu\_n = 0$
 
 This implies $a\_1u\_1 + ... + a\_ku\_k =0$
 
-$a\_k \neq 0\implies u\_k = (-\frac{a\_1}{a\_k})u\_1+ ... + (-\frac{a\_{k-1}{a\_k}u\_{k -1}$
+$a\_k \neq 0\implies u\_k = (-\frac{a\_1}{a\_k})u\_1+ ... + -\frac{a\_{k-1}{a\_k}u\_{k -1}$
 
 \in $Span({u\_1, ..., u\_{k-1}})$
 

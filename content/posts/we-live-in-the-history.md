@@ -1,7 +1,7 @@
 ---
 title: "Living in the History: In Depression We Resist"
 date: 2018-06-05T18:37:53+08:00
-author: "Jim Zenn"
+
 volumes: ["History"]
 feature: "https://ws1.sinaimg.cn/large/006tKfTcly1fs7jv9f807j30k90gotbk.jpg"
 draft: true

@@ -1,6 +1,8 @@
 -
   course-number: "MATH 115A"
   course-title: "Linear Algebra"
+  course-color: "#0052B5"
+  course-units: 5
   course-introduction: "Math 115A is a core mathematics course required of all the various mathematics majors. The course material can be regarded as an elaboration of the linear algebra already covered in Math 33A. However, the level of abstraction and the emphasis on proof technique make this a difficult course for many students. Successful students emerge from the experience not only with a better understanding of linear algebra, but also with a higher level of mathematical maturity, better equipped to deal with abstract concepts."
   course-info:
     -
@@ -14,24 +16,31 @@
       url: "https://www.math.ucla.edu/people/grad/yhkwon"
       icon: "external"
     -
-      field: "Classroom"
-      value: "Mathematical Sciences Building, 6627"
-      url: "https://goo.gl/maps/9Qe3J5EGu4p"
-      icon: "map"
+      field: "Lecture Time / Location"
+      value: "MWTh, 11am-12:50pm @ MS 6627"
+      url: "https://calendar.google.com/event?action=TEMPLATE&tmeid=XzYwb2oyYzlqNmNzamFiOWc4OHJqMmI5azY4cWthYmEyOGNwMzRiYTI2dDM0YWgxbTZjczRhaDlsNjhfMjAxODA3MjNUMTgwMDAwWiBnbjdpaWwxNjBxdTEwbDhxY2s4NmloNGFiY0Bn&tmsrc=gn7iil160qu10l8qck86ih4abc%40group.calendar.google.com&scp=ALL"
+      icon: "calendar"
     -
-      field: "Time"
-      value: "Mon - Thurs, 11am - 12:50pm"
+      field: "Discussion Time / Location"
+      value: "Tu, 11am-12:50pm @ MS 6627"
+      url: "https://calendar.google.com/event?action=TEMPLATE&tmeid=XzhjczM0aGk1Nm9xamViOW04OTFqNmI5azZkMzM4YjlvOGgxNDZiYTU3MTEzZWQ5bzhvcWoyZGE2ODhfMjAxODA3MjRUMTgwMDAwWiBnbjdpaWwxNjBxdTEwbDhxY2s4NmloNGFiY0Bn&tmsrc=gn7iil160qu10l8qck86ih4abc%40group.calendar.google.com&scp=ALL"
       icon: "calendar"
   navigation:
     -
-      name: "Course info"
-      url: "#"
-    -
       name: "Syllabus"
       url: "#syllabus"
+      new-tab: false
     -
       name: "Resources"
       url: "#resources"
+      new-tab: false
+    -
+      sep: true
+    -
+      name: "Official site"
+      url: "https://www.math.ucla.edu/~das/115a.1.18sum/"
+      icon: "external"
+      new-tab: true
   resources:
     -
       title: "Lecture Note, sample exams, and solutions"
@@ -47,6 +56,8 @@
 -
   course-number: "MATH 170A"
   course-title: "Probability Theory"
+  course-units: 4
+  course-color: "#10AD2C"
   course-introduction: "Probability and stochastic processes are used to create and analyze models in a broad range of fields, including statistics, economics, finance, engineering, biology and physics. Mathematics 170AB and 171 are designed to give a firm foundation in this area for students who will work and/or do graduate work in one of these fields. They also provide an excellent background for graduate work in probability and related areas of mathematics."
   course-info:
     -
@@ -60,37 +71,51 @@
       url: "http://www.math.ucla.edu/~tylerarant/"
       icon: "external"
     -
-      field: "Classroom"
-      value: "Franz Hall, 2258A"
-      url: "https://goo.gl/maps/PaTo41ArirD2"
-      icon: "map"
+      field: "Lecture Time / Location"
+      value: "MWTh, 9-10:50pm @ Franz 2258A"
+      url: "https://calendar.google.com/event?action=TEMPLATE&tmeid=XzhjczNhZTFoNjEyamFiOWg2a3IzYWI5azhjcGs0YjlwOGgwazhiYTQ2OHFqYWgyMzhrcTNlZDlsODRfMjAxODA3MjNUMTYwMDAwWiBnbjdpaWwxNjBxdTEwbDhxY2s4NmloNGFiY0Bn&tmsrc=gn7iil160qu10l8qck86ih4abc%40group.calendar.google.com&scp=ALL"
+      icon: "calendar"
     -
-      field: "Time"
-      value: "Mon - Thurs, 9am - 10:50pm"
+      field: "Discussion Time / Location"
+      value: "Tu, 9-10:50pm @ Franz 2258A"
+      url: "https://calendar.google.com/event?action=TEMPLATE&tmeid=Xzg1Mms0ZTIxNzUxajBiYTM2c3MzOGI5azg4cmppYjlwNnNxNDRiYTI4Y29qNmRobDhvcmo4ZHBvNjRfMjAxODA3MjRUMTYwMDAwWiBnbjdpaWwxNjBxdTEwbDhxY2s4NmloNGFiY0Bn&tmsrc=gn7iil160qu10l8qck86ih4abc%40group.calendar.google.com&scp=ALL"
       icon: "calendar"
   navigation:
-    -
-      name: "Course info"
-      url: "#"
     -
       name: "Syllabus"
       url: "#syllabus"
     -
       name: "Resources"
       url: "#resources"
+    -
+      sep: true
+    -
+      name: "Official site"
+      url: "https://ccle.ucla.edu/course/view/181A-MATH170A-1"
+      icon: "external"
   resources:
     -
       title: "Supplementary problems"
       url: "http://www.athenasc.com/prob-supp.html"
     -
       title: "Homework 01"
-      url: "/Math-170A/HW01.pdf"
+      url: "/math-170a/hw/01.pdf"
     -
       title: "Homework 02"
-      url: "/Math-170A/HW02.pdf"
+      url: "/math-170a/hw/02.pdf"
     -
       title: "Homework 03"
-      url: "/Math-170A/HW03.pdf"
+      url: "/math-170a/hw/03.pdf"
     -
       title: "Homework 04"
-      url: "/Math-170A/HW04.pdf"
+      url: "/math-170a/hw/04.pdf"
+    -
+      title: "Homework 05"
+      url: "/math-170a/hw/05.pdf"
+    -
+      title: "Homework 06"
+      url: "/math-170a/hw/06.pdf"
+    -
+      title: "Supplement"
+      url: "/math-170a/supplement.pdf"
+

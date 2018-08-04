@@ -1,11 +1,9 @@
 ---
 title: "Linear Algebra"
 date: 2018-06-25T11:00:00+08:00
-menu_title: "Courses"
-
+menuTitle: "Courses"
+hide: true
 layout: "course"
-course_number: "MATH 115A"
+courseNumber: "MATH 115A"
 
 ---
-
-

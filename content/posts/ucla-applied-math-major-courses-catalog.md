@@ -1,7 +1,7 @@
 ---
 title: "Applied Math Course Plan Catalog"
 date: 2018-05-06T16:02:04-07:00
-author: "Jim Zenn"
+
 volumes: ["Notes"]
 draft: true
 ---
