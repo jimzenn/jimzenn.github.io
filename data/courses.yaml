@@ -52,7 +52,6 @@
       author: "Michael Andrews"
       source: "UCLA MATH 115A - Winter 2018 course site"
       url: "http://www.math.ucla.edu/~mjandr/Math115A/index.html"
-
 -
   course-number: "MATH 170A"
   course-title: "Probability Theory"
@@ -118,4 +117,94 @@
     -
       title: "Supplement"
       url: "/math-170a/supplement.pdf"
+-
+  course-number: "MATH 170B"
+  course-title: "Probability Theory"
+  course-units: 4
+  course-color: "#10AD2C"
+  course-introduction: "Probability and stochastic processes are used to create and analyze models in a broad range of fields, including statistics, economics, finance, engineering, biology and physics. Mathematics 170AB and 171 are designed to give a firm foundation in this area for students who will work and/or do graduate work in one of these fields. They also provide an excellent background for graduate work in probability and related areas of mathematics."
+  course-info:
+    -
+      field: "Instructor"
+      value: "Olga Turanova"
+      url: "http://www.math.ucla.edu/~turanova/"
+      icon: "external"
+    -
+      field: "Teaching Assistant"
+      value: "Tyler Arant"
+      url: "http://www.math.ucla.edu/~tylerarant/"
+      icon: "external"
+    -
+      field: "Lecture Time / Location"
+      value: "MWTh, 9-10:50pm @ MS 5117"
+      url: "https://calendar.google.com/event?action=TEMPLATE&tmeid=NnNvajJvcGg2c3NtMmJiMTZrb2o0YjlrY29zNmFiYjI2aGltMmI5bDY0bzNlY3BoNjRvajhkMWxja18yMDE4MDgwNlQxNjAwMDBaIGduN2lpbDE2MHF1MTBsOHFjazg2aWg0YWJjQGc&tmsrc=gn7iil160qu10l8qck86ih4abc%40group.calendar.google.com&scp=ALL"
+      icon: "calendar"
+    -
+      field: "Discussion Time / Location"
+      value: "Tu, 9-10:50pm @ MS 5117"
+      url: "https://calendar.google.com/event?action=TEMPLATE&tmeid=XzYwczNnZTIyNjkwajBiYTU4ZDJrNmI5azY1MWo2YmExNmtva2FiOWw2OG8zNGUyNDYwcDRhZDlrNmNfMjAxODA4MDdUMTYwMDAwWiBnbjdpaWwxNjBxdTEwbDhxY2s4NmloNGFiY0Bn&tmsrc=gn7iil160qu10l8qck86ih4abc%40group.calendar.google.com&scp=ALL"
+      icon: "calendar"
+  navigation:
+    -
+      name: "Syllabus"
+      url: "#syllabus"
+    -
+      name: "Resources"
+      url: "#resources"
+    -
+      sep: true
+    -
+      name: "Official site"
+      url: "https://ccle.ucla.edu/course/view/181A-MATH170A-1"
+      icon: "external"
+  resources:
+    -
+      title: "Supplementary problems"
+      url: "http://www.athenasc.com/prob-supp.html"
+
+-
+  course-number: "MATH 131A"
+  course-title: "Analysis"
+  course-units: 4
+  course-color: "#8100bd"
+  course-introduction: "
+The following schedule, with textbook sections and topics, is based on 26 lectures. The remaining three classroom meetings are for leeway, reviews, and midterm exams. These are scheduled by the individual instructor. Often there are midterm exams about the beginning of the fourth and eighth weeks of instruction, plus reviews for the final exam."
+  course-info:
+    -
+      field: "Instructor"
+      value: "Bruce Lee Rothschild"
+      url: "https://www.genealogy.math.ndsu.nodak.edu/id.php?id=48557"
+      icon: "external"
+    -
+      field: "Teaching Assistant"
+      value: "Thomas Gilton"
+      url: "http://www.math.ucla.edu/~tdgilton/"
+      icon: "external"
+    -
+      field: "Lecture Time / Location"
+      value: "MWTh, 11-12:50pm @ Kinsey 1200B"
+      url: "https://calendar.google.com/event?action=TEMPLATE&tmeid=Y2NxNmFwOW42a3IzOGI5aDc0cWpnYjlrYzhvbTJiYjFjNWozNmI5b2Njc2plcGhrNjVqNmNkcGc3NF8yMDE4MDgwNlQxODAwMDBaIGduN2lpbDE2MHF1MTBsOHFjazg2aWg0YWJjQGc&tmsrc=gn7iil160qu10l8qck86ih4abc%40group.calendar.google.com&scp=ALL"
+      icon: "calendar"
+    -
+      field: "Discussion Time / Location"
+      value: "Tu, 11-12:50pm @ La Kretz 120"
+      url: "https://calendar.google.com/event?action=TEMPLATE&tmeid=XzYwcTM0ZDFtOHAzMzBiOW44cDFqNGI5azZrcGpjYjlwNjExa2FiYTE4Z28zZ2U5aThrbzNnZGhuNzBfMjAxODA4MDdUMTgwMDAwWiBnbjdpaWwxNjBxdTEwbDhxY2s4NmloNGFiY0Bn&tmsrc=gn7iil160qu10l8qck86ih4abc%40group.calendar.google.com&scp=ALL"
+      icon: "calendar"
+  navigation:
+    -
+      name: "Syllabus"
+      url: "#syllabus"
+    -
+      name: "Resources"
+      url: "#resources"
+    -
+      sep: true
+    -
+      name: "Official site"
+      url: "https://ccle.ucla.edu/course/view/181A-MATH170A-1"
+      icon: "external"
+  resources:
+    -
+      title: "Supplementary problems"
+      url: "http://www.athenasc.com/prob-supp.html"
 
