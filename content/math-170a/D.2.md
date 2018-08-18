@@ -13,18 +13,83 @@ issue: 2
 
 <div class="latex-macros">
   {{< raw >}}
+    $\newcommand{\br}{\\}$
+
     $\newcommand{\R}{\mathbb{R}}$
     $\newcommand{\Q}{\mathbb{Q}}$
     $\newcommand{\Z}{\mathbb{Z}}$
     $\newcommand{\N}{\mathbb{N}}$
+    $\newcommand{\C}{\mathbb{C}}$
+    $\newcommand{\P}{\mathbb{P}}$
+    $\newcommand{\F}{\mathbb{F}}$
+    $\newcommand{\L}{\mathcal{L}}$
+    $\newcommand{\spa}[1]{\text{span}(#1)}$
+    $\newcommand{\dist}[1]{\text{dist}(#1)}$
+    $\newcommand{\max}[1]{\text{max}(#1)}$
+    $\newcommand{\min}[1]{\text{max}(#1)}$
+    $\newcommand{\supr}[1]{\text{sup}(#1)}$
+    $\newcommand{\infi}[1]{\text{inf}(#1)}$
     $\newcommand{\set}[1]{\{#1\}}$
     $\newcommand{\emptyset}{\varnothing}$
+    $\newcommand{\otherwise}{\text{ otherwise }}$
+    $\newcommand{\if}{\text{ if }}$
+    $\newcommand{\proj}{\text{proj}}$
     $\newcommand{\union}{\cup}$
     $\newcommand{\intercept}{\cap}$
-    $\newcommand{\abs}[1]{|#1|}$
-    $\newcommand{\t#1}{\text}[1]$
+    $\newcommand{\abs}[1]{\left| #1 \right|}$
+    $\newcommand{\norm}[1]{\left\lVert#1\right\rVert}$
+    $\newcommand{\pare}[1]{\left(#1\right)}$
+    $\newcommand{\t}[1]{\text{ #1 }}$
     $\newcommand{\head}{\text H}$
     $\newcommand{\tail}{\text T}$
+    $\newcommand{\d}{\text d}$
+    $\newcommand{\limu}[2]{\underset{#1 \to #2}\lim}$
+    $\newcommand{\inv}[1]{{#1}^{-1}}$
+    $\newcommand{\inner}[2]{\langle #1, #2 \rangle}$
+    $\newcommand{\nullity}[1]{\text{nullity}(#1)}$
+    $\newcommand{\rank}[1]{\text{rank}(#1)}$
+    $\newcommand{\var}[1]{\text{var}(#1)}$
+    $\newcommand{\tr}[1]{\text{tr}(#1)}$
+    $\newcommand{\oto}{\text{ one-to-one }}$
+    $\newcommand{\ot}{\text{ onto }}$
+    $\newcommand{\ceil}[1]{\lceil#1\rceil}$
+    $\newcommand{\floor}[1]{\lfloor#1\rfloor}$
+    $\newcommand{\Re}[1]{\text{Re}(#1)}$
+    $\newcommand{\Im}[1]{\text{Im}(#1)}$
+
+
+    $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$
+    $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$
+    $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$
+    $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$
+    $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$
+    $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$
+
+    $\newcommand{\vcw}[2]{\begin{matrix} #1 \br #2 \end{matrix}}$
+    $\newcommand{\vce}[3]{\begin{matrix} #1 \br #2 \br #3 \end{matrix}}$
+    $\newcommand{\vcr}[4]{\begin{matrix} #1 \br #2 \br #3 \br #4 \end{matrix}}$
+    $\newcommand{\vct}[5]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \end{matrix}}$
+    $\newcommand{\vcy}[6]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{matrix}}$
+    $\newcommand{\vcu}[7]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{matrix}}$
+
+    $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$
+    $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$
+    $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$
+    $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$
+
+    $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$
+    $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$
+
+    $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$
+    $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$
+    $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$
+    $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$
+    $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$
+    $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$
   {{< /raw >}}
 </div>
 
@@ -99,7 +164,7 @@ Let $S$ be the sum, $D =$ event that doubles were rolled.
 
 $P(D|S \leq 4) = \frac{P(D\cap (S\leq 4))}{P(S\leq 4)}$
 
-\(c) Find the probability that at least one die lands 6.
+(c\) Find the probability that at least one die lands 6.
 
 let A be the event that at least on die lands 6.
 
@@ -128,7 +193,7 @@ $P(A|N) = \frac{P(A\cap N)}{P(N)} = \frac{P(A\cap N)}{P(N|B)P(B)+P(N|B^c)P(B^c)}
 {{% /example %}}
 
 {{% example name="Independence" %}}
-A source  transmits a signal through a noisy channel. each simbol is a $0$ or a $1$ with probabilities $p$ and $1-p$, and is recieved incorrectly with probabilities $\epsilon_0$ and $\epsilon_1$ respectively. Transmissions and errors all independent.
+A source  transmits a signal through a noisy channel. each simbol is a $0$ or a $1$ with probabilities $p$ and $1-p$, and is recieved incorrectly with probabilities $\epsilon\_0$ and $\epsilon\_1$ respectively. Transmissions and errors all independent.
 
 (a) What is the probabilities that the $k$th symbol is accurately received. (call it event A)
 
@@ -144,29 +209,29 @@ $$
 (b) Given that the k^th symbol was received accurately, what's the probability that the $k$th symbol submitted was a zero.
 
 $$
-P(Z|A) = \frac{P(A|Z)P(Z)}{P(A)} = \frac{(1-\epsilon_0)p}{(1\epsilon_0)p + (1-\epsilon_0)(1-p)}
+P(Z|A) = \frac{P(A|Z)P(Z)}{P(A)} = \frac{(1-\epsilon\_0)p}{(1\epsilon\_0)p + (1-\epsilon\_0)(1-p)}
 $$
 
-\(c) What's the probability that 1011 is correctly received.
+(c\) What's the probability that 1011 is correctly received.
 
-$P(\text{1 is correctly received}) = 1\epsilon_1$<br>
-$P(\text{0 is correctly received}) = 1\epsilon_0$
+$P(\text{1 is correctly received}) = 1\epsilon\_1$<br>
+$P(\text{0 is correctly received}) = 1\epsilon\_0$
 
 $$
 \begin{align\*}
 &P(\text{1011 correctly received}) \br
 &= P(\text{1 is correctly received})^3P(\text{0 is correctly received}) \br
-&= (1-\epsilon_1)^3(1-\epsilon)
+&= (1-\epsilon\_1)^3(1-\epsilon)
 \end{align*}
 $$
 
 (d) suppose each symbol is transmitted 3 times, and the received symbol is decided by majority rule.
 What is the probability that a zero is correctly recieved.
 
-\begin{align\*}
+$\begin{align\*}
 P(\text{zero received}) &= P(000) + P(100) + P(010) + P(001) \br
-&= (1-\epsilon_0)^3 + 3\epsilon_0(1-\epsilon_0)^2
-\end{align*}
+&= (1-\epsilon\_0)^3 + 3\epsilon\_0(1-\epsilon\_0)^2
+\end{align*}$
 
 {{% /example %}}
 
@@ -198,9 +263,6 @@ and similarly for A and C.
 
 {{% /example %}}
 
-{{% example name="" %}}
-Suppose $A,B, C$ are mutually independent, show that A and $B\cup C$ are independent (contrast this with previous example, we have a stronger hypothesis here!)
-
 {{% definition name="Mutually independent" %}}
 
 $A, B, C$ are mutually independent if<br>
@@ -208,6 +270,10 @@ $A, B, C$ are mutually independent if<br>
 2.$P(A\cap B\cap C) = P(A)P(B)P\(C)$
 
 {{% /definition %}}
+
+{{% example name="" %}}
+
+Suppose $A,B, C$ are mutually independent, show that A and $B\cup C$ are independent (contrast this with previous example, we have a stronger hypothesis here!)
 
 $P(A\cap(B\cup C))$<br>
 $= P((A\cap B) \cup (A\cap C))$<br>

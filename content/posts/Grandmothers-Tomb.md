@@ -12,7 +12,7 @@ I am a firm materialist. Hence, I always find tombs unnecessary since one's spir
 
 ## One
 
-My grandma has passed away three years ago when I was in Harbin. I did not feel much grief. 
+My grandma has passed away three years ago when I was in Harbin. I did not feel much grief.
 
 I was raised by her. Nevertheless, distance and time had blurred my memory of her. I clearly remember that in her late years, she was weak and her senses was blunt. Her eyesight faded; her teeth fell off. Sometimes, she even made a mess when she used the restroom.
 
@@ -36,7 +36,7 @@ My grandma was illiterate, and she does not speak Madarin which most people spea
 
 ## Five
 
-I am in the car with my parents on our way to Taichang, Suzhou. Has my grandma ever been to Suzhou her whole life? I doubt it. However, that is where her had her eternal rest. 
+I am in the car with my parents on our way to Taichang, Suzhou. Has my grandma ever been to Suzhou her whole life? I doubt it. However, that is where her had her eternal rest.
 
 I haven't come back to China since I left for the US two years ago. This morning, my father suddenly proposed to go to Taichang.
 
@@ -51,3 +51,9 @@ I haven't come back to China since I left for the US two years ago. This morning
 So here we are. My father seemed to be very serious about this, he really wanted to do it. I wonder what he was thinking in his mind.
 
 That, I talked to myself, is why a deceased one needs a tomb.
+
+## P.S. on Aug 10, 2018
+
+Today I watched *Coco*. Although the story is based on some Mexican tradition, I actually hoped there is a land of the dead. After all, she is the one who raised me. If she were still alive, would she be proud of me?
+
+Rest in peace, Nana.

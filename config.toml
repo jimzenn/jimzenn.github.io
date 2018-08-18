@@ -7,38 +7,20 @@ preserveTaxonomyNames = true
 googleAnalytics = "UA-83942334-3"
 
 [params]
-  num_pics = 5
   my_name = "Jim Zenn"
   my_education = "University of California, Los Angeles"
   email = "zenn@ucla.edu"
   my_major = "Applied Mathematics"
   github = "https://github.com/Jim-Zenn"
   CV = "/CV.pdf"
+  version = "2.9.2"
 
-[menu]
-  [[menu.main]]
-    identifier = "about"
-    name = "About Me"
-    url = "/about/"
-    weight = 999
-
-  [[menu.main]]
-    identifier = "math-115A"
-    name = "Math 115A"
-    url = "/math-115a/main/"
-    weight = 1
-
-  [[menu.main]]
-    identifier = "math-131A"
-    name = "Math 131A"
-    url = "/math-131a/main/"
-    weight = 1
-
-  [[menu.main]]
-    identifier = "math-170A"
-    name = "Math 170A"
-    url = "/math-170a/main/"
-    weight = 1
+# [menu]
+#   [[menu.main]]
+#     identifier = "math-115A"
+#     name = "Math 115A"
+#     url = "/math-115a/main/"
+#     weight = 1
 
 [taxonomies]
   category = "volumes"
