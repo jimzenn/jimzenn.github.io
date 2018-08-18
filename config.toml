@@ -13,7 +13,7 @@ googleAnalytics = "UA-83942334-3"
   my_major = "Applied Mathematics"
   github = "https://github.com/Jim-Zenn"
   CV = "/CV.pdf"
-  version = "2.9.2"
+  version = "2.9.3"
 
 # [menu]
 #   [[menu.main]]
