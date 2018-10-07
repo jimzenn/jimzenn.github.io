@@ -1,6 +1,6 @@
 -
-  identifier: "blog"
-  name: "Blog"
+  identifier: "home"
+  name: "Home"
   url: "/"
 -
   identifier: "courses"
@@ -18,6 +18,14 @@
       identifier: "math-131a"
       name: "MATH 131A"
       url: "/math-131a/main/"
+    -
+      identifier: "math-134"
+      name: "MATH 134"
+      url: "/math-134/main/"
+    -
+      identifier: "math-164"
+      name: "MATH 164"
+      url: "/math-164/main/"
 -
   identifier: "journey"
   name: "Journey"
