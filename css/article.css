@@ -1,0 +1,45 @@
+.article {
+  width: 100%;
+}
+
+.article__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.article__volume-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.article__volume-link:hover {
+  color: #0070c9;
+}
+
+.article__title {
+  font-family: var(--display-font);
+  font-weight: 500;
+}
+
+.article__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.article__meta small {
+  font-size: 62%;
+  bottom: 2px;
+  padding: 0 2px;
+}
+
+.article__seperator {
+  border: 0;
+  height: 1px;
+  background: #d6d6d6;
+  margin: 65px 0;
+  display: block;
+  -webkit-margin-start: auto;
+  -webkit-margin-end: auto;
+}

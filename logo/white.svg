@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Jim Zenn</title>
+    <desc>white logo</desc>
+    <defs></defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-184.000000, -71.000000)">
+            <g id="black" transform="translate(184.000000, 71.000000)">
+                <circle id="Oval" fill="#FFFFFF" cx="60" cy="60" r="60"></circle>
+                <g id="JZ" transform="translate(8.000000, 8.000000)" stroke="#000000" stroke-linecap="round">
+                    <path d="M60.1707844,91.1647979 C78.3435506,87.3929217 92,71.2912782 92,52" id="Oval" stroke-width="4.8"></path>
+                    <path d="M17.8709157,31.1274807 C14.1468763,37.2037485 12,44.3511593 12,52 C12,72.8063482 27.8857426,89.9023825 48.1900358,91.820911" id="Oval" stroke-width="4.8"></path>
+                    <path d="M60.2322277,91.005646 C74.2682082,46.838041 81.2861985,24.7542385 81.2861985,24.7542385 C73.9831626,16.9077901 63.5647192,12 52,12 C50.7039451,12 49.4222871,12.06164 48.1577974,12.1821483 C48.1577974,44.1032288 48.1577974,72.0007177 48.1900358,91.820911" id="Oval" stroke-width="4.8"></path>
+                    <circle id="Oval" stroke-width="4" cx="52" cy="52" r="52"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

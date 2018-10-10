@@ -1,0 +1,1994 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.49" />
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<title>Linear Transformation - Jim Zenn</title>
+<meta property="og:title" content="Linear Transformation - Jim Zenn">
+
+
+
+  
+
+
+
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-83942334-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3" media="all">
+    
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3" media="all">
+
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3" media="all">
+  </head>
+
+  <body class="note wide" >
+    <header class="header" id="header">
+  
+  <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
+  <div class="header__title">
+    <a class="header__site-logo-link" id="header-menu__toggle">
+      <img class="header__site-logo-image" src="/logo/wire.svg" alt="logo"/>
+    </a>
+  </div>
+  <nav class="header-menu" id="header-menu">
+      <ul class="header-menu__list">
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+          
+        
+          
+            <li class="header-menu__item header-menu__item--dropdown">
+              <a class="header-menu__link">Notes</a>
+              <ul class="header-menu__item-menu">
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/math-170a/main/">Probability Theory</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/math-115a/main/">Linear Algebra</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/math-131a/main/">Analysis</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/math-164/main/">Optimization</a></li>
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/journey/">Journey</a></li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+          
+        
+      </ul>
+  </nav>
+</header>
+<nav class="header-menu--collapsable" id="collapsable-menu">
+  <ul class="header-menu__list--collapsable">
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+      
+    
+      
+        <li class="header-menu__item header-menu__item--dropdown">
+          <a class="header-menu__link">Notes</a>
+          <ul class="header-menu__item-menu">
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/math-170a/main/">Probability Theory</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/math-115a/main/">Linear Algebra</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/math-131a/main/">Analysis</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/math-164/main/">Optimization</a></li>
+            
+          </ul>
+        </li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/journey/">Journey</a></li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+      
+    
+  </ul>
+</nav>
+
+
+    <div class="container" id="container">
+      
+        <div class="container-tag">
+          
+          <b class="container-title">Linear Algebra</b>
+          
+        </div>
+      
+      
+
+
+
+
+
+
+
+<div class="navigation" id="navigation">
+  <div class="navigation__wrapper" id="navigation__toggle">
+    <div class="navigation__left">
+      <span class="navigation__sup-title" style="color: #0052B5">MATH 115A, Section 2.1</span>
+      <span class="navigation__title">Linear Transformation</span>
+
+    </div>
+    <div class="navigation__right">
+      <ul class="navigation__list">
+      
+      </ul>
+      <ul class="navigation__list--collapsable">
+      
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  wasStuck = false;
+  window.addEventListener('scroll', function(e) {
+    var header = document.querySelector("#header");
+    var nav = document.querySelector("#navigation");
+    var navWrapper = document.querySelector("#navigation .navigation__wrapper");
+    if (window.scrollY >= header.offsetHeight) {
+      
+      if (!wasStuck) {
+        nav.classList.add("navigation--stuck");
+        navWrapper.classList.add("navigation__wrapper--stuck");
+        wasStuck = true;
+      }
+    } else {
+      if (wasStuck) {
+        nav.classList.remove("navigation--stuck");
+        navWrapper.classList.remove("navigation__wrapper--stuck");
+        wasStuck = false;
+      }
+    }
+  });
+  var toggle = document.querySelector("#navigation__toggle");
+  var list = document.querySelector(".navigation__list--collapsable");
+  toggle.addEventListener("click", function() {
+    this.classList.toggle("navigation__toggle--active");
+    list.classList.toggle("navigation__list--collapsable--active");
+  });
+  var listItems = document.querySelectorAll(".navigation__list--collapsable .navigation__link");
+  for (var i = 0; i < listItems.length; i ++) {
+    listItems[i].addEventListener("click", function() {
+      document.querySelector("#navigation__toggle").click();
+      return true;
+    });
+  }
+</script>
+
+
+
+  <main class="content" role="main">
+    <article class="article">
+      <div class="article__content">
+        <script>
+          keywordsCollector = [];
+          keywordsCounter = 0;
+        </script>
+        <p class="hide">
+Linear Transformation, Identity Transformation, Zero Transformation, Kernel (Null Space), Range (Image), Nullity, Rank, One-to-One, Onto.
+</p>
+
+<p></p>
+
+<div class="latex-macros">
+  
+    $\newcommand{\br}{\\}$
+
+    $\newcommand{\R}{\mathbb{R}}$
+    $\newcommand{\Q}{\mathbb{Q}}$
+    $\newcommand{\Z}{\mathbb{Z}}$
+    $\newcommand{\N}{\mathbb{N}}$
+    $\newcommand{\C}{\mathbb{C}}$
+    $\newcommand{\P}{\mathbb{P}}$
+    $\newcommand{\F}{\mathbb{F}}$
+    $\newcommand{\L}{\mathcal{L}}$
+    $\newcommand{\spa}[1]{\text{span}(#1)}$
+    $\newcommand{\set}[1]{\{#1\}}$
+    $\newcommand{\emptyset}{\varnothing}$
+    $\newcommand{\otherwise}{\text{ otherwise }}$
+    $\newcommand{\if}{\text{ if }}$
+    $\newcommand{\union}{\cup}$
+    $\newcommand{\intercept}{\cap}$
+    $\newcommand{\abs}[1]{| #1 |}$
+    $\newcommand{\pare}[1]{\left\(#1\right\)}$
+    $\newcommand{\t}[1]{\text{ #1 }}$
+    $\newcommand{\head}{\text H}$
+    $\newcommand{\tail}{\text T}$
+    $\newcommand{\d}{\text d}$
+    $\newcommand{\inv}[1]{{#1}^{-1}}$
+    $\newcommand{\nullity}[1]{\text{nullity}(#1)}$
+    $\newcommand{\rank}[1]{\text{rank}(#1)}$
+    $\newcommand{\nullity}[1]{\text{nullity}(#1)}$
+    $\newcommand{\oto}{\text{ one-to-one }}$
+    $\newcommand{\ot}{\text{ onto }}$
+
+
+    $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$
+    $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$
+    $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$
+    $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$
+    $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$
+    $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$
+
+    $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$
+    $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$
+    $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$
+    $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$
+
+    $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$
+    $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$
+
+    $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$
+    $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$
+    $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$
+    $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$
+    $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$
+    $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$
+  
+</div>
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="linear-transformation">Linear Transformation</span></span>
+  <div class="block__content block__content--blue">
+    <p>$V/F, W$ is a vector space over a field $F$.</p>
+
+<p>A <strong>linear transformation</strong> (or <strong>linear map</strong>) $T:V \to W$ is a function which satisfies the following properties:</p>
+
+<ol>
+<li>$T(v_1 + v_2) = T(v_1) + (v_2), \forall v_1, v_2 \in V.$</li>
+<li>$T(cv) = cT(v), \forall v \in V, c \in F.$</li>
+</ol>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("linear-transformation");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>$T: \R^3 \to \R^2, T(a_1, a_2, a_3) = (2a_1-a_3, a_2 - a_1).$</p>
+
+<p>$v_1 = (a_1, a_2, a_3), v_2 = (b_1, b_2, b_3).$</p>
+
+<p>$\begin{align*}
+  &amp;T((a_1, a_2, a_3)  + (b_1, b_2, b_3)) \br
+  &amp;=T(a_1 + b_1, a_2 + b_2, a_3 + b_3) \br
+  &amp;=(2(a_1 + b_1) - (a_3 + b_3), (a_2 + b_2) - (a_1 + b_1))
+\end{align*}$</p>
+
+<p>$T(c(a_1, a_2, a_3)) = T((ca_1, ca_2, ca_3)) = (c(2a-a_3), c(a_2 - a_1))$</p>
+
+<p>$T((a_1, a_2, a_3)) = (2a_1-a_3, a_2 - a_1)$</p>
+
+<p>$T((b_1, b_2, b_3)) = (2b_1-b_3, b_2 - b_1)$</p>
+
+<p>$\begin{align*}
+  &amp;T((a_1, a_2, a_3)) + T((b_1, b_2, b_3)) \br
+  &amp;= (2a_1-a_3, a_2 - a_1) + (2b_1-b_3, b_2 - b_1) \br
+  &amp;= &hellip;
+\end{align*}$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example: reflection about x-axis
+    
+  </span>
+  <div class="block__content block__content--gray">
+    <p>$T: \R^2 \to \R^2, T ((a,b)) = (a, -b)$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example: Rotation
+    
+  </span>
+  <div class="block__content block__content--gray">
+    <p>$T: \R^2 \to \R^2, T(P)=P&rsquo;. P=(a,b).$</p>
+
+<p>$T(P) = (a\cos \theta - b \sin \theta, a \sin \theta + b \cos \theta)$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Properties: <span class="keyword" id="basic-properties-of-linear-transformation">Basic Properties of Linear Transformation</span>
+  
+  </span>
+  <div class="block__content block__content--green">
+  <ol>
+<li><p>If $T: V \to W$ a linear transformation,</p>
+
+<ul>
+<li><p>$T(0) = 0$</p></li>
+
+<li><p>$T(v_1 - v_2) = T(v_1) - T(v_2)$</p></li>
+</ul></li>
+
+<li><p>$T: V \to W$is a linear transportation$\iff T(cv_1 + v_2) = c T(v_1) + T(v_2), \forall v_1, v_2 \in V, \forall c \in F$.</p></li>
+</ol>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <p>$T(0) = T(0 + 0) = T(0) + T(0) = T(0) + 0 = T(0) + T(0)$</p>
+
+<p>By cancellation law, $0 = T(0)$.</p>
+
+<p>$T(v_1 - v_2) = T(v_1 + (-v_2))$.</p>
+
+  </div>
+</div>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("basic-properties-of-linear-transformation");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "ppt";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>$\R^2 \to \R^2$.</p>
+
+<p>$T(x, y) = T(x + y, x-y + 1)$ is not a linear transformation.</p>
+
+<p>$T(x, y) = (x, \abs{y})$ is not a linear transformation.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>$T: M_{m \times n}(\R) \to M_{n \times m} (\R)$.</p>
+
+<p>$T(A) = A^t$ is a linear transformation.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>$T: \P_n(x) \to \P_{n-1}(x)$.</p>
+
+<p>$T(f(x)) = f&rsquo;(x)$ is a linear transformation.</p>
+
+<p>$\begin{align*}
+T(cf(x) + g(x)) &amp;= (cf(x) + g(x))&rsquo; \br
+&amp;= cf&rsquo;(x) g&rsquo;(x) \br
+&amp;= cT(f(x)) + T(g(x))
+\end{align*}$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>$T:\R^2 \to \R^3$.</p>
+
+<p>$T(a_1, a_2) = (a_1, a_2, 0)$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="identity-transformation">Identity Transformation</span></span>
+  <div class="block__content block__content--blue">
+    <p>$I: V \to V. I(v) = v, \forall v \in V$.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("identity-transformation");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="zero-transformation">Zero Transformation</span></span>
+  <div class="block__content block__content--blue">
+    <p>$T: V \to W. T(x) = 0, \forall x \in V$.</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <p>$T(cx + y) = 0$.
+$T(cx) + T(y) = 0 + 0 = 0$.</p>
+
+  </div>
+</div>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("zero-transformation");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="kernel-null-space-range-image">Kernel (Null Space), Range (Image)</span></span>
+  <div class="block__content block__content--blue">
+    <p>$T: V \to W$ is a linear transformation.</p>
+
+<p>The <strong>kernel</strong> (or <strong>null space</strong>) of $T$ denoted by $N(T)$, and is defined as:</p>
+
+<p>$$N(T) = \set{v \in V \mid T(v) = 0}$$</p>
+
+<p>The <strong>range</strong> (or <strong>image</strong>) of $T$ is denoted by $R(T)$, and is defined as:</p>
+
+<p>$$R(T)= \set{T(x) \in W \mid x \in V}$$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("kernel-null-space-range-image");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  
+  2.1<span class="keyword" id="2.1" style="visibility: hidden;">2.1</span></span>
+  <div class="block__content block__content--green">
+  <p>$T: V \to W$ is a linear transformation. <br>
+$N(T)$ is a subspace of $V$, and $R(T)$ is a subspace of $W$.</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <p>$x, y \in N(T) \implies T(x) = 0, T(y) = 0$. <br>
+$T(x + y) = T(x) + T(y) = 0 + 0 = 0.$ <br>
+$\therefore x + y \in N(T)$.</p>
+
+<p>$x \in N(T) \implies T(x) = 0, c \in F$. <br>
+$T(cx) = cT(x) = c0 = 0$ <br>
+$\therefore cx \in N(T)$.</p>
+
+<p>$N(T) \leq V$.</p>
+
+  </div>
+</div>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <p>$w_1, w_2 \in R(T) \implies \exists x_1, x_2 \in V, s.t. T(x_1) = w_1, T(x_2) = w_2$. <br>
+$w_1 + w_2 = T(x_1) + T(x_2) = T(x_1 + x_2)$.
+$\therefore (w_1 + w_2) \in R(T)$.</p>
+
+<p>$w \in R(T) \implies \exists x \in V s.t. T(x) = w$. <br>
+$cw = cT(x) = T(cx)$. <br>
+$\therefore cw \in R(T)$.</p>
+
+  </div>
+</div>
+
+  </div><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("2.1");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "thm";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="nullity-rank">Nullity, Rank</span></span>
+  <div class="block__content block__content--blue">
+    <p>$T:V \to W$ is a linear transformation.</p>
+
+<p>The dimension of the null space $N(T)$ is called the <strong>nullity</strong> of $T$ and is denoted by $\nullity{T}$. i.e.</p>
+
+<p>$$\nullity{T} := \dim{N(T)}$$</p>
+
+<p>The dimension of the image $R(T)$ is called the <strong>rank</strong> of $T$ and is denoted by $\rank{T}$. i.e.</p>
+
+<p>$$\rank{T} := \dim{R(T)}$$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("nullity-rank");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>$T: \R^n \to \R^m$. $T(x) = Ax, \forall x \in \R^n$.</p>
+
+<p>$\begin{align*}
+T(cx + y) &amp;= A(cx + y) \br
+&amp;= A(cx) + Ay \br
+&amp;= cAx + Ay \br
+&amp;= cT(x) + T(y)
+\end{align*}$</p>
+
+<p>$\rank{A} = \rank{T}$.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  
+  2.2<span class="keyword" id="2.2" style="visibility: hidden;">2.2</span></span>
+  <div class="block__content block__content--green">
+  <p>$T:V \to W$ is a linear transformation. <br>
+If $\beta = \set{x_1, x_2, &hellip;, x_{n}}$ is a basis of $V$, then</p>
+
+<p>$$R(T) = \spa{T(x_1), T(x_2), &hellip; T(x_n)}$$</p>
+
+  </div><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("2.2");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "thm";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  
+  2.3: <span class="keyword" id="dimension-theorem">Dimension Theorem</span><span class="keyword" id="2.3" style="visibility: hidden;">2.3</span></span>
+  <div class="block__content block__content--green">
+  <p>Let $T: V \to W$ be a linear transformation. <br>
+If $V$ is a finite-dimensional vector space, then</p>
+
+<p>$$\begin{align*}
+\dim V &amp;= \rank{T} + \nullity{T} \br
+&amp;=\dim R(T) + \dim N(T)
+\end{align*}$$</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <p>Let $\dim N(T) = k, N(T) \leq V$, and $\beta = \set{x_1, x_2, &hellip;, x_{k}}$ be a basis of $N(T)$.</p>
+
+<p>Since $N(T) \leq V, \beta$ can be extended to $\gamma $, a basis of $V$. i.e. $\gamma  = \beta \cup \set{y_1, y_2, &hellip;, y_{n-k}} = \set{x_1, &hellip;, x_k, y_1, &hellip;, y_{n-k}}$, where $n = \dim V$.</p>
+
+<p>Need to prove $S = \set{T(v_{k + 1}), T(v_{k + 2}), &hellip;, T(v_{n})}$ is a basis for $R(T)$.</p>
+
+<hr>
+
+<p>First we prove that $S $ generates $R(T)$.</p>
+
+<p>Let $w \in R(T)$, then $\exists x \in v$ s.t. $T(x) = w$.</p>
+
+<p>Since $\beta$ is a basis of $V, \exists c_1, c_2, &hellip;, c_{n} \in F$, s.t. $x = \sum c_ix_i$.</p>
+
+<p>Then</p>
+
+<p>$$T(x) = T(\sum_{i=1}^{n} c_ix_i) = \sum_{i=1}^{n} c_i T(x_i)$$</p>
+
+<p>Since $\forall i = 1, 2, &hellip;, k, T(v_i) = 0$,</p>
+
+<p>$$\begin{align*}
+R(T) &amp;= \spa{T(x_i), &hellip;, T(x_k), T(y_1), &hellip; , T(y_{n-k})} \br
+&amp;= \spa{T(y_1), &hellip;, T(y_{n-k})}
+\end{align*}$$</p>
+
+<p>$\therefore R(T) \subseteq \set{T(y_1), T(y_2), &hellip;, T(y_{ n-k })}$.</p>
+
+<hr>
+
+<p>Next we need to prove this set is linearly independent.</p>
+
+<p>Consider the equation, $a_1T(y_1) + &hellip; + a_{n-k}T(y_{n-k}) = 0$</p>
+
+<p>$\implies T(a_1y_1 + a_2y_2 + &hellip; + a_{n-k} y_{n-k}) = 0$</p>
+
+<p>$\implies \sum_{i=1}^{n} a_iy_i \in N(T)$</p>
+
+<p>Since $\beta = \set{x_1, x_2, &hellip;, x_{k}}$ is a basis of $N(T)$,</p>
+
+<p>$\exists b_1, b_2, &hellip;, b_{k} \in F$ s.t.</p>
+
+<p>$$\sum_{i=1}^{n-k} a_iy_i = b_1x_1 + b_2x_2 + &hellip; + b_{k} x_{k}$$</p>
+
+<p>$-b_1x_1  -b_2x_2  &hellip;  -b_{k} x_{k}  + a_1y_1 + a_2y_2 + &hellip; + a_{n-k} y_{n-k}= 0$(*)</p>
+
+<p>Since $\set{x_1, x_2, &hellip;, x_{k}, y_1, y_2, &hellip;, y_{n-k}}$ is a basis of $V$, it is a linearly independent set, in particular, for equation (*) we get</p>
+
+<p>$$-b_1 = -b_2 = -b_k = a_1 =a_2 =&hellip;= a_{n-k} = 0$$</p>
+
+<p>$\therefore \set{T(y_1), T(y_2), &hellip;, T(y_{ n-k })}$ is a linearly independent set.</p>
+
+<p>In particular, it forms a basis of $R(T)$.</p>
+
+<p>$\therefore \rank{T} = \dim R(T) = n-k$</p>
+
+<p>Recall that</p>
+
+<p>$$\begin{align*}
+\nullity{T} = \dim N(T) = k \br
+\dim V = n
+\end{align*}$$</p>
+
+<p>$\therefore \rank{T} + \nullity{T} = \dim V$</p>
+
+  </div>
+</div>
+
+  </div><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("dimension-theorem");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "thm";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  
+  2.4<span class="keyword" id="2.4" style="visibility: hidden;">2.4</span></span>
+  <div class="block__content block__content--green">
+  <p>Let $T: V \to W$ be linear transformation,</p>
+
+<p>$$T \text{is one-to-one} \iff N(T) = \set{0}$$</p>
+
+  </div><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("2.4");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "thm";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="block block--yellow ">
+  <span class="block__title block__title--yellow">Remarks
+  </span>
+  <div class="block__content block__content--yellow">
+  <p>Null space always contains at least one vector, namely, the null vector $0$.</p>
+
+<p>$$0 \in N(T)$$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="one-to-one">One-to-One</span></span>
+  <div class="block__content block__content--blue">
+    <p>$f: X \to Y$.</p>
+
+<p>$f$ is called a <strong>one-to-one</strong> or <strong>injective</strong> if $\forall x_1, x_2 \in X$,</p>
+
+<p>$$x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$$</p>
+
+<p>Equivalently, $f$ is <strong>one-to-one</strong>, if $\forall x_1, x_2 \in X$,</p>
+
+<p>$$f(x_1)=f(x_2) \implies x_1 = x_2$$</p>
+
+<p>Equivalently, $\forall y \in Y$, there exists <u>exactly one</u> $x \in X$ s.t. $f(x) = y$.</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <p>Assume that $T$ is one-to-one let $x\in N(T) \implies T(x) = 0 =T(0)$.</p>
+
+<p>Since $T$ is one-to-one, $x = 0$.</p>
+
+<p>=================</p>
+
+<p>Assume that $N(T) = \set{0}$</p>
+
+<p>let $x, y \in V, s.t. T(x) = T(y)$</p>
+
+<p>$\implies T(x) - T(y) =0$</p>
+
+<p>$\implies T(x-y) =0$</p>
+
+<p>$\implies x-y \in N(T) = \set{0}$</p>
+
+<p>$\implies x-y = 0$</p>
+
+<p>$\implies x = y$</p>
+
+  </div>
+</div>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("one-to-one");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="onto">Onto</span></span>
+  <div class="block__content block__content--blue">
+    <p>If $f: X \to Y $ is a function with range $X $, that is, if $f(X) = Y $, then $f $ is called <strong>onto</strong>.</p>
+
+<p>Equivalently, $f $ is called <strong>onto</strong> or <strong>surjective</strong> if $\forall y \in Y$, <br></p>
+
+<p>$$\exists x \in X\text{ s.t. }f(x) = y $$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("onto");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  
+  2.5<span class="keyword" id="2.5" style="visibility: hidden;">2.5</span></span>
+  <div class="block__content block__content--green">
+  <p>$V$ and $W$ <u>finite-dimensional</u> and $\dim V = \dim W = n$, then the following are all equivalent:</p>
+
+<ol>
+<li>$T$ is$\oto$</li>
+<li>$T$ is$\ot$</li>
+<li>$\rank{T} = \dim V$</li>
+<li>$\nullity{T} = 0$</li>
+</ol>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <p>$(1) \implies (2)$</p>
+
+<p>Assume $T$ is$\oto$.</p>
+
+<p>$\implies N(T) = {0}$</p>
+
+<p>$\implies \nullity{T} = \dim N(T) = 0$</p>
+
+<p>Now by the dimension theorem, $\nullity{T} + \rank{T} = \dim V$</p>
+
+<p>$\implies \rank{T} = \dim V$</p>
+
+<p>$\dim R(T) = \dim W$</p>
+
+<p>$\because \dim V = \dim W$</p>
+
+<p>$\therefore R(T) \subseteq W$</p>
+
+<p>We have, $R(T)  = W$</p>
+
+<p>FC. $R(T) = W ,T$ is onto</p>
+
+<p>$(ii) \implies (iii)$</p>
+
+<p>Assume that $T$ is onto,
+i.e. $R(T) = W$</p>
+
+<p>i.e. $\rank{T} = \dim W = \dim V$</p>
+
+<p>$(iii) \implies (i)$</p>
+
+<p>Assume that $\rank{T} = \dim V$</p>
+
+<p>$\nullity{T} + \rank{T} = \dim V$</p>
+
+  </div>
+</div>
+
+  </div><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("2.5");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "thm";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  
+  2.6<span class="keyword" id="2.6" style="visibility: hidden;">2.6</span></span>
+  <div class="block__content block__content--green">
+  <p>Let $V$ and $W$ be two vector space over field $F ,\dim V = n $.</p>
+
+<p>Let $\set{x_1, x_2, &hellip;, x_{n}}$ is a basis of $V_0$, Let $\set{w_1, w_2, &hellip;, w_{n}}$ be a set of <u>any vectors</u> in $W$. Then there exists a <u>unique</u> linear transformation $T: V \to W$ s.t. $T(x_i) = w_i, \forall i = 1,2, &hellip;, n$.</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <p>Analysis:</p>
+
+<p>$\beta = \set{x_1, x_2, &hellip;, x_{n}} \subseteq V \to W \supseteq \gamma = \set{w_1, w_2, &hellip;, w_{n}}$</p>
+
+<p>Want to define: $T: V \to W,$ s.t. $T(x_1) = w_1, T(x_2) = w_2, T(x_3) = w_3$</p>
+
+<p>T: $\beta \subseteq V \to \gamma \subseteq W$</p>
+
+<p>You want to extend $T$ to $V \to W$</p>
+
+<p>Define a linear transformation $\R^3$ to $\R^2$ whose image is the line $y = x$ in $\R^2$.</p>
+
+<p>$y = x$</p>
+
+<p>$w = \spa{\set{(1, 1)}}$</p>
+
+<p>$T: \R^3 \to \R^2$</p>
+
+<p>$\beta = \set{e_1, e_2, e_{3}}$</p>
+
+<p>Define $T(e_1) = T(e_2) = T(e_3)$</p>
+
+<p>$R(T) = \spa{T(e_1), T(e_2), T(e_3)} = \spa{\set{(1, 1)}}$</p>
+
+<p>$T(a, b, c) = T(a_1e_1 + a_2e_2 + a_{3} e_{3})$</p>
+
+<p>$= aT(e_1) + bT(e_2) + cT(e_3) = (a+b+c)(1,1)$</p>
+
+<p>Since $x \in V$ be an arbitrary vector. We need to know $T(x)=?$.</p>
+
+<p>Since $\set{x_1, x_2, &hellip;, x_{n}}$ is a basis,
+_
+$\exists$ unique scalars $a_1, a_2, &hellip;, a_{n}$ s.t. $x = \sum_{i=1}^{n} a_i x_i$</p>
+
+<p>We define $T(x)$ as $T(x) := \sum_{i=1}^{n} a_i w_i$(*)</p>
+
+<p>$T$ is linear transformation.</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <p>$x, y \in, c \in F$</p>
+
+<p>$\because \set{x_1, x_2, &hellip;, x_{n}}$ is a basis of $V\exists a_1, a_2, &hellip;, a_{n}$ and $b_1, b_2, &hellip;, b_{n} \in F$, s.t.</p>
+
+<p>$x = \sum\ a_i x_i$
+$x+y = \sum\ b_i x_i$</p>
+
+<p>by definition
+$T(x+y) = \sum_{i=1}^{n}(a_i + b_i) w_i$
+$= c \sum_{i=1}^{n} a_i w_i + \sum_{i=1}^{n} b_iw_i$</p>
+
+<p>so $T$ is a linear transformation.</p>
+
+<p>need to choose $T(x_i) = w_i \forall i$</p>
+
+<p>$x_i = 0x_1 + 0x_2 + &hellip; + 0 x_{i-1} + 1x_i + a_1x_i+1 + a_2x_i+2 + &hellip; + a_{n} x_{n}$.</p>
+
+<p>by definition (*), $T(x_i) = 0w_1 + 0w_2 + &hellip; + 0 w_{i-1} + 1w_i + 0w_i+1 + 0w_i+2 + &hellip; + 0 w_{n}$</p>
+
+<div class="block block--yellow ">
+  <span class="block__title block__title--yellow">Remarks
+  </span>
+  <div class="block__content block__content--yellow">
+  <p>Defining $T$ from basis to entire $V$ is called extending $T$ linearly.</p>
+
+  </div>
+
+<p><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div></p>
+
+<p></div>
+</div></p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <p>Assume that: there is another linear transformation $U: V \to W$ s.t. $U(n_i) = w_i, v_i = 1,2, &hellip;, n$.</p>
+
+<p>We need to show that $U(x) = T(x) \forall x in V$</p>
+
+<p>since $\set{x_1, x_2, &hellip;, x_{n}}$ is a basis of V,</p>
+
+<p>$\exists c_1, c_2, &hellip;, c_{n} \in F$ s.t. $x = \sum_{i=1}^{n} c_ix_i$</p>
+
+<p>Then $U(x)  = U(\sum_{i=1}^{n} c_ix_i) = \sum_{i=1}^{n} U(x_i) = \sum_{i=1}^{n} c_iw_i = T(\sum_{i=1}^{n} c_ix_i) = T(x)$</p>
+
+  </div>
+</div>
+
+<p></div>
+</div></p>
+
+  </div><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("2.6");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "thm";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Corollary
+  </span>
+
+
+  <div class="block__content block__content--green">
+  <p>$\dim V = n$</p>
+
+<p>Let $\set{x_i, &hellip;, x_N}$ be a basis of $V ,\set{w_1, w_2, &hellip;, w_{n}}$ be any subset in $W$.</p>
+
+<p>If $T: V \to W$ and $U:V \to W$ and two linear transformation s.t.</p>
+
+<p>$T(x_i) = U(x_i) = w_i, \forall i = 1, &hellip;, n$</p>
+
+<p>Then $T(x) = U(x), \forall x \in V$.</p>
+
+<p>i.e. $T$ and $U$ are the same linear transformation.</p>
+
+<p>In other words, if two linear transformation from $V$ to $W$ coincide on a basis of $V$, then they coincide everywhere else.</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <p>It follows from the uniqueness of the previous theorem.</p>
+
+  </div>
+</div>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul></div>
+
+
+<p>Find a linear transformation from $\R^3$ to $\R^2$ s.t. $T(1, 0, 0) = (-1, 5)$ and $T(1,1, 0) = (2,3)$</p>
+
+<p>$\set{(1, 0, 0) , (1,1, 0), (0, 0, 1)}$ is a basis of $\R^3$</p>
+
+<p>Choose $T((0, 0, 1))$ to any vector for example $T((0,0,1)) = (0, 0, 0)$.</p>
+
+<p>$(x, y , z) \in R^3$</p>
+
+<p>$T(x,y,z) = $
+$(x,y,z) = (x-y) e_1 + ye + ze_3$
+$= (x-y)(1, 0, 0) + y (1, 1, 0) + z(0, 0, 1)$
+$T(x, y, z) = (x-y)(-1,5) +y(2,3) + 2(0, 0)$
+$=(-x + y+2y, 5x -5y + 3y) = (-x+3y, 5x-2y)$</p>
+      </div>
+    </article>
+    <aside class="navigation--side">
+      <div class="navigation--side__selector">
+        <button class="navigation--side__button navigation--side__button--active" id="navigation--side__button--section" onclick="navigationSideSwitchToSection()">Course Nav.</button>
+        <button class="navigation--side__button" id="navigation--side__button--page" onclick="navigationSideSwitchToPage()">Page Nav.</button>
+        <script>
+          function navigationSideSwitchToSection() {
+            document.getElementById("page-navigation").setAttribute("style","display: none;");
+            document.getElementById("section-navigation").setAttribute("style","display: block;");
+            document.getElementById("navigation--side__button--section").classList.add("navigation--side__button--active");
+            document.getElementById("navigation--side__button--page").classList.remove("navigation--side__button--active");
+          }
+
+          function navigationSideSwitchToPage() {
+            document.getElementById("section-navigation").setAttribute("style","display: none;");
+            document.getElementById("page-navigation").setAttribute("style","display: block;");
+            document.getElementById("navigation--side__button--section").classList.remove("navigation--side__button--active");
+            document.getElementById("navigation--side__button--page").classList.add("navigation--side__button--active");
+          }
+        </script>
+      </div>
+      <ul class="navigation--side__list" id="section-navigation">
+      
+      
+      
+        
+        
+        
+        
+      
+        
+        
+        
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+              <li class="navigation--side__heading"><span class="navigation--side__heading-index">1</span>Vector Spaces</li>
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/1.2/"><span class="navigation--side__index">1.2</span> Vector Spaces</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/d.1/"><span class="navigation--side__index">D.1</span> Discussion</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/1.3/"><span class="navigation--side__index">1.3</span> Subspaces</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/1.4/"><span class="navigation--side__index">1.4</span> Linear Combinations and Systems of Linear Equations</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/1.5/"><span class="navigation--side__index">1.5</span> Linear Dependence and Linear Independence</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/d.2/"><span class="navigation--side__index">D.2</span> Discussion</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/1.6/"><span class="navigation--side__index">1.6</span> Bases and Dimensions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/d.3/"><span class="navigation--side__index">D.3</span> Discussion</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+              <li class="navigation--side__heading"><span class="navigation--side__heading-index">2</span>Linear Transformations and Matrices</li>
+            
+            
+            
+            <li class="navigation--side__item navigation--side__item--current">
+              <a href="https://jimzenn.com/math-115a/2.1/"><span class="navigation--side__index">2.1</span> Linear Transformation</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/2.2/"><span class="navigation--side__index">2.2</span> The Matrix Representation of a Linear Transformation</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/d.4/"><span class="navigation--side__index">D.4</span> Discussion</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/2.3/"><span class="navigation--side__index">2.3</span> Composition of Linear Transformations and Matrix Multiplication</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/2.4/"><span class="navigation--side__index">2.4</span> Invertibility and Isomorphisms</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/2.5/"><span class="navigation--side__index">2.5</span> The Change of Coordinate Matrix</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/d.5/"><span class="navigation--side__index">D.5</span> Discussion</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+              <li class="navigation--side__heading"><span class="navigation--side__heading-index">5</span>Diagonalization</li>
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/5.1/"><span class="navigation--side__index">5.1</span> Eigenvalues and Eigenvectors</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/5.2/"><span class="navigation--side__index">5.2</span> Diagonalizability</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+              <li class="navigation--side__heading"><span class="navigation--side__heading-index">6</span>Inner Product Spaces</li>
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/6.1/"><span class="navigation--side__index">6.1</span> Inner Products and Norms</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/d.6/"><span class="navigation--side__index">D.6</span> Discussion</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/6.2/"><span class="navigation--side__index">6.2</span> Gram-Schmidt Orthogonalization Process</a>
+            </li>
+          
+        
+      
+      </ul>
+      <ul class="navigation--side__list" id="page-navigation">
+        <script>
+          var pageNavigationListDOM = document.getElementById("page-navigation");
+          for (var i = 0; i < keywordsCollector.length; i ++) {
+            pageNavigationListDOM.appendChild(keywordsCollector[i]);
+          }
+        </script>
+      </ul>
+    </aside>
+  </main>
+
+  
+  <div class="pagination">
+    <div class="pagination-wrapper">
+      
+        
+        
+        
+          <a href="https://jimzenn.com/math-115a/d.3/" class="pagination__prev">D.3 Discussion</a>
+        
+      
+      
+        
+        
+        
+          <a href="https://jimzenn.com/math-115a/2.2/" class="pagination__next">2.2 The Matrix Representation of a Linear Transformation</a>
+        
+      
+    </div>
+  </div>
+  
+
+
+  <footer class="footer">
+  <div class="footer__wrapper">
+    <span class="copyright">Copyright 2018 Jim Zenn All rights reserved.</span>
+    <ul class="footer-links">
+      <li>
+        <a href="/Jim_Zenn-CV.pdf">CV</a>
+      </li>
+      <li>
+        <a href="https://jimzenn.com/index.xml" type="application/rss+xml" target="_blank">RSS</a>
+      </li>
+      <li>
+        <a href="https://github.com/Jim-Zenn">code</a>
+      </li>
+      <li>
+        <a href="mailto:zenn@ucla.edu">email</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+
+
+    <div>
+  </body>
+
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] },
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: true, width: "container" }
+    },
+    
+  });
+</script>
+
+<script>
+  shifted = false;
+  container = document.querySelector("#container");
+  var toggle = document.querySelector("#header-menu__toggle");
+  toggle.addEventListener("click", function toggleHeader() {
+    var content = document.querySelector("#collapsable-menu");
+    var menuIcon = document.querySelector("#header__menu-icon");
+    var globalNav = document.querySelector("#header-menu");
+    var header = document.querySelector("#header");
+    this.classList.toggle("header-menu__toggle--active");
+    content.classList.toggle("header-menu--collapsable--active");
+    header.classList.toggle("header--active");
+    container.classList.toggle("container--shifted");
+    menuIcon.classList.toggle("header__menu-icon--shifted");
+    shifted = !shifted;
+    if (shifted) {
+      triggerOffset = window.pageYOffset;
+    };
+  });
+
+  window.addEventListener('scroll', function scrollCloseTrigger() {
+    if (shifted && Math.abs(window.pageYOffset - triggerOffset) > 10) {
+      toggle.click();
+    };
+  });
+
+  container.addEventListener("click", function containerClickTrigger() {
+    if (shifted) {
+      toggle.click();
+    }
+  });
+
+  var collapsableMenuLinks = document.querySelectorAll(".header-menu__list--collapsable a");
+  for (i = 0; i < collapsableMenuLinks.length; i ++) {
+    collapsableMenuLinks[i].addEventListener("click", function(e) {
+      toggle.click();
+      return true;
+    });
+  }
+</script>
+
+
+</html>

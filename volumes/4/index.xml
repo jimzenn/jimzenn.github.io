@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>4 on Jim Zenn</title>
+    <link>https://jimzenn.com/volumes/4/</link>
+    <description>Recent content in 4 on Jim Zenn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Aug 2018 10:34:48 +0800</lastBuildDate>
+    
+	<atom:link href="https://jimzenn.com/volumes/4/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Conditional Expectation and Variance Revisited</title>
+      <link>https://jimzenn.com/math-170b/4.3/</link>
+      <pubDate>Thu, 09 Aug 2018 10:34:48 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/math-170b/4.3/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Derived Distributions</title>
+      <link>https://jimzenn.com/math-170b/4.1/</link>
+      <pubDate>Mon, 06 Aug 2018 10:34:48 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/math-170b/4.1/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

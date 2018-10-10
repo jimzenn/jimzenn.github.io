@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.49" />
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<title>Inner Products and Norms - Jim Zenn</title>
+<meta property="og:title" content="Inner Products and Norms - Jim Zenn">
+
+
+
+  
+
+
+
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-83942334-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3" media="all">
+    
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3" media="all">
+
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3" media="all">
+  </head>
+
+  <body class="note wide" >
+    <header class="header" id="header">
+  
+  <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
+  <div class="header__title">
+    <a class="header__site-logo-link" id="header-menu__toggle">
+      <img class="header__site-logo-image" src="/logo/wire.svg" alt="logo"/>
+    </a>
+  </div>
+  <nav class="header-menu" id="header-menu">
+      <ul class="header-menu__list">
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+          
+        
+          
+            <li class="header-menu__item header-menu__item--dropdown">
+              <a class="header-menu__link">Notes</a>
+              <ul class="header-menu__item-menu">
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/math-170a/main/">Probability Theory</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/math-115a/main/">Linear Algebra</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/math-131a/main/">Analysis</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/math-164/main/">Optimization</a></li>
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/journey/">Journey</a></li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+          
+        
+      </ul>
+  </nav>
+</header>
+<nav class="header-menu--collapsable" id="collapsable-menu">
+  <ul class="header-menu__list--collapsable">
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+      
+    
+      
+        <li class="header-menu__item header-menu__item--dropdown">
+          <a class="header-menu__link">Notes</a>
+          <ul class="header-menu__item-menu">
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/math-170a/main/">Probability Theory</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/math-115a/main/">Linear Algebra</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/math-131a/main/">Analysis</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/math-164/main/">Optimization</a></li>
+            
+          </ul>
+        </li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/journey/">Journey</a></li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+      
+    
+  </ul>
+</nav>
+
+
+    <div class="container" id="container">
+      
+        <div class="container-tag">
+          
+          <b class="container-title">Linear Algebra</b>
+          
+        </div>
+      
+      
+
+
+
+
+
+
+
+<div class="navigation" id="navigation">
+  <div class="navigation__wrapper" id="navigation__toggle">
+    <div class="navigation__left">
+      <span class="navigation__sup-title" style="color: #0052B5">MATH 115A, Section 6.1</span>
+      <span class="navigation__title">Inner Products and Norms</span>
+
+    </div>
+    <div class="navigation__right">
+      <ul class="navigation__list">
+      
+      </ul>
+      <ul class="navigation__list--collapsable">
+      
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  wasStuck = false;
+  window.addEventListener('scroll', function(e) {
+    var header = document.querySelector("#header");
+    var nav = document.querySelector("#navigation");
+    var navWrapper = document.querySelector("#navigation .navigation__wrapper");
+    if (window.scrollY >= header.offsetHeight) {
+      
+      if (!wasStuck) {
+        nav.classList.add("navigation--stuck");
+        navWrapper.classList.add("navigation__wrapper--stuck");
+        wasStuck = true;
+      }
+    } else {
+      if (wasStuck) {
+        nav.classList.remove("navigation--stuck");
+        navWrapper.classList.remove("navigation__wrapper--stuck");
+        wasStuck = false;
+      }
+    }
+  });
+  var toggle = document.querySelector("#navigation__toggle");
+  var list = document.querySelector(".navigation__list--collapsable");
+  toggle.addEventListener("click", function() {
+    this.classList.toggle("navigation__toggle--active");
+    list.classList.toggle("navigation__list--collapsable--active");
+  });
+  var listItems = document.querySelectorAll(".navigation__list--collapsable .navigation__link");
+  for (var i = 0; i < listItems.length; i ++) {
+    listItems[i].addEventListener("click", function() {
+      document.querySelector("#navigation__toggle").click();
+      return true;
+    });
+  }
+</script>
+
+
+
+  <main class="content" role="main">
+    <article class="article">
+      <div class="article__content">
+        <script>
+          keywordsCollector = [];
+          keywordsCounter = 0;
+        </script>
+        <p></p>
+
+<div class="latex-macros">
+  
+    $\newcommand{\br}{\\}$
+
+    $\newcommand{\R}{\mathbb{R}}$
+    $\newcommand{\Q}{\mathbb{Q}}$
+    $\newcommand{\Z}{\mathbb{Z}}$
+    $\newcommand{\N}{\mathbb{N}}$
+    $\newcommand{\C}{\mathbb{C}}$
+    $\newcommand{\P}{\mathbb{P}}$
+    $\newcommand{\F}{\mathbb{F}}$
+    $\newcommand{\L}{\mathcal{L}}$
+    $\newcommand{\spa}[1]{\text{span}(#1)}$
+    $\newcommand{\set}[1]{\{#1\}}$
+    $\newcommand{\emptyset}{\varnothing}$
+    $\newcommand{\otherwise}{\text{ otherwise }}$
+    $\newcommand{\if}{\text{ if }}$
+    $\newcommand{\union}{\cup}$
+    $\newcommand{\intercept}{\cap}$
+    $\newcommand{\abs}[1]{| #1 |}$
+    $\newcommand{\norm}[1]{\left\lVert#1\right\rVert}$
+    $\newcommand{\pare}[1]{\left\(#1\right\)}$
+    $\newcommand{\t}[1]{\text{ #1 }}$
+    $\newcommand{\head}{\text H}$
+    $\newcommand{\tail}{\text T}$
+    $\newcommand{\d}{\text d}$
+    $\newcommand{\limu}[2]{\underset{#1 \to #2}\lim}$
+    $\newcommand{\inv}[1]{{#1}^{-1}}$
+    $\newcommand{\inner}[2]{\langle #1, #2 \rangle}$
+    $\newcommand{\nullity}[1]{\text{nullity}(#1)}$
+    $\newcommand{\rank}[1]{\text{rank}(#1)}$
+    $\newcommand{\tr}[1]{\text{tr}(#1)}$
+    $\newcommand{\oto}{\text{ one-to-one }}$
+    $\newcommand{\ot}{\text{ onto }}$
+    $\newcommand{\Re}[1]{\text{Re}(#1)}$
+    $\newcommand{\Im}[1]{\text{Im}(#1)}$
+
+
+    $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$
+    $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$
+    $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$
+    $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$
+    $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$
+    $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$
+
+    $\newcommand{\vcw}[2]{\begin{matrix} #1 \br #2 \end{matrix}}$
+    $\newcommand{\vce}[3]{\begin{matrix} #1 \br #2 \br #3 \end{matrix}}$
+    $\newcommand{\vcr}[4]{\begin{matrix} #1 \br #2 \br #3 \br #4 \end{matrix}}$
+    $\newcommand{\vct}[5]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \end{matrix}}$
+    $\newcommand{\vcy}[6]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{matrix}}$
+    $\newcommand{\vcu}[7]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{matrix}}$
+
+    $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$
+    $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$
+    $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$
+    $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$
+
+    $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$
+    $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$
+
+    $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$
+    $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$
+    $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$
+    $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$
+    $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$
+    $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$
+  
+</div>
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="inner-product">Inner Product</span></span>
+  <div class="block__content block__content--blue">
+    <p>$F = \R$ or $\C$.</p>
+
+<p>Let $V $be a vector space over a $F$,</p>
+
+<p>A function $\inner{}{} : V \times V \to F$ is called an inner product if it satisfies the following properties:</p>
+
+<ol>
+<li>$\inner{ x + z }{ y } = \inner{ x }{ y } + \inner{ z }{ y }, \forall x, y, z \in V $</li>
+<li>$\inner{ cx }{ y } = c \inner{ x }{ y }, \forall x, y \in V, \forall c \in F $</li>
+<li>$\inner{ x }{ y } = \overline{ \inner{ y }{ x }}$, where $\overline{ z } $ for $z \in F $ means complex conjugate.</li>
+<li>$\inner{ x }{ x } &gt; 0 \if x \neq 0 $</li>
+</ol>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("inner-product");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>$V = \R ^n , F = \R$</p>
+
+<p>$x = (a_1, a_2, &hellip;, a_{ n }) $</p>
+
+<p>$y = (b_1, (b_2, &hellip;, (b_{ n }) $</p>
+
+<p>Define $\inner{ x }{ y } = \sum_{ i=1 }^{ n } a_ib_i $</p>
+
+<p>$z = (c_1, _2, &hellip;, _{ n }) $</p>
+
+<p>$\begin{align*}
+\inner{ x+z }{ y } &amp;= \sum_{ i=1 }^{ n } (a_i + c_i) b_i  \br
+&amp;= \inner{ x }{ y } + \inner{ z }{ y }
+\end{align*}$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>$V = \C^n, F = \C $</p>
+
+<p>$x = (a_1, (a_2, &hellip;, (a_{ n }) , a_i \in \C$</p>
+
+<p>$y = (b_1, (b_2, &hellip;, (b_{ n }), b_i \in \C $</p>
+
+<p>Define $\inner{ x }{ y } = \sum_{ i=1 }^{ n } a_ib_i $</p>
+
+<p>All first three axioms stands,</p>
+
+<p>(iv) $\inner{ x }{ x } = \sum_{ i = 1 }^{ n } a_i \overline{ a_i } = \sum_{ i=1 }^{ n } \abs{ a_i }^2 $</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>$Continuous [0, 1] / \R = f: [0, 1] \to \R, f$is continuous on $[0, 1] $</p>
+
+<p>$f,g \in continuous [0, 1] $</p>
+
+<p>$\inner{ f }{ g } = \int_{ 0 }^{ 1 } f(x) g(x) \d x $</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>$\P_n(x) / \R$</p>
+
+<p>$\inner{ f(x)}{ g(x)}  = \int_{ 0 }^{ 1 } f(x) g(x) \d x$</p>
+
+<p>$\P_n(x)/ \R \cong \R^{n+1} $</p>
+
+<p>$a_0 + a_1x + &hellip; + a_nx^n $i.e. ${\Vcr{ a_1 }{ a_2 }{ &hellip; }{ a_n }} $</p>
+
+<p>$f(x), g(x) \in \P_n(x)$</p>
+
+<p>$\inner{ f(x)}{ g(x)} = \sum_{ i=1 }^{ n } a_ib_i $</p>
+
+<p>$f(x) = \sum_{ i=0 }^{ n } a_i x^i$</p>
+
+<p>$\inner{ f(x)}{ g(x)} = \sum_{ i=1 }^{ n } a_ib_i$</p>
+
+<p>$f(x) = \sum_{ i=0 }^{ n } a_i x^i $</p>
+
+<p>$g(x)= \sum_{ i=0 }^{ n } b_i x^i $</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  
+  6.1<span class="keyword" id="6.1" style="visibility: hidden;">6.1</span></span>
+  <div class="block__content block__content--green">
+  <p>Let $\inner{ }{  }$ be an inner product space over $F$, then</p>
+
+<ol>
+<li>$\inner{x}{y + w} = \inner{x}{y} + \inner{x}{w} , \forall x, y, w \in V, \forall x, y \in V, \forall c \in F$</li>
+<li>$\inner{x}{cy} = \overline{c} \inner{x}{y} , \forall x, y \in V, \forall c \in F$</li>
+<li>$\inner{0}{x} = \inner{x}{0} = 0, \forall x \in V, 0 \in V $</li>
+<li>$\inner{x}{x} = 0 \iff x = 0$</li>
+<li>$\if \inner{x}{y} = \inner{x}{z}, \forall x \in V$, then $y = z $(notice: <u>for all</u> $x$ in $V$)</li>
+</ol>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <p>1. $\inner{x}{  y + w} = \inner{ x}{  y } + \inner{ x}{  w} , \forall x, y, w \in V, \forall x, y \in V, \forall c \in F$</p>
+
+<p>$\begin{align*}
+\inner{x}{  y + w} &amp;= \overline{ \inner{y+w}{  x}} \br
+&amp;= \overline{ \inner{y}{  x} + \inner{w}{  x}} \br
+&amp;= \overline{ \inner{y}{  x}} + \overline{ \inner{w}{  x}} \br
+&amp;= \inner{x}{  y} + \inner{x}{  w}
+\end{align*}$</p>
+
+<p><br></p>
+
+<p>2. $\inner{x}{  cy} = \overline{ c } \inner{x}{  y} , \forall x, y \in V, \forall c \in F$</p>
+
+<p>$\begin{align*}
+\inner{x}{  cy} &amp;= \overline{ \inner{cy}{  x}} \br
+&amp;= \overline{ c\inner{y}{  x}} \br
+&amp;= \overline{ c } \overline{ \inner{y}{  x}} \br
+&amp; = \overline{ c } \inner{x}{  y}
+\end{align*}$</p>
+
+  </div>
+</div>
+
+<p><br></p>
+
+<p>3. $\inner{0}{  x} = \inner{x}{  0} = 0, \forall x \in V, 0 \in V $</p>
+
+<p>$\begin{align*}
+\inner{0}{  x} &amp;= \inner{0 \cdot x}{ x}  \br
+&amp;= 0 \inner{x}{  x} = 0
+\end{align*}$</p>
+
+<p><br></p>
+
+<p>4. $\inner{x}{  x} = 0 \iff x = 0$</p>
+
+<p>Assume $\inner{x}{  x} = 0 $</p>
+
+<p>$x = 0 \implies \inner{0}{  0} = 0$ by $(3)  x= 2x \implies x= 0$</p>
+
+<p>By contradiction assume that $x \neq 0 $, then by definition of inner product $\inner{x}{  y} &gt; 0y$.</p>
+
+<p><br></p>
+
+<p>5. $\if \inner{x}{  y} = \inner{x}{  z} \forall x \in V$, then $y = z $</p>
+
+<p>$\implies \inner{ x}{  y} - \inner{x}{  z}  = 0 $</p>
+
+<p>$\implies \inner{x}{  y-z} = 0 , \forall x \in V$</p>
+
+<p>choose $x = y -z $</p>
+
+<p>$\implies \inner{y -z}{  y -z} = 0$</p>
+
+<p>$\implies y - z= 0$ by $(4) $</p>
+
+<p>$\implies = z $</p>
+
+<p>$\inner{ y}{ x} = \inner{z }{ x } \forall x \in V $</p>
+
+<p>$\implies y = 2 $</p>
+
+  </div><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("6.1");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "thm";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="norm-of-a-vector">Norm of a Vector</span></span>
+  <div class="block__content block__content--blue">
+    <p>$V $is a inner product space over a field $F $, let $x \in V$. The <strong>norm</strong> of $x$ is defined as $\norm{ x } = \sqrt{ \inner{x}{  x}} $</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("norm-of-a-vector");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>$\R^n$, inner product space with usual dot product. $x = (a_1, _2, &hellip;, _{ n }) $</p>
+
+<p>$\norm{ x } = \sqrt{ a^2_1 + a^2_2 + &hellip; + a^2_n } $</p>
+
+<p>$\begin{align*}
+\norm{ x } &amp;= \sqrt{ \inner{ x}{  x}} \br
+&amp;= \sqrt{ \sum_{ i = 1 }{n} a_i a_i}  \br
+&amp;= \sqrt{ \sum_{ i = 1 }{n} a_i^2} \br
+\end{align*}$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>$M_{n \times n}(\R) $</p>
+
+<p>$\inner{A}{  B} = \tr(B^* A) = \tr(\inv{ B }A) $</p>
+
+<p>$\inner{A}{  A}  = \sum_{ j=1 }^{ n } \sum_{ i = 1 }^{ n } a_{ij}^2, a_{ij} \in \R, \overline{ B } = B, B^* = (\overline{ B })^t = B^t $</p>
+
+<p>$\norm{ A } = \sqrt{A, A} = \sqrt{ \sum_{ j=1 }^{ n  } \sum_{ i = 1 }^{ n } a_{ij}^2 }$</p>
+
+<p>Frobenius norm of a matrix.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="block block--blue block--status"><div class="block__status block__status--extra"></div>
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="conjugate-transpose">Conjugate Transpose</span></span>
+  <div class="block__content block__content--blue">
+    <p>Let $A \in M_{m \times n} (F)$. We define the <strong>conjugate transpose</strong> or <strong>adjoint</strong> of A to be the $n \times m$ matrix $A^* $such that $(A^*)_{ij} = \overline{A_{ji}}, \forall i, j$.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("conjugate-transpose");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--blue block--status"><div class="block__status block__status--extra"></div>
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="frobenius-inner-product">Frobenius Inner Product</span></span>
+  <div class="block__content block__content--blue">
+    <p>Let $V = M_{n \times n} (F)$, and define $\inner{ A }{ B } = tr(B^* A)$ for $A, B \in V. $(Recall that the trace of a matrix $A $ is defined by $\tr{ A } = \sum_{ i=1 }^{ n } A_{ii} $). This inner product on $M_{n \times n} (F) $ is called the <strong>Frobenius inner product</strong>.</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <p>Let $A, B, C \in V $.</p>
+
+<p>1. $\inner{ A + B }{ C } = \inner{ A }{ C } + \inner{ B }{ C }$</p>
+
+<p>$\begin{align*}
+\inner{ A + B }{ C } &amp;= \tr{ C^* (A + B)} = \tr{ C^*A + C^*B } \br
+&amp;= \tr{ C^*A } + \tr{ C^*B } = \inner{ A }{ C } + \inner{ B }{ C }
+\end{align*}$</p>
+
+<p>2. $\inner{ cA }{ B } = c \inner{ A }{ B } $</p>
+
+<p>$\begin{align*}
+\inner{ cA }{ B } &amp;= \tr{ B^*(cA)} = \tr{ c(B^*A)} = c\tr{ B^*A } \br
+&amp;= c \inner{ A }{ B }
+\end{align*}$</p>
+
+<p>3. $\overline{ \inner{ A }{ B }} = \inner{ B }{ A } $</p>
+
+<p>(*) It&rsquo;s a little complicated, prove it yourself. Hint: $tr(AB) = tr(BA) $.</p>
+
+<p>4. $\inner{ A }{ A } &gt; 0 $</p>
+
+<p>$\begin{align*}
+\inner{ A }{ A } &amp;= \tr{ A^*A } = \sum_{ i = 1 }^{ n } (A^* A)_{ii} = \sum_{ i=1 }^{ n } \sum_{ k = 1 }^{ n } (A^*)_{ik}A_{ki} \br
+&amp;=\sum_{ i=1 }^{ n } \sum_{ k = 1 }^{ n } \overline{ A_{ik}}A_{ki} = \sum_{ i=1 }^{ n } \sum_{ k = 1 }^{ n } \abs{ A_{ki}}^2 &gt; 0
+\end{align*}$</p>
+
+<p>Therefore $\inner{ A }{ B } $ is an inner product over $V $.</p>
+
+  </div>
+</div>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("frobenius-inner-product");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="inner-product-space">Inner Product Space</span></span>
+  <div class="block__content block__content--blue">
+    <p>A <u>vector space</u> $V $ over $F $ endowed with a specific inner product is called an <strong>inner product space</strong>.</p>
+
+<p>If $F = \C $, we call $V $ a <strong>complex inner product space</strong>. <br>
+If $F = \R $, we call $V $ a <strong>real inner product space</strong>.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("inner-product-space");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  
+  6.2<span class="keyword" id="6.2" style="visibility: hidden;">6.2</span></span>
+  <div class="block__content block__content--green">
+  <p>$V $is inner product space over $F $.</p>
+
+<ol>
+<li>$\norm{ cx } = \abs{ c } \norm{ x } \forall x \in V, v \in F$</li>
+<li>$\norm{ x } = 0 \iff x = 0$</li>
+<li>(Cauchy-Schwarz Inequality) $\abs{ \inner{x}{  y}} \leq \norm{ x } \norm{ y }, \forall x, y \in V$</li>
+<li>(Triangle Inequality) $\norm{ x + y } \leq \norm{ x } + \norm{ y }, \forall x, y \in V$</li>
+</ol>
+
+  </div><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("6.2");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "thm";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+<p>$\begin{align*}
+\norm{ x } &amp;= \sqrt{\inner{ x}{  x}} \br
+&amp;= \sqrt{ c \cdot \overline{ c } \inner{ x}{  x}} \br
+&amp;= \sqrt{ \abs{ c }^2 \inner{x}{  x}} \br
+&amp;= \abs{ c } \inner{x}{x}
+\end{align*}$</p>
+
+<p>$x = 0 \iff \inner{x}{  x} = 0 \iff \sqrt{ \inner{x}{  x}} = 0 \iff \norm{ x }$</p>
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="orthogonal">Orthogonal</span></span>
+  <div class="block__content block__content--blue">
+    <p>Let $V $ be a inner product space over a field $F $.</p>
+
+<p>A set of vector $S \subseteq V $ called an <strong>orthogonal</strong> is $\inner{ v}{  w} = 0, \forall v, w \in S$ and $v \neq w$.</p>
+
+<p>A vector $x \in V$ is called a unit vector if $\norm{ x } = 1 $</p>
+
+<p>A set of vectors $S \subseteq V $ is called a <strong>orthogonal</strong> set if $S $is orthogonal i.e. $\inner{v}{  w} = 0  \forall v, u \in S, v \neq w$ and all the vectors of $S $are unit vectors i.e. $\norm{ v } = 1 v, v \in S $.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("orthogonal");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--yellow ">
+  <span class="block__title block__title--yellow">Remarks
+  </span>
+  <div class="block__content block__content--yellow">
+  <p>We know that $\inner{0}{  x} = \inner{x}{  0} = 0, \forall x \in V$</p>
+
+<p>i.e. $0$ vector is orthogonal to every other vector.</p>
+
+<p>Because of this a orthogonal set $S$ may contain the null vector, In particular orthogonal set may not be linearly independent in general.</p>
+
+<p>However, if $S $ is orthonormal set, then $0 \notin S$, because $\norm{ 0 } \neq 1$.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+      </div>
+    </article>
+    <aside class="navigation--side">
+      <div class="navigation--side__selector">
+        <button class="navigation--side__button navigation--side__button--active" id="navigation--side__button--section" onclick="navigationSideSwitchToSection()">Course Nav.</button>
+        <button class="navigation--side__button" id="navigation--side__button--page" onclick="navigationSideSwitchToPage()">Page Nav.</button>
+        <script>
+          function navigationSideSwitchToSection() {
+            document.getElementById("page-navigation").setAttribute("style","display: none;");
+            document.getElementById("section-navigation").setAttribute("style","display: block;");
+            document.getElementById("navigation--side__button--section").classList.add("navigation--side__button--active");
+            document.getElementById("navigation--side__button--page").classList.remove("navigation--side__button--active");
+          }
+
+          function navigationSideSwitchToPage() {
+            document.getElementById("section-navigation").setAttribute("style","display: none;");
+            document.getElementById("page-navigation").setAttribute("style","display: block;");
+            document.getElementById("navigation--side__button--section").classList.remove("navigation--side__button--active");
+            document.getElementById("navigation--side__button--page").classList.add("navigation--side__button--active");
+          }
+        </script>
+      </div>
+      <ul class="navigation--side__list" id="section-navigation">
+      
+      
+      
+        
+        
+        
+        
+      
+        
+        
+        
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+              <li class="navigation--side__heading"><span class="navigation--side__heading-index">1</span>Vector Spaces</li>
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/1.2/"><span class="navigation--side__index">1.2</span> Vector Spaces</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/d.1/"><span class="navigation--side__index">D.1</span> Discussion</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/1.3/"><span class="navigation--side__index">1.3</span> Subspaces</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/1.4/"><span class="navigation--side__index">1.4</span> Linear Combinations and Systems of Linear Equations</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/1.5/"><span class="navigation--side__index">1.5</span> Linear Dependence and Linear Independence</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/d.2/"><span class="navigation--side__index">D.2</span> Discussion</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/1.6/"><span class="navigation--side__index">1.6</span> Bases and Dimensions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/d.3/"><span class="navigation--side__index">D.3</span> Discussion</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+              <li class="navigation--side__heading"><span class="navigation--side__heading-index">2</span>Linear Transformations and Matrices</li>
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/2.1/"><span class="navigation--side__index">2.1</span> Linear Transformation</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/2.2/"><span class="navigation--side__index">2.2</span> The Matrix Representation of a Linear Transformation</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/d.4/"><span class="navigation--side__index">D.4</span> Discussion</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/2.3/"><span class="navigation--side__index">2.3</span> Composition of Linear Transformations and Matrix Multiplication</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/2.4/"><span class="navigation--side__index">2.4</span> Invertibility and Isomorphisms</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/2.5/"><span class="navigation--side__index">2.5</span> The Change of Coordinate Matrix</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/d.5/"><span class="navigation--side__index">D.5</span> Discussion</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+              <li class="navigation--side__heading"><span class="navigation--side__heading-index">5</span>Diagonalization</li>
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/5.1/"><span class="navigation--side__index">5.1</span> Eigenvalues and Eigenvectors</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/5.2/"><span class="navigation--side__index">5.2</span> Diagonalizability</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+              <li class="navigation--side__heading"><span class="navigation--side__heading-index">6</span>Inner Product Spaces</li>
+            
+            
+            
+            <li class="navigation--side__item navigation--side__item--current">
+              <a href="https://jimzenn.com/math-115a/6.1/"><span class="navigation--side__index">6.1</span> Inner Products and Norms</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/d.6/"><span class="navigation--side__index">D.6</span> Discussion</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-115a/6.2/"><span class="navigation--side__index">6.2</span> Gram-Schmidt Orthogonalization Process</a>
+            </li>
+          
+        
+      
+      </ul>
+      <ul class="navigation--side__list" id="page-navigation">
+        <script>
+          var pageNavigationListDOM = document.getElementById("page-navigation");
+          for (var i = 0; i < keywordsCollector.length; i ++) {
+            pageNavigationListDOM.appendChild(keywordsCollector[i]);
+          }
+        </script>
+      </ul>
+    </aside>
+  </main>
+
+  
+  <div class="pagination">
+    <div class="pagination-wrapper">
+      
+        
+        
+        
+          <a href="https://jimzenn.com/math-115a/5.2/" class="pagination__prev">5.2 Diagonalizability</a>
+        
+      
+      
+        
+        
+        
+          <a href="https://jimzenn.com/math-115a/d.6/" class="pagination__next">D.6 Discussion</a>
+        
+      
+    </div>
+  </div>
+  
+
+
+  <footer class="footer">
+  <div class="footer__wrapper">
+    <span class="copyright">Copyright 2018 Jim Zenn All rights reserved.</span>
+    <ul class="footer-links">
+      <li>
+        <a href="/Jim_Zenn-CV.pdf">CV</a>
+      </li>
+      <li>
+        <a href="https://jimzenn.com/index.xml" type="application/rss+xml" target="_blank">RSS</a>
+      </li>
+      <li>
+        <a href="https://github.com/Jim-Zenn">code</a>
+      </li>
+      <li>
+        <a href="mailto:zenn@ucla.edu">email</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+
+
+    <div>
+  </body>
+
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] },
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: true, width: "container" }
+    },
+    
+  });
+</script>
+
+<script>
+  shifted = false;
+  container = document.querySelector("#container");
+  var toggle = document.querySelector("#header-menu__toggle");
+  toggle.addEventListener("click", function toggleHeader() {
+    var content = document.querySelector("#collapsable-menu");
+    var menuIcon = document.querySelector("#header__menu-icon");
+    var globalNav = document.querySelector("#header-menu");
+    var header = document.querySelector("#header");
+    this.classList.toggle("header-menu__toggle--active");
+    content.classList.toggle("header-menu--collapsable--active");
+    header.classList.toggle("header--active");
+    container.classList.toggle("container--shifted");
+    menuIcon.classList.toggle("header__menu-icon--shifted");
+    shifted = !shifted;
+    if (shifted) {
+      triggerOffset = window.pageYOffset;
+    };
+  });
+
+  window.addEventListener('scroll', function scrollCloseTrigger() {
+    if (shifted && Math.abs(window.pageYOffset - triggerOffset) > 10) {
+      toggle.click();
+    };
+  });
+
+  container.addEventListener("click", function containerClickTrigger() {
+    if (shifted) {
+      toggle.click();
+    }
+  });
+
+  var collapsableMenuLinks = document.querySelectorAll(".header-menu__list--collapsable a");
+  for (i = 0; i < collapsableMenuLinks.length; i ++) {
+    collapsableMenuLinks[i].addEventListener("click", function(e) {
+      toggle.click();
+      return true;
+    });
+  }
+</script>
+
+
+</html>

@@ -1,0 +1,85 @@
+.jumbotron {
+  position: relative;
+  z-index: 2;
+  user-select: none;
+  pointer-events: none;
+  display: block;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-color: #DDD;
+  background-position: center center;
+  background-size: 100% auto;
+  margin-bottom: 70px;
+  transition: height 0.8s cubic-bezier(0.645, 0.045, 0.355, 1), border-radius 0.42s var(--jerk-curve);
+}
+
+.jumbotron__text {
+  display: block;
+  position: absolute;
+  right: 12px;
+  bottom: 4px;
+  color: white;
+  opacity: .7;
+  line-height: 12.8px;
+  transition: bottom 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.jumbotron__text span {
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+}
+
+.jumbotron__title {
+  font-size: 12.8px;
+  font-weight: 500;
+}
+
+.jumbotron__copyright {
+  font-size: .6rem;
+}
+
+#jumbotron__expand-button {
+  pointer-events: all;
+  cursor: pointer;
+  outline: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: transparent;
+  border: 0;
+}
+
+@keyframes jumbotron__expand-button-breath {
+  30%   { opacity: .3; }
+  40%   { opacity: .4; }
+}
+
+#jumbotron__expand-button svg {
+  margin: auto;
+  fill: white;
+  width: 12px;
+  height: 12px;
+  animation: jumbotron__expand-button-breath 4s infinite alternate;
+  transition: transform 0.8s linear;
+}
+
+@media (min-width: 1069px) {
+  .jumbotron {
+    height: 256px;
+  }
+}
+
+
+@media (max-width: 1068px) {
+  .jumbotron {
+    height: 256px;
+  }
+}
+
+@media (max-width: 735px) {
+  .jumbotron {
+    height: 200px;
+    background-size: cover;
+  }
+}
