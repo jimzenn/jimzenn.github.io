@@ -190,10 +190,10 @@
       url: "http://www.athenasc.com/prob-supp.html"
 -
   course-number: "MATH 134"
-  course-title: "Linear and Nonlinear Systems"
+  course-title: "Dynamics"
   course-units: 4
   course-color: "#761029"
-  course-introduction: ""
+  course-introduction: "The original name of this class is <i>Linear and Nonlinear Systems of Differential Equations</i>. However, the title Dynamics, although more general, is a better and more beautiful title. Here we mainly talk about ordinary differential equations."
   course-info:
     -
       field: "Instructor"

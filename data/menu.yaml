@@ -3,28 +3,28 @@
   name: "Home"
   url: "/"
 -
-  identifier: "courses"
-  name: "Courses"
+  identifier: "notes"
+  name: "Notes"
   menu:
     -
       identifier: "math-170a"
-      name: "MATH 170A"
+      name: "Probability Theory"
       url: "/math-170a/main/"
     -
       identifier: "math-115a"
-      name: "MATH 115A"
+      name: "Linear Algebra"
       url: "/math-115a/main/"
     -
       identifier: "math-131a"
-      name: "MATH 131A"
+      name: "Analysis"
       url: "/math-131a/main/"
-    -
-      identifier: "math-134"
-      name: "MATH 134"
-      url: "/math-134/main/"
+    # -
+    #   identifier: "math-134"
+    #   name: "Systems of Differential Equations"
+    #   url: "/math-134/main/"
     -
       identifier: "math-164"
-      name: "MATH 164"
+      name: "Optimization"
       url: "/math-164/main/"
 -
   identifier: "journey"
