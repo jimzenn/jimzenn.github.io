@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.49.1" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -300,39 +300,28 @@ if (!doNotTrack) {
 </div>
 
 <div class="block block--blue ">
-  <span class="block__title block__title--blue">Definition</span>
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="optimization-problems">Optimization Problems</span></span>
   <div class="block__content block__content--blue">
     <p>In the optimization problem</p>
 
 <p>$$\begin{align*}
-\text{minimize } &amp;f(x)  \br
-\text{subject to } &amp; x \in \Omega
+\text{minimize } &amp;f(\b{x})  \br
+\text{subject to } &amp; \b{x} \in \Omega
 \end{align*}$$</p>
 
-<p>The function \$f : \R\^n \to \R \$ that we wish to minimize is a real-valued function, and is called the <strong>objective function</strong>, or <strong>cost function</strong>.</p>
+<p>The function $f:\R^n\to\R$ that we wish to minimize is a real-valued function, and is called the <strong>objective function</strong>, or <strong>cost function</strong>.</p>
 
-<p>The vector \$\b{x} \$ is an $n$-vector of independent variables, that is, $\b{x} = \transpose{(x_1, x_2, &hellip;, x_{ n })} \in \R^n$. This vector is called the minimizer of \$f \$ over \$\Omega \$.</p>
+<p>The vector $\b{x} $ is an $n$-vector of independent variables, that is, $\b{x} = \transpose{(x_1, x_2, &hellip;, x_{ n })} \in \R^n$. This vector is called the <strong>minimizer</strong> of $f $ over $\Omega $.</p>
 
-<p>The variables \$x_1, x_2, &hellip;, x_{ n } \$ are often referred to as <strong>decision variables</strong>.</p>
+<p>The variables $x_1, x_2, &hellip;, x_{ n } $ are often referred to as <strong>decision variables</strong>.</p>
 
-<p>The set \$\Omega \$ is a subset of \$\R\^n \$ called the <strong>constraint set</strong> of <strong>feasible set</strong>.</p>
+<p>The set $\Omega$ is a subset of $\R^n$ called the <strong>constraint set</strong> of <strong>feasible set</strong>.</p>
 
-  </div>
+<p><br></p>
 
-  <ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul></div>
+<p>If $\Omega = \R^n$, then the problem is referred to as an <strong>unconstrained optimization problem</strong>.</p>
 
-
-<div class="block block--blue ">
-  <span class="block__title block__title--blue">Definition: <span class="keyword" id="feasible-direction">Feasible Direction</span></span>
-  <div class="block__content block__content--blue">
-    <p>A vector $\b{d} \in \R^n, \b{d} \neq \b{0} $, is a <strong>feasible direction</strong> at $\b{x} \in \Omega$ if there exists $\alpha_0 &gt; 0 $ such that $\b{x} + \alpha \b{d} \in \Omega$ for all $\alpha \in [0, \alpha_0] $.</p>
+<p>Otherwise, the problem is referred to as an <strong>constrained optimization problem</strong>.</p>
 
   </div>
 
@@ -347,7 +336,7 @@ if (!doNotTrack) {
       
       (function() {
         var keywordListDOM = document.getElementById("page-navigation");
-        var keywordDOM = document.getElementById("feasible-direction");
+        var keywordDOM = document.getElementById("optimization-problems");
         var keywordItemDOM = document.createElement("li");
         keywordItemDOM.setAttribute("class", "navigation--side__item");
         var keywordLinkDOM = document.createElement("a");
@@ -366,73 +355,99 @@ if (!doNotTrack) {
     </script></div>
 
 
-<div class="block block--green block--status"><div class="block__status block__status--warning"></div>
-  <span class="block__title block__title--green">Theorem
-  : <span class="keyword" id="first-order-necessary-condition-fonc">First-Order Necessary Condition (FONC)</span></span>
-  <div class="block__content block__content--green">
-  <p>Let $\Omega $ be a subset of $\R^n $ and $f \in C^1 $ a real-valued function on $\Omega $. If $\b{x}^{*} $ is a local minimizer of $f $ over $\Omega $, then for any feasible direction $\d  $ at $x^{*} $, we have</p>
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="local-minimizer">Local Minimizer</span></span>
+  <div class="block__content block__content--blue">
+    <p>$f: \R^n \to \R , \Omega \subseteq \R^n $.</p>
 
-<p>$$\transpose{ \b{d}} \nabla f(x^{*}) \geq 0$$</p>
+<p>A point $\b{x}^* \in \Omega$ is a <strong>local minimizer</strong> of $f $ over $\Omega $ if</p>
 
-<div class="proof">
-  <div class="proof__heading">
-    <span class="proof__title">Proof
-      <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
-  </div>
-  <div class="proof__content">
-    <p>Define</p>
+<p>$\exists \epsilon &gt; 0 $ such that $\forall \b{x} \in \Omega \setminus \set{ \b{x}^* }, \norm{ \b{x} - \b{x}^* } &lt; \epsilon$ implies $f(\b{x}) \geq f(\b{x}^*)$.</p>
 
-<p>$$\b{x}(\alpha) = \b{x}^{*} + \alpha \b{d} \in \Omega $$</p>
+<p>In particular, if</p>
 
-<p>Note that $\b{x}(0) = \b{x}^* $. Define the composite function</p>
+<p>$\norm{ \b{x} - \b{x}^* } &lt; \epsilon$ implies $f(\b{x}) &gt; f(\b{x}^*)$.</p>
 
-<p>$$\phi(\alpha) = f(\b{x}(\alpha)) $$.</p>
-
-<p>Then, by Taylor&rsquo;s theorem,</p>
-
-<p>$$\begin{align*}
-&amp;f(x^* + \alpha \b{d}) - f(x^*) \br
-=&amp; \phi(\alpha) - \phi(0) \br
-=&amp; \phi&rsquo;(0) \alpha + o(\alpha) \br
-=&amp; \alpha \transpose{ \b{d}} \nabla f(\b{x} (0)) + o(\alpha)
-\end{align*}$$</p>
+<p>The point $\b{x}^* $ is a <strong>strict local minimizer</strong>.</p>
 
   </div>
-</div>
 
-  </div><script>
-      
-      (function() {
-        var keywordListDOM = document.getElementById("page-navigation");
-        var keywordDOM = document.getElementById("first-order-necessary-condition-fonc");
-        var keywordItemDOM = document.createElement("li");
-        keywordItemDOM.setAttribute("class", "navigation--side__item");
-        var keywordLinkDOM = document.createElement("a");
-        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
-        var keywordIndexDOM = document.createElement("span");
-        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
-        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
-
-        keywordsCounter += 1;
-        keywordIndexDOM.innerHTML = "thm";
-        keywordLinkDOM.appendChild(keywordIndexDOM);
-        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
-        keywordItemDOM.appendChild(keywordLinkDOM);
-        keywordsCollector.push(keywordItemDOM);
-      })();
-    </script><ul class="block__footer">
+  <ul class="block__footer">
     <li class="block__footer-item">
       <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
     </li>
     <li class="block__footer-item">
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
-  </ul>
-</div>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("local-minimizer");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="global-minimizer">Global Minimizer</span></span>
+  <div class="block__content block__content--blue">
+    <p>A point $\b{x}^* \in \Omega $ is a <strong>global minimizer</strong> of $f $ over $\Omega $ if</p>
+
+<p>$$\forall \b{x} \in \Omega \setminus \set{ \b{x}^* }, f(\b{x}) \geq f(\b{x}^*) .$$</p>
+
+<p>In particular, if</p>
+
+<p>$$f(\b{x}) &gt; f(\b{x}^*).$$</p>
+
+<p>$\b{x}^*$ is a <strong>strict global minimizer</strong>.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("global-minimizer");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fw3xdnv6bnj31d60qy424.jpg" alt="global and local minimizers" /></p>
       </div>
     </article>
     <aside class="navigation--side">
@@ -623,6 +638,21 @@ if (!doNotTrack) {
           
             
             
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-164/5.6/"><span class="navigation--side__index">5.6</span> Taylor Series</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
               
               <li class="navigation--side__heading"><span class="navigation--side__heading-index">6</span>Basics of Set-Constrained and Unconstrained Optimization</li>
             
@@ -630,6 +660,21 @@ if (!doNotTrack) {
             
             <li class="navigation--side__item navigation--side__item--current">
               <a href="https://jimzenn.com/math-164/6.1/"><span class="navigation--side__index">6.1</span> Introduction</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-164/6.2/"><span class="navigation--side__index">6.2</span> Conditions for Local Minimizers</a>
             </li>
           
         
@@ -653,9 +698,15 @@ if (!doNotTrack) {
         
         
         
-          <a href="https://jimzenn.com/math-164/5.3/" class="pagination__prev">5.3 The derivative Matrix</a>
+          <a href="https://jimzenn.com/math-164/5.6/" class="pagination__prev">5.6 Taylor Series</a>
         
       
+      
+        
+        
+        
+          <a href="https://jimzenn.com/math-164/6.2/" class="pagination__next">6.2 Conditions for local minimizers</a>
+        
       
     </div>
   </div>

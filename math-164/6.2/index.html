@@ -9,8 +9,8 @@
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
-<title>A Discussion about Proofs - Jim Zenn</title>
-<meta property="og:title" content="A Discussion about Proofs - Jim Zenn">
+<title>Conditions for local minimizers - Jim Zenn</title>
+<meta property="og:title" content="Conditions for local minimizers - Jim Zenn">
 
 
 
@@ -136,7 +136,7 @@ if (!doNotTrack) {
       
         <div class="container-tag">
           
-          <b class="container-title">Analysis</b>
+          <b class="container-title">Optimization</b>
           
         </div>
       
@@ -151,8 +151,8 @@ if (!doNotTrack) {
 <div class="navigation" id="navigation">
   <div class="navigation__wrapper" id="navigation__toggle">
     <div class="navigation__left">
-      <span class="navigation__sup-title" style="color: #8100bd">MATH 131A, Section 2.8</span>
-      <span class="navigation__title">A Discussion About Proofs</span>
+      <span class="navigation__sup-title" style="color: #327658">MATH 164, Section 6.2</span>
+      <span class="navigation__title">Conditions for Local Minimizers</span>
 
     </div>
     <div class="navigation__right">
@@ -231,7 +231,7 @@ if (!doNotTrack) {
     $\newcommand{\min}[1]{\text{max}(#1)}$
     $\newcommand{\supr}[1]{\text{sup}(#1)}$
     $\newcommand{\infi}[1]{\text{inf}(#1)}$
-    $\newcommand{\set}[1]{\{#1\}}$
+    $\newcommand{\set}[1]{\left\{#1\right\}}$
     $\newcommand{\emptyset}{\varnothing}$
     $\newcommand{\otherwise}{\text{ otherwise }}$
     $\newcommand{\if}{\text{ if }}$
@@ -246,6 +246,11 @@ if (!doNotTrack) {
     $\newcommand{\tail}{\text T}$
     $\newcommand{\d}{\text d}$
     $\newcommand{\limu}[2]{\underset{#1 \to #2}\lim}$
+    $\newcommand{\der}[2]{\frac{\d #1}{\d #2}}$
+    $\newcommand{\derw}[2]{\frac{\d #1^2}{\d^2 #2}}$
+    $\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}$
+    $\newcommand{\pderw}[2]{\frac{\partial^2 #1}{\partial #2^2}}$
+    $\newcommand{\pderws}[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}$
     $\newcommand{\inv}[1]{{#1}^{-1}}$
     $\newcommand{\inner}[2]{\langle #1, #2 \rangle}$
     $\newcommand{\nullity}[1]{\text{nullity}(#1)}$
@@ -258,6 +263,11 @@ if (!doNotTrack) {
     $\newcommand{\floor}[1]{\lfloor#1\rfloor}$
     $\newcommand{\Re}[1]{\text{Re}(#1)}$
     $\newcommand{\Im}[1]{\text{Im}(#1)}$
+    $\newcommand{\dom}[1]{\text{dom}(#1)}$
+    $\newcommand{\fnext}[1]{\overset{\sim}{#1}}$
+    $\newcommand{\transpose}[1]{#1^{\text{T}}}$
+    $\newcommand{\b}[1]{\boldsymbol{#1}}$
+    $\newcommand{\None}[1]{}$
 
 
     $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$
@@ -295,11 +305,181 @@ if (!doNotTrack) {
   
 </div>
 
-<div class="block block--gray ">
-  <span class="block__title block__title--gray">Example
-  </span>
-  <div class="block__content block__content--gray">
-    <p>Prove $\lim \frac{ 1 }{ n^2 } = 0 $.</p>
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="the-first-order-derivative-of-%5Cnonef%5Crn%5Cto%5Cr">The First-Order Derivative of $\None{}f:\R^n\to\R$</span></span>
+  <div class="block__content block__content--blue">
+    <p>The <strong>first-order derivative</strong> of $f $ denoted $Df $ is</p>
+
+<p>$$Df \triangleq  \left[\pder{ f }{ x_1 }, \pder{ f }{ x_2 }, &hellip; ,  \pder{ f }{ x_n }\right]$$</p>
+
+<p>Note that the gradient $\nabla f $ is just the transpose of $Df $; that is</p>
+
+<p>$$\nabla f = \transpose{ Df } $$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("the-first-order-derivative-of-%5Cnonef%5Crn%5Cto%5Cr");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="hessian-the-second-order-derivative-of-%5Cnonef%5Crn%5Cto%5Cr">Hessian (The Second-Order Derivative) of $\None{}f:\R^n\to\R$</span></span>
+  <div class="block__content block__content--blue">
+    <p>$$\b{F}(\b{x}) = D^2 \triangleq {\Mee{ \pderw{ f }{ x_1 } (\b{x})}{ &hellip; }{ \pderws{ f }{ x_n }{ x_1 } (\b{x})}{ \vdots }{  }{ \vdots }{ \pderws{ f }{ x_1 }{ x_n } (\b{x})}{ &hellip; }{ \pderw{ f }{ x_n } (\b{x})}}$$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("hessian-the-second-order-derivative-of-%5Cnonef%5Crn%5Cto%5Cr");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="feasible-direction">Feasible Direction</span></span>
+  <div class="block__content block__content--blue">
+    <p>A vector $\b{d} \in \R^n, \b{d} \neq \b{0} $, is a <strong>feasible direction</strong> at $\b{x} \in \Omega$ if</p>
+
+<p>$$\exists \alpha_0 &gt; 0\text{ such that }\forall \alpha \in [0, \alpha_0], \pare{\b{x} + \alpha \b{d}} \in \Omega$$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("feasible-direction");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="directional-derivative">Directional Derivative</span></span>
+  <div class="block__content block__content--blue">
+    <p>Let $f: \R^n \to \R $ be a real-valued function and let $\b{d} $ be a feasible direction at $\b{x} \in \Omega $. The <strong>directional derivative</strong> of $f$ in the direction $\b{d} $, denoted $\pder{ f }{ \b{d}} $, is the real-valued function defined by</p>
+
+<p>$$\pder{ f }{ \b{d}} (\b{x}) \triangleq \limu{ \alpha }{ 0 } \frac{ f(\b{x} + \alpha \b{d})  -  f(\b{x})}{ \alpha }$$</p>
+
+<p>In particular, if $\norm{ \b{d}} = 1$, then $\pder{ f }{ \b{d}} $ is the rate of increase of $f $ at $\b{x} $ in the direction $\b{d} $.</p>
+
+<p>To compute the above derivative, suppose that $\b{x} $ and $\b{d} $ are given. Then $f(x + \alpha \b{d}) $ is a function of $\alpha $, and</p>
+
+<p>$$\pder{ f }{ \b{d}} (\b{x}) = \der{ }{ \alpha } f(\b{x} + \alpha \b{d}){\biggr\rvert}_{ \alpha = 0 } =  \nabla \transpose{ f(\b{x})} \b{d} =  \inner{ \nabla f(x)}{\b{d}}  = \transpose{ \b{d}} \nabla f(\b{x})$$</p>
+
+<p>In summary, if $\b{d} $ is a unit vector, then $\inner{ \nabla f(x)}{\b{d}} $ is the rate of increase of $f $ at the point $\b{x} $ in the direction $\b{d} $.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("directional-derivative");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  : <span class="keyword" id="first-order-necessary-condition-fonc">First-Order Necessary Condition (FONC)</span></span>
+  <div class="block__content block__content--green">
+  <p>$\Omega \subseteq \R^n, f \in \mathcal{C}^1(\Omega)$.</p>
+
+<p>If $\b{x}^{*}$ is a local minimizer of $f$ over $\Omega$, then for any feasible direction $\b{d}$ at $x^{*}$, we have</p>
+
+<p>$$\inner{ \nabla f(x^{*})}{ \b{d}} \geq 0$$</p>
 
 <div class="proof">
   <div class="proof__heading">
@@ -311,24 +491,47 @@ if (!doNotTrack) {
     <span class="proof__expand">[<a>expand</a>]</span>
   </div>
   <div class="proof__content">
-    <p>Fix $\epsilon &gt; 0 $, want to find $N $ s.t. $n &gt; N \implies \abs{ \frac{ 1 }{ n^2 } - 0 } &lt; \epsilon$.</p>
+    <p>Define</p>
+
+<p>$$\b{x}(\alpha) = \b{x}^{*} + \alpha \b{d} \in \Omega $$</p>
+
+<p>Note that $\b{x}(0) = \b{x}^* $. Define the composite function</p>
+
+<p>$$\phi(\alpha) = f(\b{x}(\alpha)) $$.</p>
+
+<p>Then, by Taylor&rsquo;s theorem,</p>
 
 <p>$$\begin{align*}
-\abs{ \frac{ 1 }{ n^2 } - 0 } &amp;&lt; \epsilon \br
-\frac{ 1 }{ n^2 } &amp;&lt; \epsilon \br
-n^2 &amp;&gt; \frac{ 1 }{ \epsilon } \br
+&amp;f(x^* + \alpha \b{d}) - f(x^*) \br
+=&amp; \phi(\alpha) - \phi(0) \br
+=&amp; \phi&rsquo;(0) \alpha + o(\alpha) \br
+=&amp; \alpha \transpose{ \b{d}} \nabla f(\b{x} (0)) + o(\alpha)
 \end{align*}$$</p>
 
-<p>Since $n &gt; 0$, $n &gt; \frac{ 1 }{ \sqrt[  ]{ \epsilon }} $.</p>
-
-<p>Choose $N = \ceil{ \frac{ 1 }{ \sqrt[  ]{ \epsilon }}}$, then $n &gt; N, \abs{ \frac{ 1 }{ n^2 } - 0 } &lt; \epsilon$.</p>
-
   </div>
 </div>
 
-  </div>
+  </div><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("first-order-necessary-condition-fonc");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
 
-  <ul class="block__footer">
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "thm";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script><ul class="block__footer">
     <li class="block__footer-item">
       <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
     </li>
@@ -336,71 +539,6 @@ n^2 &amp;&gt; \frac{ 1 }{ \epsilon } \br
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul>
-
-</div>
-
-
-<div class="block block--gray ">
-  <span class="block__title block__title--gray">Example
-  </span>
-  <div class="block__content block__content--gray">
-    <p>Prove $\lim \frac{ 4n^3 + 3n }{ n^3 - 6 } = 4 $.</p>
-
-<div class="proof">
-  <div class="proof__heading">
-    <span class="proof__title">Proof
-      <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
-  </div>
-  <div class="proof__content">
-    <p>Fix $\epsilon &gt; 0 $, want to find $N $ s.t. $n &gt; N \implies \abs{ \frac{ 4n^3 + 3n }{ n^3 - 6 } - 4 } &lt; \epsilon $.</p>
-
-<p>$\abs{ \frac{ 3n + 24 }{ n^3 - 6 }} &lt; \epsilon$</p>
-
-<p>let $n &gt; 2$,</p>
-
-<p>$\frac{ 3n + 24 }{ n^3 - 6 } &lt; \epsilon$</p>
-
-<p>We scale the left hand side to be:</p>
-
-<p>$\frac{ 3n + 24 }{ n^3 - 6 } &lt; \frac{ 27n }{ \frac{ 1 }{ 2 } n^3 }$</p>
-
-<p>to make this true, $\begin{cases}
-27n &gt; 3n+24 \br
-\frac{ 1 }{ 2 }n^3 &lt; n^3 -6
-\end{cases}$</p>
-
-<p>we get $\begin{cases}
-n &gt; 1 \br
-n &gt; \sqrt[ 3 ]{ 12 }
-\end{cases}$</p>
-
-<p>i.e. along with previous $n &gt; 2$, we choose $n &gt; 3$.</p>
-
-<p>Now we check $\frac{ 27n }{ \frac{ 1 }{ 2 }n^3 } &lt; \epsilon $</p>
-
-<p>$n &gt; \frac{ \sqrt[  ]{ 54 }}{ \epsilon } $.</p>
-
-<p>When $N = \max{ \set{ 3, \ceil{ \frac{ \sqrt[  ]{ 54 }}{ \epsilon }}}}$, we have
- &gt; N \implies \abs{ \frac{ 4n^3 + 3n }{ n^3 - 6 } - 4 } &lt; \epsilon $.</p>
-
-  </div>
-</div>
-
-  </div>
-
-  <ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-
 </div>
       </div>
     </article>
@@ -437,21 +575,36 @@ n &gt; \sqrt[ 3 ]{ 12 }
         
         
         
-      
-        
-        
-        
-        
           
             
             
               
-              <li class="navigation--side__heading"><span class="navigation--side__heading-index">1</span>Introduction</li>
+              <li class="navigation--side__heading"><span class="navigation--side__heading-index">1</span>Methods of Proof and Some Notation</li>
             
             
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-131a/1.1/"><span class="navigation--side__index">1.1</span> The Set N of Natural Numbers</a>
+              <a href="https://jimzenn.com/math-164/1.1/"><span class="navigation--side__index">1.1</span> Introduction to Optimization</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-164/1.2/"><span class="navigation--side__index">1.2</span> Review of Linear Algebra</a>
             </li>
           
         
@@ -466,52 +619,7 @@ n &gt; \sqrt[ 3 ]{ 12 }
             
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-131a/1.2/"><span class="navigation--side__index">1.2</span> The Set Q of Rational Numbers</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-131a/1.3/"><span class="navigation--side__index">1.3</span> The Set R of Rational Numbers</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-131a/d.1/"><span class="navigation--side__index">D.1</span> Discussion</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-131a/1.4/"><span class="navigation--side__index">1.4</span> The Completeness Axiom</a>
+              <a href="https://jimzenn.com/math-164/d.1/"><span class="navigation--side__index">D.1</span> Review of Linear Algebra</a>
             </li>
           
         
@@ -524,12 +632,126 @@ n &gt; \sqrt[ 3 ]{ 12 }
             
             
               
-              <li class="navigation--side__heading"><span class="navigation--side__heading-index">2</span>Sequences</li>
+              <li class="navigation--side__heading"><span class="navigation--side__heading-index">2</span>Vector Spaces and Matrices</li>
             
             
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-131a/2.7/"><span class="navigation--side__index">2.7</span> Limits of Sequences</a>
+              <a href="https://jimzenn.com/math-164/2.1/"><span class="navigation--side__index">2.1</span> Real Vector Spaces</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-164/2.2/"><span class="navigation--side__index">2.2</span> Rank of a Matrix</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+              <li class="navigation--side__heading"><span class="navigation--side__heading-index">3</span>Transformations</li>
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-164/3.4/"><span class="navigation--side__index">3.4</span> Quadratic Forms</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+              <li class="navigation--side__heading"><span class="navigation--side__heading-index">5</span>Elements of Calculus</li>
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-164/5.1/"><span class="navigation--side__index">5.1</span> Sequences and Limits</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-164/5.2/"><span class="navigation--side__index">5.2</span> Differentiability</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-164/5.3/"><span class="navigation--side__index">5.3</span> The Derivative Matrix</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-164/5.6/"><span class="navigation--side__index">5.6</span> Taylor Series</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+              <li class="navigation--side__heading"><span class="navigation--side__heading-index">6</span>Basics of Set-Constrained and Unconstrained Optimization</li>
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-164/6.1/"><span class="navigation--side__index">6.1</span> Introduction</a>
             </li>
           
         
@@ -544,208 +766,7 @@ n &gt; \sqrt[ 3 ]{ 12 }
             
             
             <li class="navigation--side__item navigation--side__item--current">
-              <a href="https://jimzenn.com/math-131a/2.8/"><span class="navigation--side__index">2.8</span> A Discussion About Proofs</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-131a/2.9/"><span class="navigation--side__index">2.9</span> Limit Theorems for Sequences</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-131a/d.2/"><span class="navigation--side__index">D.2</span> Discussion</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-131a/2.10/"><span class="navigation--side__index">2.10</span> Monotone Sequences and Cauchy Sequences</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-131a/2.11/"><span class="navigation--side__index">2.11</span> Subsequences</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-131a/d.3/"><span class="navigation--side__index">D.3</span> Discussion</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-131a/2.15/"><span class="navigation--side__index">2.15</span> Alternating Series and Integral Tests</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-              
-              <li class="navigation--side__heading"><span class="navigation--side__heading-index">3</span>Continuity</li>
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-131a/3.17/"><span class="navigation--side__index">3.17</span> Continuous Functions</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-131a/d.4/"><span class="navigation--side__index">D.4</span> Discussion</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-131a/3.18/"><span class="navigation--side__index">3.18</span> Properties of Continuous Functions</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-131a/3.19/"><span class="navigation--side__index">3.19</span> Uniform Continuity</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-131a/3.20/"><span class="navigation--side__index">3.20</span> Limits of Functions</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-              
-              <li class="navigation--side__heading"><span class="navigation--side__heading-index">5</span>Differentiation</li>
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-131a/5.28/"><span class="navigation--side__index">5.28</span> Basic Properties of the Derivative</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-131a/5.29/"><span class="navigation--side__index">5.29</span> The Mean Value Theorem</a>
+              <a href="https://jimzenn.com/math-164/6.2/"><span class="navigation--side__index">6.2</span> Conditions for Local Minimizers</a>
             </li>
           
         
@@ -769,15 +790,9 @@ n &gt; \sqrt[ 3 ]{ 12 }
         
         
         
-          <a href="https://jimzenn.com/math-131a/2.7/" class="pagination__prev">2.7 Limits of Sequences</a>
+          <a href="https://jimzenn.com/math-164/6.1/" class="pagination__prev">6.1 Introduction</a>
         
       
-      
-        
-        
-        
-          <a href="https://jimzenn.com/math-131a/2.9/" class="pagination__next">2.9 Limit Theorems for Sequences</a>
-        
       
     </div>
   </div>
