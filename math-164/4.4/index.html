@@ -9,8 +9,8 @@
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
-<title>Discussion - Jim Zenn</title>
-<meta property="og:title" content="Discussion - Jim Zenn">
+<title>Neighborhoods - Jim Zenn</title>
+<meta property="og:title" content="Neighborhoods - Jim Zenn">
 
 
 
@@ -136,7 +136,7 @@ if (!doNotTrack) {
       
         <div class="container-tag">
           
-          <b class="container-title">MATH 170A</b>
+          <b class="container-title">MATH 164</b>
           
         </div>
       
@@ -151,8 +151,8 @@ if (!doNotTrack) {
 <div class="navigation" id="navigation">
   <div class="navigation__wrapper" id="navigation__toggle">
     <div class="navigation__left">
-      <span class="navigation__sup-title" style="color: #10AD2C">MATH 170A, Section D.2</span>
-      <span class="navigation__title">Discussion</span>
+      <span class="navigation__sup-title" style="color: #327658">MATH 164, Section 4.4</span>
+      <span class="navigation__title">Neighborhoods</span>
 
     </div>
     <div class="navigation__right">
@@ -231,7 +231,7 @@ if (!doNotTrack) {
     $\newcommand{\min}[1]{\text{max}(#1)}$
     $\newcommand{\supr}[1]{\text{sup}(#1)}$
     $\newcommand{\infi}[1]{\text{inf}(#1)}$
-    $\newcommand{\set}[1]{\{#1\}}$
+    $\newcommand{\set}[1]{\left\{#1\right\}}$
     $\newcommand{\emptyset}{\varnothing}$
     $\newcommand{\otherwise}{\text{ otherwise }}$
     $\newcommand{\if}{\text{ if }}$
@@ -246,6 +246,11 @@ if (!doNotTrack) {
     $\newcommand{\tail}{\text T}$
     $\newcommand{\d}{\text d}$
     $\newcommand{\limu}[2]{\underset{#1 \to #2}\lim}$
+    $\newcommand{\der}[2]{\frac{\d #1}{\d #2}}$
+    $\newcommand{\derw}[2]{\frac{\d #1^2}{\d^2 #2}}$
+    $\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}$
+    $\newcommand{\pderw}[2]{\frac{\partial^2 #1}{\partial #2^2}}$
+    $\newcommand{\pderws}[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}$
     $\newcommand{\inv}[1]{{#1}^{-1}}$
     $\newcommand{\inner}[2]{\langle #1, #2 \rangle}$
     $\newcommand{\nullity}[1]{\text{nullity}(#1)}$
@@ -258,6 +263,11 @@ if (!doNotTrack) {
     $\newcommand{\floor}[1]{\lfloor#1\rfloor}$
     $\newcommand{\Re}[1]{\text{Re}(#1)}$
     $\newcommand{\Im}[1]{\text{Im}(#1)}$
+    $\newcommand{\dom}[1]{\text{dom}(#1)}$
+    $\newcommand{\fnext}[1]{\overset{\sim}{#1}}$
+    $\newcommand{\transpose}[1]{#1^{\text{T}}}$
+    $\newcommand{\b}[1]{\boldsymbol{#1}}$
+    $\newcommand{\None}[1]{}$
 
 
     $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$
@@ -295,289 +305,14 @@ if (!doNotTrack) {
   
 </div>
 
-<div class="block block--gray ">
-  <span class="block__title block__title--gray">Example
-  </span>
-  <div class="block__content block__content--gray">
-    <p>$\Omega$ is a sample space, $A, B \subset \Omega$ are events. We know $P(A)=0.55$, $P(B^c)=0.35$, and $P(A\cup B) = 0.75$.</p>
-
-<p>$P(B) = 1-P(B^c)=1-0.35=0.65$</p>
-
-<p>$P(A\cup B) = P(A)+P(B)-P(A\cap B)$</p>
-
-<p>$0.75 = 0.55+0.65-P(A\cap B)$</p>
-
-  </div>
-
-  <ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-
-</div>
-
-
-<div class="block block--gray ">
-  <span class="block__title block__title--gray">Example: Magical 4-sided die
-    
-  </span>
-  <div class="block__content block__content--gray">
-    <p>A magical 4-sided die is rolled twice. Let $S$ be the sum of the two rolls.
-We are told that the probability that $S=k$ is proportional to $k$ , for $k = 2,3,4,5,6,7,8$.<br>
-Moreover, all possible ways to give sum k are equally likely.<br>
-1.construct an appropriate probibility model. <br>
-2.Find the probability that doubles are rolled.</p>
-
-<p>There is a fixed constant $c$ s.t. $P(k)= ck$ for $k = 2, &hellip;, 8$ How to find $c$?</p>
-
-<p>because all these events forms a partition of the sample space,</p>
-
-<p>(a)</p>
-
-<p>$$
-\begin{align*}
-P(\Omega) &amp;= P(s=2) + P(2=3) + &hellip; + P(s=8) \br
-1 &amp;= 2c+3c+&hellip; +8c \br
-1 &amp;= 35c \br
-c &amp;= \frac1{35}
-\end{align*}
-$$</p>
-
-<p>$P(s=k) = \frac k {35} for k = 2,3,4, &hellip;, 8$</p>
-
-<p>(b)</p>
-
-<p>$P(\text{Double 1s}) = P(s=2) = \frac 2{35}$</p>
-
-<p>$P(s=4) = {(2,2), (1,3), (3, 1)}$</p>
-
-<p>given all possible ways to give sum $k$ are equally likely,</p>
-
-<p>$P(\text{Double 2s}) = \frac13 P(s=4) = \frac13 \frac 4{35}$</p>
-
-<p>$P(\text{Double 3s}) = \frac13 P(s=6) = \frac13 \frac 6{35}$</p>
-
-<p>$P(\text{Double 4s}) = P(s=8) = \frac 8{35}$</p>
-
-<p>$P(\text{rolling doubles})= &hellip;$</p>
-
-  </div>
-
-  <ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-
-</div>
-
-
-<div class="block block--gray ">
-  <span class="block__title block__title--gray">Example: Conditional probability
-    
-  </span>
-  <div class="block__content block__content--gray">
-    <p>we roll 2 fair six-sided die.</p>
-
-<p><strong>GRID DIAGRAM</strong></p>
-
-<p>(a) find the probability that doubles were rolled.</p>
-
-<p>$\Omega=\set{(i, j) | i,j = 1,2,&hellip;6}$
-$P(\text{roll doubles}))= \frac16$</p>
-
-<p>(b) Given that the sum of the rolls is 4 or less, find the conditional probability that doubles were rolled.</p>
-
-<p>Let $S$ be the sum, $D =$ event that doubles were rolled.</p>
-
-<p>$P(D|S \leq 4) = \frac{P(D\cap (S\leq 4))}{P(S\leq 4)}$</p>
-
-<p>(c) Find the probability that at least one die lands 6.</p>
-
-<p>let A be the event that at least on die lands 6.</p>
-
-<p>$P(A) = P(\text{first roll is 6}) + P(\text{second roll is 6}) - P(\text{both land 6})=\frac{11}{36}$</p>
-
-<p>(d) Give that you do not roll doubles, find the conditional probability that at least one die lands 6.
-let D be the event you roll doubles.</p>
-
-<p>$P(A|D^c)=\frac{P(A\cap D^c)}{P(D^c)} = \frac{\frac{11}{36}-\frac{1}{36}}{1-\frac{6}{36}}=\frac13$</p>
-
-  </div>
-
-  <ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-
-</div>
-
-
-<div class="block block--gray ">
-  <span class="block__title block__title--gray">Example: Tests
-    
-  </span>
-  <div class="block__content block__content--gray">
-    <p>A new test has been developed for determining whether a student is overstressed. The test is $95\%$ accurate if the student is not overstressed; and $85\%$ if the student is.<br>
-We know that $99.5\%$ of students are overstressed. Given that a particular student tests negative, what is the probability that the test is accurate?</p>
-
-<p><img src="/images/test-problems.png" alt="Test Problem Partition" /></p>
-
-<p>$N = P(\text{test negative})$,<br>
-$A = P(\text{test accurate})$,<br>
-$B = P(\text{student is overstressed})$</p>
-
-<p>$P(A|N) = \frac{P(A\cap N)}{P(N)} = \frac{P(A\cap N)}{P(N|B)P(B)+P(N|B^c)P(B^c)} = \frac{0.005\times 0.95}{0.005\times 0.95+0.995\times 0.15} = $</p>
-
-  </div>
-
-  <ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-
-</div>
-
-
-<div class="block block--gray ">
-  <span class="block__title block__title--gray">Example: Independence
-    
-  </span>
-  <div class="block__content block__content--gray">
-    <p>A source  transmits a signal through a noisy channel. each simbol is a $0$ or a $1$ with probabilities $p$ and $1-p$, and is recieved incorrectly with probabilities $\epsilon_0$ and $\epsilon_1$ respectively. Transmissions and errors all independent.</p>
-
-<p>(a) What is the probabilities that the $k$th symbol is accurately received. (call it event A)</p>
-
-<p>$z = k$th transmitted symbol is 0</p>
-
-<p>$$
-\begin{align*}
-P(A) &amp;= P(A|z)P(z) + P(A|z^c)P(z^c) \br
-&amp;=(1-\epsilon)p + (1-\epsilon)(1-p)
-\end{align*}
-$$</p>
-
-<p>(b) Given that the k^th symbol was received accurately, what&rsquo;s the probability that the $k$th symbol submitted was a zero.</p>
-
-<p>$$
-P(Z|A) = \frac{P(A|Z)P(Z)}{P(A)} = \frac{(1-\epsilon_0)p}{(1\epsilon_0)p + (1-\epsilon_0)(1-p)}
-$$</p>
-
-<p>(c) What&rsquo;s the probability that 1011 is correctly received.</p>
-
-<p>$P(\text{1 is correctly received}) = 1\epsilon_1$<br>
-$P(\text{0 is correctly received}) = 1\epsilon_0$</p>
-
-<p>$$
-\begin{align*}
-&amp;P(\text{1011 correctly received}) \br
-&amp;= P(\text{1 is correctly received})^3P(\text{0 is correctly received}) \br
-&amp;= (1-\epsilon_1)^3(1-\epsilon)
-\end{align*}
-$$</p>
-
-<p>(d) suppose each symbol is transmitted 3 times, and the received symbol is decided by majority rule.
-What is the probability that a zero is correctly recieved.</p>
-
-<p>$\begin{align*}
-P(\text{zero received}) &amp;= P(000) + P(100) + P(010) + P(001) \br
-&amp;= (1-\epsilon_0)^3 + 3\epsilon_0(1-\epsilon_0)^2
-\end{align*}$</p>
-
-  </div>
-
-  <ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-
-</div>
-
-
-<div class="block block--gray ">
-  <span class="block__title block__title--gray">Example
-  </span>
-  <div class="block__content block__content--gray">
-    <p>Let $A$ and $B$ be events with $A\subset B$. Can $A$ and $B$ be independent?</p>
-
-<p>Yes, if $B = \Omega$, then</p>
-
-<p>$P(A\cap \Omega) = P(A) - P(A) \cdot 1 = P(A) \cdot P(\Omega)$</p>
-
-  </div>
-
-  <ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-
-</div>
-
-
-<div class="block block--gray ">
-  <span class="block__title block__title--gray">Example
-  </span>
-  <div class="block__content block__content--gray">
-    <p>We know that $A$ and $B$ are independent, and that $A$ and $C$ are independent. Does it follow that $A$ and $B\cup C$ are independent?</p>
-
-<p>No, it does not follow.</p>
-
-<p>A = {HH, TH}
-B = {HH, HT}
-C = {HH, TT}</p>
-
-<p>$P(A) = P(B) = P(C) = \frac12, P(B\cup C) = \frac34$</p>
-
-<p>$P(A\cap(B\cup C)) = P(HH) = \frac14 \neq \frac13 \frac34 = P(A)P(B\cup C)$</p>
-
-<p>But,
-$P(A\cap B) = P(HH) = \frac14 = \frac12 \frac12 = P(A)P(B)$</p>
-
-<p>and similarly for A and C.</p>
-
-  </div>
-
-  <ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-
-</div>
-
-
 <div class="block block--blue ">
-  <span class="block__title block__title--blue">Definition: <span class="keyword" id="mutually-independent">Mutually Independent</span></span>
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="neighborhoods">Neighborhoods</span></span>
   <div class="block__content block__content--blue">
-    <p>$A, B, C$ are mutually independent if<br>
-1.The pairs$(A,B),(A,C),(B,C)$ all independent
-2.$P(A\cap B\cap C) = P(A)P(B)P(C)$</p>
+    <p>A <strong>neighborhood</strong> of a point $\b{x} \in \R^n $ is the set</p>
+
+<p>$$\set{ \b{y} \in \R^n : \norm{ \b{y} - \b{x}} &lt; \epsilon} $$</p>
+
+<p>where $\epsilon $ is some positive number. The neighborhood is also called the <strong>ball</strong> with the radius $\epsilon $ and center $\b{x} $.</p>
 
   </div>
 
@@ -592,7 +327,7 @@ $P(A\cap B) = P(HH) = \frac14 = \frac12 \frac12 = P(A)P(B)$</p>
       
       (function() {
         var keywordListDOM = document.getElementById("page-navigation");
-        var keywordDOM = document.getElementById("mutually-independent");
+        var keywordDOM = document.getElementById("neighborhoods");
         var keywordItemDOM = document.createElement("li");
         keywordItemDOM.setAttribute("class", "navigation--side__item");
         var keywordLinkDOM = document.createElement("a");
@@ -611,17 +346,12 @@ $P(A\cap B) = P(HH) = \frac14 = \frac12 \frac12 = P(A)P(B)$</p>
     </script></div>
 
 
-<div class="block block--gray ">
-  <span class="block__title block__title--gray">Example
-  </span>
-  <div class="block__content block__content--gray">
-    <p>Suppose $A,B, C$ are mutually independent, show that A and $B\cup C$ are independent (contrast this with previous example, we have a stronger hypothesis here!)</p>
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="interior-points">Interior Points</span></span>
+  <div class="block__content block__content--blue">
+    <p>A point $\b{x} \in S$ is said to be an <strong>interior point</strong> of the set $S$ if the set $S$ contains some neighborhood of $\b{x}$, that is, if all points within some neighborhood of $\b{x} $ are also in $S $.</p>
 
-<p>$P(A\cap(B\cup C))$<br>
-$= P((A\cap B) \cup (A\cap C))$<br>
-$= P(A\cap B)+P(A\cap) - P(A\cap B \cap C)$<br>
-$= P(A)(P(B) + P(C) -P(B)P(C))$<br>
-$= P(A)(P(B) + P(C) - P(B\cap C))$</p>
+<p>The set of all the interior points of $S$ is called the <strong>interior</strong> of $S $.</p>
 
   </div>
 
@@ -632,8 +362,145 @@ $= P(A)(P(B) + P(C) - P(B\cap C))$</p>
     <li class="block__footer-item">
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
-  </ul>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("interior-points");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
 
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="boundary-points">Boundary Points</span></span>
+  <div class="block__content block__content--blue">
+    <p>A point $\b{x} $ is said to be a <strong>boundary point</strong> of the set $S $ if <u>every</u> neighborhood of $\b{x} $ contains a point in $S $ and a point not in $S $.</p>
+
+<p>Note that a boundary point of $S $ may or may not be an element of $S $. The set of all boundary points of $S $ is called the boundary of $S $.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("boundary-points");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="open-sets-and-closed-sets">Open Sets and Closed Sets</span></span>
+  <div class="block__content block__content--blue">
+    <p>A set $S $ is said to be <strong>open</strong> if it contains a neighborhood of each of its points, that is, if each of its points is an interior point, or equivalently, if $S $ contains no boundary points.</p>
+
+<p>A set $S $ is said to be <strong>closed</strong> if it contains its boundary. We can show that a set is closed if and only if its complement is open.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("open-sets-and-closed-sets");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  : <span class="keyword" id="theorem-of-weierstrass">Theorem of Weierstrass</span></span>
+  <div class="block__content block__content--green">
+  <p>$f: \Omega \to \R $, $f $ is a continuous function, $\Omega \subseteq \R^n $ is a compact set.</p>
+
+<p>$$\exists \b{x}_0 \in \Omega\text{ such that } \forall x \in \Omega, f(\b{x} _0) \leq f(\b{x}). $$</p>
+
+<p>In other words, $f $ achieves its minimum on $\Omega $.</p>
+
+  </div><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("theorem-of-weierstrass");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "thm";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
 </div>
       </div>
     </article>
@@ -674,27 +541,12 @@ $= P(A)(P(B) + P(C) - P(B\cap C))$</p>
             
             
               
-              <li class="navigation--side__heading"><span class="navigation--side__heading-index">1</span>Sample Space and Probability</li>
+              <li class="navigation--side__heading"><span class="navigation--side__heading-index">1</span>Methods of Proof and Some Notation</li>
             
             
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/1.1/"><span class="navigation--side__index">1.1</span> Sets</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/d.1/"><span class="navigation--side__index">D.1</span> Discussion</a>
+              <a href="https://jimzenn.com/math-164/1.1/"><span class="navigation--side__index">1.1</span> Introduction to Optimization</a>
             </li>
           
         
@@ -714,7 +566,7 @@ $= P(A)(P(B) + P(C) - P(B\cap C))$</p>
             
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/1.2/"><span class="navigation--side__index">1.2</span> Probabilistic Models</a>
+              <a href="https://jimzenn.com/math-164/1.2/"><span class="navigation--side__index">1.2</span> Review of Linear Algebra</a>
             </li>
           
         
@@ -729,7 +581,25 @@ $= P(A)(P(B) + P(C) - P(B\cap C))$</p>
             
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/1.3/"><span class="navigation--side__index">1.3</span> Conditional Probability</a>
+              <a href="https://jimzenn.com/math-164/d.1/"><span class="navigation--side__index">D.1</span> Review of Linear Algebra</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+              <li class="navigation--side__heading"><span class="navigation--side__heading-index">2</span>Vector Spaces and Matrices</li>
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-164/2.1/"><span class="navigation--side__index">2.1</span> Real Vector Spaces</a>
             </li>
           
         
@@ -744,7 +614,7 @@ $= P(A)(P(B) + P(C) - P(B\cap C))$</p>
             
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/1.4/"><span class="navigation--side__index">1.4</span> Total Probability Theorem and Bayes&#39; Rule</a>
+              <a href="https://jimzenn.com/math-164/2.2/"><span class="navigation--side__index">2.2</span> Rank of a Matrix</a>
             </li>
           
         
@@ -755,11 +625,14 @@ $= P(A)(P(B) + P(C) - P(B\cap C))$</p>
         
           
             
+            
+              
+              <li class="navigation--side__heading"><span class="navigation--side__heading-index">3</span>Transformations</li>
             
             
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/1.5/"><span class="navigation--side__index">1.5</span> Independence</a>
+              <a href="https://jimzenn.com/math-164/3.4/"><span class="navigation--side__index">3.4</span> Quadratic Forms</a>
             </li>
           
         
@@ -770,26 +643,14 @@ $= P(A)(P(B) + P(C) - P(B\cap C))$</p>
         
           
             
+            
+              
+              <li class="navigation--side__heading"><span class="navigation--side__heading-index">4</span>Concepts from Geometry</li>
             
             
             
             <li class="navigation--side__item navigation--side__item--current">
-              <a href="https://jimzenn.com/math-170a/d.2/"><span class="navigation--side__index">D.2</span> Discussion</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/1.6/"><span class="navigation--side__index">1.6</span> Counting</a>
+              <a href="https://jimzenn.com/math-164/4.4/"><span class="navigation--side__index">4.4</span> Neighborhoods</a>
             </li>
           
         
@@ -802,12 +663,12 @@ $= P(A)(P(B) + P(C) - P(B\cap C))$</p>
             
             
               
-              <li class="navigation--side__heading"><span class="navigation--side__heading-index">2</span>Discrete Random Variables</li>
+              <li class="navigation--side__heading"><span class="navigation--side__heading-index">5</span>Elements of Calculus</li>
             
             
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/2.1/"><span class="navigation--side__index">2.1</span> Discrete Random Variable</a>
+              <a href="https://jimzenn.com/math-164/5.1/"><span class="navigation--side__index">5.1</span> Sequences and Limits</a>
             </li>
           
         
@@ -822,7 +683,7 @@ $= P(A)(P(B) + P(C) - P(B\cap C))$</p>
             
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/d.3/"><span class="navigation--side__index">D.3</span> Disucission</a>
+              <a href="https://jimzenn.com/math-164/5.2/"><span class="navigation--side__index">5.2</span> Differentiability</a>
             </li>
           
         
@@ -837,7 +698,7 @@ $= P(A)(P(B) + P(C) - P(B\cap C))$</p>
             
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/2.2/"><span class="navigation--side__index">2.2</span> Probability Mass Function</a>
+              <a href="https://jimzenn.com/math-164/5.3/"><span class="navigation--side__index">5.3</span> The Derivative Matrix</a>
             </li>
           
         
@@ -852,37 +713,7 @@ $= P(A)(P(B) + P(C) - P(B\cap C))$</p>
             
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/2.3/"><span class="navigation--side__index">2.3</span> Functions of Random Variables</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/d.4/"><span class="navigation--side__index">D.4</span> Disucission: Midterm Review</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/2.4/"><span class="navigation--side__index">2.4</span> Functions of Random Variables</a>
+              <a href="https://jimzenn.com/math-164/5.6/"><span class="navigation--side__index">5.6</span> Taylor Series</a>
             </li>
           
         
@@ -895,12 +726,12 @@ $= P(A)(P(B) + P(C) - P(B\cap C))$</p>
             
             
               
-              <li class="navigation--side__heading"><span class="navigation--side__heading-index">3</span>General Random Variables</li>
+              <li class="navigation--side__heading"><span class="navigation--side__heading-index">6</span>Basics of Set-Constrained and Unconstrained Optimization</li>
             
             
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/3.1/"><span class="navigation--side__index">3.1</span> Continuous Random Variables and PDFs</a>
+              <a href="https://jimzenn.com/math-164/6.1/"><span class="navigation--side__index">6.1</span> Introduction</a>
             </li>
           
         
@@ -915,112 +746,7 @@ $= P(A)(P(B) + P(C) - P(B\cap C))$</p>
             
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/3.2/"><span class="navigation--side__index">3.2</span> Cummulative Distribution Functions</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/d.5/"><span class="navigation--side__index">D.5</span> Disucission</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/3.3/"><span class="navigation--side__index">3.3</span> Normal Random Variables</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/3.4/"><span class="navigation--side__index">3.4</span> Joint PDFs of Multiple Random Variables</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/3.6/"><span class="navigation--side__index">3.6</span> The Continuous Bayes&#39; Rule</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/3.5/"><span class="navigation--side__index">3.5</span> Conditioning</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/d.6/"><span class="navigation--side__index">D.6</span> Disucission</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-            
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/math-170a/d.7/"><span class="navigation--side__index">D.7</span> Review</a>
+              <a href="https://jimzenn.com/math-164/6.2/"><span class="navigation--side__index">6.2</span> Conditions for Local Minimizers</a>
             </li>
           
         
@@ -1044,14 +770,14 @@ $= P(A)(P(B) + P(C) - P(B\cap C))$</p>
         
         
         
-          <a href="https://jimzenn.com/math-170a/1.5/" class="pagination__prev">1.5 Independence</a>
+          <a href="https://jimzenn.com/math-164/3.4/" class="pagination__prev">3.4 Quadratic Forms</a>
         
       
       
         
         
         
-          <a href="https://jimzenn.com/math-170a/1.6/" class="pagination__next">1.6 Counting</a>
+          <a href="https://jimzenn.com/math-164/5.1/" class="pagination__next">5.1 Sequences and Limits</a>
         
       
     </div>

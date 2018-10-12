@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.49.1" />
+<meta name="generator" content="Hugo 0.49.2" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -344,6 +344,167 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="positive-semidefinite-/-negative-semidefinite">Positive (Semi)definite / Negative (Semi)definite</span></span>
+  <div class="block__content block__content--blue">
+    <p>A quadratic form $\transpose{ \b{x}} \b{Q} \b{x}, \b{Q} = \transpose{ \b{Q}} $, is said to be</p>
+
+<ul>
+<li><strong>positive definite</strong> if $\forall \b{x}, \transpose{ \b{x}} \b{Q} \b{x} &gt; 0 $;</li>
+<li><strong>positive semidefinite</strong> if $\forall \b{x}, \transpose{ \b{x}} \b{Q} \b{x} \geq 0$;</li>
+<li><strong>negative definite</strong> if $\forall \b{x}, \transpose{ \b{x}} \b{Q} \b{x} &lt; 0$;</li>
+<li><strong>negative semidefinite</strong> if $\forall \b{x}, \transpose{ \b{x}} \b{Q} \b{x} \leq 0$.</li>
+</ul>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("positive-semidefinite-/-negative-semidefinite");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="principal-minors">Principal Minors</span></span>
+  <div class="block__content block__content--blue">
+    <p>The <strong>principle minors</strong> are $\det \b{Q} $ itself and the determinants of matrices obtained by successively removing an $i$th row and an $i$th column. That is, the principal minors are:</p>
+
+<p>$$\det {\Mqr{{\vcr{ q_{i_1i_1}}{ q_{i_2i_1}}{ \vdots }{ q_{i_pi_1}}}}{{\vcr{ q_{i_1i_2}}{ q_{i_2i_2}}{ \vdots }{q_{i_pi_1}}}}{{\vcr{ &hellip; }{ &hellip; }{  }{ &hellip; }}}{{\vcr{ q_{i_1i_p}}{ q_{i_2i_p}}{ \vdots }{q_{i_pi_p}}}}}\ \ , p &lt; n, \forall 1 \leq k \leq p, 1 \leq i_k \leq n $$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("principal-minors");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="leading-principal-minors">Leading Principal Minors</span></span>
+  <div class="block__content block__content--blue">
+    <p>The <strong>leading principal minors</strong> are $\det \b{Q} $ and the minors obtained by successively removing the last row and the last column. That is, the leading principal minors are:</p>
+
+<p>$$\Delta_1 = q_{11}, \Delta_2 = \det {\Mww{ q_{11}}{ q_{12}}{ q_{21}}{ q_{22}}}, \Delta_3 = \det {\Mee{ q_{11}}{ q_{12}}{ q_{13}}{ q_{21}}{ q_{22}}{ q_{23}}{ q_{31}}{ q_{32}}{ q_{33}}}, &hellip; , \Delta_n = \det \b{Q} $$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("leading-principal-minors");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  : <span class="keyword" id="sylvesters-criterion">Sylvester&#39;s Criterion</span></span>
+  <div class="block__content block__content--green">
+  <p>A quadratic form $\transpose{\b{x}}\b{Q}\b{x} = \transpose{\b{Q}}$ is positive definite</p>
+
+<p>$\iff$ the leading principal minors of $\b{Q}$ are positive.</p>
+
+  </div><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("sylvesters-criterion");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "thm";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
       </div>
     </article>
     <aside class="navigation--side">
@@ -487,6 +648,24 @@ if (!doNotTrack) {
             
             
               
+              <li class="navigation--side__heading"><span class="navigation--side__heading-index">4</span>Concepts from Geometry</li>
+            
+            
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/math-164/4.4/"><span class="navigation--side__index">4.4</span> Neighborhoods</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
               <li class="navigation--side__heading"><span class="navigation--side__heading-index">5</span>Elements of Calculus</li>
             
             
@@ -601,7 +780,7 @@ if (!doNotTrack) {
         
         
         
-          <a href="https://jimzenn.com/math-164/5.1/" class="pagination__next">5.1 Sequences and Limits</a>
+          <a href="https://jimzenn.com/math-164/4.4/" class="pagination__next">4.4 Neighborhoods</a>
         
       
     </div>
