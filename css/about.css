@@ -6,6 +6,8 @@
   padding-top: 50px !important;
   min-height: unset;
   margin-bottom: 70px;
+  color: black;
+  line-height: 1.58;
 }
 
 #print-button {
@@ -49,19 +51,22 @@
   text-decoration: none;
 }
 
+#resume__contact #resume__email:before,
+#resume__contact #resume__phone:before,
+#resume__contact #resume__website:before {
+  color: black;
+}
+
 #resume__contact #resume__email:before {
   content: "email: ";
-  color: var(--text-color);
 }
 
 #resume__contact #resume__phone:before {
   content: "phone: ";
-  color: var(--text-color);
 }
 
 #resume__contact #resume__website:before {
   content: "website: ";
-  color: var(--text-color);
 }
 
 .resume .item__field--abbr {

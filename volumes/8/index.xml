@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>8 on Jim Zenn</title>
+    <link>https://jimzenn.com/volumes/8/</link>
+    <description>Recent content in 8 on Jim Zenn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Oct 2018 21:47:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://jimzenn.com/volumes/8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction</title>
+      <link>https://jimzenn.com/optimization/8.1/</link>
+      <pubDate>Mon, 15 Oct 2018 21:47:00 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/8.1/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

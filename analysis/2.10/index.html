@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.49.2" />
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<title>Monotone Sequences and Cauchy Sequences - Jim Zenn</title>
+<meta property="og:title" content="Monotone Sequences and Cauchy Sequences - Jim Zenn">
+
+
+
+  
+
+
+
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-83942334-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3" media="all">
+    
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3" media="all">
+
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3" media="all">
+  </head>
+
+  <body class="note wide" >
+    <header class="header" id="header">
+  
+  <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
+  <div class="header__title">
+    <a class="header__site-logo-link" id="header-menu__toggle">
+      <img class="header__site-logo-image" src="/logo/wire.svg" alt="logo"/>
+    </a>
+  </div>
+  <nav class="header-menu" id="header-menu">
+      <ul class="header-menu__list">
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+          
+        
+          
+            <li class="header-menu__item header-menu__item--dropdown">
+              <a class="header-menu__link">Notes</a>
+              <ul class="header-menu__item-menu">
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/probability-theory/1.1/">Probability Theory</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/linear-algebra/1.2/">Linear Algebra</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/journey/">Journey</a></li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+          
+        
+      </ul>
+  </nav>
+</header>
+<nav class="header-menu--collapsable" id="collapsable-menu">
+  <ul class="header-menu__list--collapsable">
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+      
+    
+      
+        <li class="header-menu__item header-menu__item--dropdown">
+          <a class="header-menu__link">Notes</a>
+          <ul class="header-menu__item-menu">
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/probability-theory/1.1/">Probability Theory</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/linear-algebra/1.2/">Linear Algebra</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
+            
+          </ul>
+        </li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/journey/">Journey</a></li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+      
+    
+  </ul>
+</nav>
+
+
+    <div class="container" id="container">
+      
+        <div class="container-tag">
+          
+          <b class="container-title">
+            Notes
+          </b>
+          
+        </div>
+      
+      
+
+
+
+
+
+
+
+  
+
+
+<div class="navigation" id="navigation">
+  <div class="navigation__wrapper" id="navigation__toggle">
+    <div class="navigation__left">
+      <span class="navigation__sup-title" style="color: #8100bd">Analysis, Section 2.10</span>
+      <span class="navigation__title">Monotone Sequences and Cauchy Sequences</span>
+
+    </div>
+    <div class="navigation__right">
+      <ul class="navigation__list">
+      
+      </ul>
+      <ul class="navigation__list--collapsable">
+      
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  wasStuck = false;
+  window.addEventListener('scroll', function(e) {
+    var header = document.querySelector("#header");
+    var nav = document.querySelector("#navigation");
+    var navWrapper = document.querySelector("#navigation .navigation__wrapper");
+    if (window.scrollY >= header.offsetHeight) {
+      
+      if (!wasStuck) {
+        nav.classList.add("navigation--stuck");
+        navWrapper.classList.add("navigation__wrapper--stuck");
+        wasStuck = true;
+      }
+    } else {
+      if (wasStuck) {
+        nav.classList.remove("navigation--stuck");
+        navWrapper.classList.remove("navigation__wrapper--stuck");
+        wasStuck = false;
+      }
+    }
+  });
+  var toggle = document.querySelector("#navigation__toggle");
+  var list = document.querySelector(".navigation__list--collapsable");
+  toggle.addEventListener("click", function() {
+    this.classList.toggle("navigation__toggle--active");
+    list.classList.toggle("navigation__list--collapsable--active");
+  });
+  var listItems = document.querySelectorAll(".navigation__list--collapsable .navigation__link");
+  for (var i = 0; i < listItems.length; i ++) {
+    listItems[i].addEventListener("click", function() {
+      document.querySelector("#navigation__toggle").click();
+      return true;
+    });
+  }
+</script>
+
+
+
+  <main class="content" role="main">
+    <article class="article">
+      <div class="article__content">
+        <script>
+          keywordsCollector = [];
+          keywordsCounter = 0;
+        </script>
+        <p></p>
+
+<div class="latex-macros">
+  
+    $\newcommand{\br}{\\}$
+
+    $\newcommand{\R}{\mathbb{R}}$
+    $\newcommand{\Q}{\mathbb{Q}}$
+    $\newcommand{\Z}{\mathbb{Z}}$
+    $\newcommand{\N}{\mathbb{N}}$
+    $\newcommand{\C}{\mathbb{C}}$
+    $\newcommand{\P}{\mathbb{P}}$
+    $\newcommand{\F}{\mathbb{F}}$
+    $\newcommand{\L}{\mathcal{L}}$
+    $\newcommand{\spa}[1]{\text{span}(#1)}$
+    $\newcommand{\dist}[1]{\text{dist}(#1)}$
+    $\newcommand{\max}[1]{\text{max}(#1)}$
+    $\newcommand{\min}[1]{\text{max}(#1)}$
+    $\newcommand{\supr}[1]{\text{sup}(#1)}$
+    $\newcommand{\infi}[1]{\text{inf}(#1)}$
+    $\newcommand{\set}[1]{\{#1\}}$
+    $\newcommand{\emptyset}{\varnothing}$
+    $\newcommand{\otherwise}{\text{ otherwise }}$
+    $\newcommand{\if}{\text{ if }}$
+    $\newcommand{\proj}{\text{proj}}$
+    $\newcommand{\union}{\cup}$
+    $\newcommand{\intercept}{\cap}$
+    $\newcommand{\abs}[1]{| #1 |}$
+    $\newcommand{\norm}[1]{\left\lVert#1\right\rVert}$
+    $\newcommand{\pare}[1]{\left(#1\right)}$
+    $\newcommand{\t}[1]{\text{ #1 }}$
+    $\newcommand{\head}{\text H}$
+    $\newcommand{\tail}{\text T}$
+    $\newcommand{\d}{\text d}$
+    $\newcommand{\limu}[2]{\underset{#1 \to #2}\lim}$
+    $\newcommand{\inv}[1]{{#1}^{-1}}$
+    $\newcommand{\inner}[2]{\langle #1, #2 \rangle}$
+    $\newcommand{\nullity}[1]{\text{nullity}(#1)}$
+    $\newcommand{\rank}[1]{\text{rank}(#1)}$
+    $\newcommand{\var}[1]{\text{var}(#1)}$
+    $\newcommand{\tr}[1]{\text{tr}(#1)}$
+    $\newcommand{\oto}{\text{ one-to-one }}$
+    $\newcommand{\ot}{\text{ onto }}$
+    $\newcommand{\Re}[1]{\text{Re}(#1)}$
+    $\newcommand{\Im}[1]{\text{Im}(#1)}$
+
+
+    $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$
+    $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$
+    $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$
+    $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$
+    $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$
+    $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$
+
+    $\newcommand{\vcw}[2]{\begin{matrix} #1 \br #2 \end{matrix}}$
+    $\newcommand{\vce}[3]{\begin{matrix} #1 \br #2 \br #3 \end{matrix}}$
+    $\newcommand{\vcr}[4]{\begin{matrix} #1 \br #2 \br #3 \br #4 \end{matrix}}$
+    $\newcommand{\vct}[5]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \end{matrix}}$
+    $\newcommand{\vcy}[6]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{matrix}}$
+    $\newcommand{\vcu}[7]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{matrix}}$
+
+    $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$
+    $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$
+    $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$
+    $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$
+
+    $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$
+    $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$
+
+    $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$
+    $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$
+    $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$
+    $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$
+    $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$
+    $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$
+  
+</div>
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="monotonic-sequences">Monotonic Sequences</span></span>
+  <div class="block__content block__content--blue">
+    <p>A sequence $(s_n) $ of real numbers is called an <strong>increasing sequence</strong> if $s_n \leq s_{n+1} $ for all $n $, and $(s_n) $ is called a <strong>decreasing sequence</strong> if $s_n \geq s_{n+1} $ for all $n $. Note that if $(s_n) $ is increasing, then $s_n \leq s_m$ whenever $n &lt; m$. A sequence that is increasing or decreasing will be called a <strong>monotone sequence</strong> or a <strong>monotonic sequence</strong>.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("monotonic-sequences");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  </span>
+  <div class="block__content block__content--green">
+  <p>All bounded monotone sequences converge.</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <p>Let $(s_n) $ be a bounded increasing sequence.</p>
+
+<p>Let $S $ denote the set $\set{ s_n : n \in \N } $.</p>
+
+<p>Want to show $\lim s_n = u$.</p>
+
+<p>Let $\epsilon &gt; 0 $. Since $\supr{ S } - \epsilon $ is not an upper bound for $S $, there exists $N $ such that $s_N &gt; u - \epsilon $.</p>
+
+<p>Since $(s_n) $ is increasing, we have $s_N \leq s_n $ for all $n \geq \N $.</p>
+
+<p>Also, $s_n \leq \supr{ S } $ for all $n $.</p>
+
+<p>$\therefore \supr{ S } - \epsilon &lt; s_n \leq u $, which implies $\abs{ s_n - u } &lt; \epsilon$.</p>
+
+<p>This shows $\lim s_n = u$.</p>
+
+<p>Similar for decreasing sequences.</p>
+
+  </div>
+</div>
+
+  </div><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  </span>
+  <div class="block__content block__content--green">
+  <p>If $(s_n)$ is an unbounded increasing sequence, then $\lim s_n = +\infty $.
+If $(s_n)$ is an unbounded decreasing sequence, then $\lim s_n = -\infty $.</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <p>Let $(s_n) $ be an unbounded increasing sequence. Let $M &gt; 0 $.</p>
+
+<p>Since the set $\set{ s_n: n \in \N }$ is unbounded above, for some $N $ in $\N $ we have $s_N &gt; M $.</p>
+
+<p>Clearly  $n &gt; N$ implies $s_n \geq s_N &gt; M $, so $\lim s_n = +\infty$.</p>
+
+  </div>
+</div>
+
+  </div><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Corollary
+  </span>
+
+
+  <div class="block__content block__content--green">
+  <p>If $s_n $ is a monotone sequence, then the sequence either converges, diverges to $+\infty$ or diverges to $-\infty $. Thus $\lim s_n $ always exists for monotone sequences.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul></div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition</span>
+  <div class="block__content block__content--blue">
+    <p>Let $(s_n) $ be a sequence in $\R $. We define</p>
+
+<p>$\lim \supr{ s_n } = \limu{ N }{ \infty } \supr{ \set{ s_n : n &gt; N }} $</p>
+
+<p>$\lim \infi{ s_n } = \limu{ N }{ \infty } \infi{ \set{ s_n : n &gt; N }} $</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul></div>
+
+
+<div class="block block--yellow "> <span class="block__title block__title--yellow">Note
+  </span>
+  <div class="block__content block__content--yellow">
+    <p>In this definition we do not restrict $(s_n) $ to be bounded. However, we adopt the following conventions. If $(s_n) $ is not bounded above, $\supr{ s_n : n &gt; N } = +\infty$ for all $N $ and we decree $\lim \supr{ s_n } = +\infty$. Likewise, if $(s_n) $ is not bounded below, $\infi{ \set{ s_n : n &gt; N }} = -\infty $ for all $N $ and we decree $\lim \infi{ s_n } = -\infty $.</p>
+
+<p>$\lim \supr{ s_n }$ may not equal $\supr{ s_n : n \in \N } $, but $\lim \supr{ s_n } \leq \supr{ \set{ s_n : n \in \N }}$.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul></div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  </span>
+  <div class="block__content block__content--green">
+  <p>Let $(s_n) $ be a sequence in $\R $.</p>
+
+<p>1) If $\lim s_n $ exists, then $\lim \infi{ s_n } = \lim s_n = \lim \supr{ s_n } $.</p>
+
+<p>2) If $\lim s_n = \lim \supr{ s_n }$, then $\lim s_n$ exists and $\lim s_n = \lim \infi{ s_n } = \lim \supr{ s_n } $.</p>
+
+  </div><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition</span>
+  <div class="block__content block__content--blue">
+    <p>A sequence $(s_n) $ of real numbers is called a <strong>Cauchy sequence</strong> if</p>
+
+<p>for each $\epsilon &gt; 0 $ there exists a number $N $ such that</p>
+
+<p>$$m,n &gt; N \implies \abs{ s_n - s_m } &lt; \epsilon $$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul></div>
+
+
+<div class="block block--green">
+  <span class="block__title block__title--green">Lemma
+  
+  </span>
+  <div class="block__content block__content--green">
+  <p>Convergent sequences are Cauchy sequences.</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <p>Suppose $\lim s_n = s$.</p>
+
+<p>$$\abs{ s_n - s_m } = \abs{ s_n - s + s - s_m } \leq \abs{ s_n - s } + \abs{ s - s_m }$$</p>
+
+<p>Let $\epsilon &gt; 0 $, then there exists $N$ such that</p>
+
+<p>$n &gt; N $ implies $\abs{ s_n - s } &lt; \epsilon /2 $</p>
+
+<p>$m &gt; N $ implies $\abs{ s_m - s } &lt; \epsilon /2 $</p>
+
+<p>so</p>
+
+<p>$m, n &gt; N $ implies $\abs{ s_n - s_m } \leq \abs{ s_n - s } + \abs{ s - s_m } &lt; \frac{ \epsilon }{ 2 } + \frac{ \epsilon }{ 2 } = \epsilon$</p>
+
+<p>Thus $(s_n)$ is a Cauchy sequence.</p>
+
+  </div>
+</div>
+
+  </div>
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="block block--green">
+  <span class="block__title block__title--green">Lemma
+  
+  </span>
+  <div class="block__content block__content--green">
+  <p>Cauchy sequences are bounded.</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <p>Applying definition of Cauchy sequence with $\epsilon = 1 $ we obtain $N $ in $\N $ so that</p>
+
+<p>$$m, n &gt; N \implies \abs{ s_n - s_m } &lt; 1 $$</p>
+
+<p>In particular, $\abs{ s_n - s_{N+1}} &lt; 1$ for $n &gt; N $, so $\abs{ s_n } &lt; \abs{ s_{N+1} + 1}$ for $n &gt; N $. If $M = \max{ \set{ \abs{ s_{N+1} + 1}, \abs{ s_1 }, \abs{ s_2 }, &hellip;, \abs{ s_N }}}$ for all $n \in \N $.</p>
+
+  </div>
+</div>
+
+  </div>
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  </span>
+  <div class="block__content block__content--green">
+  <p>A sequence is a convergent sequence if and only if it is a Cauchy sequence.</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <p>We have already proved that A convergent sequence is a Cauchy sequence.</p>
+
+<p>Now we need to prove that a Cauchy sequence is a convergent sequence.</p>
+
+<p>We have also proved that Cauchy sequences are bounded, we now only need to prove that $$\lim \infi{ s_n } = \lim \supr{ s_n }$$ by theorem 10.7.</p>
+
+<p>Let $\epsilon &gt; 0 $. Since $(s_n) $ is a Cauchy sequence, there exists $N $ so that $m,n &gt; N $ implies $\abs{ s_n - s_m } &lt; \epsilon $.</p>
+
+<p>In particular, $s_n &lt; s_m + \epsilon$ for all $m, n &gt; N$.</p>
+
+<p>Then $s_m + \epsilon $ is an upper bound for $\set{ s_n : n &gt; N }$, so $v_N = \supr{ s_n : n &gt; N } \leq s_m + \epsilon $ for $m &gt; N $.</p>
+
+<p>Since $s_m &gt; \supr{ s_n : n &gt; N } - \epsilon $,  $u_N = v_N - \epsilon $ is a lower bound for $\set{ s_m : m &gt; N }$.</p>
+
+<p>Thus,</p>
+
+<p>$$\lim \supr{ s_n } \leq v_N \leq u_N + \epsilon \leq \lim \infi{ s_n } + \epsilon $$.</p>
+
+<p>Since this holds for all $\epsilon &gt; 0 $, we have $\lim \supr{ s_n } \leq \lim \infi{ s_n } $. By switching $ m $ and $ n $ in this proof, the opposite of this inequality also holds, then we have</p>
+
+<p>$$\lim \infi{ s_n } = \lim \supr{ s_n }$$</p>
+
+  </div>
+</div>
+
+  </div><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+      </div>
+    </article>
+    <aside class="navigation--side">
+      <div class="navigation--side__selector">
+        <button class="navigation--side__button navigation--side__button--active" id="navigation--side__button--section" onclick="navigationSideSwitchToSection()">subject Nav.</button>
+        <button class="navigation--side__button" id="navigation--side__button--page" onclick="navigationSideSwitchToPage()">Page Nav.</button>
+        <script>
+          function navigationSideSwitchToSection() {
+            document.getElementById("page-navigation").setAttribute("style","display: none;");
+            document.getElementById("section-navigation").setAttribute("style","display: block;");
+            document.getElementById("navigation--side__button--section").classList.add("navigation--side__button--active");
+            document.getElementById("navigation--side__button--page").classList.remove("navigation--side__button--active");
+          }
+
+          function navigationSideSwitchToPage() {
+            document.getElementById("section-navigation").setAttribute("style","display: none;");
+            document.getElementById("page-navigation").setAttribute("style","display: block;");
+            document.getElementById("navigation--side__button--section").classList.remove("navigation--side__button--active");
+            document.getElementById("navigation--side__button--page").classList.add("navigation--side__button--active");
+          }
+        </script>
+      </div>
+      <ul class="navigation--side__list" id="section-navigation">
+      
+      
+      
+        
+        
+        
+        
+      
+        
+        
+        
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">1</span>Introduction</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/1.1/"><span class="navigation--side__index">1.1</span> The Set N of Natural Numbers</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/1.2/"><span class="navigation--side__index">1.2</span> The Set Q of Rational Numbers</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/1.3/"><span class="navigation--side__index">1.3</span> The Set R of Rational Numbers</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/d.1/"><span class="navigation--side__index">D.1</span> Discussion</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/1.4/"><span class="navigation--side__index">1.4</span> The Completeness Axiom</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">2</span>Sequences</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/2.7/"><span class="navigation--side__index">2.7</span> Limits of Sequences</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/2.8/"><span class="navigation--side__index">2.8</span> A Discussion About Proofs</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/2.9/"><span class="navigation--side__index">2.9</span> Limit Theorems for Sequences</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/d.2/"><span class="navigation--side__index">D.2</span> Discussion</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item navigation--side__item--current">
+              <a href="https://jimzenn.com/analysis/2.10/"><span class="navigation--side__index">2.10</span> Monotone Sequences and Cauchy Sequences</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/2.11/"><span class="navigation--side__index">2.11</span> Subsequences</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/d.3/"><span class="navigation--side__index">D.3</span> Discussion</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/2.15/"><span class="navigation--side__index">2.15</span> Alternating Series and Integral Tests</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">3</span>Continuity</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/3.17/"><span class="navigation--side__index">3.17</span> Continuous Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/d.4/"><span class="navigation--side__index">D.4</span> Discussion</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/3.18/"><span class="navigation--side__index">3.18</span> Properties of Continuous Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/3.19/"><span class="navigation--side__index">3.19</span> Uniform Continuity</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/3.20/"><span class="navigation--side__index">3.20</span> Limits of Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">5</span>Differentiation</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/5.28/"><span class="navigation--side__index">5.28</span> Basic Properties of the Derivative</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/5.29/"><span class="navigation--side__index">5.29</span> The Mean Value Theorem</a>
+            </li>
+          
+        
+      
+      </ul>
+      <ul class="navigation--side__list" id="page-navigation">
+        <script>
+          var pageNavigationListDOM = document.getElementById("page-navigation");
+          for (var i = 0; i < keywordsCollector.length; i ++) {
+            pageNavigationListDOM.appendChild(keywordsCollector[i]);
+          }
+        </script>
+      </ul>
+    </aside>
+  </main>
+
+  
+  <div class="pagination">
+    <div class="pagination-wrapper">
+      
+        
+        
+        
+          <a href="https://jimzenn.com/analysis/d.2/" class="pagination__prev">D.2 Discussion</a>
+        
+      
+      
+        
+        
+        
+          <a href="https://jimzenn.com/analysis/2.11/" class="pagination__next">2.11 Subsequences</a>
+        
+      
+    </div>
+  </div>
+  
+
+
+  <footer class="footer">
+  <div class="footer__wrapper">
+    <span class="copyright">Copyright 2018 Jim Zenn All rights reserved.</span>
+    <ul class="footer-links">
+      <li>
+        <a href="/Jim_Zenn-CV.pdf">CV</a>
+      </li>
+      <li>
+        <a href="https://jimzenn.com/index.xml" type="application/rss+xml" target="_blank">RSS</a>
+      </li>
+      <li>
+        <a href="https://github.com/Jim-Zenn">code</a>
+      </li>
+      <li>
+        <a href="mailto:zenn@ucla.edu">email</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+
+
+    <div>
+  </body>
+
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] },
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: true, width: "container" }
+    },
+    
+  });
+</script>
+
+<script>
+  shifted = false;
+  container = document.querySelector("#container");
+  var toggle = document.querySelector("#header-menu__toggle");
+  toggle.addEventListener("click", function toggleHeader() {
+    var content = document.querySelector("#collapsable-menu");
+    var menuIcon = document.querySelector("#header__menu-icon");
+    var globalNav = document.querySelector("#header-menu");
+    var header = document.querySelector("#header");
+    this.classList.toggle("header-menu__toggle--active");
+    content.classList.toggle("header-menu--collapsable--active");
+    header.classList.toggle("header--active");
+    container.classList.toggle("container--shifted");
+    menuIcon.classList.toggle("header__menu-icon--shifted");
+    shifted = !shifted;
+    if (shifted) {
+      triggerOffset = window.pageYOffset;
+    };
+  });
+
+  window.addEventListener('scroll', function scrollCloseTrigger() {
+    if (shifted && Math.abs(window.pageYOffset - triggerOffset) > 10) {
+      toggle.click();
+    };
+  });
+
+  container.addEventListener("click", function containerClickTrigger() {
+    if (shifted) {
+      toggle.click();
+    }
+  });
+
+  var collapsableMenuLinks = document.querySelectorAll(".header-menu__list--collapsable a");
+  for (i = 0; i < collapsableMenuLinks.length; i ++) {
+    collapsableMenuLinks[i].addEventListener("click", function(e) {
+      toggle.click();
+      return true;
+    });
+  }
+</script>
+
+
+</html>

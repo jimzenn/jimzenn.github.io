@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.49.2" />
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<title>Conditions for local minimizers - Jim Zenn</title>
+<meta property="og:title" content="Conditions for local minimizers - Jim Zenn">
+
+
+
+  
+
+
+
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-83942334-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3" media="all">
+    
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3" media="all">
+
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3" media="all">
+  </head>
+
+  <body class="note wide" >
+    <header class="header" id="header">
+  
+  <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
+  <div class="header__title">
+    <a class="header__site-logo-link" id="header-menu__toggle">
+      <img class="header__site-logo-image" src="/logo/wire.svg" alt="logo"/>
+    </a>
+  </div>
+  <nav class="header-menu" id="header-menu">
+      <ul class="header-menu__list">
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+          
+        
+          
+            <li class="header-menu__item header-menu__item--dropdown">
+              <a class="header-menu__link">Notes</a>
+              <ul class="header-menu__item-menu">
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/probability-theory/1.1/">Probability Theory</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/linear-algebra/1.2/">Linear Algebra</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/journey/">Journey</a></li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+          
+        
+      </ul>
+  </nav>
+</header>
+<nav class="header-menu--collapsable" id="collapsable-menu">
+  <ul class="header-menu__list--collapsable">
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+      
+    
+      
+        <li class="header-menu__item header-menu__item--dropdown">
+          <a class="header-menu__link">Notes</a>
+          <ul class="header-menu__item-menu">
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/probability-theory/1.1/">Probability Theory</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/linear-algebra/1.2/">Linear Algebra</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
+            
+          </ul>
+        </li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/journey/">Journey</a></li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+      
+    
+  </ul>
+</nav>
+
+
+    <div class="container" id="container">
+      
+        <div class="container-tag">
+          
+          <b class="container-title">
+            Notes
+          </b>
+          
+        </div>
+      
+      
+
+
+
+
+
+
+
+  
+
+
+<div class="navigation" id="navigation">
+  <div class="navigation__wrapper" id="navigation__toggle">
+    <div class="navigation__left">
+      <span class="navigation__sup-title" style="color: #327658">Optimization, Section 6.2</span>
+      <span class="navigation__title">Conditions for Local Minimizers</span>
+
+    </div>
+    <div class="navigation__right">
+      <ul class="navigation__list">
+      
+      </ul>
+      <ul class="navigation__list--collapsable">
+      
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  wasStuck = false;
+  window.addEventListener('scroll', function(e) {
+    var header = document.querySelector("#header");
+    var nav = document.querySelector("#navigation");
+    var navWrapper = document.querySelector("#navigation .navigation__wrapper");
+    if (window.scrollY >= header.offsetHeight) {
+      
+      if (!wasStuck) {
+        nav.classList.add("navigation--stuck");
+        navWrapper.classList.add("navigation__wrapper--stuck");
+        wasStuck = true;
+      }
+    } else {
+      if (wasStuck) {
+        nav.classList.remove("navigation--stuck");
+        navWrapper.classList.remove("navigation__wrapper--stuck");
+        wasStuck = false;
+      }
+    }
+  });
+  var toggle = document.querySelector("#navigation__toggle");
+  var list = document.querySelector(".navigation__list--collapsable");
+  toggle.addEventListener("click", function() {
+    this.classList.toggle("navigation__toggle--active");
+    list.classList.toggle("navigation__list--collapsable--active");
+  });
+  var listItems = document.querySelectorAll(".navigation__list--collapsable .navigation__link");
+  for (var i = 0; i < listItems.length; i ++) {
+    listItems[i].addEventListener("click", function() {
+      document.querySelector("#navigation__toggle").click();
+      return true;
+    });
+  }
+</script>
+
+
+
+  <main class="content" role="main">
+    <article class="article">
+      <div class="article__content">
+        <script>
+          keywordsCollector = [];
+          keywordsCounter = 0;
+        </script>
+        <p></p>
+
+<div class="latex-macros">
+  
+    $\newcommand{\br}{\\}$
+
+    $\newcommand{\R}{\mathbb{R}}$
+    $\newcommand{\Q}{\mathbb{Q}}$
+    $\newcommand{\Z}{\mathbb{Z}}$
+    $\newcommand{\N}{\mathbb{N}}$
+    $\newcommand{\C}{\mathbb{C}}$
+    $\newcommand{\P}{\mathbb{P}}$
+    $\newcommand{\F}{\mathbb{F}}$
+    $\newcommand{\L}{\mathcal{L}}$
+    $\newcommand{\spa}[1]{\text{span}(#1)}$
+    $\newcommand{\dist}[1]{\text{dist}(#1)}$
+    $\newcommand{\max}[1]{\text{max}(#1)}$
+    $\newcommand{\min}[1]{\text{max}(#1)}$
+    $\newcommand{\supr}[1]{\text{sup}(#1)}$
+    $\newcommand{\infi}[1]{\text{inf}(#1)}$
+    $\newcommand{\set}[1]{\left\{#1\right\}}$
+    $\newcommand{\emptyset}{\varnothing}$
+    $\newcommand{\otherwise}{\text{ otherwise }}$
+    $\newcommand{\if}{\text{ if }}$
+    $\newcommand{\proj}{\text{proj}}$
+    $\newcommand{\union}{\cup}$
+    $\newcommand{\intercept}{\cap}$
+    $\newcommand{\abs}[1]{\left| #1 \right|}$
+    $\newcommand{\norm}[1]{\left\lVert#1\right\rVert}$
+    $\newcommand{\pare}[1]{\left(#1\right)}$
+    $\newcommand{\t}[1]{\text{ #1 }}$
+    $\newcommand{\head}{\text H}$
+    $\newcommand{\tail}{\text T}$
+    $\newcommand{\d}{\text d}$
+    $\newcommand{\limu}[2]{\underset{#1 \to #2}\lim}$
+    $\newcommand{\der}[2]{\frac{\d #1}{\d #2}}$
+    $\newcommand{\derw}[2]{\frac{\d #1^2}{\d^2 #2}}$
+    $\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}$
+    $\newcommand{\pderw}[2]{\frac{\partial^2 #1}{\partial #2^2}}$
+    $\newcommand{\pderws}[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}$
+    $\newcommand{\inv}[1]{{#1}^{-1}}$
+    $\newcommand{\inner}[2]{\langle #1, #2 \rangle}$
+    $\newcommand{\nullity}[1]{\text{nullity}(#1)}$
+    $\newcommand{\rank}[1]{\text{rank}(#1)}$
+    $\newcommand{\var}[1]{\text{var}(#1)}$
+    $\newcommand{\tr}[1]{\text{tr}(#1)}$
+    $\newcommand{\oto}{\text{ one-to-one }}$
+    $\newcommand{\ot}{\text{ onto }}$
+    $\newcommand{\ceil}[1]{\lceil#1\rceil}$
+    $\newcommand{\floor}[1]{\lfloor#1\rfloor}$
+    $\newcommand{\Re}[1]{\text{Re}(#1)}$
+    $\newcommand{\Im}[1]{\text{Im}(#1)}$
+    $\newcommand{\dom}[1]{\text{dom}(#1)}$
+    $\newcommand{\fnext}[1]{\overset{\sim}{#1}}$
+    $\newcommand{\transpose}[1]{#1^{\text{T}}}$
+    $\newcommand{\b}[1]{\boldsymbol{#1}}$
+    $\newcommand{\None}[1]{}$
+
+
+    $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$
+    $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$
+    $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$
+    $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$
+    $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$
+    $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$
+
+    $\newcommand{\vcw}[2]{\begin{matrix} #1 \br #2 \end{matrix}}$
+    $\newcommand{\vce}[3]{\begin{matrix} #1 \br #2 \br #3 \end{matrix}}$
+    $\newcommand{\vcr}[4]{\begin{matrix} #1 \br #2 \br #3 \br #4 \end{matrix}}$
+    $\newcommand{\vct}[5]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \end{matrix}}$
+    $\newcommand{\vcy}[6]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{matrix}}$
+    $\newcommand{\vcu}[7]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{matrix}}$
+
+    $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$
+    $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$
+    $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$
+    $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$
+
+    $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$
+    $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$
+
+    $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$
+    $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$
+    $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$
+    $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$
+    $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$
+    $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$
+  
+</div>
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="the-first-order-derivative-of-%5Cnonef%5Crn%5Cto%5Cr">The First-Order Derivative of $\None{}f:\R^n\to\R$</span></span>
+  <div class="block__content block__content--blue">
+    <p>The <strong>first-order derivative</strong> of $f $ denoted $Df $ is</p>
+
+<p>$$Df \triangleq  \left[\pder{ f }{ x_1 }, \pder{ f }{ x_2 }, &hellip; ,  \pder{ f }{ x_n }\right]$$</p>
+
+<p>Note that the gradient $\nabla f $ is just the transpose of $Df $; that is</p>
+
+<p>$$\nabla f = \transpose{ Df } $$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("the-first-order-derivative-of-%5Cnonef%5Crn%5Cto%5Cr");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="hessian-the-second-order-derivative-of-%5Cnonef%5Crn%5Cto%5Cr">Hessian (The Second-Order Derivative) of $\None{}f:\R^n\to\R$</span></span>
+  <div class="block__content block__content--blue">
+    <p>$$\b{F}(\b{x}) = D^2 \triangleq {\Mee{ \pderw{ f }{ x_1 } (\b{x})}{ &hellip; }{ \pderws{ f }{ x_n }{ x_1 } (\b{x})}{ \vdots }{  }{ \vdots }{ \pderws{ f }{ x_1 }{ x_n } (\b{x})}{ &hellip; }{ \pderw{ f }{ x_n } (\b{x})}}$$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("hessian-the-second-order-derivative-of-%5Cnonef%5Crn%5Cto%5Cr");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="feasible-direction">Feasible Direction</span></span>
+  <div class="block__content block__content--blue">
+    <p>A vector $\b{d} \in \R^n, \b{d} \neq \b{0} $, is a <strong>feasible direction</strong> at $\b{x} \in \Omega$ if</p>
+
+<p>$$\exists \alpha_0 &gt; 0\text{ such that }\forall \alpha \in [0, \alpha_0], \pare{\b{x} + \alpha \b{d}} \in \Omega$$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("feasible-direction");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="directional-derivative">Directional Derivative</span></span>
+  <div class="block__content block__content--blue">
+    <p>Let $f: \R^n \to \R $ be a real-valued function and let $\b{d} $ be a feasible direction at $\b{x} \in \Omega $. The <strong>directional derivative</strong> of $f$ in the direction $\b{d} $, denoted $\pder{ f }{ \b{d}} $, is the real-valued function defined by</p>
+
+<p>$$\pder{ f }{ \b{d}} (\b{x}) \triangleq \limu{ \alpha }{ 0 } \frac{ f(\b{x} + \alpha \b{d})  -  f(\b{x})}{ \alpha }$$</p>
+
+<p>In particular, if $\norm{ \b{d}} = 1$, then $\pder{ f }{ \b{d}} $ is the rate of increase of $f $ at $\b{x} $ in the direction $\b{d} $.</p>
+
+<p>To compute the above derivative, suppose that $\b{x} $ and $\b{d} $ are given. Then $f(x + \alpha \b{d}) $ is a function of $\alpha $, and</p>
+
+<p>$$\pder{ f }{ \b{d}} (\b{x}) = \der{ }{ \alpha } f(\b{x} + \alpha \b{d}){\biggr\rvert}_{ \alpha = 0 } =  \nabla \transpose{ f(\b{x})} \b{d} =  \inner{ \nabla f(x)}{\b{d}}  = \transpose{ \b{d}} \nabla f(\b{x})$$</p>
+
+<p>In summary, if $\b{d} $ is a unit vector, then $\inner{ \nabla f(x)}{\b{d}} $ is the rate of increase of $f $ at the point $\b{x} $ in the direction $\b{d} $.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("directional-derivative");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  : <span class="keyword" id="first-order-necessary-condition-fonc">First-Order Necessary Condition (FONC)</span></span>
+  <div class="block__content block__content--green">
+  <p>$\Omega \subseteq \R^n, f \in \mathcal{C}^1(\Omega)$.</p>
+
+<p>If $\b{x}^{*}$ is a local minimizer of $f$ over $\Omega$, then for <u>any</u> feasible direction $\b{d}$ at $\b{x}^{*}$, we have</p>
+
+<p>$$\inner{ \nabla f(\b{x}^{*})}{ \b{d}} = \transpose{ \b{d}} \nabla f(\b{x}^*) \geq 0$$</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <p>Define</p>
+
+<p>$$\b{x}(\alpha) = \b{x}^{*} + \alpha \b{d} \in \Omega $$</p>
+
+<p>Note that $\b{x}(0) = \b{x}^* $. Define the composite function</p>
+
+<p>$$\phi(\alpha) = f(\b{x}(\alpha))$$</p>
+
+<p>Then, by Taylor&rsquo;s theorem,</p>
+
+<p>$$\begin{align*}
+&amp;f(x^* + \alpha \b{d}) - f(x^*) \br
+=&amp; \phi(\alpha) - \phi(0) \br
+=&amp; \phi&rsquo;(0) \alpha + o(\alpha) \tag{Taylor&rsquo;s theorem}\br
+=&amp; \alpha \transpose{ \b{d}} \nabla f(\b{x} (0)) + o(\alpha)
+\end{align*}$$</p>
+
+<p>where $\alpha \geq 0 $.</p>
+
+<p>Thus, if $\phi(\alpha) \geq \phi (0) $, that is $f(\b{x}^* + \alpha \b{d}) \geq f(\b{x}^*)$ for sufficiently small values of $\alpha &gt; 0 $  ($\b{x}^*$ is a local minimizer), then we have to have $\transpose{ \b{d}}  \nabla f(\b{x} ^*) \geq 0 $.</p>
+
+  </div>
+</div>
+
+  </div><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("first-order-necessary-condition-fonc");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "thm";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Corollary
+  : <span class="keyword" id="interior-case-of-fonc">Interior Case of FONC</span></span>
+
+
+  <div class="block__content block__content--green">
+  <p>$\Omega \subseteq \R^n, f \in \mathcal{C}^1(\Omega)$.</p>
+
+<p>If $\b{x}^* $ is a local minimizer of $f $ over $\Omega $ and if $\b{x}^* $ is an interior point of $\Omega $, then</p>
+
+<p>$$\nabla f(\b{x}^*) = \b{0} $$</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <p>Suppose that $f $ has a local minimizer $\b{x}^* $ that is an interior point of $\Omega $.</p>
+
+<p>Because $\b{x}^* $ is an interior point of $\Omega $, the set of feasible directions at $\b{x}^* $ is the whole of $\R^n $.</p>
+
+<p>Thus, for any $\b{d} \in \R^n$, $\transpose{ \b{d}} \nabla f(\b{x}^*) \geq 0$ and $-\transpose{ \b{d}} \nabla f(\b{x}^*) \geq 0$.</p>
+
+<p>Hence, $\transpose{ \b{d}} f(\b{x}^*) = 0 $ for all $\b{d} \in \R^n $, which implies that $\nabla f(x ^*) = \b{0}$.</p>
+
+  </div>
+</div>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("interior-case-of-fonc");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index  navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "cor";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  : <span class="keyword" id="second-order-necessary-condition-sonc">Second-Order Necessary Condition (SONC)</span></span>
+  <div class="block__content block__content--green">
+  <p>Let $\Omega \subseteq \R^n $, $f \in \mathcal{C}^2(\Omega) $, $\b{x}^* $ a local minimizer of $f $ over $\Omega $, and $\b{d} $ a feasible direction at $\b{x}^* $. If $\transpose{ \b{d}} f(\b{x}^*) = 0 $, then</p>
+
+<p>$$\transpose{ \b{d}} \b{F}(\b{x}^*) \b{d} \geq 0$$</p>
+
+<p>where $\b{F} $ is the Hessian of $f$.</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+        by contradiction
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <p>Suppose there exists a feasible direction $\b{d} $ at $\b{x}^* $ such that $\b{d}^T \nabla f(\b{x}^*) = 0 $ and $\transpose{ \b{d}} \b{F}(\b{x}^*) \b{d} &lt; 0 $.</p>
+
+<p>Let $\b{x}(\alpha) = \b{x}^* + \alpha \b{d}$ and define the composite function $\phi(\alpha) = f(\b{x}^* + \alpha \b{d}) = f(\b{x}(\alpha))$.</p>
+
+<p>Then, by Taylor&rsquo;s theorem</p>
+
+<p>$$\phi(\alpha) = \phi(0) + \phi^{ \prime \prime } (0) \frac{ \alpha^2 }{ 2 } + o(\alpha^2)$$</p>
+
+<p>where by assumption $\phi&rsquo;(0) = \transpose{ \b{d}} \nabla f(\b{x}) = 0$, and $\phi^{ \prime \prime } (0) = \transpose{ \b{d}} \b{F}(\b{x}^*) \b{d} &lt; 0$.</p>
+
+<p>For sufficiently small $\alpha$,</p>
+
+<p>$$\phi(\alpha) - \phi (0) = \phi^{ \prime \prime }(0) \frac{ \alpha^2 }{ 2 } + o(\alpha^2) &lt; 0 $$</p>
+
+<p>that is,</p>
+
+<p>$$f(x^* + \alpha \b{d}) &lt; f(x^*) $$</p>
+
+<p>which contradicts the assumption that $x^* $ is a local minimizer. Thus,</p>
+
+<p>$$\phi^{ \prime \prime } (0) = \transpose{ \b{d}} \b{F}(\b{x} ^*) \b{d} \geq 0$$</p>
+
+  </div>
+</div>
+
+  </div><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("second-order-necessary-condition-sonc");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "thm";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Corollary
+  : <span class="keyword" id="interior-case-of-sonc">Interior Case of SONC</span></span>
+
+
+  <div class="block__content block__content--green">
+  <p>Let $x^* $ be an interior point of $\Omega \subseteq \R^n $. If $\b{x}^* $ is a local minimizer of $f: \Omega \to \R, f \in \mathcal{C}^2 $, then</p>
+
+<p>$$\nabla f(\b{x}^*) = \b{0} $$</p>
+
+<p>and $\b{F}(\b{x}^*) $ is positive semidefinite ($F(\b{x}^*) \geq 0$); that is, for all $\b{d} \in \R^n $</p>
+
+<p>$$\transpose{ \b{d}} \b{F}(\b{x}^*) \b{d} \geq 0 $$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("interior-case-of-sonc");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index  navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "cor";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  : <span class="keyword" id="second-order-sufficient-condition-sosc-interior-case">Second-Order Sufficient Condition (SOSC), Interior Case</span></span>
+  <div class="block__content block__content--green">
+  <p>Let $f\in\mathcal{C}^2$  be defined on a region where $\b{x}^*$ is an interior point. Suppose that</p>
+
+<ol>
+<li>$\nabla f(\b{x}^*) = \b{0}$; and</li>
+<li>$\b{F}(\b{x}^*) &gt; 0$.</li>
+</ol>
+
+<p>Then $\b{x}^*$ is a strict local minimizer of $f$.</p>
+
+  </div><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("second-order-sufficient-condition-sosc-interior-case");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "thm";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+      </div>
+    </article>
+    <aside class="navigation--side">
+      <div class="navigation--side__selector">
+        <button class="navigation--side__button navigation--side__button--active" id="navigation--side__button--section" onclick="navigationSideSwitchToSection()">subject Nav.</button>
+        <button class="navigation--side__button" id="navigation--side__button--page" onclick="navigationSideSwitchToPage()">Page Nav.</button>
+        <script>
+          function navigationSideSwitchToSection() {
+            document.getElementById("page-navigation").setAttribute("style","display: none;");
+            document.getElementById("section-navigation").setAttribute("style","display: block;");
+            document.getElementById("navigation--side__button--section").classList.add("navigation--side__button--active");
+            document.getElementById("navigation--side__button--page").classList.remove("navigation--side__button--active");
+          }
+
+          function navigationSideSwitchToPage() {
+            document.getElementById("section-navigation").setAttribute("style","display: none;");
+            document.getElementById("page-navigation").setAttribute("style","display: block;");
+            document.getElementById("navigation--side__button--section").classList.remove("navigation--side__button--active");
+            document.getElementById("navigation--side__button--page").classList.add("navigation--side__button--active");
+          }
+        </script>
+      </div>
+      <ul class="navigation--side__list" id="section-navigation">
+      
+      
+      
+        
+        
+        
+        
+      
+        
+        
+        
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">2</span>Vector Spaces and Matrices</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/2.1/"><span class="navigation--side__index">2.1</span> Real Vector Spaces</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/2.2/"><span class="navigation--side__index">2.2</span> Rank of a Matrix</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">3</span>Transformations</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/3.4/"><span class="navigation--side__index">3.4</span> Quadratic Forms</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">4</span>Concepts from Geometry</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/4.4/"><span class="navigation--side__index">4.4</span> Neighborhoods</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">5</span>Elements of Calculus</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/5.1/"><span class="navigation--side__index">5.1</span> Sequences and Limits</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/5.2/"><span class="navigation--side__index">5.2</span> Differentiability</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/5.3/"><span class="navigation--side__index">5.3</span> The Derivative Matrix</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/5.6/"><span class="navigation--side__index">5.6</span> Taylor Series</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">6</span>Basics of Set-Constrained and Unconstrained Optimization</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/6.1/"><span class="navigation--side__index">6.1</span> Introduction</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item navigation--side__item--current">
+              <a href="https://jimzenn.com/optimization/6.2/"><span class="navigation--side__index">6.2</span> Conditions for Local Minimizers</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">7</span>One-Dimensional Search Methods</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/7.1/"><span class="navigation--side__index">7.1</span> Golden Section Search</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/7.2/"><span class="navigation--side__index">7.2</span> Fibonacci Search</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/7.3/"><span class="navigation--side__index">7.3</span> Newton&#39;s Method</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/7.4/"><span class="navigation--side__index">7.4</span> Secant Method</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">8</span>Gradient Methods</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/8.1/"><span class="navigation--side__index">8.1</span> Introduction</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">12</span>Solving Ax = b</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/12.1/"><span class="navigation--side__index">12.1</span> Least-Squares Analysis</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/12.2/"><span class="navigation--side__index">12.2</span> Recursive Least-Squares Alorithm</a>
+            </li>
+          
+        
+      
+      </ul>
+      <ul class="navigation--side__list" id="page-navigation">
+        <script>
+          var pageNavigationListDOM = document.getElementById("page-navigation");
+          for (var i = 0; i < keywordsCollector.length; i ++) {
+            pageNavigationListDOM.appendChild(keywordsCollector[i]);
+          }
+        </script>
+      </ul>
+    </aside>
+  </main>
+
+  
+  <div class="pagination">
+    <div class="pagination-wrapper">
+      
+        
+        
+        
+          <a href="https://jimzenn.com/optimization/6.1/" class="pagination__prev">6.1 Introduction</a>
+        
+      
+      
+        
+        
+        
+          <a href="https://jimzenn.com/optimization/7.1/" class="pagination__next">7.1 Golden Section Search</a>
+        
+      
+    </div>
+  </div>
+  
+
+
+  <footer class="footer">
+  <div class="footer__wrapper">
+    <span class="copyright">Copyright 2018 Jim Zenn All rights reserved.</span>
+    <ul class="footer-links">
+      <li>
+        <a href="/Jim_Zenn-CV.pdf">CV</a>
+      </li>
+      <li>
+        <a href="https://jimzenn.com/index.xml" type="application/rss+xml" target="_blank">RSS</a>
+      </li>
+      <li>
+        <a href="https://github.com/Jim-Zenn">code</a>
+      </li>
+      <li>
+        <a href="mailto:zenn@ucla.edu">email</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+
+
+    <div>
+  </body>
+
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] },
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: true, width: "container" }
+    },
+    
+  });
+</script>
+
+<script>
+  shifted = false;
+  container = document.querySelector("#container");
+  var toggle = document.querySelector("#header-menu__toggle");
+  toggle.addEventListener("click", function toggleHeader() {
+    var content = document.querySelector("#collapsable-menu");
+    var menuIcon = document.querySelector("#header__menu-icon");
+    var globalNav = document.querySelector("#header-menu");
+    var header = document.querySelector("#header");
+    this.classList.toggle("header-menu__toggle--active");
+    content.classList.toggle("header-menu--collapsable--active");
+    header.classList.toggle("header--active");
+    container.classList.toggle("container--shifted");
+    menuIcon.classList.toggle("header__menu-icon--shifted");
+    shifted = !shifted;
+    if (shifted) {
+      triggerOffset = window.pageYOffset;
+    };
+  });
+
+  window.addEventListener('scroll', function scrollCloseTrigger() {
+    if (shifted && Math.abs(window.pageYOffset - triggerOffset) > 10) {
+      toggle.click();
+    };
+  });
+
+  container.addEventListener("click", function containerClickTrigger() {
+    if (shifted) {
+      toggle.click();
+    }
+  });
+
+  var collapsableMenuLinks = document.querySelectorAll(".header-menu__list--collapsable a");
+  for (i = 0; i < collapsableMenuLinks.length; i ++) {
+    collapsableMenuLinks[i].addEventListener("click", function(e) {
+      toggle.click();
+      return true;
+    });
+  }
+</script>
+
+
+</html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>12 on Jim Zenn</title>
+    <link>https://jimzenn.com/volumes/12/</link>
+    <description>Recent content in 12 on Jim Zenn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Oct 2018 00:55:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://jimzenn.com/volumes/12/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Recursive Least-squares Alorithm</title>
+      <link>https://jimzenn.com/optimization/12.2/</link>
+      <pubDate>Wed, 17 Oct 2018 00:55:00 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/12.2/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Least-Squares Analysis</title>
+      <link>https://jimzenn.com/optimization/12.1/</link>
+      <pubDate>Tue, 16 Oct 2018 23:38:00 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/12.1/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

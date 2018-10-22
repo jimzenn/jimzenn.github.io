@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.49.2" />
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<title>Conditional Probability - Jim Zenn</title>
+<meta property="og:title" content="Conditional Probability - Jim Zenn">
+
+
+
+  
+
+
+
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-83942334-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3" media="all">
+    
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3" media="all">
+
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3" media="all">
+  </head>
+
+  <body class="note wide" >
+    <header class="header" id="header">
+  
+  <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
+  <div class="header__title">
+    <a class="header__site-logo-link" id="header-menu__toggle">
+      <img class="header__site-logo-image" src="/logo/wire.svg" alt="logo"/>
+    </a>
+  </div>
+  <nav class="header-menu" id="header-menu">
+      <ul class="header-menu__list">
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+          
+        
+          
+            <li class="header-menu__item header-menu__item--dropdown">
+              <a class="header-menu__link">Notes</a>
+              <ul class="header-menu__item-menu">
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/probability-theory/1.1/">Probability Theory</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/linear-algebra/1.2/">Linear Algebra</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/journey/">Journey</a></li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+          
+        
+      </ul>
+  </nav>
+</header>
+<nav class="header-menu--collapsable" id="collapsable-menu">
+  <ul class="header-menu__list--collapsable">
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+      
+    
+      
+        <li class="header-menu__item header-menu__item--dropdown">
+          <a class="header-menu__link">Notes</a>
+          <ul class="header-menu__item-menu">
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/probability-theory/1.1/">Probability Theory</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/linear-algebra/1.2/">Linear Algebra</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
+            
+          </ul>
+        </li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/journey/">Journey</a></li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+      
+    
+  </ul>
+</nav>
+
+
+    <div class="container" id="container">
+      
+        <div class="container-tag">
+          
+          <b class="container-title">
+            Notes
+          </b>
+          
+        </div>
+      
+      
+
+
+
+
+
+
+
+  
+
+
+<div class="navigation" id="navigation">
+  <div class="navigation__wrapper" id="navigation__toggle">
+    <div class="navigation__left">
+      <span class="navigation__sup-title" style="color: #10AD2C">Probability Theory, Section 1.3</span>
+      <span class="navigation__title">Conditional Probability</span>
+
+    </div>
+    <div class="navigation__right">
+      <ul class="navigation__list">
+      
+      </ul>
+      <ul class="navigation__list--collapsable">
+      
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  wasStuck = false;
+  window.addEventListener('scroll', function(e) {
+    var header = document.querySelector("#header");
+    var nav = document.querySelector("#navigation");
+    var navWrapper = document.querySelector("#navigation .navigation__wrapper");
+    if (window.scrollY >= header.offsetHeight) {
+      
+      if (!wasStuck) {
+        nav.classList.add("navigation--stuck");
+        navWrapper.classList.add("navigation__wrapper--stuck");
+        wasStuck = true;
+      }
+    } else {
+      if (wasStuck) {
+        nav.classList.remove("navigation--stuck");
+        navWrapper.classList.remove("navigation__wrapper--stuck");
+        wasStuck = false;
+      }
+    }
+  });
+  var toggle = document.querySelector("#navigation__toggle");
+  var list = document.querySelector(".navigation__list--collapsable");
+  toggle.addEventListener("click", function() {
+    this.classList.toggle("navigation__toggle--active");
+    list.classList.toggle("navigation__list--collapsable--active");
+  });
+  var listItems = document.querySelectorAll(".navigation__list--collapsable .navigation__link");
+  for (var i = 0; i < listItems.length; i ++) {
+    listItems[i].addEventListener("click", function() {
+      document.querySelector("#navigation__toggle").click();
+      return true;
+    });
+  }
+</script>
+
+
+
+  <main class="content" role="main">
+    <article class="article">
+      <div class="article__content">
+        <script>
+          keywordsCollector = [];
+          keywordsCounter = 0;
+        </script>
+        <p></p>
+
+<div class="latex-macros">
+  
+    $\newcommand{\br}{\\}$
+
+    $\newcommand{\R}{\mathbb{R}}$
+    $\newcommand{\Q}{\mathbb{Q}}$
+    $\newcommand{\Z}{\mathbb{Z}}$
+    $\newcommand{\N}{\mathbb{N}}$
+    $\newcommand{\C}{\mathbb{C}}$
+    $\newcommand{\P}{\mathbb{P}}$
+    $\newcommand{\F}{\mathbb{F}}$
+    $\newcommand{\L}{\mathcal{L}}$
+    $\newcommand{\spa}[1]{\text{span}(#1)}$
+    $\newcommand{\set}[1]{\{#1\}}$
+    $\newcommand{\emptyset}{\varnothing}$
+    $\newcommand{\otherwise}{\text{ otherwise }}$
+    $\newcommand{\if}{\text{ if }}$
+    $\newcommand{\union}{\cup}$
+    $\newcommand{\intercept}{\cap}$
+    $\newcommand{\abs}[1]{| #1 |}$
+    $\newcommand{\pare}[1]{\left\(#1\right\)}$
+    $\newcommand{\t}[1]{\text{ #1 }}$
+    $\newcommand{\head}{\text H}$
+    $\newcommand{\tail}{\text T}$
+    $\newcommand{\inv}[1]{{#1}^{-1}}$
+    $\newcommand{\nullity}[1]{\text{nullity}(#1)}$
+    $\newcommand{\rank}[1]{\text{rank}(#1)}$
+    $\newcommand{\oto}{\text{ one-to-one }}$
+    $\newcommand{\ot}{\text{ onto }}$
+
+
+    $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$
+    $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$
+    $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$
+    $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$
+    $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$
+    $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$
+
+    $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$
+    $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$
+    $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$
+    $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$
+
+    $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$
+    $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$
+
+    $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$
+    $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$
+    $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$
+    $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$
+    $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$
+    $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$
+  
+</div>
+
+<p>Toss a fair coin 3 times:</p>
+
+<ol>
+<li>Probability that we get more $\head$ than $\tail$?</li>
+<li>Given that the 1st one is $\head$, probability of getting more $\head$ than $\tail$?</li>
+</ol>
+
+<p>$$
+\begin{align*}
+\Omega &amp; = \set{A_1 A_2 A_3| A_1 A_2 A_3 \in \set{\head, \tail}} \br
+       &amp; = \set{\text{HHH, HHT, HTH, HTT, TTT,TTH, THT, THH}}
+\end{align*}
+$$</p>
+
+<ol>
+<li>$P(\text{more H than T})=P(\text{HHH, HHT, HTH, THH})= \frac 12 $</li>
+<li>$P(\text{given 1st is H, more H than T})=P(\text{HHH, HHT, HTH})= \frac 34 $</li>
+</ol>
+
+<p>More generally, we are given a sample space $\Omega$, a probility law $P$, suppose $B \subseteq \Omega, P(B) &gt; 0, P(B) &gt; 0.$</p>
+
+<p>In our example, let $A =\set{\text{more H than T}}, B = \set{\text{1st one is H}}$. We found, by counting $|B|=4$, and $|A\cap B| = 3$. Note $\frac{3}{4}=\frac{P(A\cap B)}{P(B)}$.</p>
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="conditional-probability">Conditional Probability</span></span>
+  <div class="block__content block__content--blue">
+    <p>We denote the <strong>conditional probability of $A$ given $B$</strong> by $P(A|B)$.</p>
+
+<p>$$P(A|B)=\frac{P(A\cap B)}{P(B)}$$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("conditional-probability");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example: Roll a Fair Die
+    
+  </span>
+  <div class="block__content block__content--gray">
+    <p>Roll a fair die. Suppose we know the outcome is  even. What is the probability that outcome is 6?</p>
+
+<p>$$\Omega = \set{1, 2, 3, 4, 5, 6}, A = \set{6}, B=\set{2,4,6}$$
+$P(A|B)=\frac{P(A\cap B)}{P(B)}=\frac{P(\set{6})}{P(B)}= \frac{\frac16}{\frac36}=\frac13$</p>
+
+<p>Note: If $P(B) = 0$, then $P(A\cap B) = 0, $ since $P(A\cap B) \subset P(B)$</p>
+
+<p>So in this case, $P(A\cap B) = P(A|B) P(B)​$ since both are zero.</p>
+
+<p>So $P(A\cap B) = P(A|B)P(B), \forall A, B \subset \Omega$.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+<p>For $B$ with $P(B)&gt;0, P(X|B)$ is a probability law on $\Omega$.</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand">[<a>expand</a>]</span>
+  </div>
+  <div class="proof__content">
+    <ol>
+<li>possitivity: $P(A|B) =\frac{P(A\cap B)}{P(B)}\geq 0,  \forall A$</li>
+<li>addtivity: let $A, C$ be disjoint, $P((A\cup C)| B)=\frac{P((A\cup C)\cap B)}{P(B)}=\frac{P((A\cap B)\cup (C\cap B)}{P(B)} = \frac{P(A\cap B)+ P(C \cap B)}{P(B)}=P(A|B)+P(A|C)$</li>
+<li>normalization??</li>
+</ol>
+
+  </div>
+</div>
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example: Fair 4-sided die 
+    
+  </span>
+  <div class="block__content block__content--gray">
+    <p>We roll a fair, 4 sided die twice. let $x$ denote result of 1st roll, let $y$ denote result of 2nd roll. Let $B$ be the event $B=\set{(x,y)\in\Omega|\text{min}(x,y)=2}$. Determine $P(A_n| B)$, where for $n = \set{1, 2, 3, 4}$, $A_n$ is the event $A_n=\set{max(x,y) = n}$.</p>
+
+<p>$B=\set{(2,2),(2,3),(3,2),(2,4),(4,2)}, P(B)=\frac5{16}$</p>
+
+<p>$P(A_1|B)=\frac{P(A_1\cap B))}{P(B)}=\frac{0}{P(B)}=0$</p>
+
+<p>$P(A_2|B)=\frac{P(A_2\cap B))}{P(B)}=\frac{1/ 16}{5/ 16}=1/ 5$</p>
+
+<p>$P(A_3|B)=\frac{P(A_3\cap B))}{P(B)}=\frac{2/ 16}{5/ 16}=2/ 5$</p>
+
+<p>$P(A_4|B)=\frac{P(A_4\cap B))}{P(B)}=\frac{2/ 16}{5/ 16}=2/ 5$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+      </div>
+    </article>
+    <aside class="navigation--side">
+      <div class="navigation--side__selector">
+        <button class="navigation--side__button navigation--side__button--active" id="navigation--side__button--section" onclick="navigationSideSwitchToSection()">subject Nav.</button>
+        <button class="navigation--side__button" id="navigation--side__button--page" onclick="navigationSideSwitchToPage()">Page Nav.</button>
+        <script>
+          function navigationSideSwitchToSection() {
+            document.getElementById("page-navigation").setAttribute("style","display: none;");
+            document.getElementById("section-navigation").setAttribute("style","display: block;");
+            document.getElementById("navigation--side__button--section").classList.add("navigation--side__button--active");
+            document.getElementById("navigation--side__button--page").classList.remove("navigation--side__button--active");
+          }
+
+          function navigationSideSwitchToPage() {
+            document.getElementById("section-navigation").setAttribute("style","display: none;");
+            document.getElementById("page-navigation").setAttribute("style","display: block;");
+            document.getElementById("navigation--side__button--section").classList.remove("navigation--side__button--active");
+            document.getElementById("navigation--side__button--page").classList.add("navigation--side__button--active");
+          }
+        </script>
+      </div>
+      <ul class="navigation--side__list" id="section-navigation">
+      
+      
+      
+        
+        
+        
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">1</span>Sample Space and Probability</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/1.1/"><span class="navigation--side__index">1.1</span> Sets</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/d.1/"><span class="navigation--side__index">D.1</span> Discussion</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/1.2/"><span class="navigation--side__index">1.2</span> Probabilistic Models</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item navigation--side__item--current">
+              <a href="https://jimzenn.com/probability-theory/1.3/"><span class="navigation--side__index">1.3</span> Conditional Probability</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/1.4/"><span class="navigation--side__index">1.4</span> Total Probability Theorem and Bayes&#39; Rule</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/1.5/"><span class="navigation--side__index">1.5</span> Independence</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/d.2/"><span class="navigation--side__index">D.2</span> Discussion</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/1.6/"><span class="navigation--side__index">1.6</span> Counting</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">2</span>Discrete Random Variables</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/2.1/"><span class="navigation--side__index">2.1</span> Discrete Random Variable</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/d.3/"><span class="navigation--side__index">D.3</span> Disucission</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/2.2/"><span class="navigation--side__index">2.2</span> Probability Mass Function</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/2.3/"><span class="navigation--side__index">2.3</span> Functions of Random Variables</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/d.4/"><span class="navigation--side__index">D.4</span> Disucission: Midterm Review</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/2.4/"><span class="navigation--side__index">2.4</span> Functions of Random Variables</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">3</span>General Random Variables</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/3.1/"><span class="navigation--side__index">3.1</span> Continuous Random Variables and PDFs</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/3.2/"><span class="navigation--side__index">3.2</span> Cummulative Distribution Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/d.5/"><span class="navigation--side__index">D.5</span> Disucission</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/3.3/"><span class="navigation--side__index">3.3</span> Normal Random Variables</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/3.4/"><span class="navigation--side__index">3.4</span> Joint PDFs of Multiple Random Variables</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/3.6/"><span class="navigation--side__index">3.6</span> The Continuous Bayes&#39; Rule</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/3.5/"><span class="navigation--side__index">3.5</span> Conditioning</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/d.6/"><span class="navigation--side__index">D.6</span> Disucission</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/d.7/"><span class="navigation--side__index">D.7</span> Review</a>
+            </li>
+          
+        
+      
+      </ul>
+      <ul class="navigation--side__list" id="page-navigation">
+        <script>
+          var pageNavigationListDOM = document.getElementById("page-navigation");
+          for (var i = 0; i < keywordsCollector.length; i ++) {
+            pageNavigationListDOM.appendChild(keywordsCollector[i]);
+          }
+        </script>
+      </ul>
+    </aside>
+  </main>
+
+  
+  <div class="pagination">
+    <div class="pagination-wrapper">
+      
+        
+        
+        
+          <a href="https://jimzenn.com/probability-theory/1.2/" class="pagination__prev">1.2 Probabilistic Models</a>
+        
+      
+      
+        
+        
+        
+          <a href="https://jimzenn.com/probability-theory/1.4/" class="pagination__next">1.4 Total Probability Theorem and Bayes&#39; Rule</a>
+        
+      
+    </div>
+  </div>
+  
+
+
+  <footer class="footer">
+  <div class="footer__wrapper">
+    <span class="copyright">Copyright 2018 Jim Zenn All rights reserved.</span>
+    <ul class="footer-links">
+      <li>
+        <a href="/Jim_Zenn-CV.pdf">CV</a>
+      </li>
+      <li>
+        <a href="https://jimzenn.com/index.xml" type="application/rss+xml" target="_blank">RSS</a>
+      </li>
+      <li>
+        <a href="https://github.com/Jim-Zenn">code</a>
+      </li>
+      <li>
+        <a href="mailto:zenn@ucla.edu">email</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+
+
+    <div>
+  </body>
+
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] },
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: true, width: "container" }
+    },
+    
+  });
+</script>
+
+<script>
+  shifted = false;
+  container = document.querySelector("#container");
+  var toggle = document.querySelector("#header-menu__toggle");
+  toggle.addEventListener("click", function toggleHeader() {
+    var content = document.querySelector("#collapsable-menu");
+    var menuIcon = document.querySelector("#header__menu-icon");
+    var globalNav = document.querySelector("#header-menu");
+    var header = document.querySelector("#header");
+    this.classList.toggle("header-menu__toggle--active");
+    content.classList.toggle("header-menu--collapsable--active");
+    header.classList.toggle("header--active");
+    container.classList.toggle("container--shifted");
+    menuIcon.classList.toggle("header__menu-icon--shifted");
+    shifted = !shifted;
+    if (shifted) {
+      triggerOffset = window.pageYOffset;
+    };
+  });
+
+  window.addEventListener('scroll', function scrollCloseTrigger() {
+    if (shifted && Math.abs(window.pageYOffset - triggerOffset) > 10) {
+      toggle.click();
+    };
+  });
+
+  container.addEventListener("click", function containerClickTrigger() {
+    if (shifted) {
+      toggle.click();
+    }
+  });
+
+  var collapsableMenuLinks = document.querySelectorAll(".header-menu__list--collapsable a");
+  for (i = 0; i < collapsableMenuLinks.length; i ++) {
+    collapsableMenuLinks[i].addEventListener("click", function(e) {
+      toggle.click();
+      return true;
+    });
+  }
+</script>
+
+
+</html>

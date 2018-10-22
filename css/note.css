@@ -19,6 +19,11 @@
   margin-top: 6px;
   margin-bottom: 8px;
 }
+
+.article__content p:last-of-type {
+  margin-bottom: 0 !important;
+}
+
 .article__content img {
   max-width: 100%;
 }
@@ -344,6 +349,10 @@
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 1.6em;
+}
+
+.article__content .block__content--gray > p:last-of-type {
+  margin-top: 6px;
 }
 
 .article__content h1,

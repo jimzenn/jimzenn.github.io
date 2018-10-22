@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Optimizations on Jim Zenn</title>
+    <link>https://jimzenn.com/optimization/</link>
+    <description>Recent content in Optimizations on Jim Zenn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Oct 2018 00:55:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://jimzenn.com/optimization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Recursive Least-squares Alorithm</title>
+      <link>https://jimzenn.com/optimization/12.2/</link>
+      <pubDate>Wed, 17 Oct 2018 00:55:00 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/12.2/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Least-Squares Analysis</title>
+      <link>https://jimzenn.com/optimization/12.1/</link>
+      <pubDate>Tue, 16 Oct 2018 23:38:00 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/12.1/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Introduction</title>
+      <link>https://jimzenn.com/optimization/8.1/</link>
+      <pubDate>Mon, 15 Oct 2018 21:47:00 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/8.1/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Secant Method</title>
+      <link>https://jimzenn.com/optimization/7.4/</link>
+      <pubDate>Mon, 15 Oct 2018 15:53:00 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/7.4/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Newton&#39;s Method</title>
+      <link>https://jimzenn.com/optimization/7.3/</link>
+      <pubDate>Sun, 14 Oct 2018 23:49:00 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/7.3/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Fibonacci Search</title>
+      <link>https://jimzenn.com/optimization/7.2/</link>
+      <pubDate>Sun, 14 Oct 2018 16:18:00 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/7.2/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Golden Section Search</title>
+      <link>https://jimzenn.com/optimization/7.1/</link>
+      <pubDate>Sun, 14 Oct 2018 14:54:00 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/7.1/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Conditions for local minimizers</title>
+      <link>https://jimzenn.com/optimization/6.2/</link>
+      <pubDate>Wed, 10 Oct 2018 16:25:00 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/6.2/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Introduction</title>
+      <link>https://jimzenn.com/optimization/6.1/</link>
+      <pubDate>Tue, 09 Oct 2018 14:15:00 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/6.1/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Taylor Series</title>
+      <link>https://jimzenn.com/optimization/5.6/</link>
+      <pubDate>Tue, 09 Oct 2018 14:14:00 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/5.6/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>The derivative Matrix</title>
+      <link>https://jimzenn.com/optimization/5.3/</link>
+      <pubDate>Tue, 09 Oct 2018 14:14:00 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/5.3/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Differentiability</title>
+      <link>https://jimzenn.com/optimization/5.2/</link>
+      <pubDate>Tue, 09 Oct 2018 13:57:00 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/5.2/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Sequences and Limits</title>
+      <link>https://jimzenn.com/optimization/5.1/</link>
+      <pubDate>Tue, 09 Oct 2018 12:39:00 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/5.1/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Neighborhoods</title>
+      <link>https://jimzenn.com/optimization/4.4/</link>
+      <pubDate>Tue, 09 Oct 2018 10:21:00 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/4.4/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Quadratic Forms</title>
+      <link>https://jimzenn.com/optimization/3.4/</link>
+      <pubDate>Fri, 05 Oct 2018 15:52:48 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/3.4/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Rank of a Matrix</title>
+      <link>https://jimzenn.com/optimization/2.2/</link>
+      <pubDate>Fri, 05 Oct 2018 15:52:48 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/2.2/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Real Vector Spaces</title>
+      <link>https://jimzenn.com/optimization/2.1/</link>
+      <pubDate>Thu, 04 Oct 2018 14:52:48 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/2.1/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Optimization</title>
+      <link>https://jimzenn.com/optimization/main/</link>
+      <pubDate>Mon, 01 Oct 2018 11:00:00 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/main/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

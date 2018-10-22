@@ -446,53 +446,54 @@ elements of the vector space $V$ are called <strong>vectors</strong>.</p>
 </div>
 
 
-<div class="block block--yellow ">
-  <span class="block__title block__title--yellow">Remarks: what is the degree of zero polynomial: $f(x)=0$ ?
-  
-  </span>
-  <div class="block__content block__content--yellow">
-  <div class="block block--blue ">
+<div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="degree-of-polynomial">Degree of Polynomial</span></span>
   <div class="block__content block__content--blue">
     <p>The highest term&rsquo;s index with <u>non-zero</u> coefficient.</p>
 
   </div>
 
-<p><ul class="block__footer">
+  <ul class="block__footer">
     <li class="block__footer-item">
       <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
     </li>
     <li class="block__footer-item">
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
-  </ul><script></p>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("degree-of-polynomial");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
 
-<pre><code>  (function() {
-    var keywordListDOM = document.getElementById(&quot;page-navigation&quot;);
-    var keywordDOM = document.getElementById(&quot;degree-of-polynomial&quot;);
-    var keywordItemDOM = document.createElement(&quot;li&quot;);
-    keywordItemDOM.setAttribute(&quot;class&quot;, &quot;navigation--side__item&quot;);
-    var keywordLinkDOM = document.createElement(&quot;a&quot;);
-    keywordLinkDOM.setAttribute(&quot;href&quot;, &quot;#&quot; + keywordDOM.id);
-    var keywordIndexDOM = document.createElement(&quot;span&quot;);
-    keywordIndexDOM.setAttribute(&quot;class&quot;, &quot;navigation--side__index navigation--side__index--text&quot;);
-    keywordIndexDOM.setAttribute(&quot;style&quot;, &quot;color: var(--blue-text-color)&quot;);
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
 
-    keywordsCounter += 1;
-    keywordIndexDOM.innerHTML = &quot;def&quot;;
-    keywordLinkDOM.appendChild(keywordIndexDOM);
-    keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
-    keywordItemDOM.appendChild(keywordLinkDOM);
-    keywordsCollector.push(keywordItemDOM);
-  })();
-&lt;/script&gt;&lt;/div&gt;
-</code></pre>
 
-<p>What is the degree of zero polynomial?<br>
+<div class="block block--yellow ">
+  <span class="block__title block__title--yellow">Remarks: what is the degree of zero polynomial: $f(x)=0$ ?
+  
+  </span>
+  <div class="block__content block__content--yellow">
+  <p>What is the degree of zero polynomial?<br>
 <strong>undefined</strong> (some book states that the degree of zero polynomial is $-1$)</p>
 
-<p>what can you fill in the boxes below so that the equation stands?
-$0=\square x^\square$</p>
+<p>what can you fill in the boxes below so that the equation stands?</p>
+
+<p>$0=\square x^\square$</p>
 
   </div>
 
@@ -976,7 +977,7 @@ $\Q$ is a fkeld.</p>
     </article>
     <aside class="navigation--side">
       <div class="navigation--side__selector">
-        <button class="navigation--side__button navigation--side__button--active" id="navigation--side__button--section" onclick="navigationSideSwitchToSection()">Course Nav.</button>
+        <button class="navigation--side__button navigation--side__button--active" id="navigation--side__button--section" onclick="navigationSideSwitchToSection()">subject Nav.</button>
         <button class="navigation--side__button" id="navigation--side__button--page" onclick="navigationSideSwitchToPage()">Page Nav.</button>
         <script>
           function navigationSideSwitchToSection() {

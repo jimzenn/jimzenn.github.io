@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.49.2" />
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<title>Linear Algebra - Jim Zenn</title>
+<meta property="og:title" content="Linear Algebra - Jim Zenn">
+
+
+
+  
+
+
+
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-83942334-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3" media="all">
+    
+    <link rel="stylesheet" href="https://jimzenn.com/css/subject.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3" media="all">
+
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3" media="all">
+  </head>
+
+  <body class="subject wide" >
+    <header class="header" id="header">
+  
+  <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
+  <div class="header__title">
+    <a class="header__site-logo-link" id="header-menu__toggle">
+      <img class="header__site-logo-image" src="/logo/wire.svg" alt="logo"/>
+    </a>
+  </div>
+  <nav class="header-menu" id="header-menu">
+      <ul class="header-menu__list">
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+          
+        
+          
+            <li class="header-menu__item header-menu__item--dropdown">
+              <a class="header-menu__link">Notes</a>
+              <ul class="header-menu__item-menu">
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/probability-theory/1.1/">Probability Theory</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/linear-algebra/1.2/">Linear Algebra</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/journey/">Journey</a></li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+          
+        
+      </ul>
+  </nav>
+</header>
+<nav class="header-menu--collapsable" id="collapsable-menu">
+  <ul class="header-menu__list--collapsable">
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+      
+    
+      
+        <li class="header-menu__item header-menu__item--dropdown">
+          <a class="header-menu__link">Notes</a>
+          <ul class="header-menu__item-menu">
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/probability-theory/1.1/">Probability Theory</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/linear-algebra/1.2/">Linear Algebra</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
+            
+          </ul>
+        </li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/journey/">Journey</a></li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+      
+    
+  </ul>
+</nav>
+
+
+    <div class="container" id="container">
+      
+        <div class="container-tag">
+          
+          <b class="container-title">
+            Notes
+          </b>
+          
+        </div>
+      
+      
+
+  
+  <div class="navigation" id="navigation">
+  <div class="navigation__wrapper" id="navigation__toggle">
+    <div class="navigation__left">
+      <span class="navigation__sup-title" style="color: #0052B5"></span>
+      <span class="navigation__title">Linear Algebra</span>
+
+    </div>
+    <div class="navigation__right">
+      <ul class="navigation__list">
+      
+        
+          <li class="navigation__item">
+            <a class="navigation__link " href="#syllabus" >Syllabus</a>
+          </li>
+        
+      
+        
+          <li class="navigation__item">
+            <a class="navigation__link " href="#resources" >Resources</a>
+          </li>
+        
+      
+        
+          <li class="navigation__item navigation__item--sep"> | </li>
+        
+      
+        
+          <li class="navigation__item">
+            <a class="navigation__link link--external" href="https://www.math.ucla.edu/~das/115a.1.18sum/" target="_blank">Official site</a>
+          </li>
+        
+      
+      </ul>
+      <ul class="navigation__list--collapsable">
+      
+        
+          <li class="navigation__item">
+            <a class="navigation__link " href="#syllabus" >Syllabus</a>
+          </li>
+        
+      
+        
+          <li class="navigation__item">
+            <a class="navigation__link " href="#resources" >Resources</a>
+          </li>
+        
+      
+        
+        <hr class="navigation__sep"/>
+        
+      
+        
+          <li class="navigation__item">
+            <a class="navigation__link link--external" href="https://www.math.ucla.edu/~das/115a.1.18sum/" target="_blank">Official site</a>
+          </li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  wasStuck = false;
+  window.addEventListener('scroll', function(e) {
+    var header = document.querySelector("#header");
+    var nav = document.querySelector("#navigation");
+    var navWrapper = document.querySelector("#navigation .navigation__wrapper");
+    if (window.scrollY >= header.offsetHeight) {
+      
+      if (!wasStuck) {
+        nav.classList.add("navigation--stuck");
+        navWrapper.classList.add("navigation__wrapper--stuck");
+        wasStuck = true;
+      }
+    } else {
+      if (wasStuck) {
+        nav.classList.remove("navigation--stuck");
+        navWrapper.classList.remove("navigation__wrapper--stuck");
+        wasStuck = false;
+      }
+    }
+  });
+  var toggle = document.querySelector("#navigation__toggle");
+  var list = document.querySelector(".navigation__list--collapsable");
+  toggle.addEventListener("click", function() {
+    this.classList.toggle("navigation__toggle--active");
+    list.classList.toggle("navigation__list--collapsable--active");
+  });
+  var listItems = document.querySelectorAll(".navigation__list--collapsable .navigation__link");
+  for (var i = 0; i < listItems.length; i ++) {
+    listItems[i].addEventListener("click", function() {
+      document.querySelector("#navigation__toggle").click();
+      return true;
+    });
+  }
+</script>
+
+
+  <main class="content" role="main">
+    
+    <div class="subject-introduction">
+      <div class="subject-information">
+         Math 115A is a core mathematics subject required of all the various mathematics majors. The subject material can be regarded as an elaboration of the linear algebra already covered in Math 33A. However, the level of abstraction and the emphasis on proof technique make this a difficult subject for many students. Successful students emerge from the experience not only with a better understanding of linear algebra, but also with a higher level of mathematical maturity, better equipped to deal with abstract concepts.
+      </div>
+      <div class="subject-info">
+        
+        <div class="subject-info__group">
+          <span class="subject-info__field">Instructor</span>
+          <a class="subject-info__value  link--external"  href="https://www.math.ucla.edu/~das/"  target="_blank">Omprokash Das</a>
+        </div>
+        
+        <div class="subject-info__group">
+          <span class="subject-info__field">Teaching Assistant</span>
+          <a class="subject-info__value  link--external"  href="https://www.math.ucla.edu/people/grad/yhkwon"  target="_blank">Young Hak Kwon</a>
+        </div>
+        
+        <div class="subject-info__group">
+          <span class="subject-info__field">Lecture Time / Location</span>
+          <a class="subject-info__value  link--calendar"  href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=XzYwb2oyYzlqNmNzamFiOWc4OHJqMmI5azY4cWthYmEyOGNwMzRiYTI2dDM0YWgxbTZjczRhaDlsNjhfMjAxODA3MjNUMTgwMDAwWiBnbjdpaWwxNjBxdTEwbDhxY2s4NmloNGFiY0Bn&amp;tmsrc=gn7iil160qu10l8qck86ih4abc%40group.calendar.google.com&amp;scp=ALL"  target="_blank">MWTh, 11am-12:50pm @ MS 6627</a>
+        </div>
+        
+        <div class="subject-info__group">
+          <span class="subject-info__field">Discussion Time / Location</span>
+          <a class="subject-info__value  link--calendar"  href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=XzhjczM0aGk1Nm9xamViOW04OTFqNmI5azZkMzM4YjlvOGgxNDZiYTU3MTEzZWQ5bzhvcWoyZGE2ODhfMjAxODA3MjRUMTgwMDAwWiBnbjdpaWwxNjBxdTEwbDhxY2s4NmloNGFiY0Bn&amp;tmsrc=gn7iil160qu10l8qck86ih4abc%40group.calendar.google.com&amp;scp=ALL"  target="_blank">Tu, 11am-12:50pm @ MS 6627</a>
+        </div>
+        
+      </div>
+    </div>
+    <div class="subject-syllabus page-link-position-fixer" id="syllabus">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th class="mobile-hide">Date</th>
+            <th align="left">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+            
+            
+          
+            
+            
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">1.2</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>6</sup><span class="slash">/</span><sub>25</sub></td>
+                  <td class="wrap"><b>Vector Spaces</b><br><p class="hide">Spaces, Vector Spaces, Degree of Polynomial, Fields.</p>
+
+[<a href="https://jimzenn.com/linear-algebra/1.2/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">D.1</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>6</sup><span class="slash">/</span><sub>25</sub></td>
+                  <td class="wrap"><b>Discussion</b><br>[<a href="https://jimzenn.com/linear-algebra/d.1/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">1.3</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>6</sup><span class="slash">/</span><sub>27</sub></td>
+                  <td class="wrap"><b>Subspaces</b><br><p class="hide">
+  Subspaces.
+</p>
+
+[<a href="https://jimzenn.com/linear-algebra/1.3/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">1.4</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>2</sub></td>
+                  <td class="wrap"><b>Linear Combinations and Systems of Linear Equations</b><br><p class="hide">
+  Linear Combination, Span, Generating Set.
+</p>
+
+[<a href="https://jimzenn.com/linear-algebra/1.4/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">1.5</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>3</sub></td>
+                  <td class="wrap"><b>Linear Dependence and Linear Independence</b><br><p class="hide">
+  Linearly Dependent, Linearly Independent.
+</p>
+
+[<a href="https://jimzenn.com/linear-algebra/1.5/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">D.2</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>3</sub></td>
+                  <td class="wrap"><b>Discussion</b><br>[<a href="https://jimzenn.com/linear-algebra/d.2/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">1.6</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>5</sub></td>
+                  <td class="wrap"><b>Bases and Dimensions</b><br><p class="hide">
+  Basis, Dimensions of Vector Spaces.
+</p>
+
+[<a href="https://jimzenn.com/linear-algebra/1.6/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">D.3</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>10</sub></td>
+                  <td class="wrap"><b>Discussion</b><br>[<a href="https://jimzenn.com/linear-algebra/d.3/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">2.1</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>11</sub></td>
+                  <td class="wrap"><b>Linear Transformation</b><br><p class="hide">
+Linear Transformation, Identity Transformation, Zero Transformation, Kernel (Null Space), Range (Image), Nullity, Rank, One-to-One, Onto.
+</p>
+
+[<a href="https://jimzenn.com/linear-algebra/2.1/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">2.2</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>16</sub></td>
+                  <td class="wrap"><b>The Matrix Representation of a Linear Transformation</b><br>[<a href="https://jimzenn.com/linear-algebra/2.2/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">D.4</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>17</sub></td>
+                  <td class="wrap"><b>Discussion</b><br>[<a href="https://jimzenn.com/linear-algebra/d.4/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">2.3</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>18</sub></td>
+                  <td class="wrap"><b>Composition of Linear Transformations and Matrix Multiplication</b><br>[<a href="https://jimzenn.com/linear-algebra/2.3/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">2.4</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>19</sub></td>
+                  <td class="wrap"><b>Invertibility and Isomorphisms</b><br>[<a href="https://jimzenn.com/linear-algebra/2.4/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">2.5</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>23</sub></td>
+                  <td class="wrap"><b>The Change of Coordinate Matrix</b><br>[<a href="https://jimzenn.com/linear-algebra/2.5/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">D.5</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>24</sub></td>
+                  <td class="wrap"><b>Discussion</b><br>[<a href="https://jimzenn.com/linear-algebra/d.5/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">5.1</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>25</sub></td>
+                  <td class="wrap"><b>Eigenvalues and Eigenvectors</b><br>[<a href="https://jimzenn.com/linear-algebra/5.1/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">5.2</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>26</sub></td>
+                  <td class="wrap"><b>Diagonalizability</b><br>[<a href="https://jimzenn.com/linear-algebra/5.2/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">6.1</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>30</sub></td>
+                  <td class="wrap"><b>Inner Products and Norms</b><br>[<a href="https://jimzenn.com/linear-algebra/6.1/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">D.6</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>31</sub></td>
+                  <td class="wrap"><b>Discussion</b><br>[<a href="https://jimzenn.com/linear-algebra/d.6/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">6.2</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>31</sub></td>
+                  <td class="wrap"><b>Gram-Schmidt Orthogonalization Process</b><br>[<a href="https://jimzenn.com/linear-algebra/6.2/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+        </tbody>
+      </table>
+    </div>
+    <div class="subject-resources page-link-position-fixer" id="resources">
+      <h2 class="subject-resources__title">Resources</h2>
+      <ul class="subject-resources__list">
+        
+        <li class="subject-resources__item">
+          <span class="subject-resources__numbering">[1]</span>Terence Tao. 
+          <b>Lecture Note, sample exams, and solutions. </b>
+          <i>UCLA MATH 115A - Fall 2002 subject site. </i>
+          URL: <a href="http://www.math.ucla.edu/~tao/resource/general/115a.3.02f/" class="subject-resources__link" target="_blank">
+            http://www.math.ucla.edu/~tao/resource/general/115a.3.02f/
+          </a>
+        </li>
+        
+        <li class="subject-resources__item">
+          <span class="subject-resources__numbering">[2]</span>Michael Andrews. 
+          <b>Outline of lectures, and homework. </b>
+          <i>UCLA MATH 115A - Winter 2018 subject site. </i>
+          URL: <a href="http://www.math.ucla.edu/~mjandr/Math115A/index.html" class="subject-resources__link" target="_blank">
+            http://www.math.ucla.edu/~mjandr/Math115A/index.html
+          </a>
+        </li>
+        
+      </ol>
+    </div>
+    
+  </main>
+
+  <footer class="footer">
+  <div class="footer__wrapper">
+    <span class="copyright">Copyright 2018 Jim Zenn All rights reserved.</span>
+    <ul class="footer-links">
+      <li>
+        <a href="/Jim_Zenn-CV.pdf">CV</a>
+      </li>
+      <li>
+        <a href="https://jimzenn.com/index.xml" type="application/rss+xml" target="_blank">RSS</a>
+      </li>
+      <li>
+        <a href="https://github.com/Jim-Zenn">code</a>
+      </li>
+      <li>
+        <a href="mailto:zenn@ucla.edu">email</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+
+
+    <div>
+  </body>
+
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] },
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: true, width: "container" }
+    },
+    
+  });
+</script>
+
+<script>
+  shifted = false;
+  container = document.querySelector("#container");
+  var toggle = document.querySelector("#header-menu__toggle");
+  toggle.addEventListener("click", function toggleHeader() {
+    var content = document.querySelector("#collapsable-menu");
+    var menuIcon = document.querySelector("#header__menu-icon");
+    var globalNav = document.querySelector("#header-menu");
+    var header = document.querySelector("#header");
+    this.classList.toggle("header-menu__toggle--active");
+    content.classList.toggle("header-menu--collapsable--active");
+    header.classList.toggle("header--active");
+    container.classList.toggle("container--shifted");
+    menuIcon.classList.toggle("header__menu-icon--shifted");
+    shifted = !shifted;
+    if (shifted) {
+      triggerOffset = window.pageYOffset;
+    };
+  });
+
+  window.addEventListener('scroll', function scrollCloseTrigger() {
+    if (shifted && Math.abs(window.pageYOffset - triggerOffset) > 10) {
+      toggle.click();
+    };
+  });
+
+  container.addEventListener("click", function containerClickTrigger() {
+    if (shifted) {
+      toggle.click();
+    }
+  });
+
+  var collapsableMenuLinks = document.querySelectorAll(".header-menu__list--collapsable a");
+  for (i = 0; i < collapsableMenuLinks.length; i ++) {
+    collapsableMenuLinks[i].addEventListener("click", function(e) {
+      toggle.click();
+      return true;
+    });
+  }
+</script>
+
+
+</html>

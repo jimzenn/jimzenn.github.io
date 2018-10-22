@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.49.2" />
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<title>Probability Theory - Jim Zenn</title>
+<meta property="og:title" content="Probability Theory - Jim Zenn">
+
+
+
+  
+
+
+
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-83942334-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3" media="all">
+    
+    <link rel="stylesheet" href="https://jimzenn.com/css/subject.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3" media="all">
+
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3" media="all">
+  </head>
+
+  <body class="subject wide" >
+    <header class="header" id="header">
+  
+  <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
+  <div class="header__title">
+    <a class="header__site-logo-link" id="header-menu__toggle">
+      <img class="header__site-logo-image" src="/logo/wire.svg" alt="logo"/>
+    </a>
+  </div>
+  <nav class="header-menu" id="header-menu">
+      <ul class="header-menu__list">
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+          
+        
+          
+            <li class="header-menu__item header-menu__item--dropdown">
+              <a class="header-menu__link">Notes</a>
+              <ul class="header-menu__item-menu">
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/probability-theory/1.1/">Probability Theory</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/linear-algebra/1.2/">Linear Algebra</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/journey/">Journey</a></li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+          
+        
+      </ul>
+  </nav>
+</header>
+<nav class="header-menu--collapsable" id="collapsable-menu">
+  <ul class="header-menu__list--collapsable">
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+      
+    
+      
+        <li class="header-menu__item header-menu__item--dropdown">
+          <a class="header-menu__link">Notes</a>
+          <ul class="header-menu__item-menu">
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/probability-theory/1.1/">Probability Theory</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/linear-algebra/1.2/">Linear Algebra</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
+            
+          </ul>
+        </li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/journey/">Journey</a></li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+      
+    
+  </ul>
+</nav>
+
+
+    <div class="container" id="container">
+      
+        <div class="container-tag">
+          
+          <b class="container-title">
+            Notes
+          </b>
+          
+        </div>
+      
+      
+
+  
+  <div class="navigation" id="navigation">
+  <div class="navigation__wrapper" id="navigation__toggle">
+    <div class="navigation__left">
+      <span class="navigation__sup-title" style="color: #10AD2C"></span>
+      <span class="navigation__title">Probability Theory</span>
+
+    </div>
+    <div class="navigation__right">
+      <ul class="navigation__list">
+      
+        
+          <li class="navigation__item">
+            <a class="navigation__link " href="#syllabus" >Syllabus</a>
+          </li>
+        
+      
+        
+          <li class="navigation__item">
+            <a class="navigation__link " href="#resources" >Resources</a>
+          </li>
+        
+      
+        
+          <li class="navigation__item navigation__item--sep"> | </li>
+        
+      
+        
+          <li class="navigation__item">
+            <a class="navigation__link link--external" href="https://ccle.ucla.edu/subject/view/181A-MATH170A-1" >Official site</a>
+          </li>
+        
+      
+      </ul>
+      <ul class="navigation__list--collapsable">
+      
+        
+          <li class="navigation__item">
+            <a class="navigation__link " href="#syllabus" >Syllabus</a>
+          </li>
+        
+      
+        
+          <li class="navigation__item">
+            <a class="navigation__link " href="#resources" >Resources</a>
+          </li>
+        
+      
+        
+        <hr class="navigation__sep"/>
+        
+      
+        
+          <li class="navigation__item">
+            <a class="navigation__link link--external" href="https://ccle.ucla.edu/subject/view/181A-MATH170A-1" >Official site</a>
+          </li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  wasStuck = false;
+  window.addEventListener('scroll', function(e) {
+    var header = document.querySelector("#header");
+    var nav = document.querySelector("#navigation");
+    var navWrapper = document.querySelector("#navigation .navigation__wrapper");
+    if (window.scrollY >= header.offsetHeight) {
+      
+      if (!wasStuck) {
+        nav.classList.add("navigation--stuck");
+        navWrapper.classList.add("navigation__wrapper--stuck");
+        wasStuck = true;
+      }
+    } else {
+      if (wasStuck) {
+        nav.classList.remove("navigation--stuck");
+        navWrapper.classList.remove("navigation__wrapper--stuck");
+        wasStuck = false;
+      }
+    }
+  });
+  var toggle = document.querySelector("#navigation__toggle");
+  var list = document.querySelector(".navigation__list--collapsable");
+  toggle.addEventListener("click", function() {
+    this.classList.toggle("navigation__toggle--active");
+    list.classList.toggle("navigation__list--collapsable--active");
+  });
+  var listItems = document.querySelectorAll(".navigation__list--collapsable .navigation__link");
+  for (var i = 0; i < listItems.length; i ++) {
+    listItems[i].addEventListener("click", function() {
+      document.querySelector("#navigation__toggle").click();
+      return true;
+    });
+  }
+</script>
+
+
+  <main class="content" role="main">
+    
+    <div class="subject-introduction">
+      <div class="subject-information">
+         
+      </div>
+      <div class="subject-info">
+        
+        <div class="subject-info__group">
+          <span class="subject-info__field">Instructor</span>
+          <a class="subject-info__value  link--external"  href="http://www.math.ucla.edu/~turanova/"  target="_blank">Olga Turanova</a>
+        </div>
+        
+        <div class="subject-info__group">
+          <span class="subject-info__field">Teaching Assistant</span>
+          <a class="subject-info__value  link--external"  href="http://www.math.ucla.edu/~tylerarant/"  target="_blank">Tyler Arant</a>
+        </div>
+        
+        <div class="subject-info__group">
+          <span class="subject-info__field">Lecture Time / Location</span>
+          <a class="subject-info__value  link--calendar"  href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=XzhjczNhZTFoNjEyamFiOWg2a3IzYWI5azhjcGs0YjlwOGgwazhiYTQ2OHFqYWgyMzhrcTNlZDlsODRfMjAxODA3MjNUMTYwMDAwWiBnbjdpaWwxNjBxdTEwbDhxY2s4NmloNGFiY0Bn&amp;tmsrc=gn7iil160qu10l8qck86ih4abc%40group.calendar.google.com&amp;scp=ALL"  target="_blank">MWTh, 9-10:50pm @ Franz 2258A</a>
+        </div>
+        
+        <div class="subject-info__group">
+          <span class="subject-info__field">Discussion Time / Location</span>
+          <a class="subject-info__value  link--calendar"  href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=Xzg1Mms0ZTIxNzUxajBiYTM2c3MzOGI5azg4cmppYjlwNnNxNDRiYTI4Y29qNmRobDhvcmo4ZHBvNjRfMjAxODA3MjRUMTYwMDAwWiBnbjdpaWwxNjBxdTEwbDhxY2s4NmloNGFiY0Bn&amp;tmsrc=gn7iil160qu10l8qck86ih4abc%40group.calendar.google.com&amp;scp=ALL"  target="_blank">Tu, 9-10:50pm @ Franz 2258A</a>
+        </div>
+        
+      </div>
+    </div>
+    <div class="subject-syllabus page-link-position-fixer" id="syllabus">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th class="mobile-hide">Date</th>
+            <th align="left">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+            
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">1.1</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>6</sup><span class="slash">/</span><sub>25</sub></td>
+                  <td class="wrap"><b>Sets</b><br>[<a href="https://jimzenn.com/probability-theory/1.1/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">D.1</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>6</sup><span class="slash">/</span><sub>25</sub></td>
+                  <td class="wrap"><b>Discussion</b><br>[<a href="https://jimzenn.com/probability-theory/d.1/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">1.2</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>6</sup><span class="slash">/</span><sub>27</sub></td>
+                  <td class="wrap"><b>Probabilistic Models</b><br>[<a href="https://jimzenn.com/probability-theory/1.2/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">1.3</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>6</sup><span class="slash">/</span><sub>28</sub></td>
+                  <td class="wrap"><b>Conditional Probability</b><br>[<a href="https://jimzenn.com/probability-theory/1.3/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">1.4</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>6</sup><span class="slash">/</span><sub>29</sub></td>
+                  <td class="wrap"><b>Total Probability Theorem and Bayes&#39; Rule</b><br>[<a href="https://jimzenn.com/probability-theory/1.4/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">1.5</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>6</sup><span class="slash">/</span><sub>29</sub></td>
+                  <td class="wrap"><b>Independence</b><br>[<a href="https://jimzenn.com/probability-theory/1.5/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">D.2</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>3</sub></td>
+                  <td class="wrap"><b>Discussion</b><br>[<a href="https://jimzenn.com/probability-theory/d.2/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">1.6</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>5</sub></td>
+                  <td class="wrap"><b>Counting</b><br>[<a href="https://jimzenn.com/probability-theory/1.6/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">2.1</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>9</sub></td>
+                  <td class="wrap"><b>Discrete Random Variable</b><br>[<a href="https://jimzenn.com/probability-theory/2.1/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">D.3</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>10</sub></td>
+                  <td class="wrap"><b>Disucission</b><br>[<a href="https://jimzenn.com/probability-theory/d.3/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">2.2</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>11</sub></td>
+                  <td class="wrap"><b>Probability Mass Function</b><br>[<a href="https://jimzenn.com/probability-theory/2.2/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">2.3</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>16</sub></td>
+                  <td class="wrap"><b>Functions of Random Variables</b><br>[<a href="https://jimzenn.com/probability-theory/2.3/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">D.4</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>17</sub></td>
+                  <td class="wrap"><b>Disucission: Midterm Review</b><br>[<a href="https://jimzenn.com/probability-theory/d.4/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">2.4</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>18</sub></td>
+                  <td class="wrap"><b>Functions of Random Variables</b><br>[<a href="https://jimzenn.com/probability-theory/2.4/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">3.1</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>19</sub></td>
+                  <td class="wrap"><b>Continuous Random Variables and PDFs</b><br>[<a href="https://jimzenn.com/probability-theory/3.1/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">3.2</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>23</sub></td>
+                  <td class="wrap"><b>Cummulative Distribution Functions</b><br>[<a href="https://jimzenn.com/probability-theory/3.2/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">D.5</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>24</sub></td>
+                  <td class="wrap"><b>Disucission</b><br>[<a href="https://jimzenn.com/probability-theory/d.5/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">3.3</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>25</sub></td>
+                  <td class="wrap"><b>Normal Random Variables</b><br>[<a href="https://jimzenn.com/probability-theory/3.3/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">3.4</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>25</sub></td>
+                  <td class="wrap"><b>Joint PDFs of Multiple Random Variables</b><br>[<a href="https://jimzenn.com/probability-theory/3.4/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">3.6</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>25</sub></td>
+                  <td class="wrap"><b>The Continuous Bayes&#39; Rule</b><br>[<a href="https://jimzenn.com/probability-theory/3.6/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">3.5</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>25</sub></td>
+                  <td class="wrap"><b>Conditioning</b><br>[<a href="https://jimzenn.com/probability-theory/3.5/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">D.6</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>31</sub></td>
+                  <td class="wrap"><b>Disucission</b><br>[<a href="https://jimzenn.com/probability-theory/d.6/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">D.7</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>8</sup><span class="slash">/</span><sub>1</sub></td>
+                  <td class="wrap"><b>Review</b><br>[<a href="https://jimzenn.com/probability-theory/d.7/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+        </tbody>
+      </table>
+    </div>
+    <div class="subject-resources page-link-position-fixer" id="resources">
+      <h2 class="subject-resources__title">Resources</h2>
+      <ul class="subject-resources__list">
+        
+        <li class="subject-resources__item">
+          <span class="subject-resources__numbering">[1]</span>
+          <b>Supplementary problems. </b>
+          <i></i>
+          URL: <a href="http://www.athenasc.com/prob-supp.html" class="subject-resources__link" target="_blank">
+            http://www.athenasc.com/prob-supp.html
+          </a>
+        </li>
+        
+        <li class="subject-resources__item">
+          <span class="subject-resources__numbering">[2]</span>
+          <b>Homework 01. </b>
+          <i></i>
+          URL: <a href="/math-170a/hw/01.pdf" class="subject-resources__link" target="_blank">
+            /math-170a/hw/01.pdf
+          </a>
+        </li>
+        
+        <li class="subject-resources__item">
+          <span class="subject-resources__numbering">[3]</span>
+          <b>Homework 02. </b>
+          <i></i>
+          URL: <a href="/math-170a/hw/02.pdf" class="subject-resources__link" target="_blank">
+            /math-170a/hw/02.pdf
+          </a>
+        </li>
+        
+        <li class="subject-resources__item">
+          <span class="subject-resources__numbering">[4]</span>
+          <b>Homework 03. </b>
+          <i></i>
+          URL: <a href="/math-170a/hw/03.pdf" class="subject-resources__link" target="_blank">
+            /math-170a/hw/03.pdf
+          </a>
+        </li>
+        
+        <li class="subject-resources__item">
+          <span class="subject-resources__numbering">[5]</span>
+          <b>Homework 04. </b>
+          <i></i>
+          URL: <a href="/math-170a/hw/04.pdf" class="subject-resources__link" target="_blank">
+            /math-170a/hw/04.pdf
+          </a>
+        </li>
+        
+        <li class="subject-resources__item">
+          <span class="subject-resources__numbering">[6]</span>
+          <b>Homework 05. </b>
+          <i></i>
+          URL: <a href="/math-170a/hw/05.pdf" class="subject-resources__link" target="_blank">
+            /math-170a/hw/05.pdf
+          </a>
+        </li>
+        
+        <li class="subject-resources__item">
+          <span class="subject-resources__numbering">[7]</span>
+          <b>Homework 06. </b>
+          <i></i>
+          URL: <a href="/math-170a/hw/06.pdf" class="subject-resources__link" target="_blank">
+            /math-170a/hw/06.pdf
+          </a>
+        </li>
+        
+        <li class="subject-resources__item">
+          <span class="subject-resources__numbering">[8]</span>
+          <b>Supplement. </b>
+          <i></i>
+          URL: <a href="/math-170a/supplement.pdf" class="subject-resources__link" target="_blank">
+            /math-170a/supplement.pdf
+          </a>
+        </li>
+        
+      </ol>
+    </div>
+    
+    <div class="subject-introduction">
+      <div class="subject-information">
+         
+      </div>
+      <div class="subject-info">
+        
+        <div class="subject-info__group">
+          <span class="subject-info__field">Instructor</span>
+          <a class="subject-info__value  link--external"  href="http://www.math.ucla.edu/~turanova/"  target="_blank">Olga Turanova</a>
+        </div>
+        
+        <div class="subject-info__group">
+          <span class="subject-info__field">Teaching Assistant</span>
+          <a class="subject-info__value  link--external"  href="http://www.math.ucla.edu/~tylerarant/"  target="_blank">Tyler Arant</a>
+        </div>
+        
+        <div class="subject-info__group">
+          <span class="subject-info__field">Lecture Time / Location</span>
+          <a class="subject-info__value  link--calendar"  href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=XzhjczNhZTFoNjEyamFiOWg2a3IzYWI5azhjcGs0YjlwOGgwazhiYTQ2OHFqYWgyMzhrcTNlZDlsODRfMjAxODA3MjNUMTYwMDAwWiBnbjdpaWwxNjBxdTEwbDhxY2s4NmloNGFiY0Bn&amp;tmsrc=gn7iil160qu10l8qck86ih4abc%40group.calendar.google.com&amp;scp=ALL"  target="_blank">MWTh, 9-10:50pm @ Franz 2258A</a>
+        </div>
+        
+        <div class="subject-info__group">
+          <span class="subject-info__field">Discussion Time / Location</span>
+          <a class="subject-info__value  link--calendar"  href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=Xzg1Mms0ZTIxNzUxajBiYTM2c3MzOGI5azg4cmppYjlwNnNxNDRiYTI4Y29qNmRobDhvcmo4ZHBvNjRfMjAxODA3MjRUMTYwMDAwWiBnbjdpaWwxNjBxdTEwbDhxY2s4NmloNGFiY0Bn&amp;tmsrc=gn7iil160qu10l8qck86ih4abc%40group.calendar.google.com&amp;scp=ALL"  target="_blank">Tu, 9-10:50pm @ Franz 2258A</a>
+        </div>
+        
+      </div>
+    </div>
+    <div class="subject-syllabus page-link-position-fixer" id="syllabus">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th class="mobile-hide">Date</th>
+            <th align="left">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+            
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">1.1</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>6</sup><span class="slash">/</span><sub>25</sub></td>
+                  <td class="wrap"><b>Sets</b><br>[<a href="https://jimzenn.com/probability-theory/1.1/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">D.1</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>6</sup><span class="slash">/</span><sub>25</sub></td>
+                  <td class="wrap"><b>Discussion</b><br>[<a href="https://jimzenn.com/probability-theory/d.1/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">1.2</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>6</sup><span class="slash">/</span><sub>27</sub></td>
+                  <td class="wrap"><b>Probabilistic Models</b><br>[<a href="https://jimzenn.com/probability-theory/1.2/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">1.3</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>6</sup><span class="slash">/</span><sub>28</sub></td>
+                  <td class="wrap"><b>Conditional Probability</b><br>[<a href="https://jimzenn.com/probability-theory/1.3/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">1.4</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>6</sup><span class="slash">/</span><sub>29</sub></td>
+                  <td class="wrap"><b>Total Probability Theorem and Bayes&#39; Rule</b><br>[<a href="https://jimzenn.com/probability-theory/1.4/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">1.5</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>6</sup><span class="slash">/</span><sub>29</sub></td>
+                  <td class="wrap"><b>Independence</b><br>[<a href="https://jimzenn.com/probability-theory/1.5/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">D.2</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>3</sub></td>
+                  <td class="wrap"><b>Discussion</b><br>[<a href="https://jimzenn.com/probability-theory/d.2/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">1.6</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>5</sub></td>
+                  <td class="wrap"><b>Counting</b><br>[<a href="https://jimzenn.com/probability-theory/1.6/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">2.1</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>9</sub></td>
+                  <td class="wrap"><b>Discrete Random Variable</b><br>[<a href="https://jimzenn.com/probability-theory/2.1/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">D.3</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>10</sub></td>
+                  <td class="wrap"><b>Disucission</b><br>[<a href="https://jimzenn.com/probability-theory/d.3/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">2.2</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>11</sub></td>
+                  <td class="wrap"><b>Probability Mass Function</b><br>[<a href="https://jimzenn.com/probability-theory/2.2/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">2.3</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>16</sub></td>
+                  <td class="wrap"><b>Functions of Random Variables</b><br>[<a href="https://jimzenn.com/probability-theory/2.3/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">D.4</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>17</sub></td>
+                  <td class="wrap"><b>Disucission: Midterm Review</b><br>[<a href="https://jimzenn.com/probability-theory/d.4/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">2.4</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>18</sub></td>
+                  <td class="wrap"><b>Functions of Random Variables</b><br>[<a href="https://jimzenn.com/probability-theory/2.4/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">3.1</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>19</sub></td>
+                  <td class="wrap"><b>Continuous Random Variables and PDFs</b><br>[<a href="https://jimzenn.com/probability-theory/3.1/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">3.2</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>23</sub></td>
+                  <td class="wrap"><b>Cummulative Distribution Functions</b><br>[<a href="https://jimzenn.com/probability-theory/3.2/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">D.5</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>24</sub></td>
+                  <td class="wrap"><b>Disucission</b><br>[<a href="https://jimzenn.com/probability-theory/d.5/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">3.3</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>25</sub></td>
+                  <td class="wrap"><b>Normal Random Variables</b><br>[<a href="https://jimzenn.com/probability-theory/3.3/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">3.4</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>25</sub></td>
+                  <td class="wrap"><b>Joint PDFs of Multiple Random Variables</b><br>[<a href="https://jimzenn.com/probability-theory/3.4/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">3.6</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>25</sub></td>
+                  <td class="wrap"><b>The Continuous Bayes&#39; Rule</b><br>[<a href="https://jimzenn.com/probability-theory/3.6/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">3.5</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>25</sub></td>
+                  <td class="wrap"><b>Conditioning</b><br>[<a href="https://jimzenn.com/probability-theory/3.5/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">D.6</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>7</sup><span class="slash">/</span><sub>31</sub></td>
+                  <td class="wrap"><b>Disucission</b><br>[<a href="https://jimzenn.com/probability-theory/d.6/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+            
+            
+            
+              
+                <tr>
+                  <td align="center">D.7</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>8</sup><span class="slash">/</span><sub>1</sub></td>
+                  <td class="wrap"><b>Review</b><br>[<a href="https://jimzenn.com/probability-theory/d.7/">Notes</a>]</td>
+                </tr>
+              
+            
+          
+        </tbody>
+      </table>
+    </div>
+    <div class="subject-resources page-link-position-fixer" id="resources">
+      <h2 class="subject-resources__title">Resources</h2>
+      <ul class="subject-resources__list">
+        
+        <li class="subject-resources__item">
+          <span class="subject-resources__numbering">[1]</span>
+          <b>Supplementary problems. </b>
+          <i></i>
+          URL: <a href="http://www.athenasc.com/prob-supp.html" class="subject-resources__link" target="_blank">
+            http://www.athenasc.com/prob-supp.html
+          </a>
+        </li>
+        
+      </ol>
+    </div>
+    
+  </main>
+
+  <footer class="footer">
+  <div class="footer__wrapper">
+    <span class="copyright">Copyright 2018 Jim Zenn All rights reserved.</span>
+    <ul class="footer-links">
+      <li>
+        <a href="/Jim_Zenn-CV.pdf">CV</a>
+      </li>
+      <li>
+        <a href="https://jimzenn.com/index.xml" type="application/rss+xml" target="_blank">RSS</a>
+      </li>
+      <li>
+        <a href="https://github.com/Jim-Zenn">code</a>
+      </li>
+      <li>
+        <a href="mailto:zenn@ucla.edu">email</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+
+
+    <div>
+  </body>
+
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] },
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: true, width: "container" }
+    },
+    
+  });
+</script>
+
+<script>
+  shifted = false;
+  container = document.querySelector("#container");
+  var toggle = document.querySelector("#header-menu__toggle");
+  toggle.addEventListener("click", function toggleHeader() {
+    var content = document.querySelector("#collapsable-menu");
+    var menuIcon = document.querySelector("#header__menu-icon");
+    var globalNav = document.querySelector("#header-menu");
+    var header = document.querySelector("#header");
+    this.classList.toggle("header-menu__toggle--active");
+    content.classList.toggle("header-menu--collapsable--active");
+    header.classList.toggle("header--active");
+    container.classList.toggle("container--shifted");
+    menuIcon.classList.toggle("header__menu-icon--shifted");
+    shifted = !shifted;
+    if (shifted) {
+      triggerOffset = window.pageYOffset;
+    };
+  });
+
+  window.addEventListener('scroll', function scrollCloseTrigger() {
+    if (shifted && Math.abs(window.pageYOffset - triggerOffset) > 10) {
+      toggle.click();
+    };
+  });
+
+  container.addEventListener("click", function containerClickTrigger() {
+    if (shifted) {
+      toggle.click();
+    }
+  });
+
+  var collapsableMenuLinks = document.querySelectorAll(".header-menu__list--collapsable a");
+  for (i = 0; i < collapsableMenuLinks.length; i ++) {
+    collapsableMenuLinks[i].addEventListener("click", function(e) {
+      toggle.click();
+      return true;
+    });
+  }
+</script>
+
+
+</html>
