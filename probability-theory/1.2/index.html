@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.49.2" />
+<meta name="generator" content="Hugo 0.50" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -364,51 +364,6 @@ if (!doNotTrack) {
 
 <p>The probability law should encode our knowledge or belief about the collective &ldquo;likelihood&rdquo; of the elements of $A$.</p>
 
-<div class="block block--green ">
-  <span class="block__title block__title--green">Axioms: <span class="keyword" id="probability-axioms">Probability Axioms</span>
-  
-  </span>
-  <div class="block__content block__content--green">
-  <p>Any probability law must satisfies the following axioms:</p>
-
-<ol>
-<li><strong>(Nonnegativity)</strong> $P(A)\geq 0$, for every event $A$.</li>
-<li><strong>(Additivity)</strong> if $A_1,A_2,&hellip;$ is a sequence of disjoint events, then the probability of their union satisfies $P(A_1\cup A_2 \cup &hellip;)=P(A_1) + P(A_2)+&hellip;$.</li>
-<li><strong>(Normalization)</strong> $P(\Omega)=1$.</li>
-</ol>
-
-  </div>
-
-<p><ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul><script></p>
-
-<pre><code>  (function() {
-    var keywordListDOM = document.getElementById(&quot;page-navigation&quot;);
-    var keywordDOM = document.getElementById(&quot;probability-axioms&quot;);
-    var keywordItemDOM = document.createElement(&quot;li&quot;);
-    keywordItemDOM.setAttribute(&quot;class&quot;, &quot;navigation--side__item&quot;);
-    var keywordLinkDOM = document.createElement(&quot;a&quot;);
-    keywordLinkDOM.setAttribute(&quot;href&quot;, &quot;#&quot; + keywordDOM.id);
-    var keywordIndexDOM = document.createElement(&quot;span&quot;);
-    keywordIndexDOM.setAttribute(&quot;class&quot;, &quot;navigation--side__index navigation--side__index--text&quot;);
-    keywordIndexDOM.setAttribute(&quot;style&quot;, &quot;color: var(--blue-text-color)&quot;);
-
-    keywordsCounter += 1;
-    keywordIndexDOM.innerHTML = &quot;axm&quot;;
-    keywordLinkDOM.appendChild(keywordIndexDOM);
-    keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
-    keywordItemDOM.appendChild(keywordLinkDOM);
-    keywordsCollector.push(keywordItemDOM);
-  })();
-&lt;/script&gt;&lt;/div&gt;
-</code></pre>
-
   </div>
 
   <ul class="block__footer">
@@ -433,6 +388,51 @@ if (!doNotTrack) {
 
         keywordsCounter += 1;
         keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Axioms: <span class="keyword" id="probability-axioms">Probability Axioms</span>
+  
+  </span>
+  <div class="block__content block__content--green">
+  <p>Any probability law must satisfies the following axioms:</p>
+
+<ol>
+<li><strong>(Nonnegativity)</strong> $P(A)\geq 0$, for every event $A$.</li>
+<li><strong>(Additivity)</strong> if $A_1,A_2,&hellip;$ is a sequence of disjoint events, then the probability of their union satisfies $P(A_1\cup A_2 \cup &hellip;)=P(A_1) + P(A_2)+&hellip;$.</li>
+<li><strong>(Normalization)</strong> $P(\Omega)=1$.</li>
+</ol>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("probability-axioms");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "axm";
         keywordLinkDOM.appendChild(keywordIndexDOM);
         keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
         keywordItemDOM.appendChild(keywordLinkDOM);

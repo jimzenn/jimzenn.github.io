@@ -6,26 +6,26 @@
     <description>Recent content in 12 on Jim Zenn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Oct 2018 00:55:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 01 Nov 2018 23:38:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jimzenn.com/volumes/12/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Recursive Least-squares Alorithm</title>
-      <link>https://jimzenn.com/optimization/12.2/</link>
-      <pubDate>Wed, 17 Oct 2018 00:55:00 +0800</pubDate>
+      <title>Least-Squares Analysis</title>
+      <link>https://jimzenn.com/optimization/12.1/</link>
+      <pubDate>Thu, 01 Nov 2018 23:38:00 +0800</pubDate>
       
-      <guid>https://jimzenn.com/optimization/12.2/</guid>
+      <guid>https://jimzenn.com/optimization/12.1/</guid>
       <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Least-Squares Analysis</title>
-      <link>https://jimzenn.com/optimization/12.1/</link>
-      <pubDate>Tue, 16 Oct 2018 23:38:00 +0800</pubDate>
+      <title>Recursive Least-squares Alorithm</title>
+      <link>https://jimzenn.com/optimization/12.2/</link>
+      <pubDate>Thu, 01 Nov 2018 00:55:00 +0800</pubDate>
       
-      <guid>https://jimzenn.com/optimization/12.1/</guid>
+      <guid>https://jimzenn.com/optimization/12.2/</guid>
       <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     

@@ -9,8 +9,8 @@
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
-<title>Subspaces - Jim Zenn</title>
-<meta property="og:title" content="Subspaces - Jim Zenn">
+<title>The Method of Steepest Descent - Jim Zenn</title>
+<meta property="og:title" content="The method of steepest descent - Jim Zenn">
 
 
 
@@ -160,8 +160,8 @@ if (!doNotTrack) {
 <div class="navigation" id="navigation">
   <div class="navigation__wrapper" id="navigation__toggle">
     <div class="navigation__left">
-      <span class="navigation__sup-title" style="color: #0052B5">Linear Algebra, Section 1.3</span>
-      <span class="navigation__title">Subspaces</span>
+      <span class="navigation__sup-title" style="color: #327658">Optimization, Section 8.2</span>
+      <span class="navigation__title">The Method of Steepest Descent</span>
 
     </div>
     <div class="navigation__right">
@@ -220,11 +220,7 @@ if (!doNotTrack) {
           keywordsCollector = [];
           keywordsCounter = 0;
         </script>
-        <p class="hide">
-  Subspaces.
-</p>
-
-<p></p>
+        <p></p>
 
 <div class="latex-macros">
   
@@ -239,22 +235,50 @@ if (!doNotTrack) {
     $\newcommand{\F}{\mathbb{F}}$
     $\newcommand{\L}{\mathcal{L}}$
     $\newcommand{\spa}[1]{\text{span}(#1)}$
-    $\newcommand{\set}[1]{\{#1\}}$
+    $\newcommand{\dist}[1]{\text{dist}(#1)}$
+    $\newcommand{\max}[1]{\text{max}(#1)}$
+    $\newcommand{\min}[1]{\text{max}(#1)}$
+    $\newcommand{\supr}[1]{\text{sup}(#1)}$
+    $\newcommand{\infi}[1]{\text{inf}(#1)}$
+    $\newcommand{\argmax}[1]{\underset{#1}{\text{argmax }}}$
+    $\newcommand{\argmin}[1]{\underset{#1}{\text{argmin }}}$
+    $\newcommand{\set}[1]{\left\{#1\right\}}$
     $\newcommand{\emptyset}{\varnothing}$
     $\newcommand{\otherwise}{\text{ otherwise }}$
     $\newcommand{\if}{\text{ if }}$
+    $\newcommand{\proj}{\text{proj}}$
     $\newcommand{\union}{\cup}$
     $\newcommand{\intercept}{\cap}$
-    $\newcommand{\abs}[1]{| #1 |}$
-    $\newcommand{\pare}[1]{\left\(#1\right\)}$
+    $\newcommand{\abs}[1]{\left| #1 \right|}$
+    $\newcommand{\norm}[1]{\left\lVert#1\right\rVert}$
+    $\newcommand{\pare}[1]{\left(#1\right)}$
     $\newcommand{\t}[1]{\text{ #1 }}$
     $\newcommand{\head}{\text H}$
     $\newcommand{\tail}{\text T}$
+    $\newcommand{\d}{\text d}$
+    $\newcommand{\limu}[2]{\underset{#1 \to #2}\lim}$
+    $\newcommand{\der}[2]{\frac{\d #1}{\d #2}}$
+    $\newcommand{\derw}[2]{\frac{\d #1^2}{\d^2 #2}}$
+    $\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}$
+    $\newcommand{\pderw}[2]{\frac{\partial^2 #1}{\partial #2^2}}$
+    $\newcommand{\pderws}[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}$
     $\newcommand{\inv}[1]{{#1}^{-1}}$
+    $\newcommand{\inner}[2]{\langle #1, #2 \rangle}$
     $\newcommand{\nullity}[1]{\text{nullity}(#1)}$
     $\newcommand{\rank}[1]{\text{rank}(#1)}$
+    $\newcommand{\var}[1]{\text{var}(#1)}$
+    $\newcommand{\tr}[1]{\text{tr}(#1)}$
     $\newcommand{\oto}{\text{ one-to-one }}$
     $\newcommand{\ot}{\text{ onto }}$
+    $\newcommand{\ceil}[1]{\lceil#1\rceil}$
+    $\newcommand{\floor}[1]{\lfloor#1\rfloor}$
+    $\newcommand{\Re}[1]{\text{Re}(#1)}$
+    $\newcommand{\Im}[1]{\text{Im}(#1)}$
+    $\newcommand{\dom}[1]{\text{dom}(#1)}$
+    $\newcommand{\fnext}[1]{\overset{\sim}{#1}}$
+    $\newcommand{\transpose}[1]{{#1}^{\text{T}}}$
+    $\newcommand{\b}[1]{\boldsymbol{#1}}$
+    $\newcommand{\None}[1]{}$
 
 
     $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$
@@ -263,6 +287,13 @@ if (!doNotTrack) {
     $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$
     $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$
     $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$
+
+    $\newcommand{\vcw}[2]{\begin{matrix} #1 \br #2 \end{matrix}}$
+    $\newcommand{\vce}[3]{\begin{matrix} #1 \br #2 \br #3 \end{matrix}}$
+    $\newcommand{\vcr}[4]{\begin{matrix} #1 \br #2 \br #3 \br #4 \end{matrix}}$
+    $\newcommand{\vct}[5]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \end{matrix}}$
+    $\newcommand{\vcy}[6]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{matrix}}$
+    $\newcommand{\vcu}[7]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{matrix}}$
 
     $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$
     $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$
@@ -286,46 +317,15 @@ if (!doNotTrack) {
 </div>
 
 <div class="block block--blue ">
-  <span class="block__title block__title--blue">Definition: <span class="keyword" id="subspaces">Subspaces</span></span>
+  <span class="block__title block__title--blue">Definition</span>
   <div class="block__content block__content--blue">
-    <p>A subset $W$ of a vector space $V$ over a Field $F$ is called a <strong>subspace</strong> if $W$ is a vector space over $F$ is a vector space, denoted by $W \leq V$.</p>
+    <p>The method of steepest descent is a gradient algorithm where the step size $\alpha_k $ is chosen to achieve the maximum amount of decrease of the objective function at each individual step. Specifically, $\alpha_k$ is chosen to minimize $\phi_k (\alpha) \triangleq f(\b{x}^{(k)} - \alpha \nabla f(\b{x}^{(k)}))$. In other words,</p>
 
-  </div>
+<p>$$\alpha_k = \argmin{ \alpha \geq 0} f(\b{x}^{(k)} - \alpha \nabla f(\b{x}^{k}))$$</p>
 
-  <ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul><script>
-      
-      (function() {
-        var keywordListDOM = document.getElementById("page-navigation");
-        var keywordDOM = document.getElementById("subspaces");
-        var keywordItemDOM = document.createElement("li");
-        keywordItemDOM.setAttribute("class", "navigation--side__item");
-        var keywordLinkDOM = document.createElement("a");
-        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
-        var keywordIndexDOM = document.createElement("span");
-        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
-        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+<p>To summarize, the steepest descent algorithm proceeds as follows:</p>
 
-        keywordsCounter += 1;
-        keywordIndexDOM.innerHTML = "def";
-        keywordLinkDOM.appendChild(keywordIndexDOM);
-        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
-        keywordItemDOM.appendChild(keywordLinkDOM);
-        keywordsCollector.push(keywordItemDOM);
-      })();
-    </script></div>
-
-
-<div class="block block--yellow "> <span class="block__title block__title--yellow">Note
-  </span>
-  <div class="block__content block__content--yellow">
-    <p>In any vector space $V, V$ itself and $\set{0}$ are subspaces. The latter is called the <strong>zero subspace</strong> of $V$.</p>
+<p>At each step starting from the point $\b{x}^{(k)} $, we conduct a line search in the direction $- \nabla f(\b{x}^{(k)}) $ until a minimizer $\b{x}^{(k+1)}$ is found.</p>
 
   </div>
 
@@ -341,70 +341,11 @@ if (!doNotTrack) {
 
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
-  
-  1.3: <span class="keyword" id="properties-of-subspaces">Properties of Subspaces</span><span class="keyword" id="1.3" style="visibility: hidden;">1.3</span></span>
+  </span>
   <div class="block__content block__content--green">
-  <p>Additionally, a subset $W$ of a vector space $V$ is a subspace of $V$ if and only if the following three properties hold.</p>
+  <p>If $\set{ \b{x}^{(k)}}^ \infty _ {k=0} $ is a steepest descent sequence for a given function $f: \R^n \to \R $, then for each $k$ the vector $\b{x}^{(k+1)} - \b{x}^{(k)}$ is orthogonal to the vector $\b{x}^{(k + 2)} - \b{x}^{(k+1)}$.</p>
 
-<ol>
-<li>$W$ has a zero vector.</li>
-<li>$x + y \in W$ whenever $x\in W$ and $y \in W$. ($W$ is <strong>closed under addition</strong>)</li>
-<li>$cx \in W$ whenever $c \in F$ and $x \in W$. ($W$ is <strong>closed under scalar multiplication</strong>)</li>
-</ol>
-
-<div class="proof">
-  <div class="proof__heading">
-    <span class="proof__title">Proof
-      <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
-  </div>
-  <div class="proof__content">
-    <p><u>Assume that $W$ is a subspace.</u></p>
-
-<p>This implies from the definition of subspace that $W$ itself is a vector space over $F$. then for all three of the properties are satisfiled.</p>
-
-<p><br></p>
-
-<p><u>Assume that the three properties holds for $W$.</u> We need to proof that $W$ is a subspace of $V$, i.e. itself is a vector space.</p>
-
-<ol>
-<li>$w_1 + w_2 = w_2 + w_1, \forall w_1, w_2 \in W \subseteq V$</li>
-<li>$(w_1 + w_2) + w_3 = w_1 + (w_2 + w_3）, \forall w_1, w_2, w_3 \in W \subseteq V$</li>
-<li>The third property.</li>
-<li>let $c= -1 \in F$， $\forall x \in W \subseteq V, x + (-1)x = (1-1) x = 0$</li>
-<li>$1w=w, \forall w \in W \subseteq V$</li>
-<li>$\forall a,b \in F, \forall x \in W \subseteq V, (ab)x=a(bx)$</li>
-<li>$\forall a \in F, \forall x, y\in W \subseteq V, a(x+y)=ax+ay$</li>
-<li>$\forall a,b \in F, \forall x \in W \subseteq V, (a+b)x = ax+ bx$</li>
-</ol>
-
-  </div>
-</div>
-
-  </div><script>
-      
-      (function() {
-        var keywordListDOM = document.getElementById("page-navigation");
-        var keywordDOM = document.getElementById("properties-of-subspaces");
-        var keywordItemDOM = document.createElement("li");
-        keywordItemDOM.setAttribute("class", "navigation--side__item");
-        var keywordLinkDOM = document.createElement("a");
-        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
-        var keywordIndexDOM = document.createElement("span");
-        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
-        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
-
-        keywordsCounter += 1;
-        keywordIndexDOM.innerHTML = "thm";
-        keywordLinkDOM.appendChild(keywordIndexDOM);
-        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
-        keywordItemDOM.appendChild(keywordLinkDOM);
-        keywordsCollector.push(keywordItemDOM);
-      })();
-    </script><ul class="block__footer">
+  </div><ul class="block__footer">
     <li class="block__footer-item">
       <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
     </li>
@@ -412,159 +353,15 @@ if (!doNotTrack) {
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul>
-</div>
-
-
-<div class="block block--gray ">
-  <span class="block__title block__title--gray">Example: $\R^2/\R=$ XY-plane
-    
-  </span>
-  <div class="block__content block__content--gray">
-    
-  </div>
-
-  <ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-
-</div>
-
-
-<div class="block block--gray ">
-  <span class="block__title block__title--gray">Example: X-axis
-    
-  </span>
-  <div class="block__content block__content--gray">
-    <p>W=${(a,0)|a\in\R}$</p>
-
-<ol>
-<li>$(0,0)\in W$</li>
-<li>$(a,0) + (b,0) = (a+b, 0) \in W, V$</li>
-<li>$\lambda \in \R, \lambda(a, 0) = (\lambda a, 0) \in W$</li>
-</ol>
-
-<p>$\therefore W$ is a subspace of $\R^2$</p>
-
-<p>Any straight line in $\R^2$ that passes through the origin is a subspace of $\R^2$</p>
-
-  </div>
-
-  <ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-
-</div>
-
-
-<div class="examples">
-  <strong>Examples
-  </strong> <p>$W = \set{A\in M_{n\times n}(\R)|A^T=A}=$ Set of all symmetric matrices is a subspace.</p>
-
-<p>Set of all diagnal matrices is a subspace.</p>
-
-<p>Set of all invertible matrices is <strong>NOT</strong> a subspace.</p>
-
-<p>Set of all upper triangular matrices is a subspace.</p>
-
-<p>Set of all lower triangular matrices is a subspace.</p>
-
-<p>$W = \set{A\in M_{n\times n}|A^2=A}$ is <strong>NOT</strong> a subspace.</p>
-
-<p>$W=\set{A\in M_{n\times n}(R)| \tr{A}=0}$ is a subspace.</p>
-
-<p>$\R^n$, hyperplanes that passes through the origin $a_1x_1+a_2x_2+&hellip;+a_nx_n=0$ are subspaces.</p>
-
-</div>
-
-<div class="block block--gray ">
-  <span class="block__title block__title--gray">Example: $\R^5$
-    
-  </span>
-  <div class="block__content block__content--gray">
-    <p>$\R^5, W =\set{(x_1, x_2,x_3,x_4,x_5)\in \R^5 | x_1-x_2+x_5=0, 2x_3+7x_4=0}$. subspace.</p>
-
-<ol>
-<li><p>$(0,0,0,0,0) \in W$, since <br>
-$0- 0+0 =0$<br>
-$2\cdot0+7\cdot0=0$</p></li>
-
-<li><p>$(x_1, x_2,&hellip;,x_5)\in W \implies x_1-x_2+x_5=0  (1), 2x_3+7x_4=0   (2)$<br>
-$(y_1,y_2,&hellip;,y_5) \in W \implies  y_1-y_2+y_5=0  (3), 2y_3+7y_4=0  (4)$<br>
-$(x_1+y_1,x_2+y_2,&hellip;x_5+,y_5) \in W$<br>
-$(1)+(3) = 0, (2)+(4) = 0$</p></li>
-
-<li><p>trivial</p></li>
-</ol>
-
-  </div>
-
-  <ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-
 </div>
 
 
 <div class="block block--green ">
-  <span class="block__title block__title--green">Theorem
+  <span class="block__title block__title--green">Properties: <span class="keyword" id="descent-property">Descent Property</span>
   
-  1.4<span class="keyword" id="1.4" style="visibility: hidden;">1.4</span></span>
-  <div class="block__content block__content--green">
-  <p>The intersection of any number (uncountable is also included) of subspaces of $V$ is again a subspace of $V$.</p>
-
-  </div><script>
-      
-      (function() {
-        var keywordListDOM = document.getElementById("page-navigation");
-        var keywordDOM = document.getElementById("1.4");
-        var keywordItemDOM = document.createElement("li");
-        keywordItemDOM.setAttribute("class", "navigation--side__item");
-        var keywordLinkDOM = document.createElement("a");
-        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
-        var keywordIndexDOM = document.createElement("span");
-        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
-        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
-
-        keywordsCounter += 1;
-        keywordIndexDOM.innerHTML = "thm";
-        keywordLinkDOM.appendChild(keywordIndexDOM);
-        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
-        keywordItemDOM.appendChild(keywordLinkDOM);
-        keywordsCollector.push(keywordItemDOM);
-      })();
-    </script><ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-</div>
-
-
-<div class="block block--yellow ">
-  <span class="block__title block__title--yellow">Remarks
   </span>
-  <div class="block__content block__content--yellow">
-  <p>Union of TWO subspaces may not be a subspace in general.</p>
-
-<p>Union is a subspace if and only if one subspace is the subset of the other.</p>
+  <div class="block__content block__content--green">
+  <p>If $\set{ x^{(k)}}^ \infty _ {k = 0} $ is the steepest descent sequence for $f: \R^n \to \R $ and if $\nabla f(\b{x}^{(k)}) \neq \b{0} $, then $f(\b{x}^{(k+1)}) &lt; f (\b{x}^{(k)})$.</p>
 
   </div>
 
@@ -575,8 +372,156 @@ $(1)+(3) = 0, (2)+(4) = 0$</p></li>
     <li class="block__footer-item">
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
-  </ul>
-</div>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("descent-property");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "ppt";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--yellow "> <span class="block__title block__title--yellow">Note: <span class="keyword" id="stopping-criterion">Stopping Criterion</span>
+    
+  </span>
+  <div class="block__content block__content--yellow">
+    <p>In the case for some $k $ we have $\nabla f(\b{x}^{(k)}) = 0 $, then the point $\b{x}^{(k)} $ satisfies the FONC. In this case, $\b{x}^{(k+1)} = \b{x}^{(k)}$ can be used as a stopping criterion for the algorithm. However, this criterion can rarely be met.</p>
+
+<p>A practical stopping criterion is to check if $\norm{ \nabla f(\b{x}^{(k)})}$ is less than a prespecified threshold, in which case we stop. Alternatively, we may use the following criterion</p>
+
+<p>$$\abs{ f(\b{x}^{(k+1)}) - f(\b{x}^{(k)})} &lt; \epsilon$$</p>
+
+<p>where $\epsilon &gt; 0 $ is a prespecified threshold.</p>
+
+<p>Yet another alternative is to compute the norm $\norm{ \b{x}^{(k+1)} - \b{x}^{(k)}}$ of the difference between two successive iterates, and we stop if the norm is less than a prespecified threshold:</p>
+
+<p>$$\norm{ \b{x}^{k+1} - \b{x}^{(k)}} &lt; \epsilon $$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("stopping-criterion");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--yellow-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "not";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--yellow "> <span class="block__title block__title--yellow">Note: <span class="keyword" id="optimizing-quadratic-functions-%5Cnonef%5Cbx%5Cfrac12%5Ctranspose%5Cbx%5Cbq%5Cbx%5Ctranspose%5Cbb%5Cbx">Optimizing Quadratic Functions $\None{}f(\b{x})=\frac{1}{2}\transpose{\b{x}}\b{Q}\b{x}\transpose{\b{b}}\b{x}  $</span>
+    
+  </span>
+  <div class="block__content block__content--yellow">
+    <p>$\b{Q} \in \R^{n \times n}, \b{Q} = \transpose{\b{Q}}, \b{Q} &gt; 0$, $\b{b} \in \R ^n$, and $\b{x} \in \R^n $.</p>
+
+<p>The unique minimizer of $\b{f} $ can be found by setting the $\nabla f(\b{x}) $ to zero, where</p>
+
+<p>$$\nabla f(\b{x}) = \b{Q} \b{x} - \b{b}$$</p>
+
+<p>since
+$$D (\transpose{ \b{x}} \b{Q} \b{x}) = \transpose{ \b{x}} (\b{Q} + \transpose{ \b{Q}}) = 2 \transpose{ \b{x}} \b{Q}\br
+D (\transpose{ b } \b{x}) = \transpose{ \b{b}}$$</p>
+
+<p>Also, we have $\b{F}(\b{x}) = \b{Q} = \transpose{ \b{Q}} &gt; 0 $.</p>
+
+<p>In fact, we can generalize the matrix $\b{Q} $ to be a non-symmetric matrix $\b{A} $. In that case, we just need to replace $\b{A}$ with</p>
+
+<p>$$\b{Q} = \pare{\b{A} + \transpose{ \b{A}}} $$</p>
+
+<p>Then it can be covered under above case.</p>
+
+<p>To simplify the notation we write $g^{(k)} = \nabla f(\b{x}^{(k)})$. Then, the steepest descent algorithm for the quadratic function can be represented as</p>
+
+<p>$$\b{x}^{(k+1)} = \b{x}^{(k)} - \alpha_k g^{(k)}$$</p>
+
+<p>where</p>
+
+<p>$$\begin{align*}
+\alpha_k &amp;= \argmin{ \alpha \geq 0 } f(\b{x}^{(k)} - \alpha \b{g}^{(k)}) \br
+&amp;= \argmin{ \alpha \geq 0 } (\frac{ 1 }{ 2 } \transpose{(\b{x}^{(k)} - \alpha \b{g}^{(k)})} \b{Q} (\b{x}^{(k)} - \alpha \b{g}^{(k)}) - \transpose{(\b{x}^{(k)} - \alpha \b{g}^{(k)})}\b{b})
+\end{align*}$$</p>
+
+<p>In the quadratic case, we can find an explicit formula for $\alpha_k $.</p>
+
+<p>We want to find a specific formula for $\alpha_k $.</p>
+
+<p>Assume $\b{g}^{(k)} \neq 0 $, for if $\b{g}^{(k)} = 0 $ is a stop criterion. Because $\alpha_k \geq 0 $ is a minimizer of $\phi_k (\alpha) = f(\b{x}^{(k)} - \alpha \b{x}^{(k)}) $, we apply the FONC to $\phi_k(\alpha)$ to obtain</p>
+
+<p>$$\phi&rsquo;_k(\alpha) = \transpose{(\b{x}^{(k)} - \alpha \b{g}^{(k)})} \b{Q} (- g^{(k)}) - \transpose{ \b{b}}(-\b{g}^{(k)}) = 0 $$</p>
+
+<p>Hence,</p>
+
+<p>$$\$alpha_k= \frac{ \transpose{ \b{g}^{(k)}} \b{g}^{(k)}}{ \transpose{ \b{g}^{(k)}} \b{Q} \b{g}^{(k)}}$</p>
+
+<p>The method of steepest descent for the quadratic takes the form</p>
+
+<p>$$\b{x}^{(k+1)} = \b{x}^{(k)} - \pare{\frac{ \transpose{ \b{g}^{(k)}} \b{g}^{(k)}}{ \transpose{ \b{g}^{(k)}} \b{Q} \b{g}^{(k)}}} \b{g}^{(k)} $$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("optimizing-quadratic-functions-%5Cnonef%5Cbx%5Cfrac12%5Ctranspose%5Cbx%5Cbq%5Cbx%5Ctranspose%5Cbb%5Cbx");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--yellow-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "not";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
       </div>
     </article>
     <aside class="navigation--side">
@@ -621,7 +566,7 @@ $(1)+(3) = 0, (2)+(4) = 0$</p></li>
             
             
                
-                <li class="navigation--side__heading"><span class="navigation--side__heading-index">1</span>Vector Spaces</li>
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">2</span>Vector Spaces and Matrices</li>
               
             
             
@@ -630,7 +575,7 @@ $(1)+(3) = 0, (2)+(4) = 0$</p></li>
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/linear-algebra/1.2/"><span class="navigation--side__index">1.2</span> Vector Spaces</a>
+              <a href="https://jimzenn.com/optimization/2.1/"><span class="navigation--side__index">2.1</span> Real Vector Spaces</a>
             </li>
           
         
@@ -650,7 +595,279 @@ $(1)+(3) = 0, (2)+(4) = 0$</p></li>
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/linear-algebra/d.1/"><span class="navigation--side__index">D.1</span> Discussion</a>
+              <a href="https://jimzenn.com/optimization/2.2/"><span class="navigation--side__index">2.2</span> Rank of a Matrix</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">3</span>Transformations</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/3.4/"><span class="navigation--side__index">3.4</span> Quadratic Forms</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">4</span>Concepts from Geometry</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/4.4/"><span class="navigation--side__index">4.4</span> Neighborhoods</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">5</span>Elements of Calculus</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/5.1/"><span class="navigation--side__index">5.1</span> Sequences and Limits</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/5.2/"><span class="navigation--side__index">5.2</span> Differentiability</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/5.3/"><span class="navigation--side__index">5.3</span> The Derivative Matrix</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/5.6/"><span class="navigation--side__index">5.6</span> Taylor Series</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">6</span>Basics of Set-Constrained and Unconstrained Optimization</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/6.1/"><span class="navigation--side__index">6.1</span> Introduction</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/6.2/"><span class="navigation--side__index">6.2</span> Conditions for Local Minimizers</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">7</span>One-Dimensional Search Methods</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/7.1/"><span class="navigation--side__index">7.1</span> Golden Section Search</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/7.2/"><span class="navigation--side__index">7.2</span> Fibonacci Search</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/7.3/"><span class="navigation--side__index">7.3</span> Newton&#39;s Method</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/7.4/"><span class="navigation--side__index">7.4</span> Secant Method</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">8</span>Gradient Methods</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/8.1/"><span class="navigation--side__index">8.1</span> Introduction</a>
             </li>
           
         
@@ -670,7 +887,7 @@ $(1)+(3) = 0, (2)+(4) = 0$</p></li>
               
             
             <li class="navigation--side__item navigation--side__item--current">
-              <a href="https://jimzenn.com/linear-algebra/1.3/"><span class="navigation--side__index">1.3</span> Subspaces</a>
+              <a href="https://jimzenn.com/optimization/8.2/"><span class="navigation--side__index">8.2</span> The Method of Steepest Descent</a>
             </li>
           
         
@@ -690,87 +907,7 @@ $(1)+(3) = 0, (2)+(4) = 0$</p></li>
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/linear-algebra/1.4/"><span class="navigation--side__index">1.4</span> Linear Combinations and Systems of Linear Equations</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-              
-            
-            
-            
-            
-              
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/linear-algebra/1.5/"><span class="navigation--side__index">1.5</span> Linear Dependence and Linear Independence</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-              
-            
-            
-            
-            
-              
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/linear-algebra/d.2/"><span class="navigation--side__index">D.2</span> Discussion</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-              
-            
-            
-            
-            
-              
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/linear-algebra/1.6/"><span class="navigation--side__index">1.6</span> Bases and Dimensions</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-              
-            
-            
-            
-            
-              
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/linear-algebra/d.3/"><span class="navigation--side__index">D.3</span> Discussion</a>
+              <a href="https://jimzenn.com/optimization/8.3/"><span class="navigation--side__index">8.3</span> Analysis of Gradient Methods</a>
             </li>
           
         
@@ -783,7 +920,7 @@ $(1)+(3) = 0, (2)+(4) = 0$</p></li>
             
             
                
-                <li class="navigation--side__heading"><span class="navigation--side__heading-index">2</span>Linear Transformations and Matrices</li>
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">12</span>Solving Ax = b</li>
               
             
             
@@ -792,7 +929,7 @@ $(1)+(3) = 0, (2)+(4) = 0$</p></li>
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/linear-algebra/2.1/"><span class="navigation--side__index">2.1</span> Linear Transformation</a>
+              <a href="https://jimzenn.com/optimization/12.2/"><span class="navigation--side__index">12.2</span> Recursive Least-Squares Alorithm</a>
             </li>
           
         
@@ -812,211 +949,7 @@ $(1)+(3) = 0, (2)+(4) = 0$</p></li>
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/linear-algebra/2.2/"><span class="navigation--side__index">2.2</span> The Matrix Representation of a Linear Transformation</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-              
-            
-            
-            
-            
-              
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/linear-algebra/d.4/"><span class="navigation--side__index">D.4</span> Discussion</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-              
-            
-            
-            
-            
-              
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/linear-algebra/2.3/"><span class="navigation--side__index">2.3</span> Composition of Linear Transformations and Matrix Multiplication</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-              
-            
-            
-            
-            
-              
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/linear-algebra/2.4/"><span class="navigation--side__index">2.4</span> Invertibility and Isomorphisms</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-              
-            
-            
-            
-            
-              
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/linear-algebra/2.5/"><span class="navigation--side__index">2.5</span> The Change of Coordinate Matrix</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-              
-            
-            
-            
-            
-              
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/linear-algebra/d.5/"><span class="navigation--side__index">D.5</span> Discussion</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-               
-                <li class="navigation--side__heading"><span class="navigation--side__heading-index">5</span>Diagonalization</li>
-              
-            
-            
-            
-            
-              
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/linear-algebra/5.1/"><span class="navigation--side__index">5.1</span> Eigenvalues and Eigenvectors</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-              
-            
-            
-            
-            
-              
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/linear-algebra/5.2/"><span class="navigation--side__index">5.2</span> Diagonalizability</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-               
-                <li class="navigation--side__heading"><span class="navigation--side__heading-index">6</span>Inner Product Spaces</li>
-              
-            
-            
-            
-            
-              
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/linear-algebra/6.1/"><span class="navigation--side__index">6.1</span> Inner Products and Norms</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-              
-            
-            
-            
-            
-              
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/linear-algebra/d.6/"><span class="navigation--side__index">D.6</span> Discussion</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-              
-            
-            
-            
-            
-              
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/linear-algebra/6.2/"><span class="navigation--side__index">6.2</span> Gram-Schmidt Orthogonalization Process</a>
+              <a href="https://jimzenn.com/optimization/12.1/"><span class="navigation--side__index">12.1</span> Least-Squares Analysis</a>
             </li>
           
         
@@ -1040,14 +973,14 @@ $(1)+(3) = 0, (2)+(4) = 0$</p></li>
         
         
         
-          <a href="https://jimzenn.com/linear-algebra/d.1/" class="pagination__prev">D.1 Discussion</a>
+          <a href="https://jimzenn.com/optimization/8.1/" class="pagination__prev">8.1 Introduction</a>
         
       
       
         
         
         
-          <a href="https://jimzenn.com/linear-algebra/1.4/" class="pagination__next">1.4 Linear Combinations and Systems of Linear Equations</a>
+          <a href="https://jimzenn.com/optimization/8.3/" class="pagination__next">8.3 Analysis of Gradient Methods</a>
         
       
     </div>

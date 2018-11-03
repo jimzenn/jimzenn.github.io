@@ -6,10 +6,28 @@
     <description>Recent content in 8 on Jim Zenn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Oct 2018 21:47:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 21 Oct 2018 23:07:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jimzenn.com/volumes/8/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Analysis of Gradient Methods</title>
+      <link>https://jimzenn.com/optimization/8.3/</link>
+      <pubDate>Sun, 21 Oct 2018 23:07:00 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/8.3/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>The method of steepest descent</title>
+      <link>https://jimzenn.com/optimization/8.2/</link>
+      <pubDate>Tue, 16 Oct 2018 21:04:00 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/optimization/8.2/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Introduction</title>
