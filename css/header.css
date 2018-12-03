@@ -49,6 +49,18 @@ body.home .header:hover {
   text-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
 
+.header__site-logo-link--home {
+  display: block;
+}
+
+.header__site-logo-link--toggle {
+  display: none;
+}
+
+#header-menu__toggle {
+  pointer-events: none;
+}
+
 .header__menu-icon {
   display: block;
   position: absolute;
@@ -316,7 +328,16 @@ body.home .header:hover {
     padding-left: 1rem;
   }
 
-  .header__site-logo-link {
+  .header__site-logo-link--home {
+    display: none;
+  }
+
+  .header__site-logo-link--toggle {
+    display: block;
+  }
+
+  #header-menu__toggle {
+    pointer-events: auto;
     cursor: pointer;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   }
