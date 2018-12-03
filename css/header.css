@@ -13,7 +13,6 @@ body {
   z-index: 5;
   width: 100vw;
   box-sizing: border-box;
-  cursor: default;
   font-size: 17px;
   user-select: none;
   transition: background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), height 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -60,11 +59,6 @@ body.home .header:hover {
 
 .header__menu-icon--shifted {
   transform: translateX(.5rem);
-}
-
-.header__site-logo-link {
-  cursor: pointer;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
 .header__site-logo-image {
@@ -320,6 +314,11 @@ body.home .header:hover {
 @media (max-width: 735px) {
   .header {
     padding-left: 1rem;
+  }
+
+  .header__site-logo-link {
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   }
 
   .container-tag {
