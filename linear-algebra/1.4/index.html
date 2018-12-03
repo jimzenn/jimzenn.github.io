@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.50" />
+<meta name="generator" content="Hugo 0.52" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -81,8 +81,6 @@ if (!doNotTrack) {
                 
                   <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
                 
-                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
-                
               </ul>
             </li>
           
@@ -117,8 +115,6 @@ if (!doNotTrack) {
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
             
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
-            
-              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
             
           </ul>
         </li>
@@ -223,8 +219,6 @@ if (!doNotTrack) {
         <p class="hide">
   Linear Combination, Span, Generating Set.
 </p>
-
-<p></p>
 
 <div class="latex-macros">
   
@@ -381,9 +375,9 @@ The <strong>span</strong> of $S$ or the <strong>linear span</strong> of $S$ deno
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p><strong>case 1</strong>:
 if $S$ is $\emptyset, y$ definition $\spa{s} = {0} \leq V$.</p>
 
@@ -462,9 +456,9 @@ $\lambda x \in \spa{S}$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>To prove $\spa{S}$ is the smallest subspace, we need to prove that $$\forall W \leq V, W \supseteq S \implies \spa{S} \leq W$$</p>
 
 <p>Since $x\in \spa{S}, \exists x_1, x_2,&hellip;, x_n \in S$ and $a_1, a_2, &hellip;, a_n \in F$ s.t.</p>
@@ -549,9 +543,9 @@ $\therefore x_i \in S \implies x_i \in W$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$a,b \in \R,$ then $(a,b) \in \R^2.$</p>
 
 <p>$(a, b) = a(1,0) + b(0,1).$</p>
@@ -592,9 +586,9 @@ $\therefore x_i \in S \implies x_i \in W$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$a, b \in \R^2$.</p>
 
 <p>$(a,b) = x(1, -1) + y (2,3) = (x+2y, -x+ 3y)$</p>
@@ -649,9 +643,9 @@ $$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$$
 \begin{align*}
 f(x) &amp;= ax^3 + bx^2 + cx + d \br
@@ -702,9 +696,9 @@ $$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$S \subseteq T \implies \spa{S} \subseteq \spa{T}$</p>
 
 <p>$\because \spa{S} = V, \spa{T} \leq V$</p>
@@ -1281,12 +1275,27 @@ $$</p>
   });
 
   var collapsableMenuLinks = document.querySelectorAll(".header-menu__list--collapsable a");
-  for (i = 0; i < collapsableMenuLinks.length; i ++) {
+  for (let i = 0; i < collapsableMenuLinks.length; i ++) {
     collapsableMenuLinks[i].addEventListener("click", function(e) {
       toggle.click();
       return true;
     });
   }
+</script>
+
+<script charset="utf-8">
+  let proofExpandToggles = document.querySelectorAll(".proof__expand");
+  proofExpandToggles.forEach((node) => {
+    node.addEventListener('click', function(e) {
+      if (e.target.textContent == "expand") {
+        e.target.textContent = "collapse";
+      } else {
+        e.target.textContent = "expand";
+      }
+      proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
+      proofContentNode.classList.toggle("hide");
+    });
+  });
 </script>
 
 

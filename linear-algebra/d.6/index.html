@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.50" />
+<meta name="generator" content="Hugo 0.52" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -81,8 +81,6 @@ if (!doNotTrack) {
                 
                   <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
                 
-                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
-                
               </ul>
             </li>
           
@@ -117,8 +115,6 @@ if (!doNotTrack) {
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
             
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
-            
-              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
             
           </ul>
         </li>
@@ -220,9 +216,7 @@ if (!doNotTrack) {
           keywordsCollector = [];
           keywordsCounter = 0;
         </script>
-        <p></p>
-
-<div class="latex-macros">
+        <div class="latex-macros">
   
     $\newcommand{\br}{\\}$
 
@@ -429,9 +423,9 @@ Define $U+V = \set{ u+v | u \in U, v \in V } $</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$W $ is finite-dimensional vector space $\implies$ finite dimensional vector space.</p>
 
 <p>Let $\dim U = n, \dim V = m $</p>
@@ -466,9 +460,9 @@ Define $U+V = \set{ u+v | u \in U, v \in V } $</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>Suppose not $U \cap V = \set{ 0 } $</p>
 
 <p>What is the $\dim U + V $</p>
@@ -554,9 +548,9 @@ Define $U+V = \set{ u+v | u \in U, v \in V } $</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>Suppose $V \in R(T) \cap N(T)$</p>
 
 <p>$v \in R(T), \exists w \in V s.t. V = T(W) $</p>
@@ -575,9 +569,9 @@ Define $U+V = \set{ u+v | u \in U, v \in V } $</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$R(T) + N(T) = V $</p>
 
 <p>Enough to show, for each $v \in V$</p>
@@ -630,9 +624,9 @@ Define $U+V = \set{ u+v | u \in U, v \in V } $</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>For each $v \in V $</p>
 
 <p>we want to prove that $v \in \spa{ v_1, v_2, &hellip;, v_{ n }} $</p>
@@ -1250,12 +1244,27 @@ Define $U+V = \set{ u+v | u \in U, v \in V } $</p>
   });
 
   var collapsableMenuLinks = document.querySelectorAll(".header-menu__list--collapsable a");
-  for (i = 0; i < collapsableMenuLinks.length; i ++) {
+  for (let i = 0; i < collapsableMenuLinks.length; i ++) {
     collapsableMenuLinks[i].addEventListener("click", function(e) {
       toggle.click();
       return true;
     });
   }
+</script>
+
+<script charset="utf-8">
+  let proofExpandToggles = document.querySelectorAll(".proof__expand");
+  proofExpandToggles.forEach((node) => {
+    node.addEventListener('click', function(e) {
+      if (e.target.textContent == "expand") {
+        e.target.textContent = "collapse";
+      } else {
+        e.target.textContent = "expand";
+      }
+      proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
+      proofContentNode.classList.toggle("hide");
+    });
+  });
 </script>
 
 

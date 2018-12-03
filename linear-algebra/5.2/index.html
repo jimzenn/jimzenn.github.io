@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.50" />
+<meta name="generator" content="Hugo 0.52" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -81,8 +81,6 @@ if (!doNotTrack) {
                 
                   <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
                 
-                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
-                
               </ul>
             </li>
           
@@ -117,8 +115,6 @@ if (!doNotTrack) {
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
             
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
-            
-              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
             
           </ul>
         </li>
@@ -220,9 +216,7 @@ if (!doNotTrack) {
           keywordsCollector = [];
           keywordsCounter = 0;
         </script>
-        <p></p>
-
-<div class="latex-macros">
+        <div class="latex-macros">
   
     $\newcommand{\br}{\\}$
 
@@ -537,9 +531,9 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$k = 1, \lambda_1, x_1, x_1 \neq 0 , x_1$ is linearly independent.</p>
 
 <p>Assume that the statement is true for any $(k-1) $ number of distinct eigenvalue.</p>
@@ -618,9 +612,9 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$\lambda_1 \neq \lambda_2 \neq &hellip; \neq \lambda_k$ eigenvalues</p>
 
 <p>$x_1, $x_2, &hellip;, $x_{ n }$ eigenvectors</p>
@@ -862,9 +856,9 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$0 \neq v \in E_ \lambda \implies \dim E_ \lambda \geq 1 $.</p>
 
 <p>$\dim E_\lambda = p$.</p>
@@ -947,9 +941,9 @@ $$v_1 = v_2 =  &hellip; = v_k = 0 $$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>By contradiction, assume that there is at least one $v_i$ say $v_{i_1} \neq 0 , i \in \set{ 1, 2, &hellip;, k }$,</p>
 
 <p>i.e. $v_{i_1} $ is an eigenvector contradiction to $\lambda_{i_ 1} $</p>
@@ -999,9 +993,9 @@ $$v_1 = v_2 =  &hellip; = v_k = 0 $$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>Let $\dim E_{ \lambda _ i  } = n_i , i - 1, 2, &hellip;, k$</p>
 
 <p>Let $S_i \subseteq E_ { \lambda_ i } $</p>
@@ -1084,9 +1078,9 @@ since $S_i = \set{ v_{i_1}, v_{i_2}, &hellip;, v_{in_i}} $ is linearly independe
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$T $ is diagonalizable $\iff \exists$  a basis $\beta $ consisting of eigenvectors of $T $.</p>
 
 <p>$\dim V = n $</p>
@@ -1851,12 +1845,27 @@ We show that $A $ is diagonalizable and find a $2 \times 2 $ matrix $Q $ s.t. $\
   });
 
   var collapsableMenuLinks = document.querySelectorAll(".header-menu__list--collapsable a");
-  for (i = 0; i < collapsableMenuLinks.length; i ++) {
+  for (let i = 0; i < collapsableMenuLinks.length; i ++) {
     collapsableMenuLinks[i].addEventListener("click", function(e) {
       toggle.click();
       return true;
     });
   }
+</script>
+
+<script charset="utf-8">
+  let proofExpandToggles = document.querySelectorAll(".proof__expand");
+  proofExpandToggles.forEach((node) => {
+    node.addEventListener('click', function(e) {
+      if (e.target.textContent == "expand") {
+        e.target.textContent = "collapse";
+      } else {
+        e.target.textContent = "expand";
+      }
+      proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
+      proofContentNode.classList.toggle("hide");
+    });
+  });
 </script>
 
 

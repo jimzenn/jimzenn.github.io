@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.50" />
+<meta name="generator" content="Hugo 0.52" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -81,8 +81,6 @@ if (!doNotTrack) {
                 
                   <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
                 
-                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
-                
               </ul>
             </li>
           
@@ -117,8 +115,6 @@ if (!doNotTrack) {
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
             
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
-            
-              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
             
           </ul>
         </li>
@@ -220,9 +216,7 @@ if (!doNotTrack) {
           keywordsCollector = [];
           keywordsCounter = 0;
         </script>
-        <p></p>
-
-<div class="latex-macros">
+        <div class="latex-macros">
   
     $\newcommand{\br}{\\}$
 
@@ -315,9 +309,9 @@ if (!doNotTrack) {
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$\sum\ \frac{ 1 }{ n } \geq \int_{ 1 }^{ n+1 } \frac{ 1 }{ x } \d x = \log_e(n+1)$</p>
 
 <p>Since $\limu{ n }{ \infty } \log_e(n+1) = + \infty , \sum\ \frac{ 1 }{ n } = + \infty$.</p>
@@ -368,9 +362,9 @@ if (!doNotTrack) {
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$\sum_{ k=1 }^{ n } \frac{ 1 }{ k^2 } \leq 1 + \int_{ 1 }^{ n } \frac{ 1 }{ x^2 } \d x = 2 - \frac{ 1 }{ n } &lt; 2$.</p>
 
 <p>$\therefore \sum \frac{ 1 }{ n^2 }$ converges.</p>
@@ -502,9 +496,9 @@ if (!doNotTrack) {
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>We need to show that the sequence $(s_n)$ converges. Note that the subsequence $(s_{2n}) $ is increasing because $s_{2n+2} - s_{2n} = + a_{2n+1} - a_{ 2n + 2 } \geq 0 $. Similarly, the subsequence $(s_{2n-1}) $ is decreasing since $s_{2n+1} - s_{2n-1} = a_{2n+1} - a_{2n} \leq 0 $. We claim</p>
 
 <p>$$s_{2m} \leq s_{2n+1} \forall m, n \in \N  \tag{1}$$</p>
@@ -1102,12 +1096,27 @@ if (!doNotTrack) {
   });
 
   var collapsableMenuLinks = document.querySelectorAll(".header-menu__list--collapsable a");
-  for (i = 0; i < collapsableMenuLinks.length; i ++) {
+  for (let i = 0; i < collapsableMenuLinks.length; i ++) {
     collapsableMenuLinks[i].addEventListener("click", function(e) {
       toggle.click();
       return true;
     });
   }
+</script>
+
+<script charset="utf-8">
+  let proofExpandToggles = document.querySelectorAll(".proof__expand");
+  proofExpandToggles.forEach((node) => {
+    node.addEventListener('click', function(e) {
+      if (e.target.textContent == "expand") {
+        e.target.textContent = "collapse";
+      } else {
+        e.target.textContent = "expand";
+      }
+      proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
+      proofContentNode.classList.toggle("hide");
+    });
+  });
 </script>
 
 

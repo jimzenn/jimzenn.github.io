@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.50" />
+<meta name="generator" content="Hugo 0.52" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -81,8 +81,6 @@ if (!doNotTrack) {
                 
                   <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
                 
-                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
-                
               </ul>
             </li>
           
@@ -117,8 +115,6 @@ if (!doNotTrack) {
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
             
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
-            
-              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
             
           </ul>
         </li>
@@ -220,9 +216,7 @@ if (!doNotTrack) {
           keywordsCollector = [];
           keywordsCounter = 0;
         </script>
-        <p></p>
-
-<div class="latex-macros">
+        <div class="latex-macros">
   
     $\newcommand{\br}{\\}$
 
@@ -382,9 +376,9 @@ if (!doNotTrack) {
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>It is enough to prove that $\beta&rsquo; $ in linearly independent.</p>
 
 <p>Suppose $a_1x&rsquo;_1 + a_2x&rsquo;_2 + &hellip; + a_{ n }x&rsquo;_{ n } = 0 $</p>
@@ -444,9 +438,9 @@ $$T\text{ is invertible} \iff T \oto and \ot $$</li>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>($\implies $) Suppose $T $ is invertible.</p>
 
 <p>$\inv{ T } T = Id_V, T \inv{ T }  = Id_W $</p>
@@ -546,9 +540,9 @@ there is $v \in V $ s.t. $Tv = w (onto) $</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p><strong>step 1</strong> $\Phi $ is a linear transformation.o
 easy.</p>
 
@@ -615,9 +609,9 @@ easy.</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>induction on m, m = 1, true.</p>
 
 <p>Suppose the statement is true for some m = x.</p>
@@ -683,9 +677,9 @@ $S<em>1 $ is true, $S</em>{n+1} $ is true given $S_n $ is true,</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>let $v \in E_ \lambda ^T  $ be given.</p>
 
 <p>By definition, T_v = lambda v.</p>
@@ -1270,12 +1264,27 @@ $S<em>1 $ is true, $S</em>{n+1} $ is true given $S_n $ is true,</p>
   });
 
   var collapsableMenuLinks = document.querySelectorAll(".header-menu__list--collapsable a");
-  for (i = 0; i < collapsableMenuLinks.length; i ++) {
+  for (let i = 0; i < collapsableMenuLinks.length; i ++) {
     collapsableMenuLinks[i].addEventListener("click", function(e) {
       toggle.click();
       return true;
     });
   }
+</script>
+
+<script charset="utf-8">
+  let proofExpandToggles = document.querySelectorAll(".proof__expand");
+  proofExpandToggles.forEach((node) => {
+    node.addEventListener('click', function(e) {
+      if (e.target.textContent == "expand") {
+        e.target.textContent = "collapse";
+      } else {
+        e.target.textContent = "expand";
+      }
+      proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
+      proofContentNode.classList.toggle("hide");
+    });
+  });
 </script>
 
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.50" />
+<meta name="generator" content="Hugo 0.52" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -81,8 +81,6 @@ if (!doNotTrack) {
                 
                   <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
                 
-                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
-                
               </ul>
             </li>
           
@@ -117,8 +115,6 @@ if (!doNotTrack) {
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
             
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
-            
-              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
             
           </ul>
         </li>
@@ -223,8 +219,6 @@ if (!doNotTrack) {
         <p class="hide">
   Basis, Dimensions of Vector Spaces.
 </p>
-
-<p></p>
 
 <div class="latex-macros">
   
@@ -340,9 +334,9 @@ if (!doNotTrack) {
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <ol>
 <li><p>need to prove $\beta$ generates $V$.<br>
 $\forall (a,b) \in \R^2,$<br>
@@ -390,9 +384,9 @@ Is $S= \set{e_1, e_2, e_3, &hellip;}$abasis of $\R^\infty$?</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p><strong>No.</strong> it is not.</p>
 
 <p>Let $e = (1, 1, 1, 1, &hellip;), e \in \R^\infty$. <br></p>
@@ -457,9 +451,9 @@ $S= \set{e_1, e_2, e_3, &hellip;, e_n}$ is a basis of $\R^n$.</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <ol>
 <li><p>need to prove that $S$ generates $\R^n$. <br>
 $(a_1, a_2, &hellip;, a_{n}) \in \R^n$ <br>
@@ -555,9 +549,9 @@ $\spa{\beta} = \P(x) $</p></li>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <ol>
 <li>need to prove that $\emptyset$ generates $\set{0}$. <br>
 Trivial. It is defined that $\spa{\emptyset} = \set{0}$.</li>
@@ -598,9 +592,9 @@ $$v = \sum^n_{i=1}a_iv_i$$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$\implies$</p>
 
 <p>$\spa{\beta} = V$, since $\beta$ is a basis of $V$.</p>
@@ -682,9 +676,9 @@ then $a_i$ must be all zero. Hence $\beta$ is linearly dependent.</p></li>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p><strong>case 1</strong>:
 If $S=\emptyset$ or $S= \set{0}$, then $\spa{S} = \set{0} = V.$</p>
 
@@ -775,9 +769,9 @@ otherwise &hellip;.</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>Denote $\set{v_1, v_2, &hellip;, v_{j-1}, v, v_{j+1}, &hellip;, v_n}$ by $\beta&rsquo;$.</p>
 
 <p>want to prove: $\spa{\beta&rsquo;} = V, \beta&rsquo;$ is linearly independent.</p>
@@ -888,9 +882,9 @@ $c_jv_j = c_1v_1 + &hellip; + c_{j-1}v_{j-1} -v + c_{j+1}v_{j+1} + &hellip; + c_
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>let $\beta = \set{v_1, v_2, &hellip;, v_n}$ and $\gamma = \set{u_1, u_2, &hellip;, u_n}$ be two basis of $V$.</p>
 
 <p>need to prove $\abs{\beta} \geq \abs{\gamma}$ and $\abs{\gamma} \geq \abs{\beta}$</p>
@@ -1231,9 +1225,9 @@ $\forall S \subseteq V, S$ is linearly independent, $\abs{S} = n \implies S$ is 
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>Let $S$ be a finite set and $\spa{S} = V$.</p>
 
 <p><strong>On the contrary</strong>, assume that $\abs{S} &lt; n$.</p>
@@ -1255,9 +1249,9 @@ by possibly remaining same vector from $S$, let $T$ be a subset of $S$ s.t. $T$ 
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$\abs{S} = n$ and $\spa{S} = V$. We try to prove that $S$ is not a basis.</p>
 
 <p><strong>On the contrary</strong> assume that $S$ is not a basis. Then, $S$ must be linearly dependent.</p>
@@ -1278,9 +1272,9 @@ by possibly remaining same vector from $S$, let $T$ be a subset of $S$ s.t. $T$ 
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>Let $S$ be a linearly independent, $\abs{S} = n = \dim V$.</p>
 
 <p>Let $\beta = \set{v_1, v_2, &hellip;, v_n}$ be a basis of $V$.</p>
@@ -1302,9 +1296,9 @@ we can replace $v_1, v_2, v_3, &hellip;, v_n$ with $u_1, u_2, &hellip;, u_n$  on
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>Let $S = {v_1, v_2, &hellip;, v_k}$ be a linearly independent set in $V$.</p>
 
 <p>if $\spa{S} = V$, then $S$ is already a basis. (definition of basis)<br></p>
@@ -1371,9 +1365,9 @@ we can replace $v_1, v_2, v_3, &hellip;, v_n$ with $u_1, u_2, &hellip;, u_n$  on
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>DOUBLE CHECK</p>
 
 <p>let $\dim V = n \geq 0$,</p>
@@ -1397,9 +1391,9 @@ so assume that $W \neq \set{0}$.</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>Assume that $\dim W = \dim V = n$
 let #\beta = \set{w_1, w_2, &hellip;, _n}# be a basis of $W$.
 Then $\spa{\beta} = W$
@@ -1975,12 +1969,27 @@ We get $W=V$</p>
   });
 
   var collapsableMenuLinks = document.querySelectorAll(".header-menu__list--collapsable a");
-  for (i = 0; i < collapsableMenuLinks.length; i ++) {
+  for (let i = 0; i < collapsableMenuLinks.length; i ++) {
     collapsableMenuLinks[i].addEventListener("click", function(e) {
       toggle.click();
       return true;
     });
   }
+</script>
+
+<script charset="utf-8">
+  let proofExpandToggles = document.querySelectorAll(".proof__expand");
+  proofExpandToggles.forEach((node) => {
+    node.addEventListener('click', function(e) {
+      if (e.target.textContent == "expand") {
+        e.target.textContent = "collapse";
+      } else {
+        e.target.textContent = "expand";
+      }
+      proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
+      proofContentNode.classList.toggle("hide");
+    });
+  });
 </script>
 
 

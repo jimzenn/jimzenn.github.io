@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.50" />
+<meta name="generator" content="Hugo 0.52" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -81,8 +81,6 @@ if (!doNotTrack) {
                 
                   <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
                 
-                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
-                
               </ul>
             </li>
           
@@ -117,8 +115,6 @@ if (!doNotTrack) {
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
             
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
-            
-              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
             
           </ul>
         </li>
@@ -223,8 +219,6 @@ if (!doNotTrack) {
         <p class="hide">
 Linear Transformation, Identity Transformation, Zero Transformation, Kernel (Null Space), Range (Image), Nullity, Rank, One-to-One, Onto.
 </p>
-
-<p></p>
 
 <div class="latex-macros">
   
@@ -439,9 +433,9 @@ Linear Transformation, Identity Transformation, Zero Transformation, Kernel (Nul
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$T(0) = T(0 + 0) = T(0) + T(0) = T(0) + 0 = T(0) + T(0)$</p>
 
 <p>By cancellation law, $0 = T(0)$.</p>
@@ -628,9 +622,9 @@ T(cf(x) + g(x)) &amp;= (cf(x) + g(x))&rsquo; \br
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$T(cx + y) = 0$.
 $T(cx) + T(y) = 0 + 0 = 0$.</p>
 
@@ -729,9 +723,9 @@ $N(T)$ is a subspace of $V$, and $R(T)$ is a subspace of $W$.</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$x, y \in N(T) \implies T(x) = 0, T(y) = 0$. <br>
 $T(x + y) = T(x) + T(y) = 0 + 0 = 0.$ <br>
 $\therefore x + y \in N(T)$.</p>
@@ -752,9 +746,9 @@ $\therefore cx \in N(T)$.</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$w_1, w_2 \in R(T) \implies \exists x_1, x_2 \in V, s.t. T(x_1) = w_1, T(x_2) = w_2$. <br>
 $w_1 + w_2 = T(x_1) + T(x_2) = T(x_1 + x_2)$.
 $\therefore (w_1 + w_2) \in R(T)$.</p>
@@ -932,9 +926,9 @@ If $V$ is a finite-dimensional vector space, then</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>Let $\dim N(T) = k, N(T) \leq V$, and $\beta = \set{x_1, x_2, &hellip;, x_{k}}$ be a basis of $N(T)$.</p>
 
 <p>Since $N(T) \leq V, \beta$ can be extended to $\gamma $, a basis of $V$. i.e. $\gamma  = \beta \cup \set{y_1, y_2, &hellip;, y_{n-k}} = \set{x_1, &hellip;, x_k, y_1, &hellip;, y_{n-k}}$, where $n = \dim V$.</p>
@@ -1116,9 +1110,9 @@ R(T) &amp;= \spa{T(x_i), &hellip;, T(x_k), T(y_1), &hellip; , T(y_{n-k})} \br
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>Assume that $T$ is one-to-one let $x\in N(T) \implies T(x) = 0 =T(0)$.</p>
 
 <p>Since $T$ is one-to-one, $x = 0$.</p>
@@ -1236,9 +1230,9 @@ R(T) &amp;= \spa{T(x_i), &hellip;, T(x_k), T(y_1), &hellip; , T(y_{n-k})} \br
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$(1) \implies (2)$</p>
 
 <p>Assume $T$ is$\oto$.</p>
@@ -1324,9 +1318,9 @@ i.e. $R(T) = W$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>Analysis:</p>
 
 <p>$\beta = \set{x_1, x_2, &hellip;, x_{n}} \subseteq V \to W \supseteq \gamma = \set{w_1, w_2, &hellip;, w_{n}}$</p>
@@ -1372,9 +1366,9 @@ $\exists$ unique scalars $a_1, a_2, &hellip;, a_{n}$ s.t. $x = \sum_{i=1}^{n} a_
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$x, y \in, c \in F$</p>
 
 <p>$\because \set{x_1, x_2, &hellip;, x_{n}}$ is a basis of $V\exists a_1, a_2, &hellip;, a_{n}$ and $b_1, b_2, &hellip;, b_{n} \in F$, s.t.</p>
@@ -1422,9 +1416,9 @@ $= c \sum_{i=1}^{n} a_i w_i + \sum_{i=1}^{n} b_iw_i$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>Assume that: there is another linear transformation $U: V \to W$ s.t. $U(n_i) = w_i, v_i = 1,2, &hellip;, n$.</p>
 
 <p>We need to show that $U(x) = T(x) \forall x in V$</p>
@@ -1499,9 +1493,9 @@ $= c \sum_{i=1}^{n} a_i w_i + \sum_{i=1}^{n} b_iw_i$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>It follows from the uniqueness of the previous theorem.</p>
 
   </div>
@@ -2087,12 +2081,27 @@ $=(-x + y+2y, 5x -5y + 3y) = (-x+3y, 5x-2y)$</p>
   });
 
   var collapsableMenuLinks = document.querySelectorAll(".header-menu__list--collapsable a");
-  for (i = 0; i < collapsableMenuLinks.length; i ++) {
+  for (let i = 0; i < collapsableMenuLinks.length; i ++) {
     collapsableMenuLinks[i].addEventListener("click", function(e) {
       toggle.click();
       return true;
     });
   }
+</script>
+
+<script charset="utf-8">
+  let proofExpandToggles = document.querySelectorAll(".proof__expand");
+  proofExpandToggles.forEach((node) => {
+    node.addEventListener('click', function(e) {
+      if (e.target.textContent == "expand") {
+        e.target.textContent = "collapse";
+      } else {
+        e.target.textContent = "expand";
+      }
+      proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
+      proofContentNode.classList.toggle("hide");
+    });
+  });
 </script>
 
 

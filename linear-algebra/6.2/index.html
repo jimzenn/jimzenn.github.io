@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.50" />
+<meta name="generator" content="Hugo 0.52" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -81,8 +81,6 @@ if (!doNotTrack) {
                 
                   <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
                 
-                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
-                
               </ul>
             </li>
           
@@ -117,8 +115,6 @@ if (!doNotTrack) {
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
             
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
-            
-              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
             
           </ul>
         </li>
@@ -220,9 +216,7 @@ if (!doNotTrack) {
           keywordsCollector = [];
           keywordsCounter = 0;
         </script>
-        <p></p>
-
-<div class="latex-macros">
+        <div class="latex-macros">
   
     $\newcommand{\br}{\\}$
 
@@ -353,9 +347,9 @@ if (!doNotTrack) {
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$\because v \in \spa{ S } \exists $</p>
 
 <p>$a_1, _2, &hellip;, _{ k } \in s.t. $</p>
@@ -436,9 +430,9 @@ v &amp;= a_1v_1 + a_2v_2 + &hellip; + a_{ n }v_{ n } \br
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>since $S = \set{ v_1, v_2, &hellip;, v_{ k }}$ is an orthonormal set, $\norm{ v_i } = \norm{ v_i } = 1, 2, &hellip;, k $</p>
 
 <p>$\therefore$ it follows from $(1) $</p>
@@ -473,9 +467,9 @@ v &amp;= a_1v_1 + a_2v_2 + &hellip; + a_{ n }v_{ n } \br
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>Let $v_1, _2, &hellip;, _{ k } $ be same arbitrary vectors in $S $. Consider the equation $a_1v_1 + a_2v_2 + &hellip; + a_{ k }v_{ k } = 0 $.</p>
 
 <p>$$\begin{align*}
@@ -529,9 +523,9 @@ v_k &amp;= w_k - \sum_{ i=1 }^{ k-1 } \frac{ \inner{ w_k }{ v_i }}{ \norm{ v_i }
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>For $n = 1, S =  \set{ w_1 } ,  S&rsquo; = \set{ v_1 } = \set{ w_1 }$</p>
 
 <p>Then $S&rsquo;$ is orthogonal and $\spa{ S } = \spa{ S&rsquo; } $.</p>
@@ -1233,12 +1227,27 @@ v_k &amp;= w_k - \sum_{ i=1 }^{ k-1 } \frac{ \inner{ w_k }{ v_i }}{ \norm{ v_i }
   });
 
   var collapsableMenuLinks = document.querySelectorAll(".header-menu__list--collapsable a");
-  for (i = 0; i < collapsableMenuLinks.length; i ++) {
+  for (let i = 0; i < collapsableMenuLinks.length; i ++) {
     collapsableMenuLinks[i].addEventListener("click", function(e) {
       toggle.click();
       return true;
     });
   }
+</script>
+
+<script charset="utf-8">
+  let proofExpandToggles = document.querySelectorAll(".proof__expand");
+  proofExpandToggles.forEach((node) => {
+    node.addEventListener('click', function(e) {
+      if (e.target.textContent == "expand") {
+        e.target.textContent = "collapse";
+      } else {
+        e.target.textContent = "expand";
+      }
+      proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
+      proofContentNode.classList.toggle("hide");
+    });
+  });
 </script>
 
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.50" />
+<meta name="generator" content="Hugo 0.52" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -81,8 +81,6 @@ if (!doNotTrack) {
                 
                   <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
                 
-                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
-                
               </ul>
             </li>
           
@@ -117,8 +115,6 @@ if (!doNotTrack) {
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
             
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
-            
-              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
             
           </ul>
         </li>
@@ -223,8 +219,6 @@ if (!doNotTrack) {
         <p class="hide">
   Linearly Dependent, Linearly Independent.
 </p>
-
-<p></p>
 
 <div class="latex-macros">
   
@@ -338,9 +332,9 @@ if (!doNotTrack) {
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>We just need to find <u>one</u> not all zero coefficient solution.</p>
 
 <p>$-2(1,0) + 3(0,1) +1(2,-3) = (0,0)$</p>
@@ -419,9 +413,9 @@ $$a_1=a_2=&hellip;=a_n=0$$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>Assume that $\emptyset$ is linear dependent.</p>
 
 <p>$v_1, v_2, &hellip;, v_n \in \emptyset$ and $a_1,a_2, &hellip;, a_n \in F$ such that at least one of the $a_i$s is non-zero and $a_1v_1 + a_2v_2 + &hellip; + a_nv_n = 0$.</p>
@@ -444,9 +438,9 @@ $$a_1=a_2=&hellip;=a_n=0$$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>Assume that it is linearly dependent:</p>
 
 <p>$\exists a \in F, a\neq 0.$ s.t. $$av=0$$</p>
@@ -486,9 +480,9 @@ $$a_1=a_2=&hellip;=a_n=0$$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$a(1,0) + b(0,1) = (0,0)$</p>
 
 <p>$\implies (a,b) = (0,0)$</p>
@@ -528,9 +522,9 @@ $$a_1=a_2=&hellip;=a_n=0$$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$a(1,1) + b(2,-3) = (0,0)$</p>
 
 <p>$(a+2b,a-3b) = (0,0)$</p>
@@ -624,9 +618,9 @@ $\iff v \in \spa{S}$.</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$\impliedby$</p>
 
 <p>$v\in \spa{S}$.</p>
@@ -1330,12 +1324,27 @@ $v = -\frac{a_1}{a}v_1 -\frac{a_2}{a}v_2 - &hellip; -\frac{a_n}{a}a_nv_n$</p>
   });
 
   var collapsableMenuLinks = document.querySelectorAll(".header-menu__list--collapsable a");
-  for (i = 0; i < collapsableMenuLinks.length; i ++) {
+  for (let i = 0; i < collapsableMenuLinks.length; i ++) {
     collapsableMenuLinks[i].addEventListener("click", function(e) {
       toggle.click();
       return true;
     });
   }
+</script>
+
+<script charset="utf-8">
+  let proofExpandToggles = document.querySelectorAll(".proof__expand");
+  proofExpandToggles.forEach((node) => {
+    node.addEventListener('click', function(e) {
+      if (e.target.textContent == "expand") {
+        e.target.textContent = "collapse";
+      } else {
+        e.target.textContent = "expand";
+      }
+      proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
+      proofContentNode.classList.toggle("hide");
+    });
+  });
 </script>
 
 

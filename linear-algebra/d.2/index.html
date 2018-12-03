@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.50" />
+<meta name="generator" content="Hugo 0.52" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -81,8 +81,6 @@ if (!doNotTrack) {
                 
                   <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
                 
-                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
-                
               </ul>
             </li>
           
@@ -117,8 +115,6 @@ if (!doNotTrack) {
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
             
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
-            
-              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
             
           </ul>
         </li>
@@ -220,9 +216,7 @@ if (!doNotTrack) {
           keywordsCollector = [];
           keywordsCounter = 0;
         </script>
-        <p></p>
-
-<div class="latex-macros">
+        <div class="latex-macros">
   
     $\newcommand{\br}{\\}$
 
@@ -387,9 +381,9 @@ This means $\set{s \in S, f(s) \neq 0}$ is finite.</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>By definition $C(S, F) \subseteq \F(S, F)$
 (1) 0\in C(S, F) because</p>
 
@@ -464,9 +458,9 @@ Because $A,B$ are finite, $C$ is also finite, and so $f, g \in C(s,F)$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>note that W is a subspace of $M_{2\times2}(F)$</p>
 
 <p>Because $M_1, M_2, M_3 \in W$</p>
@@ -552,9 +546,9 @@ $e = a_1e_1 + &hellip; + a_ne_n$ for some $n \in N$ and $a_1 \in F$, derive the 
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>($\subseteq$)</p>
 
 <p>let $v\in Span(S_1 \cup S_2)$ b given
@@ -576,9 +570,9 @@ $v = a_1w_1 + &hellip;+ a_n w_n$ for some $a_i\in F w_1 \in S_1 \cup S_2$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>($\supseteq$)</p>
 
 <p>$Span(S_1) + Span(S_2) \subseteq span(S_1 \cup S_2)$
@@ -618,9 +612,9 @@ $v = v_1 + v_2$ s.t. $v_i\in Span(S_i)$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>$(\implies)$</p>
 
 <p>if $W = \spa{W}$
@@ -720,9 +714,9 @@ $\iff S = {0}$ or $\exists$ distinct vectors $v_1, u_1, u_2, &hellip; , u_n \in 
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>if S = {0} ,ok
 if &hellip;,
 $v = a_1u_1 + &hellip; + a_nu_n$ for same $a_1\in F$</p>
@@ -739,9 +733,9 @@ $v = a_1u_1 + &hellip; + a_nu_n$ for same $a_1\in F$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>If $S = \set{0}$ done
 if $S \neq \set{0}$ we need to prove</p>
 
@@ -795,9 +789,9 @@ $\iff u_1 =0 or (star)$u_{k+1}\in Span(\set{u_1, &hellip;, u_k})$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>if $u_1 =0$</p>
 
 <p>$u_1 =0 $ done.</p>
@@ -818,9 +812,9 @@ Then $S$ is linearly dependent by the previous exercise.</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>Assume $S$ is linearly dependent</p>
 
 <p>Assume also that $u_1 \neq 0$ and prove (star)</p>
@@ -1418,12 +1412,27 @@ s.t.</p>
   });
 
   var collapsableMenuLinks = document.querySelectorAll(".header-menu__list--collapsable a");
-  for (i = 0; i < collapsableMenuLinks.length; i ++) {
+  for (let i = 0; i < collapsableMenuLinks.length; i ++) {
     collapsableMenuLinks[i].addEventListener("click", function(e) {
       toggle.click();
       return true;
     });
   }
+</script>
+
+<script charset="utf-8">
+  let proofExpandToggles = document.querySelectorAll(".proof__expand");
+  proofExpandToggles.forEach((node) => {
+    node.addEventListener('click', function(e) {
+      if (e.target.textContent == "expand") {
+        e.target.textContent = "collapse";
+      } else {
+        e.target.textContent = "expand";
+      }
+      proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
+      proofContentNode.classList.toggle("hide");
+    });
+  });
 </script>
 
 

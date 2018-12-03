@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.50" />
+<meta name="generator" content="Hugo 0.52" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -81,8 +81,6 @@ if (!doNotTrack) {
                 
                   <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
                 
-                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
-                
               </ul>
             </li>
           
@@ -117,8 +115,6 @@ if (!doNotTrack) {
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
             
               <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
-            
-              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/data-mining/1/">Data Mining</a></li>
             
           </ul>
         </li>
@@ -220,9 +216,7 @@ if (!doNotTrack) {
           keywordsCollector = [];
           keywordsCounter = 0;
         </script>
-        <p></p>
-
-<div class="latex-macros">
+        <div class="latex-macros">
   
     $\newcommand{\R}{\mathbb{R}}$
     $\newcommand{\Q}{\mathbb{Q}}$
@@ -270,9 +264,9 @@ if (!doNotTrack) {
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>2 holds for all $0 \leq m \leq n$</p>
 
 <p>That is given $m$ many independent vectors</p>
@@ -334,9 +328,9 @@ Then $H$ has $n - 0$ has many vectors and $L \cup H - \emptyset \cup$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>suppose L has m many independent vectors, m \geq n +1</p>
 
 <p>WLOG. it is sufficient to prove when m =m +1 L= \set{_1, _2, &hellip;, _{n+1}}, L&rsquo;= \set{v_1, v_2, &hellip;, v_{n}}. By step 1, there is H \subseteq G s.t. \abs{H}= n- m = 0 and L&rsquo; \cup H generates V, L&rsquo; generates V.</p>
@@ -399,9 +393,9 @@ If $\dim V = n$, if $\abs{S} = n, S$ is linearly independent, then $S$ is a basi
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>Let $\dim V = n, \beta$ is a basis of $V , L = \set{w_1, w_2, &hellip;, w_{n}}, L$ is linearly independent.</p>
 
 <p>$\exists H \subseteq \beta$ s.t. $\abs{H}= n-m=n-n =0$
@@ -444,9 +438,9 @@ and $\spa{L \cup H} = V = V$.</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>Need to find $n$ linearly independent vectors in $S$, then corollary of theorem 1.10 finishes the proof.</p>
 
 <p>Choose any $u_1 \in S$, consider $W_1 = \spa{u_1}$.</p>
@@ -491,9 +485,9 @@ need to prove $ W_1 \subseteq W_2 \iff \dim(w_1 \cap w_2) = \dim W_1$.</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>easy. $W_1 \cap W_2  = W_1$</p>
 
   </div>
@@ -506,9 +500,9 @@ need to prove $ W_1 \subseteq W_2 \iff \dim(w_1 \cap w_2) = \dim W_1$.</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand">[<a>collapse</a>]</span>
   </div>
-  <div class="proof__content">
+  <div class="proof__content hide">
     <p>let $\dim (w_1 \cap w_2) = m $</p>
 
 <p>(this is finite because dim V finite)</p>
@@ -1165,12 +1159,27 @@ and $f(a) = a^n \cdot a_n + &hellip;+ a \cdot a_1+ a_0 = 0$</p>
   });
 
   var collapsableMenuLinks = document.querySelectorAll(".header-menu__list--collapsable a");
-  for (i = 0; i < collapsableMenuLinks.length; i ++) {
+  for (let i = 0; i < collapsableMenuLinks.length; i ++) {
     collapsableMenuLinks[i].addEventListener("click", function(e) {
       toggle.click();
       return true;
     });
   }
+</script>
+
+<script charset="utf-8">
+  let proofExpandToggles = document.querySelectorAll(".proof__expand");
+  proofExpandToggles.forEach((node) => {
+    node.addEventListener('click', function(e) {
+      if (e.target.textContent == "expand") {
+        e.target.textContent = "collapse";
+      } else {
+        e.target.textContent = "expand";
+      }
+      proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
+      proofContentNode.classList.toggle("hide");
+    });
+  });
 </script>
 
 
