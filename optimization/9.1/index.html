@@ -316,11 +316,19 @@ if (!doNotTrack) {
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="newtons-method">Newton&#39;s Method</span></span>
   <div class="block__content block__content--blue">
-    <p>$$f(\b{x}) \approx f(\b{x}^{(k)}) + \transpose{(\b{x} - \b{x}^{(k)})} \b{g}^{(k)} + \frac{ 1 }{ 2 } \transpose{(\b{x} - \b{x}^{(k)})} F(\b{x}^{(k)})(\b{x} - \b{x}^{(k)}) \triangleq q(\b{x})$$</p>
+    <p><strong>Newton&rsquo;s method</strong> (sometimes called the Newton-Raphson method) uses first and second derivatives and indeed does perform better than the steepest descent method if the initial point is close to the minimizer. The idea behind this method is as follows. Giving a starting point, we construct a quadratic approximation as follows.</p>
+
+<p>Giving a starting point, we construct a quadratic approximation to the objective function that matches the first and second derivative value at that point. We then minimize the approximate (quadratic) function instead of the original objective function. We use the minimizer of the approximate function as the starting point in the next step and repeat the procedure iteratively.</p>
+
+<p>If the objective function is quadratic, then the approximation is exact, and the method yields the true minimizer in one step. If otherwise, i.e. the objective function is not quadratic, then the approximation will provide only an estimate of the position of the true minimizer.</p>
+
+<p>By using the Taylor series expansion of $f$ about the current point $\b{x}^{(k)}$, neglecting terms of order three and higher.</p>
+
+<p>$$f(\b{x}) \approx f(\b{x}^{(k)}) + \transpose{(\b{x} - \b{x}^{(k)})} \b{g}^{(k)} + \frac{ 1 }{ 2 } \transpose{(\b{x} - \b{x}^{(k)})} F(\b{x}^{(k)})(\b{x} - \b{x}^{(k)}) \triangleq q(\b{x})$$</p>
 
 <p>Applying the FONC to $\b{q}$ yields</p>
 
-<p>$$0 = \nabla q(\b{x}) = \b{g}^{(k)} + F(\b{x}^{(k)})(\b{x} - \b{x}^{(k)}) $$</p>
+<p>$$0 = \nabla q(\b{x}) = \b{g}^{(k)} + F(\b{x}^{(k)})(\b{x} - \b{x}^{(k)})$$</p>
 
 <p>If $F(x^{(k)}) &gt; 0$, then $\b{q}$ achieves a minimum at</p>
 
