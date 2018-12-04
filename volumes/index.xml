@@ -6,7 +6,7 @@
     <description>Recent content in Volumes on Jim Zenn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Oct 2018 14:03:48 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 06 Aug 2018 11:03:48 +0800</lastBuildDate>
     
 	<atom:link href="https://jimzenn.com/volumes/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>1</title>
       <link>https://jimzenn.com/volumes/1/</link>
-      <pubDate>Tue, 02 Oct 2018 14:03:48 +0800</pubDate>
+      <pubDate>Mon, 06 Aug 2018 11:03:48 +0800</pubDate>
       
       <guid>https://jimzenn.com/volumes/1/</guid>
       <description></description>
@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>11</title>
+      <link>https://jimzenn.com/volumes/11/</link>
+      <pubDate>Thu, 15 Nov 2018 16:00:00 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/volumes/11/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>12</title>
       <link>https://jimzenn.com/volumes/12/</link>
       <pubDate>Thu, 01 Nov 2018 23:38:00 +0800</pubDate>
@@ -41,7 +50,7 @@
     <item>
       <title>2</title>
       <link>https://jimzenn.com/volumes/2/</link>
-      <pubDate>Fri, 05 Oct 2018 15:52:48 +0800</pubDate>
+      <pubDate>Wed, 08 Aug 2018 12:43:48 +0800</pubDate>
       
       <guid>https://jimzenn.com/volumes/2/</guid>
       <description></description>
@@ -50,7 +59,7 @@
     <item>
       <title>3</title>
       <link>https://jimzenn.com/volumes/3/</link>
-      <pubDate>Fri, 05 Oct 2018 15:52:48 +0800</pubDate>
+      <pubDate>Mon, 27 Aug 2018 11:00:48 +0800</pubDate>
       
       <guid>https://jimzenn.com/volumes/3/</guid>
       <description></description>
@@ -68,7 +77,7 @@
     <item>
       <title>5</title>
       <link>https://jimzenn.com/volumes/5/</link>
-      <pubDate>Tue, 09 Oct 2018 14:14:00 +0800</pubDate>
+      <pubDate>Thu, 30 Aug 2018 11:00:48 +0800</pubDate>
       
       <guid>https://jimzenn.com/volumes/5/</guid>
       <description></description>
@@ -77,7 +86,7 @@
     <item>
       <title>6</title>
       <link>https://jimzenn.com/volumes/6/</link>
-      <pubDate>Wed, 10 Oct 2018 16:25:00 +0800</pubDate>
+      <pubDate>Tue, 09 Oct 2018 14:15:00 +0800</pubDate>
       
       <guid>https://jimzenn.com/volumes/6/</guid>
       <description></description>
@@ -86,7 +95,7 @@
     <item>
       <title>7</title>
       <link>https://jimzenn.com/volumes/7/</link>
-      <pubDate>Mon, 15 Oct 2018 15:53:00 +0800</pubDate>
+      <pubDate>Sun, 14 Oct 2018 14:54:00 +0800</pubDate>
       
       <guid>https://jimzenn.com/volumes/7/</guid>
       <description></description>
@@ -95,7 +104,7 @@
     <item>
       <title>8</title>
       <link>https://jimzenn.com/volumes/8/</link>
-      <pubDate>Sun, 21 Oct 2018 23:07:00 +0800</pubDate>
+      <pubDate>Mon, 15 Oct 2018 21:47:00 +0800</pubDate>
       
       <guid>https://jimzenn.com/volumes/8/</guid>
       <description></description>
@@ -104,18 +113,9 @@
     <item>
       <title>9</title>
       <link>https://jimzenn.com/volumes/9/</link>
-      <pubDate>Sat, 03 Nov 2018 17:51:00 +0800</pubDate>
+      <pubDate>Sat, 03 Nov 2018 17:40:00 +0800</pubDate>
       
       <guid>https://jimzenn.com/volumes/9/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>D</title>
-      <link>https://jimzenn.com/volumes/d/</link>
-      <pubDate>Tue, 28 Aug 2018 11:03:48 +0800</pubDate>
-      
-      <guid>https://jimzenn.com/volumes/d/</guid>
       <description></description>
     </item>
     

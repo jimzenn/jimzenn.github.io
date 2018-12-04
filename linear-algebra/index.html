@@ -151,382 +151,22 @@ if (!doNotTrack) {
       
         
           <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/6.2/">Gram-Schmidt Orthogonalization process</a></h1>
+    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/1.2/">Vector Spaces</a></h1>
     <p class="article__meta">
   <span>
     
-    <a href="/volumes/6" class="article__volume-link">Vol. 6</a>, Issue 2
+    <a href="/volumes/1" class="article__volume-link">Vol. 1</a>, Issue 2
     
     <small>∙</small>
-    July 2018
+    June 2018
   </span>
   
 </p>
 
     <div class="article__summary">
-      $\newcommand{\br}{\\}$ $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\L}{\mathcal{L}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\otherwise}{\text{ otherwise }}$ $\newcommand{\if}{\text{ if }}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{| #1 |}$ $\newcommand{\proj}{\text{proj}}$ $\newcommand{\norm}[1]{\left\lVert#1\right\rVert}$ $\newcommand{\pare}[1]{\left\(#1\right\)}$ $\newcommand{\t}[1]{\text{ #1 }}$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$ $\newcommand{\d}{\text d}$ $\newcommand{\limu}[2]{\underset{#1 \to #2}\lim}$ $\newcommand{\inv}[1]{{#1}^{-1}}$ $\newcommand{\inner}[2]{\langle #1, #2 \rangle}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\rank}[1]{\text{rank}(#1)}$ $\newcommand{\tr}[1]{\text{tr}(#1)}$ $\newcommand{\oto}{\text{ one-to-one }}$ $\newcommand{\ot}{\text{ onto }}$ $\newcommand{\Re}[1]{\text{Re}(#1)}$ $\newcommand{\Im}[1]{\text{Im}(#1)}$ $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$ $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$ $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$ $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$ $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$ $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$ $\newcommand{\vcw}[2]{\begin{matrix} #1 \br #2 \end{matrix}}$ $\newcommand{\vce}[3]{\begin{matrix} #1 \br #2 \br #3 \end{matrix}}$ $\newcommand{\vcr}[4]{\begin{matrix} #1 \br #2 \br #3 \br #4 \end{matrix}}$ $\newcommand{\vct}[5]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \end{matrix}}$ $\newcommand{\vcy}[6]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{matrix}}$ $\newcommand{\vcu}[7]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{matrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$ $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$ $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$ $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$  Definition: Orthonormal Basis Let $V $ be an inner product vector space over a field $F = \R $ or $\C$.
+      <p class="hide">Spaces, Vector Spaces, Degree of Polynomial, Fields.</p>
     </div>
-    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/6.2/"> Read the article</a></p>
-  </article>
-
-        
-      
-        
-          <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/d.6/">Discussion</a></h1>
-    <p class="article__meta">
-  <span>
-    
-    <a href="/volumes/d" class="article__volume-link">Vol. D</a>, Issue 6
-    
-    <small>∙</small>
-    July 2018
-  </span>
-  
-</p>
-
-    <div class="article__summary">
-      $\newcommand{\br}{\\}$ $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\L}{\mathcal{L}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\otherwise}{\text{ otherwise }}$ $\newcommand{\if}{\text{ if }}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{| #1 |}$ $\newcommand{\norm}[1]{\left\lVert#1\right\rVert}$ $\newcommand{\pare}[1]{\left\(#1\right\)}$ $\newcommand{\t}[1]{\text{ #1 }}$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$ $\newcommand{\d}{\text d}$ $\newcommand{\limu}[2]{\underset{#1 \to #2}\lim}$ $\newcommand{\inv}[1]{{#1}^{-1}}$ $\newcommand{\inner}[2]{\langle #1, #2 \rangle}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\rank}[1]{\text{rank}(#1)}$ $\newcommand{\tr}[1]{\text{tr}(#1)}$ $\newcommand{\Re}[1]{\text{Re}(#1)}$ $\newcommand{\Im}[1]{\text{Im}(#1)}$ $\newcommand{\oto}{\text{ one-to-one }}$ $\newcommand{\ot}{\text{ onto }}$ $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$ $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$ $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$ $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$ $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$ $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$ $\newcommand{\vcw}[2]{\begin{matrix} #1 \br #2 \end{matrix}}$ $\newcommand{\vce}[3]{\begin{matrix} #1 \br #2 \br #3 \end{matrix}}$ $\newcommand{\vcr}[4]{\begin{matrix} #1 \br #2 \br #3 \br #4 \end{matrix}}$ $\newcommand{\vct}[5]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \end{matrix}}$ $\newcommand{\vcy}[6]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{matrix}}$ $\newcommand{\vcu}[7]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{matrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$ $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$ $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$ $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$  Example: 6.
-    </div>
-    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/d.6/"> Read the article</a></p>
-  </article>
-
-        
-      
-        
-          <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/6.1/">Inner Products and Norms</a></h1>
-    <p class="article__meta">
-  <span>
-    
-    <a href="/volumes/6" class="article__volume-link">Vol. 6</a>, Issue 1
-    
-    <small>∙</small>
-    July 2018
-  </span>
-  
-</p>
-
-    <div class="article__summary">
-      $\newcommand{\br}{\\}$ $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\L}{\mathcal{L}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\otherwise}{\text{ otherwise }}$ $\newcommand{\if}{\text{ if }}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{| #1 |}$ $\newcommand{\norm}[1]{\left\lVert#1\right\rVert}$ $\newcommand{\pare}[1]{\left\(#1\right\)}$ $\newcommand{\t}[1]{\text{ #1 }}$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$ $\newcommand{\d}{\text d}$ $\newcommand{\limu}[2]{\underset{#1 \to #2}\lim}$ $\newcommand{\inv}[1]{{#1}^{-1}}$ $\newcommand{\inner}[2]{\langle #1, #2 \rangle}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\rank}[1]{\text{rank}(#1)}$ $\newcommand{\tr}[1]{\text{tr}(#1)}$ $\newcommand{\oto}{\text{ one-to-one }}$ $\newcommand{\ot}{\text{ onto }}$ $\newcommand{\Re}[1]{\text{Re}(#1)}$ $\newcommand{\Im}[1]{\text{Im}(#1)}$ $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$ $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$ $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$ $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$ $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$ $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$ $\newcommand{\vcw}[2]{\begin{matrix} #1 \br #2 \end{matrix}}$ $\newcommand{\vce}[3]{\begin{matrix} #1 \br #2 \br #3 \end{matrix}}$ $\newcommand{\vcr}[4]{\begin{matrix} #1 \br #2 \br #3 \br #4 \end{matrix}}$ $\newcommand{\vct}[5]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \end{matrix}}$ $\newcommand{\vcy}[6]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{matrix}}$ $\newcommand{\vcu}[7]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{matrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$ $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$ $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$ $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$  Definition: Inner Product $F = \R$ or $\C$.
-    </div>
-    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/6.1/"> Read the article</a></p>
-  </article>
-
-        
-      
-        
-          <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/5.2/">Diagonalizability</a></h1>
-    <p class="article__meta">
-  <span>
-    
-    <a href="/volumes/5" class="article__volume-link">Vol. 5</a>, Issue 2
-    
-    <small>∙</small>
-    July 2018
-  </span>
-  
-</p>
-
-    <div class="article__summary">
-      $\newcommand{\br}{\\}$ $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\L}{\mathcal{L}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\otherwise}{\text{ otherwise }}$ $\newcommand{\if}{\text{ if }}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{| #1 |}$ $\newcommand{\pare}[1]{\left\(#1\right\)}$ $\newcommand{\t}[1]{\text{ #1 }}$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$ $\newcommand{\d}{\text d}$ $\newcommand{\inv}[1]{{#1}^{-1}}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\rank}[1]{\text{rank}(#1)}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\oto}{\text{ one-to-one }}$ $\newcommand{\ot}{\text{ onto }}$ $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$ $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$ $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$ $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$ $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$ $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$ $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$ $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$ $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$  Definition: Diagonalizability of Linear Operators Let $T$ be an linear operator on a finite-dimensional vector space $V$,
-    </div>
-    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/5.2/"> Read the article</a></p>
-  </article>
-
-        
-      
-        
-          <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/5.1/">Eigenvalues and Eigenvectors</a></h1>
-    <p class="article__meta">
-  <span>
-    
-    <a href="/volumes/5" class="article__volume-link">Vol. 5</a>, Issue 1
-    
-    <small>∙</small>
-    July 2018
-  </span>
-  
-</p>
-
-    <div class="article__summary">
-      $\newcommand{\br}{\\}$ $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\L}{\mathcal{L}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\otherwise}{\text{ otherwise }}$ $\newcommand{\if}{\text{ if }}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{| #1 |}$ $\newcommand{\pare}[1]{\left\(#1\right\)}$ $\newcommand{\t}[1]{\text{ #1 }}$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$ $\newcommand{\d}{\text d}$ $\newcommand{\inv}[1]{{#1}^{-1}}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\rank}[1]{\text{rank}(#1)}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\oto}{\text{ one-to-one }}$ $\newcommand{\ot}{\text{ onto }}$ $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$ $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$ $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$ $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$ $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$ $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$ $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$ $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$ $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$  Definition: Eigenvalues and Eigenvectors of Linear Operators $T: V \to V $ is a linear operator on $V$.
-    </div>
-    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/5.1/"> Read the article</a></p>
-  </article>
-
-        
-      
-        
-          <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/d.5/">Discussion</a></h1>
-    <p class="article__meta">
-  <span>
-    
-    <a href="/volumes/d" class="article__volume-link">Vol. D</a>, Issue 5
-    
-    <small>∙</small>
-    July 2018
-  </span>
-  
-</p>
-
-    <div class="article__summary">
-      $\newcommand{\br}{\\}$ $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\L}{\mathcal{L}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\otherwise}{\text{ otherwise }}$ $\newcommand{\if}{\text{ if }}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{| #1 |}$ $\newcommand{\pare}[1]{\left\(#1\right\)}$ $\newcommand{\t}[1]{\text{ #1 }}$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$ $\newcommand{\d}{\text d}$ $\newcommand{\inv}[1]{{#1}^{-1}}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\rank}[1]{\text{rank}(#1)}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\oto}{\text{ one-to-one }}$ $\newcommand{\ot}{\text{ onto }}$ $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$ $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$ $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$ $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$ $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$ $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$ $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$ $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$ $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$  $\beta = \set{ u_1, u_2, &hellip;, u_{ n }}$
-    </div>
-    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/d.5/"> Read the article</a></p>
-  </article>
-
-        
-      
-        
-          <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/2.5/">The Change of Coordinate Matrix</a></h1>
-    <p class="article__meta">
-  <span>
-    
-    <a href="/volumes/2" class="article__volume-link">Vol. 2</a>, Issue 5
-    
-    <small>∙</small>
-    July 2018
-  </span>
-  
-</p>
-
-    <div class="article__summary">
-      $\newcommand{\br}{\\}$ $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\L}{\mathcal{L}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\otherwise}{\text{ otherwise }}$ $\newcommand{\if}{\text{ if }}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{| #1 |}$ $\newcommand{\pare}[1]{\left\(#1\right\)}$ $\newcommand{\t}[1]{\text{ #1 }}$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$ $\newcommand{\d}{\text d}$ $\newcommand{\inv}[1]{{#1}^{-1}}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\rank}[1]{\text{rank}(#1)}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\oto}{\text{ one-to-one }}$ $\newcommand{\ot}{\text{ onto }}$ $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$ $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$ $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$ $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$ $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$ $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$ $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$ $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$ $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$  Theorem 2.
-    </div>
-    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/2.5/"> Read the article</a></p>
-  </article>
-
-        
-      
-        
-          <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/2.4/">Invertibility and Isomorphisms</a></h1>
-    <p class="article__meta">
-  <span>
-    
-    <a href="/volumes/2" class="article__volume-link">Vol. 2</a>, Issue 4
-    
-    <small>∙</small>
-    July 2018
-  </span>
-  
-</p>
-
-    <div class="article__summary">
-      $\newcommand{\br}{\\}$ $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\L}{\mathcal{L}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\otherwise}{\text{ otherwise }}$ $\newcommand{\if}{\text{ if }}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{| #1 |}$ $\newcommand{\pare}[1]{\left\(#1\right\)}$ $\newcommand{\t}[1]{\text{ #1 }}$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$ $\newcommand{\d}{\text d}$ $\newcommand{\inv}[1]{{#1}^{-1}}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\rank}[1]{\text{rank}(#1)}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\oto}{\text{ one-to-one }}$ $\newcommand{\ot}{\text{ onto }}$ $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$ $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$ $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$ $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$ $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$ $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$ $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$ $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$ $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$  Definition: Invertibility of Linear Transformation Let $V $ and $W $ be vector spaces, and let $T: V \to W $ be linear.
-    </div>
-    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/2.4/"> Read the article</a></p>
-  </article>
-
-        
-      
-        
-          <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/2.3/">Composition of Linear Transformations and Matrix Multiplication</a></h1>
-    <p class="article__meta">
-  <span>
-    
-    <a href="/volumes/2" class="article__volume-link">Vol. 2</a>, Issue 3
-    
-    <small>∙</small>
-    July 2018
-  </span>
-  
-</p>
-
-    <div class="article__summary">
-      $\newcommand{\br}{\\}$ $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\L}{\mathcal{L}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{|#1|}$ $\newcommand{\inv}[1]{#1^{-1}}$ $\newcommand{\t#1}{\text}[1]$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$ $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$ $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$ $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$ $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$ $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$ $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$ $\newcommand{\vcw}[2]{\begin{matrix} #1 \br #2 \end{matrix}}$ $\newcommand{\vce}[3]{\begin{matrix} #1 \br #2 \br #3 \end{matrix}}$ $\newcommand{\vcr}[4]{\begin{matrix} #1 \br #2 \br #3 \br #4 \end{matrix}}$ $\newcommand{\vct}[5]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \end{matrix}}$ $\newcommand{\vcy}[6]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{matrix}}$ $\newcommand{\vcu}[7]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{matrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix}#1 & #2 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix}#1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Mqr}[4]{\begin{bmatrix}#1 & #2 & #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqt}[5]{\begin{bmatrix}#1 & #2 & #3 & #4 & #5 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix}#1 \br #2 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix}#1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mrq}[4]{\begin{bmatrix}#1 \br #2 \br #3 \br #4 \end{bmatrix}}$ $\newcommand{\Mtq}[5]{\begin{bmatrix}#1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$ $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$ $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$  Theorem 2.
-    </div>
-    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/2.3/"> Read the article</a></p>
-  </article>
-
-        
-      
-        
-          <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/d.4/">Discussion</a></h1>
-    <p class="article__meta">
-  <span>
-    
-    <a href="/volumes/d" class="article__volume-link">Vol. D</a>, Issue 4
-    
-    <small>∙</small>
-    July 2018
-  </span>
-  
-</p>
-
-    <div class="article__summary">
-      $\newcommand{\br}{\\}$ $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\L}{\mathcal{L}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\otherwise}{\text{otherwise}}$ $\newcommand{\if}{\text{if}}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{|#1|}$ $\newcommand{\pare}[1]{\left\(#1\right\)}$ $\newcommand{\t}[1]{\text{#1}}$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\rank}[1]{\text{rank}(#1)}$ $\newcommand{\oto}{\text{ one-to-one }}$ $\newcommand{\ot}{\text{ onto }}$ $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$ $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$ $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$ $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$ $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$ $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$ $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$ $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$ $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$  Example: midterm 4b  $\set{W_i| W_i \leq V, i \in I}$
-    </div>
-    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/d.4/"> Read the article</a></p>
-  </article>
-
-        
-      
-        
-          <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/2.2/">The Matrix Representation of a Linear Transformation</a></h1>
-    <p class="article__meta">
-  <span>
-    
-    <a href="/volumes/2" class="article__volume-link">Vol. 2</a>, Issue 2
-    
-    <small>∙</small>
-    July 2018
-  </span>
-  
-</p>
-
-    <div class="article__summary">
-      $\newcommand{\br}{\\}$ $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\L}{\mathcal{L}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\otherwise}{\text{ otherwise }}$ $\newcommand{\if}{\text{ if }}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{| #1 |}$ $\newcommand{\pare}[1]{\left\(#1\right\)}$ $\newcommand{\t}[1]{\text{ #1 }}$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$ $\newcommand{\d}{\text d}$ $\newcommand{\limu}[2]{\underset{#1 \to #2}\lim}$ $\newcommand{\inv}[1]{{#1}^{-1}}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\rank}[1]{\text{rank}(#1)}$ $\newcommand{\oto}{\text{ one-to-one }}$ $\newcommand{\ot}{\text{ onto }}$ $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$ $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$ $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$ $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$ $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$ $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$ $\newcommand{\vcw}[2]{\begin{matrix} #1 \br #2 \end{matrix}}$ $\newcommand{\vce}[3]{\begin{matrix} #1 \br #2 \br #3 \end{matrix}}$ $\newcommand{\vcr}[4]{\begin{matrix} #1 \br #2 \br #3 \br #4 \end{matrix}}$ $\newcommand{\vct}[5]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \end{matrix}}$ $\newcommand{\vcy}[6]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{matrix}}$ $\newcommand{\vcu}[7]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{matrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$ $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$ $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$ $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$  Definition: Ordered Basis Let $V$ be a finite-dimensional vector space.
-    </div>
-    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/2.2/"> Read the article</a></p>
-  </article>
-
-        
-      
-        
-          <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/2.1/">Linear Transformation</a></h1>
-    <p class="article__meta">
-  <span>
-    
-    <a href="/volumes/2" class="article__volume-link">Vol. 2</a>, Issue 1
-    
-    <small>∙</small>
-    July 2018
-  </span>
-  
-</p>
-
-    <div class="article__summary">
-      <p class="hide">
-Linear Transformation, Identity Transformation, Zero Transformation, Kernel (Null Space), Range (Image), Nullity, Rank, One-to-One, Onto.
-</p>
-    </div>
-    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/2.1/"> Read the article</a></p>
-  </article>
-
-        
-      
-        
-          <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/d.3/">Discussion</a></h1>
-    <p class="article__meta">
-  <span>
-    
-    <a href="/volumes/d" class="article__volume-link">Vol. D</a>, Issue 3
-    
-    <small>∙</small>
-    July 2018
-  </span>
-  
-</p>
-
-    <div class="article__summary">
-      $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{|#1|}$ $\newcommand{\t#1}{\text}[1]$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$  Definitions that you need to know  subspace linear combinations, span $S \subseteq V, V$ vector space, $S$ span $V ?$ linearly dependent / linearly independent basis, $dim of V$, state the theorem  Theorem : Replacement Theorem $V$ vector space generated by $G, G$ has $n$ vectors. $L$ is set of independent $m$ vectors.
-    </div>
-    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/d.3/"> Read the article</a></p>
-  </article>
-
-        
-      
-        
-          <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/1.6/">Bases and Dimensions</a></h1>
-    <p class="article__meta">
-  <span>
-    
-    <a href="/volumes/1" class="article__volume-link">Vol. 1</a>, Issue 6
-    
-    <small>∙</small>
-    July 2018
-  </span>
-  
-</p>
-
-    <div class="article__summary">
-      <p class="hide">
-  Basis, Dimensions of Vector Spaces.
-</p>
-    </div>
-    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/1.6/"> Read the article</a></p>
-  </article>
-
-        
-      
-        
-          <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/d.2/">Discussion</a></h1>
-    <p class="article__meta">
-  <span>
-    
-    <a href="/volumes/d" class="article__volume-link">Vol. D</a>, Issue 2
-    
-    <small>∙</small>
-    July 2018
-  </span>
-  
-</p>
-
-    <div class="article__summary">
-      $\newcommand{\br}{\\}$ $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\L}{\mathcal{L}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\otherwise}{\text{ otherwise }}$ $\newcommand{\if}{\text{ if }}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{| #1 |}$ $\newcommand{\pare}[1]{\left\(#1\right\)}$ $\newcommand{\t}[1]{\text{ #1 }}$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$ $\newcommand{\d}{\text d}$ $\newcommand{\inv}[1]{{#1}^{-1}}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\rank}[1]{\text{rank}(#1)}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\oto}{\text{ one-to-one }}$ $\newcommand{\ot}{\text{ onto }}$ $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$ $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$ $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$ $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$ $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$ $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$ $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$ $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$ $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$  $$ \begin{bmatrix} x_{11} &amp; x_{12} \br x_{21} &amp; x_{22} \br \end{bmatrix} $$
-    </div>
-    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/d.2/"> Read the article</a></p>
-  </article>
-
-        
-      
-        
-          <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/1.5/">Linear Dependence and Linear Independence</a></h1>
-    <p class="article__meta">
-  <span>
-    
-    <a href="/volumes/1" class="article__volume-link">Vol. 1</a>, Issue 5
-    
-    <small>∙</small>
-    July 2018
-  </span>
-  
-</p>
-
-    <div class="article__summary">
-      <p class="hide">
-  Linearly Dependent, Linearly Independent.
-</p>
-    </div>
-    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/1.5/"> Read the article</a></p>
-  </article>
-
-        
-      
-        
-          <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/1.4/">Linear Combinations and Systems of Linear Equations</a></h1>
-    <p class="article__meta">
-  <span>
-    
-    <a href="/volumes/1" class="article__volume-link">Vol. 1</a>, Issue 4
-    
-    <small>∙</small>
-    July 2018
-  </span>
-  
-</p>
-
-    <div class="article__summary">
-      <p class="hide">
-  Linear Combination, Span, Generating Set.
-</p>
-    </div>
-    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/1.4/"> Read the article</a></p>
+    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/1.2/"> Read the article</a></p>
   </article>
 
         
@@ -557,44 +197,272 @@ Linear Transformation, Identity Transformation, Zero Transformation, Kernel (Nul
       
         
           <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/d.1/">Discussion</a></h1>
+    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/1.4/">Linear Combinations and Systems of Linear Equations</a></h1>
     <p class="article__meta">
   <span>
     
-    <a href="/volumes/d" class="article__volume-link">Vol. D</a>, Issue 1
+    <a href="/volumes/1" class="article__volume-link">Vol. 1</a>, Issue 4
     
     <small>∙</small>
-    June 2018
+    July 2018
   </span>
   
 </p>
 
     <div class="article__summary">
-      $\newcommand{\br}{\\}$ $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\L}{\mathcal{L}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\otherwise}{\text{ otherwise }}$ $\newcommand{\if}{\text{ if }}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{| #1 |}$ $\newcommand{\pare}[1]{\left\(#1\right\)}$ $\newcommand{\t}[1]{\text{ #1 }}$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$ $\newcommand{\inv}[1]{{#1}^{-1}}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\rank}[1]{\text{rank}(#1)}$ $\newcommand{\oto}{\text{ one-to-one }}$ $\newcommand{\ot}{\text{ onto }}$ $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$ $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$ $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$ $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$ $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$ $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$ $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$ $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$ $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$  Examples  $\C$ is a vector space over $\C$.
+      <p class="hide">
+  Linear Combination, Span, Generating Set.
+</p>
     </div>
-    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/d.1/"> Read the article</a></p>
+    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/1.4/"> Read the article</a></p>
   </article>
 
         
       
         
           <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/1.2/">Vector Spaces</a></h1>
+    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/1.5/">Linear Dependence and Linear Independence</a></h1>
     <p class="article__meta">
   <span>
     
-    <a href="/volumes/1" class="article__volume-link">Vol. 1</a>, Issue 2
+    <a href="/volumes/1" class="article__volume-link">Vol. 1</a>, Issue 5
     
     <small>∙</small>
-    June 2018
+    July 2018
   </span>
   
 </p>
 
     <div class="article__summary">
-      <p class="hide">Spaces, Vector Spaces, Degree of Polynomial, Fields.</p>
+      <p class="hide">
+  Linearly Dependent, Linearly Independent.
+</p>
     </div>
-    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/1.2/"> Read the article</a></p>
+    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/1.5/"> Read the article</a></p>
+  </article>
+
+        
+      
+        
+          <article class="article article--list-item">
+    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/1.6/">Bases and Dimensions</a></h1>
+    <p class="article__meta">
+  <span>
+    
+    <a href="/volumes/1" class="article__volume-link">Vol. 1</a>, Issue 6
+    
+    <small>∙</small>
+    July 2018
+  </span>
+  
+</p>
+
+    <div class="article__summary">
+      <p class="hide">
+  Basis, Dimensions of Vector Spaces.
+</p>
+    </div>
+    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/1.6/"> Read the article</a></p>
+  </article>
+
+        
+      
+        
+          <article class="article article--list-item">
+    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/2.1/">Linear Transformation</a></h1>
+    <p class="article__meta">
+  <span>
+    
+    <a href="/volumes/2" class="article__volume-link">Vol. 2</a>, Issue 1
+    
+    <small>∙</small>
+    July 2018
+  </span>
+  
+</p>
+
+    <div class="article__summary">
+      <p class="hide">
+Linear Transformation, Identity Transformation, Zero Transformation, Kernel (Null Space), Range (Image), Nullity, Rank, One-to-One, Onto.
+</p>
+    </div>
+    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/2.1/"> Read the article</a></p>
+  </article>
+
+        
+      
+        
+          <article class="article article--list-item">
+    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/2.2/">The Matrix Representation of a Linear Transformation</a></h1>
+    <p class="article__meta">
+  <span>
+    
+    <a href="/volumes/2" class="article__volume-link">Vol. 2</a>, Issue 2
+    
+    <small>∙</small>
+    July 2018
+  </span>
+  
+</p>
+
+    <div class="article__summary">
+      $\newcommand{\br}{\\}$ $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\L}{\mathcal{L}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\otherwise}{\text{ otherwise }}$ $\newcommand{\if}{\text{ if }}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{| #1 |}$ $\newcommand{\pare}[1]{\left\(#1\right\)}$ $\newcommand{\t}[1]{\text{ #1 }}$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$ $\newcommand{\d}{\text d}$ $\newcommand{\limu}[2]{\underset{#1 \to #2}\lim}$ $\newcommand{\inv}[1]{{#1}^{-1}}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\rank}[1]{\text{rank}(#1)}$ $\newcommand{\oto}{\text{ one-to-one }}$ $\newcommand{\ot}{\text{ onto }}$ $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$ $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$ $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$ $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$ $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$ $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$ $\newcommand{\vcw}[2]{\begin{matrix} #1 \br #2 \end{matrix}}$ $\newcommand{\vce}[3]{\begin{matrix} #1 \br #2 \br #3 \end{matrix}}$ $\newcommand{\vcr}[4]{\begin{matrix} #1 \br #2 \br #3 \br #4 \end{matrix}}$ $\newcommand{\vct}[5]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \end{matrix}}$ $\newcommand{\vcy}[6]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{matrix}}$ $\newcommand{\vcu}[7]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{matrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$ $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$ $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$ $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$  Definition: Ordered Basis Let $V$ be a finite-dimensional vector space.
+    </div>
+    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/2.2/"> Read the article</a></p>
+  </article>
+
+        
+      
+        
+          <article class="article article--list-item">
+    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/2.3/">Composition of Linear Transformations and Matrix Multiplication</a></h1>
+    <p class="article__meta">
+  <span>
+    
+    <a href="/volumes/2" class="article__volume-link">Vol. 2</a>, Issue 3
+    
+    <small>∙</small>
+    July 2018
+  </span>
+  
+</p>
+
+    <div class="article__summary">
+      $\newcommand{\br}{\\}$ $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\L}{\mathcal{L}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{|#1|}$ $\newcommand{\inv}[1]{#1^{-1}}$ $\newcommand{\t#1}{\text}[1]$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$ $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$ $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$ $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$ $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$ $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$ $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$ $\newcommand{\vcw}[2]{\begin{matrix} #1 \br #2 \end{matrix}}$ $\newcommand{\vce}[3]{\begin{matrix} #1 \br #2 \br #3 \end{matrix}}$ $\newcommand{\vcr}[4]{\begin{matrix} #1 \br #2 \br #3 \br #4 \end{matrix}}$ $\newcommand{\vct}[5]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \end{matrix}}$ $\newcommand{\vcy}[6]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{matrix}}$ $\newcommand{\vcu}[7]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{matrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix}#1 & #2 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix}#1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Mqr}[4]{\begin{bmatrix}#1 & #2 & #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqt}[5]{\begin{bmatrix}#1 & #2 & #3 & #4 & #5 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix}#1 \br #2 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix}#1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mrq}[4]{\begin{bmatrix}#1 \br #2 \br #3 \br #4 \end{bmatrix}}$ $\newcommand{\Mtq}[5]{\begin{bmatrix}#1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$ $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$ $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$  Theorem 2.
+    </div>
+    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/2.3/"> Read the article</a></p>
+  </article>
+
+        
+      
+        
+          <article class="article article--list-item">
+    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/2.4/">Invertibility and Isomorphisms</a></h1>
+    <p class="article__meta">
+  <span>
+    
+    <a href="/volumes/2" class="article__volume-link">Vol. 2</a>, Issue 4
+    
+    <small>∙</small>
+    July 2018
+  </span>
+  
+</p>
+
+    <div class="article__summary">
+      $\newcommand{\br}{\\}$ $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\L}{\mathcal{L}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\otherwise}{\text{ otherwise }}$ $\newcommand{\if}{\text{ if }}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{| #1 |}$ $\newcommand{\pare}[1]{\left\(#1\right\)}$ $\newcommand{\t}[1]{\text{ #1 }}$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$ $\newcommand{\d}{\text d}$ $\newcommand{\inv}[1]{{#1}^{-1}}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\rank}[1]{\text{rank}(#1)}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\oto}{\text{ one-to-one }}$ $\newcommand{\ot}{\text{ onto }}$ $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$ $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$ $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$ $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$ $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$ $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$ $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$ $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$ $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$  Definition: Invertibility of Linear Transformation Let $V $ and $W $ be vector spaces, and let $T: V \to W $ be linear.
+    </div>
+    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/2.4/"> Read the article</a></p>
+  </article>
+
+        
+      
+        
+          <article class="article article--list-item">
+    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/2.5/">The Change of Coordinate Matrix</a></h1>
+    <p class="article__meta">
+  <span>
+    
+    <a href="/volumes/2" class="article__volume-link">Vol. 2</a>, Issue 5
+    
+    <small>∙</small>
+    July 2018
+  </span>
+  
+</p>
+
+    <div class="article__summary">
+      $\newcommand{\br}{\\}$ $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\L}{\mathcal{L}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\otherwise}{\text{ otherwise }}$ $\newcommand{\if}{\text{ if }}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{| #1 |}$ $\newcommand{\pare}[1]{\left\(#1\right\)}$ $\newcommand{\t}[1]{\text{ #1 }}$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$ $\newcommand{\d}{\text d}$ $\newcommand{\inv}[1]{{#1}^{-1}}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\rank}[1]{\text{rank}(#1)}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\oto}{\text{ one-to-one }}$ $\newcommand{\ot}{\text{ onto }}$ $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$ $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$ $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$ $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$ $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$ $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$ $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$ $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$ $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$  Theorem 2.
+    </div>
+    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/2.5/"> Read the article</a></p>
+  </article>
+
+        
+      
+        
+          <article class="article article--list-item">
+    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/5.1/">Eigenvalues and Eigenvectors</a></h1>
+    <p class="article__meta">
+  <span>
+    
+    <a href="/volumes/5" class="article__volume-link">Vol. 5</a>, Issue 1
+    
+    <small>∙</small>
+    July 2018
+  </span>
+  
+</p>
+
+    <div class="article__summary">
+      $\newcommand{\br}{\\}$ $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\L}{\mathcal{L}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\otherwise}{\text{ otherwise }}$ $\newcommand{\if}{\text{ if }}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{| #1 |}$ $\newcommand{\pare}[1]{\left\(#1\right\)}$ $\newcommand{\t}[1]{\text{ #1 }}$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$ $\newcommand{\d}{\text d}$ $\newcommand{\inv}[1]{{#1}^{-1}}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\rank}[1]{\text{rank}(#1)}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\oto}{\text{ one-to-one }}$ $\newcommand{\ot}{\text{ onto }}$ $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$ $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$ $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$ $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$ $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$ $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$ $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$ $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$ $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$  Definition: Eigenvalues and Eigenvectors of Linear Operators $T: V \to V $ is a linear operator on $V$.
+    </div>
+    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/5.1/"> Read the article</a></p>
+  </article>
+
+        
+      
+        
+          <article class="article article--list-item">
+    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/5.2/">Diagonalizability</a></h1>
+    <p class="article__meta">
+  <span>
+    
+    <a href="/volumes/5" class="article__volume-link">Vol. 5</a>, Issue 2
+    
+    <small>∙</small>
+    July 2018
+  </span>
+  
+</p>
+
+    <div class="article__summary">
+      $\newcommand{\br}{\\}$ $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\L}{\mathcal{L}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\otherwise}{\text{ otherwise }}$ $\newcommand{\if}{\text{ if }}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{| #1 |}$ $\newcommand{\pare}[1]{\left\(#1\right\)}$ $\newcommand{\t}[1]{\text{ #1 }}$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$ $\newcommand{\d}{\text d}$ $\newcommand{\inv}[1]{{#1}^{-1}}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\rank}[1]{\text{rank}(#1)}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\oto}{\text{ one-to-one }}$ $\newcommand{\ot}{\text{ onto }}$ $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$ $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$ $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$ $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$ $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$ $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$ $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$ $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$ $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$  Definition: Diagonalizability of Linear Operators Let $T$ be an linear operator on a finite-dimensional vector space $V$,
+    </div>
+    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/5.2/"> Read the article</a></p>
+  </article>
+
+        
+      
+        
+          <article class="article article--list-item">
+    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/6.1/">Inner Products and Norms</a></h1>
+    <p class="article__meta">
+  <span>
+    
+    <a href="/volumes/6" class="article__volume-link">Vol. 6</a>, Issue 1
+    
+    <small>∙</small>
+    July 2018
+  </span>
+  
+</p>
+
+    <div class="article__summary">
+      $\newcommand{\br}{\\}$ $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\L}{\mathcal{L}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\otherwise}{\text{ otherwise }}$ $\newcommand{\if}{\text{ if }}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{| #1 |}$ $\newcommand{\norm}[1]{\left\lVert#1\right\rVert}$ $\newcommand{\pare}[1]{\left\(#1\right\)}$ $\newcommand{\t}[1]{\text{ #1 }}$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$ $\newcommand{\d}{\text d}$ $\newcommand{\limu}[2]{\underset{#1 \to #2}\lim}$ $\newcommand{\inv}[1]{{#1}^{-1}}$ $\newcommand{\inner}[2]{\langle #1, #2 \rangle}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\rank}[1]{\text{rank}(#1)}$ $\newcommand{\tr}[1]{\text{tr}(#1)}$ $\newcommand{\oto}{\text{ one-to-one }}$ $\newcommand{\ot}{\text{ onto }}$ $\newcommand{\Re}[1]{\text{Re}(#1)}$ $\newcommand{\Im}[1]{\text{Im}(#1)}$ $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$ $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$ $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$ $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$ $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$ $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$ $\newcommand{\vcw}[2]{\begin{matrix} #1 \br #2 \end{matrix}}$ $\newcommand{\vce}[3]{\begin{matrix} #1 \br #2 \br #3 \end{matrix}}$ $\newcommand{\vcr}[4]{\begin{matrix} #1 \br #2 \br #3 \br #4 \end{matrix}}$ $\newcommand{\vct}[5]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \end{matrix}}$ $\newcommand{\vcy}[6]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{matrix}}$ $\newcommand{\vcu}[7]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{matrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$ $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$ $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$ $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$  Definition: Inner Product $F = \R$ or $\C$.
+    </div>
+    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/6.1/"> Read the article</a></p>
+  </article>
+
+        
+      
+        
+          <article class="article article--list-item">
+    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/linear-algebra/6.2/">Gram-Schmidt Orthogonalization process</a></h1>
+    <p class="article__meta">
+  <span>
+    
+    <a href="/volumes/6" class="article__volume-link">Vol. 6</a>, Issue 2
+    
+    <small>∙</small>
+    July 2018
+  </span>
+  
+</p>
+
+    <div class="article__summary">
+      $\newcommand{\br}{\\}$ $\newcommand{\R}{\mathbb{R}}$ $\newcommand{\Q}{\mathbb{Q}}$ $\newcommand{\Z}{\mathbb{Z}}$ $\newcommand{\N}{\mathbb{N}}$ $\newcommand{\C}{\mathbb{C}}$ $\newcommand{\P}{\mathbb{P}}$ $\newcommand{\F}{\mathbb{F}}$ $\newcommand{\L}{\mathcal{L}}$ $\newcommand{\spa}[1]{\text{span}(#1)}$ $\newcommand{\set}[1]{\{#1\}}$ $\newcommand{\emptyset}{\varnothing}$ $\newcommand{\otherwise}{\text{ otherwise }}$ $\newcommand{\if}{\text{ if }}$ $\newcommand{\union}{\cup}$ $\newcommand{\intercept}{\cap}$ $\newcommand{\abs}[1]{| #1 |}$ $\newcommand{\proj}{\text{proj}}$ $\newcommand{\norm}[1]{\left\lVert#1\right\rVert}$ $\newcommand{\pare}[1]{\left\(#1\right\)}$ $\newcommand{\t}[1]{\text{ #1 }}$ $\newcommand{\head}{\text H}$ $\newcommand{\tail}{\text T}$ $\newcommand{\d}{\text d}$ $\newcommand{\limu}[2]{\underset{#1 \to #2}\lim}$ $\newcommand{\inv}[1]{{#1}^{-1}}$ $\newcommand{\inner}[2]{\langle #1, #2 \rangle}$ $\newcommand{\nullity}[1]{\text{nullity}(#1)}$ $\newcommand{\rank}[1]{\text{rank}(#1)}$ $\newcommand{\tr}[1]{\text{tr}(#1)}$ $\newcommand{\oto}{\text{ one-to-one }}$ $\newcommand{\ot}{\text{ onto }}$ $\newcommand{\Re}[1]{\text{Re}(#1)}$ $\newcommand{\Im}[1]{\text{Im}(#1)}$ $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$ $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$ $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$ $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$ $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$ $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$ $\newcommand{\vcw}[2]{\begin{matrix} #1 \br #2 \end{matrix}}$ $\newcommand{\vce}[3]{\begin{matrix} #1 \br #2 \br #3 \end{matrix}}$ $\newcommand{\vcr}[4]{\begin{matrix} #1 \br #2 \br #3 \br #4 \end{matrix}}$ $\newcommand{\vct}[5]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \end{matrix}}$ $\newcommand{\vcy}[6]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{matrix}}$ $\newcommand{\vcu}[7]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{matrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$ $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$ $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$ $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$ $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$ $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$ $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$ $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$ $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$ $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$  Definition: Orthonormal Basis Let $V $ be an inner product vector space over a field $F = \R $ or $\C$.
+    </div>
+    <p><a class="article__more" href="https://jimzenn.com/linear-algebra/6.2/"> Read the article</a></p>
   </article>
 
         
