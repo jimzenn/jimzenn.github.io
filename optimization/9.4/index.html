@@ -261,7 +261,7 @@ if (!doNotTrack) {
     $\newcommand{\inv}[1]{{#1}^{-1}}$
     $\newcommand{\inner}[2]{\langle #1, #2 \rangle}$
     $\newcommand{\nullity}[1]{\text{nullity}(#1)}$
-    $\newcommand{\rank}[1]{\text{rank}(#1)}$
+    $\newcommand{\rank}[1]{\text{rank }#1}$
     $\newcommand{\var}[1]{\text{var}(#1)}$
     $\newcommand{\tr}[1]{\text{tr}(#1)}$
     $\newcommand{\oto}{\text{ one-to-one }}$
@@ -277,12 +277,12 @@ if (!doNotTrack) {
     $\newcommand{\None}[1]{}$
 
 
-    $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$
-    $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$
-    $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$
-    $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$
-    $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$
-    $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$
+    $\newcommand{\Vcw}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Vce}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Vcr}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$
+    $\newcommand{\Vct}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$
+    $\newcommand{\Vcy}[6]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{bmatrix}}$
+    $\newcommand{\Vcu}[7]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{bmatrix}}$
 
     $\newcommand{\vcw}[2]{\begin{matrix} #1 \br #2 \end{matrix}}$
     $\newcommand{\vce}[3]{\begin{matrix} #1 \br #2 \br #3 \end{matrix}}$
@@ -395,9 +395,9 @@ if (!doNotTrack) {
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
-    <p>Suppose we are given $m $ measurements of a process at m points in time. Let $t_1, _2, &hellip;, _{ m } $ denote the measurement times, and $y_1, _2, &hellip;, _{ m } $ the mesurement values. Note that $t_1 = 0 $ while $t_{21} = 10 $. We wish to fit a sinusoid to the measurement data. The equation of the sinusoid is $y= A \sin (\omega t + \phi) $.</p>
+    <p>Suppose we are given $m $ measurements of a process at m points in time. Let $t_1, _2, &hellip;, _{ m } $ denote the measurement times, and $y_1, _2, &hellip;, _{ m } $ the mesurement values. Note that $t_1 = 0 $ while $t_{21} = 10 $. We wish to fit a sinusoid to the measurement data. The equation of the sinusoid is $y= A \sin (\omega t + \phi) $ with appropriate choices of the parameters $A, \omega, $ and $\phi $.</p>
 
-<p>with appropriate choices of the parameters $A, \omega, $ and $\phi $. To formulate the data-fitting problem, we construct the objective function</p>
+<p>To formulate the data-fitting problem, we construct the objective function</p>
 
 <p>$$\sum_{ i=1 }^{ m } (y_i - A \sin (\omega t_i + \phi))^2 $$</p>
 
@@ -416,7 +416,7 @@ if (!doNotTrack) {
 
 <p>$$\b{J}(\b{x}) = {\Mee{ \pder{ r_1 }{ x_1 }(\b{x})}{ &hellip; }{ \pder{ r_1 }{ x_n } (\b{x})}{ \vdots }{  }{ \vdots }{ \pder{ r_m }{ x_1 }(\b{x})}{ &hellip; }{ \pder{ r_m }{ x_n } (\b{x})}} $$</p>
 
-<p>Then, the gradient of $ f $ can be represented as</p>
+<p>Then, the gradient of $f $ can be represented as</p>
 
 <p>$$\nabla f(\b{x}) = 2 \transpose{ \b{J}(\b{x})} \b{r}(\b{x}) $$</p>
 
@@ -427,6 +427,20 @@ if (!doNotTrack) {
 &amp;= \pder{  }{ x_k }\pare{2 \sum_{ i=1 }^{ m } r_i(\b{x}) \pder{ r_i }{ x_j }(\b{x})} \br
 &amp;= 2\sum_{ i=1 }^{ m }\pare{\pder{ r_i }{ x_k }(\b{x}) \pder{ r_i }{ x_j }(\b{x}) + r_i(\b{x}) \pderws{r_i}{x_k}{x_j}(\b{x})}
 \end{align*}$$</p>
+
+<p>Letting $\b{S}(\b{x}) $ be the matrix whose $(k, j) $th component is</p>
+
+<p>$$r_i(\b{x}) \pderws{r _i}{x_k}{x_j}(\b{x}) $$</p>
+
+<p>we write the Hessian matrix as</p>
+
+<p>$$\b{F}(\b{x}) = 2(\transpose{\b{J}(\b{x})} \b{J}(\b{x}) + \b{S}(\b{x})) $$</p>
+
+<p>Therefore, Newton&rsquo;s method applied to the nonlinear least-squares problem is given by</p>
+
+<p>$$\b{x}^{(k+1)} = \b{x}^{(k)} - \inv{(\transpose{ \b{J}(\b{x})}\b{J}(\b{x}) + \b{S}(\b{x}))} \transpose{ \b{J}(\b{x})}\b{r}(\b{x})$$</p>
+
+<p>In some applications, the matrix $\b{S}(\b{x}) $ involving the second derivatives of the function $\b{r} $ can be ignored because its components are negligibly small. In this case, the above Newton&rsquo;s algorithm reduces to what is commonly called the <strong>Gauss-Newton method</strong> does not require calculation of the second derivatives of $\b{r}$.</p>
 
   </div>
 
@@ -941,6 +955,46 @@ if (!doNotTrack) {
           
             
             
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/10.2/"><span class="navigation--side__index">10.2</span> The Conjugate Direction Algorithm</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/10.3/"><span class="navigation--side__index">10.3</span> The Conjugate Gradient Algorithm</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
                
                 <li class="navigation--side__heading"><span class="navigation--side__heading-index">11</span>Quasi-Newton Methods</li>
               
@@ -983,6 +1037,26 @@ if (!doNotTrack) {
           
             
             
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/11.3/"><span class="navigation--side__index">11.3</span> The Rank One Correction Formula</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
                
                 <li class="navigation--side__heading"><span class="navigation--side__heading-index">12</span>Solving Ax = b</li>
               
@@ -1014,6 +1088,252 @@ if (!doNotTrack) {
             
             <li class="navigation--side__item ">
               <a href="https://jimzenn.com/optimization/12.2/"><span class="navigation--side__index">12.2</span> Recursive Least-Squares Alorithm</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">15</span>Introduction to Linear Programming</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/15.1/"><span class="navigation--side__index">15.1</span> Introduction to Linear Programming</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/15.5/"><span class="navigation--side__index">15.5</span> Standard Form Linear Programs</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/15.6/"><span class="navigation--side__index">15.6</span> Basic Solutions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/15.7/"><span class="navigation--side__index">15.7</span> Properties of Basic Solutions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">20</span>Problems with Inequality Constraints</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/20.1/"><span class="navigation--side__index">20.1</span> Introduction</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/20.2/"><span class="navigation--side__index">20.2</span> Problem Formulation</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/20.3/"><span class="navigation--side__index">20.3</span> Tangent and Normal Spaces</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/20.4/"><span class="navigation--side__index">20.4</span> Lagrange Condition</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/20.5/"><span class="navigation--side__index">20.5</span> Second-Order Conditions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/20.6/"><span class="navigation--side__index">20.6</span> Minimizing Quadratics Subject to Linear Constraints</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">21</span>Convex Optimization Problems</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/21.1/"><span class="navigation--side__index">21.1</span> Karush-Kuhn-Tucker Condition</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/21.2/"><span class="navigation--side__index">21.1</span> Second-Order Conditions</a>
             </li>
           
         

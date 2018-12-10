@@ -273,8 +273,18 @@
   </url>
   
   <url>
+    <loc>https://jimzenn.com/optimization/10.2/</loc>
+    <lastmod>2018-12-03T23:28:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jimzenn.com/linear-algebra/1.2/</loc>
     <lastmod>2018-06-25T11:03:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jimzenn.com/optimization/10.3/</loc>
+    <lastmod>2018-12-04T18:38:00+08:00</lastmod>
   </url>
   
   <url>
@@ -308,6 +318,11 @@
   </url>
   
   <url>
+    <loc>https://jimzenn.com/optimization/11.3/</loc>
+    <lastmod>2018-12-04T19:57:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jimzenn.com/optimization/12.1/</loc>
     <lastmod>2018-11-01T23:38:00+08:00</lastmod>
   </url>
@@ -318,8 +333,38 @@
   </url>
   
   <url>
+    <loc>https://jimzenn.com/optimization/15.1/</loc>
+    <lastmod>2018-12-09T13:40:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jimzenn.com/optimization/15.5/</loc>
+    <lastmod>2018-12-09T13:47:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jimzenn.com/optimization/15.6/</loc>
+    <lastmod>2018-12-09T15:59:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jimzenn.com/optimization/15.7/</loc>
+    <lastmod>2018-12-09T16:39:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jimzenn.com/optimization/20.1/</loc>
+    <lastmod>2018-12-09T17:35:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jimzenn.com/linear-algebra/2.1/</loc>
     <lastmod>2018-07-11T11:03:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jimzenn.com/optimization/20.2/</loc>
+    <lastmod>2018-12-09T17:49:00+08:00</lastmod>
   </url>
   
   <url>
@@ -328,8 +373,18 @@
   </url>
   
   <url>
+    <loc>https://jimzenn.com/optimization/20.3/</loc>
+    <lastmod>2018-12-09T22:36:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jimzenn.com/linear-algebra/2.3/</loc>
     <lastmod>2018-07-18T11:03:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jimzenn.com/optimization/20.4/</loc>
+    <lastmod>2018-12-09T23:04:00+08:00</lastmod>
   </url>
   
   <url>
@@ -338,8 +393,28 @@
   </url>
   
   <url>
+    <loc>https://jimzenn.com/optimization/20.5/</loc>
+    <lastmod>2018-12-09T23:49:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jimzenn.com/linear-algebra/2.5/</loc>
     <lastmod>2018-07-23T12:00:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jimzenn.com/optimization/20.6/</loc>
+    <lastmod>2018-12-10T00:05:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jimzenn.com/optimization/21.1/</loc>
+    <lastmod>2018-12-10T03:23:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jimzenn.com/optimization/21.2/</loc>
+    <lastmod>2018-12-10T03:54:00+08:00</lastmod>
   </url>
   
   <url>
@@ -457,8 +532,26 @@
   </url>
   
   <url>
+    <loc>https://jimzenn.com/volumes/15/</loc>
+    <lastmod>2018-12-09T13:40:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jimzenn.com/volumes/2/</loc>
     <lastmod>2018-08-08T12:43:48+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jimzenn.com/volumes/20/</loc>
+    <lastmod>2018-12-09T17:35:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jimzenn.com/volumes/21/</loc>
+    <lastmod>2018-12-10T03:23:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   

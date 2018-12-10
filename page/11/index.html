@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.52" />
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<title>Jim Zenn</title>
+<meta property="og:title" content="Jim Zenn">
+<meta property="og:type" content="website">
+
+
+
+<meta property="description" content="">
+
+
+
+
+
+<link href="https://jimzenn.com/index.xml" rel="alternate" type="application/rss+xml" title="Jim Zenn" />
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-83942334-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3" media="all">
+    
+    <link rel="stylesheet" href="https://jimzenn.com/css/jumbotron.css?v=2.9.9.9.3" media="all">
+
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3" media="all">
+  </head>
+
+  <body class="home" >
+    <header class="header" id="header">
+  
+  <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
+  <div class="header__title">
+    <a class="header__site-logo-link--home" href="/">
+      <img class="header__site-logo-image" src="/logo/wire.svg" alt="logo"/>
+    </a>
+    <a class="header__site-logo-link--toggle" id="header-menu__toggle">
+      <img class="header__site-logo-image" src="/logo/wire.svg" alt="logo"/>
+    </a>
+  </div>
+  <nav class="header-menu" id="header-menu">
+      <ul class="header-menu__list">
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+          
+        
+          
+            <li class="header-menu__item header-menu__item--dropdown">
+              <a class="header-menu__link">Notes</a>
+              <ul class="header-menu__item-menu">
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/probability-theory/1.1/">Probability Theory</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/linear-algebra/1.2/">Linear Algebra</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/journey/">Journey</a></li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+          
+        
+      </ul>
+  </nav>
+</header>
+<nav class="header-menu--collapsable" id="collapsable-menu">
+  <ul class="header-menu__list--collapsable">
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+      
+    
+      
+        <li class="header-menu__item header-menu__item--dropdown">
+          <a class="header-menu__link">Notes</a>
+          <ul class="header-menu__item-menu">
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/probability-theory/1.1/">Probability Theory</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/linear-algebra/1.2/">Linear Algebra</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
+            
+          </ul>
+        </li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/journey/">Journey</a></li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+      
+    
+  </ul>
+</nav>
+
+
+    <div class="container" id="container">
+      
+      
+
+  <div class="jumbotron" id="jumbotron">
+  <div class="jumbotron__text" id="jumbotron__text">
+    <span class="jumbotron__title" id="jumbotron__title"></span>
+    <span class="jumbotron__copyright" id="jumbotron__copyright"></span>
+  </div>
+  <button id="jumbotron__expand-button" onclick="expand_jumbotron()">
+    <svg id="jumbotron__expand-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      width="306px" height="306px" viewBox="0 0 306 306" style="enable-background:new 0 0 306 306;" xml:space="preserve">
+      <g id="expand-more">
+        <polygon points="270.3,58.65 153,175.95 35.7,58.65 0,94.35 153,247.35 306,94.35 		"/>
+      </g>
+    </svg>
+  </button>
+</div>
+<script type="text/javascript">
+  featuredPhotos = [
+    {"author":"Jim Zenn","device":"Pixel XL","title":"Cathedral Of Saint Mary Of The Assumption","url":"/images/featured/webp/cathedral-of-saint-mary-of-the-assumption.webp"},
+    {"author":"Jim Zenn","device":"Pixel XL","title":"Cherry Blossom at UC Berkeley","url":"/images/featured/webp/cherry-blossom-at-uc-berkeley.webp"},
+    {"author":"Jim Zenn","device":"Nexus 5X","title":"View from Los Angeles City Hall","url":"/images/featured/webp/view-from-los-angeles-city-hall.webp"},
+    {"author":"Jim Zenn","device":"Pixel XL","title":"Royce Hall of UCLA","url":"/images/featured/webp/royce-hall-of-UCLA.webp"},
+    {"author":"Jim Zenn","device":"Nexus 5X","title":"The Broad","url":"/images/featured/webp/the-broad.webp"},
+    {"author":"Jim Zenn","device":"Pixel XL","title":"Valley Life Sciences Building at UC Berkeley","url":"/images/featured/webp/valley-life-sciences-building-at-uc-berkeley.webp"},
+    {"author":"Jim Zenn","device":"Pixel XL","title":"Amoeba Music","url":"/images/featured/webp/amoeba-music.webp"},
+    {"author":"Jim Zenn","device":"Pixel XL","title":"La Val's Pizza","url":"/images/featured/webp/la-vals-pizza-berkeley.webp"},
+    {"author":"Jim Zenn","device":"Pixel XL","title":"Little Gem","url":"/images/featured/webp/little-gem-san-francisco.webp"},
+    {"author":"Jim Zenn","device":"Pixel XL","title":"Rogue One","url":"/images/featured/webp/rogue-one.webp"},
+    {"author":"Jim Zenn","device":"Pixel XL","title":"UC Berkeley","url":"/images/featured/webp/uc-berkeley-1.webp"},
+    {"author":"Jim Zenn","device":"Nexus 5X","title":"400 Duboce Ave, San Francisco","url":"/images/featured/webp/400-duboce-san-francisco.webp"},
+    {"author":"Jim Zenn","device":"Pixel XL","title":"上海古猗园","url":"/images/featured/webp/ancient-yi-garden.webp"},
+    {"author":"Jim Zenn","device":"Pixel XL","title":"上海新天地","url":"/images/featured/webp/xintiandi.webp"},
+    {"author":"Jim Zenn","device":"Pixel XL","title":"Lake Merrit BART Station","url":"/images/featured/webp/lake-merrit-bart-station.webp"},
+    {"author":"Jim Zenn","device":"Nexus 6X","title":"Union Square","url":"/images/featured/webp/union-square.webp"},
+    {"author":"Jim Zenn","device":"Pixel XL","title":"Sunset at Berkeley","url":"/images/featured/webp/sunset-at-berkeley.webp"},
+    {"author":"Jim Zenn","device":"minecraft","title":"Red Sea","url":"/images/featured/webp/minecraft-red-sea.webp"},
+    {"author":"Jim Zenn","device":"minecraft","title":"Home","url":"/images/featured/webp/minecraft-home.webp"},
+    {"author":"Jim Zenn","device":"minecraft","title":"Inside the Pyramid","url":"/images/featured/webp/minecraft-inside-the-pyramid.webp"},
+    {"author":"Jim Zenn","device":"minecraft","title":"The Stone Tower","url":"/images/featured/webp/minecraft-the-stone-tower.webp"},
+    {"author":"Jim Zenn","device":"minecraft","title":"Temple","url":"/images/featured/webp/minecraft-temple.webp"},
+    {"author":"Jim Zenn","device":"Pixel XL","title":"San Francisco Museum of Modern Art","url":"/images/featured/webp/SFMoMA-1.webp"},
+    
+  ]
+  numPhotos = featuredPhotos.length;
+  idx = Math.floor(Math.random() * numPhotos);
+  photoData = featuredPhotos[idx];
+  document.getElementById("jumbotron").style.backgroundImage = 'url(' + photoData['url'] + ')';
+  document.getElementById("jumbotron__title").innerHTML = photoData['title'];
+  document.getElementById("jumbotron__copyright").innerHTML = `Photo by <b>${photoData['author']}</b> with ${photoData['device']}. All rights reserved`;
+</script>
+
+<script type="text/javascript">
+jumbotronExpanded = false;
+jumbotronOriginalHeight = document.getElementById("jumbotron").scrollHeight;
+jumbotronImage = new Image();
+jumbotronImage.src = photoData['url'];
+expand_jumbotron = function() {
+  jumbotronImageRatio = jumbotronImage.height / jumbotronImage.width;
+  jumbotronImageExpandedHeight = Math.min(500, jumbotronImageRatio * document.documentElement.clientWidth);
+  if (!jumbotronExpanded) {
+    document.getElementById("jumbotron__text").style.bottom = `10px`;
+    document.getElementById("jumbotron__expand-svg").style.transform = 'rotate(180deg)';
+    document.getElementById("jumbotron").style.height = jumbotronImageExpandedHeight + `px`;
+  } else {
+    document.getElementById("jumbotron__text").style.bottom = `4px`;
+    document.getElementById("jumbotron").style.height = jumbotronOriginalHeight + 'px';
+    document.getElementById("jumbotron__expand-svg").style.transform = 'rotate(0)';
+  }
+  jumbotronExpanded = !jumbotronExpanded;
+}
+</script>
+
+
+  <main class="content" role="main">
+    <div class="article-list">
+      
+        
+        
+        
+            <article class="article article--list-item">
+    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/blog/grandmothers-tomb/">Grandmother&#39;s Tomb</a></h1>
+    <p class="article__meta">
+  <span>
+    
+    <a href="/volumes/journey" class="article__volume-link">Vol. Journey</a>
+    <small>∙</small>
+    June 2018
+  </span>
+  
+</p>
+
+    <div class="article__summary">
+      <p>I am not trying to accuse anyone. Here, I only want to talk about my memories of her.</p>
+
+<p>I am a firm materialist. Because of this, I always thought tombs unnecessary, since one&rsquo;s spirit is unlikely to exist after their decease. The dead need no places to rest. Death is void and eternal.</p>
+    </div>
+    <p><a class="article__more" href="https://jimzenn.com/blog/grandmothers-tomb/"> Read the article</a></p>
+  </article>
+
+        
+      
+        
+        
+        
+            <article class="article article--list-item">
+    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/blog/shanghai-once-again/">Shanghai Once Again</a></h1>
+    <p class="article__meta">
+  <span>
+    
+    <a href="/volumes/journey" class="article__volume-link">Vol. Journey</a>
+    <small>∙</small>
+    May 2018
+  </span>
+  
+</p>
+
+    <div class="article__summary">
+      When I left Shanghai for the US I was all on my own. I met new friends, got a new community, had a new life style and embraced a different culture. Everything was fresh. By the end the second year, I already see Berkeley as my second home.
+Now I am back, to my real home, where my family is, where I grew up, where I spent 18 years of my life.
+    </div>
+    <p><a class="article__more" href="https://jimzenn.com/blog/shanghai-once-again/"> Read the article</a></p>
+  </article>
+
+        
+      
+        
+        
+        
+            <article class="article article--list-item">
+    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/blog/ucla-applied-math-infosheet/">UCLA Applied Mathematics Infosheet</a></h1>
+    <p class="article__meta">
+  <span>
+    
+    <a href="/volumes/notes" class="article__volume-link">Vol. Notes</a>
+    <small>∙</small>
+    May 2018
+  </span>
+  
+</p>
+
+    <div class="article__summary">
+      <p>This page is a catch-all infosheet for UCLA applied math students like me. This page collected the requirements for students to declare the major and to graduate. It also has information on optional challenges, specifically: <em>specialization in computing</em>, <em>statistics minor</em>, and <em>department honor program</em>.</p>
+
+<p>Because there are simply too much information, I am not able to list all the sources from which I collected these information, but all infomation in this article does come from UCLA&rsquo;s official websites. Still, there can be things that I accidentally left out or mistaken. You can use this as a reference, but do not rely solely on this page.</p>
+
+<p>If you notice any error in this page, please contact me and let me know.</p>
+    </div>
+    <p><a class="article__more" href="https://jimzenn.com/blog/ucla-applied-math-infosheet/"> Read the article</a></p>
+  </article>
+
+        
+      
+        
+        
+        
+      
+    </div>
+
+  
+
+  </main>
+
+  <footer class="footer">
+  <div class="footer__wrapper">
+    <span class="copyright">Copyright 2018 Jim Zenn All rights reserved.</span>
+    <ul class="footer-links">
+      <li>
+        <a href="/Jim_Zenn-CV.pdf">CV</a>
+      </li>
+      <li>
+        <a href="https://jimzenn.com/index.xml" type="application/rss+xml" target="_blank">RSS</a>
+      </li>
+      <li>
+        <a href="https://github.com/Jim-Zenn">code</a>
+      </li>
+      <li>
+        <a href="mailto:zenn@ucla.edu">email</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+
+
+    <div>
+  </body>
+
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] },
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: true, width: "container" }
+    },
+    
+  });
+</script>
+
+<script>
+  shifted = false;
+  container = document.querySelector("#container");
+  var toggle = document.querySelector("#header-menu__toggle");
+  toggle.addEventListener("click", function toggleHeader() {
+    var content = document.querySelector("#collapsable-menu");
+    var menuIcon = document.querySelector("#header__menu-icon");
+    var globalNav = document.querySelector("#header-menu");
+    var header = document.querySelector("#header");
+    this.classList.toggle("header-menu__toggle--active");
+    content.classList.toggle("header-menu--collapsable--active");
+    header.classList.toggle("header--active");
+    container.classList.toggle("container--shifted");
+    menuIcon.classList.toggle("header__menu-icon--shifted");
+    shifted = !shifted;
+    if (shifted) {
+      triggerOffset = window.pageYOffset;
+    };
+  });
+
+  window.addEventListener('scroll', function scrollCloseTrigger() {
+    if (shifted && Math.abs(window.pageYOffset - triggerOffset) > 10) {
+      toggle.click();
+    };
+  });
+
+  container.addEventListener("click", function containerClickTrigger() {
+    if (shifted) {
+      toggle.click();
+    }
+  });
+
+  var collapsableMenuLinks = document.querySelectorAll(".header-menu__list--collapsable a");
+  for (let i = 0; i < collapsableMenuLinks.length; i ++) {
+    collapsableMenuLinks[i].addEventListener("click", function(e) {
+      toggle.click();
+      return true;
+    });
+  }
+</script>
+
+<script charset="utf-8">
+  let proofExpandToggles = document.querySelectorAll(".proof__expand");
+  proofExpandToggles.forEach((node) => {
+    node.addEventListener('click', function(e) {
+      if (e.target.textContent == "expand") {
+        e.target.textContent = "collapse";
+      } else {
+        e.target.textContent = "expand";
+      }
+      proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
+      proofContentNode.classList.toggle("hide");
+    });
+  });
+</script>
+
+
+</html>

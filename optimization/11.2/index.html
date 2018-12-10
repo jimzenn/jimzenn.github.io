@@ -261,7 +261,7 @@ if (!doNotTrack) {
     $\newcommand{\inv}[1]{{#1}^{-1}}$
     $\newcommand{\inner}[2]{\langle #1, #2 \rangle}$
     $\newcommand{\nullity}[1]{\text{nullity}(#1)}$
-    $\newcommand{\rank}[1]{\text{rank}(#1)}$
+    $\newcommand{\rank}[1]{\text{rank }#1}$
     $\newcommand{\var}[1]{\text{var}(#1)}$
     $\newcommand{\tr}[1]{\text{tr}(#1)}$
     $\newcommand{\oto}{\text{ one-to-one }}$
@@ -277,12 +277,12 @@ if (!doNotTrack) {
     $\newcommand{\None}[1]{}$
 
 
-    $\newcommand{\Vcw}[2]{\begin{pmatrix} #1 \br #2 \end{pmatrix}}$
-    $\newcommand{\Vce}[3]{\begin{pmatrix} #1 \br #2 \br #3 \end{pmatrix}}$
-    $\newcommand{\Vcr}[4]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \end{pmatrix}}$
-    $\newcommand{\Vct}[5]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{pmatrix}}$
-    $\newcommand{\Vcy}[6]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{pmatrix}}$
-    $\newcommand{\Vcu}[7]{\begin{pmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{pmatrix}}$
+    $\newcommand{\Vcw}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Vce}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Vcr}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$
+    $\newcommand{\Vct}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$
+    $\newcommand{\Vcy}[6]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{bmatrix}}$
+    $\newcommand{\Vcu}[7]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{bmatrix}}$
 
     $\newcommand{\vcw}[2]{\begin{matrix} #1 \br #2 \end{matrix}}$
     $\newcommand{\vce}[3]{\begin{matrix} #1 \br #2 \br #3 \end{matrix}}$
@@ -323,7 +323,11 @@ if (!doNotTrack) {
 \b{x}^{(k+1)} &amp;= \b{x}^{(k)} + \alpha_k \b{d}^{(k)}
 \end{align*}$$</p>
 
-<p>where the matrices $ \b{H}_1, \b{H}_2, &hellip;$</p>
+<p>where the matrices $\b{H}_1, \b{H}_2, &hellip;$ are symetric. In the quadratic case, the above matrices are required to satisfy</p>
+
+<p>$$\b{H}_{k+1} \Delta\b{g}^{(i)} = \Delta\b{x}^{(i)}, 0 \leq i \leq k$$</p>
+
+<p>where $\delta \b{x}^{(i)} = \b{x}^{(i + 1)} - \b{x}^{(i)} = \alpha_i \b{d}^{(i)} $.</p>
 
   </div>
 
@@ -355,6 +359,31 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  </span>
+  <div class="block__content block__content--green">
+  <p>Consider a quasi-Newton algorithm applied to a quadratic function with Hessian $\b{Q} = \transpose{ \b{Q}} $, such that for $0 \leq k &lt; n - 1 $,</p>
+
+<p>$$\b{H}_{k+1} \Delta \b{g}^{(i)} = \Delta \b{x}^{(i)},  0 \leq i \leq k$$</p>
+
+<p>where $\b{H} _{k+1} = \transpose{ \b{H}}_{k+1} $. If $\alpha_i \neq 0, 0 \leq i \leq k+1, $ then $\b{d}^{(0)}, &hellip;, \b{d}^{(k+1)} $ are $\b{Q}$-conjugate.</p>
+
+<p>In other words, quasi-Newton methods are also conjugate direction methods.</p>
+
+<p>That also means a quasi-Newton algorithm solves a quadratic of $n $ variables in at most $n $ steps.</p>
+
+  </div><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
       </div>
     </article>
     <aside class="navigation--side">
@@ -856,6 +885,46 @@ if (!doNotTrack) {
           
             
             
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/10.2/"><span class="navigation--side__index">10.2</span> The Conjugate Direction Algorithm</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/10.3/"><span class="navigation--side__index">10.3</span> The Conjugate Gradient Algorithm</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
                
                 <li class="navigation--side__heading"><span class="navigation--side__heading-index">11</span>Quasi-Newton Methods</li>
               
@@ -887,6 +956,26 @@ if (!doNotTrack) {
             
             <li class="navigation--side__item navigation--side__item--current">
               <a href="https://jimzenn.com/optimization/11.2/"><span class="navigation--side__index">11.2</span> Approximating the Inverse Hessian</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/11.3/"><span class="navigation--side__index">11.3</span> The Rank One Correction Formula</a>
             </li>
           
         
@@ -933,6 +1022,252 @@ if (!doNotTrack) {
           
         
       
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">15</span>Introduction to Linear Programming</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/15.1/"><span class="navigation--side__index">15.1</span> Introduction to Linear Programming</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/15.5/"><span class="navigation--side__index">15.5</span> Standard Form Linear Programs</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/15.6/"><span class="navigation--side__index">15.6</span> Basic Solutions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/15.7/"><span class="navigation--side__index">15.7</span> Properties of Basic Solutions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">20</span>Problems with Inequality Constraints</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/20.1/"><span class="navigation--side__index">20.1</span> Introduction</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/20.2/"><span class="navigation--side__index">20.2</span> Problem Formulation</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/20.3/"><span class="navigation--side__index">20.3</span> Tangent and Normal Spaces</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/20.4/"><span class="navigation--side__index">20.4</span> Lagrange Condition</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/20.5/"><span class="navigation--side__index">20.5</span> Second-Order Conditions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/20.6/"><span class="navigation--side__index">20.6</span> Minimizing Quadratics Subject to Linear Constraints</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">21</span>Convex Optimization Problems</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/21.1/"><span class="navigation--side__index">21.1</span> Karush-Kuhn-Tucker Condition</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/optimization/21.2/"><span class="navigation--side__index">21.1</span> Second-Order Conditions</a>
+            </li>
+          
+        
+      
       </ul>
       <ul class="navigation--side__list" id="page-navigation">
         <script>
@@ -952,7 +1287,7 @@ if (!doNotTrack) {
         
         
         
-          <a href="https://jimzenn.com/optimization/12.1/" class="pagination__prev">12.1 Least-Squares Analysis</a>
+          <a href="https://jimzenn.com/optimization/11.3/" class="pagination__prev">11.3 The Rank One Correction Formula</a>
         
       
       
