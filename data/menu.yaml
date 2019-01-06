@@ -7,25 +7,21 @@
   name: "Notes"
   menu:
     -
-      identifier: "math-170a"
+      identifier: "probability-theory"
       name: "Probability Theory"
-      url: "/math-170a/main/"
+      url: "/probability-theory/1.1/"
     -
-      identifier: "math-115a"
+      identifier: "linear-algebra"
       name: "Linear Algebra"
-      url: "/math-115a/main/"
+      url: "/linear-algebra/1.2/"
     -
-      identifier: "math-131a"
+      identifier: "analysis"
       name: "Analysis"
-      url: "/math-131a/main/"
-    # -
-    #   identifier: "math-134"
-    #   name: "Systems of Differential Equations"
-    #   url: "/math-134/main/"
+      url: "/analysis/1.1/"
     -
-      identifier: "math-164"
+      identifier: "optimization"
       name: "Optimization"
-      url: "/math-164/main/"
+      url: "/optimization/2.1/"
 -
   identifier: "journey"
   name: "Journey"

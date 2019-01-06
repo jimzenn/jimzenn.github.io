@@ -9,7 +9,7 @@
     to: 2020
     toAbbr: 2020
     descriptions:
-      - Probability Theory, Advanced Linear Algebra, Analysis, Optimization (<i>in progress</i>), Data Mining (<i>in progress</i>), Linear and Nonlinear Systems (<i>in progress</i>).
+      - Probability Theory, Advanced Linear Algebra, Analysis, Optimization (<i>in progress</i>), Data Mining (<i>in progress</i>).
   -
     college: University of California, Berkeley
     collegeAbbr: UC Berkeley
@@ -20,15 +20,15 @@
     toAbbr: 08/17
     descriptions:
       - Structure and Interpretation of Computer Programs, <span note="Upon the completion of this class, I worked as a lab assistant for this class for a semster, this experience really solidified my data structure knowledge and my Java skills.">Data Structures</span>, <span note="I audited this class and tutored two UC Berkeley students throughout this class, both of which got A's. I actually learned this class very well."> Computational Models of Cognition</span>.
-  -
-    college: Harbin Institute of Technology
-    major: <span note="I transferred out after my sophomore year and did not complete the degree. However what I learned in this third best CS school in China paved my way forward.">Computer Science</span>
-    from: Sep 2013
-    fromAbbr: 09/13
-    to: Aug 2015
-    toAbbr: 08/15
-    descriptions:
-      - Algorithms, Probability Theory, Assembly Language, Set Theory, Graph Theory, Computer Architecture.
+  # -
+  #   college: Harbin Institute of Technology
+  #   major: <span note="I transferred out after my sophomore year and did not complete the degree. However what I learned in this third best CS school in China paved my way forward.">Computer Science</span>
+  #   from: Sep 2013
+  #   fromAbbr: 09/13
+  #   to: Aug 2015
+  #   toAbbr: 08/15
+  #   descriptions:
+  #     - Algorithms, Probability Theory, Assembly Language, Set Theory, Graph Theory, Computer Architecture.
 
 "Work Experiences":
   -
@@ -46,12 +46,12 @@
       - Utilizes Google Cloud Functions to enable a serverless website which had zero server error and zero down time.
   -
     employer: <span note="Teambition is a collaboration tool that facilitates teamwork.">Teambition</span>
-    title: "Front-end Developer Intern [Javascript]"
-    from: "Sep 2015"
-    fromAbbr: "09/15"
-    to: "Dec 2015"
-    toAbbr: "12/15"
-    location: "Shanghai, China"
+    title: Front-end Developer Intern [Javascript]
+    from: Sep 2015
+    fromAbbr: 09/15
+    to: Dec 2015
+    toAbbr: 12/15
+    location: Shanghai, China
     descriptions:
       - Integrated Evernote, GitHub, and other third-party apps into Teambition so that users gets update notifications.
       - Upgraded the interface of the permission system, enabling a finer control within and across organizations.
@@ -112,13 +112,13 @@
     value: solid data structure and algorithm understanding with mathematical insight.
   -
     key: "Programming Languages"
-    value: <span class="prof-1">Java</span> <span class="prof-1">Python</span> <span class="prof-1">Javascript</span> <span class="prof-1">Go</span> <span class="prof-2">Kotlin</span> <span class="prof-2">C</span> <span class="prof-3">C++</span> <span class="prof-1">HTML & CSS</span> <span class="prof-4">Swift</span> <span class="prof-3">SQL</span>.
+    value: <span class="prof-1">Java</span> <span class="prof-1">Python</span> <span class="prof-1">Typescript</span> <span class="prof-1">Javascript</span> <span class="prof-1">Go</span> <span class="prof-2">Kotlin</span> <span class="prof-2">C</span> <span class="prof-3">C++</span> <span class="prof-1">HTML & CSS</span> <span class="prof-3">SQL</span>.
   -
     key: "Design and Prototyping Tools"
     value: <span class="prof-1">Sketch</span> <span class="prof-2">Photoshop</span> <span class="prof-2">After Effects</span> <span class="prof-2">Indesign</span> <span class="prof-3">Principle</span> <span class="prof-3">Processing</span>.
   -
     key: "Frameworks & Tools"
-    value: <span class="prof-2">CUDA</span> <span class="prof-2">ISPC</span> <span class="prof-1">Git</span> <span class="prof-1">Unix</span> <span class="prof-1">Express</span> <span class="prof-1">Django</span> <span class="prof-1">Gulp</span> <span class="prof-2">Vue</span> <span class="prof-3">React</span> <span class="prof-1">Hexo</span> <span class="prof-1">Hugo</span>.
+    value: <span class="prof-2">CUDA</span> <span class="prof-2">ISPC</span> <span class="prof-1">Angular</span> <span class="prof-1">Git</span> <span class="prof-1">Unix</span> <span class="prof-1">Express</span> <span class="prof-1">Django</span> <span class="prof-1">Gulp</span> <span class="prof-2">Vue</span> <span class="prof-3">React</span> <span class="prof-1">Hexo</span> <span class="prof-1">Hugo</span>.
   -
     key: "Interests"
     value: "Podcasts: <i>Recode Decode</i>, <i>Y Combinator's</i>, <i>Google Methods</i>. Cooking. Photography. Communistic shared living."
