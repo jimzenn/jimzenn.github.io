@@ -15,6 +15,10 @@
       name: "Linear Algebra"
       url: "/linear-algebra/1.2/"
     -
+      identifier: "numerical-methods"
+      name: "Numerical Methods"
+      url: "/numerical-methods/1.1/"
+    -
       identifier: "analysis"
       name: "Analysis"
       url: "/analysis/1.1/"

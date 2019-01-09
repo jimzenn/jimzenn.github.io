@@ -1,4 +1,46 @@
 -
+  subject-title: "Numerical Methods"
+  subject-color: "#328410"
+  subject-units: 5
+  subject-introduction: ""
+  subject-info:
+    -
+      field: "Discussion Time / Location"
+      value: ""
+      url: ""
+      icon: "calendar"
+  subject-chapters:
+    - "Algorithms"
+    - "Differentialtion and Integral with Numerical Methods"
+    - "Linear Systems"
+  navigation:
+    -
+      name: "Syllabus"
+      url: "#syllabus"
+      new-tab: false
+    -
+      name: "Resources"
+      url: "#resources"
+      new-tab: false
+    -
+      sep: true
+    -
+      name: "Official site"
+      url: "https://www.math.ucla.edu/~das/115a.1.18sum/"
+      icon: "external"
+      new-tab: true
+  resources:
+    -
+      title: "Lecture Note, sample exams, and solutions"
+      author: "Terence Tao"
+      source: "UCLA MATH 115A - Fall 2002 subject site"
+      url: "http://www.math.ucla.edu/~tao/resource/general/115a.3.02f/"
+    -
+      title: "Outline of lectures, and homework"
+      author: "Michael Andrews"
+      source: "UCLA MATH 115A - Winter 2018 subject site"
+      url: "http://www.math.ucla.edu/~mjandr/Math115A/index.html"
+-
   subject-title: "Linear Algebra"
   subject-color: "#0052B5"
   subject-units: 5
@@ -60,7 +102,6 @@
       source: "UCLA MATH 115A - Winter 2018 subject site"
       url: "http://www.math.ucla.edu/~mjandr/Math115A/index.html"
 -
-  subject-number: "MATH 170A"
   subject-title: "Probability Theory"
   subject-units: 4
   subject-color: "#10AD2C"
@@ -136,7 +177,6 @@
       url: "/math-170a/supplement.pdf"
 
 -
-  subject-number: "MATH 131A"
   subject-title: "Analysis"
   subject-units: 4
   subject-color: "#8100bd"
@@ -188,7 +228,6 @@
       title: "Supplementary problems"
       url: "http://www.athenasc.com/prob-supp.html"
 -
-  subject-number: "MATH 134"
   subject-title: "Dynamics"
   subject-units: 4
   subject-color: "#761029"
