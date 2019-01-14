@@ -1,10 +1,10 @@
 ---
-title: "Allgorithm"
-date: 2019-01-07T10:07:00+08:00
-volumes: ["1"]
+title: "Review"
+date: 2018-08-01T10:34:48+08:00
+volumes: ["D"]
 layout: "note"
-issue: 1
-weight: 11
+issue: 8
+draft: true
 
 ---
 
@@ -40,6 +40,7 @@ weight: 11
     $\newcommand{\abs}[1]{\left| #1 \right|}$
     $\newcommand{\norm}[1]{\left\lVert#1\right\rVert}$
     $\newcommand{\pare}[1]{\left(#1\right)}$
+    $\newcommand{\brac}[1]{\left[#1\right]}$
     $\newcommand{\t}[1]{\text{ #1 }}$
     $\newcommand{\head}{\text H}$
     $\newcommand{\tail}{\text T}$
@@ -106,88 +107,40 @@ weight: 11
   {{< /raw >}}
 </div>
 
-{{% definition name="" status="" %}}
+$$E[X] = \sum\_{ x = 1 }^{ \infty } x P(X=x) $$
 
-An **algorithm** is a procedure describing a <u>finite</u> sequence of steps to perform in a specified order. The objective is to solve a problem or approximate a solution to the problem.
+$$E[X] = \sum\_{ n = 1 }^{ \infty }n P(X=n) = p \sum\_{ n=1 }^{ \infty } n (1 - p)^{n - 1} $$
 
-{{% /definition %}}
+$$E[X] = P(X=1)E[X|X = 1] P(X > 1) E[X | X > 1] $$
 
-{{% definition name="Errors" status="" %}}
 
-- Errors in data: measurement errors, representation of a number in computer.
-- Computational error: errors in finite-digit arithmetic.
-- Truncation error: approximation.
+{{% note name="memorylessness" %}}
 
-{{% /definition %}}
+geometric distribution / exponential distribution
 
-{{% definition name="Absolute error and Relative error" status="" %}}
+{{% /note %}}
 
-Let $p^\*$ be an approximation to $p \in \R$.
+{{% note name="Variance" %}}
 
-The **absolute error** is $e\_a(p, p^\*) = \abs{ p - p^\* }$
+$var(X) = E\brac{ X^2 } - (E\brac{ X })^2 = E[(X - E[X])^2]$
 
-The **relative error** is $e\_r(p, p^\*) = \frac{ \abs{ p - p^\* }}{ \abs{ p }} $
+{{% /note %}}
 
-In practice, since $p $ is unknown,
+{{% note name="" %}}
 
-$e\_r(p, p^\*) = \frac{ \abs{ p - p^\* }}{ \abs{ p^\* }} $
+$$(Y - 1) | (X > 1) ~ Geom(p)$$
 
-{{% /definition %}}
+$Var(X)$
 
-{{% example name="" %}}
-
-$p = 0.123456, p^\*= 0.123. $
-
-$\abs{ p - p^\* } = 0.000456 \leq 5 \times 10^ {-3} $
-
-$\frac{ \abs{ p - p^\* }}{ \abs{ p }} = o(10^{-2})$
-
-{{% /example %}}
+{{% /note %}}
 
 {{% example name="" %}}
 
-$p = 0.123456 \times 10 ^6, p^\* = 0.123 \times 10^6 $
+$P(X \in (a,)) = \int\_{ a }^{ b } f\_X(x) \d x$
 
-$\abs{ p - p^\* } = o(10^3) $
+Assume $X $ is nonnegative
 
-$\frac{ \abs{ p - p^\* }}{ \abs{ p }} = o(10^{-2}) $
-
-{{% /example %}}
-
-{{% definition name="Truncation error" status="" %}}
-
-**Truncation error** is the error made by truncating an infinite series to a finite series.
-
-{{% /definition %}}
-
-{{% example name="" %}}
-
-$f(x) \approx P\_n(x) = f(x^\*) + f'(x^\*) (x - x^\*) + \frac{ f^{ \prime \prime } (x^\*)}{ 2! } (x - x^\*)^2 + .. + \frac{ f^{(n)}(x^\*)}{ n! } (x - x^\*)^n$
-
-The truncation error is
-
-$R\_n(x) = f(x) - P\_n(x) = \frac{ f^{(n + 1)} (x^2)}{(n+1)! } (x - x^\*)^{n + 1}$
+Prove that $E\brac{ X } = \int\_{0}^{\infty} P(X \geq x) \d x $
 
 {{% /example %}}
-
-{{% definition name="rates of convergence" status="" %}}
-
-Given $\beta\_n \to 0$ as $n \to +\infty$ and $\alpha\_n \to \alpha$ as $n \to +\infty$.
-
-If there exists $K > 0$, and an integer $n\_0$ such that $\abs{ \alpha\_n - \alpha} \leq K \abs{\beta\_n}$ for any $n \geq n\_0 $. Then we say $\set{\alpha\_n}^{+ \infty}\_{n = 1}$ converges to $\alpha$ with **rate of convergence** of $O(\beta\_n) $. It is indicated by writing $\alpha\_n = \alpha + O(\beta\_n)$.
-
-{{% /definition %}}
-
-{{% example name="" %}}
-
-$\alpha\_n = \frac{ n +1 }{ n^2 }, \alpha\_n = \frac{ 1 }{ n } + \frac{ 1 }{ n^2 } = O(\frac{ 1 }{ n }) + 0$
-
-$\beta\_n = \frac{ n+1 }{ n^3 }, \beta\_n = \frac{ 1 }{ n^2 } + \frac{ 1 }{ n^3 } = O(\frac{  1 }{ n^2 }) +0 $
-
-$\gamma\_n = 2^{ -n }, \gamma\_n = 2^{-n} = O(2^{-n}) $
-
-$$\sum\_{n=0}^{ \infty} \frac{f^{(n)}\pare{ 0 }}{n!}\pare{x- 0}^n $$
-
-{{% /example %}}
-
 
