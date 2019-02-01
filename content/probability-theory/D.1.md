@@ -113,11 +113,11 @@ $$\Omega = \set{ CG, G\_1C, G\_2C }$$
 
 Since the player has no knowledge about the three doors, the first choice must be random. Therefore, all three doors have the same probability to be chosen,
 
-$$P(CG) = P(G\_1C) = P(G\_2C)$$
+$$\b{P}(CG) = \b{P}(G\_1C) = \b{P}(G\_2C)$$
 
 The probability of the player winning a car in the end is:
 
-$$P(\text{win})=P(\set{G\_1C, G\_2C}) = \frac23$$
+$$\b{P}(\text{win})=\b{P}(\set{G\_1C, G\_2C}) = \frac23$$
 
 In other words, if you swap, you win the game if and only if you select the wrong door at the beginning.
 
@@ -127,9 +127,9 @@ Let's consider the sample space $\Omega$.
 
 $$\Omega = \set{ CC, G\_1G\_1, G\_2G\_2 }$$
 
-$$P(CC) = P(G\_1G\_1) = P(G\_2G\_2)$$
+$$\b{P}(CC) = \b{P}(G\_1G\_1) = \b{P}(G\_2G\_2)$$
 
-$$P(\text{win})=P(\set{CC}) = \frac13$$
+$$\b{P}(\text{win})=\b{P}(\set{CC}) = \frac13$$
 
 So with the swap you have 2/3 chance of winning, but without swap you only have 1/3 chance.
 
@@ -150,16 +150,16 @@ Now let's consider the sample space $\Omega$.
 
 $$\Omega = \set{ G\_1C, G\_2C, CG, G\_1G\_2, G\_2G\_1 }$$
 
-we seek $P(\set{G\_1C, G\_2C})$
+we seek $\b{P}(\set{G\_1C, G\_2C})$
 
 
 Since the player has no knowledge about the three doors, the first choice must be random. Therefore, all three doors have the same probability to be chosen,
 
-$$P(CG) = P(G\_1C) = P(G\_2C)$$
+$$\b{P}(CG) = \b{P}(G\_1C) = \b{P}(G\_2C)$$
 
 The probability of the player winning a car in the end is:
 
-$$P(\text{win})=P(\set{G\_1C, G\_2C}) = \frac23$$
+$$\b{P}(\text{win})=\b{P}(\set{G\_1C, G\_2C}) = \frac23$$
 
 <strong>Case 2: don't swap.</strong> If you do not swap then you win the game if and only if you select the correct door at the beginning.
 
@@ -169,9 +169,9 @@ $$\Omega = \set{ CC, G\_1G\_1, G\_2G\_2 }$$
 
 Since the player has no knowledge about the three doors, the first choice must be random. Therefore, all three doors have the same probability to be chosen,
 
-$$P(CC) = P(G\_1G\_1) = P(G\_2G\_2)$$
+$$\b{P}(CC) = \b{P}(G\_1G\_1) = \b{P}(G\_2G\_2)$$
 
-$$P(\text{win})=P(\set{CC}) = \frac13$$
+$$\b{P}(\text{win})=\b{P}(\set{CC}) = \frac13$$
 
 So with the swap you have 2/3 chance of winning, but without swap you only have 1/3 chance.
 

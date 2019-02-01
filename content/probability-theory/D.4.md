@@ -91,13 +91,13 @@ Two fair six-sided dice are rolled. Find the probability that the sum of the out
 
 $\Omega = \set{(i, j) | i,j \in \set{ 1,2,...,6 }}$
 
-$P(\text{ sum = 11 }) = P(\set{(5,6), (6,5)}) = \frac{2}{ 36 } = \frac{1}{ 18 }$
+$\b{P}(\text{ sum = 11 }) = \b{P}(\set{(5,6), (6,5)}) = \frac{2}{ 36 } = \frac{1}{ 18 }$
 
 {{% /example %}}
 
 {{% example name="1c, with extra sauce" %}}
 
-Roll 3 fair six-sided dice. Let X = sum of the outcomes. Find P(X=11).
+Roll 3 fair six-sided dice. Let X = sum of the outcomes. Find \b{P}(X=11).
 
 Let $X\_i = $ outcome of roll $i, i = 1,2,3$.
 
@@ -105,10 +105,10 @@ $X= X\_1 + X\_2 + X\_3$
 
 $$
 \begin{align\*}
-P(\text{ X = 11 })
-&= P(\text{ X\_1 + X\_2 + X\_3 = 11 }) \br
-&= \sum\_{ k=2 }^{ 10 }P(X\_1 + X\_2 = k)P(X\_3 = 11-k | x\_1 + x\_2 = k) \br
-&= \sum\_{ k=5 }^{ 10 } P(X\_1 + X\_2 =k)P(X\_3 = 11 - k) \br
+\b{P}(\text{ X = 11 })
+&= \b{P}(\text{ X\_1 + X\_2 + X\_3 = 11 }) \br
+&= \sum\_{ k=2 }^{ 10 }\b{P}(X\_1 + X\_2 = k)\b{P}(X\_3 = 11-k | x\_1 + x\_2 = k) \br
+&= \sum\_{ k=5 }^{ 10 } \b{P}(X\_1 + X\_2 =k)\b{P}(X\_3 = 11 - k) \br
 \end{align*}
 $$
 
@@ -120,7 +120,7 @@ $6$ sheets of paper, labeled with #s from $1$ through $6$. Draw two simultaneous
 
 $\Omega = \set{(i,) | i \neq j, i,j \in \set{ 1,2,...,6 }}$
 
-$P(\text{ um = 11 }) = \frac{1}{ \binom{6}{2}}$
+$\b{P}(\text{ um = 11 }) = \frac{1}{ \binom{6}{2}}$
 
 {{% /example %}}
 
@@ -129,7 +129,7 @@ $P(\text{ um = 11 }) = \frac{1}{ \binom{6}{2}}$
 Let X be discrete uniform on \set{ -3, -2,  -1, 0, 1, 2, 3 } <br>
 a) Find the PMF of X
 
-$P(X=k) = \begin{cases}
+$\b{P}(X=k) = \begin{cases}
                \frac{1}{7} \text{ if } k \in \set{ -3, -2, -1, 0, 1, 2, 3 }
                0 \text{ otherwise }
             \end{cases}
@@ -152,7 +152,7 @@ b) $E[X] = \frac{1}{7} (-3 -2 -1 +0 + 1 + 2+ 3)$
 You keep drawing without replacement, until you draw the 0 ball.
 For $k = 1, 2, 3, ..., 10$, find the probability that you need k draws to get the $0$. $X = $ number of balls drawn until you get the ball $0$.
 
-$P(X = k) = \frac{ \binom{9}{ k-1 } (k-1)! \cdot 1 }{ \binom{ 10 }{k} k! } = \frac{1}{ 10 }$
+$\b{P}(X = k) = \frac{ \binom{9}{ k-1 } (k-1)! \cdot 1 }{ \binom{ 10 }{k} k! } = \frac{1}{ 10 }$
 
 {{% /example %}}
 
@@ -166,7 +166,7 @@ Company gives a candidate $15$ questions. Will hire if candidate answers all cor
 
 H = candidate hired, Q = candidate is qualified.
 
-$P(Q|H) = \frac{ P(H |Q) P(Q)}{ P(H)} = \frac{ P(H|Q) P(Q)}{ P(H|Q) P(Q) + P(H|Q^c) P(Q^c)}= \frac{ p^{15} \cdot q }{ p^{15} \cdot q + (1-p)^{15} \cdot (1-q)}$
+$\b{P}(Q|H) = \frac{ \b{P}(H |Q) \b{P}(Q)}{ \b{P}(H)} = \frac{ \b{P}(H|Q) \b{P}(Q)}{ \b{P}(H|Q) \b{P}(Q) + \b{P}(H|Q^c) \b{P}(Q^c)}= \frac{ p^{15} \cdot q }{ p^{15} \cdot q + (1-p)^{15} \cdot (1-q)}$
 
 {{% /example %}}
 
@@ -176,14 +176,14 @@ Let $X$ be uniform on $\set{ a, a+1, ..., b }, a < b integers$, compute $E[X|c \
 
 $\begin{align\*}
   &E[X| c \leq X \leq d] \br
-  &= \sum\_{ k=a }^{b} k P(X=k | c \leq X \leq d) \br
-  &= \sum\_{ k=c }^{d} k P(X=k | c \leq X \leq d)
+  &= \sum\_{ k=a }^{b} k \b{P}(X=k | c \leq X \leq d) \br
+  &= \sum\_{ k=c }^{d} k \b{P}(X=k | c \leq X \leq d)
 \end{align*}$
 
 $\begin{align\*}
-  P(X=k | c \leq X \leq d) \br
-  &= \frac{ P(X=k, c \leq X \leq d)}{ P(c \leq X \leq d)} \br
-  &= \frac{ P(X =k)}{ P(c \leq X \leq d)} \br
+  \b{P}(X=k | c \leq X \leq d) \br
+  &= \frac{ \b{P}(X=k, c \leq X \leq d)}{ \b{P}(c \leq X \leq d)} \br
+  &= \frac{ \b{P}(X =k)}{ \b{P}(c \leq X \leq d)} \br
   &= \frac{ \frac{1}{ b - a + 1 }}{ \frac{ d -c + 1 }{ b - a +1 }} \br
   &= \frac{1}{ d-c+1 }
 \end{align*}$
@@ -199,7 +199,7 @@ Find the expected value of his pay.
 
 $W = $ k hours work W is uniform  on $\set{ 0, 1, 2, ..., 100 }$
 
-$P(\text{ pay }) = \begin{cases}
+$\b{P}(\text{ pay }) = \begin{cases}
              W , 0 \leq W \leq 50  \br
              50+2(W-50) , 51 \leq W \leq 75 \br
              2W - 50 + 30, 76 \leq W \leq 100 \text{ w/ prize } \br
@@ -208,10 +208,10 @@ $P(\text{ pay }) = \begin{cases}
 
 $\begin{align\*}
   &E[P] =   \br
-  &E[P| 0 \leq W \leq 50] P(0 \leq W \leq 50) \br
-  &+ E[P| 51 \leq W \leq 75] P(51 \leq W \leq 75) \br
-  &+ E[P| 76 \leq W \leq 100 \text{ w/ prize}] P(76 \leq W \leq 100 \text{ w/ prize}) \br
-  &+ E[P| 76 \leq W \leq 100 \text{ w/o prize}] P(76 \leq W \leq 100 \text{ w/o prize}) \br
+  &E[P| 0 \leq W \leq 50] \b{P}(0 \leq W \leq 50) \br
+  &+ E[P| 51 \leq W \leq 75] \b{P}(51 \leq W \leq 75) \br
+  &+ E[P| 76 \leq W \leq 100 \text{ w/ prize}] \b{P}(76 \leq W \leq 100 \text{ w/ prize}) \br
+  &+ E[P| 76 \leq W \leq 100 \text{ w/o prize}] \b{P}(76 \leq W \leq 100 \text{ w/o prize}) \br
 \end{align*}$
 
 {{% /example %}}
@@ -226,14 +226,14 @@ $Z = max(X\_1, X\_2, X\_3)$ <br>
 {{% remarks name="technique" %}}
 
 $\begin{align\*}
-P(Y \geq k) &= P(min(X\_1, X\_2, X\_3) \geq k) \br
-&= P(X\_1 \geq k, X\_2 \geq k, X\_3 \geq k) \br
-&= P(X\_1 \geq k) P(X \geq k) P(X\_3 \geq k) \br
-&= P(X\_1 \geq k)^3
+\b{P}(Y \geq k) &= \b{P}(min(X\_1, X\_2, X\_3) \geq k) \br
+&= \b{P}(X\_1 \geq k, X\_2 \geq k, X\_3 \geq k) \br
+&= \b{P}(X\_1 \geq k) \b{P}(X \geq k) \b{P}(X\_3 \geq k) \br
+&= \b{P}(X\_1 \geq k)^3
 \end{align*}$
 
 $\begin{align\*}
-P(Y = k) &= P(Y \geq k) - P(Y \geq k+1) \br
+\b{P}(Y = k) &= \b{P}(Y \geq k) - \b{P}(Y \geq k+1) \br
 &= \left\(\frac{ 7-k }{6}\right\)^3 - \left\(\frac{ 7-(k+1)}{6}\right\)^3 \br
 \end{align*}$
 
@@ -241,13 +241,13 @@ P(Y = k) &= P(Y \geq k) - P(Y \geq k+1) \br
 
 
 $\begin{align\*}
-P(Z \leq k) &= P(max(X\_1, X\_2, X\_3) \leq k) \br
-&=P(X\_1 \leq k, X\_2 \leq k, X\_3 \leq k) \br
-&=P(X\_1 \leq k)^3 \br
+\b{P}(Z \leq k) &= \b{P}(max(X\_1, X\_2, X\_3) \leq k) \br
+&=\b{P}(X\_1 \leq k, X\_2 \leq k, X\_3 \leq k) \br
+&=\b{P}(X\_1 \leq k)^3 \br
 &= \frac{k}{6}^3
 \end{align*}$
 
-$P(Z=k) = P(Z \leq k) - P(Z \leq k-1) = \left\(\frac{k}{6} \right\)^3 - \left\(\frac{ k - 1 }{6} \right\)^3$
+$\b{P}(Z=k) = \b{P}(Z \leq k) - \b{P}(Z \leq k-1) = \left\(\frac{k}{6} \right\)^3 - \left\(\frac{ k - 1 }{6} \right\)^3$
 
 
 {{% /example %}}
@@ -263,7 +263,7 @@ An undergraduate student has prop q of getting an A.
 <br>
 Find the expected value of $X$ = number os students who get A's.
 
-method 1: $E[X] = \sum\k P(X=k)$
+method 1: $E[X] = \sum\k \b{P}(X=k)$
 
 method 2:
 
@@ -320,7 +320,7 @@ Notice that $ X\_1, X\_2, ..., X\_{n}$ are NOT independent.
 
 $E[X] &= E[X\_1] + ... + E[X\_n] \br
 &= n E[X\_i] \br
-&= n P(couple 1 sits next to each other) \br
+&= n \b{P}(couple 1 sits next to each other) \br
 &= n(\frac{2}{ n-1 }) \br
 &= \frac{ 2n }{ n-1 }$
 

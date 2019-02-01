@@ -35,14 +35,14 @@ draft: true
 What is the probability that the couple is seated next to each other?
 
 
-$P(A)=\frac{\text{number of ways to pick 2 chairs next to each other}}{\text{number of ways to pick 2 chairs}}$
+$\b{P}(A)=\frac{\text{number of ways to pick 2 chairs next to each other}}{\text{number of ways to pick 2 chairs}}$
 
 Seat person 1 first (they can sit anywhere doesn't matter since table is round) Then, when seating person 2, there are n-1 chairs left, and we want them to end up in one of the 2 chairs next to person 1.
-So $P(A) = \frac{2}{n-1}$
+So $\b{P}(A) = \frac{2}{n-1}$
 
 (b) Repeat put (a), but with a rectangular table with the chairs all on one side.
 
-$P(A) = \frac{\text{number of ways to select 2 chairs next to each other}}{\text{number of ways to select 2 chairs}}$
+$\b{P}(A) = \frac{\text{number of ways to select 2 chairs next to each other}}{\text{number of ways to select 2 chairs}}$
 
 {{% /example %}}
 
@@ -50,10 +50,10 @@ $P(A) = \frac{\text{number of ways to select 2 chairs next to each other}}{\text
 A deck of 52 standard standard playing cards is shuffled. What is the probability that the 13th card dealt from top is the first king to be dealt with.
 
 Way 1: multiplication rule
-$P(A)=\frac{48}{52}\frac{47}{51} \frac{46}{50}... \frac{37}{41} \frac{4}{40}$
+$\b{P}(A)=\frac{48}{52}\frac{47}{51} \frac{46}{50}... \frac{37}{41} \frac{4}{40}$
 
 Way 2:
-$P(A)= \frac{ \text{number of ways to deal 13 cards, first 12 not kings,  then a king}}{ \text{number of ways to deal 13 cards}}$
+$\b{P}(A)= \frac{ \text{number of ways to deal 13 cards, first 12 not kings,  then a king}}{ \text{number of ways to deal 13 cards}}$
 $= \frac{ \binom{48}{12} \cdot 12! \cdot 4 }{ \binom{52}{13} 13!}$
 
 
@@ -65,11 +65,11 @@ an urn contains m red balls and n white balls.
 
 $\Omega = \set{RR, RW,WW}$
 
-$P(RW) = \frac{ \binom{m}{1} }{ \binom{n}{1}}$
+$\b{P}(RW) = \frac{ \binom{m}{1} }{ \binom{n}{1}}$
 
 (b) Suppose we draw with replacement.
 
-$P( \text{different colors}) = \frac{m}{m+n} \frac{n}{m+n} + \frac{n}{n+m} + \frac{m}{n+m}$
+$\b{P}( \text{different colors}) = \frac{m}{m+n} \frac{n}{m+n} + \frac{n}{n+m} + \frac{m}{n+m}$
 
 {{% /example %}}
 
@@ -102,7 +102,7 @@ $ \binom{5}{3} \binom{5}{3} + 3 \binom{5}{2} \binom{5}{3} + 5 \binom{10}{3}$
 
 $X$ is uniform on $ \set{1, 2, ..., 1000}$
 
-$ P( \text{divisible by 2 or 3} ) = P( \text{2 divides X} ) P( \text{3 divides X} ) - P( \text{6 divides X} )$
+$ \b{P}( \text{divisible by 2 or 3} ) = \b{P}( \text{2 divides X} ) \b{P}( \text{3 divides X} ) - \b{P}( \text{6 divides X} )$
 
 Random variables
 
@@ -122,18 +122,18 @@ $X(HH) =2, X(HT) =X(TH) = 1, X(TT) = 0$
 
 Let X be a RV with Probability mass function (PMF)
 
-(b) compute $E[X] = \sum_k k \cdot P(X=k)$
+(b) compute $E[X] = \sum_k k \cdot \b{P}(X=k)$
 
 \(c) Find the PMF of $Y = X^2$
 
-p_Y(y) = P(Y = y)
+p_Y(y) = \b{P}(Y = y)
 
 
 (d) compute $E[Y]$
 
-$E[Y] = 0 P(Y=0) + 1 P(Y=1)  +4 P(Y=4)$ = 0 + \frac{1}{5} + 4 \cdot \frac{4}{5} = \frac{17}{5}$
+$E[Y] = 0 \b{P}(Y=0) + 1 \b{P}(Y=1)  +4 \b{P}(Y=4)$ = 0 + \frac{1}{5} + 4 \cdot \frac{4}{5} = \frac{17}{5}$
 
-$E[Y]= E[X^2] = \sum_{k \in \set{-2, -1, 0, 1, 2}} K^2 P(X=k)$
+$E[Y]= E[X^2] = \sum_{k \in \set{-2, -1, 0, 1, 2}} K^2 \b{P}(X=k)$
 
 
 {{% /example %}}
@@ -144,9 +144,9 @@ $E[Y]= E[X^2] = \sum_{k \in \set{-2, -1, 0, 1, 2}} K^2 P(X=k)$
 X discrete R.V. which is uniform on the integers in the range $[a, b]$ where a, b are integers with $a <0 < b$ X uniform m $ \set{a, a+1, a+2, ..., -1, -, 1, ...}$   (size=-a+b+1).
 (a) Find the PMF of $y = max \set{0, X}$. $y \in \set{0, 1,2,..., b}$.
 
-if $k =1,2,..., b, P(y=k) = P(max \set{0, x} = k) = P(X=k) = \frac{1}{-a+b+1}$
+if $k =1,2,..., b, \b{P}(y=k) = \b{P}(max \set{0, x} = k) = \b{P}(X=k) = \frac{1}{-a+b+1}$
 
-$P(Y =0)=P(max \set{0,x} 0 = 0)= P(X \in \set{a + a+1, ..., -1, 0}) = \frac{-a+1}{-a+b+1}$
+$\b{P}(Y =0)=\b{P}(max \set{0,x} 0 = 0)= \b{P}(X \in \set{a + a+1, ..., -1, 0}) = \frac{-a+1}{-a+b+1}$
 {{% /example %}}
 
 {{% example name="" %}}
@@ -162,15 +162,15 @@ DDDW 0.3^3 * 0.4
 ...
 DDDDDDDDDW 0.3^9 * 0.4
 
-P(A wins series) = \sum_(i=0)^9 (.3)^i (.4)
+\b{P}(A wins series) = \sum_(i=0)^9 (.3)^i (.4)
 
 (b) What is the probability mass function of the $X = \text{number of games played}$
 
-$P(X=1)= .3 + .4 = .7$
-$P(X=2)= .3 (.3 + .4) =.21$
-$P(X=k)= .3^{k-1} (.3 + .4) (k = 1, 2, ..., 9)$
+$\b{P}(X=1)= .3 + .4 = .7$
+$\b{P}(X=2)= .3 (.3 + .4) =.21$
+$\b{P}(X=k)= .3^{k-1} (.3 + .4) (k = 1, 2, ..., 9)$
 
-$P(X=10)= (.3)^{10} +(.3)^9 \times .7$
+$\b{P}(X=10)= (.3)^{10} +(.3)^9 \times .7$
 
 (c) Find $E[X]$
 E[X] = \sum_1^{10}{ k \cdot 3^{k-1} \cdot .7} + 10 \cdot .3

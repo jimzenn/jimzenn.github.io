@@ -88,33 +88,33 @@ Let $X$ = number of weeks he plays, $Y$ = number of weeks he wins.
 
 
 $$\begin{align\*}
-P(A \mid B^c) &= \frac{ P(B^c \mid A) P(A)}{ P(B^c \mid A)P(A) + P(B ^c \mid A^c)P(A^c)} \br
+\b{P}(A \mid B^c) &= \frac{ \b{P}(B^c \mid A) \b{P}(A)}{ \b{P}(B^c \mid A)\b{P}(A) + \b{P}(B ^c \mid A^c)\b{P}(A^c)} \br
 &= \frac{(1-q) p }{(1-q)p + 1(1-p)}
 \end{align\*}$$
 
-**(b)** Find the marginal PMF $P(Y=y \mid X = x)$ conditioned on $X = x, Y$ is Binomial $(x, q)$.
+**(b)** Find the marginal PMF $\b{P}(Y=y \mid X = x)$ conditioned on $X = x, Y$ is Binomial $(x, q)$.
 
-So, $P(Y = y \mid X = x) = \begin{cases}
+So, $\b{P}(Y = y \mid X = x) = \begin{cases}
 \binom{ x }{ y } q^y (1-q)^{x-y} \if y \in \set{0, 1, ..., x} \text{ and } x \in \set{ 0,1, ..., n }\br
 0 \otherwise
 \end{cases}$
 
 **(c\)** Find the joint PMF of $X,Y $.
 
-$P(X = x, Y = y) = P(Y = y \mid X = x)P(X = x) = \begin{cases}
+$\b{P}(X = x, Y = y) = \b{P}(Y = y \mid X = x)\b{P}(X = x) = \begin{cases}
 \binom{ x }{ y }q^y(1-q)^{x-y} \binom{ n }{ x }p^x (1-p^{n-x}), \if y \in \set{0, 1, ..., x} \text{ and } x \in \set{ 0,1, ..., n } \br
 0, \otherwise
 \end{cases}$
 
 **(d)** What is the marginal PMF of $Y$?
 
-$P(\text{win on a particular week}) = p \cdot q$.
+$\b{P}(\text{win on a particular week}) = p \cdot q$.
 
 $Y$ is Binomial$(n, pq)$.
 
-**(e)** Find the conditional PMF $P(X = x | Y = y)$.
+**(e)** Find the conditional PMF $\b{P}(X = x | Y = y)$.
 
-$P(X=x \mid Y = y) = \begin{cases}
+$\b{P}(X=x \mid Y = y) = \begin{cases}
 \frac{ \binom{ n }{ x } \binom{ x }{ y } p^x(1-p)^{n - x} q^y (1-q)^{x-y}}{ \binom{ n }{ x }(pq^y)(1-pq)^y}, \if x \in \set{ 1, 2, ..., n } y \in \set{ 1, 2, ..., x }  \br
 0, \otherwise
 \end{cases}$
@@ -128,7 +128,7 @@ $n$ students in a class,
 $X = $ number of students who get As, <br>
 $Y = $ number of students who get Bs.
 
-$P(X = x, Y = y) = \begin{cases}
+$\b{P}(X = x, Y = y) = \begin{cases}
 \binom{ n }{ x } \binom{ n-x }{ y } p^x q^y (1-p-q)^{n-x-y}, \if \begin{align\*}
 0 \leq x \leq n \br
 0 \leq y \leq n \br
@@ -189,7 +189,7 @@ $var(y) = E[y^2] - E^2[y] $
 **(d)** Compute PDF of $T = Y - X, T \in [0, 1]$
 Let $t \in [0, 1]$.
 
-$P(T \leq t) = P(Y - X \leq t) = \int\_{ 0 }^{ 1 } \int\_{ x }^{ x+t } f(X=x, Y = y) \d y \d x = \int\_{ 0 }^{ 1 } t \d x = t$
+$\b{P}(T \leq t) = \b{P}(Y - X \leq t) = \int\_{ 0 }^{ 1 } \int\_{ x }^{ x+t } f(X=x, Y = y) \d y \d x = \int\_{ 0 }^{ 1 } t \d x = t$
 
 CDF:
 
@@ -238,7 +238,7 @@ $y\_n \in [0, 1)$.
 
 Let, $y \in [0, 1)$.
 
-$F\_{Y\_n}(y) = P(Y\_n \leq y) = P(\max \set{ X\_1, X\_2, ..., X\_{ n } \leq y })$
+$F\_{Y\_n}(y) = \b{P}(Y\_n \leq y) = \b{P}(\max \set{ X\_1, X\_2, ..., X\_{ n } \leq y })$
 
 
 **(b)** Compute $E[y\_n] $ and $\limu{n}{ \infty } E[y\_n] $
@@ -256,8 +256,8 @@ $X = $  number of defective items
 $X $ is $Binomial(1000, 0.05)$.
 
 $$\begin{align\*}
-P(X \leq 4) &= 1 - p(X \leq 4) \br
-& = 1 - \sum\_{ i=0 }^{ 3 }P(x=i) \br
+\b{P}(X \leq 4) &= 1 - p(X \leq 4) \br
+& = 1 - \sum\_{ i=0 }^{ 3 }\b{P}(x=i) \br
 &= \sum\_{ i=0 }^{ 3 } \binom{ 1000 }{ i }(0.05)^i (0.95)^{1000-i}
 \end{align\*}$$
 
@@ -274,8 +274,8 @@ $E[X] = E[Y] = np$
 So, $Y $ is Poisson with parameter $50$.
 
 $\begin{align\*}
-P(X \geq 4) \approx P(Y \geq 4) &= 1 - P(Y < 4) \br
-&= 1 -  (P(Y=0) + p(Y= 1) + P(Y = 2) + P(Y = 3))
+\b{P}(X \geq 4) \approx \b{P}(Y \geq 4) &= 1 - \b{P}(Y < 4) \br
+&= 1 -  (\b{P}(Y=0) + p(Y= 1) + \b{P}(Y = 2) + \b{P}(Y = 3))
 \end{align\*}$
 
 

@@ -86,10 +86,10 @@ Let $X, Y $ be independent are continuous random variables. Both $X, Y $ are uni
 {{% example name="" %}}
 
 Let $X $ be uniform $[0, 1] $, $Y $ be exponential(2). $X, Y $ are independent. <br>
-1. Find $P(Y \geq X)$ <br>
+1. Find $\b{P}(Y \geq X)$ <br>
 2. Let $Z = X+Y $, find the conditional density of $Z $ given $Y = y $.
 
-1\. $P(Y \geq X) = \int\_{ 0 }^{ 1 } \int\_{ x }^{ \infty } f\_{X,Y}(x,y) \d y \d x $
+1\. $\b{P}(Y \geq X) = \int\_{ 0 }^{ 1 } \int\_{ x }^{ \infty } f\_{X,Y}(x,y) \d y \d x $
 
 $\because X, Y $ are independent
 
@@ -134,7 +134,7 @@ If $T\_1 \geq 5 $, then $W = T\_1 + T\_2 $.
 
 If $T\_1 < 5 $, then $W = 5 + T\_2  $.
 
-Let $p = P(T\_1 < 5) $
+Let $p = \b{P}(T\_1 < 5) $
 
 $\begin{align\*}
 E[W] &= E[W | T\_1 \geq 5] \(1 - p\) + E[W| T\_1 < 5] p \br
@@ -142,7 +142,7 @@ E[W] &= E[W | T\_1 \geq 5] \(1 - p\) + E[W| T\_1 < 5] p \br
 &= (E[T\_1 | T\_1 \geq 5] + E[T\_2|T\_1 \geq 5])(1-p) + E[5+ T\_2] p
 \end{align\*}$
 
-So, we need $p = P(T\_1 < 5), E[ T\_1 | T\_1 \geq 5 ] $
+So, we need $p = \b{P}(T\_1 < 5), E[ T\_1 | T\_1 \geq 5 ] $
 
 $p= \int\_{ 0 }^{ 5 } \frac{ 1 }{ 30 }e ^ { -\frac{ x }{ 30 }} \d x = 1 - e^{- \frac{ 5 }{ 30 }}$
 
@@ -150,14 +150,14 @@ $A = \set{ T\_1 \geq 5 }$
 
 $ f\_{T\_1 | A}(t) =
 \begin{cases}
-  \frac{ f\_{T\_1}(t)}{ P(A)}, t \in A \br
+  \frac{ f\_{T\_1}(t)}{ \b{P}(A)}, t \in A \br
   0,  \otherwise
 \end{cases}$
 
 $\begin{align\*}
 E [T\_1 | T\_1 \geq 5] &= \int\_{ -\infty }^{ \infty } t \cdot f\_{T\_1 \mid A} (t) \d t \br
-&= \int\_{ 5 }^{ \infty } \frac{ t \cdot \frac{ 1 }{ 30 }e^{- \frac{ t }{30}}}{ P(A)} \d t \br
-&= \frac{ 1 }{ P(A)} \int\_{ 5 }^{ \infty }  \frac{ t e^{- \frac{ t }{ 30 }}}{ 30 } \d t \br
+&= \int\_{ 5 }^{ \infty } \frac{ t \cdot \frac{ 1 }{ 30 }e^{- \frac{ t }{30}}}{ \b{P}(A)} \d t \br
+&= \frac{ 1 }{ \b{P}(A)} \int\_{ 5 }^{ \infty }  \frac{ t e^{- \frac{ t }{ 30 }}}{ 30 } \d t \br
 \end{align\*}$
 
 
@@ -171,9 +171,9 @@ Consider two continuous random variables $Y, Z$. Let $X $ be continuous random v
 For $x$,
 
 $\begin{align\*}
-F\_X(x) &= P(X \leq x) \br
-&= P(X \leq x \mid X = Y)P (X = Y) + P(X \leq x \mid X = Z) P(X = Z) \br
-&= P(Y \leq x)P (X = Y) + P(Z \leq x) P(X = Z) \br
+F\_X(x) &= \b{P}(X \leq x) \br
+&= \b{P}(X \leq x \mid X = Y)P (X = Y) + \b{P}(X \leq x \mid X = Z) \b{P}(X = Z) \br
+&= \b{P}(Y \leq x)P (X = Y) + \b{P}(Z \leq x) \b{P}(X = Z) \br
 &= F\_y(x) \cdot p + F\_Z(x) \cdot (1-p)
 \end{align\*}$
 
@@ -191,7 +191,7 @@ p \lambda e^{- \lambda x}, \if x < 0 \br
 $x < 0,$
 
 $\begin{align\*}
-F\_X(x) &= P(X \leq x)  \br
+F\_X(x) &= \b{P}(X \leq x)  \br
 &= \int\_{ -\infty }^{ x } p \lambda e^ { \lambda t } \d t \br
 &=pe^{ \lambda t } \Big | ^x\_ { -\infty }
 \end{align\*}$
@@ -199,7 +199,7 @@ F\_X(x) &= P(X \leq x)  \br
 $x \geq 0 $
 
 $\begin{align\*}
-P\_X(x) &= P(X \leq x) \br
+P\_X(x) &= \b{P}(X \leq x) \br
 &= \int\_{ -\infty }^{ 0 } p \lambda e^ { \lambda t } \d t + \int\_{ 0 }^{ x } (1-p) \lambda e^{ - \lambda t } \d t \br
 &= pe^{ \lambda t } \Big |^ 0\_ { -\infty } + [ - (1 - p) e^{ - \lambda t } ]^x\_0
 &= 1 - (1 - p)e^{ - \lambda x }
@@ -216,7 +216,7 @@ $X $ is a random variable with PDF $f\_X(x) = \begin{cases}
 
 $A = {x \geq 2} $
 
-find $E[X], P(A, f\_{X|A}(x)), E[X|A] $
+find $E[X], \b{P}(A, f\_{X|A}(x)), E[X|A] $
 
 $\begin{align\*}
  E[X] &= \int\_{ 1 }^{ 3 } x \frac{ x }{ 4 } \d x \br
@@ -224,11 +224,11 @@ $\begin{align\*}
 &= \frac{ 26 }{ 12 }
 \end{align\*}$
 
-$P(A) = P(X \geq 2) = \int\_{ 2 }^{ 3 } \frac{ x }{ 4 } \d x = \frac{ 5 }{ 8 } $
+$\b{P}(A) = \b{P}(X \geq 2) = \int\_{ 2 }^{ 3 } \frac{ x }{ 4 } \d x = \frac{ 5 }{ 8 } $
 
 $\begin{align\*}
 f\_{X \mid A}(x) &= \begin{cases}
-  \frac{ f\_X(x)}{ P(A)}, \if x \in A \br
+  \frac{ f\_X(x)}{ \b{P}(A)}, \if x \in A \br
   0, \otherwise
 \end{cases}
 &= \begin{cases}

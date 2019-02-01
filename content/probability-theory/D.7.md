@@ -90,17 +90,17 @@ draft: true
 |                                         | Discrete                                        | Continuous                                             |
 | -------------                           | ----------------------------------------------- | ------------                                           |
 | Probability                             | PMF                                             | PDF                                                    |
-| Cummulative                             | $P(X \leq x) =  \sum\_{ i = \min(X)}^{ X } P\_X(i)$                                                | CDF\: $F\_X(x) = \int\_{ -\infty }^{ x } f(t) \d t  $|
-| Conditional Probability <br>$P(A\| B)$  | $\frac{ P(A \cap B)}{ P(B)}$                    | $\int\_{ E } f\_{X \| A}(x) \d x$                      |
+| Cummulative                             | $\b{P}(X \leq x) =  \sum\_{ i = \min(X)}^{ X } P\_X(i)$                                                | CDF\: $F\_X(x) = \int\_{ -\infty }^{ x } f(t) \d t  $|
+| Conditional Probability <br>$\b{P}(A\| B)$  | $\frac{ \b{P}(A \cap B)}{ \b{P}(B)}$                    | $\int\_{ E } f\_{X \| A}(x) \d x$                      |
 | Joint Probability<br> $P\_{X,Y}(x, y) $ | $P\_{X,Y}(x, y) $                               | $\int\_{ y\_1 }^{ y\_2 } \int\_{ x\_1 }^{ x\_2 } f\_{X, Y}(x, y) \d x \d y $ |
 | Marginal Probability<br> $P\_X(x) $     | $\sum\_{ y } P\_{X, Y}(x,y) $                   | $\int\_{ -\infty }^{ +\infty } f\_{X, Y}(x, y) \d y $  |
 | Independence| $P\_{X, Y} = P\_X(x)P\_Y(y)$| $f\_{X, Y} (x ,y) = f\_X(x)f\_Y(y)$  |
 | Covariance | $\text{cov}(X, Y)$ <br> $ = E[(X - E[X])(Y - E[Y])] $ <br> $=\text{cov}(E[XY] - E[X]E[Y]) $ | $\text{cov}(X, Y) = E[(X - E[X])(Y - E[Y])] $ <br> $=\text{cov}(E[XY] - E[X]E[Y]) $|
-| Conditional on set of $X$ | $P\_{X}(x \| A) = \frac{ P(X \cap A)}{ P(A)} $ | $f\_{X \in A}(x) = \begin{cases} \frac{ f(X \in A)}{f(A)} & x \in A \br 0 & \otherwise \end{cases} $ |
-| Conditional on another R.V. | $P\_{X\|Y}(x \| y) = \frac{ P(X = x, Y = y)}{ P(Y = y)} $ | $f\_{X\|Y}(x \| y) = \frac{ f(X = x, Y = y)}{ f(Y = y)} $|
-| Total Probability Theorem (TPT) | $P(B) = \sum\_{ i= 0 }^{ n } P(B\|A\_i) $ | $f\_X(x) = \int\_{ -\infty }^ { +\infty } f\_{X\|y}(x) f\_Y(y) \d y$ |
+| Conditional on set of $X$ | $P\_{X}(x \| A) = \frac{ \b{P}(X \cap A)}{ \b{P}(A)} $ | $f\_{X \in A}(x) = \begin{cases} \frac{ f(X \in A)}{f(A)} & x \in A \br 0 & \otherwise \end{cases} $ |
+| Conditional on another R.V. | $P\_{X\|Y}(x \| y) = \frac{ \b{P}(X = x, Y = y)}{ \b{P}(Y = y)} $ | $f\_{X\|Y}(x \| y) = \frac{ f(X = x, Y = y)}{ f(Y = y)} $|
+| Total Probability Theorem (TPT) | $\b{P}(B) = \sum\_{ i= 0 }^{ n } \b{P}(B\|A\_i) $ | $f\_X(x) = \int\_{ -\infty }^ { +\infty } f\_{X\|y}(x) f\_Y(y) \d y$ |
 | Total Expectation Theorem (TET) | $E[X] = \sum\_{ y } E[X \| Y = y]P\_Y(y) $ | $E[X] = \int\_{ -\infty }^{ +\infty } E[X \| Y = y]f\_Y(y) \d y$ |
-| Bayes' Law | $ P(X \| A) =  \frac{ P(A \| X) P(A)}{ \sum\_{ i = 1 }^{ n }P(A \| X) P(A\_i)} $ | $ P\_{X \| Y}(x \| y) = \frac{ f\_X(x) f\_{Y\|X}(y\|x)}{ \int\_{ -\infty }^{ +\infty } f\_{X}(t)f\_{Y\|X}(y \| t)\d t} $ |
+| Bayes' Law | $ \b{P}(X \| A) =  \frac{ \b{P}(A \| X) \b{P}(A)}{ \sum\_{ i = 1 }^{ n }\b{P}(A \| X) \b{P}(A\_i)} $ | $ P\_{X \| Y}(x \| y) = \frac{ f\_X(x) f\_{Y\|X}(y\|x)}{ \int\_{ -\infty }^{ +\infty } f\_{X}(t)f\_{Y\|X}(y \| t)\d t} $ |
 | Uniform Dist. $\U(a, b)$ | $ P\_X(x) = \frac{ 1 }{ n } $ | $f\_X(x) = \begin{cases}\frac {1}{b-a} & {\text{for }}x\in [a,b] \br0 &  \otherwise\end{cases}$  $F\_X(x) = {\begin{cases}0&{\text{ for }}x<a\br{\frac {x-a}{b-a}}&{\text{ for }}x\in [a,b)\br 1&{\text{ for }}x\geq b\end{cases}}$ $ E[X] = \frac{ b - a }{ 2 }, \var{ X } = \frac{ 1 }{ 12 } (b -a)^2$|
 | Bernoulli Dist. <br> $\text{Bernoulli}(p) $| $P\_X(k) \br = B(1, p) \br =  \begin{cases} 1 &\if k = 1 \br 0 &\if k = 0 \end{cases}$ |
 | Geometric Dist. (discrete) <br> Exponential Dist. (continuous) <br> | $P\_X(k) = (1- p)^{k - 1 } p,$ <br>$k = 1, 2, ...$<br> $E[X] = \frac{ 1 }{ p }, \var {X} = \frac {1-p}{p^{2}}$  | $f\_X(x) = \begin{cases}\lambda e ^{- \lambda x} &\if x \geq 0 \br 0 &\otherwise\end{cases}$ $ F\_X(x) = \begin{cases} 1- e^{ - \lambda x } &\if x \geq 0 \br 0 &\otherwise\end{cases} $ <br> $E[X] = \frac{ 1 }{ \lambda }, \var{X} = \frac{ 1 }{ \lambda^2 } $ |
