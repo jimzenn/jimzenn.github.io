@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -278,15 +278,15 @@ if (!doNotTrack) {
 </div>
 
 <div class="block block--blue ">
-  <span class="block__title block__title--blue">Definition</span>
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="set">Set</span></span>
   <div class="block__content block__content--blue">
-    <p>A <strong>set</strong> is a collection of objects, called <strong>elements</strong> of the set.</p>
+    <p>A <strong>set</strong> is a collection of objects, which are the <strong>elements</strong> of the set.</p>
 
 <p>If $S$ is a set, and $x$ is an element of $S$, we write $x \in S$; if $y$ is not an element of $S$, we write $y \not\in S$.</p>
 
-<p>An <u>empty set</u> is a set which has no elements, denoted $\emptyset$.</p>
+<p>An <strong>empty set</strong> is a set which has no elements, denoted $\emptyset$.</p>
 
-<p>If a set $S$ consists of a finite number of elements say $x_1, &hellip;, x_n$ , we write $S=\set{x_1, &hellip;, x_n}$.</p>
+<p>If a set $S$ contains a finite number of elements say $x_1, &hellip;, x_n$ , we write $S=\set{x_1, &hellip;, x_n}$.</p>
 
   </div>
 
@@ -297,28 +297,35 @@ if (!doNotTrack) {
     <li class="block__footer-item">
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
-  </ul></div>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("set");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
 
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
 
-<div class="examples">
-  <strong>Examples
-  </strong> <ol>
-<li>The set of instructors in this subject is $\set{\text{Olga Turanova}}$.</li>
-<li>The set of letters in the name of this subject is $\set{P, r, o, b, a, i, l, t, y, h, e}$.</li>
-
-<li><p>The set of possible outcomes of one coin toss:
-$\set{\text{Head}, \text{Tail}}$.</p></li>
-
-<li><p>The set of possible outcomes of one coin toss:
-$\set{\text{HH}, \text{HT}, \text{TH}, \text{TT}}$.</p></li>
-</ol>
-
-</div>
 
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="countability">Countability</span></span>
   <div class="block__content block__content--blue">
-    <p>If $S$ consists of infinitely many elements which can be enumerated in a list, say $x_1, x_2, &hellip;$, we write $S=\set{x_1, x_2, &hellip;}$ &amp; say $S$ is <u>countably infinite</u>.</p>
+    <p>If $S$ consists of infinitely many elements which can be enumerated in a list, such that there are as many elements as there are positive integers, we write $S=\set{x_1, x_2, &hellip;}$ and say that $S$ is <strong>countably infinite</strong>.</p>
+
+<p>If the elements of $S$ cannot be enumerated in a list, $S$ is called <strong>uncountable</strong>.</p>
 
   </div>
 
@@ -351,26 +358,6 @@ $\set{\text{HH}, \text{HT}, \text{TH}, \text{TT}}$.</p></li>
       })();
     </script></div>
 
-
-<div class="examples">
-  <strong>Examples
-  </strong> <ul>
-<li>$\N =\set{1, 2, 3, &hellip;}$ is countably infinite.</li>
-<li>$\Q​$ is also countably infinite (the reason why will not be covered in this class).</li>
-</ul>
-
-</div>
-
-<p>If the elements of $S$ cannot be enumerated in a list, S is called <u>uncountable</u></p>
-
-<div class="examples">
-  <strong>Examples
-  </strong> <ul>
-<li>The real numbers $\R$ are uncountable.</li>
-<li>The interval $(1, 2]$ is uncountable.</li>
-</ul>
-
-</div>
 
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="a-set-that-satisfies-a-certain-property">A Set That Satisfies a Certain Property</span></span>
@@ -408,14 +395,6 @@ $\set{\text{HH}, \text{HT}, \text{TH}, \text{TT}}$.</p></li>
       })();
     </script></div>
 
-
-<div class="examples">
-  <strong>Examples
-  </strong> <p>$\set{x|x&gt;0, \frac{x}{2}\in \N}=\set{2,4,6,8,&hellip;}$</p>
-
-<p>Both can describe the set of even natural numbers $S$.</p>
-
-</div>
 
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="subset-and-supset">Subset and Supset</span></span>
@@ -457,7 +436,7 @@ $\set{\text{HH}, \text{HT}, \text{TH}, \text{TT}}$.</p></li>
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="set-equal">Set Equal</span></span>
   <div class="block__content block__content--blue">
-    <p>$S \subseteq T, T \supseteq S\iff S = T$.</p>
+    <p>$$S = T \iff S \subseteq T, S \supseteq T $$</p>
 
   </div>
 
@@ -491,30 +470,19 @@ $\set{\text{HH}, \text{HT}, \text{TH}, \text{TT}}$.</p></li>
     </script></div>
 
 
-<div class="examples">
-  <strong>Examples
-  </strong> <ul>
-<li>$S=\set{1, 2}$</li>
-<li>$\set{1, 2}\subset S, \set{1,2,3}\not\subset S, 1 \in S, \set{1} \not\in S$</li>
-<li>$\set{5}\in\set{\set{5}, 7, \text{cat}}$</li>
-<li>$\set{5} \not\subset\set{\set{5}, 7, \text{cat}}$</li>
-</ul>
-
-</div>
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="set-operations">Set Operations</span></span>
   <div class="block__content block__content--blue">
     <p>We often introduce a universal set, $\Omega$ containing all objects of interest in a particular context.</p>
 
 <p>The <strong>complement</strong> of $S$ is:
-$$S^c=\set{x\in\Omega|x\not\in S}$$</p>
+$$S^c=\set{x\in\Omega \mid x\not\in S}$$</p>
 
-<p>The <strong>union</strong> of $S$ &amp; $T$ is:
-$$S\cup T = \set{x\in\Omega | x \in S \text{ or } x \in T}$$</p>
+<p>The <strong>union</strong> of $S$ and $T$ is:
+$$S\cup T = \set{x\in\Omega \mid x \in S \text{ or } x \in T}$$</p>
 
-<p>The <strong>intersection</strong> of $S$ &amp; $T$ is:
-$$S\cap T = \set{x\in\Omega|x \in S \text{ and } x \in T}$$</p>
+<p>The <strong>intersection</strong> of $S$ and $T$ is:
+$$S\cap T = \set{x\in\Omega \mid x \in S \text{ and } x \in T}$$</p>
 
   </div>
 
@@ -530,6 +498,85 @@ $$S\cap T = \set{x\in\Omega|x \in S \text{ and } x \in T}$$</p>
       (function() {
         var keywordListDOM = document.getElementById("page-navigation");
         var keywordDOM = document.getElementById("set-operations");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="disjoint-sets">Disjoint Sets</span></span>
+  <div class="block__content block__content--blue">
+    <p>Two sets are said to be <strong>disjoint</strong> if their intersection is empty.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("disjoint-sets");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="partition">Partition</span></span>
+  <div class="block__content block__content--blue">
+    <p>A collection of sets is said to be a <strong>partition</strong> of a set $S$ if</p>
+
+<ol>
+<li>the sets in the collection are disjoint</li>
+<li>their union is $S$</li>
+</ol>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("partition");
         var keywordItemDOM = document.createElement("li");
         keywordItemDOM.setAttribute("class", "navigation--side__item");
         var keywordLinkDOM = document.createElement("a");
@@ -848,7 +895,67 @@ $$S\cap T = \set{x\in\Omega|x \in S \text{ and } x \in T}$$</p>
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/probability-theory/2.4/"><span class="navigation--side__index">2.4</span> Functions of Random Variables</a>
+              <a href="https://jimzenn.com/probability-theory/2.4/"><span class="navigation--side__index">2.4</span> Expectation, Mean, and Variance</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/2.5/"><span class="navigation--side__index">2.5</span> Joint PMFs of Multiple Random Variables</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/2.6/"><span class="navigation--side__index">2.6</span> Conditioning</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/2.7/"><span class="navigation--side__index">2.7</span> Independence</a>
             </li>
           
         
@@ -975,6 +1082,130 @@ $$S\cap T = \set{x\in\Omega|x \in S \text{ and } x \in T}$$</p>
           
         
       
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">4</span>Further Topics on Random Variables</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/4.1/"><span class="navigation--side__index">4.1</span> Derived Distributions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/4.2/"><span class="navigation--side__index">4.2</span> Covariance and Correlation</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/4.3/"><span class="navigation--side__index">4.3</span> Conditional Expectation and Variance Revisited</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/4.4/"><span class="navigation--side__index">4.4</span> Transforms</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/4.5/"><span class="navigation--side__index">4.5</span> Sum of a Random Number of Independent Random Variables</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">5</span>Limit Theorems</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/5.1/"><span class="navigation--side__index">5.1</span> Markov and Chebyshev Inequalities</a>
+            </li>
+          
+        
+      
       </ul>
       <ul class="navigation--side__list" id="page-navigation">
         <script>
@@ -991,12 +1222,12 @@ $$S\cap T = \set{x\in\Omega|x \in S \text{ and } x \in T}$$</p>
   <div class="pagination">
     <div class="pagination-wrapper">
       
-        
-        
-        
-          <a href="https://jimzenn.com/probability-theory/1.2/" class="pagination__prev">1.2 Probabilistic Models</a>
-        
       
+        
+        
+        
+          <a href="https://jimzenn.com/probability-theory/1.2/" class="pagination__next">1.2 Probabilistic Models</a>
+        
       
     </div>
   </div>
@@ -1005,7 +1236,7 @@ $$S\cap T = \set{x\in\Omega|x \in S \text{ and } x \in T}$$</p>
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2018 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/Jim_Zenn-CV.pdf">CV</a>
@@ -1092,10 +1323,10 @@ $$S\cap T = \set{x\in\Omega|x \in S \text{ and } x \in T}$$</p>
   let proofExpandToggles = document.querySelectorAll(".proof__expand");
   proofExpandToggles.forEach((node) => {
     node.addEventListener('click', function(e) {
-      if (e.target.textContent == "expand") {
-        e.target.textContent = "collapse";
+      if (e.target.textContent == "[expand]") {
+        e.target.textContent = "[collapse]";
       } else {
-        e.target.textContent = "expand";
+        e.target.textContent = "[expand]";
       }
       proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
       proofContentNode.classList.toggle("hide");

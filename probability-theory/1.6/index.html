@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -282,11 +282,11 @@ if (!doNotTrack) {
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="counting">Counting</span></span>
   <div class="block__content block__content--blue">
-    <p>Number of ways to select $k$ objects from a collection of n objects.</p>
+    <p>Number of ways to select $k$ objects from a collection of $n$ objects.</p>
 
 <ul>
-<li>if order matters: &ldquo;permutation&rdquo;</li>
-<li>of order doesn&rsquo;t matter: &ldquo;combination&rdquo;</li>
+<li>if order matters: <strong>permutation</strong></li>
+<li>if order doesn&rsquo;t matter: <strong>combination</strong></li>
 </ul>
 
   </div>
@@ -321,24 +321,21 @@ if (!doNotTrack) {
     </script></div>
 
 
-<p>Recall: $m != m(m-1)(m-2) &hellip; 3 \cdot 2 \cdot 1$
-Convention: $0!=1$</p>
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="permutation">Permutation</span></span>
   <div class="block__content block__content--blue">
-    <p>Let $k, n$ be integers, $k \leq n$. We have $n$ distince objects, we wish to count number of ways to pick $k$ of these and arrange them in a sequence.
+    <p>Let $k, n$ be integers, $k \leq n$. We have $n$ distinct objects, we wish to count number of ways to pick $k$ of these and arrange them in a sequence.
 i.e. number of sequences of length $k$ made up of the $n$ objects.</p>
 
 <p>$$
 \begin{align*}
-total &amp;= n(n-1)(n-2)&hellip;n-(k-1) \br
+\text{Number of permutations} &amp;= n(n-1)(n-2)&hellip;(n-(k-1)) \br
 &amp;=\frac{n(n-1) &hellip; (n-k+1)(n-k) &hellip; 2 \cdot 1}{(n-k)(n-k-1)&hellip;2\cdot 1} \br
 &amp;=\frac{n!}{(n-k)!}
 \end{align*}
 $$</p>
 
-<p>In particular, if $k = n$, number of ways to arrange n objects is $n!$.</p>
+<p>In particular, if $k = n$, number of ways to arrange $n$ objects is $n!$.</p>
 
   </div>
 
@@ -373,17 +370,13 @@ $$</p>
 
 
 <div class="block block--blue ">
-  <span class="block__title block__title--blue">Definition: <span class="keyword" id="combinations">Combinations</span></span>
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="combination">Combination</span></span>
   <div class="block__content block__content--blue">
     <p>Let $\binom{n}{k}$ denote number of ways to form a $k$-elements subset from $n$ objects.</p>
 
 <p>$\binom{n}{k}$ is called <strong>binomial coefficient</strong>.</p>
 
-<p>$\binom{n}{k} = \frac{n!}{k!(n-k)!}$</p>
-
-<p>or</p>
-
-<p>$n! = \binom{n}{k}k!(n-k)!$</p>
+<p>$$\binom{n}{k} = \frac{n!}{k!(n-k)!}$$</p>
 
   </div>
 
@@ -398,7 +391,7 @@ $$</p>
       
       (function() {
         var keywordListDOM = document.getElementById("page-navigation");
-        var keywordDOM = document.getElementById("combinations");
+        var keywordDOM = document.getElementById("combination");
         var keywordItemDOM = document.createElement("li");
         keywordItemDOM.setAttribute("class", "navigation--side__item");
         var keywordLinkDOM = document.createElement("a");
@@ -417,29 +410,6 @@ $$</p>
     </script></div>
 
 
-<div class="block block--gray ">
-  <span class="block__title block__title--gray">Example: Toss a coin $n$ times
-    
-  </span>
-  <div class="block__content block__content--gray">
-    <p>$\Omega=\set{(x_1, &hellip;, x_n)| x_i\in\set{\head, \tail}}$</p>
-
-<p>We have $\binom{n}{k} =$ number of distince outcomes in $\Omega$(i.e. n-toss sequences) that contains exactly $k$ heads.</p>
-
-  </div>
-
-  <ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-
-</div>
-
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="binomial-formula">Binomial Formula</span></span>
@@ -453,7 +423,7 @@ $$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>For $0 \leq p \leq 1$, and for $0 \leq p \leq 1$.</p>
@@ -464,7 +434,7 @@ $$</p>
 
 <p>$$
 \begin{align*}
-P(A_k) &amp;=\binom{n}{k} \underset{k\text{ times i.e. # heads}}{p &hellip; p}\cdot\underset{n-k\text{ times i.e. # tails}}{(1-p)&hellip;(1-p)} \br
+\b{P}(A_k) &amp;=\binom{n}{k} \underset{k\text{ times i.e. # heads}}{p &hellip; p}\cdot\underset{n-k\text{ times i.e. # tails}}{(1-p)&hellip;(1-p)} \br
 &amp;=\binom{n}{k} p^k(1-p)^{n-k}\br
 \end{align*}
 $$</p>
@@ -500,44 +470,6 @@ $$</p>
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul>
-</div>
-
-
-<div class="block block--gray ">
-  <span class="block__title block__title--gray">Example: Draw 7 cards
-    
-  </span>
-  <div class="block__content block__content--gray">
-    <p>Draw 7 cards (w/o replacement) from standard 52 card deck.
-Let $A$ be the event you get exactly 3 aces.
-Let $B$ be the event you get exactly 2 kings.</p>
-
-<p>$P(A\cup B) = P(A) + P(B) - P(A\cap B)$</p>
-
-<p>Number of ways to choose 7 cards: $\binom{52}{7}$</p>
-
-<p>let&rsquo;s find $P(A)$:
-Think of deck as &ldquo;aces&rdquo; and &ldquo;non-aces&rdquo;. <br>
-7 cards = exactly 3 aces (out of 4) + 4 other cards. <br>
-so total number ways is $\binom{4}{3}\binom{48}{4}$.
-$P(A) = \frac{\abs{A}}{\abs{\Omega}} = \frac{\binom{4}{3}\binom{48}{4}}{\binom{52}{7}}$</p>
-
-<p>Similarly,
-$P(B) = \frac{\abs{A}}{\abs{\Omega}} = \frac{\binom{4}{2}\binom{48}{5}}{\binom{52}{7}}$</p>
-
-<p>$P(A\cap B) = \frac{\abs{A}}{\abs{\Omega}} = \frac{\binom{4}{3}\binom{4}{2}\binom{44}{2}}{\binom{52}{7}}$</p>
-
-  </div>
-
-  <ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-
 </div>
       </div>
     </article>
@@ -774,7 +706,67 @@ $P(B) = \frac{\abs{A}}{\abs{\Omega}} = \frac{\binom{4}{2}\binom{48}{5}}{\binom{5
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/probability-theory/2.4/"><span class="navigation--side__index">2.4</span> Functions of Random Variables</a>
+              <a href="https://jimzenn.com/probability-theory/2.4/"><span class="navigation--side__index">2.4</span> Expectation, Mean, and Variance</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/2.5/"><span class="navigation--side__index">2.5</span> Joint PMFs of Multiple Random Variables</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/2.6/"><span class="navigation--side__index">2.6</span> Conditioning</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/2.7/"><span class="navigation--side__index">2.7</span> Independence</a>
             </li>
           
         
@@ -901,6 +893,130 @@ $P(B) = \frac{\abs{A}}{\abs{\Omega}} = \frac{\binom{4}{2}\binom{48}{5}}{\binom{5
           
         
       
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">4</span>Further Topics on Random Variables</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/4.1/"><span class="navigation--side__index">4.1</span> Derived Distributions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/4.2/"><span class="navigation--side__index">4.2</span> Covariance and Correlation</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/4.3/"><span class="navigation--side__index">4.3</span> Conditional Expectation and Variance Revisited</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/4.4/"><span class="navigation--side__index">4.4</span> Transforms</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/4.5/"><span class="navigation--side__index">4.5</span> Sum of a Random Number of Independent Random Variables</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">5</span>Limit Theorems</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/5.1/"><span class="navigation--side__index">5.1</span> Markov and Chebyshev Inequalities</a>
+            </li>
+          
+        
+      
       </ul>
       <ul class="navigation--side__list" id="page-navigation">
         <script>
@@ -920,14 +1036,14 @@ $P(B) = \frac{\abs{A}}{\abs{\Omega}} = \frac{\binom{4}{2}\binom{48}{5}}{\binom{5
         
         
         
-          <a href="https://jimzenn.com/probability-theory/2.1/" class="pagination__prev">2.1 Discrete Random Variable</a>
+          <a href="https://jimzenn.com/probability-theory/1.5/" class="pagination__prev">1.5 Independence</a>
         
       
       
         
         
         
-          <a href="https://jimzenn.com/probability-theory/1.5/" class="pagination__next">1.5 Independence</a>
+          <a href="https://jimzenn.com/probability-theory/2.1/" class="pagination__next">2.1 Discrete Random Variable</a>
         
       
     </div>
@@ -937,7 +1053,7 @@ $P(B) = \frac{\abs{A}}{\abs{\Omega}} = \frac{\binom{4}{2}\binom{48}{5}}{\binom{5
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2018 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/Jim_Zenn-CV.pdf">CV</a>
@@ -1024,10 +1140,10 @@ $P(B) = \frac{\abs{A}}{\abs{\Omega}} = \frac{\binom{4}{2}\binom{48}{5}}{\binom{5
   let proofExpandToggles = document.querySelectorAll(".proof__expand");
   proofExpandToggles.forEach((node) => {
     node.addEventListener('click', function(e) {
-      if (e.target.textContent == "expand") {
-        e.target.textContent = "collapse";
+      if (e.target.textContent == "[expand]") {
+        e.target.textContent = "[collapse]";
       } else {
-        e.target.textContent = "expand";
+        e.target.textContent = "[expand]";
       }
       proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
       proofContentNode.classList.toggle("hide");

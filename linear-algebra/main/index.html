@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -505,7 +505,7 @@ Linear Transformation, Identity Transformation, Zero Transformation, Kernel (Nul
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2018 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/Jim_Zenn-CV.pdf">CV</a>
@@ -592,10 +592,10 @@ Linear Transformation, Identity Transformation, Zero Transformation, Kernel (Nul
   let proofExpandToggles = document.querySelectorAll(".proof__expand");
   proofExpandToggles.forEach((node) => {
     node.addEventListener('click', function(e) {
-      if (e.target.textContent == "expand") {
-        e.target.textContent = "collapse";
+      if (e.target.textContent == "[expand]") {
+        e.target.textContent = "[collapse]";
       } else {
-        e.target.textContent = "expand";
+        e.target.textContent = "[expand]";
       }
       proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
       proofContentNode.classList.toggle("hide");

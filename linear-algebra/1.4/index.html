@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -377,7 +377,7 @@ The <strong>span</strong> of $S$ or the <strong>linear span</strong> of $S$ deno
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p><strong>case 1</strong>:
@@ -458,7 +458,7 @@ $\lambda x \in \spa{S}$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>To prove $\spa{S}$ is the smallest subspace, we need to prove that $$\forall W \leq V, W \supseteq S \implies \spa{S} \leq W$$</p>
@@ -545,7 +545,7 @@ $\therefore x_i \in S \implies x_i \in W$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>$a,b \in \R,$ then $(a,b) \in \R^2.$</p>
@@ -588,7 +588,7 @@ $\therefore x_i \in S \implies x_i \in W$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>$a, b \in \R^2$.</p>
@@ -645,7 +645,7 @@ $$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>$$
@@ -698,7 +698,7 @@ $$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>$S \subseteq T \implies \spa{S} \subseteq \spa{T}$</p>
@@ -1065,14 +1065,14 @@ $$</p>
         
         
         
-          <a href="https://jimzenn.com/linear-algebra/1.5/" class="pagination__prev">1.5 Linear Dependence and Linear Independence</a>
+          <a href="https://jimzenn.com/linear-algebra/1.3/" class="pagination__prev">1.3 Subspaces</a>
         
       
       
         
         
         
-          <a href="https://jimzenn.com/linear-algebra/1.3/" class="pagination__next">1.3 Subspaces</a>
+          <a href="https://jimzenn.com/linear-algebra/1.5/" class="pagination__next">1.5 Linear Dependence and Linear Independence</a>
         
       
     </div>
@@ -1082,7 +1082,7 @@ $$</p>
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2018 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/Jim_Zenn-CV.pdf">CV</a>
@@ -1169,10 +1169,10 @@ $$</p>
   let proofExpandToggles = document.querySelectorAll(".proof__expand");
   proofExpandToggles.forEach((node) => {
     node.addEventListener('click', function(e) {
-      if (e.target.textContent == "expand") {
-        e.target.textContent = "collapse";
+      if (e.target.textContent == "[expand]") {
+        e.target.textContent = "[collapse]";
       } else {
-        e.target.textContent = "expand";
+        e.target.textContent = "[expand]";
       }
       proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
       proofContentNode.classList.toggle("hide");

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -334,7 +334,7 @@ if (!doNotTrack) {
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>We just need to find <u>one</u> not all zero coefficient solution.</p>
@@ -415,7 +415,7 @@ $$a_1=a_2=&hellip;=a_n=0$$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>Assume that $\emptyset$ is linear dependent.</p>
@@ -440,7 +440,7 @@ $$a_1=a_2=&hellip;=a_n=0$$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>Assume that it is linearly dependent:</p>
@@ -482,7 +482,7 @@ $$a_1=a_2=&hellip;=a_n=0$$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>$a(1,0) + b(0,1) = (0,0)$</p>
@@ -524,7 +524,7 @@ $$a_1=a_2=&hellip;=a_n=0$$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>$a(1,1) + b(2,-3) = (0,0)$</p>
@@ -620,7 +620,7 @@ $\iff v \in \spa{S}$.</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>$\impliedby$</p>
@@ -1114,14 +1114,14 @@ $v = -\frac{a_1}{a}v_1 -\frac{a_2}{a}v_2 - &hellip; -\frac{a_n}{a}a_nv_n$</p>
         
         
         
-          <a href="https://jimzenn.com/linear-algebra/1.6/" class="pagination__prev">1.6 Bases and Dimensions</a>
+          <a href="https://jimzenn.com/linear-algebra/1.4/" class="pagination__prev">1.4 Linear Combinations and Systems of Linear Equations</a>
         
       
       
         
         
         
-          <a href="https://jimzenn.com/linear-algebra/1.4/" class="pagination__next">1.4 Linear Combinations and Systems of Linear Equations</a>
+          <a href="https://jimzenn.com/linear-algebra/1.6/" class="pagination__next">1.6 Bases and Dimensions</a>
         
       
     </div>
@@ -1131,7 +1131,7 @@ $v = -\frac{a_1}{a}v_1 -\frac{a_2}{a}v_2 - &hellip; -\frac{a_n}{a}a_nv_n$</p>
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2018 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/Jim_Zenn-CV.pdf">CV</a>
@@ -1218,10 +1218,10 @@ $v = -\frac{a_1}{a}v_1 -\frac{a_2}{a}v_2 - &hellip; -\frac{a_n}{a}a_nv_n$</p>
   let proofExpandToggles = document.querySelectorAll(".proof__expand");
   proofExpandToggles.forEach((node) => {
     node.addEventListener('click', function(e) {
-      if (e.target.textContent == "expand") {
-        e.target.textContent = "collapse";
+      if (e.target.textContent == "[expand]") {
+        e.target.textContent = "[collapse]";
       } else {
-        e.target.textContent = "expand";
+        e.target.textContent = "[expand]";
       }
       proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
       proofContentNode.classList.toggle("hide");

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -289,7 +289,7 @@ if (!doNotTrack) {
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>$x, y \in V, a \in F$.</p>
@@ -357,7 +357,7 @@ UT(ax + y) &amp;= U(T(ax + y)) \br
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>$\begin{align*}
@@ -436,7 +436,7 @@ UT(ax + y) &amp;= U(T(ax + y)) \br
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p><strong>Analysis</strong></p>
@@ -536,7 +536,7 @@ T(v_j) &amp;= \sum_{i=1}^{m} b_{ij} w_i &amp; (2)
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>Follows from the previous computation</p>
@@ -612,7 +612,7 @@ T(v_j) &amp;= \sum_{i=1}^{m} b_{ij} w_i &amp; (2)
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>Fix $v \in V$, let $f: F \to V $ and $g: F \to W $ be two linear transformation.</p>
@@ -1139,14 +1139,14 @@ and $g(a) = aT(v), \forall a \in F$</p>
         
         
         
-          <a href="https://jimzenn.com/linear-algebra/2.4/" class="pagination__prev">2.4 Invertibility and Isomorphisms</a>
+          <a href="https://jimzenn.com/linear-algebra/2.2/" class="pagination__prev">2.2 The Matrix Representation of a Linear Transformation</a>
         
       
       
         
         
         
-          <a href="https://jimzenn.com/linear-algebra/2.2/" class="pagination__next">2.2 The Matrix Representation of a Linear Transformation</a>
+          <a href="https://jimzenn.com/linear-algebra/2.4/" class="pagination__next">2.4 Invertibility and Isomorphisms</a>
         
       
     </div>
@@ -1156,7 +1156,7 @@ and $g(a) = aT(v), \forall a \in F$</p>
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2018 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/Jim_Zenn-CV.pdf">CV</a>
@@ -1243,10 +1243,10 @@ and $g(a) = aT(v), \forall a \in F$</p>
   let proofExpandToggles = document.querySelectorAll(".proof__expand");
   proofExpandToggles.forEach((node) => {
     node.addEventListener('click', function(e) {
-      if (e.target.textContent == "expand") {
-        e.target.textContent = "collapse";
+      if (e.target.textContent == "[expand]") {
+        e.target.textContent = "[collapse]";
       } else {
-        e.target.textContent = "expand";
+        e.target.textContent = "[expand]";
       }
       proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
       proofContentNode.classList.toggle("hide");

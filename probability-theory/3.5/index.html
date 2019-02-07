@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -221,7 +221,6 @@ if (!doNotTrack) {
         <div class="latex-macros">
   
     $\newcommand{\br}{\\}$
-
     $\newcommand{\R}{\mathbb{R}}$
     $\newcommand{\Q}{\mathbb{Q}}$
     $\newcommand{\Z}{\mathbb{Z}}$
@@ -231,56 +230,78 @@ if (!doNotTrack) {
     $\newcommand{\F}{\mathbb{F}}$
     $\newcommand{\L}{\mathcal{L}}$
     $\newcommand{\spa}[1]{\text{span}(#1)}$
-    $\newcommand{\set}[1]{\{#1\}}$
+    $\newcommand{\dist}[1]{\text{dist}(#1)}$
+    $\newcommand{\max}[1]{\text{max}(#1)}$
+    $\newcommand{\min}[1]{\text{max}(#1)}$
+    $\newcommand{\supr}[1]{\text{sup}(#1)}$
+    $\newcommand{\infi}[1]{\text{inf}(#1)}$
+    $\newcommand{\ite}[1]{\text{int}(#1)}$
+    $\newcommand{\ext}[1]{\text{ext}(#1)}$
+    $\newcommand{\bdry}[1]{\partial #1}$
+    $\newcommand{\argmax}[1]{\underset{#1}{\text{argmax }}}$
+    $\newcommand{\argmin}[1]{\underset{#1}{\text{argmin }}}$
+    $\newcommand{\set}[1]{\left\{#1\right\}}$
     $\newcommand{\emptyset}{\varnothing}$
+    $\newcommand{\tilde}{\text{~}}$
     $\newcommand{\otherwise}{\text{ otherwise }}$
     $\newcommand{\if}{\text{ if }}$
+    $\newcommand{\proj}{\text{proj}}$
     $\newcommand{\union}{\cup}$
     $\newcommand{\intercept}{\cap}$
-    $\newcommand{\abs}[1]{| #1 |}$
+    $\newcommand{\abs}[1]{\left| #1 \right|}$
     $\newcommand{\norm}[1]{\left\lVert#1\right\rVert}$
-    $\newcommand{\pare}[1]{\left\(#1\right\)}$
+    $\newcommand{\pare}[1]{\left(#1\right)}$
+    $\newcommand{\brac}[1]{\left[#1\right]}$
     $\newcommand{\t}[1]{\text{ #1 }}$
     $\newcommand{\head}{\text H}$
     $\newcommand{\tail}{\text T}$
     $\newcommand{\d}{\text d}$
     $\newcommand{\limu}[2]{\underset{#1 \to #2}\lim}$
+    $\newcommand{\der}[2]{\frac{\d #1}{\d #2}}$
+    $\newcommand{\derw}[2]{\frac{\d #1^2}{\d^2 #2}}$
+    $\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}$
+    $\newcommand{\pderw}[2]{\frac{\partial^2 #1}{\partial #2^2}}$
+    $\newcommand{\pderws}[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}$
     $\newcommand{\inv}[1]{{#1}^{-1}}$
     $\newcommand{\inner}[2]{\langle #1, #2 \rangle}$
     $\newcommand{\nullity}[1]{\text{nullity}(#1)}$
     $\newcommand{\rank}[1]{\text{rank }#1}$
+    $\newcommand{\nullspace}[1]{\mathcal{N}\pare{#1}}$
+    $\newcommand{\range}[1]{\mathcal{R}\pare{#1}}$
+    $\newcommand{\var}[1]{\text{var}\pare{#1}}$
+    $\newcommand{\cov}[2]{\text{cov}(#1, #2)}$
     $\newcommand{\tr}[1]{\text{tr}(#1)}$
-    $\newcommand{\var}[1]{\text{var}(#1)}$
     $\newcommand{\oto}{\text{ one-to-one }}$
     $\newcommand{\ot}{\text{ onto }}$
+    $\newcommand{\ceil}[1]{\lceil#1\rceil}$
+    $\newcommand{\floor}[1]{\lfloor#1\rfloor}$
     $\newcommand{\Re}[1]{\text{Re}(#1)}$
     $\newcommand{\Im}[1]{\text{Im}(#1)}$
-
-
+    $\newcommand{\dom}[1]{\text{dom}(#1)}$
+    $\newcommand{\fnext}[1]{\overset{\sim}{#1}}$
+    $\newcommand{\transpose}[1]{{#1}^{\text{T}}}$
+    $\newcommand{\b}[1]{\boldsymbol{#1}}$
+    $\newcommand{\None}[1]{}$
     $\newcommand{\Vcw}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
     $\newcommand{\Vce}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
     $\newcommand{\Vcr}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$
     $\newcommand{\Vct}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$
     $\newcommand{\Vcy}[6]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{bmatrix}}$
     $\newcommand{\Vcu}[7]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{bmatrix}}$
-
     $\newcommand{\vcw}[2]{\begin{matrix} #1 \br #2 \end{matrix}}$
     $\newcommand{\vce}[3]{\begin{matrix} #1 \br #2 \br #3 \end{matrix}}$
     $\newcommand{\vcr}[4]{\begin{matrix} #1 \br #2 \br #3 \br #4 \end{matrix}}$
     $\newcommand{\vct}[5]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \end{matrix}}$
     $\newcommand{\vcy}[6]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{matrix}}$
     $\newcommand{\vcu}[7]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{matrix}}$
-
     $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$
     $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$
     $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$
     $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$
-
     $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
     $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
     $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$
     $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$
-
     $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$
     $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
     $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$
@@ -295,28 +316,28 @@ if (!doNotTrack) {
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="conditioning-a-random-variable-on-an-event">Conditioning a Random Variable on an Event</span></span>
   <div class="block__content block__content--blue">
-    <p>The $conditional PDF $ of a continuous random variable $X $, given an event $A $ with $P(A) &gt; 0 $, is defined as a nonnegative function $f_{X|A} $ that satisfies</p>
+    <p>The <strong>conditional PDF</strong> of a continuous random variable $X $, given an event $A $ with $\b{P}(A) &gt; 0 $, is defined as a nonnegative function $f_{X|A} $ that satisfies</p>
 
-<p>$$P(X \in B | A) = \int_{ B } f_{X|A}(x) \d x $$</p>
+<p>$$\b{P}(X \in B | A) = \int_{ B } f_{X|A}(x) \d x $$</p>
 
 <p>for any subset $B $ of the real line.</p>
 
 <p>$$\int_{ -\infty }^{ +\infty } f_{X|A}(x) \d x = 1$$</p>
 
-<p>In particular, we condition an event of the form $\set{ X \in A } $, with $P(X \in A) &gt; 0 $, the definition of conditional probabilities yields</p>
+<p>In particular, we condition an event of the form $\set{ X \in A } $, with $\b{P}(X \in A) &gt; 0 $, the definition of conditional probabilities yields</p>
 
-<p>$$P(X \in B | X \in A) = \frac{ P(X \in B, X \in A)}{ P(X \in A)} = \frac{ \int_{ A \cap B } f_X(x) \d x }{ P(X \in A)} $$</p>
+<p>$$\b{P}(X \in B | X \in A) = \frac{ \b{P}(X \in B, X \in A)}{ \b{P}(X \in A)} = \frac{ \int_{ A \cap B } f_X(x) \d x }{ \b{P}(X \in A)} $$</p>
 
 <p>We conclude that</p>
 
 <p>$$ f_{X  | \set{ X \in A }}(x) = \begin{cases}
-  \frac{ f_X(x)}{ P(X \in A)}, \if x \in A \br
+  \frac{ f_X(x)}{ \b{P}(X \in A)}, \if x \in A \br
   0, \otherwise
 \end{cases} $$</p>
 
-<p>Let $A_1, A_2, &hellip;, A_{ n } $ be disjoint events that form a partition of the sample space, and assume that $P(A_i) &gt; 0 $ for all $i $, then</p>
+<p>Let $A_1, A_2, &hellip;, A_{ n } $ be disjoint events that form a partition of the sample space, and assume that $\b{P}(A_i) &gt; 0 $ for all $i $, then</p>
 
-<p>$f_X(x) = \sum_{ i=1 }^{ n } P(A_i)f_{X|A_i}(x)$(total probability theorem)</p>
+<p>$f_X(x) = \sum_{ i=1 }^{ n } \b{P}(A_i)f_{X|A_i}(x)$(total probability theorem)</p>
 
   </div>
 
@@ -366,7 +387,7 @@ f_X(x) &amp;= \int_{ -\infty }^{ +\infty } f_Y(y) f_{X|Y}(x | y) \d y
 
 <p>We have</p>
 
-<p>$$P(X \in A | Y = y) = \int_{ A } f_{X|Y}(x|y) \d x$$</p>
+<p>$$\b{P}(X \in A | Y = y) = \int_{ A } f_{X|Y}(x|y) \d x$$</p>
 
   </div>
 
@@ -403,7 +424,7 @@ f_X(x) &amp;= \int_{ -\infty }^{ +\infty } f_Y(y) f_{X|Y}(x | y) \d y
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="conditional-expectations">Conditional Expectations</span></span>
   <div class="block__content block__content--blue">
-    <p>Let $X $ and $Y $ be jointly continuous random variables, and let $A $ be an event with $P(A) &gt; 0 $.</p>
+    <p>Let $X $ and $Y $ be jointly continuous random variables, and let $A $ be an event with $\b{P}(A) &gt; 0 $.</p>
 
 <p>The conditional expectation of $X $ given the event $A $ is defined by</p>
 
@@ -449,7 +470,7 @@ f_X(x) &amp;= \int_{ -\infty }^{ +\infty } f_Y(y) f_{X|Y}(x | y) \d y
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="the-expected-value-rule">The Expected Value Rule</span></span>
   <div class="block__content block__content--green">
-  <p>Let $X $ and $Y $ be jointly continuous random variables, and let $A $ be an event with $P(A) &gt; 0 $. For a function $g(X)$, we have</p>
+  <p>Let $X $ and $Y $ be jointly continuous random variables, and let $A $ be an event with $\b{P}(A) &gt; 0 $. For a function $g(X)$, we have</p>
 
 <p>The expectation of $g(X)$ given the event $A $ is defined by</p>
 
@@ -490,13 +511,78 @@ f_X(x) &amp;= \int_{ -\infty }^{ +\infty } f_Y(y) f_{X|Y}(x | y) \d y
 </div>
 
 
+<div class="block block--yellow "> <span class="block__title block__title--yellow">Note: <span class="keyword" id="tail-sum-formula">Tail Sum Formula</span>
+    
+  </span>
+  <div class="block__content block__content--yellow">
+    <p><strong>Discrete case</strong> let&rsquo;s assume $X $ takes non-negative integer values then</p>
+
+<p>$$E[X] = \sum_{ k = 1 }^{ \infty } \b{P}(X \geq k) = \sum_{ k = 0 }^{ \infty } \b{P}(X &gt; k) $$</p>
+
+<p><strong>Continuous case</strong> if $X &gt; 0 $, then</p>
+
+<p>$E[X] = \int_{  -\infty }^{ \infty } \b{P}(X &gt; x) \d x = 1 - F_X(x)$</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand"><a>[expand]</a></span>
+  </div>
+  <div class="proof__content hide">
+    <p>$\begin{align*}
+\b{P}(X = 1)  + \b{P}(X = 2) + \b{P}(X = 3)  + \b{P}(X = 4) + &amp;&hellip; \br
++\b{P}(X = 2) + \b{P}(X = 3)  + \b{P}(X = 4) + &amp;&hellip; \br
++\b{P}(X = 3)  + \b{P}(X = 4) + &amp;&hellip; \br
++\b{P}(X = 4) + &amp;&hellip; \br
++ &amp;&hellip;
+\end{align*}$</p>
+
+  </div>
+</div>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("tail-sum-formula");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--yellow-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "not";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="total-expectation-theorem">Total Expectation Theorem</span></span>
   <div class="block__content block__content--green">
-  <p>Let $A_1, A_2, &hellip;, A_{ n } $ be disjoint events that form a partition of the sample space, and assume that $P(A_i) &gt; 0$ for all $i$. Then,</p>
+  <p>Let $A_1, A_2, &hellip;, A_{ n } $ be disjoint events that form a partition of the sample space, and assume that $\b{P}(A_i) &gt; 0$ for all $i$. Then,</p>
 
-<p>$$E[X] = \sum_{ i=1 }^{ n } P(A_i) E[X | A_i]$$</p>
+<p>$$E[X] = \sum_{ i=1 }^{ n } \b{P}(A_i) E[X | A_i]$$</p>
 
 <p>Similarly,</p>
 
@@ -766,7 +852,67 @@ f_X(x) &amp;= \int_{ -\infty }^{ +\infty } f_Y(y) f_{X|Y}(x | y) \d y
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/probability-theory/2.4/"><span class="navigation--side__index">2.4</span> Functions of Random Variables</a>
+              <a href="https://jimzenn.com/probability-theory/2.4/"><span class="navigation--side__index">2.4</span> Expectation, Mean, and Variance</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/2.5/"><span class="navigation--side__index">2.5</span> Joint PMFs of Multiple Random Variables</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/2.6/"><span class="navigation--side__index">2.6</span> Conditioning</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/2.7/"><span class="navigation--side__index">2.7</span> Independence</a>
             </li>
           
         
@@ -893,6 +1039,130 @@ f_X(x) &amp;= \int_{ -\infty }^{ +\infty } f_Y(y) f_{X|Y}(x | y) \d y
           
         
       
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">4</span>Further Topics on Random Variables</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/4.1/"><span class="navigation--side__index">4.1</span> Derived Distributions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/4.2/"><span class="navigation--side__index">4.2</span> Covariance and Correlation</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/4.3/"><span class="navigation--side__index">4.3</span> Conditional Expectation and Variance Revisited</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/4.4/"><span class="navigation--side__index">4.4</span> Transforms</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/4.5/"><span class="navigation--side__index">4.5</span> Sum of a Random Number of Independent Random Variables</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">5</span>Limit Theorems</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/5.1/"><span class="navigation--side__index">5.1</span> Markov and Chebyshev Inequalities</a>
+            </li>
+          
+        
+      
       </ul>
       <ul class="navigation--side__list" id="page-navigation">
         <script>
@@ -912,14 +1182,14 @@ f_X(x) &amp;= \int_{ -\infty }^{ +\infty } f_Y(y) f_{X|Y}(x | y) \d y
         
         
         
-          <a href="https://jimzenn.com/probability-theory/3.6/" class="pagination__prev">3.6 The Continuous Bayes&#39; Rule</a>
+          <a href="https://jimzenn.com/probability-theory/3.4/" class="pagination__prev">3.4 Joint PDFs of Multiple Random Variables</a>
         
       
       
         
         
         
-          <a href="https://jimzenn.com/probability-theory/3.4/" class="pagination__next">3.4 Joint PDFs of Multiple Random Variables</a>
+          <a href="https://jimzenn.com/probability-theory/3.6/" class="pagination__next">3.6 The Continuous Bayes&#39; Rule</a>
         
       
     </div>
@@ -929,7 +1199,7 @@ f_X(x) &amp;= \int_{ -\infty }^{ +\infty } f_Y(y) f_{X|Y}(x | y) \d y
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2018 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/Jim_Zenn-CV.pdf">CV</a>
@@ -1016,10 +1286,10 @@ f_X(x) &amp;= \int_{ -\infty }^{ +\infty } f_Y(y) f_{X|Y}(x | y) \d y
   let proofExpandToggles = document.querySelectorAll(".proof__expand");
   proofExpandToggles.forEach((node) => {
     node.addEventListener('click', function(e) {
-      if (e.target.textContent == "expand") {
-        e.target.textContent = "collapse";
+      if (e.target.textContent == "[expand]") {
+        e.target.textContent = "[collapse]";
       } else {
-        e.target.textContent = "expand";
+        e.target.textContent = "[expand]";
       }
       proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
       proofContentNode.classList.toggle("hide");

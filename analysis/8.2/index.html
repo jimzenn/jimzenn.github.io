@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.54.0" />
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<title>Some Point-Set Topology of Metric Spaces - Jim Zenn</title>
+<meta property="og:title" content="Some point-set topology of metric spaces - Jim Zenn">
+
+
+
+  
+
+
+
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-83942334-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3" media="all">
+    
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3" media="all">
+
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3" media="all">
+  </head>
+
+  <body class="note wide" >
+    <header class="header" id="header">
+  
+  <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
+  <div class="header__title">
+    <a class="header__site-logo-link--home" href="/">
+      <img class="header__site-logo-image" src="/logo/wire.svg" alt="logo"/>
+    </a>
+    <a class="header__site-logo-link--toggle" id="header-menu__toggle">
+      <img class="header__site-logo-image" src="/logo/wire.svg" alt="logo"/>
+    </a>
+  </div>
+  <nav class="header-menu" id="header-menu">
+      <ul class="header-menu__list">
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+          
+        
+          
+            <li class="header-menu__item header-menu__item--dropdown">
+              <a class="header-menu__link">Notes</a>
+              <ul class="header-menu__item-menu">
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/probability-theory/1.1/">Probability Theory</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/linear-algebra/1.2/">Linear Algebra</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/journey/">Journey</a></li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+          
+        
+      </ul>
+  </nav>
+</header>
+<nav class="header-menu--collapsable" id="collapsable-menu">
+  <ul class="header-menu__list--collapsable">
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+      
+    
+      
+        <li class="header-menu__item header-menu__item--dropdown">
+          <a class="header-menu__link">Notes</a>
+          <ul class="header-menu__item-menu">
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/probability-theory/1.1/">Probability Theory</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/linear-algebra/1.2/">Linear Algebra</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
+            
+          </ul>
+        </li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/journey/">Journey</a></li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+      
+    
+  </ul>
+</nav>
+
+
+    <div class="container" id="container">
+      
+        <div class="container-tag">
+          
+          <b class="container-title">
+            Notes
+          </b>
+          
+        </div>
+      
+      
+
+
+
+
+
+
+
+  
+
+
+<div class="navigation" id="navigation">
+  <div class="navigation__wrapper" id="navigation__toggle">
+    <div class="navigation__left">
+      <span class="navigation__sup-title" style="color: #8100bd">Analysis, Section 8.2</span>
+      <span class="navigation__title">Some Point-Set Topology of Metric Spaces</span>
+    </div>
+    <div class="navigation__right">
+      <ul class="navigation__list">
+      
+      </ul>
+      <ul class="navigation__list--collapsable">
+      
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  wasStuck = false;
+  window.addEventListener('scroll', function(e) {
+    var header = document.querySelector("#header");
+    var nav = document.querySelector("#navigation");
+    var navWrapper = document.querySelector("#navigation .navigation__wrapper");
+    if (window.scrollY >= header.offsetHeight) {
+      
+      if (!wasStuck) {
+        nav.classList.add("navigation--stuck");
+        navWrapper.classList.add("navigation__wrapper--stuck");
+        wasStuck = true;
+      }
+    } else {
+      if (wasStuck) {
+        nav.classList.remove("navigation--stuck");
+        navWrapper.classList.remove("navigation__wrapper--stuck");
+        wasStuck = false;
+      }
+    }
+  });
+  var toggle = document.querySelector("#navigation__toggle");
+  var list = document.querySelector(".navigation__list--collapsable");
+  toggle.addEventListener("click", function() {
+    this.classList.toggle("navigation__toggle--active");
+    list.classList.toggle("navigation__list--collapsable--active");
+  });
+  var listItems = document.querySelectorAll(".navigation__list--collapsable .navigation__link");
+  for (var i = 0; i < listItems.length; i ++) {
+    listItems[i].addEventListener("click", function() {
+      document.querySelector("#navigation__toggle").click();
+      return true;
+    });
+  }
+</script>
+
+
+
+  <main class="content" role="main">
+    <article class="article">
+      <div class="article__content">
+        <script>
+          keywordsCollector = [];
+          keywordsCounter = 0;
+        </script>
+        <div class="latex-macros">
+  
+    $\newcommand{\br}{\\}$
+
+    $\newcommand{\R}{\mathbb{R}}$
+    $\newcommand{\Q}{\mathbb{Q}}$
+    $\newcommand{\Z}{\mathbb{Z}}$
+    $\newcommand{\N}{\mathbb{N}}$
+    $\newcommand{\C}{\mathbb{C}}$
+    $\newcommand{\P}{\mathbb{P}}$
+    $\newcommand{\F}{\mathbb{F}}$
+    $\newcommand{\L}{\mathcal{L}}$
+    $\newcommand{\spa}[1]{\text{span}(#1)}$
+    $\newcommand{\dist}[1]{\text{dist}(#1)}$
+    $\newcommand{\max}[1]{\text{max}(#1)}$
+    $\newcommand{\min}[1]{\text{min}(#1)}$
+    $\newcommand{\supr}[1]{\text{sup}(#1)}$
+    $\newcommand{\infi}[1]{\text{inf}(#1)}$
+    $\newcommand{\ite}[1]{\text{int}(#1)}$
+    $\newcommand{\ext}[1]{\text{ext}(#1)}$
+    $\newcommand{\bdry}[1]{\partial #1}$
+    $\newcommand{\argmax}[1]{\underset{#1}{\text{argmax }}}$
+    $\newcommand{\argmin}[1]{\underset{#1}{\text{argmin }}}$
+    $\newcommand{\set}[1]{\left\{#1\right\}}$
+    $\newcommand{\emptyset}{\varnothing}$
+    $\newcommand{\otherwise}{\text{ otherwise }}$
+    $\newcommand{\if}{\text{ if }}$
+    $\newcommand{\proj}{\text{proj}}$
+    $\newcommand{\union}{\cup}$
+    $\newcommand{\intercept}{\cap}$
+    $\newcommand{\abs}[1]{\left| #1 \right|}$
+    $\newcommand{\norm}[1]{\left\lVert#1\right\rVert}$
+    $\newcommand{\pare}[1]{\left(#1\right)}$
+    $\newcommand{\brac}[1]{\left[#1\right]}$
+    $\newcommand{\t}[1]{\text{ #1 }}$
+    $\newcommand{\head}{\text H}$
+    $\newcommand{\tail}{\text T}$
+    $\newcommand{\d}{\text d}$
+    $\newcommand{\limu}[2]{\underset{#1 \to #2}\lim}$
+    $\newcommand{\der}[2]{\frac{\d #1}{\d #2}}$
+    $\newcommand{\derw}[2]{\frac{\d #1^2}{\d^2 #2}}$
+    $\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}$
+    $\newcommand{\pderw}[2]{\frac{\partial^2 #1}{\partial #2^2}}$
+    $\newcommand{\pderws}[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}$
+    $\newcommand{\inv}[1]{{#1}^{-1}}$
+    $\newcommand{\inner}[2]{\langle #1, #2 \rangle}$
+    $\newcommand{\nullity}[1]{\text{nullity}(#1)}$
+    $\newcommand{\rank}[1]{\text{rank }#1}$
+    $\newcommand{\nullspace}[1]{\mathcal{N}\pare{#1}}$
+    $\newcommand{\range}[1]{\mathcal{R}\pare{#1}}$
+    $\newcommand{\var}[1]{\text{var}(#1)}$
+    $\newcommand{\tr}[1]{\text{tr}(#1)}$
+    $\newcommand{\oto}{\text{ one-to-one }}$
+    $\newcommand{\ot}{\text{ onto }}$
+    $\newcommand{\ceil}[1]{\lceil#1\rceil}$
+    $\newcommand{\floor}[1]{\lfloor#1\rfloor}$
+    $\newcommand{\Re}[1]{\text{Re}(#1)}$
+    $\newcommand{\Im}[1]{\text{Im}(#1)}$
+    $\newcommand{\dom}[1]{\text{dom}(#1)}$
+    $\newcommand{\fnext}[1]{\overset{\sim}{#1}}$
+    $\newcommand{\transpose}[1]{{#1}^{\text{T}}}$
+    $\newcommand{\b}[1]{\boldsymbol{#1}}$
+    $\newcommand{\None}[1]{}$
+
+
+    $\newcommand{\Vcw}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Vce}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Vcr}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$
+    $\newcommand{\Vct}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$
+    $\newcommand{\Vcy}[6]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{bmatrix}}$
+    $\newcommand{\Vcu}[7]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{bmatrix}}$
+
+    $\newcommand{\vcw}[2]{\begin{matrix} #1 \br #2 \end{matrix}}$
+    $\newcommand{\vce}[3]{\begin{matrix} #1 \br #2 \br #3 \end{matrix}}$
+    $\newcommand{\vcr}[4]{\begin{matrix} #1 \br #2 \br #3 \br #4 \end{matrix}}$
+    $\newcommand{\vct}[5]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \end{matrix}}$
+    $\newcommand{\vcy}[6]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{matrix}}$
+    $\newcommand{\vcu}[7]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{matrix}}$
+
+    $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$
+    $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$
+    $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$
+    $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$
+
+    $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$
+    $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$
+
+    $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$
+    $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$
+    $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$
+    $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$
+    $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$
+    $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$
+  
+</div>
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="balls">Balls</span></span>
+  <div class="block__content block__content--blue">
+    <p>Let $(X, d) $ be a metric space, $x_0 \in X, r&gt; 0 $.</p>
+
+<p>The (open) ball of radius $r $ centered at $x_0 $ relative to $d $ in $X $ is the set $B_{(X, d)}(x_0, r) = \set{ x \in X : d (x_0, x) &lt; r } $</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("balls");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>$X = \R, f: \R \to \R f(x) = \begin{cases}
+  1 &amp; x = 0 \br
+  0 &amp; if x = 1 \br
+  x &amp; \otherwise
+\end{cases}$</p>
+
+<p>Define $d: \R \times \R \to [0, \infty)$ by $d(x, y) = \abs{  f(x) - f(y)} $</p>
+
+<p>Does $(x_n)^ \infty _{n = 1 } $ defined by $x_n = \frac{ 1 }{ n } $ converge? If so, to what value.</p>
+
+<p>Claim: $(x_n)_{n = 1} ^ \infty \to 1$</p>
+
+<p>Check!</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="block block--yellow "> <span class="block__title block__title--yellow">Note
+  </span>
+  <div class="block__content block__content--yellow">
+    <p>$\R^n = \set{ xo = (x_1, &hellip;, x_n): x_i \in \R } $</p>
+
+<p>If $(_k)^\infty_{k=1} $ is a sequence in $\R^n$  then we write</p>
+
+<p>$x^{(k)} = (x^{(k)}_1, x^{(k)}_2, &hellip;, x^{(k)}_n) $</p>
+
+<p>Notice that if you fix an index $i $, then $(x_i^{(k)})^\infty_{k=1} $ is a sequence.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul></div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  
+  1.1.18<span class="keyword" id="1.1.18" style="visibility: hidden;">1.1.18</span></span>
+  <div class="block__content block__content--green">
+  <p>o
+Let $X = \R^n $, $(x^{(k)})^\infty_{k=1} $ is a sequence in $\R^n$ and $x_0 = (x_1, x_2, &hellip;, x_n) $ a point in $\R^n $</p>
+
+<p>The following statements are <strong>equivalent</strong>.</p>
+
+<ol>
+<li>$(x^{(k)})^\infty_{k=1} \to x_0 $ in $l^1 $ metric.</li>
+<li>$(x^{(k)})^\infty_{k=1} \to x_0 $ in $l^2$ metric.</li>
+<li>$(x^{(k)})^\infty_{k=1} \to x_0$ in $l^\infty $ metric.</li>
+<li>for every $j \in \set{ 1, 2, &hellip;, n } $, $(x^{(k)}_j)^\infty_{k=1} \to x_j $.</li>
+</ol>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand"><a>[expand]</a></span>
+  </div>
+  <div class="proof__content hide">
+    <p>$(1 \implies 2)$</p>
+
+<p>Assume $(x^{(k)})^\infty_{k=1} \to x_0 $ in $d_{l^1}$,</p>
+
+<p>$$\limu{ k }{ \infty } d_{l^1}(x^{(k)}, x_0) \to 0 $$</p>
+
+<p>Since $\forall i, d_{l^1}(x^{(k)}_i, x_0) &gt;= d_{l^2} (x^{(k)}_i, x_0) $, by squeeze theorem,</p>
+
+<p>$$\limu{ k }{ \infty } d_{l^2}(x^{(k)}, x_0)= 0$$</p>
+
+<p>$\therefore (x^{(k)})^ \infty _{k = 0} \to x_0 $ in $d_{l^2}$.</p>
+
+<p>$(2 \implies 1) $</p>
+
+<p>Assume $(x^{(k)})^\infty_{k=1} \to x_0 $ in $d_{l^2} $,</p>
+
+<p>$$\limu{ k }{ \infty } d_{l^2}(x^{(k)}, x_0) = 0$$</p>
+
+<p>Since $d_{l^1}(x^{(k)}, x_0) \leq \sqrt[  ]{ n } d_{l^2}(x ^{(k)}, x_0) $, by squeeze theorem,</p>
+
+<p>$$\limu{ k }{ \infty } d_{l^1} (x^{(k)}, x_0) = 0 $$</p>
+
+<p>$\therefore (x^{(k)})^\infty_{k=1} \to x_0 $ in $d_{l^1} $.</p>
+
+<p>$(1 \implies 3, 3 \implies 1) $ follow from a similar computation.</p>
+
+<p>$(1 \implies 4) $</p>
+
+<p>Fix $i \in \set{ 1, 2, &hellip;, n } $ to show $x^{(k)}_i  \to x_i$; we prove $\limu{ k }{ \infty } \abs{ x_i^{(k)} \to x_i } = 0 $.</p>
+
+<p>Since $0 \leq \abs{  x_i^{(k)} - x_i } \leq \sum_{ i = 1 }^{ n }\abs{ x_i^{(k)} - x_i } $, by squeeze theorem,</p>
+
+<p>$$\limu{ k }{ \infty } \abs{ x^{(k)}_i - x_i } = 0 $$</p>
+
+<p>$\therefore (x_i^{(k)}) \to x_i, \forall i$.</p>
+
+<p>$(4 \implies 1)$</p>
+
+<p>Assume $(x_i^{(k)}) \to x_i \forall i$,</p>
+
+<p>$$\limu{ k }{ \infty } \abs{ x_i^{(k)} -x_i } =0,  \forall i$$</p>
+
+<p>$d_{l^1} (x^{(k)}, x_0) = \sum_{ i = 1 }^{ n } \abs{ x_i^{(k)} - x_i }$</p>
+
+<p>$\therefore (x^{(k)})^\infty_{k=1} \to (x_0)$ in $d_{l^1} $.</p>
+
+  </div>
+</div>
+
+  </div><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("1.1.18");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "thm";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="interior-exterior-and-boundary">Interior, Exterior and Boundary</span></span>
+  <div class="block__content block__content--blue">
+    <p>Let $(X, d)$ a metric space, let $E \subseteq X$.</p>
+
+<p>$x \in X$ is an <strong>interior point</strong> of $E$, if
+$$\exists r &gt; 0 \text{ s.t. } B(x, r) \cap E = E\text{ i.e. }B(x, r) \subseteq E$$</p>
+
+<p>$x \in X $ is an <strong>exterior point</strong> of $E$ if
+$$\exists r &gt; 0 \text{ s.t. } B(x, r) \cap E = \emptyset$$</p>
+
+<p>$x \in X $ is a <strong>boundary point</strong> if $x$ is neither an interior point nor an exterior point.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("interior-exterior-and-boundary");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--yellow "> <span class="block__title block__title--yellow">Note
+  </span>
+  <div class="block__content block__content--yellow">
+    <p>$(X, d) $ metric space $E \subseteq X, x_0 \in X $.</p>
+
+<ol>
+<li>$x_0 \in \ite{E} \iff \exists r &gt;0$ such that $B(x_0, r) \subseteq E$</li>
+<li>$\ite{E} \cap \ext{E} = \emptyset$</li>
+<li>$\ite{E} \cap \bdry{E} = \emptyset$</li>
+<li>$\ext{E} \cap \bdry{E} = \emptyset$</li>
+<li>$X = \ite{E} \cup \ext{E} \cup \bdry{E}$</li>
+</ol>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul></div>
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>$X = \R, d_{l^2}, E = (0, 1]. $</p>
+
+<p>$\ite{E} = (0, 1)$</p>
+
+<p>$\ext{E} = (-\infty, 0) \cup (1, +\infty) $</p>
+
+<p>$\bdry{E} = \set{0, 1} $</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>$X= \R, E = [0, 1] d_{l^1}. \forall x \in X$, If $0 &lt; r \leq 1, B(x, r) = \set{ x } $. Why?</p>
+
+<p>$B(x,r) = \set{ y \in R: d(x, y) &lt; r } $</p>
+
+<p>$\ite{E} = (0, 1]$</p>
+
+<p>$\ext{E} = (-\infty, 0] \cup [1, \infty)$</p>
+
+<p>$\bdry{E} = \emptyset$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>$0 \not \in E = (0, 1], $ but $0 $ is &ldquo;close&rdquo; to $E $.</p>
+
+<p>Use language of open balls.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="adherent-point-and-closure">Adherent Point and Closure</span></span>
+  <div class="block__content block__content--blue">
+    <p>Let $(X,d)$ be a metric space, let $E \subseteq X$, and let $x_0 $ be a point in $X $.</p>
+
+<p>$x_0 $ is an <strong>adherent point</strong> of $E$ if
+$$\forall r &gt; 0, B(x_0, r) \cap E \neq \emptyset$$</p>
+
+<p>The set of all adherent points of $E$ is called the <strong>closure</strong> of $E$, and is denoted $\overline{ E }$.</p>
+
+<p>$E $ is the collection of all adherent points of $E_0$. This set is called the <strong>closure</strong> of $E$.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("adherent-point-and-closure");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  </span>
+  <div class="block__content block__content--green">
+  <p>Let $(X, d)$ metric space, let $E \subset X$, and let $x_0 \in X$.</p>
+
+<p>The following statements are logically equivalent.</p>
+
+<ol>
+<li>$x_0$ is an adherent point.</li>
+<li>$x_0$ is $\ite{E} \cup \bdry{E}$.</li>
+<li>there exists a sequence in $E$, $(x^{(n)})^\infty_{n=1}$ such that $(x^{(n)})^\infty_{n=1} \to x_0$.</li>
+</ol>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand"><a>[expand]</a></span>
+  </div>
+  <div class="proof__content hide">
+    <p><strong>(1 -&gt; 3)</strong></p>
+
+<p>Since $x_0 $ is an adherent point, $\forall r &gt; 0, B(x_0, r) \cap E \neq \emptyset$.</p>
+
+<p>Choose $x^{(1)} \in B(x_0, 1) \cap E$, since $B(x_0, 1) \cap E \neq \emptyset$.</p>
+
+<p>Choose $x^{(2)} \in B(x, \frac{ 1 }{ 2 }) \cap E \neq \emptyset$.</p>
+
+<p>Similarly we choose $(x^{(n)})^\infty_{n=1}$ such that</p>
+
+<p>1. $x^{(n)} \in E, \forall n \in N$</p>
+
+<p>2. $d(x^{(n)},x_0) &lt; \frac{ 1 }{ n } $</p>
+
+<p>Hence, $x^{(n)} \in B(x_0, \frac{ 1 }{ n })$ i.e. $d(x^{(n)}, x_0) &lt; \frac{ 1 }{ n } $.</p>
+
+<p>By squeeze theorem, $\limu{ n }{ \infty } d(x^{(n)}, x_0) = 0$.</p>
+
+<p><strong>(3 -&gt; 1)</strong></p>
+
+<p>Suppose $(x^{(n)})^\infty_{n=1} \to x_0$.</p>
+
+<p>Need to show $\forall r &gt; 0, B(x_0, r) \cap E \neq \emptyset$.</p>
+
+<p>Since $\limu{n}{\infty} d(x^{(n)}, x_0) = 0, \exists N $ such that if $n &gt; N  \implies d(x^{(n)}, x_i) &lt; r$.</p>
+
+<p>Pick some $n_0 &gt;N $, $d(x^{(n_0)}, x_0) &lt; r $.</p>
+
+<p>Hence $x^{(n_0)} \in B(x_0, r), x^{(n_0)} \in E$.</p>
+
+<p>$x^{(n_0)} \in B(x_0, r) \cap E$.</p>
+
+  </div>
+</div>
+
+  </div><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="open-and-closed-sets">Open and Closed Sets</span></span>
+  <div class="block__content block__content--blue">
+    <p>Let $(X,d)$ be a metric space, and let $E \subseteq X$.</p>
+
+<p>$E$ is <strong>closed</strong> if $E \cap \bdry{E} = \bdry{E}$, i.e. $\bdry{ E } \subseteq E$.</p>
+
+<p>$E$ is <strong>open</strong> if $E \cap \bdry{E}= \emptyset$.</p>
+
+<p>$E$ is <strong>neither open nor closed</strong> if $E \cap \bdry{E} \neq \emptyset$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("open-and-closed-sets");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<div class="block block--yellow "> <span class="block__title block__title--yellow">Note
+  </span>
+  <div class="block__content block__content--yellow">
+    <p>Is $\bdry{ \R } \subseteq \R $?</p>
+
+<p>Yes, $\emptyset \subseteq \R$</p>
+
+<p>So $\R$ is closed?</p>
+
+<p>Now, let $E = \emptyset $, $\bdry{ \emptyset } = \emptyset$</p>
+
+<p>$\bdry{ \emptyset } = \emptyset $</p>
+
+<p>$\bdry{ \emptyset } \cap \emptyset = \emptyset$</p>
+
+<p>$\emptyset $ is both open and closed.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul></div>
+
+
+<div class="block block--yellow "> <span class="block__title block__title--yellow">Note
+  </span>
+  <div class="block__content block__content--yellow">
+    <p>For every metric space $(X, d)$.</p>
+
+<p>$X $ is open and closed.</p>
+
+<p>$\emptyset $ is open and closed.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul></div>
+
+
+<div class="block block--yellow "> <span class="block__title block__title--yellow">Note
+  </span>
+  <div class="block__content block__content--yellow">
+    <p>$\ite{ X } = X $</p>
+
+<p>Since $\forall E, \ite{ E } \subseteq E $</p>
+
+<p>so $\ite{ X } \subseteq X $.</p>
+
+<p>Let $x_0 \in X$, pick any $r &gt; 0 $</p>
+
+<p>$B(x_0, r) = \set{ x \in X: d(x_0, x) &lt; r } \subseteq X$</p>
+
+<p>Thus $x_0 $ is an interior point of $X $ and hence $X \subseteq \ite{ X } $.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul></div>
+
+
+<div class="block block--yellow "> <span class="block__title block__title--yellow">Note
+  </span>
+  <div class="block__content block__content--yellow">
+    <p>Let $X $ be a set and $d $ the discrete metric on $X_0 $.</p>
+
+<p>Every subset $E \subseteq X $ is always open and closed.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul></div>
+
+
+<div class="block block--green">
+  <span class="block__title block__title--green">Lemma
+  
+  </span>
+  <div class="block__content block__content--green">
+  <p>Let $(X, d) $ be a metric space.</p>
+
+<ol>
+<li>Let $E \subseteq X $. $E$ is open $\iff E = \ite{ E }$.</li>
+<li>Let $E \subseteq X$. $E $ is closed $\iff E = \overline{ E }$.</li>
+<li>Let $x_0 \in X, r &gt; 0$. <br>
+The open ball $B(x_0, r) = \set{x \in X : d(x_0, x) \leq r}$ is an open set. <br>
+The closed ball $\set{x \in X : d(x_0, x) \leq r}$ is a closed set.</li>
+<li>$\forall x_0 \in X, E = \set{x_0}$ is closed.</li>
+<li>Let $E \subseteq X $. $E $ is open $\iff X \setminus E $ is closed.</li>
+<li>Let $E_1, E_2, &hellip;, E_n \subseteq X$ be a finite number of open sets. $E_1 \cap E_2 \cap &hellip; \cap E_n $ is still open. <br>
+Let $F_1, F_2, &hellip;, F_n \subseteq X$ be a finite number of closed sets. $F_1 \cup F_2 \cup &hellip; \cup F_n$ is still closed.</li>
+<li>Let $I$ be an indexing set. $I$ can be infinite or uncountable. <br>
+If $\set{ E_ \alpha }_ { \alpha \in I } $, $E_ \alpha $ open $\forall \alpha \in I, \bigcup_ { \alpha \in I } E_ \alpha $ is still open. <br>
+If $\set{ F_ \alpha }_ { \alpha \in I }$, $F_ \alpha$ closed $\forall \alpha \in I,  \bigcap_ { \alpha \in I } F_ \alpha$ is still closed.</li>
+</ol>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand"><a>[expand]</a></span>
+  </div>
+  <div class="proof__content hide">
+    <p>$(1) $</p>
+
+<p>Assume $E $ is open $\bdry{ E } \cap E = \emptyset$. Pick a point in $E $,</p>
+
+<p>$x_0 $ need to find $r &gt; 0 $.</p>
+
+<p>$B(x_0, r) \subseteq E, x_0 \in \ite{ E } $  or  $x_0 \in \bdry{ E }$ or $x_0 \in \ext{ E } $.</p>
+
+<p>Since $\bdry{ E } \cap E  = \emptyset, x_0 \in E$  is nnot in $\bdry{  E } $.</p>
+
+<p>$x_0 \in E \implies x_0 \not \in \ext{ E }$</p>
+
+<p>$\forall r &gt; 0, B(x_0, r) contains x_0$</p>
+
+<p>so $B(x, r) \cap E \forall r $</p>
+
+<p>Thus $x_0 $ must be in $\ite{ E } $</p>
+
+<p>To show $E = \ite{ E } $ implies $E  $ is open.</p>
+
+<p>$(2)$</p>
+
+<p>suppose $E = \overline{ E } $, $\overline{ E } = E \cup \bdry{ E } $</p>
+
+<p>$\bdry{ E } \subseteq \overline{ E } = E $.</p>
+
+<p>Now suppose $E $ is closed. $\bdry{ E } \subseteq E $</p>
+
+<p>$\overline{  E } = E \subseteq E $.</p>
+
+  </div>
+</div>
+
+  </div>
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+      </div>
+    </article>
+    <aside class="navigation--side">
+      <div class="navigation--side__selector">
+        <button class="navigation--side__button navigation--side__button--active" id="navigation--side__button--section" onclick="navigationSideSwitchToSection()">subject Nav.</button>
+        <button class="navigation--side__button" id="navigation--side__button--page" onclick="navigationSideSwitchToPage()">Page Nav.</button>
+        <script>
+          function navigationSideSwitchToSection() {
+            document.getElementById("page-navigation").setAttribute("style","display: none;");
+            document.getElementById("section-navigation").setAttribute("style","display: block;");
+            document.getElementById("navigation--side__button--section").classList.add("navigation--side__button--active");
+            document.getElementById("navigation--side__button--page").classList.remove("navigation--side__button--active");
+          }
+
+          function navigationSideSwitchToPage() {
+            document.getElementById("section-navigation").setAttribute("style","display: none;");
+            document.getElementById("page-navigation").setAttribute("style","display: block;");
+            document.getElementById("navigation--side__button--section").classList.remove("navigation--side__button--active");
+            document.getElementById("navigation--side__button--page").classList.add("navigation--side__button--active");
+          }
+        </script>
+      </div>
+      <ul class="navigation--side__list" id="section-navigation">
+      
+      
+      
+        
+        
+        
+        
+      
+        
+        
+        
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">1</span>Introduction</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/1.1/"><span class="navigation--side__index">1.1</span> The Set N of Natural Numbers</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/1.2/"><span class="navigation--side__index">1.2</span> The Set Q of Rational Numbers</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/1.3/"><span class="navigation--side__index">1.3</span> The Set R of Rational Numbers</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/1.4/"><span class="navigation--side__index">1.4</span> The Completeness Axiom</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">2</span>Sequences</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/2.7/"><span class="navigation--side__index">2.7</span> Limits of Sequences</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/2.8/"><span class="navigation--side__index">2.8</span> A Discussion About Proofs</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/2.9/"><span class="navigation--side__index">2.9</span> Limit Theorems for Sequences</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/2.10/"><span class="navigation--side__index">2.10</span> Monotone Sequences and Cauchy Sequences</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/2.11/"><span class="navigation--side__index">2.11</span> Subsequences</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/2.15/"><span class="navigation--side__index">2.15</span> Alternating Series and Integral Tests</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">3</span>Continuity</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/3.17/"><span class="navigation--side__index">3.17</span> Continuous Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/3.18/"><span class="navigation--side__index">3.18</span> Properties of Continuous Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/3.19/"><span class="navigation--side__index">3.19</span> Uniform Continuity</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/3.20/"><span class="navigation--side__index">3.20</span> Limits of Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">5</span>Differentiation</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/5.28/"><span class="navigation--side__index">5.28</span> Basic Properties of the Derivative</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/5.29/"><span class="navigation--side__index">5.29</span> The Mean Value Theorem</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">8</span></li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/8.1/"><span class="navigation--side__index">8.1</span> Definitions and Examples</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item navigation--side__item--current">
+              <a href="https://jimzenn.com/analysis/8.2/"><span class="navigation--side__index">8.2</span> Some Point-Set Topology of Metric Spaces</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/8.3/"><span class="navigation--side__index">8.3</span> Relative Topology</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/8.4/"><span class="navigation--side__index">8.4</span> Cauchy Sequences and Complete Metric Spaces</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/8.5/"><span class="navigation--side__index">8.5</span> Compact Metric Spaces</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">9</span></li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/9.1/"><span class="navigation--side__index">9.1</span> Continuous Functions</a>
+            </li>
+          
+        
+      
+      </ul>
+      <ul class="navigation--side__list" id="page-navigation">
+        <script>
+          var pageNavigationListDOM = document.getElementById("page-navigation");
+          for (var i = 0; i < keywordsCollector.length; i ++) {
+            pageNavigationListDOM.appendChild(keywordsCollector[i]);
+          }
+        </script>
+      </ul>
+    </aside>
+  </main>
+
+  
+  <div class="pagination">
+    <div class="pagination-wrapper">
+      
+        
+        
+        
+          <a href="https://jimzenn.com/analysis/8.1/" class="pagination__prev">8.1 Definitions and examples</a>
+        
+      
+      
+        
+        
+        
+          <a href="https://jimzenn.com/analysis/8.3/" class="pagination__next">8.3 Relative Topology</a>
+        
+      
+    </div>
+  </div>
+  
+
+
+  <footer class="footer">
+  <div class="footer__wrapper">
+    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <ul class="footer-links">
+      <li>
+        <a href="/Jim_Zenn-CV.pdf">CV</a>
+      </li>
+      <li>
+        <a href="https://jimzenn.com/index.xml" type="application/rss+xml" target="_blank">RSS</a>
+      </li>
+      <li>
+        <a href="https://github.com/Jim-Zenn">code</a>
+      </li>
+      <li>
+        <a href="mailto:zenn@ucla.edu">email</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+
+
+    <div>
+  </body>
+
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] },
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: true, width: "container" }
+    },
+    
+  });
+</script>
+
+<script>
+  shifted = false;
+  container = document.querySelector("#container");
+  var toggle = document.querySelector("#header-menu__toggle");
+  toggle.addEventListener("click", function toggleHeader() {
+    var content = document.querySelector("#collapsable-menu");
+    var menuIcon = document.querySelector("#header__menu-icon");
+    var globalNav = document.querySelector("#header-menu");
+    var header = document.querySelector("#header");
+    this.classList.toggle("header-menu__toggle--active");
+    content.classList.toggle("header-menu--collapsable--active");
+    header.classList.toggle("header--active");
+    container.classList.toggle("container--shifted");
+    menuIcon.classList.toggle("header__menu-icon--shifted");
+    shifted = !shifted;
+    if (shifted) {
+      triggerOffset = window.pageYOffset;
+    };
+  });
+
+  window.addEventListener('scroll', function scrollCloseTrigger() {
+    if (shifted && Math.abs(window.pageYOffset - triggerOffset) > 10) {
+      toggle.click();
+    };
+  });
+
+  container.addEventListener("click", function containerClickTrigger() {
+    if (shifted) {
+      toggle.click();
+    }
+  });
+
+  var collapsableMenuLinks = document.querySelectorAll(".header-menu__list--collapsable a");
+  for (let i = 0; i < collapsableMenuLinks.length; i ++) {
+    collapsableMenuLinks[i].addEventListener("click", function(e) {
+      toggle.click();
+      return true;
+    });
+  }
+</script>
+
+<script charset="utf-8">
+  let proofExpandToggles = document.querySelectorAll(".proof__expand");
+  proofExpandToggles.forEach((node) => {
+    node.addEventListener('click', function(e) {
+      if (e.target.textContent == "[expand]") {
+        e.target.textContent = "[collapse]";
+      } else {
+        e.target.textContent = "[expand]";
+      }
+      proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
+      proofContentNode.classList.toggle("hide");
+    });
+  });
+</script>
+
+
+</html>

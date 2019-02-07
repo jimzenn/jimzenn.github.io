@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -533,7 +533,7 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>$k = 1, \lambda_1, x_1, x_1 \neq 0 , x_1$ is linearly independent.</p>
@@ -614,7 +614,7 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>$\lambda_1 \neq \lambda_2 \neq &hellip; \neq \lambda_k$ eigenvalues</p>
@@ -858,7 +858,7 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>$0 \neq v \in E_ \lambda \implies \dim E_ \lambda \geq 1 $.</p>
@@ -943,7 +943,7 @@ $$v_1 = v_2 =  &hellip; = v_k = 0 $$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>By contradiction, assume that there is at least one $v_i$ say $v_{i_1} \neq 0 , i \in \set{ 1, 2, &hellip;, k }$,</p>
@@ -995,7 +995,7 @@ $$v_1 = v_2 =  &hellip; = v_k = 0 $$</p>
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>Let $\dim E_{ \lambda _ i  } = n_i , i - 1, 2, &hellip;, k$</p>
@@ -1080,7 +1080,7 @@ since $S_i = \set{ v_{i_1}, v_{i_2}, &hellip;, v_{in_i}} $ is linearly independe
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>$T $ is diagonalizable $\iff \exists$  a basis $\beta $ consisting of eigenvectors of $T $.</p>
@@ -1635,14 +1635,14 @@ We show that $A $ is diagonalizable and find a $2 \times 2 $ matrix $Q $ s.t. $\
         
         
         
-          <a href="https://jimzenn.com/linear-algebra/6.1/" class="pagination__prev">6.1 Inner Products and Norms</a>
+          <a href="https://jimzenn.com/linear-algebra/5.1/" class="pagination__prev">5.1 Eigenvalues and Eigenvectors</a>
         
       
       
         
         
         
-          <a href="https://jimzenn.com/linear-algebra/5.1/" class="pagination__next">5.1 Eigenvalues and Eigenvectors</a>
+          <a href="https://jimzenn.com/linear-algebra/6.1/" class="pagination__next">6.1 Inner Products and Norms</a>
         
       
     </div>
@@ -1652,7 +1652,7 @@ We show that $A $ is diagonalizable and find a $2 \times 2 $ matrix $Q $ s.t. $\
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2018 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/Jim_Zenn-CV.pdf">CV</a>
@@ -1739,10 +1739,10 @@ We show that $A $ is diagonalizable and find a $2 \times 2 $ matrix $Q $ s.t. $\
   let proofExpandToggles = document.querySelectorAll(".proof__expand");
   proofExpandToggles.forEach((node) => {
     node.addEventListener('click', function(e) {
-      if (e.target.textContent == "expand") {
-        e.target.textContent = "collapse";
+      if (e.target.textContent == "[expand]") {
+        e.target.textContent = "[collapse]";
       } else {
-        e.target.textContent = "expand";
+        e.target.textContent = "[expand]";
       }
       proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
       proofContentNode.classList.toggle("hide");

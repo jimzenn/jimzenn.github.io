@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -233,7 +233,7 @@ if (!doNotTrack) {
     $\newcommand{\spa}[1]{\text{span}(#1)}$
     $\newcommand{\dist}[1]{\text{dist}(#1)}$
     $\newcommand{\max}[1]{\text{max}(#1)}$
-    $\newcommand{\min}[1]{\text{max}(#1)}$
+    $\newcommand{\min}[1]{\text{min}(#1)}$
     $\newcommand{\supr}[1]{\text{sup}(#1)}$
     $\newcommand{\infi}[1]{\text{inf}(#1)}$
     $\newcommand{\set}[1]{\{#1\}}$
@@ -724,14 +724,14 @@ dot{ N } &amp;= rN (1 - \frac{ N }{ k }) \br
         
         
         
-          <a href="https://jimzenn.com/dynamics/1.1/" class="pagination__prev">1.1 Introduction to Dynamic Systems</a>
+          <a href="https://jimzenn.com/dynamics/2.4/" class="pagination__prev">2.4 Linear Stability Analysis</a>
         
       
       
         
         
         
-          <a href="https://jimzenn.com/dynamics/2.4/" class="pagination__next">2.4 Linear Stability Analysis</a>
+          <a href="https://jimzenn.com/dynamics/1.1/" class="pagination__next">1.1 Introduction to Dynamic Systems</a>
         
       
     </div>
@@ -741,7 +741,7 @@ dot{ N } &amp;= rN (1 - \frac{ N }{ k }) \br
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2018 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/Jim_Zenn-CV.pdf">CV</a>
@@ -828,10 +828,10 @@ dot{ N } &amp;= rN (1 - \frac{ N }{ k }) \br
   let proofExpandToggles = document.querySelectorAll(".proof__expand");
   proofExpandToggles.forEach((node) => {
     node.addEventListener('click', function(e) {
-      if (e.target.textContent == "expand") {
-        e.target.textContent = "collapse";
+      if (e.target.textContent == "[expand]") {
+        e.target.textContent = "[collapse]";
       } else {
-        e.target.textContent = "expand";
+        e.target.textContent = "[expand]";
       }
       proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
       proofContentNode.classList.toggle("hide");

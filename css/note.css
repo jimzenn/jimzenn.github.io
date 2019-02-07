@@ -75,6 +75,7 @@
 }
 
 .article__content .block--status .block__title {
+  user-select: none;
   margin-left: 10px;
 }
 
@@ -190,6 +191,7 @@
 }
 
 .article__content .block__title {
+  user-select: none;
   font-weight: 600;
 }
 
@@ -216,6 +218,7 @@
 }
 
 .article__content .block__footer {
+  user-select: none;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;

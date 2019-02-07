@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.53" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -157,7 +157,7 @@ if (!doNotTrack) {
         
           
               <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/blog/ucla-applied-math-infosheet/">UCLA Applied Mathematics Infosheet</a></h1>
+    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/blog/_backup/ucla-applied-math-infosheet/">UCLA Applied Mathematics Infosheet</a></h1>
     <p class="article__meta">
   <span>
     
@@ -175,7 +175,7 @@ if (!doNotTrack) {
 
 <p>If you notice any error in this page, please contact me and let me know.</p>
     </div>
-    <p><a class="article__more" href="https://jimzenn.com/blog/ucla-applied-math-infosheet/"> Read the article</a></p>
+    <p><a class="article__more" href="https://jimzenn.com/blog/_backup/ucla-applied-math-infosheet/"> Read the article</a></p>
   </article>
 
           
@@ -277,10 +277,10 @@ if (!doNotTrack) {
   let proofExpandToggles = document.querySelectorAll(".proof__expand");
   proofExpandToggles.forEach((node) => {
     node.addEventListener('click', function(e) {
-      if (e.target.textContent == "expand") {
-        e.target.textContent = "collapse";
+      if (e.target.textContent == "[expand]") {
+        e.target.textContent = "[collapse]";
       } else {
-        e.target.textContent = "expand";
+        e.target.textContent = "[expand]";
       }
       proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
       proofContentNode.classList.toggle("hide");

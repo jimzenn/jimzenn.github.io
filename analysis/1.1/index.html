@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -431,7 +431,7 @@ if (!doNotTrack) {
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>Let $A$ be a non-empty subset of $\N $. Want to know that $A $ has a minimal element, that is, there is an element $a \in A $ such that $a \leq n $ for all $n \in A $. We will do this by strong induction on the following predicate:</p>
@@ -529,7 +529,7 @@ if (!doNotTrack) {
         
       </span>
     </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+    <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
     <p>Let $X$ be a subset of $\N$,</p>
@@ -1146,6 +1146,130 @@ if (!doNotTrack) {
           
         
       
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">8</span></li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/8.1/"><span class="navigation--side__index">8.1</span> Definitions and Examples</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/8.2/"><span class="navigation--side__index">8.2</span> Some Point-Set Topology of Metric Spaces</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/8.3/"><span class="navigation--side__index">8.3</span> Relative Topology</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/8.4/"><span class="navigation--side__index">8.4</span> Cauchy Sequences and Complete Metric Spaces</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/8.5/"><span class="navigation--side__index">8.5</span> Compact Metric Spaces</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">9</span></li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/9.1/"><span class="navigation--side__index">9.1</span> Continuous Functions</a>
+            </li>
+          
+        
+      
       </ul>
       <ul class="navigation--side__list" id="page-navigation">
         <script>
@@ -1162,12 +1286,12 @@ if (!doNotTrack) {
   <div class="pagination">
     <div class="pagination-wrapper">
       
-        
-        
-        
-          <a href="https://jimzenn.com/analysis/1.2/" class="pagination__prev">1.2 The set Q of Rational Numbers</a>
-        
       
+        
+        
+        
+          <a href="https://jimzenn.com/analysis/1.2/" class="pagination__next">1.2 The set Q of Rational Numbers</a>
+        
       
     </div>
   </div>
@@ -1176,7 +1300,7 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2018 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/Jim_Zenn-CV.pdf">CV</a>
@@ -1263,10 +1387,10 @@ if (!doNotTrack) {
   let proofExpandToggles = document.querySelectorAll(".proof__expand");
   proofExpandToggles.forEach((node) => {
     node.addEventListener('click', function(e) {
-      if (e.target.textContent == "expand") {
-        e.target.textContent = "collapse";
+      if (e.target.textContent == "[expand]") {
+        e.target.textContent = "[collapse]";
       } else {
-        e.target.textContent = "expand";
+        e.target.textContent = "[expand]";
       }
       proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
       proofContentNode.classList.toggle("hide");

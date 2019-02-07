@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.52" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -151,29 +151,6 @@ if (!doNotTrack) {
       
         
           <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/blog/grandmothers-tomb/">Grandmother&#39;s Tomb</a></h1>
-    <p class="article__meta">
-  <span>
-    
-    <a href="/volumes/journey" class="article__volume-link">Vol. Journey</a>
-    <small>∙</small>
-    June 2018
-  </span>
-  
-</p>
-
-    <div class="article__summary">
-      <p>I am not trying to accuse anyone. Here, I only want to talk about my memories of her.</p>
-
-<p>I am a firm materialist. Because of this, I always thought tombs unnecessary, since one&rsquo;s spirit is unlikely to exist after their decease. The dead need no places to rest. Death is void and eternal.</p>
-    </div>
-    <p><a class="article__more" href="https://jimzenn.com/blog/grandmothers-tomb/"> Read the article</a></p>
-  </article>
-
-        
-      
-        
-          <article class="article article--list-item">
     <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/blog/shanghai-once-again/">Shanghai Once Again</a></h1>
     <p class="article__meta">
   <span>
@@ -190,31 +167,6 @@ if (!doNotTrack) {
 Now I am back, to my real home, where my family is, where I grew up, where I spent 18 years of my life.
     </div>
     <p><a class="article__more" href="https://jimzenn.com/blog/shanghai-once-again/"> Read the article</a></p>
-  </article>
-
-        
-      
-        
-          <article class="article article--list-item">
-    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/blog/ucla-applied-math-infosheet/">UCLA Applied Mathematics Infosheet</a></h1>
-    <p class="article__meta">
-  <span>
-    
-    <a href="/volumes/notes" class="article__volume-link">Vol. Notes</a>
-    <small>∙</small>
-    May 2018
-  </span>
-  
-</p>
-
-    <div class="article__summary">
-      <p>This page is a catch-all infosheet for UCLA applied math students like me. This page collected the requirements for students to declare the major and to graduate. It also has information on optional challenges, specifically: <em>specialization in computing</em>, <em>statistics minor</em>, and <em>department honor program</em>.</p>
-
-<p>Because there are simply too much information, I am not able to list all the sources from which I collected these information, but all infomation in this article does come from UCLA&rsquo;s official websites. Still, there can be things that I accidentally left out or mistaken. You can use this as a reference, but do not rely solely on this page.</p>
-
-<p>If you notice any error in this page, please contact me and let me know.</p>
-    </div>
-    <p><a class="article__more" href="https://jimzenn.com/blog/ucla-applied-math-infosheet/"> Read the article</a></p>
   </article>
 
         
@@ -247,7 +199,7 @@ Now I am back, to my real home, where my family is, where I grew up, where I spe
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2018 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/Jim_Zenn-CV.pdf">CV</a>
@@ -334,10 +286,10 @@ Now I am back, to my real home, where my family is, where I grew up, where I spe
   let proofExpandToggles = document.querySelectorAll(".proof__expand");
   proofExpandToggles.forEach((node) => {
     node.addEventListener('click', function(e) {
-      if (e.target.textContent == "expand") {
-        e.target.textContent = "collapse";
+      if (e.target.textContent == "[expand]") {
+        e.target.textContent = "[collapse]";
       } else {
-        e.target.textContent = "expand";
+        e.target.textContent = "[expand]";
       }
       proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
       proofContentNode.classList.toggle("hide");
