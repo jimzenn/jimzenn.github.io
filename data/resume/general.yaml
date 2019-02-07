@@ -9,26 +9,46 @@
     to: 2020
     toAbbr: 2020
     descriptions:
-      - Probability Theory, Advanced Linear Algebra, Analysis, Optimization (<i>in progress</i>), Data Mining (<i>in progress</i>).
+      - Optimization, Data Mining, Probability Theory, Advanced Linear Algebra, Mathematical & Numerical Analysis.
   -
     college: University of California, Berkeley
     collegeAbbr: UC Berkeley
-    major: <span note="I enrolled in UC Berkeley's classes as a Berkeley City College student.">Cross Enrollment</span> (GPA 3.850)
+    major: Cross Enrollment</span> (GPA 3.850)
     from: Jan 2017
     fromAbbr: 01/17
     to: Aug 2017
     toAbbr: 08/17
     descriptions:
-      - Structure and Interpretation of Computer Programs, <span note="Upon the completion of this class, I worked as a lab assistant for this class for a semster, this experience really solidified my data structure knowledge and my Java skills.">Data Structures</span>, <span note="I audited this class and tutored two UC Berkeley students throughout this class, both of which got A's. I actually learned this class very well."> Computational Models of Cognition</span>.
-  # -
-  #   college: Harbin Institute of Technology
-  #   major: <span note="I transferred out after my sophomore year and did not complete the degree. However what I learned in this third best CS school in China paved my way forward.">Computer Science</span>
-  #   from: Sep 2013
-  #   fromAbbr: 09/13
-  #   to: Aug 2015
-  #   toAbbr: 08/15
-  #   descriptions:
-  #     - Algorithms, Probability Theory, Assembly Language, Set Theory, Graph Theory, Computer Architecture.
+      - Structure and Interpretation of Computer Programs, Data Structures, Computational Models of Cognition.
+  -
+    college: Carnegie Mellon University
+    major: Online lectures
+    from: Jan 2018
+    fromAbbr: 01/18
+    to: Aug 2018
+    toAbbr: 08/18
+    descriptions:
+      - Distributed System, Parrellel Computing.
+
+"Skills":
+  -
+    key: "Data Mining & Machine Learning"
+    value: knows when and how to apply what algorithm or model, and why the algorithm works.
+  -
+    key: "Parallel computing"
+    value: knows how to use ISPC and CUDA to optimize programs in different parallel settings.
+  -
+    key: "Data Structure & Algorithm"
+    value: solid data structure and algorithm understanding with mathematical insight.
+  -
+    key: "Programming Languages"
+    value: <span class="prof-1">C++</span> <span class="prof-1">Java</span> <span class="prof-1">Python</span> <span class="prof-1">Typescript</span> <span class="prof-2">Javascript</span> <span class="prof-2">Go</span> <span class="prof-2">Kotlin</span> <span class="prof-2">C</span> <span class="prof-1">HTML & CSS</span> <span class="prof-3">SQL</span>.
+  -
+    key: "Design and Prototyping Tools"
+    value: <span class="prof-1">Sketch</span> <span class="prof-2">Photoshop</span> <span class="prof-2">After Effects</span> <span class="prof-2">Indesign</span> <span class="prof-3">Principle</span> <span class="prof-3">Processing</span>.
+  -
+    key: "Frameworks & Tools"
+    value: <span class="prof-2">CUDA</span> <span class="prof-2">ISPC</span> <span class="prof-1">Angular</span> <span class="prof-1">Git</span> <span class="prof-1">Unix</span> <span class="prof-1">Express</span> <span class="prof-1">Django</span> <span class="prof-1">Gulp</span> <span class="prof-2">Vue</span> <span class="prof-3">React</span> <span class="prof-1">Hexo</span> <span class="prof-1">Hugo</span>.
 
 "Work Experiences":
   -
@@ -40,12 +60,11 @@
     toAbbr: Now
     location: Sunnyvale, CA
     descriptions:
-      - Co-organized the conference since 2017, which have 1,400 attendees each year.
-      - Built and maintains a responsive and search-engine-optimized website <a href='https://aifrontiers.com/'>[link]</a> with over 4,000 users.
       - manages, tracks and quantifies digital marketing such that cost stays low while conversion stays high.
       - Utilizes Google Cloud Functions to enable a serverless website which had zero server error and zero down time.
+      - Built and maintains a responsive and search-engine-optimized website with over 4,000 users.
   -
-    employer: <span note="Teambition is a collaboration tool that facilitates teamwork.">Teambition</span>
+    employer: Teambition
     title: Front-end Developer Intern [Javascript]
     from: Sep 2015
     fromAbbr: 09/15
@@ -76,8 +95,8 @@
     location: Harbin, China
     descriptions:
       - Drafted the design guideline for Harbin Institute of Technology Model United Nations and other major events.
-      - Designed for Harbin Institute of Technology's Model United Nations Conference and managed the production of all materials.
-      - Coordinated the design of Harbin Institute of Technology's 2015 yearbook <a href="/portfolio/HITAnnualReport2015.pdf">[View]</a> which was distributed internationally.
+      - Managed Harbin Institute of Technology's Model United Nations's design and production.
+      - Coordinated the design of Harbin Institute of Technology's 2015 yearbook which was distributed internationally.
       - Co-organized the first <i>Global Innovators' Forum of Technology and Society</i> with 140 attendees.
 "Projects":
   -
@@ -86,40 +105,19 @@
     skills: ["Go", "Python", "JavaScript"]
     descriptions:
       - Designed a delivery system that utilizes existing traffic to delivery packages with maximized efficiency.
-      - Used Hungarian algorithm and local clustering to match deliveries with deliverers which minimize the total cost.
+      - Designed algorithms to match deliveries with deliverers which minimize the total cost.
       - Wrote a Go server which used channels and goroutines to handle potential mutex in communications among clients.
       - Wrote a Python server with a visualization of the simulation and routes using Google Maps API and Google Firebase.
   -
-    name: Math Notes <a href="/math-115a/2.3/">[Link]</a>
+    name: Math Notes
     year: 2018
     skills: ["HTML5", "CSS3", "Javascript"]
     descriptions:
       - Built and designed a website that displays LaTeX notes with clear legible layout optimized for both desktop and mobile.
       - Designed efficient navigation through all the notes with anotations and collapsable proofs and solutions.
-  -
-    name: Reedly <a href="/portfolio/Reedly-showcase.pdf">[Link]</a>
-    year: 2017
-    skills: ["Sketch", "Photoshop"]
-    descriptions:
-      - Built A prototype for an elegant Android RSS reader, designed for both mobile and tablet use cases.
-      - Followed the material design guideline with careful consideration for both usability and customizability.
-"Skills":
-  -
-    key: "Parallel computing"
-    value: knows how to use ISPC and CUDA to optimize programs in different parallel settings.
-  -
-    key: "Data Structure & Algorithm"
-    value: solid data structure and algorithm understanding with mathematical insight.
-  -
-    key: "Programming Languages"
-    value: <span class="prof-1">Java</span> <span class="prof-1">Python</span> <span class="prof-1">Typescript</span> <span class="prof-1">Javascript</span> <span class="prof-1">Go</span> <span class="prof-2">Kotlin</span> <span class="prof-2">C</span> <span class="prof-3">C++</span> <span class="prof-1">HTML & CSS</span> <span class="prof-3">SQL</span>.
-  -
-    key: "Design and Prototyping Tools"
-    value: <span class="prof-1">Sketch</span> <span class="prof-2">Photoshop</span> <span class="prof-2">After Effects</span> <span class="prof-2">Indesign</span> <span class="prof-3">Principle</span> <span class="prof-3">Processing</span>.
-  -
-    key: "Frameworks & Tools"
-    value: <span class="prof-2">CUDA</span> <span class="prof-2">ISPC</span> <span class="prof-1">Angular</span> <span class="prof-1">Git</span> <span class="prof-1">Unix</span> <span class="prof-1">Express</span> <span class="prof-1">Django</span> <span class="prof-1">Gulp</span> <span class="prof-2">Vue</span> <span class="prof-3">React</span> <span class="prof-1">Hexo</span> <span class="prof-1">Hugo</span>.
-  -
-    key: "Interests"
-    value: "Podcasts: <i>Recode Decode</i>, <i>Y Combinator's</i>, <i>Google Methods</i>. Cooking. Photography. Communistic shared living."
-
+"Interests":
+  - "Cooking,"
+  - "Guitar,"
+  - "Photography,"
+  - "Communistic shared living,"
+  - "Podcasts: <i>Recode Decode</i>, <i>Y Combinator's</i>, <i>Google Methods</i>."
