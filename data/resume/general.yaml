@@ -42,13 +42,13 @@
     value: solid data structure and algorithm understanding with mathematical insight.
   -
     key: "Programming Languages"
-    value: <span class="prof-1">C++</span> <span class="prof-1">Java</span> <span class="prof-1">Python</span> <span class="prof-1">Typescript</span> <span class="prof-2">Javascript</span> <span class="prof-2">Go</span> <span class="prof-2">Kotlin</span> <span class="prof-2">C</span> <span class="prof-1">HTML & CSS</span> <span class="prof-3">SQL</span>.
+    value: <span class="prof-1">C++</span> <span class="prof-1">Java</span> <span class="prof-1">Python</span> <span class="prof-1">Typescript</span> <span class="prof-2">Javascript</span> <span class="prof-2">Go</span> <span class="prof-2">Kotlin</span> <span class="prof-2">C</span> <span class="prof-1">HTML & CSS</span> <span class="prof-2">SQL</span>.
   -
     key: "Design and Prototyping Tools"
     value: <span class="prof-1">Sketch</span> <span class="prof-2">Photoshop</span> <span class="prof-2">After Effects</span> <span class="prof-2">Indesign</span> <span class="prof-3">Principle</span> <span class="prof-3">Processing</span>.
   -
     key: "Frameworks & Tools"
-    value: <span class="prof-2">CUDA</span> <span class="prof-2">ISPC</span> <span class="prof-1">Angular</span> <span class="prof-1">Git</span> <span class="prof-1">Unix</span> <span class="prof-1">Express</span> <span class="prof-1">Django</span> <span class="prof-1">Gulp</span> <span class="prof-2">Vue</span> <span class="prof-3">React</span> <span class="prof-1">Hexo</span> <span class="prof-1">Hugo</span>.
+    value: <span class="prof-2">CUDA</span> <span class="prof-2">ISPC</span> <span class="prof-1">Angular</span> <span class="prof-2">SKLearn</span> <span class="prof-2">Tensorflow</span> <span class="prof-1">Git</span> <span class="prof-1">Unix</span> <span class="prof-1">Django</span> <span class="prof-1">Gulp</span> <span class="prof-3">React</span>.
 
 "Work Experiences":
   -
@@ -60,8 +60,8 @@
     toAbbr: Now
     location: Sunnyvale, CA
     descriptions:
-      - manages, tracks and quantifies digital marketing such that cost stays low while conversion stays high.
-      - Utilizes Google Cloud Functions to enable a serverless website which had zero server error and zero down time.
+      - Managed, tracks and quantifies digital marketing such that cost stays low while conversion stays high.
+      - Utilized Google Cloud Functions to enable a serverless website which had zero server error and zero down time.
       - Built and maintains a responsive and search-engine-optimized website with over 4,000 users.
   -
     employer: Teambition
@@ -97,7 +97,7 @@
       - Drafted the design guideline for Harbin Institute of Technology Model United Nations and other major events.
       - Managed Harbin Institute of Technology's Model United Nations's design and production.
       - Coordinated the design of Harbin Institute of Technology's 2015 yearbook which was distributed internationally.
-      - Co-organized the first <i>Global Innovators' Forum of Technology and Society</i> with 140 attendees.
+      - Co-organized the first <i>Global Innovators' Forum of Technology and Society</i> which attracted attendees.
 "Projects":
   -
     name: Drift - Delivery Along the Way

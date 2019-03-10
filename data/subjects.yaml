@@ -168,6 +168,12 @@
     - "Differentiation"
     - "Integration"
     - "Capstone"
+    - "Metric Spaces"
+    - "Continuous functions on metric spaces"
+    - "Uniform convergence"
+    - "Power series"
+    - "fourier series"
+    - "Several variable differential calculus"
   navigation:
     -
       name: "Syllabus"
