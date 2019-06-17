@@ -106,6 +106,15 @@ weight: 1000
   {{< /raw >}}
 </div>
 
+## 1
+
+Let $x\_0 \in \overline{ E }, y\_0 = f(x\_0)$.
+
+Since $x\_0 \in E, \exists (x^{(n)})^\infty\_{ n =1}, x\_n \to x\_0$.
+
+Since $f$ is continuous, $x\_n \to x\_0 $ implies that $f(x\_n) = f(x\_0) $.
+
+Since $f(x\_n) \in f(E), \forall n, f(x\_0) \in \overline{ f(E)} $
 
 {{% definition name="inner product space" status="" %}}
 
@@ -227,45 +236,30 @@ if $f $ is analytic find $c\_n $
 
 {{% example name="" %}}
 
-$d(a, b) > 0, X$ connected
-
-show $\forall r \in [ 0, d(a, b) ] $
-
-$d(a, x\_r) = r $
+$X$ connected.
+show $\forall, a, b,d(a, b) > 0,  r \in [ 0, d(a, b) ], \exists x\_r, d(a, x\_r) = r $
 
 {{% proof index="" method="" %}}
 
-$B(a, r) = u$ open set $u \neq \emptyset $
+Choose $U = \set{y \in X : d(a, y) < r} = B(a, r)$ open set $U \neq \emptyset$.
 
-$V = \set{ y \in X : d(a, y) > r } \neq \emptyset$ 
+Choose $V = \set{y \in X : d(a, y) > r} \neq \emptyset, V$ contains $b$.
 
-$V$ contains $b $
+Either $V \cup U = X$ or $V \cup U \neq X $.
 
-$V = X \setminus \set{ y \in X : d(0, y) \leq r } $
+$U, V$ open disjoint non-empty, contradicts that $X$ is connected.
 
-$V$ open
+Thus $\exists x\_r \not \in U, x\_r \not \in V$.
 
-So either
+$d(a, x\_r) \geq r$ and $d(a, x\_r) \leq r$.
 
-$V \cup U = X$ or $V \cup U \neq X $
+Then $d(a, x\_r) = r$
 
-open disjoint non-empty
-
-X is connected
-
-$V \cup V = X$ is impossible.
-
-Thus $\exists x\_n $ not in $u $ and not in $V $
-
-$d(a, x\_r) \geq r $ and $d(a, x\_r) \leq r $
-
-$d(a, x\_r) = r (0 < r < d(a, b))$
+{{% /proof %}}
 
 $s(a, r) = u $ open set $u \neq \emptyset $
 
 $V = \set{ y \in X: d(a, y) > r } \neq \emptyset $
-
-{{% /proof %}}
 
 New question: Can you show $B(a,r) $ is open?
 
