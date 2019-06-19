@@ -248,6 +248,20 @@
     padding-top: 0;
   }
 
+
+  .content--resume .item__heading {
+    position: relative;
+    flex-flow: column nowrap;
+  }
+
+  .content--resume .item__heading .item__field:last-child {
+    position: absolute;
+    display: inline-block;
+    max-width: 50%;
+    right: 0;
+  }
+
+
   .footer {
     font-size: 11px;
     flex-direction: column-reverse;
