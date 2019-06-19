@@ -4,14 +4,6 @@
   padding-bottom: 120px;
 }
 
-.article__content h1:first-of-type {
-  display: inline-block;
-  padding-bottom: 6px;
-  margin-bottom: 56px;
-  border-bottom: 3px #ff2600 solid;
-}
-
-
 .article__content p:not(:first-of-type) {
   text-indent: -5.75ch;
   margin-left: 6ch;
