@@ -3,27 +3,21 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.54.0" />
-
+<meta name="generator" content="Hugo 0.55.6" />
 
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
-<title>Markov and Chebyshev Inequalities - Jim Zenn</title>
-<meta property="og:title" content="Markov and Chebyshev Inequalities - Jim Zenn">
-
-
-
+  <title>Markov and Chevyshev Inequalities - Jim Zenn</title>
+  <meta property="og:title" content="Markov and Chevyshev Inequalities - Jim Zenn">
   
 
 
 
 
-
-
 <script
-  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
   crossorigin="anonymous"></script>
 
 
@@ -39,17 +33,17 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3">
   </head>
 
   <body class="note wide" >
@@ -69,6 +63,10 @@ if (!doNotTrack) {
         
           
             <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
@@ -93,7 +91,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -104,6 +102,10 @@ if (!doNotTrack) {
     
       
     <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
@@ -128,7 +130,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -138,11 +140,9 @@ if (!doNotTrack) {
     <div class="container" id="container">
       
         <div class="container-tag">
-          
-          <b class="container-title">
-            Notes
-          </b>
-          
+        
+          <b class="container-title">Notes</b>
+        
         </div>
       
       
@@ -160,7 +160,7 @@ if (!doNotTrack) {
   <div class="navigation__wrapper" id="navigation__toggle">
     <div class="navigation__left">
       <span class="navigation__sup-title" style="color: #10AD2C">Probability Theory, Section 5.1</span>
-      <span class="navigation__title">Markov and Chebyshev Inequalities</span>
+      <span class="navigation__title">Markov and Chevyshev Inequalities</span>
     </div>
     <div class="navigation__right">
       <ul class="navigation__list">
@@ -232,9 +232,9 @@ if (!doNotTrack) {
     $\newcommand{\spa}[1]{\text{span}(#1)}$
     $\newcommand{\dist}[1]{\text{dist}(#1)}$
     $\newcommand{\max}[1]{\text{max}(#1)}$
-    $\newcommand{\min}[1]{\text{max}(#1)}$
-    $\newcommand{\supr}[1]{\text{sup}(#1)}$
-    $\newcommand{\infi}[1]{\text{inf}(#1)}$
+    $\newcommand{\min}[1]{\text{min}(#1)}$
+    $\newcommand{\supr}[0]{\text{sup}}$
+    $\newcommand{\infi}[0]{\text{inf}}$
     $\newcommand{\ite}[1]{\text{int}(#1)}$
     $\newcommand{\ext}[1]{\text{ext}(#1)}$
     $\newcommand{\bdry}[1]{\partial #1}$
@@ -257,6 +257,7 @@ if (!doNotTrack) {
     $\newcommand{\tail}{\text T}$
     $\newcommand{\d}{\text d}$
     $\newcommand{\limu}[2]{\underset{#1 \to #2}\lim}$
+    $\newcommand{\limd}[3]{\underset{#1 \to #2; #3}\lim}$
     $\newcommand{\der}[2]{\frac{\d #1}{\d #2}}$
     $\newcommand{\derw}[2]{\frac{\d #1^2}{\d^2 #2}}$
     $\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}$
@@ -311,14 +312,25 @@ if (!doNotTrack) {
     $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$
     $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$
   
+
 </div>
+
+<p>We derive some important inequalities in this section, which use the mean and
+sometimes the variance of a random variable to draw conclusions on the probabilities of certain events.</p>
+
+<p>They are primarily useful in situations where <strong>exact values or bounds for the mean and variance of a random variable $X $ are easily computable, but the distribution of $X $ is either unavailable or hard to calculate.</strong> Essentially, they provide us
+with a range approximation of the probability.</p>
+
 
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="markovs-inequality">Markov&#39;s Inequality</span></span>
   <div class="block__content block__content--blue">
-    <p>If a random variable can only take nonnegative values, then</p>
+    <p><strong>Markov inequality</strong> asserts that if a <strong>nonnegative</strong> random variable has a
+small mean, then the probability that it takes a large value must also be small.</p>
 
-<p>$$P(X \geq a) \leq \frac{ E [ X ] }{ a }, \forall a &gt; 0$$</p>
+<p>If a random variable $X $ can only take nonnegative values, then</p>
+
+<p>$$P(X \geq a) \leq \frac{ E [X] }{ a }, \forall a &gt; 0$$</p>
 
 <div class="proof">
   <div class="proof__heading">
@@ -330,7 +342,7 @@ if (!doNotTrack) {
     <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
-    <p>Fix a positive number $a $ and consider the random variable $Y_a $ defined by</p>
+    <p>Fix a positive number $a$ and consider the random variable $Y_a$ defined by</p>
 
 <p>$$Y_a = \begin{cases}
 0 &amp;,\text{ if }X &lt; a \br
@@ -343,11 +355,17 @@ a &amp;,\text{ if }X \geq a
 
 <p>always holds and therefore,</p>
 
-<p>$$E [ Y_a ] \leq E [ X ] $$</p>
+<p>$$E[Y_a] \leq E [ X ]$$.</p>
 
-<p>On the other hand,</p>
+<p>Notice the fact that by definition</p>
 
-<p>$$E [ Y_a ] = aP(Y_a = a) = a P(X \geq a)$$</p>
+<p>$P(Y_a = 0) = P(X &lt; a)$</p>
+
+<p>$P(Y_a = a) = P(X \geq a)$</p>
+
+<p>Therefore,</p>
+
+<p>$$E [ Y_a ] = 0P(Y_a = 0) + aP(Y_a = a) = aP(Y_a = a) = a P(X \geq a)$$</p>
 
 <p>from which we obtain</p>
 
@@ -388,18 +406,19 @@ a &amp;,\text{ if }X \geq a
     </script></div>
 
 
+
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   </span>
 
 
   <div class="block__content block__content--green">
-  <p>Let $X$ be a random variable. Then</p>
+  <p>Let $X$ be a random variable. Then $\forall a &gt; 0$</p>
 
-<ol>
-<li>$P(\abs{ X } \geq a) \leq \frac{ E [ \abs{ X } ] }{ a }, \forall a &gt; 0$</li>
-<li>$P(\abs{ X } \geq a) \leq \frac{ E [ \abs{ X }^n ] }{ a^n }, \forall a &gt; 0$</li>
-</ol>
+<p>$$\begin{align*}
+P(\abs{ X } \geq a) &amp;\leq \frac{ E [ \abs{ X } ] }{ a } \br
+P(\abs{ X } \geq a) &amp;\leq \frac{ E [ \abs{ X }^n ] }{ a^n }
+\end{align*}$$</p>
 
 <div class="proof">
   <div class="proof__heading">
@@ -412,9 +431,12 @@ a &amp;,\text{ if }X \geq a
   </div>
   <div class="proof__content hide">
     <ol>
-<li>Markov</li>
-<li>$X = \abs{ X }^n, a = a^n $. Markov implies that $P(\abs{ X } \geq a) = P(\abs{ X }^n \geq a^n) \leq \frac{ E [ \abs{ X }^n ] }{ a^n }$</li>
+<li><p>follows directly from Markov&rsquo;s inequality on the random variable $\abs{X}$.</p></li>
+
+<li><p>Let $X = \abs{ X }^n, a = a^n $. Markov implies that</p></li>
 </ol>
+
+<p>$$P(\abs{ X } \geq a) = P(\abs{ X }^n \geq a^n) \leq \frac{ E [ \abs{ X }^n ] }{ a^n }$$</p>
 
   </div>
 </div>
@@ -431,12 +453,13 @@ a &amp;,\text{ if }X \geq a
   </ul></div>
 
 
+
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="chebyshev-inequality">Chebyshev Inequality</span></span>
   <div class="block__content block__content--blue">
-    <p>If $X $ is a random variable with mean $\mu $ and variance $\sigma^2 $, then</p>
+    <p>If $X$ is a random variable with mean $\mu$ and variance $\sigma^2$, then</p>
 
-<p>$$P(\abs{ X - \mu } \geq c) \leq \frac{ \sigma^2 }{ c^2 } \forall c &gt; 0 $$</p>
+<p>$$\forall c &gt; 0, P(\abs{ X - \mu } \geq c) \leq \frac{ \sigma^2 }{ c^2 }$$</p>
 
 <div class="proof">
   <div class="proof__heading">
@@ -448,9 +471,9 @@ a &amp;,\text{ if }X \geq a
     <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
-    <p>Set $Y = X - E[X]$, let $n = 2$, using Markov inequality corollary 2.</p>
+    <p>Set $Y = X - \mu$, let $n = 2$, using Markov inequality corollary 2.</p>
 
-<p>$$P(\abs{ X - E [ X ] } \geq t) \leq \frac{ E [ (X - E [ X ])^2 ] }{ t^2 } $$</p>
+<p>$$P(\abs{ X - E [ X ] } \geq c) \leq \frac{E[(X-E[X])^2]}{c^2}$$</p>
 
   </div>
 </div>
@@ -487,15 +510,31 @@ a &amp;,\text{ if }X \geq a
     </script></div>
 
 
+
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   </span>
 
 
   <div class="block__content block__content--green">
-  <p>$\forall s &gt; 0, P(\abs{ X - E [ X ] }) \geq s \sqrt[  ]{ var(X)} \leq \frac{ 1 }{ s^2 }$</p>
+  <p>If $X$ is a random variable with mean $\mu$ and variance $\sigma^2$, then</p>
 
-<p>set $t = s \sqrt[  ]{ var(x)} $ in Chebyshev $P(X - E [ X ]) \geq s \sqrt[  ]{ \var{ X }} \leq \frac{ \var{ X }}{ s^2 \var{ X }} = \frac{ 1 }{ s^2 }$</p>
+<p>$$\forall s&gt;0, P(\abs{X- \mu} \geq s \sigma) \leq \frac{1}{s^2}$$</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand"><a>[expand]</a></span>
+  </div>
+  <div class="proof__content hide">
+    <p>set $c = s \sigma $ in Chebyshev inequality.</p>
+
+  </div>
+</div>
 
   </div>
 
@@ -509,18 +548,190 @@ a &amp;,\text{ if }X \geq a
   </ul></div>
 
 
+
+<div class="block block--yellow "> <span class="block__title block__title--yellow">Note
+  </span>
+  <div class="block__content block__content--yellow">
+    <p>The Chebyshev inequality tends to be more powerful than the Markov inequality,
+since it provides more accurate bounds using the information on the variance of
+$X$.</p>
+
+<p>Still, the mean and the variance of a random variable are only a rough summary
+of its properties, and we cannot expect the bounds to be closed aproximations
+of the exact probabilities.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul></div>
+
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example: Uninformative Chebyshev Bounds
+    
+  </span>
+  <div class="block__content block__content--gray">
+    <p>Let $X$ be uniformly distributed in $[0, 4] $. Use Chebyshev inequality to
+bound the probability that $\abs{ X - 2 } \geq 1 $. We have</p>
+
+<p>$$P(\abs{ X - 2 } \geq 1) \leq \frac{ 4 }{ 3 } $$</p>
+
+<p>This example shows that Chebyshev inequality sometimes provides bounds that are so loose that it provides no information at all.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>Let $X $ be exponentially distributed with parameter $\lambda = 1 $, so that $E[X] = \var{ X } = 1 $. For $c &gt; 1 $, using the Chebyshev inequality, we obtain</p>
+
+<p>$$P(X \geq c) = P(X - 1 \geq c - 1) \leq P(\abs{ X - 1 } \geq c - 1) \leq \frac{ 1 }{(c - 1)^2 }$$</p>
+
+<p>Comparing to the exact answer $P(X \geq c) = e^{-c} $, this is a very conservative estimation.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Corollary
+  : <span class="keyword" id="upper-bounds-in-the-chebyshev-inequality">Upper Bounds in the Chebyshev Inequality</span></span>
+
+
+  <div class="block__content block__content--green">
+  <p>When $X $ is known to take values in a range $[a, b] $ we claim that</p>
+
+<p>$$\sigma^2 \leq (b-a)^2 / 4$$</p>
+
+<p>Thus if $\sigma^2$ is unknown, we may use the bound $(b -a)^2 /4 $ in place of $\sigma^2 $ in the Chebyshev inequality, and obtain</p>
+
+<p>$$P(\abs{ X - \mu } \geq c) \leq \frac{(b - a)^2 }{ 4 c^2 }, \forall c &gt; 0 $$</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand"><a>[expand]</a></span>
+  </div>
+  <div class="proof__content hide">
+    <p>Note that for any constant $\gamma $ we have</p>
+
+<p>$$E[(X - \gamma)^2] = E[X^2] -2 E[X] \gamma + \gamma^2 $$</p>
+
+<p>The quadratic is minimized when $\gamma = E[X]$. It follows that</p>
+
+<p>$$\sigma^2 = E[(X - E[X])^2] \leq E[(X - \gamma)^2], \forall \gamma$$</p>
+
+<p>By letting $\gamma = (a + b) / 2 $, we obtain</p>
+
+<p>$$\begin{align*}
+\sigma^2 &amp;\leq E[(X - \frac{ a+ b }{ 2 })^2]  \br
+&amp;= E[X^2 - (a+b)X + \frac{(a+b)^2 }{ 4 }] \br
+&amp;= E[X^2 - (a+b)X + ab] + \frac{(b-a)^2 }{ 4 } \br
+&amp;= E[(X -a)(X -b)] + \frac{(b-a)^2 }{ 4 } \br
+&amp;\leq \frac{(b-a)^2 }{ 4 }
+\end{align*}$$</p>
+
+<p>Since $x \in [a, b], E[(X -a)(X - b)] \leq 0 $.</p>
+
+<p>The bound $\sigma^2 \leq (b -a)^2 /4 $ may be quite conservative, <strong>but in the absence of further information about $X$, it cannot be improved.</strong></p>
+
+<p>When $X $ is the random variable that takes the $a $ and $b $ with equal probability $\frac{ 1 }{ 2 } $, $\sigma^2 = \frac{(b -a)^2 }{ 4 } $.</p>
+
+  </div>
+</div>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("upper-bounds-in-the-chebyshev-inequality");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index  navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "cor";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="the-chernoff-bound">The Chernoff Bound</span></span>
   <div class="block__content block__content--blue">
-    <p>Let $X $ be a random variable. Then, $\forall t &gt; 0$.</p>
+    <p>Let $X $ be a random variable. Then, $\forall s &gt; 0, \forall a \in R $.</p>
 
-<p>$$P(X \geq r) \leq e^{ - tr } M_X(t) \forall r \in R $$</p>
+<p>$$P(X \geq a) \leq e^{ - sa } M_X(s)$$</p>
 
-<p>$$P(X \geq r) \leq \frac{ M_X(t)}{ e^{tr}} = \frac{ E [ e^{xt} ] }{ e^{tr}} $$</p>
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand"><a>[expand]</a></span>
+  </div>
+  <div class="proof__content hide">
+    <p>Substitute $X = e^{sX} $ and $a = e^{sa} $ in the Markov inequality</p>
 
-<p>substitute $X = e^{tX} $ and $a = e^{tr} $ to the markov</p>
+<p>$$P(X \geq a) = P(e^{sx} \geq e^{sa}) \leq \frac{ E [ e^{sX} ] }{ e^{sa}} = \frac{ M_X(s)}{ e^{sa}} $$</p>
 
-<p>$$P(X \geq r) = P(e^{tx \geq e^tr}) \leq \frac{ E [ e^{tx} ] }{ e^{tr}} = \frac{ M_X(t)}{ e^{tr}} $$</p>
+  </div>
+</div>
 
   </div>
 
@@ -552,125 +763,6 @@ a &amp;,\text{ if }X \geq a
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
-
-<div class="block block--green ">
-  <span class="block__title block__title--green">Theorem
-  </span>
-  <div class="block__content block__content--green">
-  <p>Let $(X^{(n)})^\infty_{ n =1} $ be a sequence of independent identically distributed random variable with $E [ X_i ] = \mu$. Then for $s_n = \frac{ X_1, X_2, &hellip;, X_n }{ n }$</p>
-
-<p>$$\limu{ n }{ \infty } P(\abs{ s_n - \mu } \geq \epsilon) =0 , \forall \epsilon &gt; 0$$</p>
-
-<div class="proof">
-  <div class="proof__heading">
-    <span class="proof__title">Proof
-      <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
-  </div>
-  <div class="proof__content hide">
-    <p>proof only for $\var{ X_i } &lt; \infty $</p>
-
-<p>$$E [ S_n ] = E [ \frac{ X_1, X_2, &hellip;, X_n }{ n } ] = \frac{ n E [ X_i ] }{ n } = \mu$$</p>
-
-<p>$$\var{ S_n } = \var{ \frac{ X_1, X_2, &hellip;, X_n }{ n }} = \frac{ n \var{ X_i }}{ n^2 } = \frac{ \var{ X_i }}{ n }$$</p>
-
-<p>Using Chebyshev</p>
-
-<p>$$P(\abs{ s_n - \mu } \geq \epsilon) \leq \frac{ \var{ s_n }}{ \epsilon^2 } = \frac{ \var{ X_i }}{ n \epsilon^2 }$$</p>
-
-<p>When $n \to \infty $</p>
-
-<p>$$P(\abs{ s_n - \mu } \geq \epsilon) \to \infty $$</p>
-
-  </div>
-</div>
-
-  </div><ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-</div>
-
-
-<div class="block block--blue ">
-  <span class="block__title block__title--blue">Definition: <span class="keyword" id="convergence-in-probability">Convergence in Probability</span></span>
-  <div class="block__content block__content--blue">
-    <p>Let $(Y^{(n)})^\infty_{ n =1} $ be a sequence of random variable. We say that $Y_n $ &rsquo;s converge to a random variable $Y $ in probability denoted by $Y_n \to Y $ if</p>
-
-<p>$$\limu{ n }{ \infty } = P(\abs{ Y_n - Y } \geq \epsilon) = 0, \forall \epsilon &gt; 0$$</p>
-
-  </div>
-
-  <ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul><script>
-      
-      (function() {
-        var keywordListDOM = document.getElementById("page-navigation");
-        var keywordDOM = document.getElementById("convergence-in-probability");
-        var keywordItemDOM = document.createElement("li");
-        keywordItemDOM.setAttribute("class", "navigation--side__item");
-        var keywordLinkDOM = document.createElement("a");
-        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
-        var keywordIndexDOM = document.createElement("span");
-        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
-        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
-
-        keywordsCounter += 1;
-        keywordIndexDOM.innerHTML = "def";
-        keywordLinkDOM.appendChild(keywordIndexDOM);
-        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
-        keywordItemDOM.appendChild(keywordLinkDOM);
-        keywordsCollector.push(keywordItemDOM);
-      })();
-    </script></div>
-
-
-<div class="block block--gray ">
-  <span class="block__title block__title--gray">Example
-  </span>
-  <div class="block__content block__content--gray">
-    <p>Suppose that the portion of people voting for the candidate $A$ is $p$. You select $n$ people in random. Let $M_n $ be the potion of people voting for $A$ among these $n$ people.</p>
-
-<p>$$X_1, X_2, &hellip; X_n \text{~ Bernoulli}(P), \mu_n = \frac{ X_1, X_2, &hellip;, X_n }{ n } $$</p>
-
-<p>$$P(\abs{ \mu_n - p } \geq \epsilon) \leq \frac{ p(1-p)}{ n \epsilon^2 } \leq \frac{ 1 }{ 4 n \epsilon^n }$$</p>
-
-<p>$$P(\abs{ \mu_n - p} \geq \epsilon) \leq \frac{ p(1 -p)}{ n \epsilon^2 } \leq \frac{ 1 }{ \mu_n \epsilon^2 }$$</p>
-
-<p>$$P(\abs{ \mu_100 -p } \geq 0.1) \leq \frac{ 1 }{ 4 \times 100 \times 0.1^2 } = \frac{ 1 }{ 4 }$$</p>
-
-<p>Suppose you  want the confidence level of 0.95 with the mistake at most. $\epsilon = 0.01 $</p>
-
-<p>$$P(\abs{ \mu_n - p }  \geq 0.01) \leq \frac{ 1 }{ 4 n \times 0.01^2 }$$</p>
-
-<p>We have to ask $n \geq 50000 $ people.</p>
-
-  </div>
-
-  <ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-
-</div>
       </div>
     </article>
     <aside class="navigation--side">
@@ -1211,8 +1303,150 @@ a &amp;,\text{ if }X \geq a
             
               
             
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/5.0/"><span class="navigation--side__index">5.0</span> Introduction to Limit Theorems</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
             <li class="navigation--side__item navigation--side__item--current">
-              <a href="https://jimzenn.com/probability-theory/5.1/"><span class="navigation--side__index">5.1</span> Markov and Chebyshev Inequalities</a>
+              <a href="https://jimzenn.com/probability-theory/5.1/"><span class="navigation--side__index">5.1</span> Markov and Chevyshev Inequalities</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/5.2/"><span class="navigation--side__index">5.2</span> The Weak Law of Large Numbers</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/5.3/"><span class="navigation--side__index">5.3</span> Convergence in Probability</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/5.4/"><span class="navigation--side__index">5.4</span> The Central Limit Theorem</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/5.5/"><span class="navigation--side__index">5.5</span> The Strong Law of Large Numbers</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">6</span>The Bernoulli and Poisson Processes</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/6.1/"><span class="navigation--side__index">6.1</span> The Bernoulli Process</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/6.2/"><span class="navigation--side__index">6.2</span> The Poisson Process</a>
             </li>
           
         
@@ -1236,12 +1470,14 @@ a &amp;,\text{ if }X \geq a
         
         
         
-          <a href="https://jimzenn.com/probability-theory/4.5/" class="pagination__prev">4.5 Sum of a Random Number of Independent Random Variables</a>
+          <a href="https://jimzenn.com/probability-theory/5.0/" class="pagination__prev">5. Introduction to Limit Theorems</a>
         
       
       
         
         
+        
+          <a href="https://jimzenn.com/probability-theory/5.2/" class="pagination__next">5.2 The Weak Law of Large Numbers</a>
         
       
     </div>
@@ -1275,7 +1511,7 @@ a &amp;,\text{ if }X \geq a
   </body>
 
   <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
   MathJax.Hub.Config({
     tex2jax: {
       inlineMath: [['$','$'], ['\\(','\\)']],

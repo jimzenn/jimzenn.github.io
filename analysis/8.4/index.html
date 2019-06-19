@@ -3,27 +3,21 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.54.0" />
-
+<meta name="generator" content="Hugo 0.55.6" />
 
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
-<title>Cauchy Sequences and Complete Metric Spaces - Jim Zenn</title>
-<meta property="og:title" content="Cauchy sequences and complete metric spaces - Jim Zenn">
-
-
-
+  <title>Cauchy Sequences and Complete Metric Spaces - Jim Zenn</title>
+  <meta property="og:title" content="Cauchy sequences and complete metric spaces - Jim Zenn">
   
 
 
 
 
-
-
 <script
-  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
   crossorigin="anonymous"></script>
 
 
@@ -39,17 +33,17 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3">
   </head>
 
   <body class="note wide" >
@@ -69,6 +63,10 @@ if (!doNotTrack) {
         
           
             <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
@@ -93,7 +91,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -104,6 +102,10 @@ if (!doNotTrack) {
     
       
     <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
@@ -128,7 +130,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -138,11 +140,9 @@ if (!doNotTrack) {
     <div class="container" id="container">
       
         <div class="container-tag">
-          
-          <b class="container-title">
-            Notes
-          </b>
-          
+        
+          <b class="container-title">Notes</b>
+        
         </div>
       
       
@@ -232,7 +232,7 @@ if (!doNotTrack) {
     $\newcommand{\spa}[1]{\text{span}(#1)}$
     $\newcommand{\dist}[1]{\text{dist}(#1)}$
     $\newcommand{\max}[1]{\text{max}(#1)}$
-    $\newcommand{\min}[1]{\text{max}(#1)}$
+    $\newcommand{\min}[1]{\text{min}(#1)}$
     $\newcommand{\supr}[1]{\text{sup}(#1)}$
     $\newcommand{\infi}[1]{\text{inf}(#1)}$
     $\newcommand{\ite}[1]{\text{int}(#1)}$
@@ -312,7 +312,9 @@ if (!doNotTrack) {
     $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$
     $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$
   
+
 </div>
+
 
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="subsequences">Subsequences</span></span>
@@ -355,6 +357,7 @@ if (!doNotTrack) {
     </script></div>
 
 
+
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   
@@ -372,6 +375,7 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
+
 
 
 <div class="block block--blue ">
@@ -413,6 +417,7 @@ if (!doNotTrack) {
     </script></div>
 
 
+
 <div class="block block--green ">
   <span class="block__title block__title--green">Proposition
   </span>
@@ -434,6 +439,7 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
+
 
 
 <div class="block block--blue ">
@@ -477,9 +483,10 @@ if (!doNotTrack) {
     </script></div>
 
 
+
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
-  : Convergent sequences are Cauchy sequences
+  : Convergent Sequences Are Cauchy Sequences
   
   </span>
   <div class="block__content block__content--green">
@@ -495,6 +502,7 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
+
 
 
 <div class="block block--green">
@@ -516,6 +524,7 @@ if (!doNotTrack) {
 </div>
 
 
+
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   
@@ -533,6 +542,7 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
+
 
 
 <div class="block block--green">
@@ -554,6 +564,7 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
+
 
 
 <div class="block block--blue ">
@@ -593,11 +604,12 @@ if (!doNotTrack) {
     </script></div>
 
 
+
 <div class="block block--green ">
   <span class="block__title block__title--green">Proposition
   </span>
   <div class="block__content block__content--green">
-  <p>Let $(X, d) $ be a metric space, and let $(Y, d|_{ Y \times Y }) $ be a subspace of $(X,d) $. If $(Y, d|_{ Y \times Y }) $ is complete, then $Y $ must be closed in $X$.</p>
+  <p>Let $(X, d) $ be a metric space, and let $(Y, d|_{ Y \times Y }) $ be a subspace of $(X,d) $. If $(Y, d|_{ Y \times Y }) $ is complete, then $Y $ must be <strong>closed</strong> in $X$.</p>
 
   </div><ul class="block__footer">
     <li class="block__footer-item">
@@ -608,6 +620,7 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
+
 
 
 <div class="block block--green ">
@@ -627,10 +640,11 @@ if (!doNotTrack) {
 </div>
 
 
+
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
-    <p>An incomplete metric space such as $(\Q,d) $ may be considered closed in some spaces ($\Q $ is closed in $\Q $) but not in others. (for instance, $\Q $ is not closed in $\R $).</p>
+    <p>An incomplete metric space such as $(\Q,d) $ may be considered closed in some spaces ($\Q$ is closed in $\Q$) but not in others. (for instance, $\Q $ is not closed in $\R $).</p>
 
 <p>It turns out that given any incomplete metric space $(X,d)$, there exists a <strong>completion</strong> $(\overline{X}, \overline{d})$, which is a larger metric space containing $(X,d)$ which is complete, and such that $X $ is not closed in $\overline{X} $(indeed, the closure of $X$ in $(\overline{X}, \overline{d})$ will be all of $\overline{X}$).</p>
 
@@ -779,7 +793,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.7/"><span class="navigation--side__index">2.7</span> Limits of Sequences</a>
+              <a href="https://jimzenn.com/analysis/2.1/"><span class="navigation--side__index">2.1</span> Limits of Sequences</a>
             </li>
           
         
@@ -799,7 +813,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.8/"><span class="navigation--side__index">2.8</span> A Discussion About Proofs</a>
+              <a href="https://jimzenn.com/analysis/2.2/"><span class="navigation--side__index">2.2</span> A Discussion About Proofs</a>
             </li>
           
         
@@ -819,7 +833,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.9/"><span class="navigation--side__index">2.9</span> Limit Theorems for Sequences</a>
+              <a href="https://jimzenn.com/analysis/2.3/"><span class="navigation--side__index">2.3</span> Limit Theorems for Sequences</a>
             </li>
           
         
@@ -839,7 +853,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.10/"><span class="navigation--side__index">2.10</span> Monotone Sequences and Cauchy Sequences</a>
+              <a href="https://jimzenn.com/analysis/2.4/"><span class="navigation--side__index">2.4</span> Monotone Sequences and Cauchy Sequences</a>
             </li>
           
         
@@ -859,7 +873,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.11/"><span class="navigation--side__index">2.11</span> Subsequences</a>
+              <a href="https://jimzenn.com/analysis/2.5/"><span class="navigation--side__index">2.5</span> Subsequences</a>
             </li>
           
         
@@ -879,7 +893,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.15/"><span class="navigation--side__index">2.15</span> Alternating Series and Integral Tests</a>
+              <a href="https://jimzenn.com/analysis/2.9/"><span class="navigation--side__index">2.9</span> Alternating Series and Integral Tests</a>
             </li>
           
         
@@ -901,7 +915,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/3.17/"><span class="navigation--side__index">3.17</span> Continuous Functions</a>
+              <a href="https://jimzenn.com/analysis/3.1/"><span class="navigation--side__index">3.1</span> Continuous Functions</a>
             </li>
           
         
@@ -921,7 +935,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/3.18/"><span class="navigation--side__index">3.18</span> Properties of Continuous Functions</a>
+              <a href="https://jimzenn.com/analysis/3.2/"><span class="navigation--side__index">3.2</span> Properties of Continuous Functions</a>
             </li>
           
         
@@ -941,7 +955,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/3.19/"><span class="navigation--side__index">3.19</span> Uniform Continuity</a>
+              <a href="https://jimzenn.com/analysis/3.3/"><span class="navigation--side__index">3.3</span> Uniform Continuity</a>
             </li>
           
         
@@ -961,7 +975,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/3.20/"><span class="navigation--side__index">3.20</span> Limits of Functions</a>
+              <a href="https://jimzenn.com/analysis/3.4/"><span class="navigation--side__index">3.4</span> Limits of Functions</a>
             </li>
           
         
@@ -983,7 +997,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/5.28/"><span class="navigation--side__index">5.28</span> Basic Properties of the Derivative</a>
+              <a href="https://jimzenn.com/analysis/5.1/"><span class="navigation--side__index">5.1</span> Basic Properties of the Derivative</a>
             </li>
           
         
@@ -1003,7 +1017,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/5.29/"><span class="navigation--side__index">5.29</span> The Mean Value Theorem</a>
+              <a href="https://jimzenn.com/analysis/5.2/"><span class="navigation--side__index">5.2</span> The Mean Value Theorem</a>
             </li>
           
         
@@ -1016,7 +1030,7 @@ if (!doNotTrack) {
             
             
                
-                <li class="navigation--side__heading"><span class="navigation--side__heading-index">8</span></li>
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">8</span>Metric Spaces</li>
               
             
             
@@ -1025,7 +1039,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/8.1/"><span class="navigation--side__index">8.1</span> Definitions and Examples</a>
+              <a href="https://jimzenn.com/analysis/8.1/"><span class="navigation--side__index">8.1</span> Metrics and Metric Spaces</a>
             </li>
           
         
@@ -1118,7 +1132,7 @@ if (!doNotTrack) {
             
             
                
-                <li class="navigation--side__heading"><span class="navigation--side__heading-index">9</span></li>
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">9</span>Continuous Functions on Metric Spaces</li>
               
             
             
@@ -1128,6 +1142,372 @@ if (!doNotTrack) {
             
             <li class="navigation--side__item ">
               <a href="https://jimzenn.com/analysis/9.1/"><span class="navigation--side__index">9.1</span> Continuous Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/9.2/"><span class="navigation--side__index">9.2</span> Continuity and Product Spaces</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/9.3/"><span class="navigation--side__index">9.3</span> Continuity and Compactness</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/9.4/"><span class="navigation--side__index">9.4</span> Continuity and Connectedness</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">10</span>Uniform Convergence</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.1/"><span class="navigation--side__index">10.1</span> Limiting Values of Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.2/"><span class="navigation--side__index">10.2</span> Pointwise and Uniform Convergence</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.4/"><span class="navigation--side__index">10.4</span> The Metric of Uniform Convergence</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.5/"><span class="navigation--side__index">10.5</span> Series of Functions; the Weierstrass M-Test</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.6/"><span class="navigation--side__index">10.6</span> Uniform Convergence and Integration</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.7/"><span class="navigation--side__index">10.7</span> Uniform Convergence and Derivatives</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">11</span>Power Series</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.1/"><span class="navigation--side__index">11.1</span> Formal Power Series</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/12.1/"><span class="navigation--side__index">11.1</span> Periodic Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.2/"><span class="navigation--side__index">11.2</span> Real Analytic Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.3/"><span class="navigation--side__index">11.11</span> Abel&#39;s Theorem</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.4/"><span class="navigation--side__index">11.4</span> Multiplication of Power Series</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.5/"><span class="navigation--side__index">11.5</span> The Exponential and Logarithm Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.7/"><span class="navigation--side__index">11.7</span> Trigonometric Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">15</span></li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/midterm2/"><span class="navigation--side__index">15.1</span> Midterm Review</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/final/"><span class="navigation--side__index">15.2</span> Final</a>
             </li>
           
         
@@ -1158,7 +1538,7 @@ if (!doNotTrack) {
         
         
         
-          <a href="https://jimzenn.com/analysis/8.5/" class="pagination__next">8.5 Compact metric spaces</a>
+          <a href="https://jimzenn.com/analysis/8.5/" class="pagination__next">8.5 Compact Metric Spaces</a>
         
       
     </div>
@@ -1192,7 +1572,7 @@ if (!doNotTrack) {
   </body>
 
   <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
   MathJax.Hub.Config({
     tex2jax: {
       inlineMath: [['$','$'], ['\\(','\\)']],

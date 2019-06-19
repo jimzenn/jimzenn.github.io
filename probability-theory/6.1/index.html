@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.55.6" />
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+  <title>The Bernoulli Process - Jim Zenn</title>
+  <meta property="og:title" content="The Bernoulli Process - Jim Zenn">
+  
+
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-83942334-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3">
+    
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3">
+
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3">
+  </head>
+
+  <body class="note wide" >
+    <header class="header" id="header">
+  
+  <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
+  <div class="header__title">
+    <a class="header__site-logo-link--home" href="/">
+      <img class="header__site-logo-image" src="/logo/wire.svg" alt="logo"/>
+    </a>
+    <a class="header__site-logo-link--toggle" id="header-menu__toggle">
+      <img class="header__site-logo-image" src="/logo/wire.svg" alt="logo"/>
+    </a>
+  </div>
+  <nav class="header-menu" id="header-menu">
+      <ul class="header-menu__list">
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+          
+        
+          
+            <li class="header-menu__item header-menu__item--dropdown">
+              <a class="header-menu__link">Notes</a>
+              <ul class="header-menu__item-menu">
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/probability-theory/1.1/">Probability Theory</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/linear-algebra/1.2/">Linear Algebra</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
+                
+                  <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
+                
+              </ul>
+            </li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/journey/">Journey</a></li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+          
+        
+      </ul>
+  </nav>
+</header>
+<nav class="header-menu--collapsable" id="collapsable-menu">
+  <ul class="header-menu__list--collapsable">
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+      
+    
+      
+        <li class="header-menu__item header-menu__item--dropdown">
+          <a class="header-menu__link">Notes</a>
+          <ul class="header-menu__item-menu">
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/probability-theory/1.1/">Probability Theory</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/linear-algebra/1.2/">Linear Algebra</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/analysis/1.1/">Analysis</a></li>
+            
+              <li class="header-menu__item-menu-item"><a class="header-menu__item-menu-link" href="/optimization/2.1/">Optimization</a></li>
+            
+          </ul>
+        </li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/journey/">Journey</a></li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+      
+    
+  </ul>
+</nav>
+
+
+    <div class="container" id="container">
+      
+        <div class="container-tag">
+        
+          <b class="container-title">Notes</b>
+        
+        </div>
+      
+      
+
+
+
+
+
+
+
+  
+
+
+<div class="navigation" id="navigation">
+  <div class="navigation__wrapper" id="navigation__toggle">
+    <div class="navigation__left">
+      <span class="navigation__sup-title" style="color: #10AD2C">Probability Theory, Section 6.1</span>
+      <span class="navigation__title">The Bernoulli Process</span>
+    </div>
+    <div class="navigation__right">
+      <ul class="navigation__list">
+      
+      </ul>
+      <ul class="navigation__list--collapsable">
+      
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  wasStuck = false;
+  window.addEventListener('scroll', function(e) {
+    var header = document.querySelector("#header");
+    var nav = document.querySelector("#navigation");
+    var navWrapper = document.querySelector("#navigation .navigation__wrapper");
+    if (window.scrollY >= header.offsetHeight) {
+      
+      if (!wasStuck) {
+        nav.classList.add("navigation--stuck");
+        navWrapper.classList.add("navigation__wrapper--stuck");
+        wasStuck = true;
+      }
+    } else {
+      if (wasStuck) {
+        nav.classList.remove("navigation--stuck");
+        navWrapper.classList.remove("navigation__wrapper--stuck");
+        wasStuck = false;
+      }
+    }
+  });
+  var toggle = document.querySelector("#navigation__toggle");
+  var list = document.querySelector(".navigation__list--collapsable");
+  toggle.addEventListener("click", function() {
+    this.classList.toggle("navigation__toggle--active");
+    list.classList.toggle("navigation__list--collapsable--active");
+  });
+  var listItems = document.querySelectorAll(".navigation__list--collapsable .navigation__link");
+  for (var i = 0; i < listItems.length; i ++) {
+    listItems[i].addEventListener("click", function() {
+      document.querySelector("#navigation__toggle").click();
+      return true;
+    });
+  }
+</script>
+
+
+
+  <main class="content" role="main">
+    <article class="article">
+      <div class="article__content">
+        <script>
+          keywordsCollector = [];
+          keywordsCounter = 0;
+        </script>
+        <div class="latex-macros">
+  
+    $\newcommand{\br}{\\}$
+    $\newcommand{\R}{\mathbb{R}}$
+    $\newcommand{\Q}{\mathbb{Q}}$
+    $\newcommand{\Z}{\mathbb{Z}}$
+    $\newcommand{\N}{\mathbb{N}}$
+    $\newcommand{\C}{\mathbb{C}}$
+    $\newcommand{\P}{\mathbb{P}}$
+    $\newcommand{\F}{\mathbb{F}}$
+    $\newcommand{\L}{\mathcal{L}}$
+    $\newcommand{\spa}[1]{\text{span}(#1)}$
+    $\newcommand{\dist}[1]{\text{dist}(#1)}$
+    $\newcommand{\max}[1]{\text{max}(#1)}$
+    $\newcommand{\min}[1]{\text{min}(#1)}$
+    $\newcommand{\supr}{\text{sup}}$
+    $\newcommand{\infi}{\text{inf}}$
+    $\newcommand{\ite}[1]{\text{int}(#1)}$
+    $\newcommand{\ext}[1]{\text{ext}(#1)}$
+    $\newcommand{\bdry}[1]{\partial #1}$
+    $\newcommand{\argmax}[1]{\underset{#1}{\text{argmax }}}$
+    $\newcommand{\argmin}[1]{\underset{#1}{\text{argmin }}}$
+    $\newcommand{\set}[1]{\left\{#1\right\}}$
+    $\newcommand{\emptyset}{\varnothing}$
+    $\newcommand{\tilde}{\text{~}}$
+    $\newcommand{\otherwise}{\text{ otherwise }}$
+    $\newcommand{\if}{\text{ if }}$
+    $\newcommand{\proj}{\text{proj}}$
+    $\newcommand{\union}{\cup}$
+    $\newcommand{\intercept}{\cap}$
+    $\newcommand{\abs}[1]{\left| #1 \right|}$
+    $\newcommand{\norm}[1]{\left\lVert#1\right\rVert}$
+    $\newcommand{\pare}[1]{\left(#1\right)}$
+    $\newcommand{\brac}[1]{\left[#1\right]}$
+    $\newcommand{\t}[1]{\text{ #1 }}$
+    $\newcommand{\head}{\text H}$
+    $\newcommand{\tail}{\text T}$
+    $\newcommand{\d}{\text d}$
+    $\newcommand{\limu}[2]{\underset{#1 \to #2}\lim}$
+    $\newcommand{\limsupu}[2]{\underset{#1 \to #2}{\lim\supr}}$
+    $\newcommand{\liminfu}[2]{\underset{#1 \to #2}{\lim\infi}}$
+    $\newcommand{\limd}[3]{\underset{#1 \to #2; #3}\lim}$
+    $\newcommand{\der}[2]{\frac{\d #1}{\d #2}}$
+    $\newcommand{\derw}[2]{\frac{\d #1^2}{\d^2 #2}}$
+    $\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}$
+    $\newcommand{\pderw}[2]{\frac{\partial^2 #1}{\partial #2^2}}$
+    $\newcommand{\pderws}[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}$
+    $\newcommand{\inv}[1]{{#1}^{-1}}$
+    $\newcommand{\inner}[2]{\langle #1, #2 \rangle}$
+    $\newcommand{\nullity}[1]{\text{nullity}(#1)}$
+    $\newcommand{\rank}[1]{\text{rank }#1}$
+    $\newcommand{\nullspace}[1]{\mathcal{N}\pare{#1}}$
+    $\newcommand{\range}[1]{\mathcal{R}\pare{#1}}$
+    $\newcommand{\var}[1]{\text{var}\pare{#1}}$
+    $\newcommand{\cov}[2]{\text{cov}(#1, #2)}$
+    $\newcommand{\tr}[1]{\text{tr}(#1)}$
+    $\newcommand{\oto}{\text{ one-to-one }}$
+    $\newcommand{\ot}{\text{ onto }}$
+    $\newcommand{\ipto}{\overset{\text{i.p.}}\longrightarrow}$
+    $\newcommand{\asto}{\overset{\text{a.s.}}\longrightarrow}$
+    $\newcommand{\expdist}[1]{\text{ ~ Exp}(#1)}$
+    $\newcommand{\binomdist}[2]{\text{ ~ B}(#1, #2)}$
+    $\newcommand{\unifdist}[1]{\text{ ~ Unif}(#1)}$
+    $\newcommand{\normdist}[2]{\text{ ~ N}(#1,#2)}$
+    $\newcommand{\berndist}[2]{\text{ ~ Bernoulli}(#1,#2)}$
+    $\newcommand{\geodist}[1]{\text{ ~ Geometric}(#1)}$
+    $\newcommand{\poissondist}[1]{\text{ ~ Poisson}(#1)}$
+    $\newcommand{\ceil}[1]{\lceil#1\rceil}$
+    $\newcommand{\floor}[1]{\lfloor#1\rfloor}$
+    $\newcommand{\Re}[1]{\text{Re}(#1)}$
+    $\newcommand{\Im}[1]{\text{Im}(#1)}$
+    $\newcommand{\dom}[1]{\text{dom}(#1)}$
+    $\newcommand{\fnext}[1]{\overset{\sim}{#1}}$
+    $\newcommand{\transpose}[1]{{#1}^{\text{T}}}$
+    $\newcommand{\b}[1]{\boldsymbol{#1}}$
+    $\newcommand{\None}[1]{}$
+    $\newcommand{\Vcw}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Vce}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Vcr}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$
+    $\newcommand{\Vct}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$
+    $\newcommand{\Vcy}[6]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{bmatrix}}$
+    $\newcommand{\Vcu}[7]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{bmatrix}}$
+    $\newcommand{\vcw}[2]{\begin{matrix} #1 \br #2 \end{matrix}}$
+    $\newcommand{\vce}[3]{\begin{matrix} #1 \br #2 \br #3 \end{matrix}}$
+    $\newcommand{\vcr}[4]{\begin{matrix} #1 \br #2 \br #3 \br #4 \end{matrix}}$
+    $\newcommand{\vct}[5]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \end{matrix}}$
+    $\newcommand{\vcy}[6]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \end{matrix}}$
+    $\newcommand{\vcu}[7]{\begin{matrix} #1 \br #2 \br #3 \br #4 \br #5 \br #6 \br #7 \end{matrix}}$
+    $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$
+    $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$
+    $\newcommand{\Mqr}[4]{\begin{bmatrix} #1 & #2 & #3 & #4 \end{bmatrix}}$
+    $\newcommand{\Mqt}[5]{\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \end{bmatrix}}$
+    $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Mrq}[4]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \end{bmatrix}}$
+    $\newcommand{\Mtq}[5]{\begin{bmatrix} #1 \br #2 \br #3 \br #4 \br #5 \end{bmatrix}}$
+    $\newcommand{\Mqw}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}$
+    $\newcommand{\Mwq}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
+    $\newcommand{\Mww}[4]{\begin{bmatrix} #1 & #2 \br #3 & #4 \end{bmatrix}}$
+    $\newcommand{\Mqe}[3]{\begin{bmatrix} #1 & #2 & #3 \end{bmatrix}}$
+    $\newcommand{\Meq}[3]{\begin{bmatrix} #1 \br #2 \br #3 \end{bmatrix}}$
+    $\newcommand{\Mwe}[6]{\begin{bmatrix} #1 & #2 & #3\br #4 & #5 & #6 \end{bmatrix}}$
+    $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$
+    $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$
+  
+
+</div>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="stochastic-process">Stochastic Process</span></span>
+  <div class="block__content block__content--blue">
+    <p>A stochastic process is a mathematical model of a probabilistic experiment that evolves in time and generates a sequence of numerical values. Each numerical value in the sequence is modeled by a random variable, so a stochastic process is simply a (finite or infinite) sequence of random variables.</p>
+
+<p>However, stochastic process involve some change in emphasis over our earlier models. In particular:</p>
+
+<ol>
+<li>more focus on the <strong>dependencies</strong> in the sequence of values generated by the process. <br>
+e.g. how do future prices of a stock depend on past values?</li>
+<li>more interest in <strong>long-term averges</strong> involving the entire sequence of generated values.<br>
+e.g. what is the fraction of time that a machine is idle?</li>
+<li>interest in characterizing the likelihood or frequency of certain <strong>boundary events</strong>.<br>
+e.g. what is the probability that within a given hour all circuits of some telephone system become simultaneously busy?</li>
+</ol>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("stochastic-process");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example: Stochastic processes
+    
+  </span>
+  <div class="block__content block__content--gray">
+    <ol>
+<li>the sequence of daily prices of a stock</li>
+<li>the sequence of scores in a football game</li>
+<li>the sequence of failure times of a machine</li>
+<li>the sequence of hourly traffic loads at a node of a communication network</li>
+</ol>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="arrival-type-processes">Arrival-Type Processes</span></span>
+  <div class="block__content block__content--blue">
+    <p><strong>Arrival-Type Processes</strong> are processes where occurrences have the character of an &ldquo;arrival&rdquo;.</p>
+
+<p>We will focus on models where the interarrival times (the times between successive arrivals) are independent random variables.</p>
+
+<p>The case where arrivals occur in <strong>discrete</strong> time and the interarrival times are <u>geometrically</u> distributed is the <strong>Bernoulli process</strong>;</p>
+
+<p>The case where arrivals occur in <strong>continuous</strong> time and the interarrival times are <u>exponentially</u> distributed is the <strong>Poisson process</strong>;</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("arrival-type-processes");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Poisson</th>
+<th>Bernoulli</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Times of Arrival</td>
+<td>Continuous</td>
+<td>Discrete</td>
+</tr>
+
+<tr>
+<td>PMF of # of Arrivals</td>
+<td>Poisson</td>
+<td>Binomial</td>
+</tr>
+
+<tr>
+<td>Interarrival Time CDF</td>
+<td>Exponential</td>
+<td>Geometric</td>
+</tr>
+
+<tr>
+<td>Arrival Rate</td>
+<td>$\lambda$ per unit time</td>
+<td>$p$ per trial</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="bernoulli-process">Bernoulli Process</span></span>
+  <div class="block__content block__content--blue">
+    <p>A sequence of $X_1, X_2, &hellip;, X_n$ of <strong>independent</strong> Bernoulli random variables
+$X_i $ with</p>
+
+<p>$$P(X_i = 1) = P(\text{success at the }i\text{th trial}) = p$$
+$$P(X_i = 0) = P(\text{faiure at the }i\text{th trial}) = 1 - p$$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("bernoulli-process");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+
+<div class="block block--yellow ">
+  <span class="block__title block__title--yellow">Recall: Binomial Distribution
+  
+  </span>
+  <div class="block__content block__content--yellow">
+  <p>The distribution of the number $S $ of successes in $n $ independent trials.</p>
+
+<p>$$p_S(k) = \binom{ n }{ k } p^k (1- pk)^{ n - k }, k = 0, 1, &hellip;, n $$</p>
+
+<p>$$E[S] = np, \var{ S } = np(1 - p)$$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+
+<div class="block block--yellow ">
+  <span class="block__title block__title--yellow">Recall: Geometric Distribution
+  
+  </span>
+  <div class="block__content block__content--yellow">
+  <p>The distribution of the number $T $ of trial up to (and including) the first
+success.</p>
+
+<p>$$p_T(t) = (1 - p)^{t -1} p, t = 1,2, &hellip; $$</p>
+
+<p>$$E[T] = \frac{ 1 }{ p }, \var{ T } = \frac{ 1-p }{ p^2 } $$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+
+<div class="block block--yellow ">
+  <span class="block__title block__title--yellow">Remarks: Independence and Memorylessness
+  
+  </span>
+  <div class="block__content block__content--yellow">
+  <p>The independence assumption underlying the Bernoulli process implies the memorylessness property, which, in a nutshell, means:</p>
+
+<p><strong>Whatever has happened in past trials provide no information on the outcomes of future trials.</strong></p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+
+<div class="block block--yellow ">
+  <span class="block__title block__title--yellow">Recall
+  </span>
+  <div class="block__content block__content--yellow">
+  <p>Two random variables $U, V $.</p>
+
+<p>$$U, V\text{ independent } \implies g(U), h(V)\text{ independent}$$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>Define random variable $Y = (X_1 + X_3) X_6 X_7, Z = (X_2 + X_4) (X_5 + X_8) $. Because $X_i $ are independent for all $i $. Since the two collection $\set{ X_1, X_3, X_6, X_7 } $ and $\set{ X_2, X_4, X_5, X_8 } $, $Y $ and $Z $ are also independent.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Properties: <span class="keyword" id="fresh-start-property-of-the-bernoulli-process">Fresh-Start Property of the Bernoulli Process</span>
+  
+  </span>
+  <div class="block__content block__content--green">
+  <p>Suppose a Bernoulli process has been running for $n $ times steps, and that we have observed the value of $X_1, X_2, &hellip;, X_n $. Notice the fact that:</p>
+
+<p>the sequence of future trials $X_{n+1}, X_{n+2}, &hellip; $ are independent Bernoulli trials and therefore form a Bernoulli process. In addition, these future trials are independent from the past ones.</p>
+
+<p>We conclude that starting from any given point in time, the future is also modeled by a Bernoulli process, which is independent of the past. We refer to this loosely as the <strong>fresh-start</strong> property of the Bernoulli process.</p>
+
+<p>More concisely, <br>
+for any given time $n $, the sequence of random variable $X_{n+1}, X_{n+2}, &hellip;$(the future of the process) is also a Bernoulli process, and is independent from $X_1, X_2, &hellip;, X_n $(the past of the process).</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("fresh-start-property-of-the-bernoulli-process");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "ppt";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Properties: <span class="keyword" id="memorylessness-property-of-geometric-distributions">Memorylessness Property of Geometric Distributions</span>
+  
+  </span>
+  <div class="block__content block__content--green">
+  <p>Recall that the time $T $ until the first success is a geometric random variable. Suppose that we have been watching the process for $n $ time steps, and no success has been recorded. What can we say about the number $T-n $ of remaining trials until the first success?</p>
+
+<p>Since the future of the process (after time $n $) is independent of the past and
+constitutes a fresh-starting Bernoulli process, the number of future trials until the first success is described by the same geometric PMF.</p>
+
+<p>$$P(T-n = t | T&gt; n) = (1-p)^{t-1} p = P(T = t), t = 1, 2, &hellip; $$</p>
+
+<p>We refer to this as the <strong>memorylessness</strong> property.</p>
+
+<p>Note: this can also be derived algebraically, using the definition of conditional probabilities.</p>
+
+<p>More concisely, <br>
+Let $n $ be a given time and let $\overline{ T } $ be the time of the first success after time $n $. Then $\overline{ T } - n $ has a geometric distribution with parameter $p $, and is independent of the random variables $X_1, X_2, &hellip;, X_n $.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("memorylessness-property-of-geometric-distributions");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "ppt";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>A computer executes two types of tasks, priority and non priority, and operates in discrete time units (slots). Each task requires one full slot to complete.<br>
+A priority task arrives with probability $p $ at the beginning of each slot, independent of other slots, a nonpriority task is always available and is executed at a given slot if no priority task is available.<br>
+We call a slot <strong>busy</strong> if within the slot, the computer executes a priority task, and otherwise we all it <strong>idle</strong>. <br>
+We call a string of idle slots, <strong>idle period</strong>; and a string of busy slots, <strong>busy period</strong>.<br>
+Want to know the PMF, mean, and variance of the following random variables.<br>
+1. $T=$ the time index of the first idle slot<br>
+2. $B=$ the length (number of slots) of the first busy period<br>
+3. $I=$ the length of the first idle period<br>
+4. $Z=$ the number of slots after the first slot of the first busy period up to and including the first subsequent idle slot</p>
+
+<p>$T\geodist{1-p}$</p>
+
+<p>Consider the first busy period. It starts with the first busy slot, call it slot $L$. $Z = B\geodist{1-p}$.</p>
+
+<p>$I \geodist{p} $</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+
+<div class="block block--yellow ">
+  <span class="block__title block__title--yellow">Remarks
+  </span>
+  <div class="block__content block__content--yellow">
+  <p>Start watching a Bernoulli process at a random time $N$, what we see is indistinguishable from a Bernoulli process that has just started, as long as $N$ is determined only by the past history of the process and does not convey any information on the future.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example: Fresh-start at a Random Time
+    
+  </span>
+  <div class="block__content block__content--gray">
+    <p>Let $N $ be the first time that we have a success immediately following a previous success. (That is, $N $ is the first $i $ for which $X_{i - 1} = X_i = 1 $). What is the probability $P(X_{N+1} = X_{N+2} = 0) $ that there are no successes in the two trials that follow?</p>
+
+<p>Intuitively, once the condition $X_{N-1} = X_N = 1 $ is satisfied, and from then on, the future of the process consists of independent Bernoulli trials. Therefore, the probability of an event that refers to the future of the process is the same as in a fresh-starting Bernoulli process, so that $P(X_{N+1} = X_{N+2} = 0) = (1 -p)^2 $.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+
+<div class="block block--yellow ">
+  <span class="block__title block__title--yellow">Remarks: Interarrival Times
+  
+  </span>
+  <div class="block__content block__content--yellow">
+  <p>An important random variable associated with the Beronoulli process is the time of the $k $th success (or arrival), which we denote by $Y_k $. A related random variable is the $k $th interarrival time, denoted by $T_k $. It is defined by</p>
+
+<p>$$T_1 = Y_1, T_k = Y_k - Y_{k-1}, k = 2, 3, &hellip;$$</p>
+
+<p>and represents the number of trials following the $(k-1) $st success until the next success. Note that</p>
+
+<p>$$Y_k = T_1 + T_2 + &hellip; + T_k $$</p>
+
+<p>Note that $\forall i, j, T_i, T_j $ independent.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition</span>
+  <div class="block__content block__content--blue">
+    <ol>
+<li><p>Start with a sequence of independent geometric random variables $T_1, T_2, &hellip;$ with common parameter $p $, and let these stand for the interval times.</p></li>
+
+<li><p>Record a success (or arrival) at times, $T_1, T_1 + t_2, T_1 + T_2 + T_3$, etc.</p></li>
+</ol>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul></div>
+
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>It is observed that after a rainy day, the number of days until it rains again is geometrically distributed with parameter $p $, independent of the past. Find the probability that it rains on both the $5$th and the $8$th day of the month.</p>
+
+<p>View rainy days as &ldquo;arrivals&rdquo;, then the description of the weather conforms to the alternative description of the Bernoulli process given above.</p>
+
+<p>Any given day is rainy with probability $p$, independent of other days.</p>
+
+<p>In particular, the probability that day $5 $ and $8 $ are rainy is equal to $p^2 $.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
+</div>
+
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="the-kth-arrival-time">The Kth Arrival Time</span></span>
+  <div class="block__content block__content--blue">
+    <p>$Y_k$ of the $k$th success (or arrival) is equal to the sum $Y_k = T_1 + T_2 + &hellip; + T_k$ of $k$ i.i.d. geometric random variables.</p>
+
+<p>With that observation, we can then derive formulas for the mean, variance, and PMF of $Y_k $, which are given in the table that follow.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("the-kth-arrival-time");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Properties: <span class="keyword" id="properties-of-the-kth-arrival-time">Properties of the Kth Arrival Time</span>
+  
+  </span>
+  <div class="block__content block__content--green">
+  <p>$$E[Y_k] = E[T_1] + &hellip; + E[ T_k ] = \frac{ k }{ p }$$</p>
+
+<p>$$\var{ Y_k } = \var{ T_1 } + &hellip; + \var{ T_k } = \frac{ k(1-p)}{ p^2 } $$</p>
+
+<p>$$p_{Y_k}(t) = \binom{ t-1 }{ k-1 } p^k(1-p)^{t-k} , t = k, k+1, &hellip;$$</p>
+
+<p>This is known as the <strong>Pascal PMF of order $k$</strong>.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("properties-of-the-kth-arrival-time");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "ppt";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="splitting-of-a-bernoulli-process">Splitting of a Bernoulli Process</span></span>
+  <div class="block__content block__content--blue">
+    <p>Start with a Bernoulli process in which there is a probability $p$ of an arrival at each time, consider <strong>splitting</strong> it as follows. Whenever there is an arrival. We choose to either keep it (with probability $q$), or to discard it (with probability $1-q$).</p>
+
+<p>Then, the probability of a kept arrival is $pq$, and the probability of a discarded arrival is $p(1-q)$. The sequence of kept arrivals and discarded arrivals are both Bernoulli sequences.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("splitting-of-a-bernoulli-process");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="merging-of-two-bernoulli-process">Merging of Two Bernoulli Process</span></span>
+  <div class="block__content block__content--blue">
+    <p>Start with two Bernoulli processes with parameter $p $ and $q $ respectively, consider <strong>merging</strong> as follows. An arrival is recorded in the merged process if and only if there is an arrival in at least one of the two original process. The probability $P = 1 - (1-p)(1-q) = p + q - pq$.</p>
+
+<p>Since different time slots in either of the original processes are independent, different slots in the merged process are also <strong>independent</strong>. Thus the merged process is Bernoulli with success probability $p+q-pq $ at each time step.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("merging-of-two-bernoulli-process");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="the-poisson-approximation-to-the-binomial">The Poisson Approximation to the Binomial</span></span>
+  <div class="block__content block__content--blue">
+    <p>The number of successes in $n$ independent Bernoulli trials is a binomial random
+variable with parameters $n$ and $p$, and its mean is $np$.</p>
+
+<p>When $n$ is large but $p$ is small, the mean $np$ has a moderate value. This kind
+of situations can be addressed by keeping the product $np$ at a constant value
+$\lambda$. To do so we let $n$ grow while simultaneously let $p$ decrease.</p>
+
+<p>In the limit, it turns out that the formula for the binomial PMF simplifies to
+Poisson PMF, that is</p>
+
+<p>$\forall k &gt; 0 $
+$$\begin{align*}
+\limu{ n }{ \infty } p_S(k) &amp;= \frac{ n! }{(n-k)!k! } \cdot p^k (1-p)^{ n-k } \br
+&amp;= e^{- \lambda} \frac{ \lambda^k }{ k! } = p_Z(k)
+\end{align*}$$</p>
+
+<p>where $S \binomdist{ n }{ p }, Z \poissondist{ \lambda }, p = \lambda / n$</p>
+
+<p>In general, the Poisson PMF is a good approximation to the binomial as long as
+$\lambda=np $, $n $ is very large, $p $ is very small.</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand"><a>[expand]</a></span>
+  </div>
+  <div class="proof__content hide">
+    <p>Let $S \binomdist{ n }{ p }, p = \lambda / n $, then</p>
+
+<p>$$\begin{align*}
+p_S(k) &amp;= \frac{ n! }{(n-k)!k! } \cdot p^k(1-p)^{n-k} \br
+&amp;= \frac{n(n-1) &hellip;(n-k+1)}{k!}\cdot\frac{\lambda^k}{n^k}\pare{1-\frac{\lambda}{ n }}^{n-k} \br
+&amp;= \frac{ n }{ n } \cdot \frac{ n-1 }{ n } &hellip; \frac{ n-k+1 }{ n } \cdot \frac{ \lambda^k }{ k! } \cdot \pare{ 1- \frac{ \lambda }{ n }}^{n-k}
+\end{align*}$$</p>
+
+<p>$\limu{ n }{ \infty } \frac{ n - c }{ n } = 1$, given $c$ is constant.</p>
+
+<p>Furthermore,</p>
+
+<p>$$\pare{ 1- \frac{ \lambda }{ n }}^{-k} \to 1 $$</p>
+
+<p>$$\pare{ 1 - \frac{ \lambda }{ n }}^n \to e^{- \lambda} $$</p>
+
+<p>Then, fix $k &gt; 0 $</p>
+
+<p>$$\limu{ n }{ \infty } p_S(k) = e^{- \lambda} \frac{ \lambda^k }{ k! }$$</p>
+
+  </div>
+</div>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("the-poisson-approximation-to-the-binomial");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+
+<div class="block block--yellow "> <span class="block__title block__title--yellow">Note
+  </span>
+  <div class="block__content block__content--yellow">
+    <p>As a rule of thumb, the Poisson/binomial approximation is valid to several decimal places if $n \geq 100, p \leq 0.01, \lambda = np $.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul></div>
+      </div>
+    </article>
+    <aside class="navigation--side">
+      <div class="navigation--side__selector">
+        <button class="navigation--side__button navigation--side__button--active" id="navigation--side__button--section" onclick="navigationSideSwitchToSection()">subject Nav.</button>
+        <button class="navigation--side__button" id="navigation--side__button--page" onclick="navigationSideSwitchToPage()">Page Nav.</button>
+        <script>
+          function navigationSideSwitchToSection() {
+            document.getElementById("page-navigation").setAttribute("style","display: none;");
+            document.getElementById("section-navigation").setAttribute("style","display: block;");
+            document.getElementById("navigation--side__button--section").classList.add("navigation--side__button--active");
+            document.getElementById("navigation--side__button--page").classList.remove("navigation--side__button--active");
+          }
+
+          function navigationSideSwitchToPage() {
+            document.getElementById("section-navigation").setAttribute("style","display: none;");
+            document.getElementById("page-navigation").setAttribute("style","display: block;");
+            document.getElementById("navigation--side__button--section").classList.remove("navigation--side__button--active");
+            document.getElementById("navigation--side__button--page").classList.add("navigation--side__button--active");
+          }
+        </script>
+      </div>
+      <ul class="navigation--side__list" id="section-navigation">
+      
+      
+      
+        
+        
+        
+        
+      
+        
+        
+        
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">1</span>Sample Space and Probability</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/1.1/"><span class="navigation--side__index">1.1</span> Sets</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/1.2/"><span class="navigation--side__index">1.2</span> Probabilistic Models</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/1.3/"><span class="navigation--side__index">1.3</span> Conditional Probability</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/1.4/"><span class="navigation--side__index">1.4</span> Total Probability Theorem and Bayes&#39; Rule</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/1.5/"><span class="navigation--side__index">1.5</span> Independence</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/1.6/"><span class="navigation--side__index">1.6</span> Counting</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">2</span>Discrete Random Variables</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/2.1/"><span class="navigation--side__index">2.1</span> Discrete Random Variable</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/2.2/"><span class="navigation--side__index">2.2</span> Probability Mass Function</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/2.3/"><span class="navigation--side__index">2.3</span> Functions of Random Variables</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/2.4/"><span class="navigation--side__index">2.4</span> Expectation, Mean, and Variance</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/2.5/"><span class="navigation--side__index">2.5</span> Joint PMFs of Multiple Random Variables</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/2.6/"><span class="navigation--side__index">2.6</span> Conditioning</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/2.7/"><span class="navigation--side__index">2.7</span> Independence</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">3</span>General Random Variables</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/3.1/"><span class="navigation--side__index">3.1</span> Continuous Random Variables and PDFs</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/3.2/"><span class="navigation--side__index">3.2</span> Cummulative Distribution Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/3.3/"><span class="navigation--side__index">3.3</span> Normal Random Variables</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/3.4/"><span class="navigation--side__index">3.4</span> Joint PDFs of Multiple Random Variables</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/3.5/"><span class="navigation--side__index">3.5</span> Conditioning</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/3.6/"><span class="navigation--side__index">3.6</span> The Continuous Bayes&#39; Rule</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">4</span>Further Topics on Random Variables</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/4.1/"><span class="navigation--side__index">4.1</span> Derived Distributions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/4.2/"><span class="navigation--side__index">4.2</span> Covariance and Correlation</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/4.3/"><span class="navigation--side__index">4.3</span> Conditional Expectation and Variance Revisited</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/4.4/"><span class="navigation--side__index">4.4</span> Transforms</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/4.5/"><span class="navigation--side__index">4.5</span> Sum of a Random Number of Independent Random Variables</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">5</span>Limit Theorems</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/5.0/"><span class="navigation--side__index">5.0</span> Introduction to Limit Theorems</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/5.1/"><span class="navigation--side__index">5.1</span> Markov and Chevyshev Inequalities</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/5.2/"><span class="navigation--side__index">5.2</span> The Weak Law of Large Numbers</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/5.3/"><span class="navigation--side__index">5.3</span> Convergence in Probability</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/5.4/"><span class="navigation--side__index">5.4</span> The Central Limit Theorem</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/5.5/"><span class="navigation--side__index">5.5</span> The Strong Law of Large Numbers</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">6</span>The Bernoulli and Poisson Processes</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item navigation--side__item--current">
+              <a href="https://jimzenn.com/probability-theory/6.1/"><span class="navigation--side__index">6.1</span> The Bernoulli Process</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/probability-theory/6.2/"><span class="navigation--side__index">6.2</span> The Poisson Process</a>
+            </li>
+          
+        
+      
+      </ul>
+      <ul class="navigation--side__list" id="page-navigation">
+        <script>
+          var pageNavigationListDOM = document.getElementById("page-navigation");
+          for (var i = 0; i < keywordsCollector.length; i ++) {
+            pageNavigationListDOM.appendChild(keywordsCollector[i]);
+          }
+        </script>
+      </ul>
+    </aside>
+  </main>
+
+  
+  <div class="pagination">
+    <div class="pagination-wrapper">
+      
+        
+        
+        
+          <a href="https://jimzenn.com/probability-theory/5.5/" class="pagination__prev">5.5 The Strong Law of Large Numbers</a>
+        
+      
+      
+        
+        
+        
+          <a href="https://jimzenn.com/probability-theory/6.2/" class="pagination__next">6.2 The Poisson Process</a>
+        
+      
+    </div>
+  </div>
+  
+
+
+  <footer class="footer">
+  <div class="footer__wrapper">
+    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <ul class="footer-links">
+      <li>
+        <a href="/Jim_Zenn-CV.pdf">CV</a>
+      </li>
+      <li>
+        <a href="https://jimzenn.com/index.xml" type="application/rss+xml" target="_blank">RSS</a>
+      </li>
+      <li>
+        <a href="https://github.com/Jim-Zenn">code</a>
+      </li>
+      <li>
+        <a href="mailto:zenn@ucla.edu">email</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+
+
+    <div>
+  </body>
+
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] },
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: true, width: "container" }
+    },
+    
+  });
+</script>
+
+<script>
+  shifted = false;
+  container = document.querySelector("#container");
+  var toggle = document.querySelector("#header-menu__toggle");
+  toggle.addEventListener("click", function toggleHeader() {
+    var content = document.querySelector("#collapsable-menu");
+    var menuIcon = document.querySelector("#header__menu-icon");
+    var globalNav = document.querySelector("#header-menu");
+    var header = document.querySelector("#header");
+    this.classList.toggle("header-menu__toggle--active");
+    content.classList.toggle("header-menu--collapsable--active");
+    header.classList.toggle("header--active");
+    container.classList.toggle("container--shifted");
+    menuIcon.classList.toggle("header__menu-icon--shifted");
+    shifted = !shifted;
+    if (shifted) {
+      triggerOffset = window.pageYOffset;
+    };
+  });
+
+  window.addEventListener('scroll', function scrollCloseTrigger() {
+    if (shifted && Math.abs(window.pageYOffset - triggerOffset) > 10) {
+      toggle.click();
+    };
+  });
+
+  container.addEventListener("click", function containerClickTrigger() {
+    if (shifted) {
+      toggle.click();
+    }
+  });
+
+  var collapsableMenuLinks = document.querySelectorAll(".header-menu__list--collapsable a");
+  for (let i = 0; i < collapsableMenuLinks.length; i ++) {
+    collapsableMenuLinks[i].addEventListener("click", function(e) {
+      toggle.click();
+      return true;
+    });
+  }
+</script>
+
+<script charset="utf-8">
+  let proofExpandToggles = document.querySelectorAll(".proof__expand");
+  proofExpandToggles.forEach((node) => {
+    node.addEventListener('click', function(e) {
+      if (e.target.textContent == "[expand]") {
+        e.target.textContent = "[collapse]";
+      } else {
+        e.target.textContent = "[expand]";
+      }
+      proofContentNode = e.target.parentNode.parentNode.nextElementSibling;
+      proofContentNode.classList.toggle("hide");
+    });
+  });
+</script>
+
+
+</html>

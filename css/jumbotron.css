@@ -40,6 +40,7 @@
 }
 
 #jumbotron__expand-button {
+  padding-top: 60px;
   pointer-events: all;
   cursor: pointer;
   outline: 0;
@@ -52,7 +53,7 @@
 
 @keyframes jumbotron__expand-button-breath {
   30%   { opacity: .3; }
-  40%   { opacity: .4; }
+  40%   { opacity: .8; }
 }
 
 #jumbotron__expand-button svg {

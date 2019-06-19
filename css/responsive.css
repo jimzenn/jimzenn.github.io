@@ -27,9 +27,9 @@
     padding-right: calc( 50vw - 490px + 0.5rem);
   }
 
-  body.about .content,
-  body.about .pagination,
-  body.about .footer {
+  body.resume .content,
+  body.resume .pagination,
+  body.resume .footer {
     padding-left: calc( 50vw - 400px + 0.5rem);
     padding-right: calc( 50vw - 400px + 0.5rem);
   }
@@ -248,7 +248,7 @@
     margin-top: 2px;
   }
 
-  .content--about {
+  .content--resume {
     padding-top: 0;
   }
 

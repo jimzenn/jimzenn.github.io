@@ -3,27 +3,21 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.54.0" />
-
+<meta name="generator" content="Hugo 0.55.6" />
 
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
-<title>Compact Metric Spaces - Jim Zenn</title>
-<meta property="og:title" content="Compact metric spaces - Jim Zenn">
-
-
-
+  <title>Compact Metric Spaces - Jim Zenn</title>
+  <meta property="og:title" content="Compact metric spaces - Jim Zenn">
   
 
 
 
 
-
-
 <script
-  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
   crossorigin="anonymous"></script>
 
 
@@ -39,17 +33,17 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3">
   </head>
 
   <body class="note wide" >
@@ -69,6 +63,10 @@ if (!doNotTrack) {
         
           
             <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
@@ -93,7 +91,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -104,6 +102,10 @@ if (!doNotTrack) {
     
       
     <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
@@ -128,7 +130,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -138,11 +140,9 @@ if (!doNotTrack) {
     <div class="container" id="container">
       
         <div class="container-tag">
-          
-          <b class="container-title">
-            Notes
-          </b>
-          
+        
+          <b class="container-title">Notes</b>
+        
         </div>
       
       
@@ -232,9 +232,9 @@ if (!doNotTrack) {
     $\newcommand{\spa}[1]{\text{span}(#1)}$
     $\newcommand{\dist}[1]{\text{dist}(#1)}$
     $\newcommand{\max}[1]{\text{max}(#1)}$
-    $\newcommand{\min}[1]{\text{max}(#1)}$
-    $\newcommand{\supr}[1]{\text{sup}(#1)}$
-    $\newcommand{\infi}[1]{\text{inf}(#1)}$
+    $\newcommand{\min}[1]{\text{min}(#1)}$
+    $\newcommand{\supr}{\text{sup}}$
+    $\newcommand{\infi}{\text{inf}}$
     $\newcommand{\ite}[1]{\text{int}(#1)}$
     $\newcommand{\ext}[1]{\text{ext}(#1)}$
     $\newcommand{\bdry}[1]{\partial #1}$
@@ -257,6 +257,9 @@ if (!doNotTrack) {
     $\newcommand{\tail}{\text T}$
     $\newcommand{\d}{\text d}$
     $\newcommand{\limu}[2]{\underset{#1 \to #2}\lim}$
+    $\newcommand{\limsupu}[2]{\underset{#1 \to #2}{\lim\supr}}$
+    $\newcommand{\liminfu}[2]{\underset{#1 \to #2}{\lim\infi}}$
+    $\newcommand{\limd}[3]{\underset{#1 \to #2; #3}\lim}$
     $\newcommand{\der}[2]{\frac{\d #1}{\d #2}}$
     $\newcommand{\derw}[2]{\frac{\d #1^2}{\d^2 #2}}$
     $\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}$
@@ -269,11 +272,18 @@ if (!doNotTrack) {
     $\newcommand{\nullspace}[1]{\mathcal{N}\pare{#1}}$
     $\newcommand{\range}[1]{\mathcal{R}\pare{#1}}$
     $\newcommand{\var}[1]{\text{var}\pare{#1}}$
-    $\newcommand{\cov}[1]{\text{cov}(#1)}$
-    $\newcommand{\cov}[2]{\text{cov}\pare{#1, #2}}$
+    $\newcommand{\cov}[2]{\text{cov}(#1, #2)}$
     $\newcommand{\tr}[1]{\text{tr}(#1)}$
     $\newcommand{\oto}{\text{ one-to-one }}$
     $\newcommand{\ot}{\text{ onto }}$
+    $\newcommand{\ipto}{\overset{\text{i.p.}}\longrightarrow}$
+    $\newcommand{\asto}{\overset{\text{a.s.}}\longrightarrow}$
+    $\newcommand{\expdist}[1]{\text{ ~ Exp}(#1)}$
+    $\newcommand{\unifdist}[1]{\text{ ~ Unif}(#1)}$
+    $\newcommand{\normdist}[2]{\text{ ~ N}(#1,#2)}$
+    $\newcommand{\berndist}[2]{\text{ ~ Bernoulli}(#1,#2)}$
+    $\newcommand{\geodist}[1]{\text{ ~ Geometric}(#1)}$
+    $\newcommand{\poissondist}[1]{\text{ ~ Poisson}(#1)}$
     $\newcommand{\ceil}[1]{\lceil#1\rceil}$
     $\newcommand{\floor}[1]{\lfloor#1\rfloor}$
     $\newcommand{\Re}[1]{\text{Re}(#1)}$
@@ -312,14 +322,18 @@ if (!doNotTrack) {
     $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$
     $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$
   
+
 </div>
+
 
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="compactness">Compactness</span></span>
   <div class="block__content block__content--blue">
-    <p>A metric space $(X,d)$ is said to be <strong>compact</strong> iff every sequence in $(X,d)$ has at least one convergent subsequence.</p>
+    <p>A metric space $(X,d)$ is <strong>compact</strong> iff every sequence in $(X,d)$ has at least one convergent subsequence. i.e.</p>
 
-<p>A subset $Y$ of a metric space $X$ is said to be <strong>compact</strong> iff the subspace $(Y,d|_{Y\times Y})$ is compact.</p>
+<p>$$\forall (x^{(n)})^\infty_{n =1} \in X, \exists \limu{ j }{ \infty}(x^{(n_j)})^\infty_{ j =1} = L $$</p>
+
+<p>A subset $Y \subseteq X$ is <strong>compact</strong> iff the subspace $(Y,d|_{Y\times Y})$ is compact.</p>
 
   </div>
 
@@ -353,11 +367,12 @@ if (!doNotTrack) {
     </script></div>
 
 
+
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks
   </span>
   <div class="block__content block__content--yellow">
-  <p>The notion of a set $Y$ being compact is <u>intrinsic</u>, in the sense that it only depends on the metric function $d|_{(Y, d|_{Y \times Y})}$ restricted to $Y$, and not on the choice of the ambient space $X$.</p>
+  <p>Compactness of a set $Y$ is an <strong>intrinsic</strong> property, since it <strong>only depends on the metric function $d|_{(Y, d|_{Y \times Y})}$ restricted to $Y$</strong>, and not on the choice of the ambient space $X$.</p>
 
 <p>The notions of completeness and of boundedness are also intrinsic, but the notions of open and closed are not.</p>
 
@@ -374,10 +389,14 @@ if (!doNotTrack) {
 </div>
 
 
+
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="bounded-sets">Bounded Sets</span></span>
   <div class="block__content block__content--blue">
-    <p>Let $(X,d)$ be a metric space, and let $Y$ be a subset of $X$. We say that $Y$ is <strong>bounded</strong> iff there exists a ball $B(x,r)$ in $X$ which contains $Y$.</p>
+    <p>Let $(X,d)$ be a metric space, and let $Y \subseteq X$.</p>
+
+<p>$Y$ is <strong>bounded</strong> iff
+$$\exists B(x, r), Y \subseteq B(x, r) \subseteq X $$</p>
 
   </div>
 
@@ -411,11 +430,56 @@ if (!doNotTrack) {
     </script></div>
 
 
+
 <div class="block block--green ">
   <span class="block__title block__title--green">Proposition
   </span>
   <div class="block__content block__content--green">
-  <p>A compact metric space is both complete and bounded.</p>
+  <p>A compact metric space is both <u>complete</u> and <u>bounded</u>.</p>
+
+<p>Let $(X, d)$ be a compact metric space. Let $(x^{(n)})^\infty_{ n =1}$ be a Cauchy sequence in $X$.</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand"><a>[expand]</a></span>
+  </div>
+  <div class="proof__content hide">
+    <p><strong>Completeness:</strong></p>
+
+<p>Since $(X, d)$ is compact, $(x^{(n)})^\infty_{ n =1}$ has a convergent subsequence.</p>
+
+<p>Therefore $(x^{(n)})^\infty_{ n =1}$ is convergent.</p>
+
+<p><strong>Boundedness:</strong></p>
+
+<p>Assume on the contrary, $(X, d)$ is not bounded.</p>
+
+<p>Then we can construct a sequence as follows.</p>
+
+<p>Choose $x_0 \in X$, <br>
+choose $x_1 \in X, d(x_0, x_1) &gt; 1 $, <br>
+choose $x_2 \in X, d(x_0, x_2) &gt; 2 $, <br>
+choose $x_n \in X, d(x_0, x_n) &gt; n $.</p>
+
+<p>Since $(X, d) $ is not bounded, we can construct such a sequence with infinite
+elements, and this sequence does not converge to any specific point, because if
+a limit $L$ exists, $\limu{ n }{ \infty } d(x_n, L) = 0 $</p>
+
+<p>However, $d(x_0, x_n) \leq d(x_0, L) + d(L, x_n)$.</p>
+
+<p>Since $\limu{ n }{ \infty }d(x_0, x_n) = \infty $ by construction, $\limu{ n }{ \infty } d(x_n, L) \to \infty $.</p>
+
+<p>CONTRADICTION.</p>
+
+<p>Hence $(X, d) $ must be bounded.</p>
+
+  </div>
+</div>
 
   </div><ul class="block__footer">
     <li class="block__footer-item">
@@ -428,13 +492,44 @@ if (!doNotTrack) {
 </div>
 
 
+
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   : <span class="keyword" id="compact-sets-are-closed-and-bounded">Compact Sets Are Closed and Bounded</span></span>
 
 
   <div class="block__content block__content--green">
-  <p>Let $(X,d) $ be a metric space, and let $Y$ be a compact subset of $X$. Then $Y$ is closed and bounded.</p>
+  <p>Let $(X,d)$ be a metric space, and let $Y$ be a compact subset of $X$. Then $Y$ is closed and bounded.</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand"><a>[expand]</a></span>
+  </div>
+  <div class="proof__content hide">
+    <p>$Y$ is a compact subset of $X$.</p>
+
+<p><strong>Closedness:</strong></p>
+
+<p>Assume on the contrary, $Y$ is not closed.
+Then exists $x_0 \in \bdry{ Y }, x_0 \not \in Y$.
+Since $x_0$ is an adherent point of $Y$, there must exist a sequence $(y^{(n)})^\infty_{ n =1} $ in $Y$, such that $\limu{ n }{ \infty } (y^{(n)})^\infty_{ n =1} = x_0$.</p>
+
+<p>However, if $(y^{(n)})^\infty_{ n =1} $ does exist, since $Y$ is compact.
+The limit $x_0 $ must be inside $Y $ as well.</p>
+
+<p>Then $x_0$ is an interior point of $Y$. CONTRADICTION.</p>
+
+<p><strong>Boundedness:</strong></p>
+
+<p>Since $X$ is compact, then $X$ is bounded. Hence $Y$ is bounded.</p>
+
+  </div>
+</div>
 
   </div>
 
@@ -468,13 +563,14 @@ if (!doNotTrack) {
     </script></div>
 
 
+
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="heine-borel-theorem">Heine-Borel Theorem</span></span>
   <div class="block__content block__content--green">
-  <p>Let $(R^n, d) $ be a Euclidean space with either the Euclidean ($d_{l^2}$) metric, the taxicab ($d_{l^1}$) metric, or the sup-norm ($d_{l^\infty} $) metric. Let $E$ be a subset of $\R^n $.</p>
+  <p>$(R^n, d)$ where $d = d_{l^2}$, or $d = d_{l^1}$, or $d = d_{l^\infty}$. $E \subseteq \R^n $.</p>
 
-<p>Then $E$ is compact if and only if it is closed and bounded.</p>
+<p>Then $E$ is compact $\iff $ $E$ closed and bounded.</p>
 
   </div><script>
       
@@ -507,11 +603,14 @@ if (!doNotTrack) {
 </div>
 
 
+
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
-  : <span class="keyword" id="every-open-cover-of-a-compact-set-has-a-%EF%AC%81nite-subcover">Every Open Cover of a Compact Set Has a ﬁnite Subcover</span></span>
+  : <span class="keyword" id="every-open-cover-of-a-compact-set-has-a-finite-subcover">Every Open Cover of a Compact Set Has a Finite Subcover</span></span>
   <div class="block__content block__content--green">
-  <p>Let $(X,d) $ be a metric space, and let $Y $ be a compact subset of $X$. Let $(V_ \alpha)_ { \alpha \in I } $ be a collection of open sets in $X$, and suppose that</p>
+  <p>Let $(X,d)$ be a metric space, and let $Y \subseteq X$ is compact.</p>
+
+<p>Let $(V_ \alpha)_ { \alpha \in I}$ be a collection of open sets in $X$, and suppose that</p>
 
 <p>$$Y \subseteq \bigcup_{ \alpha \in I } V_ \alpha $$</p>
 
@@ -529,13 +628,11 @@ if (!doNotTrack) {
     <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
-    <p>$r(y) = \supr{ \set{ r&gt; 0 : B(y ,r) \subseteq V_ \alpha }}$</p>
+    <p>$r(y) = \supr{\set{ r&gt; 0 : B(y ,r) \subseteq V_ \alpha }}. r(y) &gt; 0, \forall y \in X$.</p>
 
-<p>$r(y) &gt; 0, \forall y \in X $.</p>
+<p>($V_\alpha$s are open)</p>
 
-<p>($V_\alpha$ s are open)</p>
-
-<p>$r_0 = \infi{ \set{ r(y) : y \in Y }} $</p>
+<p>$r_0 = \infi{\set{ r(y) : y \in Y }} $</p>
 
 <p>$r_0 \geq 0$</p>
 
@@ -584,11 +681,11 @@ if (!doNotTrack) {
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
-    <p>$ y^{(1)} \in V_ \alpha_1 $</p>
+    <p>$y^{(1)} \in V_ \alpha_1 $</p>
 
-<p>$ B(y^{(1)}, r(y^{(1)})) \leq V_ \alpha_1 $</p>
+<p>$B(y^{(1)}, r(y^{(1)})) \leq V_ \alpha_1 $</p>
 
-<p>Is $ Y \subset V_ \alpha_1 $</p>
+<p>Is $Y \subset V_ \alpha_1 $</p>
 
 <p>No, by assumption.</p>
 
@@ -605,25 +702,25 @@ if (!doNotTrack) {
 
 <p>$\exists y^{(2)} \in Y \setminus V_ \alpha_1$</p>
 
-<p>$ d(y^{(1)}, y^{(2)}) &gt; K, y^{(2)} \in V_ \alpha _2$</p>
+<p>$d(y^{(1)}, y^{(2)}) &gt; K, y^{(2)} \in V_ \alpha _2$</p>
 
-<p>Is $ Y \subset V_ \alpha_1 \cup \alpha_2 $ ?</p>
+<p>Is $Y \subset V_ \alpha_1 \cup \alpha_2 $ ?</p>
 
 <p>No $\exists y^{(3)} \in Y \setminus (V _ \alpha _1 \cup V _ \alpha _2) $</p>
 
-<p>$ d(y^{(3)}, y^{(2)}) &gt; K $</p>
+<p>$d(y^{(3)}, y^{(2)}) &gt; K $</p>
 
-<p>$ d(y^{(3)}, y^{(1)}) &gt; K $</p>
+<p>$d(y^{(3)}, y^{(1)}) &gt; K $</p>
 
-<p>$ y^{(3)} \in V_ \alpha _3 $</p>
+<p>$y^{(3)} \in V_ \alpha _3 $</p>
 
-<p>Sequence $(y^{(n)})^ \infty _{n = 1} $ in $ Y $</p>
+<p>Sequence $(y^{(n)})^ \infty _{n = 1} $ in $Y $</p>
 
-<p>$ d(y^{(n)}, y^{(m)}) &gt; K &gt; 0 $</p>
+<p>$d(y^{(n)}, y^{(m)}) &gt; K &gt; 0 $</p>
 
 <p>So  no subseq can converge. HW.</p>
 
-<p>$ Y $ is not compact. contradiction.</p>
+<p>$Y $ is not compact. contradiction.</p>
 
 <p></div>
 </div></p>
@@ -632,7 +729,7 @@ if (!doNotTrack) {
       
       (function() {
         var keywordListDOM = document.getElementById("page-navigation");
-        var keywordDOM = document.getElementById("every-open-cover-of-a-compact-set-has-a-%EF%AC%81nite-subcover");
+        var keywordDOM = document.getElementById("every-open-cover-of-a-compact-set-has-a-finite-subcover");
         var keywordItemDOM = document.createElement("li");
         keywordItemDOM.setAttribute("class", "navigation--side__item");
         var keywordLinkDOM = document.createElement("a");
@@ -659,28 +756,12 @@ if (!doNotTrack) {
 </div>
 
 
-<div class="block block--yellow "> <span class="block__title block__title--yellow">Note
-  </span>
-  <div class="block__content block__content--yellow">
-    <p>Why are compact sets important?</p>
-
-  </div>
-
-  <ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul></div>
-
 
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
-  <p>Let $ f: [a, b] \to \R $ be a continuous function. Then $ f $ attains its max and min in $[a, b]$. max : $\exists c \in [a, b] $ such that $f&copy; \geq f(x) , \forall x \in [a, b]$</p>
+  <p>Let $f: [a, b] \to \R $ be a continuous function. Then $f $ attains its max and min in $[a, b]$. max: $\exists c \in [a, b] $ such that $f(c) \geq f(x) , \forall x \in [a, b]$.</p>
 
   </div><ul class="block__footer">
     <li class="block__footer-item">
@@ -693,17 +774,51 @@ if (!doNotTrack) {
 </div>
 
 
+
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   </span>
 
 
   <div class="block__content block__content--green">
-  <p>Let $(X,d)$ be a metric space, and let $K_1, K_2, &hellip;$ be a sequence of non-empty compact subsets of $X$ such that</p>
+  <p>??????</p>
 
-<p>$K_1 \subset K_2 \subset K_3 \subset &hellip; $</p>
+<p>Let $(X,d)$ be a metric space, and let $K_1, K_2, K_3, &hellip;$ be a sequence of non-empty <u>compact</u> subsets of $X$ such that</p>
+
+<p>$$K_1 \subset K_2 \subset K_3 \subset &hellip; $$</p>
 
 <p>Then the intersection $\bigcap_{ n=1 }^ \infty K_n $ is non-empty.</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand"><a>[expand]</a></span>
+  </div>
+  <div class="proof__content hide">
+    <p>$\forall n$, since $K_n$ is compact, $K_n$ is closed.</p>
+
+<p>First we look at the space $X = K_1$.</p>
+
+<p>Assume on the contrary $\bigcap K_n = \emptyset $.</p>
+
+<p>Take complement $\bigcup_{ n= 1 }^ \infty (X \setminus K_n) = X = \bigcup_{ n= 1 }^ \infty O_n $, which is compact.</p>
+
+<p>We can find $O_{n_1}, O_{n_2}, &hellip;, O_{n_k}$ such that</p>
+
+<p>$$\bigcup_{ k= 1 }^ \infty O_{n_k} \subseteq X $$</p>
+
+<p>Notice that $X \setminus K_n = O_n$ is open in $X$.</p>
+
+<p>let $m = \max{ n_1, n_2, &hellip;, n_k } $</p>
+
+<p>$O_m = X \setminus X_m = \subseteq X, K_m = \emptyset $.</p>
+
+  </div>
+</div>
 
   </div>
 
@@ -717,6 +832,7 @@ if (!doNotTrack) {
   </ul></div>
 
 
+
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
@@ -724,9 +840,11 @@ if (!doNotTrack) {
   <p>Let $(X,d) $ be a metric space.</p>
 
 <ol>
-<li><p>If $Y$ is a compact subset of $X$, and $Z \subseteq Y $, then $Z $ is compact if and only if $Z$ is closed.</p></li>
+<li><p>$Y \subseteq X$, $Y$ compact, and $Z \subseteq Y$, then
+$$Z\text{ is compact}\iff Z\text{ is closed}$$</p></li>
 
-<li><p>If $Y_1, _2, &hellip;, _n $ are a finite collection of compact subsets of $X$, then their union $Y_1 \cup Y_2 \cup &hellip; \cup Y_n $ is also compact.</p></li>
+<li><p>If $Y_1, Y_2, &hellip;, Y_n \subseteq X$ are a finite collection of compact subsets
+$$\bigcup_{ n=0 }^ \infty Y_n\text{ is also compact}$$</p></li>
 
 <li><p>Every finite subset of $X$  (including the empty set) is compact.</p></li>
 </ol>
@@ -875,7 +993,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.7/"><span class="navigation--side__index">2.7</span> Limits of Sequences</a>
+              <a href="https://jimzenn.com/analysis/2.1/"><span class="navigation--side__index">2.1</span> Limits of Sequences</a>
             </li>
           
         
@@ -895,7 +1013,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.8/"><span class="navigation--side__index">2.8</span> A Discussion About Proofs</a>
+              <a href="https://jimzenn.com/analysis/2.2/"><span class="navigation--side__index">2.2</span> A Discussion About Proofs</a>
             </li>
           
         
@@ -915,7 +1033,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.9/"><span class="navigation--side__index">2.9</span> Limit Theorems for Sequences</a>
+              <a href="https://jimzenn.com/analysis/2.3/"><span class="navigation--side__index">2.3</span> Limit Theorems for Sequences</a>
             </li>
           
         
@@ -935,7 +1053,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.10/"><span class="navigation--side__index">2.10</span> Monotone Sequences and Cauchy Sequences</a>
+              <a href="https://jimzenn.com/analysis/2.4/"><span class="navigation--side__index">2.4</span> Monotone Sequences and Cauchy Sequences</a>
             </li>
           
         
@@ -955,7 +1073,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.11/"><span class="navigation--side__index">2.11</span> Subsequences</a>
+              <a href="https://jimzenn.com/analysis/2.5/"><span class="navigation--side__index">2.5</span> Subsequences</a>
             </li>
           
         
@@ -975,7 +1093,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.15/"><span class="navigation--side__index">2.15</span> Alternating Series and Integral Tests</a>
+              <a href="https://jimzenn.com/analysis/2.9/"><span class="navigation--side__index">2.9</span> Alternating Series and Integral Tests</a>
             </li>
           
         
@@ -997,7 +1115,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/3.17/"><span class="navigation--side__index">3.17</span> Continuous Functions</a>
+              <a href="https://jimzenn.com/analysis/3.1/"><span class="navigation--side__index">3.1</span> Continuous Functions</a>
             </li>
           
         
@@ -1017,7 +1135,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/3.18/"><span class="navigation--side__index">3.18</span> Properties of Continuous Functions</a>
+              <a href="https://jimzenn.com/analysis/3.2/"><span class="navigation--side__index">3.2</span> Properties of Continuous Functions</a>
             </li>
           
         
@@ -1037,7 +1155,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/3.19/"><span class="navigation--side__index">3.19</span> Uniform Continuity</a>
+              <a href="https://jimzenn.com/analysis/3.3/"><span class="navigation--side__index">3.3</span> Uniform Continuity</a>
             </li>
           
         
@@ -1057,7 +1175,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/3.20/"><span class="navigation--side__index">3.20</span> Limits of Functions</a>
+              <a href="https://jimzenn.com/analysis/3.4/"><span class="navigation--side__index">3.4</span> Limits of Functions</a>
             </li>
           
         
@@ -1079,7 +1197,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/5.28/"><span class="navigation--side__index">5.28</span> Basic Properties of the Derivative</a>
+              <a href="https://jimzenn.com/analysis/5.1/"><span class="navigation--side__index">5.1</span> Basic Properties of the Derivative</a>
             </li>
           
         
@@ -1099,7 +1217,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/5.29/"><span class="navigation--side__index">5.29</span> The Mean Value Theorem</a>
+              <a href="https://jimzenn.com/analysis/5.2/"><span class="navigation--side__index">5.2</span> The Mean Value Theorem</a>
             </li>
           
         
@@ -1112,7 +1230,7 @@ if (!doNotTrack) {
             
             
                
-                <li class="navigation--side__heading"><span class="navigation--side__heading-index">8</span></li>
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">8</span>Metric Spaces</li>
               
             
             
@@ -1121,7 +1239,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/8.1/"><span class="navigation--side__index">8.1</span> Definitions and Examples</a>
+              <a href="https://jimzenn.com/analysis/8.1/"><span class="navigation--side__index">8.1</span> Metrics and Metric Spaces</a>
             </li>
           
         
@@ -1214,7 +1332,7 @@ if (!doNotTrack) {
             
             
                
-                <li class="navigation--side__heading"><span class="navigation--side__heading-index">9</span></li>
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">9</span>Continuous Functions on Metric Spaces</li>
               
             
             
@@ -1224,6 +1342,372 @@ if (!doNotTrack) {
             
             <li class="navigation--side__item ">
               <a href="https://jimzenn.com/analysis/9.1/"><span class="navigation--side__index">9.1</span> Continuous Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/9.2/"><span class="navigation--side__index">9.2</span> Continuity and Product Spaces</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/9.3/"><span class="navigation--side__index">9.3</span> Continuity and Compactness</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/9.4/"><span class="navigation--side__index">9.4</span> Continuity and Connectedness</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">10</span>Uniform Convergence</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.1/"><span class="navigation--side__index">10.1</span> Limiting Values of Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.2/"><span class="navigation--side__index">10.2</span> Pointwise and Uniform Convergence</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.4/"><span class="navigation--side__index">10.4</span> The Metric of Uniform Convergence</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.5/"><span class="navigation--side__index">10.5</span> Series of Functions; the Weierstrass M-Test</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.6/"><span class="navigation--side__index">10.6</span> Uniform Convergence and Integration</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.7/"><span class="navigation--side__index">10.7</span> Uniform Convergence and Derivatives</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">11</span>Power Series</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.1/"><span class="navigation--side__index">11.1</span> Formal Power Series</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/12.1/"><span class="navigation--side__index">11.1</span> Periodic Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.2/"><span class="navigation--side__index">11.2</span> Real Analytic Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.3/"><span class="navigation--side__index">11.11</span> Abel&#39;s Theorem</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.4/"><span class="navigation--side__index">11.4</span> Multiplication of Power Series</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.5/"><span class="navigation--side__index">11.5</span> The Exponential and Logarithm Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.7/"><span class="navigation--side__index">11.7</span> Trigonometric Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">15</span></li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/midterm2/"><span class="navigation--side__index">15.1</span> Midterm Review</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/final/"><span class="navigation--side__index">15.2</span> Final</a>
             </li>
           
         
@@ -1247,7 +1731,7 @@ if (!doNotTrack) {
         
         
         
-          <a href="https://jimzenn.com/analysis/8.4/" class="pagination__prev">8.4 Cauchy sequences and complete metric spaces</a>
+          <a href="https://jimzenn.com/analysis/8.4/" class="pagination__prev">8.4 Cauchy Sequences and Complete Metric Spaces</a>
         
       
       
@@ -1288,7 +1772,7 @@ if (!doNotTrack) {
   </body>
 
   <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
   MathJax.Hub.Config({
     tex2jax: {
       inlineMath: [['$','$'], ['\\(','\\)']],

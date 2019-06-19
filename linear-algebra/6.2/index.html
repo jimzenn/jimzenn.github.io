@@ -3,27 +3,21 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.54.0" />
-
+<meta name="generator" content="Hugo 0.55.6" />
 
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
-<title>Gram-Schmidt Orthogonalization Process - Jim Zenn</title>
-<meta property="og:title" content="Gram-Schmidt Orthogonalization process - Jim Zenn">
-
-
-
+  <title>Gram-Schmidt Orthogonalization Process - Jim Zenn</title>
+  <meta property="og:title" content="Gram-Schmidt Orthogonalization process - Jim Zenn">
   
 
 
 
 
-
-
 <script
-  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
   crossorigin="anonymous"></script>
 
 
@@ -39,17 +33,17 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3">
   </head>
 
   <body class="note wide" >
@@ -69,6 +63,10 @@ if (!doNotTrack) {
         
           
             <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
@@ -93,7 +91,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -104,6 +102,10 @@ if (!doNotTrack) {
     
       
     <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
@@ -128,7 +130,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -138,11 +140,9 @@ if (!doNotTrack) {
     <div class="container" id="container">
       
         <div class="container-tag">
-          
-          <b class="container-title">
-            Notes
-          </b>
-          
+        
+          <b class="container-title">Notes</b>
+        
         </div>
       
       
@@ -290,7 +290,9 @@ if (!doNotTrack) {
     $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$
     $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$
   
+
 </div>
+
 
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="orthonormal-basis">Orthonormal Basis</span></span>
@@ -329,6 +331,7 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
+
 
 
 <div class="block block--green ">
@@ -415,6 +418,7 @@ v &amp;= a_1v_1 + a_2v_2 + &hellip; + a_{ n }v_{ n } \br
 </div>
 
 
+
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   </span>
@@ -452,6 +456,7 @@ v &amp;= a_1v_1 + a_2v_2 + &hellip; + a_{ n }v_{ n } \br
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul></div>
+
 
 
 <div class="block block--green ">
@@ -501,6 +506,7 @@ a_1 \norm{ v_1 }^2 &amp;= 0
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul></div>
+
 
 
 <div class="block block--green ">
@@ -600,6 +606,7 @@ v_k &amp;= w_k - \sum_{ i=1 }^{ k-1 } \frac{ \inner{ w_k }{ v_i }}{ \norm{ v_i }
 </div>
 
 
+
 <div class="block block--yellow block--status"><div class="block__status block__status--extra"></div> <span class="block__title block__title--yellow">Note: <span class="keyword" id="what-happens-in-an-induction-if-we-dont-check-the-base-case">What Happens in an Induction if We Don&#39;t Check the Base Case?</span>
     
   </span>
@@ -650,6 +657,7 @@ v_k &amp;= w_k - \sum_{ i=1 }^{ k-1 } \frac{ \inner{ w_k }{ v_i }}{ \norm{ v_i }
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
+
 
 
 <div class="block block--gray ">
@@ -1062,7 +1070,7 @@ v_k &amp;= w_k - \sum_{ i=1 }^{ k-1 } \frac{ \inner{ w_k }{ v_i }}{ \norm{ v_i }
   </body>
 
   <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
   MathJax.Hub.Config({
     tex2jax: {
       inlineMath: [['$','$'], ['\\(','\\)']],

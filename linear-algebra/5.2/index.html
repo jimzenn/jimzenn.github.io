@@ -3,27 +3,21 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.54.0" />
-
+<meta name="generator" content="Hugo 0.55.6" />
 
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
-<title>Diagonalizability - Jim Zenn</title>
-<meta property="og:title" content="Diagonalizability - Jim Zenn">
-
-
-
+  <title>Diagonalizability - Jim Zenn</title>
+  <meta property="og:title" content="Diagonalizability - Jim Zenn">
   
 
 
 
 
-
-
 <script
-  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
   crossorigin="anonymous"></script>
 
 
@@ -39,17 +33,17 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3">
   </head>
 
   <body class="note wide" >
@@ -69,6 +63,10 @@ if (!doNotTrack) {
         
           
             <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
@@ -93,7 +91,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -104,6 +102,10 @@ if (!doNotTrack) {
     
       
     <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
@@ -128,7 +130,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -138,11 +140,9 @@ if (!doNotTrack) {
     <div class="container" id="container">
       
         <div class="container-tag">
-          
-          <b class="container-title">
-            Notes
-          </b>
-          
+        
+          <b class="container-title">Notes</b>
+        
         </div>
       
       
@@ -277,7 +277,9 @@ if (!doNotTrack) {
     $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$
     $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$
   
+
 </div>
+
 
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="diagonalizability-of-linear-operators">Diagonalizability of Linear Operators</span></span>
@@ -316,6 +318,7 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
+
 
 
 <div class="block block--blue ">
@@ -365,6 +368,7 @@ if (!doNotTrack) {
     </script></div>
 
 
+
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks
   </span>
@@ -382,6 +386,7 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
+
 
 
 <div class="block block--gray ">
@@ -412,6 +417,7 @@ if (!doNotTrack) {
   </ul>
 
 </div>
+
 
 
 <div class="block block--yellow ">
@@ -447,6 +453,7 @@ if (!doNotTrack) {
 </div>
 
 
+
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks
   </span>
@@ -469,6 +476,7 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
     </li>
   </ul>
 </div>
+
 
 
 <div class="block block--green ">
@@ -513,6 +521,7 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
     </li>
   </ul>
 </div>
+
 
 
 <div class="block block--green ">
@@ -597,6 +606,7 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
 </div>
 
 
+
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   </span>
@@ -644,6 +654,7 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
   </ul></div>
 
 
+
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="split">Split</span></span>
   <div class="block__content block__content--blue">
@@ -685,6 +696,7 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
     </script></div>
 
 
+
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
@@ -705,6 +717,7 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
 </div>
 
 
+
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
@@ -723,6 +736,7 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
   </ul>
 
 </div>
+
 
 
 <div class="block block--blue ">
@@ -762,6 +776,7 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
+
 
 
 <div class="block block--blue ">
@@ -805,6 +820,7 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
     </script></div>
 
 
+
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="geometric-multiplicity">Geometric Multiplicity</span></span>
   <div class="block__content block__content--blue">
@@ -840,6 +856,7 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
+
 
 
 <div class="block block--green ">
@@ -924,6 +941,7 @@ $T(v_p) = \lambda v_p =0 \cdot v_1  + 0 \cdot v_2 + &hellip; + \lambda \cdot v_p
 </div>
 
 
+
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   
@@ -975,6 +993,7 @@ $$v_1 = v_2 =  &hellip; = v_k = 0 $$</p>
     </li>
   </ul>
 </div>
+
 
 
 <div class="block block--green ">
@@ -1059,6 +1078,7 @@ since $S_i = \set{ v_{i_1}, v_{i_2}, &hellip;, v_{in_i}} $ is linearly independe
     </li>
   </ul>
 </div>
+
 
 
 <div class="block block--green ">
@@ -1172,6 +1192,7 @@ $\lambda_1, \lambda_2, &hellip;, \lambda_{ k }$ are the distinct roots of $f(t)=
 </div>
 
 
+
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note: <span class="keyword" id="test-for-diagonalization">Test for Diagonalization</span>
     
   </span>
@@ -1251,6 +1272,7 @@ for diagonalizability.</p>
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
+
 
 
 <div class="block block--gray ">
@@ -1676,7 +1698,7 @@ We show that $A $ is diagonalizable and find a $2 \times 2 $ matrix $Q $ s.t. $\
   </body>
 
   <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
   MathJax.Hub.Config({
     tex2jax: {
       inlineMath: [['$','$'], ['\\(','\\)']],

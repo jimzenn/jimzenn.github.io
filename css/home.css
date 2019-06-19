@@ -1,0 +1,44 @@
+.content {
+  justify-content: flex-start;
+  font-family: "Roboto Mono", monospace;
+  padding-bottom: 120px;
+}
+
+.article__content h1:first-of-type {
+  display: inline-block;
+  padding-bottom: 6px;
+  margin-bottom: 56px;
+  border-bottom: 3px #ff2600 solid;
+}
+
+
+.article__content p {
+  text-indent: -5.75ch;
+  margin-left: 6ch;
+}
+
+.article__content .now-sep {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.article__content .now-sep span {
+  display: block;
+  color: #ff2600;
+  width: 6.5ch;
+  font-weight: 600;
+  font-size: 17px;
+  margin-left: .2ch;
+  text-indent: 5px;
+  padding-bottom: 3px;
+}
+
+.article__content .now-sep div {
+  display: block;
+  height: 2.5px;
+  width: 100%;
+  background-color: #ff2600;
+  overflow: visible;
+}
+

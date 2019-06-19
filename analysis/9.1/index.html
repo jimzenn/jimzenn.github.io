@@ -3,27 +3,21 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.54.0" />
-
+<meta name="generator" content="Hugo 0.55.6" />
 
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
-<title>Continuous Functions - Jim Zenn</title>
-<meta property="og:title" content="Continuous Functions - Jim Zenn">
-
-
-
+  <title>Continuous Functions - Jim Zenn</title>
+  <meta property="og:title" content="Continuous Functions - Jim Zenn">
   
 
 
 
 
-
-
 <script
-  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
   crossorigin="anonymous"></script>
 
 
@@ -39,17 +33,17 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3">
   </head>
 
   <body class="note wide" >
@@ -69,6 +63,10 @@ if (!doNotTrack) {
         
           
             <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
@@ -93,7 +91,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -104,6 +102,10 @@ if (!doNotTrack) {
     
       
     <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
@@ -128,7 +130,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -138,11 +140,9 @@ if (!doNotTrack) {
     <div class="container" id="container">
       
         <div class="container-tag">
-          
-          <b class="container-title">
-            Notes
-          </b>
-          
+        
+          <b class="container-title">Notes</b>
+        
         </div>
       
       
@@ -232,7 +232,7 @@ if (!doNotTrack) {
     $\newcommand{\spa}[1]{\text{span}(#1)}$
     $\newcommand{\dist}[1]{\text{dist}(#1)}$
     $\newcommand{\max}[1]{\text{max}(#1)}$
-    $\newcommand{\min}[1]{\text{max}(#1)}$
+    $\newcommand{\min}[1]{\text{min}(#1)}$
     $\newcommand{\supr}[1]{\text{sup}(#1)}$
     $\newcommand{\infi}[1]{\text{inf}(#1)}$
     $\newcommand{\ite}[1]{\text{int}(#1)}$
@@ -312,24 +312,62 @@ if (!doNotTrack) {
     $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$
     $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$
   
+
 </div>
 
-<div class="block block--gray ">
-  <span class="block__title block__title--gray">Example
+
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="continuous-functions">Continuous Functions</span></span>
+  <div class="block__content block__content--blue">
+    <p>$(X, d_X), (Y, d_Y). f: X \to Y$.</p>
+
+<p>We say that $f$ is <strong>continuous</strong> at $x_0 \in X$ iff</p>
+
+<p>$$\forall \epsilon &gt; 0, \exists \delta &gt; 0\text{ such that }d_X(x, x_0) &lt; \delta \implies d_Y(f(x), f(x_0)) &lt; \epsilon$$</p>
+
+<p>We say that $f$ is <strong>continuous</strong> iff</p>
+
+<p>$$\forall x \in X, f\text{ is continuous at }x$$</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("continuous-functions");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+
+<div class="block block--yellow ">
+  <span class="block__title block__title--yellow">Remarks: Continuous maps
+  
   </span>
-  <div class="block__content block__content--gray">
-    <p>$f: \R \to \R$, standard metric, defined by</p>
-
-<p>$$f(x)=\begin{cases}
-0 &amp;\text{ if }x \not \in \Q \br
-\frac{ 1 }{ n }\text{ if }x \in \Q
-\end{cases}$$</p>
-
-<p>is continuous $\forall x_0 \not \in \Q $</p>
-
-<p>and discontinuous $\forall x_0 \in \Q $</p>
-
-<p>(Thomae&rsquo;s Function)</p>
+  <div class="block__content block__content--yellow">
+  <p>Continuous functions are also sometimes called <strong>continuous maps</strong>.</p>
 
   </div>
 
@@ -341,15 +379,37 @@ if (!doNotTrack) {
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul>
-
 </div>
 
 
-<div class="block block--gray ">
-  <span class="block__title block__title--gray">Example
+
+<div class="block block--yellow ">
+  <span class="block__title block__title--yellow">Remarks
   </span>
-  <div class="block__content block__content--gray">
-    <p>$tan(x)$ is continuous on it&rsquo;s defined domain</p>
+  <div class="block__content block__content--yellow">
+  <p>If $f: X \to Y$ is continuous, and $K$ is any subset of $X$, then the
+restriction $f|_K: K \to Y$ of $f$ to $K$ is also continuous.</p>
+
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand"><a>[expand]</a></span>
+  </div>
+  <div class="proof__content hide">
+    <p>$f$ is continuous.</p>
+
+<p>Then, $\forall x_0 \in X, f$ is continuous at $x_0$.</p>
+
+<p>Since $\forall x_1 \in K, x_1 \in X$, $f$ is continuous on all $x_1$.</p>
+
+<p>$f$ is continuous on $K$.</p>
+
+  </div>
+</div>
 
   </div>
 
@@ -361,27 +421,91 @@ if (!doNotTrack) {
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul>
-
 </div>
+
 
 
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
-  </span>
+  : <span class="keyword" id="continuity-preserves-convergence-point-case">Continuity Preserves Convergence (Point Case)</span></span>
   <div class="block__content block__content--green">
-  <p>Let $(X, d_X) , (Y, d_Y)$ be metric spaces, $f: X \to Y, x_0 \in X $</p>
+  <p>$(X, d_X), (Y, d_Y). f: X \to Y. x_0 \in X.$</p>
 
-<p>The following are equivalent:</p>
+<p>Then the following three statements are logically equivalent:</p>
 
 <ol>
-<li><p>$f $ is continuous $\forall x_0 \in X$</p></li>
+<li><p>$f$ is continuous at $x_0$.</p></li>
 
-<li><p>$\forall (x^{(n)})^\infty_{ n =1} $ in $X$ such that $(x^{(n)})^\infty_{ n =1} \to x_0 $, we have $f(x^{(n)})^\infty_{ n =1} \to f(x_0) $</p></li>
+<li><p>$\forall (x^{(n)})^\infty_{ n =1} \subseteq X,$<br>$\limu{ n }{ \infty } x^{(n)} = x_0$ with respect to the metric $d_X$, <br> $\limu{ n }{ \infty } f(x^{(n)}) = f(x_0)$ with respect to the metric $d_Y$.</p></li>
 
-<li><p>$\forall V \subseteq Y $ open containing $f(x_0) $, $\exists u \subseteq X$ open containing $x_0 $, such that $f(u) \subseteq V$.</p></li>
+<li><p>For every open set $V \subset Y$ that contains $f(x_0)$, there exists an
+open set $U \subset X$ containing $x_0$ such that $f(U) \subseteq V$.</p></li>
 </ol>
 
-  </div><ul class="block__footer">
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand"><a>[expand]</a></span>
+  </div>
+  <div class="proof__content hide">
+    <p>$(1 \implies 2)$</p>
+
+<p>$\forall (x^{(n)})^\infty_{ n =1} \in X , \limu{ n }{ \infty } x^{(n)} = x_0.$ We have</p>
+
+<p>$$\forall \delta &gt; 0, \exists N \geq 1,\text{ such that } n \geq N \implies d_X(x, x_0) &lt; \delta$$</p>
+
+<p>Also $f$ is continuous at $x_0$. Then,</p>
+
+<p>$$\forall \epsilon &gt; 0, \exists \delta &gt; 0, \text{ such that } d_X(x, x_0) &lt; \delta \implies d_Y(f(x), f(x_0)) &lt; \epsilon$$</p>
+
+<p>Therefore,</p>
+
+<p>$$\forall \epsilon &gt; 0, \exists N \geq 1, \text{ such that } n \geq N \implies d_X(f(x), f(x_0)) &lt; \epsilon$$</p>
+
+<p>In conclusion,</p>
+
+<p>$$\forall (x^{(n)})^\infty_{ n =1} \in X, \limu{ n }{ \infty } x^{(n)} = x_0 \implies \limu{ n }{ \infty }f(x^{(n)}) = f(x_0)$$</p>
+
+<p>$(2 \implies 1)$</p>
+
+<p>We have,</p>
+
+<p>$$\forall \delta &gt; 0, \exists N_1 \geq 1,\text{ such that } \forall n \geq N_1, \limu{ n }{ \infty } d_X(x_n, x_0) &lt; \delta.$$</p>
+
+<p>$$\forall \epsilon &gt; 0, \exists N_2 \geq 1,\text{ such that } \forall n \geq N_2, \limu{ n }{ \infty } d_Y(f(x_n), f(x_0)) &lt; \epsilon.$$</p>
+
+<p>Choose $N = \max{N_1, N_2}$,</p>
+
+<p>We have $\forall \delta &gt; 0, $</p>
+
+  </div>
+</div>
+
+  </div><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("continuity-preserves-convergence-point-case");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "thm";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script><ul class="block__footer">
     <li class="block__footer-item">
       <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
     </li>
@@ -389,6 +513,154 @@ if (!doNotTrack) {
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul>
+</div>
+
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Theorem
+  : <span class="keyword" id="continuity-preserves-convergence-general-case">Continuity Preserves Convergence (General Case)</span></span>
+  <div class="block__content block__content--green">
+  <p>$(X, d_X)$, $(Y, d_Y)$. $f: X \to Y$.</p>
+
+<p>Then the following four statements are equivalent:</p>
+
+<ol>
+<li><p>$f$ is continuous.</p></li>
+
+<li><p>$(x^{(n)})^\infty_{ n =1} \subseteq X$, $x_0 \in X$. <br> $\limu{ n }{ \infty } x^{(n)} = x_0$ with respect to the metric $d_X$, <br>$\limu{ n }{ \infty } f(x^{(n)}) = f(x_0) $ with respect to the metric $d_Y$.</p></li>
+
+<li><p>Whenever $V$ is an open set in $Y$, the set $\inv{ f }(V) := \set{ x \in X : f(x) \in V } $ is an open set in $X$.</p></li>
+
+<li><p>Whenever $F$ is a closed set in $Y$, the set $\inv{ f }(F) := \set{ x \in X : f(x) \in F } $ is a closed set in $X$.</p></li>
+</ol>
+
+  </div><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("continuity-preserves-convergence-general-case");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "thm";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+
+<div class="block block--yellow ">
+  <span class="block__title block__title--yellow">Remarks
+  </span>
+  <div class="block__content block__content--yellow">
+  <p>It may seem strange that continuity ensures that the inverse image of an open set is open.</p>
+
+<p>One may guess instead that the reverse should be true, that the forward image of an open set is open; but this not true.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
+
+
+
+<div class="block block--green ">
+  <span class="block__title block__title--green">Corollary
+  : <span class="keyword" id="continuity-preserved-by-composition">Continuity Preserved by Composition</span></span>
+
+
+  <div class="block__content block__content--green">
+  <p>$(X, d_X), (Y, d_Y), (Z, d_Z).$</p>
+
+<ol>
+<li><p>If $f: X \to Y$ is continuous at a point $x_0 \in X$, <br>
+and $g: Y \to Z$ is continuous at $f(x_0) \in Y$, <br>
+then the composition $g \circ f : X \to Z$, defined by $g \circ f(x) := g(f(x))$, is continuous at $x_0$.</p></li>
+
+<li><p>If $f: X \to Y$ is continuous, and $g: Y \to Z$ is continuous, then $g \circ f : X \to Z$ is also continuous.</p></li>
+</ol>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("continuity-preserved-by-composition");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index  navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "cor";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
+
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example: Thomae&#39;s Function
+    
+  </span>
+  <div class="block__content block__content--gray">
+    <p>$f: \R \to \R$, standard metric, defined by
+$$f(x)=\begin{cases}
+0 &amp;\text{ if }x \not \in \Q \br
+\frac{1}{n}&amp;\text{ if }x \in \Q
+\end{cases}$$
+is continuous $\forall x_0 \not \in \Q$ and discontinuous $\forall x_0 \in \Q$.</p>
+
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
 </div>
       </div>
     </article>
@@ -525,7 +797,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.7/"><span class="navigation--side__index">2.7</span> Limits of Sequences</a>
+              <a href="https://jimzenn.com/analysis/2.1/"><span class="navigation--side__index">2.1</span> Limits of Sequences</a>
             </li>
           
         
@@ -545,7 +817,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.8/"><span class="navigation--side__index">2.8</span> A Discussion About Proofs</a>
+              <a href="https://jimzenn.com/analysis/2.2/"><span class="navigation--side__index">2.2</span> A Discussion About Proofs</a>
             </li>
           
         
@@ -565,7 +837,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.9/"><span class="navigation--side__index">2.9</span> Limit Theorems for Sequences</a>
+              <a href="https://jimzenn.com/analysis/2.3/"><span class="navigation--side__index">2.3</span> Limit Theorems for Sequences</a>
             </li>
           
         
@@ -585,7 +857,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.10/"><span class="navigation--side__index">2.10</span> Monotone Sequences and Cauchy Sequences</a>
+              <a href="https://jimzenn.com/analysis/2.4/"><span class="navigation--side__index">2.4</span> Monotone Sequences and Cauchy Sequences</a>
             </li>
           
         
@@ -605,7 +877,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.11/"><span class="navigation--side__index">2.11</span> Subsequences</a>
+              <a href="https://jimzenn.com/analysis/2.5/"><span class="navigation--side__index">2.5</span> Subsequences</a>
             </li>
           
         
@@ -625,7 +897,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.15/"><span class="navigation--side__index">2.15</span> Alternating Series and Integral Tests</a>
+              <a href="https://jimzenn.com/analysis/2.9/"><span class="navigation--side__index">2.9</span> Alternating Series and Integral Tests</a>
             </li>
           
         
@@ -647,7 +919,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/3.17/"><span class="navigation--side__index">3.17</span> Continuous Functions</a>
+              <a href="https://jimzenn.com/analysis/3.1/"><span class="navigation--side__index">3.1</span> Continuous Functions</a>
             </li>
           
         
@@ -667,7 +939,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/3.18/"><span class="navigation--side__index">3.18</span> Properties of Continuous Functions</a>
+              <a href="https://jimzenn.com/analysis/3.2/"><span class="navigation--side__index">3.2</span> Properties of Continuous Functions</a>
             </li>
           
         
@@ -687,7 +959,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/3.19/"><span class="navigation--side__index">3.19</span> Uniform Continuity</a>
+              <a href="https://jimzenn.com/analysis/3.3/"><span class="navigation--side__index">3.3</span> Uniform Continuity</a>
             </li>
           
         
@@ -707,7 +979,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/3.20/"><span class="navigation--side__index">3.20</span> Limits of Functions</a>
+              <a href="https://jimzenn.com/analysis/3.4/"><span class="navigation--side__index">3.4</span> Limits of Functions</a>
             </li>
           
         
@@ -729,7 +1001,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/5.28/"><span class="navigation--side__index">5.28</span> Basic Properties of the Derivative</a>
+              <a href="https://jimzenn.com/analysis/5.1/"><span class="navigation--side__index">5.1</span> Basic Properties of the Derivative</a>
             </li>
           
         
@@ -749,7 +1021,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/5.29/"><span class="navigation--side__index">5.29</span> The Mean Value Theorem</a>
+              <a href="https://jimzenn.com/analysis/5.2/"><span class="navigation--side__index">5.2</span> The Mean Value Theorem</a>
             </li>
           
         
@@ -762,7 +1034,7 @@ if (!doNotTrack) {
             
             
                
-                <li class="navigation--side__heading"><span class="navigation--side__heading-index">8</span></li>
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">8</span>Metric Spaces</li>
               
             
             
@@ -771,7 +1043,7 @@ if (!doNotTrack) {
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/8.1/"><span class="navigation--side__index">8.1</span> Definitions and Examples</a>
+              <a href="https://jimzenn.com/analysis/8.1/"><span class="navigation--side__index">8.1</span> Metrics and Metric Spaces</a>
             </li>
           
         
@@ -864,7 +1136,7 @@ if (!doNotTrack) {
             
             
                
-                <li class="navigation--side__heading"><span class="navigation--side__heading-index">9</span></li>
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">9</span>Continuous Functions on Metric Spaces</li>
               
             
             
@@ -874,6 +1146,372 @@ if (!doNotTrack) {
             
             <li class="navigation--side__item navigation--side__item--current">
               <a href="https://jimzenn.com/analysis/9.1/"><span class="navigation--side__index">9.1</span> Continuous Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/9.2/"><span class="navigation--side__index">9.2</span> Continuity and Product Spaces</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/9.3/"><span class="navigation--side__index">9.3</span> Continuity and Compactness</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/9.4/"><span class="navigation--side__index">9.4</span> Continuity and Connectedness</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">10</span>Uniform Convergence</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.1/"><span class="navigation--side__index">10.1</span> Limiting Values of Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.2/"><span class="navigation--side__index">10.2</span> Pointwise and Uniform Convergence</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.4/"><span class="navigation--side__index">10.4</span> The Metric of Uniform Convergence</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.5/"><span class="navigation--side__index">10.5</span> Series of Functions; the Weierstrass M-Test</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.6/"><span class="navigation--side__index">10.6</span> Uniform Convergence and Integration</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.7/"><span class="navigation--side__index">10.7</span> Uniform Convergence and Derivatives</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">11</span>Power Series</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.1/"><span class="navigation--side__index">11.1</span> Formal Power Series</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/12.1/"><span class="navigation--side__index">11.1</span> Periodic Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.2/"><span class="navigation--side__index">11.2</span> Real Analytic Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.3/"><span class="navigation--side__index">11.11</span> Abel&#39;s Theorem</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.4/"><span class="navigation--side__index">11.4</span> Multiplication of Power Series</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.5/"><span class="navigation--side__index">11.5</span> The Exponential and Logarithm Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.7/"><span class="navigation--side__index">11.7</span> Trigonometric Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">15</span></li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/midterm2/"><span class="navigation--side__index">15.1</span> Midterm Review</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/final/"><span class="navigation--side__index">15.2</span> Final</a>
             </li>
           
         
@@ -897,12 +1535,14 @@ if (!doNotTrack) {
         
         
         
-          <a href="https://jimzenn.com/analysis/8.5/" class="pagination__prev">8.5 Compact metric spaces</a>
+          <a href="https://jimzenn.com/analysis/8.5/" class="pagination__prev">8.5 Compact Metric Spaces</a>
         
       
       
         
         
+        
+          <a href="https://jimzenn.com/analysis/9.2/" class="pagination__next">9.2 Continuity and Product Spaces</a>
         
       
     </div>
@@ -936,7 +1576,7 @@ if (!doNotTrack) {
   </body>
 
   <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
   MathJax.Hub.Config({
     tex2jax: {
       inlineMath: [['$','$'], ['\\(','\\)']],

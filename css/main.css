@@ -157,7 +157,6 @@ span[note]:hover:after {
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   min-height: calc(100vh - 250px);
   margin-left: auto;

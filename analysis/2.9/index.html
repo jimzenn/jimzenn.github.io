@@ -3,27 +3,21 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.54.0" />
-
+<meta name="generator" content="Hugo 0.55.6" />
 
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
-<title>Limit Theorems for Sequences - Jim Zenn</title>
-<meta property="og:title" content="Limit Theorems for Sequences - Jim Zenn">
-
-
-
+  <title>Alternating Series and Integral Tests - Jim Zenn</title>
+  <meta property="og:title" content="Alternating Series and Integral Tests - Jim Zenn">
   
 
 
 
 
-
-
 <script
-  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
   crossorigin="anonymous"></script>
 
 
@@ -39,17 +33,17 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3">
   </head>
 
   <body class="note wide" >
@@ -69,6 +63,10 @@ if (!doNotTrack) {
         
           
             <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
@@ -93,7 +91,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -104,6 +102,10 @@ if (!doNotTrack) {
     
       
     <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
@@ -128,7 +130,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -138,11 +140,9 @@ if (!doNotTrack) {
     <div class="container" id="container">
       
         <div class="container-tag">
-          
-          <b class="container-title">
-            Notes
-          </b>
-          
+        
+          <b class="container-title">Notes</b>
+        
         </div>
       
       
@@ -160,7 +160,7 @@ if (!doNotTrack) {
   <div class="navigation__wrapper" id="navigation__toggle">
     <div class="navigation__left">
       <span class="navigation__sup-title" style="color: #8100bd">Analysis, Section 2.9</span>
-      <span class="navigation__title">Limit Theorems for Sequences</span>
+      <span class="navigation__title">Alternating Series and Integral Tests</span>
     </div>
     <div class="navigation__right">
       <ul class="navigation__list">
@@ -243,7 +243,7 @@ if (!doNotTrack) {
     $\newcommand{\proj}{\text{proj}}$
     $\newcommand{\union}{\cup}$
     $\newcommand{\intercept}{\cap}$
-    $\newcommand{\abs}[1]{\left| #1 \right|}$
+    $\newcommand{\abs}[1]{| #1 |}$
     $\newcommand{\norm}[1]{\left\lVert#1\right\rVert}$
     $\newcommand{\pare}[1]{\left(#1\right)}$
     $\newcommand{\t}[1]{\text{ #1 }}$
@@ -259,11 +259,8 @@ if (!doNotTrack) {
     $\newcommand{\tr}[1]{\text{tr}(#1)}$
     $\newcommand{\oto}{\text{ one-to-one }}$
     $\newcommand{\ot}{\text{ onto }}$
-    $\newcommand{\ceil}[1]{\lceil#1\rceil}$
-    $\newcommand{\floor}[1]{\lfloor#1\rfloor}$
     $\newcommand{\Re}[1]{\text{Re}(#1)}$
     $\newcommand{\Im}[1]{\text{Im}(#1)}$
-    $\newcommand{\dom}[1]{\text{dom}(#1)}$
 
 
     $\newcommand{\Vcw}[2]{\begin{bmatrix} #1 \br #2 \end{bmatrix}}$
@@ -299,14 +296,15 @@ if (!doNotTrack) {
     $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$
     $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$
   
+
 </div>
 
-<div class="block block--green ">
-  <span class="block__title block__title--green">Theorem
-  
-  9.1<span class="keyword" id="9.1" style="visibility: hidden;">9.1</span></span>
-  <div class="block__content block__content--green">
-  <p>Convergent sequences are bounded.</p>
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>We show $\sum\ \frac{ 1 }{ n } = +\infty$.</p>
 
 <div class="proof">
   <div class="proof__heading">
@@ -318,291 +316,28 @@ if (!doNotTrack) {
     <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
-    <p>Let $(s_n) $ be a convergent sequence, and let $s = \lim s_n$.</p>
+    <p>$\sum\ \frac{ 1 }{ n } \geq \int_{ 1 }^{ n+1 } \frac{ 1 }{ x } \d x = \log_e(n+1)$</p>
 
-<p>Arbitrarily choose an $\epsilon &gt; 0 $. Here we choose $\epsilon = 1 $.</p>
-
-<p>Since $(s_n) $ is convergent, exists $N \in \N$ so that</p>
-
-<p>$$n &gt; N \implies \abs{ s_n - s } &lt; 1 $$</p>
-
-<p>$$\begin{align*}
-\abs{(s_n - s) + s } &amp;\leq \abs{ s_n - s } + \abs{ s } \br
-\abs{ s_n } &amp;\leq \abs{ s_n - s } + \abs{ s } \br
-\abs{ s_n } - \abs{ s } &amp;\leq \abs{ s_n - s } \br
-\end{align*}$$</p>
-
-<p>$\because \abs{ s_n - s } &lt; 1 $</p>
-
-<p>$$\abs{ s_n } - \abs{ s } &lt; 1 $$</p>
-
-<p>i.e. For all $n &gt; N $, $\abs{ s_n }  &lt; 1 + \abs{ s } $.</p>
-
-<p>Define $M = \max{ \set{ \abs{ s } + 1, \abs{ s_1 }, \abs{ s_2 }, &hellip;, \abs{ s_N }}}$.</p>
-
-<p>$M$ is an upper bound of $(s_n)$.</p>
-
-  </div>
-</div>
-
-  </div><script>
-      
-      (function() {
-        var keywordListDOM = document.getElementById("page-navigation");
-        var keywordDOM = document.getElementById("9.1");
-        var keywordItemDOM = document.createElement("li");
-        keywordItemDOM.setAttribute("class", "navigation--side__item");
-        var keywordLinkDOM = document.createElement("a");
-        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
-        var keywordIndexDOM = document.createElement("span");
-        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
-        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
-
-        keywordsCounter += 1;
-        keywordIndexDOM.innerHTML = "thm";
-        keywordLinkDOM.appendChild(keywordIndexDOM);
-        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
-        keywordItemDOM.appendChild(keywordLinkDOM);
-        keywordsCollector.push(keywordItemDOM);
-      })();
-    </script><ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-</div>
-
-
-<div class="block block--gray ">
-  <span class="block__title block__title--gray">Example
-  </span>
-  <div class="block__content block__content--gray">
-    <p>Show that $\frac{ 2n + 1 }{ 3n -1 } \to \frac{ 2 }{ 3 }$.</p>
-
-<p>Fix $\epsilon &gt; 0 $, want to find $ N $ s.t. $n &gt; N \implies \abs{ \frac{ 2n+1 }{ 3n-1 } - \frac{ 2 }{ 3 }} &lt; \epsilon$.</p>
-
-<p>$\begin{align*}
-\abs{ \frac{ 2n+1 }{ 3n-1 } - \frac{ 2 }{ 3 }} &amp;&lt; \epsilon \br
-\frac{ 5 }{ 3n-1 } &amp;&lt; \epsilon
-\end{align*}$</p>
-
-<p>$N = \frac{5 + \epsilon}{3 \epsilon}$.</p>
-
-  </div>
-
-  <ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-
-</div>
-
-
-<div class="block block--green ">
-  <span class="block__title block__title--green">Theorem
-  </span>
-  <div class="block__content block__content--green">
-  <p>$s_n \to s \implies \abs{ s_n } \to \abs{ s }$.</p>
-
-  </div><ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-</div>
-
-
-<div class="block block--green block--status"><div class="block__status block__status--warning"></div>
-  <span class="block__title block__title--green">Theorem
-  : <span class="keyword" id="the-subsequence-theorem">The Subsequence Theorem</span></span>
-  <div class="block__content block__content--green">
-  <p>Let $\set{ t_n } $ be a subsequence of $\set{ s_n } $.</p>
-
-<p>$s_n \to s $, $t_n \to s \implies t_n = s_{f(n)}$.</p>
-
-<p>where $f(n)$ is an increasing function from $\N $ to $\N$ called the <strong>selection function</strong>.</p>
-
-<div class="proof">
-  <div class="proof__heading">
-    <span class="proof__title">Proof
-      <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
-  </div>
-  <div class="proof__content hide">
-    <p>Consider $\epsilon &gt; 0 $, then $\exists N , \abs{s_n - s} &lt; \epsilon$.</p>
-
-<p>$n \geq N$, some $f(n)$ is increasing, then $f(n) \geq n$.</p>
-
-<p>$f(1) \geq 1$, assume $f(n) \geq n $.</p>
-
-<p>$f(n + 1) &gt; f(n) \because f$ is increasing.</p>
-
-<p>$\therefore f(n + 1) &gt; n $</p>
-
-<p>$\therefore f(n + 1) \geq n +1 $(because $n$ is an integer)</p>
-
-<p>$\abs{ s_n - s } &lt; \epsilon, n &gt; N $</p>
-
-<p>$t_n = s_{f(n)} $</p>
-
-<p>since f(n) &gt; n, then</p>
-
-<p>$n \geq N \implies f(n) \geq N$</p>
-
-<p>$\therefore \abs{ t_n - s } = \abs{ s_{f(n)} - s } &lt; \epsilon $</p>
-
-<p>$\therefore t_n \to s $ is true $\forall s_n n \geq N$</p>
-
-  </div>
-</div>
-
-  </div><script>
-      
-      (function() {
-        var keywordListDOM = document.getElementById("page-navigation");
-        var keywordDOM = document.getElementById("the-subsequence-theorem");
-        var keywordItemDOM = document.createElement("li");
-        keywordItemDOM.setAttribute("class", "navigation--side__item");
-        var keywordLinkDOM = document.createElement("a");
-        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
-        var keywordIndexDOM = document.createElement("span");
-        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
-        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
-
-        keywordsCounter += 1;
-        keywordIndexDOM.innerHTML = "thm";
-        keywordLinkDOM.appendChild(keywordIndexDOM);
-        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
-        keywordItemDOM.appendChild(keywordLinkDOM);
-        keywordsCollector.push(keywordItemDOM);
-      })();
-    </script><ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-</div>
-
-
-<div class="block block--gray ">
-  <span class="block__title block__title--gray">Example
-  </span>
-  <div class="block__content block__content--gray">
-    <p>$s_n \to s $, then $\set{ s_n } $ is bounded.</p>
-
-<p>Can know this just like the $inf \set{ \abs{ s_n }}$ problem</p>
-
-<p>assume false</p>
-
-<p>Then $\set{ s_n } $ either has no upper bound (-sup \set{ s_n } = \infty)
-or has no lower bound.</p>
-
-<p>Consider $\abs{ S_n } $ we know $\abs{ s_n } \to s $</p>
-
-<p>so $\set{ \abs{ s_n }}$ has no upper bound.</p>
-
-<p>Then for any $M $, there is some $n $ with $\abs{s_n} &gt; M $</p>
-
-<p>Take a subsequence</p>
-
-<p>$t_1 $ where $t_1 = s_{n_1} $ where $\abs{ s_{n_1}} $
-$t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
-
-<p>$\abs{ t_k } &gt; k $</p>
-
-<p>Then $t_1, t_2, t_3 &hellip; $</p>
-
-<p>is subseq</p>
-
-<p>that does not $\to s $</p>
-
-  </div>
-
-  <ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-
-</div>
-
-
-<div class="block block--green ">
-  <span class="block__title block__title--green">Theorem
-  : <span class="keyword" id="binomial-theorem">Binomial Theorem</span></span>
-  <div class="block__content block__content--green">
-  <p>$$\binom{ n }{ k } = \frac{ n! }{ k! (n - k)! } $$</p>
-
-<p>where $n! = n(n-1) &hellip; 3 \times 2 \times 1 $</p>
-
-  </div><script>
-      
-      (function() {
-        var keywordListDOM = document.getElementById("page-navigation");
-        var keywordDOM = document.getElementById("binomial-theorem");
-        var keywordItemDOM = document.createElement("li");
-        keywordItemDOM.setAttribute("class", "navigation--side__item");
-        var keywordLinkDOM = document.createElement("a");
-        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
-        var keywordIndexDOM = document.createElement("span");
-        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
-        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
-
-        keywordsCounter += 1;
-        keywordIndexDOM.innerHTML = "thm";
-        keywordLinkDOM.appendChild(keywordIndexDOM);
-        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
-        keywordItemDOM.appendChild(keywordLinkDOM);
-        keywordsCollector.push(keywordItemDOM);
-      })();
-    </script><ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-</div>
-
+<p>Since $\limu{ n }{ \infty } \log_e(n+1) = + \infty , \sum\ \frac{ 1 }{ n } = + \infty$.</p>
 
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
-    <p>It&rsquo;s obvious that $\binom{ n }{ k }  \in \Q$, how prove that it is also in $\Z $.</p>
+    <p>We use integral test in this case. Notice how we choose the lower limit. It&rsquo;s pretty arbitrary as long as it is larger than $1$ and meet our need. Think about it, why can we do this.</p>
 
-<p>$n!$</p>
+  </div>
 
-<p>step 1: choose $k $ from $n$ : $\binom{ n }{ k } $</p>
+<p><ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul></div></p>
 
-<p>step 2: order them : $k! $</p>
-
-<p>step 3: order the rest : $(n - k)! $</p>
-
-<p>step 4: Put $k $ first than $n-k $ second</p>
-
-<p>$n! =  \binom{ n }{ k } k! \pare{n-k}! $</p>
-
-<p>Hence, $\frac{ n! }{ k! (n - k)! }$ is an integer, because it is the ways to choose $k $ from $n $.</p>
+<p></div>
+</div></p>
 
   </div>
 
@@ -613,30 +348,17 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
     <li class="block__footer-item">
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
-  </ul></div>
-
-
-<div class="block block--green ">
-  <span class="block__title block__title--green">Theorem
-  </span>
-  <div class="block__content block__content--green">
-  <p>$$\binom{ n }{ k } = \binom{ n-1 }{ k } + \binom{ n-1 }{ k -1 } $$</p>
-
-  </div><ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
   </ul>
+
 </div>
 
 
-<div class="block block--blue ">
-  <span class="block__title block__title--blue">Definition: <span class="keyword" id="binomial-theorem">Binomial Theorem</span></span>
-  <div class="block__content block__content--blue">
-    <p>$$(1 + x)^n = \sum_{ k=0 }^{ n } \binom{ n }{ k }x^k$$</p>
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>We show $\sum \frac{ 1 }{ n^2 }$ converges.</p>
 
 <div class="proof">
   <div class="proof__heading">
@@ -648,24 +370,9 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
     <span class="proof__expand"><a>[expand]</a></span>
   </div>
   <div class="proof__content hide">
-    <p>$$P(n): (1 + x)^n = \binom{ n }{ 0 } + \binom{ n }{ 1 }x + \binom{ n }{ 2 }x^2 + &hellip; + \binom{ n }{ n }x^n$$</p>
+    <p>$\sum_{ k=1 }^{ n } \frac{ 1 }{ k^2 } \leq 1 + \int_{ 1 }^{ n } \frac{ 1 }{ x^2 } \d x = 2 - \frac{ 1 }{ n } &lt; 2$.</p>
 
-<p><strong>The basis:</strong></p>
-
-<p>When $n = 0, (1 + x)^0 = \binom{ 0 }{ 0 } = 1$</p>
-
-<p>When $n = 1, (1 + x)^1 = \binom{ 1 }{ 0 } + \binom{ 1 }{ 1 }x = 1 + x$</p>
-
-<p><strong>The Inductive step:</strong></p>
-
-<p>$\begin{align*}
-(1 + x)^{n + 1} &amp;= (1+ x)^n (1 + x) \br
-&amp;= (1 + x)\pare{\binom{ n }{ 0 } + \binom{ n }{ 1 }x + \binom{ n }{ 2 }x^2 + &hellip; + \binom{ n }{ n }x^n} \br
-= \binom{ n }{ 0 } + &amp;\binom{ n }{ 1 }x + \binom{ n }{ 2 }x^2 + &hellip; + \binom{ n }{ n }x^n + \br
-&amp;\binom{ n }{ 0 } x + \binom{ n }{ 1 }x^2 + &hellip; + \binom{ n }{ n-1 } x^n + \binom{ n }{ n } x^{n+1} \br
-&amp;= \binom{ n+1 }{ 0} + \binom{ n+1 }{ 1 }x  + &hellip; + \binom{ n+1 }{ n }x^n + \binom{ n+1 }{ n+1 } x^{n+1} \br
-&amp;= \sum_{ k=0 }^{ n+1 } \binom{ n + 1 }{ k } x^k
-\end{align*}$</p>
+<p>$\therefore \sum \frac{ 1 }{ n^2 }$ converges.</p>
 
   </div>
 </div>
@@ -679,35 +386,22 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
     <li class="block__footer-item">
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
-  </ul><script>
-      
-      (function() {
-        var keywordListDOM = document.getElementById("page-navigation");
-        var keywordDOM = document.getElementById("binomial-theorem");
-        var keywordItemDOM = document.createElement("li");
-        keywordItemDOM.setAttribute("class", "navigation--side__item");
-        var keywordLinkDOM = document.createElement("a");
-        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
-        var keywordIndexDOM = document.createElement("span");
-        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
-        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+  </ul>
 
-        keywordsCounter += 1;
-        keywordIndexDOM.innerHTML = "def";
-        keywordLinkDOM.appendChild(keywordIndexDOM);
-        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
-        keywordItemDOM.appendChild(keywordLinkDOM);
-        keywordsCollector.push(keywordItemDOM);
-      })();
-    </script></div>
+</div>
+
 
 
 <div class="block block--blue ">
-  <span class="block__title block__title--blue">Definition: <span class="keyword" id="infinity-limits">Infinity Limits</span></span>
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="alternating-series">Alternating Series</span></span>
   <div class="block__content block__content--blue">
-    <p>For a sequence $(s_n) $, we write lim $s_n = + \infty$ provided for each $M &gt; 0 $ there is a number $N $ s.t. $n &gt; N $ implies $s_n &gt; M $.</p>
+    <p>Let $a_n &gt;0 $, $\sum_{ n = 1 }^{ \infty } (-1)^{n+1} a_n$ is alternating.</p>
 
-<p>Henceforth we will say $(s_n)$ <u>HAS a limit</u> or <u>the limit exists</u> provided $(s_n)$ converges or diverges to $+\infty $ or diverges to $-\infty $.</p>
+<p>any convergent series has $a_n \to 0 $.</p>
+
+<p>Suppose $a_n &gt; 0 $ and $a_n \to 0 $</p>
+
+<p>suppose $a_n &gt; a_{n+1} \forall n$ i.e. decreasing.</p>
 
   </div>
 
@@ -722,7 +416,7 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
       
       (function() {
         var keywordListDOM = document.getElementById("page-navigation");
-        var keywordDOM = document.getElementById("infinity-limits");
+        var keywordDOM = document.getElementById("alternating-series");
         var keywordItemDOM = document.createElement("li");
         keywordItemDOM.setAttribute("class", "navigation--side__item");
         var keywordLinkDOM = document.createElement("a");
@@ -741,31 +435,12 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
     </script></div>
 
 
+
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
-  <p>$s, t$ are not $ +\infty$ or $-\infty$.</p>
-
-<p><strong>1.</strong> $s_n \to s \implies \set{ s_n } $ is bounded.</p>
-
-<p><strong>2.</strong> $s_n \to s  \implies k s_n \to ks $.</p>
-
-<p><strong>3.</strong> $s_n \to s, t_n \to t \implies s_n + t_n \to s + t$.</p>
-
-<p><strong>4.</strong> $s_n \to s, t_n \to t \implies s_nt_n \to st$.</p>
-
-<p><strong>5.</strong> $s_n \to s, s_n \neq 0,  s \neq 0 \implies \inv{\pare{s_n}} \to \inv{ s }$.</p>
-
-<p><strong>6.</strong> $s_n \to s, t_n \to t, s_n, s \neq 0 \implies \frac{ t_n }{ s_n } \to \frac{ t }{ s } $.</p>
-
-<p><strong>7a.</strong> $If p &gt; 0, \frac{ 1 }{ n^p} \to 0 $.</p>
-
-<p><strong>7b.</strong> $If \abs{ a } &lt; 1, a^n \to 0$.</p>
-
-<p><strong>7c.</strong> $\sqrt[ n ]{ n } \to 1$.</p>
-
-<p><strong>7d.</strong> $If a &gt; 0, \sqrt[ n ]{ a } \to 1 $.</p>
+  <p>$\sum \frac{ 1 }{ n^p } $ converges if and only if $p &gt; 1 $.</p>
 
   </div><ul class="block__footer">
     <li class="block__footer-item">
@@ -778,58 +453,79 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
 </div>
 
 
-<div class="block block--green ">
-  <span class="block__title block__title--green">Theorem
-  
-  9.9<span class="keyword" id="9.9" style="visibility: hidden;">9.9</span></span>
-  <div class="block__content block__content--green">
-  <p>Let $(s_n)$ and $(t_n) $ be sequences such that $\lim s_n = +\infty $ and $\lim t_n &gt; 0 $  ($\lim t_n$ can be finite or $+\infty$). Then $\lim s_n t_n = +\infty $.</p>
 
-  </div><script>
-      
-      (function() {
-        var keywordListDOM = document.getElementById("page-navigation");
-        var keywordDOM = document.getElementById("9.9");
-        var keywordItemDOM = document.createElement("li");
-        keywordItemDOM.setAttribute("class", "navigation--side__item");
-        var keywordLinkDOM = document.createElement("a");
-        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
-        var keywordIndexDOM = document.createElement("span");
-        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
-        keywordIndexDOM.setAttribute("style", "color: var(--green-text-color)");
+<div class="block block--blue ">
+  <span class="block__title block__title--blue">Definition: <span class="keyword" id="alternating-series">Alternating Series</span></span>
+  <div class="block__content block__content--blue">
+    <p>$\sum (-1)^{n+1} a_n $ is called an alternating series.</p>
 
-        keywordsCounter += 1;
-        keywordIndexDOM.innerHTML = "thm";
-        keywordLinkDOM.appendChild(keywordIndexDOM);
-        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
-        keywordItemDOM.appendChild(keywordLinkDOM);
-        keywordsCollector.push(keywordItemDOM);
-      })();
-    </script><ul class="block__footer">
+  </div>
+
+  <ul class="block__footer">
     <li class="block__footer-item">
       <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
     </li>
     <li class="block__footer-item">
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
-  </ul>
-</div>
+  </ul><script>
+      
+      (function() {
+        var keywordListDOM = document.getElementById("page-navigation");
+        var keywordDOM = document.getElementById("alternating-series");
+        var keywordItemDOM = document.createElement("li");
+        keywordItemDOM.setAttribute("class", "navigation--side__item");
+        var keywordLinkDOM = document.createElement("a");
+        keywordLinkDOM.setAttribute("href", "#" + keywordDOM.id);
+        var keywordIndexDOM = document.createElement("span");
+        keywordIndexDOM.setAttribute("class", "navigation--side__index navigation--side__index--text");
+        keywordIndexDOM.setAttribute("style", "color: var(--blue-text-color)");
+
+        keywordsCounter += 1;
+        keywordIndexDOM.innerHTML = "def";
+        keywordLinkDOM.appendChild(keywordIndexDOM);
+        keywordLinkDOM.innerHTML += keywordDOM.innerHTML;
+        keywordItemDOM.appendChild(keywordLinkDOM);
+        keywordsCollector.push(keywordItemDOM);
+      })();
+    </script></div>
+
 
 
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
-  
-  9.10<span class="keyword" id="9.10" style="visibility: hidden;">9.10</span></span>
+  : <span class="keyword" id="alternating-series-theorem">Alternating Series Theorem</span></span>
   <div class="block__content block__content--green">
-  <p>Let $(s_n)$ be a sequence where $ s_n &gt; 0, s_n \in \R $.</p>
+  <p>If $a_1 \geq a_2 \geq &hellip; \geq a_n \geq &hellip; \geq 0 $ and $\lim a_n = 0 $, then the alternating series $\sum\ (-1)^{n +1} a_n $ converges. Moreover, the partial sums $s_n = \sum_{ k=1 }^{ n } (-1)^{k+1} a_k $ satisfy $\abs{ s - s_n } \leq a_n $for all $n $.</p>
 
-<p>$$\lim s_n = +\infty \iff \lim \frac{ 1 }{ s_n } = 0 $$</p>
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Proof
+      <span class="proof__method">
+        
+      </span>
+    </span>
+    <span class="proof__expand"><a>[expand]</a></span>
+  </div>
+  <div class="proof__content hide">
+    <p>We need to show that the sequence $(s_n)$ converges. Note that the subsequence $(s_{2n}) $ is increasing because $s_{2n+2} - s_{2n} = + a_{2n+1} - a_{ 2n + 2 } \geq 0 $. Similarly, the subsequence $(s_{2n-1}) $ is decreasing since $s_{2n+1} - s_{2n-1} = a_{2n+1} - a_{2n} \leq 0 $. We claim</p>
+
+<p>$$s_{2m} \leq s_{2n+1} \forall m, n \in \N  \tag{1}$$</p>
+
+<p>First note that $s_{2n} \leq s_{2n+1} $ for all $n $, because $s_{2n+1} -s_{2n} = a_{2n+1} \geq 0$. If $m \leq n $, then $(1)$ holds because $s_{2n+1} \geq s_{2m+1} \geq s_{2m} $. Thanks to $(1) $, we see that $(s_{2n}) $ is an increasing subsequence of $(s_n) $ bounded above by each odd partial sum, and $(s_{2n+1}) $ is a decreasing subsequence of $(s_n) $ bounded below by each even partial sum. By theorem 10.2, these subsequences converge, say to $s $ and $t $. Now</p>
+
+<p>$$t - s = \limu{ n  }\infty{ s_{2n+1}} - \limu{ n} \infty { s_{2n}} = \limu{ n} \infty {(s_{2n+1} - s_{2n})} = \limu{ n} \infty { a_{2n+1}} = 0 $$</p>
+
+<p>so $s = t$. It follows that $\lim_n s_n = s$.</p>
+
+  </div>
+</div>
 
   </div><script>
       
       (function() {
         var keywordListDOM = document.getElementById("page-navigation");
-        var keywordDOM = document.getElementById("9.10");
+        var keywordDOM = document.getElementById("alternating-series-theorem");
         var keywordItemDOM = document.createElement("li");
         keywordItemDOM.setAttribute("class", "navigation--side__item");
         var keywordLinkDOM = document.createElement("a");
@@ -989,7 +685,7 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.7/"><span class="navigation--side__index">2.7</span> Limits of Sequences</a>
+              <a href="https://jimzenn.com/analysis/2.1/"><span class="navigation--side__index">2.1</span> Limits of Sequences</a>
             </li>
           
         
@@ -1009,7 +705,67 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.8/"><span class="navigation--side__index">2.8</span> A Discussion About Proofs</a>
+              <a href="https://jimzenn.com/analysis/2.2/"><span class="navigation--side__index">2.2</span> A Discussion About Proofs</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/2.3/"><span class="navigation--side__index">2.3</span> Limit Theorems for Sequences</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/2.4/"><span class="navigation--side__index">2.4</span> Monotone Sequences and Cauchy Sequences</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/2.5/"><span class="navigation--side__index">2.5</span> Subsequences</a>
             </li>
           
         
@@ -1029,67 +785,7 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
               
             
             <li class="navigation--side__item navigation--side__item--current">
-              <a href="https://jimzenn.com/analysis/2.9/"><span class="navigation--side__index">2.9</span> Limit Theorems for Sequences</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-              
-            
-            
-            
-            
-              
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.10/"><span class="navigation--side__index">2.10</span> Monotone Sequences and Cauchy Sequences</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-              
-            
-            
-            
-            
-              
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.11/"><span class="navigation--side__index">2.11</span> Subsequences</a>
-            </li>
-          
-        
-      
-        
-        
-        
-        
-          
-            
-            
-              
-            
-            
-            
-            
-              
-            
-            <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/2.15/"><span class="navigation--side__index">2.15</span> Alternating Series and Integral Tests</a>
+              <a href="https://jimzenn.com/analysis/2.9/"><span class="navigation--side__index">2.9</span> Alternating Series and Integral Tests</a>
             </li>
           
         
@@ -1111,7 +807,7 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/3.17/"><span class="navigation--side__index">3.17</span> Continuous Functions</a>
+              <a href="https://jimzenn.com/analysis/3.1/"><span class="navigation--side__index">3.1</span> Continuous Functions</a>
             </li>
           
         
@@ -1131,7 +827,7 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/3.18/"><span class="navigation--side__index">3.18</span> Properties of Continuous Functions</a>
+              <a href="https://jimzenn.com/analysis/3.2/"><span class="navigation--side__index">3.2</span> Properties of Continuous Functions</a>
             </li>
           
         
@@ -1151,7 +847,7 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/3.19/"><span class="navigation--side__index">3.19</span> Uniform Continuity</a>
+              <a href="https://jimzenn.com/analysis/3.3/"><span class="navigation--side__index">3.3</span> Uniform Continuity</a>
             </li>
           
         
@@ -1171,7 +867,7 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/3.20/"><span class="navigation--side__index">3.20</span> Limits of Functions</a>
+              <a href="https://jimzenn.com/analysis/3.4/"><span class="navigation--side__index">3.4</span> Limits of Functions</a>
             </li>
           
         
@@ -1193,7 +889,7 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/5.28/"><span class="navigation--side__index">5.28</span> Basic Properties of the Derivative</a>
+              <a href="https://jimzenn.com/analysis/5.1/"><span class="navigation--side__index">5.1</span> Basic Properties of the Derivative</a>
             </li>
           
         
@@ -1213,7 +909,7 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/5.29/"><span class="navigation--side__index">5.29</span> The Mean Value Theorem</a>
+              <a href="https://jimzenn.com/analysis/5.2/"><span class="navigation--side__index">5.2</span> The Mean Value Theorem</a>
             </li>
           
         
@@ -1226,7 +922,7 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
             
             
                
-                <li class="navigation--side__heading"><span class="navigation--side__heading-index">8</span></li>
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">8</span>Metric Spaces</li>
               
             
             
@@ -1235,7 +931,7 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
               
             
             <li class="navigation--side__item ">
-              <a href="https://jimzenn.com/analysis/8.1/"><span class="navigation--side__index">8.1</span> Definitions and Examples</a>
+              <a href="https://jimzenn.com/analysis/8.1/"><span class="navigation--side__index">8.1</span> Metrics and Metric Spaces</a>
             </li>
           
         
@@ -1328,7 +1024,7 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
             
             
                
-                <li class="navigation--side__heading"><span class="navigation--side__heading-index">9</span></li>
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">9</span>Continuous Functions on Metric Spaces</li>
               
             
             
@@ -1338,6 +1034,372 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
             
             <li class="navigation--side__item ">
               <a href="https://jimzenn.com/analysis/9.1/"><span class="navigation--side__index">9.1</span> Continuous Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/9.2/"><span class="navigation--side__index">9.2</span> Continuity and Product Spaces</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/9.3/"><span class="navigation--side__index">9.3</span> Continuity and Compactness</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/9.4/"><span class="navigation--side__index">9.4</span> Continuity and Connectedness</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">10</span>Uniform Convergence</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.1/"><span class="navigation--side__index">10.1</span> Limiting Values of Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.2/"><span class="navigation--side__index">10.2</span> Pointwise and Uniform Convergence</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.4/"><span class="navigation--side__index">10.4</span> The Metric of Uniform Convergence</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.5/"><span class="navigation--side__index">10.5</span> Series of Functions; the Weierstrass M-Test</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.6/"><span class="navigation--side__index">10.6</span> Uniform Convergence and Integration</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/10.7/"><span class="navigation--side__index">10.7</span> Uniform Convergence and Derivatives</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">11</span>Power Series</li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.1/"><span class="navigation--side__index">11.1</span> Formal Power Series</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/12.1/"><span class="navigation--side__index">11.1</span> Periodic Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.2/"><span class="navigation--side__index">11.2</span> Real Analytic Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.3/"><span class="navigation--side__index">11.11</span> Abel&#39;s Theorem</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.4/"><span class="navigation--side__index">11.4</span> Multiplication of Power Series</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.5/"><span class="navigation--side__index">11.5</span> The Exponential and Logarithm Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/11.7/"><span class="navigation--side__index">11.7</span> Trigonometric Functions</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+               
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">15</span></li>
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/midterm2/"><span class="navigation--side__index">15.1</span> Midterm Review</a>
+            </li>
+          
+        
+      
+        
+        
+        
+        
+          
+            
+            
+              
+            
+            
+            
+            
+              
+            
+            <li class="navigation--side__item ">
+              <a href="https://jimzenn.com/analysis/final/"><span class="navigation--side__index">15.2</span> Final</a>
             </li>
           
         
@@ -1361,14 +1423,14 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
         
         
         
-          <a href="https://jimzenn.com/analysis/2.8/" class="pagination__prev">2.8 A Discussion about Proofs</a>
+          <a href="https://jimzenn.com/analysis/2.5/" class="pagination__prev">2.5 Subsequences</a>
         
       
       
         
         
         
-          <a href="https://jimzenn.com/analysis/2.10/" class="pagination__next">2.10 Monotone Sequences and Cauchy Sequences</a>
+          <a href="https://jimzenn.com/analysis/3.1/" class="pagination__next">3.1 Continuous Functions</a>
         
       
     </div>
@@ -1402,7 +1464,7 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
   </body>
 
   <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
   MathJax.Hub.Config({
     tex2jax: {
       inlineMath: [['$','$'], ['\\(','\\)']],

@@ -3,27 +3,21 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.54.0" />
-
+<meta name="generator" content="Hugo 0.55.6" />
 
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
-<title>Vector Spaces - Jim Zenn</title>
-<meta property="og:title" content="Vector Spaces - Jim Zenn">
-
-
-
+  <title>Vector Spaces - Jim Zenn</title>
+  <meta property="og:title" content="Vector Spaces - Jim Zenn">
   
 
 
 
 
-
-
 <script
-  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
   crossorigin="anonymous"></script>
 
 
@@ -39,17 +33,17 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.3">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3" media="all">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.3">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.3">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3" media="all">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.3">
   </head>
 
   <body class="note wide" >
@@ -69,6 +63,10 @@ if (!doNotTrack) {
         
           
             <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+          
+        
+          
+            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
@@ -93,7 +91,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -104,6 +102,10 @@ if (!doNotTrack) {
     
       
     <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+      
+    
+      
+    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
@@ -128,7 +130,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/about/">About Me</a></li>
+    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -138,11 +140,9 @@ if (!doNotTrack) {
     <div class="container" id="container">
       
         <div class="container-tag">
-          
-          <b class="container-title">
-            Notes
-          </b>
-          
+        
+          <b class="container-title">Notes</b>
+        
         </div>
       
       
@@ -277,7 +277,9 @@ if (!doNotTrack) {
     $\newcommand{\Mew}[6]{\begin{bmatrix} #1 & #2 \br #3 & #4 \br #5 & #6 \end{bmatrix}}$
     $\newcommand{\Mee}[9]{\begin{bmatrix} #1 & #2 & #3 \br #4 & #5 & #6 \br #7 & #8 & #9 \end{bmatrix}}$
   
+
 </div>
+
 
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="spaces">Spaces</span></span>
@@ -314,6 +316,7 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
+
 
 
 <div class="block block--blue ">
@@ -375,6 +378,7 @@ elements of the vector space $V$ are called <strong>vectors</strong>.</p>
     </script></div>
 
 
+
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: $\R^n/\R$
     
@@ -414,6 +418,7 @@ elements of the vector space $V$ are called <strong>vectors</strong>.</p>
 </div>
 
 
+
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: Arbitrary Polynomial
     
@@ -449,6 +454,7 @@ elements of the vector space $V$ are called <strong>vectors</strong>.</p>
   </ul>
 
 </div>
+
 
 
 <div class="block block--blue ">
@@ -488,6 +494,7 @@ elements of the vector space $V$ are called <strong>vectors</strong>.</p>
     </script></div>
 
 
+
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks: what is the degree of zero polynomial: $f(x)=0$ ?
   
@@ -513,6 +520,7 @@ elements of the vector space $V$ are called <strong>vectors</strong>.</p>
 </div>
 
 
+
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: Real Sequence (!IMPORTANT)
     
@@ -536,6 +544,7 @@ $\lambda \in \R, \lambda (a_n) = (\lambda a_n)$</p>
   </ul>
 
 </div>
+
 
 
 <div class="block block--gray ">
@@ -566,6 +575,7 @@ $\lambda \in \R,\lambda A =(\lambda a_{ij})_{m\times n}$</p>
 </div>
 
 
+
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: &#34;Bad Mutiplication&#34;
     
@@ -592,6 +602,7 @@ $\lambda (a_1, a_2) = (\lambda a_1, -a_2)$<br></p>
   </ul>
 
 </div>
+
 
 
 <div class="block block--gray ">
@@ -621,6 +632,7 @@ $\lambda(a_1, a_2) + \lambda(b_1, b_2) = (\lambda a_1 + \lambda b_1 + 1, \lambda
   </ul>
 
 </div>
+
 
 
 <div class="block block--gray ">
@@ -655,6 +667,7 @@ $\lambda a = a$</p>
   </ul>
 
 </div>
+
 
 
 <div class="block block--green ">
@@ -717,6 +730,7 @@ x &amp;= x+0 \br
     </li>
   </ul>
 </div>
+
 
 
 <div class="block block--green ">
@@ -802,6 +816,7 @@ x &amp;= x+0 \br
     </script></div>
 
 
+
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   
@@ -843,6 +858,7 @@ x &amp;= x+0 \br
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
+
 
 
 <div class="block block--green ">
@@ -889,6 +905,7 @@ x &amp;= x+0 \br
     </li>
   </ul>
 </div>
+
 
 
 <div class="block block--blue ">
@@ -950,15 +967,31 @@ The elements  elements $c$ and $d$ referred to in (F 4) are called an <strong>ad
     </script></div>
 
 
-<div class="examples">
-  <strong>Examples
-  </strong> <p>$\R$ is a field.
+
+<div class="block block--gray ">
+  <span class="block__title block__title--gray">Example
+  </span>
+  <div class="block__content block__content--gray">
+    <p>$\R$ is a field.
 $\C$ is a field.
-$\Q$ is a fkeld.</p>
+$\Q$ is a field.</p>
 
 <p>$\Z$ is NOT a field.  (F4)</p>
 
+  </div>
+
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+
 </div>
+
+
 
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
@@ -1356,7 +1389,7 @@ $\Q$ is a fkeld.</p>
   </body>
 
   <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
   MathJax.Hub.Config({
     tex2jax: {
       inlineMath: [['$','$'], ['\\(','\\)']],

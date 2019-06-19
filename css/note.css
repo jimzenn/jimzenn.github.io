@@ -195,11 +195,6 @@
   font-weight: 600;
 }
 
-.article__content .block__content > * {
-  margin-left: 1.25em;
-  margin-right: 1.25em;
-}
-
 .article__content .block__content > ul ul,
 .article__content .block__content > ol ul,
 .article__content .block__content > ul ol,
@@ -252,15 +247,6 @@
   margin-right: 7px;
   color: rgba(25, 25, 25, 0.2)!important;
   pointer-events: none;
-}
-
-.article__content .examples > ul,
-.article__content .examples > ol {
-  padding-left: 30px;
-}
-
-.article__content .examples > p {
-  padding-left: 25px;
 }
 
 .article__content .proof {

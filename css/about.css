@@ -136,10 +136,16 @@
 }
 
 .resume .proficiency-scale {
-  float: right;
+  margin-left: 10px;
   display: inline-block;
   font-weight: 400;
   font-size: 10px;
+}
+.resume .proficiency-scale:before {
+  margin-right: 10px;
+  content: "|";
+  font-weight: bold;
+  color: #BBB;
 }
 
 .resume .proficiency-scale span {
