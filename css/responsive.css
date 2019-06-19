@@ -139,13 +139,14 @@
     font-size: 14px;
   }
 
-  /* body:not(.home) .container { */
-  /*   border-top-left-radius: 1.5rem; */
-  /* } */
-
   .content {
     padding-top: 15px;
   }
+
+  body.home .content {
+    padding-top: 60px;
+  }
+
 
   .jumbotron {
     height: 200px;

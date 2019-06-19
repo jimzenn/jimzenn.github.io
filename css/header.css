@@ -18,14 +18,6 @@ body {
   transition: background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), height 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-body.home .header {
-  position: absolute;
-}
-
-body.home .header:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
 .header__title {
   color: white;
   height: 100%;
@@ -350,13 +342,9 @@ body.home .header:hover {
     transform: translateY(-100%) translateX(4.5rem);
   }
 
-  body:not(.home) .header__site-logo-image {
-    border: var(--backdrop-color) 4px solid;
+  .header__site-logo-image {
+    border: var(--backdrop-color) 2px solid;
     background-color: var(--backdrop-color);
-  }
-
-  body.home .header__menu-icon {
-    display: none;
   }
 
   .header-menu {
