@@ -32,7 +32,7 @@
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: .1px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 #resume__expected-graduation {
@@ -182,22 +182,22 @@
 
 .resume .prof-1:before {
   content: " ";
-  background-color: #2F0DB6;
+  background-color: #0062d5;
 }
 
 .resume .prof-2:before {
   content: " ";
-  background-color: #416FE9;
+  background-color: #2491ca;
 }
 
 .resume .prof-3:before {
   content: " ";
-  background-color: #6EBAC4;
+  background-color: #4ebfbf;
 }
 
 .resume .prof-4:before {
   content: " ";
-  background-color: #BDF264;
+  background-color: #78efb2;
 }
 
 @media (min-width: 1069px) {
