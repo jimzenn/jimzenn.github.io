@@ -3,6 +3,10 @@
   name: "Home"
   url: "/"
 -
+  identifier: "blog"
+  name: "Blog"
+  url: "/blog/"
+-
   identifier: "notes"
   name: "Notes"
   menu:
@@ -23,10 +27,6 @@
       name: "Optimization"
       url: "/optimization/2.1/"
 -
-  identifier: "journey"
-  name: "Journey"
-  url: "/journey/"
--
-  identifier: "about"
-  name: "About Me"
-  url: "/about/"
+  identifier: "resume"
+  name: "Resume"
+  url: "/resume/"

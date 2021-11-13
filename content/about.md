@@ -6,10 +6,34 @@ layout: about
 about: true
 ---
 
-I am a student of UCLA majoring in Applied Mathematics.
+1994, born in Shanghai, China.
 
- I currently work with AI Frontiers Conference. I am responsible for all of the conference's web development and digital marketing.
+2012, deemed the worst math student ever by my high school math teacher.
 
-Before I was admitted to UCLA, I studied Computer Science at Harbin Institute of Technology (HIT). I was Vice President of Technology of HICA (HIT International Communication Association). I was responsible for the organization's technology operation and public communication, including website, tech development and branding. I also founded HICA's technology division HICA IO, which plays a key role in the continued development of HICA's website and branding.
+2013, started pursuing a B.S. degree in computer science at Harbin Institute of Technology (HIT).
 
-I am a native of Shanghai, the Magic Capital of China.
+2015, left HIT to intern at Teambition.
+
+2015, came to the United States trying to get into UC Berkeley.
+
+2017, served as house president at Berkeley Student Cooperative.
+
+2017, worked as a lab assistant at UC Berkeley's notorious data structure course, CS 61B.
+
+2018, failed again trying to get into UC Berkeley, went to UCLA instead as a math major.
+
+2018, went to LA. Started questioning why everybody is so rich.
+
+2019, interned at Google Inc.
+
+2019, studied remotely from Stanford in my senior year.
+
+2020, volunteered at **X lab** and met **Z**.
+
+2020, graduated from UCLA as a B.S. in Math with no honor.
+
+2020, started working at X, the moonshot factory.
+
+2021, co-founded Quest with **Z**.
+
+In 2023 **(Age 29)**, my company went IPO in New York.

@@ -70,13 +70,13 @@ draft: true
   {{< /raw >}}
 </div>
 
-{{% examples name="" %}}
+{{% example name="" %}}
 $\C$ is a vector space over $\C$.
 
 $\C$ is also a vector space over $\R, \R \subset \C$.
 
 $\R$ is also a vector space over $\Q, \Q \subset \R$.
-{{% /examples %}}
+{{% /example %}}
 
 {{% example name="$F\_2$, a field of characteristic 2" %}}
 $F = \set{0, 1}.$<br>

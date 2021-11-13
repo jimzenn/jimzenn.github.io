@@ -2,70 +2,58 @@
   -
     college: University of California, Los Angeles
     collegeAbbr: UCLA
-    major: Mathematics of Computation [B.S.] (GPA 3.771)
-    majorAbbr: Math of Computation B.S. (GPA 3.771)
+    major: Mathematics of Computation (B.S.)
+    majorAbbr: Math B.S.
     from: Jun 2018
     fromAbbr: 06/18
-    to: 2020
-    toAbbr: 2020
+    to: Dec 2019
+    toAbbr: 12/19
     descriptions:
-      - Optimization, Data Mining, Probability Theory, Advanced Linear Algebra, Mathematical & Numerical Analysis.
+      - Optimization, Data Mining, Probability Theory, Linear Algebra, Mathematical Analysis, Dynamics, Operating System.
   -
     college: University of California, Berkeley
     collegeAbbr: UC Berkeley
-    major: Cross Enrollment</span> (GPA 3.850)
+    major: Cross Enrollment</span>
     from: Jan 2017
     fromAbbr: 01/17
     to: Aug 2017
     toAbbr: 08/17
     descriptions:
-      - Structure and Interpretation of Computer Programs, Data Structures, Computational Models of Cognition.
-  -
-    college: Carnegie Mellon University
-    major: Online lectures
-    from: Jan 2018
-    fromAbbr: 01/18
-    to: Aug 2018
-    toAbbr: 08/18
-    descriptions:
-      - Distributed System, Parrellel Computing.
+      - Data Structures, Structure and Interpretation of Computer Programs.
 
 "Skills":
   -
-    key: "Data Mining & Machine Learning"
-    value: knows when and how to apply what algorithm or model, and why the algorithm works.
-  -
-    key: "Parallel computing"
-    value: knows how to use ISPC and CUDA to optimize programs in different parallel settings.
-  -
-    key: "Data Structure & Algorithm"
-    value: solid data structure and algorithm understanding with mathematical insight.
-  -
     key: "Programming Languages"
-    value: <span class="prof-1">C++</span> <span class="prof-1">Java</span> <span class="prof-1">Python</span> <span class="prof-1">Typescript</span> <span class="prof-2">Javascript</span> <span class="prof-2">Go</span> <span class="prof-2">Kotlin</span> <span class="prof-2">C</span> <span class="prof-1">HTML & CSS</span> <span class="prof-2">SQL</span>.
-  -
-    key: "Design and Prototyping Tools"
-    value: <span class="prof-1">Sketch</span> <span class="prof-2">Photoshop</span> <span class="prof-2">After Effects</span> <span class="prof-2">Indesign</span> <span class="prof-3">Principle</span> <span class="prof-3">Processing</span>.
+    value: <span class="prof-1">Java</span> <span class="prof-1">Python</span> <span class="prof-2">C++</span> <span class="prof-1">Typescript</span> <span class="prof-1">Javascript</span> <span class="prof-1">Go</span> <span class="prof-1">C</span> <span class="prof-1">HTML & CSS</span> <span class="prof-2">SQL</span> <span class="prof-2">ISPC</span>.
   -
     key: "Frameworks & Tools"
-    value: <span class="prof-2">CUDA</span> <span class="prof-2">ISPC</span> <span class="prof-1">Angular</span> <span class="prof-2">SKLearn</span> <span class="prof-2">Tensorflow</span> <span class="prof-1">Git</span> <span class="prof-1">Unix</span> <span class="prof-1">Django</span> <span class="prof-1">Gulp</span> <span class="prof-3">React</span>.
+    value: <span class="prof-1">Angular</span> <span class="prof-2">React</span> <span class="prof-1">Flutter</span> <span class="prof-2">Tensorflow</span> <span class="prof-2">CUDA</span> <span class="prof-1">OpenMP</span> <span class="prof-1">Django</span> <span class="prof-3">D3.js</span>.
+  -
+    key: "Design and Prototyping"
+    value: <span class="prof-1">Sketch</span> <span class="prof-2">Photoshop</span> <span class="prof-2">After Effects</span> <span class="prof-3">Processing</span> <span class="prof-4">Indesign</span> <span class="prof-4">Principle</span>.
+  -
+    key: "Data Mining & Machine Learning"
+    value: classification, clustering, prediction, pattern mining, similarity search, etc.
+  -
+    key: "Parallel Computing"
+    value: Studied OpenMP, CUDA, ISPC and low-level optimization stratigies from CMU 15-618 lecture videos.
 
 "Work Experiences":
   -
-    employer: AI Frontiers Conference
-    title: Full Stack Developer [Javascript]
-    from: Sep 2016
-    fromAbbr: 09/16
-    to: Present
-    toAbbr: Now
-    location: Sunnyvale, CA
+    employer: Google Inc.
+    title: Software Engineer Intern
+    from: Jun 2019
+    fromAbbr: 06/19
+    to: Sep 2019
+    toAbbr: 09/19
+    location: Mountain View, CA
     descriptions:
-      - Managed, tracks and quantifies digital marketing such that cost stays low while conversion stays high.
-      - Utilized Google Cloud Functions to enable a serverless website which had zero server error and zero down time.
-      - Built and maintains a responsive and search-engine-optimized website with over 4,000 users.
+      - Built stateful RPC sampler that can provide testability to over 80% of previously untestable Google Shopping RPCs.
+      - Designed and built stateful log sampling pipeline with the stateful RPC sampler for a Google Shopping server.
+      - Cooperated with multiple Google Shopping teams to ensure a robust and reliable log replay interface.
   -
     employer: Teambition
-    title: Front-end Developer Intern [Javascript]
+    title: Front-end Developer Intern
     from: Sep 2015
     fromAbbr: 09/15
     to: Dec 2015
@@ -77,27 +65,27 @@
       - Built Teambition’s blog and career site with Wordpress and nodeJS, both sites now have over 10,000 pageviews.
   -
     employer: UC Berkeley EECS Dept.
-    title: Teaching Assistant [Java]
+    title: Lab Assistant
     from: Jun 2017
     fromAbbr: "06/17"
     to: "Aug 2017"
-    toAbbr: "06/17"
+    toAbbr: "08/17"
     location: Berkeley, CA
     descriptions:
-      - Taught concepts covering knowledge of data structures (hash tables, heaps, stacks, queues, tries, BSTs, linked lists, etc.), graph traversal algorithms (Dijkstra’s, Kruskal’s), sorting algorithms (Quicksort, Mergesort), runtime analysis, and more.
+      - Covered classic data structures and algorithms topics such as lists, trees, graphs, runtime analysis, etc.
   -
     employer: IO Design Group
     title: Founder
     from: Sep 2014
-    fromAbbr: "09/14"
-    to: Aug 2015
+    fromAbbr: "04/14"
+    to: "Aug 2015"
     toAbbr: "08/15"
     location: Harbin, China
     descriptions:
       - Drafted the design guideline for Harbin Institute of Technology Model United Nations and other major events.
-      - Managed Harbin Institute of Technology's Model United Nations's design and production.
-      - Coordinated the design of Harbin Institute of Technology's 2015 yearbook which was distributed internationally.
-      - Co-organized the first <i>Global Innovators' Forum of Technology and Society</i> which attracted attendees.
+      - Managed design and production of 6th HIT Model United Nations materials.
+      - Recruited over 100 members in the first year.
+
 "Projects":
   -
     name: Drift - Delivery Along the Way
@@ -105,19 +93,22 @@
     skills: ["Go", "Python", "JavaScript"]
     descriptions:
       - Designed a delivery system that utilizes existing traffic to delivery packages with maximized efficiency.
-      - Designed algorithms to match deliveries with deliverers which minimize the total cost.
-      - Wrote a Go server which used channels and goroutines to handle potential mutex in communications among clients.
-      - Wrote a Python server with a visualization of the simulation and routes using Google Maps API and Google Firebase.
+      - Designed algorithms to match deliveries and deliverers at low time and distance cost.
+      - Implemented a Go server that uses channels to handle communications among end users.
+      - Developed a real-time visualization of the algorithm simulation using Google Maps API and Google Firebase.
   -
     name: Math Notes
     year: 2018
     skills: ["HTML5", "CSS3", "Javascript"]
     descriptions:
       - Built and designed a website that displays LaTeX notes with clear legible layout optimized for both desktop and mobile.
-      - Designed efficient navigation through all the notes with anotations and collapsable proofs and solutions.
+      - Designed efficient navigation flow through all the notes with anotations and collapsable proofs and solutions.
+
 "Interests":
   - "Cooking,"
-  - "Guitar,"
-  - "Photography,"
-  - "Communistic shared living,"
-  - "Podcasts: <i>Recode Decode</i>, <i>Y Combinator's</i>, <i>Google Methods</i>."
+  - "guitar,"
+  - "photography,"
+  - "graphic design,"
+  - "traveling,"
+  - "communistic shared living,"
+  - "podcasts."
