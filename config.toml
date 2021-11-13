@@ -7,17 +7,18 @@ preserveTaxonomyNames = true
 googleAnalytics = "UA-83942334-3"
 
 [params]
-  my_legal_name = "Qingwei Zeng"
-  my_preferred_name = "Jim"
-  my_education = "University of California, Los Angeles"
-  phone = "+1 (510) 508-2766"
-  tel = "+15105082766"
-  email = "zenn@ucla.edu"
-  expected_graduation = "December 2019"
-  my_major = "Math of Computation"
-  github = "https://github.com/Jim-Zenn"
-  CV = "/Jim_Zenn-CV.pdf"
   version = "2.9.9.9.8"
+  [params.resume]
+    my_legal_name = "Qingwei Zeng"
+    my_preferred_name = "Jim"
+    my_education = "University of California, Los Angeles"
+    phone = "+1 (510) 508-2766"
+    tel = "+15105082766"
+    email = "zenn@ucla.edu"
+    expected_graduation = "December 2019"
+    my_major = "Math of Computation"
+    github = "https://github.com/Jim-Zenn"
+    CV = "/Jim_Zenn-CV.pdf"
 
 # [menu]
 #   [[menu.main]]
