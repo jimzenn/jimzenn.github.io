@@ -20,13 +20,11 @@ googleAnalytics = "UA-83942334-3"
     github = "https://github.com/Jim-Zenn"
     CV = "/Jim_Zenn-CV.pdf"
 
-# [menu]
-#   [[menu.main]]
-#     identifier = "math-115A"
-#     name = "Math 115A"
-#     url = "/math-115a/main/"
-#     weight = 1
-
 [taxonomies]
   category = "volumes"
   tag = "keywords"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
