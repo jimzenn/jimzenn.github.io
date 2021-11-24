@@ -36,7 +36,19 @@ I am **Qingwei Zeng 曾庆伟** a.k.a. **Jim Zenn**.<br>For a formal resume, che
 
 **2019**, interned at Google in Mountain View, CA.
 
+**2019**, finished my UCLA senior year while auditing at Stanford.
+
+**2020**, working full time at Google in Mountain View, CA.
+
+**2020**, started [mavericks.fm](https://mavericks.fm), a podcast where I talk with folks with unique experiences from tech, art and academia.
+
+**2021**, studying part-time at Stanford.
+
 <div class="now-sep">
   <span>now</span>
   <div></div>
 </div>
+
+**2022**, Found a startup to empower others.
+
+**2024**, Enrolled in Stanford GSB.
