@@ -2,6 +2,7 @@
 title: "Jim Zenn"
 menuTitle: "Home"
 date: 2019-06-18T12:16:00+08:00
+type: "home"
 content-only: true
 
 ---

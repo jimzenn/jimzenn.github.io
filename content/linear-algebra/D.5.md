@@ -3,6 +3,7 @@ title: "Discussion"
 date: 2018-07-24T11:03:48+08:00
 volumes: ["D"]
 layout: "note"
+type: "notes"
 issue: 5
 draft: true
 

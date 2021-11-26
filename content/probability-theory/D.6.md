@@ -3,6 +3,7 @@ title: "Disucission"
 date: 2018-07-31T10:03:48+08:00
 volumes: ["D"]
 layout: "note"
+type: "notes"
 issue: 6
 draft: true
 

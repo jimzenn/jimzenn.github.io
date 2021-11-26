@@ -3,6 +3,7 @@ title: "Midterm Review"
 date: 2019-02-22T16:14:00+08:00
 volumes: ["15"]
 layout: "note"
+type: "notes"
 issue: 1
 weight: 999
 

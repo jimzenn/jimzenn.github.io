@@ -3,6 +3,7 @@ title: "Review"
 date: 2018-08-01T10:34:48+08:00
 volumes: ["D"]
 layout: "note"
+type: "notes"
 issue: 7
 draft: true
 

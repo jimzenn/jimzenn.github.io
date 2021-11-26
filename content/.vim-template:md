@@ -3,6 +3,7 @@ title: "%HERE%"
 date: %DATE%T%TIME%:00+08:00
 volumes: [""]
 layout: "note"
+type: "notes"
 issue: 
 weight: 
 
