@@ -6,10 +6,6 @@ content-only: true
 
 ---
 
-I am **Qingwei Zeng 曾庆伟** a.k.a. **Jim Zenn**.<br>For a formal resume, check [here](/resume).
-
-<br>
-
 **1994**, born in Shanghai, China.
 
 **2013**, pursued a B.S. degree in computer science at [Harbin Institute of Technology](https://en.wikipedia.org/wiki/Harbin\_Institute\_of\_Technology); founded IO design group.
