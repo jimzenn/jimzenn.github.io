@@ -1,5 +1,15 @@
+.container {
+  background-color: white;
+}
+
 .body.resume {
   min-width: 850px;
+}
+
+@media (min-width: 1069px) {
+  .container {
+    --container-width: 840px;
+  }
 }
 
 .content--resume {
@@ -8,10 +18,11 @@
   margin-bottom: 70px;
   color: black;
   line-height: 1.8;
+  box-sizing: border-box;
 }
 
 #print-button {
-   align-self: flex-end;
+  align-self: flex-end;
 }
 
 .resume-content {
@@ -29,16 +40,17 @@
 #resume__legal-name {
   font-family: var(--display-font);
   font-size: 2.1em;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.2;
-  letter-spacing: .1px;
-  /* text-transform: uppercase; */
 }
 
 #resume__expected-graduation {
   display: block;
   font-weight: 500;
-  letter-spacing: -.04em;
+}
+
+#resume__expected-graduation b {
+  font-weight: 600;
 }
 
 #resume__contact {
@@ -52,9 +64,7 @@
   text-decoration: none;
 }
 
-#resume__contact #resume__email:before,
-#resume__contact #resume__phone:before,
-#resume__contact #resume__website:before {
+#resume__contact #resume__email:before, #resume__contact #resume__phone:before, #resume__contact #resume__website:before {
   color: black;
 }
 
@@ -94,6 +104,7 @@
   font-weight: 600;
   width: 100%;
 }
+
 .resume .section__item {
   list-style: none;
   margin-bottom: 4px;
@@ -121,7 +132,6 @@
   min-width: 20ch;
 }
 
-
 .resume .item__field {
   display: inline-block;
   white-space: nowrap;
@@ -142,6 +152,7 @@
   font-weight: 400;
   font-size: 10px;
 }
+
 .resume .proficiency-scale:before {
   margin-right: 10px;
   content: "|";
@@ -159,17 +170,11 @@
   margin-right: 6px;
 }
 
-.resume .prof-1,
-.resume .prof-2,
-.resume .prof-3,
-.resume .prof-4 {
+.resume .prof-1, .resume .prof-2, .resume .prof-3, .resume .prof-4 {
   white-space: nowrap;
 }
 
-.resume .prof-1:before,
-.resume .prof-2:before,
-.resume .prof-3:before,
-.resume .prof-4:before {
+.resume .prof-1:before, .resume .prof-2:before, .resume .prof-3:before, .resume .prof-4:before {
   display: inline-block;
   width: 6px;
   height: 6px;
@@ -215,4 +220,3 @@
     padding-right: 30px;
   }
 }
-

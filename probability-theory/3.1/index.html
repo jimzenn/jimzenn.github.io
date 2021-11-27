@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Continuous Random Variables and PDFs - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -305,12 +315,10 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="distribution-function">Distribution Function</span></span>
   <div class="block__content block__content--blue">
     <p>Let $X$ be an (arbitrary) random variable.  The <strong>distribution function</strong> $F_X: \R \to [0, 1]$ of $X$ is defined by $F_X(x) = \b{P}(X \leq x)$, for $x \in \R$.  We say two random variables $X, Y$ are <strong>identically distributed</strong> if they have the same distribution function.</p>
-
 <p>The random variable $X$ and $Y$ are said to be <strong>identically distributed</strong> if $F_X = F_Y$.</p>
 
   </div>
@@ -345,17 +353,14 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="density-function">Density Function</span></span>
   <div class="block__content block__content--blue">
     <p>A function $f: \R \to [0, \infty)$ is called a <strong>density function</strong> if it satisfies the following conditions.</p>
-
 <ol>
 <li>For any $-\infty \leq a &lt; b &lt; \infty $, the integral $\int_{ a }^{ b } f_X(x) \d x $ exists.</li>
 <li>$\int_{ -\infty }^{ +\infty } f_X(x) \d x = 1$.</li>
 </ol>
-
 <p>Note that density functions are nonnegative.</p>
 
   </div>
@@ -390,22 +395,15 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="probability-density-function-pdf-of-continuous-random-variables">Probability Density Function (PDF) of Continuous Random Variables</span></span>
   <div class="block__content block__content--blue">
     <p>A random variable $X$ is said to have a <strong>continuous distribution</strong> (we also say that $X$ is <strong>continuous</strong>) if there exists a density function $f_X$  such that</p>
-
 <p>$$\b{P}(X \in B) = \int_B f_X(x)\d x$$</p>
-
 <p>for every subset $B$ of the real line.</p>
-
 <p>We call $f_X$ the <strong>probability density function</strong> of $X$, or <strong>PDF</strong> for short.</p>
-
 <p>In particular the probability that the value of $X$ falls within an interval is</p>
-
 <p>$$\b{P}(a \leq X \leq b) = \int_{ a }^{ b } f_X(x) \d x $$</p>
-
 <p>and can be interpreted as the area under the graph of the PDF.</p>
 
   </div>
@@ -440,16 +438,12 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>For any continuous random variable $X$ and any single value $a$, we have</p>
-
 <p>$$\b{P}(X = a) = \int_{ a }^{ a } f_X(x) \d x = 0$$</p>
-
 <p>Hence, including or excluding the endpoint of an interval has <strong>no effect</strong> on its probability. That is</p>
-
 <p>$$\b{P}(a \leq X \leq b) = \b{P}(a &lt; X &lt; b) = \b{P}(a \leq X &lt; b) = \b{P}(a &lt; X \leq b)$$</p>
 
   </div>
@@ -464,14 +458,11 @@ if (!doNotTrack) {
   </ul></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>Suppose that $X$ is a continuous random variable with density function $f_X$. The Fundamental Theorem of Calculus implies that the distribution function</p>
-
 <p>$$F_X(x) = \b{P}(X \leq x) = \int_{ -\infty }^{ x } f_X(t) \d t $$</p>
-
 <p>is <strong>continuous</strong> at any $x \in \R$.</p>
 
   </div>
@@ -486,11 +477,10 @@ if (!doNotTrack) {
   </ul></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
-    <p>If $f_X$ is continuous at a point $x \in \R$, then $F_X$ is differentiable at $X $, and $F&rsquo;_X(x) = f_X(x)$.</p>
+    <p>If $f_X$ is continuous at a point $x \in \R$, then $F_X$ is differentiable at $X $, and $F'_X(x) = f_X(x)$.</p>
 
   </div>
 
@@ -504,12 +494,10 @@ if (!doNotTrack) {
   </ul></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="expected-value-continuous-case">Expected Value (Continuous Case)</span></span>
   <div class="block__content block__content--blue">
     <p>Let $X$ be a continuous random variable, and $h: \R \to \R $ a function. Then the <strong>expected value</strong> of $h(X) $ is defined by</p>
-
 <p>$$E[h(X)] = \int_{ - \infty }^{ + \infty } x f_X(x) \d x$$</p>
 
   </div>
@@ -544,12 +532,10 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="expected-value-general">Expected Value (General)</span></span>
   <div class="block__content block__content--blue">
     <p>For an arbitrary random variable $X$, the <strong>expected value</strong> is defined as the following Lebesgue integral</p>
-
 <p>$$E[X] = \int_{ \Omega } X(\omega) \d \b{P}(\omega)$$</p>
 
   </div>
@@ -584,14 +570,12 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Properties: <span class="keyword" id="linearity-of-expectation">Linearity of Expectation</span>
   
   </span>
   <div class="block__content block__content--green">
   <p>Let $X$ be an <strong>arbitrary</strong> random variable on the sample space $\Omega $ and $a, b \in \R$ be constants. Then</p>
-
 <p>$$E[aX+b] = a E[X] + b$$</p>
 
   </div>
@@ -626,13 +610,11 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="expected-value-of-the-product-of-independent-random-variables">Expected Value of the Product of Independent Random Variables</span></span>
   <div class="block__content block__content--green">
   <p>If random variables $X_1, _2, &hellip;, _n $ are independent, then</p>
-
 <p>$$E[ X_1, X_2, &hellip;, X_n ] = E[X_1] E[X_2] &hellip; E[X_n]$$</p>
 
   </div><script>
@@ -666,13 +648,11 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="tail-sum-calculation-of-discrete-random-variables-expected-value">Tail Sum Calculation of Discrete Random Variable&#39;s Expected Value</span></span>
   <div class="block__content block__content--green">
   <p>If a discrete random variable $X$ on the sample space $\Omega $ is non-negative, that is, $X \geq 0$, and integer valued, then</p>
-
 <p>$$E\brac{ X } = \sum_{ k=1 }^{ \infty } \b{P}(X \geq k)$$</p>
 
   </div><script>
@@ -706,13 +686,11 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="tail-sum-calculation-of-continuous-random-variables-expected-value">Tail Sum Calculation of Continuous Random Variable&#39;s Expected Value</span></span>
   <div class="block__content block__content--green">
   <p>Let $X \geq 0$, that is $X : \Omega \to [0, \infty)$ . Let $h$ be a continuous differentiable function with $h(0) = 0 $. Then</p>
-
 <p>$$E\brac{h(X)} = \int_{ \R } \b{P}(X &gt; x) \d x$$</p>
 
   </div><script>
@@ -744,7 +722,6 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--blue ">
@@ -784,12 +761,10 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="variance-of-continuous-random-variables">Variance of Continuous Random Variables</span></span>
   <div class="block__content block__content--blue">
     <p>Let $X$ be a continuous random variable, the <strong>variance</strong> of $X $ is defined the same way as before, i.e.</p>
-
 <p>$$var(X) = E[(X - E(X))^2]$$</p>
 
   </div>
@@ -824,7 +799,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
@@ -842,14 +816,13 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Properties
   </span>
   <div class="block__content block__content--green">
   <ol>
 <li>$var(aX+b) = a^2 var(X)$</li>
-<li>$var(X) = E[X^2] - E[X]^2$</li>
+<li>$var(X) = E[X^2] - E<input checked="" disabled="" type="checkbox"> ^2$</li>
 </ol>
 
   </div>
@@ -864,50 +837,40 @@ if (!doNotTrack) {
   </ul></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="exponential-random-variable">Exponential Random Variable</span></span>
   <div class="block__content block__content--blue">
     <p>Let $\lambda &gt; 0, f_X(x) = \begin{cases}
-  \lambda e^{- \lambda x} &amp; \text{ for } x&gt; 0 \br
-  0 &amp; \otherwise
+\lambda e^{- \lambda x} &amp; \text{ for } x&gt; 0 \br
+0 &amp; \otherwise
 \end{cases}$ , find expectation.</p>
-
 <p>$X $ is called an <strong>exponential random variable</strong>.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>First check this PDF sums to 1.</p>
-
 <p>$\begin{align*}
 &amp;\int_{ - \infty }^{ + \infty } \d x \br
 &amp;= \int_{ 0 }^{ + \infty } \lambda e^{- \lambda x}dx
 \end{align*}$</p>
-
 <p>Let $u = \lambda x, \d u = \lambda \d x$,</p>
-
 <p>$\begin{align*}
 &amp;= \int_{ 0 }^{ + \infty } \lambda e^{-u} \frac{ 1 }{ \lambda } \d u \br
 &amp;= \int_{ 0 }^{ + \infty }  e ^{-u} \d u \br
 &amp;= [e^{ -u }]^ \infty _0 \br
 &amp;= 1
 \end{align*}$</p>
-
   </div>
 </div>
-
 <p>CDF of exponential random variable,</p>
-
 <p>For $a \geq 0 $</p>
-
 <p>$\begin{align*}
 F_X(a) &amp;= \b{P}(X \leq a) \br
 &amp;= 1- \b{P}(X &gt; a) \br
@@ -916,7 +879,6 @@ F_X(a) &amp;= \b{P}(X \leq a) \br
 &amp;= 1 - \int_{ \lambda a }^{ \infty } e^{-u} \d u \br
 &amp;= 1 - e^{- \lambda a}
 \end{align*}$</p>
-
 <p>$\begin{align*}
 E[X] &amp;= \int_{ 0 }^{ \infty } x f(x) \d x \br
 &amp;= [-xd^{- \lambda x}]_0^{ \infty } - \int_{ 0 }^{ \infty } [-e^{- \lambda x}] \d x \br
@@ -956,18 +918,14 @@ E[X] &amp;= \int_{ 0 }^{ \infty } x f(x) \d x \br
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: The Exponential Random Variable is Memoryless
     
   </span>
   <div class="block__content block__content--gray">
     <p>Time $T $ until a new light bulb burns out is an exponential random variable with parameter $\lambda $. Ariadne turns the light on, leaves the room, and when she returns, $t $ time units later, finds that the light bulb is <u>still on</u>, which corresponds to the event $A = {T &gt; t} $. Let $X $ be the additional time until the light bulb burns out. What is the conditional CDF of $X $. Given the event $A $?</p>
-
 <p>We have for $x \geq 0 $.</p>
-
 <p>$\b{P}(X &gt; x \mid A) = \b{P}(T &gt; t+x \mid T &gt; t) = \frac{ \b{P}(T &gt; t+x\text{ and }T &gt; t)}{ \b{P}(T &gt; t)} = \frac{ \b{P}(T &gt; t+x)}{ \b{P}(T &gt; t)}  = \frac{ e^{ - \lambda(t + x)}}{ e^{ - \lambda t }} = e^{ - \lambda x }$</p>
-
 <p>Thus the conditional $CDF$ of $X$ is exponential with parameter $\lambda$, regardless of the time $t$ that elapsed between the lighting of the bulb and Ariadne&rsquo;s arrival. This is known as the <strong>memorylessness property</strong> of the exponential. Generally, if we model the time to complete a certain operation by an exponential random variable $X$, this property implies that as long as the operation has not been completed, the remaining time up to completion has the same exponential CDF, no matter when the operation started.</p>
 
   </div>
@@ -984,29 +942,22 @@ E[X] &amp;= \int_{ 0 }^{ \infty } x f(x) \d x \br
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="geometric-random-variable">Geometric Random Variable</span></span>
   <div class="block__content block__content--blue">
     <p>Let $Y $ be geometric random variable with parameter $p$ for $k = 1, 2, 3, &hellip; $</p>
-
 <p>Thus</p>
-
 <p>$\begin{align*}
 \b{P}(Y = k) = (1 - p)^{k -1} p
 \end{align*}$</p>
-
 <p>so,</p>
-
 <p>$$\begin{align*}
 F_Y(n) = \b{P}(Y \leq n) &amp;= \sum_{ k=1 }^{ n } (1 - p)^{k-1}p \br
 &amp;= p \sum_{ k=1 }^{ n } (1 - p)^{k - 1} \br
 &amp;= p (\frac{ 1- (1 - p)^n }{ 1- (1 - p)}) \br
 &amp;= 1- (1-p)^n,\text{ for} n = 1, 2, &hellip;
 \end{align*}$$</p>
-
 <p>So CDF of geometric random variable is:</p>
-
 <p>$$F_Y(x) = \begin{cases}
 1 - (1 - p)^n, \if x \leq [n, n + 1), n \geq 1 \br
 0, \if x &lt; 1
@@ -1766,13 +1717,13 @@ F_Y(n) = \b{P}(Y \leq n) &amp;= \sum_{ k=1 }^{ n } (1 - p)^{k-1}p \br
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

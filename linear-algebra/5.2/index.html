@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Diagonalizability - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -270,12 +280,10 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="diagonalizability-of-linear-operators">Diagonalizability of Linear Operators</span></span>
   <div class="block__content block__content--blue">
     <p>Let $T$ be an linear operator on a finite-dimensional vector space $V$,</p>
-
 <p>$T$ is <strong>diagonalizable</strong> if there exists an ordered basis $\beta $ of $V $ s.t. $[ T ]_{ \beta } $ is a diagonal matrix.</p>
 
   </div>
@@ -310,20 +318,14 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="diagonalizability-of-matrices">Diagonalizability of Matrices</span></span>
   <div class="block__content block__content--blue">
     <p>Let $A_{n \times n} \in M_{n \times n}(F)$.</p>
-
 <p>$L_A : F^n \to F^n $ of $F^n /F$ s.t.</p>
-
 <p>$[ L_A ]_{ \gamma }$ is a diagonal matrix.</p>
-
 <p>A square matrix $A $ is called <strong>diagonalizable</strong> if $L_A $ is diagonalizable.</p>
-
 <p>Equivalently,</p>
-
 <p>$A$ is diagonalizable if exists an invertible matrix  $Q$ s.t. $\inv{ Q }AQ$ is a diagonal matrix.</p>
 
   </div>
@@ -358,7 +360,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks
   </span>
@@ -378,21 +379,15 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>$L_A : F^jkn_{\beta \neq \gamma} \to F^n_{\beta \neq \gamma} $</p>
-
 <p>$L_A(v) = Av, \forall v \in F^n $</p>
-
 <p>$v = {\Vcr{ a_1 }{ a_2 }{ \vdots }{ a_n }} \in F^n$</p>
-
 <p>$[ L_A ]_{ \beta } = A \if \beta = { e_1, e_2, &hellip;, e_{ n }}$</p>
-
 <p>$[ L_A ]_{ \gamma } = B $</p>
-
 <p>$B = \inv{ Q }A Q$</p>
 
   </div>
@@ -409,25 +404,17 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks
   </span>
   <div class="block__content block__content--yellow">
   <p>$T: V \to V $, assume that $T $ is diagonalizable.</p>
-
 <p>$\implies $ ordered basis $\beta = \set{ x_1, x_2, &hellip;, x_{ n }} $ s.t.</p>
-
 <p>$[ T ]_{ \beta } = {\Mee{ \lambda_1 }{ 0 }{ 0 }{ 0 }{ \ddots }{ 0 }{ 0 }{ 0 }{ \lambda_n }} $</p>
-
 <p>$\lambda_i$ are not necessarily distinct.</p>
-
 <p>$T(x_1) = \lambda x_1 + 0 x_2 + &hellip; + 0 x_n$</p>
-
 <p>$\implies T(x_1)  = \lambda _ 1 x_1$ and $x_1 \neq 0$</p>
-
 <p>$\implies \lambda_1 $is an eigenvalue of $T$ and $x_1 $ is a corresponding eigenvector.</p>
-
 <p><strong>Conclusion</strong>: That basis $\beta $ is a basis where every vector in $\beta $ is a eigenvector, and the diagonal entries of $[ T ]_{ \beta } $ are the corresponding eigenvalues.</p>
 
   </div>
@@ -443,13 +430,11 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks
   </span>
   <div class="block__content block__content--yellow">
   <p>$T: V \to V $, assume that $\set{ v_1, v_2, &hellip;, v_{ n }} $ be a basis of $V $ s.t. $v_i $ is an eigenvector corresponding to eigenvalue of $t_i $ of $T $.</p>
-
 <p>$$T(v_1) = t_1v_1 = t_1 v_1 + 0v_2 + &hellip; + 0v_{ n } \br
 T(v_2) = t_2v_2 = 0 v_1 + t_2v_2 + &hellip; + 0v_{ n } \br
 \vdots \br
@@ -468,18 +453,14 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   5.1<span class="keyword" id="5.1" style="visibility: hidden;">5.1</span></span>
   <div class="block__content block__content--green">
   <p>Let $T$ be an linear operator on a finite-dimensional vector space $V$,</p>
-
 <p>Then $T$ is diagonalizable $\iff $</p>
-
 <p>There exists an ordered basis  $\beta = \set{ x_1, x_2, &hellip;, x_{ n }}$.</p>
-
 <p>Consisting of eigenvector of $T $ each $x_i $ is an eigenvector of $T$. In this case, $[ T ]_{ \beta }$ is a diagonal matrix with the diagonal entries as corresponding eigenvalue.</p>
 
   </div><script>
@@ -513,55 +494,40 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   5.5<span class="keyword" id="5.5" style="visibility: hidden;">5.5</span></span>
   <div class="block__content block__content--green">
   <p>Let $T$ be an linear operator on a finite-dimensional vector space $V$,</p>
-
 <p>Let $\lambda_1, \lambda_2, &hellip;, \lambda_{ k }$ be distinct eigenvalues of $T , k \leq n$.</p>
-
 <p>If $x_1, x_2, &hellip;, x_{ k } $ are corresponding eigenvector, then $\set{ x_1, x_2, &hellip;, x_{ k }}$ is linearly independent.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$k = 1, \lambda_1, x_1, x_1 \neq 0 , x_1$ is linearly independent.</p>
-
 <p>Assume that the statement is true for any $(k-1) $ number of distinct eigenvalue.</p>
-
 <p>Consider:</p>
-
 <p>$a_1x_1 + a_2x_2 + &hellip; + a_{ k }x_{ k } = 0, a_i \in F$</p>
-
 <p>Apply $(T- \lambda_a I_v)$ on both side.</p>
-
 <p>$$\begin{align*}
 (T- \lambda_k I_v)(a_ix_i) i \neq k \br
 &amp;= a_i (T x_i - \lambda_k x_i) \br
 &amp;= a_i(\lambda_i x_i - \lambda_k x_i) \br
 &amp;= a_i(\lambda_i - \lambda_k)x_i
 \end{align*}$$</p>
-
 <p>since, $\lambda_i - \lambda_k \neq 0$</p>
-
 <p>$a_1(\lambda_1 - \lambda_k)x_1 + a_2(\lambda_2 - \lambda_k)x_2 + &hellip; + a_{ k }(\lambda_k - \lambda_k)x_{ k } = 0, a_i \in F$</p>
-
 <p>$\therefore a_i (\lambda_i - \lambda_k) = 0 (i = 1, 2, &hellip;, k - 1) \implies a_i = 0, \lambda_i \neq \lambda_k$</p>
-
 <p>using (i) and (ii) we get $a_kx_k = 0 $</p>
-
 <p>$\because x_k $ is an eigenvector. $x_k \neq 0$ $\therefore \set{ x_k }$ is linearly independent $\implies a_k = 0 $</p>
-
   </div>
 </div>
 
@@ -596,7 +562,6 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   </span>
@@ -604,31 +569,23 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
 
   <div class="block__content block__content--green">
   <p>Let $T$ be an linear operator on a finite-dimensional vector space $V$,</p>
-
 <p>$T$ has $n$-distinct eigenvalues $\implies T$ is diagonalizable.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$\lambda_1 \neq \lambda_2 \neq &hellip; \neq \lambda_k$ eigenvalues</p>
-
 <p>$x_1, $x_2, &hellip;, $x_{ n }$ eigenvectors</p>
-
 <p>$\beta = \set{ x_1, x_2, &hellip;, x_{ n }}$ is linearly independent.</p>
-
 <p>Notice $\abs{ \beta } = n = \dim V $</p>
-
 <p>$\therefore \beta$ is a basis of $V $</p>
-
 <p>$\beta $ is a basis of $V$ consisting only eigenvectors of $T $, hence $T $ is diagonalizable.</p>
-
   </div>
 </div>
 
@@ -644,14 +601,11 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
   </ul></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="split">Split</span></span>
   <div class="block__content block__content--blue">
     <p>A polynomial $f(x)$ with coefficients in a field F is called <strong>split over</strong> $F$, if $f(x)$ can be written as a product of $n $ linear polynomial with coefficient in $F$.</p>
-
 <p>i.e. $f(x) = a(x- a_1)(x - a_2)(x- a_3) &hellip; (x - a_n)$</p>
-
 <p>note: $f$ is called a split of over if it can be completely factored into linear factors over $F$.</p>
 
   </div>
@@ -686,7 +640,6 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
@@ -705,7 +658,6 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
   </ul>
 
 </div>
-
 
 
 <div class="block block--gray ">
@@ -728,12 +680,10 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="algebraic-multiplicity">Algebraic Multiplicity</span></span>
   <div class="block__content block__content--blue">
     <p>Let $T$ be an linear operator on a finite-dimensional vector space $V$,</p>
-
 <p>Let $\lambda $ be an eigenvalue of $T $, then a positive integer $k \geq 1 $ is called the <strong>algebraic multiplicity</strong> of $\lambda $, if $(\lambda - t)^k $ is a factor of the characteristic polynomial.</p>
 
   </div>
@@ -768,14 +718,11 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="eigenspaces">Eigenspaces</span></span>
   <div class="block__content block__content--blue">
     <p>Let $T$ be an linear operator on a finite-dimensional vector space $V$,</p>
-
 <p>$\lambda \in F $ is an eigenvalue of $T $, we define a subspace $E_ \lambda \subseteq V $ as $E_ \lambda = \set{ x \in V | T(x) = \lambda x } =N(T - \lambda I_v)$.</p>
-
 <p>$E_ \lambda$ is called the <strong>eigenspace</strong> of $\lambda. $</p>
 
   </div>
@@ -808,7 +755,6 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--blue ">
@@ -848,55 +794,41 @@ T(v_n) = t_nv_n = 0 v_1 + 0v_2 + &hellip; + t_nv_{ n }$$</p>
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   5.7<span class="keyword" id="5.7" style="visibility: hidden;">5.7</span></span>
   <div class="block__content block__content--green">
   <p>Let $T$ be an linear operator on a finite-dimensional vector space $V$,</p>
-
 <p>$\lambda $ is an eigenvalue of $T $, the algebraic multiplicity of $\lambda $ is $m $, then $1 \leq \dim E_{ \lambda } \leq m$.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$0 \neq v \in E_ \lambda \implies \dim E_ \lambda \geq 1 $.</p>
-
 <p>$\dim E_\lambda = p$.</p>
-
 <p>Let $\set{ v_1, v_2, &hellip;, v_{ p }}$ be a basis of $E_\lambda \subseteq V $</p>
-
 <p>Extend this basis to a basis $\set{ v_1, v_2, &hellip;, v_{ p+1 }, v_{p +1}, v_{p+2}, &hellip;, v_{ n }} = \beta$ of $V $.</p>
-
 <p>$[ T ]_{ beta }$ observe that $v_1, _2, &hellip;, _{ p } $ are all eigenvectors of with respect to $\lambda$.</p>
-
 <p>$\therefore T(v_1) = \lambda v_1 = \lambda \cdot v_1 + 0 \cdot v_2  + &hellip; + 0 \cdot v_n$
 $T(v_2) = \lambda v_2 =0 \cdot v_1  + \lambda \cdot v_2 +  &hellip; + 0 \cdot v_n$
 $T(v_p) = \lambda v_p =0 \cdot v_1  + 0 \cdot v_2 + &hellip; + \lambda \cdot v_p +   &hellip; + 0 \cdot v_n$</p>
-
 <p>$T(v_{p + 1}) = \sum_{ i=1 }^{ n } a_{i_{p+1}}v_i$</p>
-
 <p>$T(v_n) = \sum_{ i=1 }^{ n } a_{in} v_i $</p>
-
 <p>$A = [ T ]_{ \beta } = {\Mww{ \lambda I_p }{ B }{ 0 }{ C }}$</p>
-
 <p>$(A - tI_n) = {\Mww{ \lambda I_p  - t I_p }{ B }{ 0 }{ C - t I_{n-p}}}$</p>
-
 <p>$\begin{align*}
 \det(A - tI_n) &amp;= \det (\lambda I_p - t I_p) \det (c - t I_{n - p}) \br
 &amp;= \det ((\lambda - t) I_p) \det(c- t I_{n-p}) \br
 &amp;= (\lambda -t)^p \det I_p \det(c - t I_ {n - p}) \br
 &amp;= (\lambda - t)^p g(t), \text{ where } g(t) = \det(c- I_{n-p})
 \end{align*}$</p>
-
   </div>
 </div>
 
@@ -931,45 +863,34 @@ $T(v_p) = \lambda v_p =0 \cdot v_1  + 0 \cdot v_2 + &hellip; + \lambda \cdot v_p
 </div>
 
 
-
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   
   </span>
   <div class="block__content block__content--green">
   <p>Let $T$ be an linear operator on a finite-dimensional vector space $V$, let $\lambda_1, \lambda_2, &hellip;, \lambda_{ k } $ be distinct eigenvalues of $T $. Let $v_i \in E_ { \lambda_i }$ for $i = 1,2, &hellip; ,k .$</p>
-
 <p>If
 $$v_1 + v_2 + &hellip; + v_{ k } = 0 $$
 then
 $$v_1 = v_2 =  &hellip; = v_k = 0 $$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>By contradiction, assume that there is at least one $v_i$ say $v_{i_1} \neq 0 , i \in \set{ 1, 2, &hellip;, k }$,</p>
-
 <p>i.e. $v_{i_1} $ is an eigenvector contradiction to $\lambda_{i_ 1} $</p>
-
-<p>Let $v_{i_1}, v\_{ i_2 }, &hellip;, v\_{ i_{m}} $ are all non-zero vectors, from $E_{ \lambda_{i _ 1}}, E_ { \lambda { i_ 2  }}, &hellip; , E_ { \lambda { i_ m  }} $, respectively, and the remaining ones are all zero vectors.</p>
-
+<p>Let $v_{i_1}, v\<em>{ i_2 }, &hellip;, v\</em>{ i_{m}} $ are all non-zero vectors, from $E_{ \lambda_{i _ 1}}, E_ { \lambda { i_ 2  }}, &hellip; , E_ { \lambda { i_ m  }} $, respectively, and the remaining ones are all zero vectors.</p>
 <p>$i_1, i_2, &hellip;, i_{ m } \in \set{ 1, 2, &hellip;, k } $</p>
-
 <p>$\therefore $ the equation $(i) $ looks like the following,</p>
-
 <p>$v_{i_1} + v_{i_2} + &hellip; + v_{i_ m } = 0 $(ii)</p>
-
 <p>Since $v_{i_1} \neq 0, v_{i_2} \neq 0, &hellip;, v_{i_n} \neq 0$.</p>
-
 <p>Then all  eigenvector for  corresponding to distinct eigenvalues, and that is contradiction to (ii) since eigenvectors from different eigenvalues are  linearly independent.</p>
-
   </div>
 </div>
 
@@ -985,57 +906,39 @@ $$v_1 = v_2 =  &hellip; = v_k = 0 $$</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   5.8<span class="keyword" id="5.8" style="visibility: hidden;">5.8</span></span>
   <div class="block__content block__content--green">
   <p>Let $T$ be an linear operator on a finite-dimensional vector space $V, \lambda_1, \lambda_2, &hellip;, \lambda_{ k } $ are distinct eigenvalues of $T $.</p>
-
 <p>Let $S_i $ be a linearly independent subset of $E_{ \lambda_i } $ for $i = 1, 2, &hellip;, k $.</p>
-
 <p>Then $\underset{i=1}{\overset{k} \cup} S_i$ is also linearly independent.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Let $\dim E_{ \lambda _ i  } = n_i , i - 1, 2, &hellip;, k$</p>
-
 <p>Let $S_i \subseteq E_ { \lambda_ i } $</p>
-
 <p>$S_i = \set{  v_{i1}, v _{i2}, &hellip;, v_{in_i}} , i = 1, 2, &hellip;, k$</p>
-
 <p>want to prove $S_i $ linearly independent.</p>
-
 <p>To that end consider the following equation:</p>
-
 <p>$\sum_{ i=1 }^{ k } \sum_{ j = 1 }^{ n_i } a_{ij}v_{ij} = 0$</p>
-
 <p>Let $w_i  = \sum_{ j=1 }^{ n_i } a_{ij}v_{ij}, i = 1, 2 , &hellip;, k$</p>
-
 <p>Then $w_i \in E_ { \lambda _ i }$, since $v_{i1}, v_{ i2 }, &hellip;, v_{ in_i } \in S_i \subseteq E_{ \lambda_ i }$ and $E_ { \lambda_i }  is a subspace$</p>
-
 <p>$\therefore $ we get from (i) $\sum_{ i= 1 }^{ k } w_i = 0, w_i \in E_ {\lambda_i}$.</p>
-
 <p>By previous theorem we then get</p>
-
 <p>$w_i = 0, \forall i = 1, 2, &hellip;, k $</p>
-
 <p>i.e. $\sum_{ j=1 }^{ n_i } a_{ij} v_{ij} = 0 \forall i = 1, 2, &hellip;, k$
 since $S_i = \set{ v_{i_1}, v_{i_2}, &hellip;, v_{in_i}} $ is linearly independent from (iii) we get</p>
-
 <p>$a_{ij} = 0 \forall i = 1, 2, &hellip;, n and j = 1, 2, &hellip;, n_i $</p>
-
 <p>$\therefore \underset{i = 1}{\overset{k} \cup} S_i $ is linearly independent.</p>
-
   </div>
 </div>
 
@@ -1070,84 +973,54 @@ since $S_i = \set{ v_{i_1}, v_{i_2}, &hellip;, v_{in_i}} $ is linearly independe
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   5.9<span class="keyword" id="5.9" style="visibility: hidden;">5.9</span></span>
   <div class="block__content block__content--green">
   <p>Let $T$ be an linear operator on a finite-dimensional vector space $V$, let $\lambda_1, \lambda_2, &hellip;, \lambda_{ k }$ are distinct eigenvalues of $T$, then</p>
-
 <ol>
 <li>$T $ is diagonalizable $\iff \forall \lambda_i,  $ algebraic multiplicity$(\lambda_i) =$ geometric multiplicity$(\lambda_i), i = 1, 2, &hellip;, k $.</li>
 <li>If $T $ is diagonalizable and if $\beta_1, \beta_2, &hellip;, \beta_{ k } $ are basis of $E_{ \lambda_1}, E_{ \lambda_2}, &hellip;, E_{ \lambda_{ k }} $ respectively, $\beta = \beta_1 \cup \beta_2 \cup &hellip; \cup \beta_k  $  is a basis of $V $.</li>
 </ol>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$T $ is diagonalizable $\iff \exists$  a basis $\beta $ consisting of eigenvectors of $T $.</p>
-
 <p>$\dim V = n $</p>
-
 <p>let $f(t)$  be the characteristic polynomial of $T $.</p>
-
 <p>$deg(f(t))  = n$o
 $\lambda_1, \lambda_2, &hellip;, \lambda_{ k }$ are the distinct roots of $f(t)=(\lambda_1)^{a_1} + (\lambda_2)^{a_2} +  &hellip; +  (\lambda_k)^{a_k}$</p>
-
 <p>where $a_i = $ algebraic multiplicity of $\lambda_i $</p>
-
 <p>$\therefore deg(f(t)) = n $</p>
-
 <p>$\because a_1, a_2, &hellip;, a_{ k } = n (*)$</p>
-
 <p><strong>Part 1</strong> that algebraic multiplicity$(\lambda_i)$ = geometric multiplicity $(\lambda_i) , \forall i = 1, 2, &hellip;, k$</p>
-
 <p>$\therefore$ geometric multiplicity $(\lambda_i) = a_i, \forall i = 1, 2, &hellip;, k$</p>
-
 <p>Recall that, geometric multiplicity$(\lambda_i) = \dim E_ { \lambda_i }  $</p>
-
 <p>$\therefore$ let $\beta_i $ be basis of $E_ { \lambda_i } $ Then $\abs{ \beta_i } = a_i, i = 1, 2, &hellip;, k $</p>
-
 <p>Then $\beta_1 \cup \beta_2 \cup &hellip; \cup \beta_k $ is a linearly independent set by the previous theorem.</p>
-
 <p>Now, observe that $\beta_i \cap \beta_j  = \emptyset  $ since $i \neq j $.</p>
-
 <p>$\therefore \abs{ \beta_1 \cup \beta_2 \cup &hellip; \cup \beta_k}  = \abs{ \beta_1 } + \abs{ \beta_2 } + &hellip; + \abs{ \beta_K } = n = \dim V by (*)$</p>
-
 <p>$\therefore \underset{i = 1}{\overset{k} \cup} \beta_i $ is a basis of $V $ consisting of eigenvector of $T $. Hence T is diagonalizable.</p>
-
 <p><strong>Part 2</strong></p>
-
 <p>Assume that $T $ is diagonalizable. Then exists an ordered basis $\beta $ of $V $ s.t. [ T ]_{ \beta } is a diagonalizable matrix.</p>
-
 <p>Let $\beta $ = \set{ v_{11}, v_{12}, &hellip;, v_{1n_1}, v_{21}, v_{22}, &hellip;, v_{2n_2}, &hellip;, v_{k1}, v_{k2}, &hellip;, v_{kn_k}}</p>
-
 <p>where , $v_{i1}, v_{i2}, &hellip;, v_{in_i}$ are eigenvector corresponding to the eigenvalues $\lambda_i \forall i = 1, 2, &hellip;, k$.</p>
-
 <p>$\therefore $ geo.mult.$(\lambda_i)  = n_i$  &hellip; (*)</p>
-
 <p>$T(v_{11}) = \lambda_1v_{11} $</p>
-
 <p>$\vdots $</p>
-
 <p>$T(v_{1n_1}) = \lambda_1v_{1n_i} $</p>
-
 <p>$\vdots $</p>
-
 <p>(you get the idea&hellip;)</p>
-
 <p>$\det([ T ]_{ \beta } - tI_n) = (\lambda_1 -t)^{n_1}(\lambda_2-t)^{n_2}&hellip;(\lambda_k -t)^{n_k}$</p>
-
 <p>$\therefore$ alg.mult.$(\lambda_i) = n_i =  $ geo.mult.$(\lambda_i)$</p>
-
   </div>
 </div>
 
@@ -1182,21 +1055,15 @@ $\lambda_1, \lambda_2, &hellip;, \lambda_{ k }$ are the distinct roots of $f(t)=
 </div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note: <span class="keyword" id="test-for-diagonalization">Test for Diagonalization</span>
     
   </span>
   <div class="block__content block__content--yellow">
     <p>Let $T $ be a linear operator on an $n $-dimensional vector space $V $. Then $T $ is diagonalizable if and only if both of the following conditions hold.</p>
-
 <p>For each eigenvalue $\lambda$ of $T $, $\text{alg.mult.}(T) = \text{geo.mult.}(T)$.</p>
-
 <p>These same conditions can be used to test if a square matrix $A $ is diagonalizable because diagonalizability of $A $ is equivalent to diagonalizability of the operator $L_A $.</p>
-
 <p>If $T $ is diagonalizable, and $\beta_1, \beta_2, &hellip;, \beta_{ k } $ are ordered bases for the eigenspaces of $T $.</p>
-
 <p>Then the union $\beta = \beta_1 \cup \beta_2 \cup &hellip; \cup \beta_k $ is an ordered bases for $V $ consisting of eigenvectors of $T $, and hence $[T]_ \beta $ is a diagonal matrix.</p>
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
@@ -1204,33 +1071,23 @@ $\lambda_1, \lambda_2, &hellip;, \lambda_{ k }$ are the distinct roots of $f(t)=
     <p>We test the matrix
 $$A = {\Mee{ 3 }{ 1 }{ 0 }{ 0 }{ 3 }{ 0 }{ 0 }{ 0 }{ 4 }} \in M_{3 \times 3}(R) $$
 for diagonalizability.</p>
-
 <p>The characteristic polynomial of $A $ is $\det(A - t I) = 0(t - 4)(t- 3)^2$, which splits.</p>
-
 <p>A has eigenvalues $\lambda_1 = 4, \lambda_2 = 3$ with algebraic multiplicities $1$ and $2$, respectively.</p>
-
 <p>Since $\lambda_1 $ has alg.mult. $1 $, by theorem 5.7, geo.mult. = 1 = alg.mult.</p>
-
 <p>Then we check $\lambda_2. Since</p>
-
 <p>$$A - \lambda_2I = {\Mee{ 0 }{ 1 }{ 0 }{ 0 }{ 0 }{ 0 }{ 0 }{ 0 }{ 1 }}$$</p>
-
 <p>has $\rank{ 2 }$, we see that $\nullity{ A - \lambda_2 I } = 3 - \rank{ A - \lambda_2 I } = 1 $, which is not the alg.mult. of $\lambda_2 $.</p>
-
 <p>$\therefore A $ is not diagonalizable.</p>
-
   </div>
-
-<p><ul class="block__footer">
+  <ul class="block__footer">
     <li class="block__footer-item">
       <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
     </li>
     <li class="block__footer-item">
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
-  </ul></p>
-
-<p></div></p>
+  </ul>
+</div>
 
   </div>
 
@@ -1264,7 +1121,6 @@ for diagonalizability.</p>
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: Finding the $Q$
     
@@ -1273,23 +1129,14 @@ for diagonalizability.</p>
     <p>Let
 $$A = {\Mww{ 0 }{ -2 }{ 1 }{ 3 }} $$
 We show that $A $ is diagonalizable and find a $2 \times 2 $ matrix $Q $ s.t. $\inv{ Q }A Q $ is a diagonal matrix.</p>
-
 <p>$A - \lambda I = (t -1)(t- 2) $, and hence $A $ has two distinct eigenvalues, $\lambda_1 = 1 $ and $\lambda_2 = 2 $. By applying the corollary to theorem 5.5 to the operator $L_A $, we see that $A $ is diagonalizable.</p>
-
 <p>Moreover,</p>
-
 <p>$$\gamma_1 = \set{{\Vcw{ -2 }{ 1 }}}, \gamma_2 = \set{{\Vcw{ -1 }{ 1 }}} $$</p>
-
 <p>are bases for the eigenspaces $E_{\lambda_1} $ and $E_{ \lambda_2 } $, respectively. Therefore</p>
-
 <p>$\gamma = \gamma_1 \cup \gamma_2 = \set{{\Vcw{ -2 }{ 1 }}, {\Vcw{ -1 }{ 1 }}} $</p>
-
 <p>is an ordered basis for $\R^2 $ consisting of eigenvector of $A $. Let</p>
-
 <p>$$ Q = {\Mww{ -2 }{ -1 }{ 1 }{ 1 }} $$</p>
-
 <p>the matrix whose columns are the vectors in $\gamma$. Then, by the corollary to theorem 2.23,</p>
-
 <p>$$ D = \inv{ Q }AQ = [ L_A ]_{ \beta  } = {\Mww{ 1 }{ 0 }{ 0 }{ 2 }} $$</p>
 
   </div>
@@ -1664,13 +1511,13 @@ We show that $A $ is diagonalizable and find a $2 \times 2 $ matrix $Q $ s.t. $\
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

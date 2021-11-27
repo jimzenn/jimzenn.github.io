@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Sets - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -268,16 +278,12 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="set">Set</span></span>
   <div class="block__content block__content--blue">
     <p>A <strong>set</strong> is a collection of objects, which are the <strong>elements</strong> of the set.</p>
-
 <p>If $S$ is a set, and $x$ is an element of $S$, we write $x \in S$; if $y$ is not an element of $S$, we write $y \not\in S$.</p>
-
 <p>An <strong>empty set</strong> is a set which has no elements, denoted $\emptyset$.</p>
-
 <p>If a set $S$ contains a finite number of elements say $x_1, &hellip;, x_n$ , we write $S=\set{x_1, &hellip;, x_n}$.</p>
 
   </div>
@@ -312,12 +318,10 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="countability">Countability</span></span>
   <div class="block__content block__content--blue">
     <p>If $S$ consists of infinitely many elements which can be enumerated in a list, such that there are as many elements as there are positive integers, we write $S=\set{x_1, x_2, &hellip;}$ and say that $S$ is <strong>countably infinite</strong>.</p>
-
 <p>If the elements of $S$ cannot be enumerated in a list, $S$ is called <strong>uncountable</strong>.</p>
 
   </div>
@@ -350,7 +354,6 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--blue ">
@@ -390,7 +393,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="subset-and-supset">Subset and Supset</span></span>
   <div class="block__content block__content--blue">
@@ -426,7 +428,6 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--blue ">
@@ -466,18 +467,14 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="set-operations">Set Operations</span></span>
   <div class="block__content block__content--blue">
     <p>We often introduce a universal set, $\Omega$ containing all objects of interest in a particular context.</p>
-
 <p>The <strong>complement</strong> of $S$ is:
 $$S^c=\set{x\in\Omega \mid x\not\in S}$$</p>
-
 <p>The <strong>union</strong> of $S$ and $T$ is:
 $$S\cup T = \set{x\in\Omega \mid x \in S \text{ or } x \in T}$$</p>
-
 <p>The <strong>intersection</strong> of $S$ and $T$ is:
 $$S\cap T = \set{x\in\Omega \mid x \in S \text{ and } x \in T}$$</p>
 
@@ -511,7 +508,6 @@ $$S\cap T = \set{x\in\Omega \mid x \in S \text{ and } x \in T}$$</p>
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--blue ">
@@ -551,12 +547,10 @@ $$S\cap T = \set{x\in\Omega \mid x \in S \text{ and } x \in T}$$</p>
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="partition">Partition</span></span>
   <div class="block__content block__content--blue">
     <p>A collection of sets is said to be a <strong>partition</strong> of a set $S$ if</p>
-
 <ol>
 <li>the sets in the collection are disjoint</li>
 <li>their union is $S$</li>
@@ -594,19 +588,14 @@ $$S\cap T = \set{x\in\Omega \mid x \in S \text{ and } x \in T}$$</p>
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>${({S^c})^c}=S$</p>
-
 <p>$S\cap S^c=\emptyset$</p>
-
 <p>$S\cup S^c = \Omega$</p>
-
 <p>$S\cap(T\cup V)=(S\cap T)\cup(S\cap V)$</p>
-
 <p>$S\cup(T\cap V)=(S\cup T)\cap(S\cup V)$</p>
 
   </div><ul class="block__footer">
@@ -620,13 +609,11 @@ $$S\cap T = \set{x\in\Omega \mid x \in S \text{ and } x \in T}$$</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="de-morgans-laws">De Morgan&#39;s Laws</span></span>
   <div class="block__content block__content--green">
   <p><u>De Morgan&rsquo;s Laws</u>, $S_1, S_2,&hellip;$ are sets</p>
-
 <ol>
 <li>$(\underset{n}{\cup} S_n)^c = \underset n \cap S_n^c$</li>
 <li>$(\underset{n}{\cap} S_n)^c = \underset n \cup S_n^c$</li>
@@ -1379,13 +1366,13 @@ $$S\cap T = \set{x\in\Omega \mid x \in S \text{ and } x \in T}$$</p>
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

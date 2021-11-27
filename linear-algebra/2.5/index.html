@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>The Change of Coordinate Matrix - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -270,43 +280,33 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   2.22<span class="keyword" id="2.22" style="visibility: hidden;">2.22</span></span>
   <div class="block__content block__content--green">
   <p>$T:V \to V, \dim V$ is finite.</p>
-
 <p>Let $V$ be a finite-dimensional vector space, and $\beta$ ordered basis of $V$.</p>
-
 <p>Let $I_V: V \to V$ is defined as  $I_V(x) = x \forall x \in V, $ i.e. $I_V =$ identity matrix. Let $Q = [I_V]$, then</p>
-
 <ol>
 <li>$Q$ is invertible</li>
-<li>$Q [ v ]_{ \beta&rsquo; } = [ \beta ]$</li>
+<li>$Q [ v ]_{ \beta' } = [ \beta ]$</li>
 </ol>
-
-<p>The matrix $Q= [ I_V ]_{ \beta&rsquo; }^{ \beta }$ is called the change of coordinate matrix from $\beta&rsquo;$ -coordinate to $\beta$-coordinate.</p>
-
+<p>The matrix $Q= [ I_V ]_{ \beta' }^{ \beta }$ is called the change of coordinate matrix from $\beta'$ -coordinate to $\beta$-coordinate.</p>
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
-    <p>Since the identity transformation $I_V $ is clearly invertible, its matrix $[ I_V ]_{ \beta&rsquo; }^{ \beta } = Q$ is also invertible.</p>
-
+    <p>Since the identity transformation $I_V $ is clearly invertible, its matrix $[ I_V ]_{ \beta' }^{ \beta } = Q$ is also invertible.</p>
 <p>(ii) $[ I_v(v) ]_{ \beta } = [ v ]_{ \beta }$</p>
-
-<p>$[ I_V ]_{ \beta&rsquo;  }^ \beta [ v ]_{ \beta&rsquo; }^{ \beta } = [ v ]_{ \beta } $</p>
-
-<p>$\therefore Q[v]_\beta&rsquo; = [ v ]_{ \beta }$</p>
-
+<p>$[ I_V ]_{ \beta'  }^ \beta [ v ]_{ \beta' }^{ \beta } = [ v ]_{ \beta } $</p>
+<p>$\therefore Q[v]_\beta' = [ v ]_{ \beta }$</p>
   </div>
 </div>
 
@@ -341,37 +341,29 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   2.25<span class="keyword" id="2.25" style="visibility: hidden;">2.25</span></span>
   <div class="block__content block__content--green">
-  <p>$T: V \to V, \dim V $ is finite and $\beta$ and $\beta&rsquo; $ is ordered basis of $V$.</p>
-
-<p>$$[ T ]_{ \beta&rsquo; } = \inv{ Q } [ T ]_{ \beta } Q$$</p>
-
-<p>where $Q $ is the change of coordinate matrix from $\beta&rsquo;$ to $\beta $.</p>
-
+  <p>$T: V \to V, \dim V $ is finite and $\beta$ and $\beta' $ is ordered basis of $V$.</p>
+<p>$$[ T ]_{ \beta' } = \inv{ Q } [ T ]_{ \beta } Q$$</p>
+<p>where $Q $ is the change of coordinate matrix from $\beta'$ to $\beta $.</p>
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$I_V T = T I_V $</p>
-
-<p>$[ I_V T ]_{ \beta&rsquo; }^{ \beta }  = [ T I_V ]_{ \beta&rsquo; }^{ \beta }$</p>
-
-<p>$[ I_V ]_{ \beta&rsquo; }^{ \beta } [ T ]_{ \beta&rsquo; } = [ T ]_{ \beta } [ I_V ]_{ \beta&rsquo; }^{ \beta }$
-$Q [ T ]_{ \beta&rsquo; }  = [ T ]_{ \beta } Q$</p>
-
-<p>$\implies  [ T ]_{ \beta&rsquo; } = \inv{ Q } [ T ]_{ \beta } Q$</p>
-
+<p>$[ I_V T ]_{ \beta' }^{ \beta }  = [ T I_V ]_{ \beta' }^{ \beta }$</p>
+<p>$[ I_V ]_{ \beta' }^{ \beta } [ T ]_{ \beta' } = [ T ]_{ \beta } [ I_V ]_{ \beta' }^{ \beta }$
+$Q [ T ]_{ \beta' }  = [ T ]_{ \beta } Q$</p>
+<p>$\implies  [ T ]_{ \beta' } = \inv{ Q } [ T ]_{ \beta } Q$</p>
   </div>
 </div>
 
@@ -406,7 +398,6 @@ $Q [ T ]_{ \beta&rsquo; }  = [ T ]_{ \beta } Q$</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   </span>
@@ -427,21 +418,17 @@ $Q [ T ]_{ \beta&rsquo; }  = [ T ]_{ \beta } Q$</p>
   </ul></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="similar-matrices">Similar Matrices</span></span>
   <div class="block__content block__content--blue">
     <p>Let $A $ and $B $ be two $n \times n $ matrices, then $A $ and $B $ are similar if $\exists $ and invertible matrix $Q$ s.t. $B = \inv{ Q } AQ $.</p>
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks
   </span>
   <div class="block__content block__content--yellow">
   <p>Two matrices $T $ with respect to different ordered basis are <strong>similar</strong> to each other.</p>
-
   </div>
-
-<p><ul class="block__footer">
+  <ul class="block__footer">
     <li class="block__footer-item">
       <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
     </li>
@@ -449,7 +436,7 @@ $Q [ T ]_{ \beta&rsquo; }  = [ T ]_{ \beta } Q$</p>
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul>
-</div></p>
+</div>
 
   </div>
 
@@ -483,32 +470,26 @@ $Q [ T ]_{ \beta&rsquo; }  = [ T ]_{ \beta } Q$</p>
     </script></div>
 
 
-
 <div class="block block--green block--status"><div class="block__status block__status--warning"></div>
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>$A$ is invertible matrix if and only if it is a change of coordinate matrix.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$\implies$</p>
-
 <p>If $A$ is invertible, so is $L_A$, and therefore the columns of $A$, which span the range
 of $L_A$, must be linearly independent. Then $A$ is the matrix that changes $\beta$ coordinates into standard coordinates in $F^n$, where $\beta$ is the ordered basis consisting of the columns of $A$.</p>
-
 <p>$\impliedby $</p>
-
 <p>The inverse is the matrix that changes coordinates back again.</p>
-
   </div>
 </div>
 
@@ -881,13 +862,13 @@ of $L_A$, must be linearly independent. Then $A$ is the matrix that changes $\be
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Limiting Values of Functions - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -305,14 +315,11 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="limiting-value-of-a-function">Limiting Value of a Function</span></span>
   <div class="block__content block__content--blue">
     <p>Let $(X, d_X) $ and $(Y, d_Y)$ be two metric spaces, let $E$ be a subset of $X$, and let $f: X \to Y $ be a function. If $x_0 \in X$ is an adherent point of $E$, and $L \in Y$.</p>
-
 <p>we say that $f(x)$ converges to $L$ in $Y$ as $x$ converges to $x_0$ in $E$, and we write $\limd{ x }{ x_0 }{ x \in E \setminus \set{ x_0 }} f(x) = L$ iff</p>
-
 <p>$$\forall \epsilon &gt; 0, \exists \delta &gt; 0 \text{ such that } \forall x \in E, d_X(x, x_0) &lt; \delta \implies d_Y(f(x), L) &lt; \epsilon $$</p>
 
   </div>
@@ -347,19 +354,14 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks
   </span>
   <div class="block__content block__content--yellow">
   <p>According to the definition of function continuity at a point, we see that</p>
-
 <p>$f$ is continuous at $x_0$ iff</p>
-
 <p>$$\limd{ x }{ x_0 }{ x \in X } f(x) = f(x_0) $$</p>
-
 <p>Thus $f$ is continuous on $X$ iff we have</p>
-
 <p>$$\limd{ x }{ x_0 }{ x \in X } f(x) = f(x_0) \forall x_0 \in X $$</p>
 
   </div>
@@ -373,7 +375,6 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--yellow ">
@@ -395,21 +396,24 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Proposition
   </span>
   <div class="block__content block__content--green">
   <p>Let $(X, d_X) $ and $(Y, d_y) $ be two metric spaces. $E \subseteq X$, and let $f: X \to Y$ be a function. Let $x_0 \in X$ be an adherent point of $E$ and $L \in Y$. Then the following four statements are logically equivalent:</p>
-
 <ol>
-<li><p>$\limd{ x }{ x_0 }{ x \in E } f(x) = L$.</p></li>
-
-<li><p>$\forall (x^{(n)})^\infty_{ n =1} \in E, \limu{ n }{ \infty }(x^{(n)}) = x_0$ with respect to the metric $d_X$, $\limu{ n }{ \infty }(f(x^{(n)}))^\infty_{ n =1} = L $ with respect to the metric $d_Y $.</p></li>
-
-<li><p>For every open set $V \subset Y$ which contains $L$, there exists an open set $U \subset X$ containing $x_0$ such that $f(U \cap E) \subseteq V$.</p></li>
-
-<li><p>If one defines the function $g: E \cup \set{ x_0 } \to Y $ by defining $g(x_0) := L$, and $g(x) := f(x) $ for $x \in E \setminus \set{ x_0 } $, then $g $ is continuous at $x_0 $. Furthermore, if $x_0 \in E $, then $f(x_0) = L $.</p></li>
+<li>
+<p>$\limd{ x }{ x_0 }{ x \in E } f(x) = L$.</p>
+</li>
+<li>
+<p>$\forall (x^{(n)})^\infty_{ n =1} \in E, \limu{ n }{ \infty }(x^{(n)}) = x_0$ with respect to the metric $d_X$, $\limu{ n }{ \infty }(f(x^{(n)}))^\infty_{ n =1} = L $ with respect to the metric $d_Y $.</p>
+</li>
+<li>
+<p>For every open set $V \subset Y$ which contains $L$, there exists an open set $U \subset X$ containing $x_0$ such that $f(U \cap E) \subseteq V$.</p>
+</li>
+<li>
+<p>If one defines the function $g: E \cup \set{ x_0 } \to Y $ by defining $g(x_0) := L$, and $g(x) := f(x) $ for $x \in E \setminus \set{ x_0 } $, then $g $ is continuous at $x_0 $. Furthermore, if $x_0 \in E $, then $f(x_0) = L $.</p>
+</li>
 </ol>
 
   </div><ul class="block__footer">
@@ -423,15 +427,12 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks
   </span>
   <div class="block__content block__content--yellow">
   <p>Observe that a function $f(x)$ can converge to at most one limit $L$ as $x$ converges to $x_0$. In other words, if the limit</p>
-
 <p>$$\limd{ x }{ x_0 }{ x \in E } f(x)$$</p>
-
 <p>exists at all, then it can only take at most one value.</p>
 
   </div>
@@ -445,7 +446,6 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--yellow ">
@@ -468,14 +468,11 @@ it ensures that for $\delta $ sufficiently small, there are points $x \in E $, s
 </div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>$(X, d_X), (Y, d_Y)$. $E \subseteq X$. $f: E \to Y$. $x_0 \in E$.</p>
-
 <p>Show that $\limd{ x }{ x_0 }{ x \in E } f(x)$ exists if and only if $\limd{ x }{ x_0 }{ x \in E \setminus \set{ x_0 }} f(x) $ exists and is equal to $f(x_0)$.</p>
-
 <p>Show that $\limd{ x }{ x_0 }{ x \in E } f(x)$ exists $\implies \limd{ x }{ x_0 }{ x \in E } f(x) = f(x_0)$.</p>
 
   </div>
@@ -1378,13 +1375,13 @@ it ensures that for $\delta $ sufficiently small, there are points $x \in E $, s
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

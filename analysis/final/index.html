@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Final - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -304,31 +314,20 @@ if (!doNotTrack) {
   
 
 </div>
-
 <h2 id="1">1</h2>
-
 <p>Let $x_0 \in \overline{ E }, y_0 = f(x_0)$.</p>
-
 <p>Since $x_0 \in E, \exists (x^{(n)})^\infty_{ n =1}, x_n \to x_0$.</p>
-
 <p>Since $f$ is continuous, $x_n \to x_0 $ implies that $f(x_n) = f(x_0) $.</p>
-
 <p>Since $f(x_n) \in f(E), \forall n, f(x_0) \in \overline{ f(E)} $</p>
-
 
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="inner-product-space">Inner Product Space</span></span>
   <div class="block__content block__content--blue">
     <p>vector space with function $&lt;, &gt;: V \times V \to \C $</p>
-
 <p>such that</p>
-
 <p>$\inner{ v }{ w } = \overline{ \inner{ w }{ v }} $</p>
-
 <p>$\inner{ v }{ v } \geq 0, \forall v \in V $</p>
-
 <p>$\inner{ v }{ v } = 0 \iff v = 0$</p>
-
 <p>$\inner{ cv + w }{ z } = c \inner{ v }{ z } + \inner{ w }{ z } $</p>
 
   </div>
@@ -363,40 +362,26 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>$C(\R / \Z , \C) = V $</p>
-
 <p>vectors are functions</p>
-
 <p>$\inner{ f }{ g } = \int_{ 0 }^{ 1 } f(x) \overline{ g(x)} \d x $</p>
-
 <p>$\inner{ g }{ f } = \int_{ 0 }^{ 1 } g(x) \overline{ f(x)} \d x = \overline{ \int_{ 0 }^{ 1 } g(x) \overline{ f(x)} \d x } $</p>
-
 <p>From those props, we have</p>
-
 <ol>
 <li>(Cauchy-Scharz inequality) $\abs{ \inner{ f }{ g }} \leq \sqrt[  ]{ \inner{ f }{ f }} \sqrt[  ]{ \inner{ g }{ g }}$</li>
 <li>For any inner vector space we define $2- $norm by</li>
 </ol>
-
 <p>$$\norm{ v }_2 = \sqrt[  ]{ v, v } $$</p>
-
 <p>Using Cauchy Schwaz,</p>
-
 <p>$$\norm{ v+w }_2 \leq \norm{ v }_2 + \norm{ w }_2 $$</p>
-
 <p>from other props, $\norm{ v }_2 \geq 0, \forall v \in V$</p>
-
 <p>$$\norm{ v }_2 = 0 \implies v = 0_v $$</p>
-
 <p>$$\norm{ aV }_2 = \abs{ a } \norm{ v }_2 $$</p>
-
 <p>$$\norm{ av }_2 = \sqrt[  ]{ \inner{ av }{ av }} $$</p>
-
 <p>$$\norm{ av }^2_2 = \inner{ av }{ av } = \br a \inner{ v }{ av } = a \overline{ \inner{ av }{ v }} = a \overline{ a } \overline{ \inner{ v }{ v }} = \abs{ a }^2  \norm{ v }_2$$</p>
 
   </div>
@@ -413,19 +398,14 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="cauchy-schwarz">Cauchy-Schwarz</span></span>
   <div class="block__content block__content--green">
   <p>$\abs{ \inner{ f }{ g }} \leq \norm{ f }_2 \norm{ g }_2$</p>
-
 <p>$\inner{ v }{ v } \geq 0, v = f - tg, t \in \R$</p>
-
 <p>$$\inner{ f-tg }{ f-tg } \geq 0 $$</p>
-
 <p>$$\inner{ f }{ f-tg } - t \inner{ g }{ f-tg } $$</p>
-
 <p>$$\inner{ f }{ f } - t \inner{ f }{ g } - t \inner{ g }{ f } + t^2 \inner{ g }{ g } $$</p>
 
   </div><script>
@@ -458,17 +438,11 @@ if (!doNotTrack) {
   </ul>
 </div>
 
-
 <p>minimum occurs when</p>
-
 <p>$t = \frac{ -b }{ 2a }, a = \norm{ g }_2^2 $</p>
-
 <p>$b = - (\inner{ f }{ g } +? \inner{ g }{ f }) $</p>
-
 <p>$b = -2 (\Re{(f, g)}) $</p>
-
 <p>$$\norm{ f + g }_2 = \norm{ f }_2 + \norm{ g }_2 $$</p>
-
 <p>$$\begin{align}
 \norm{ f+g }^2_2 &amp;= \inner{ f }{ f } + \inner{ f }{ g } + \inner{ g }{ f } + \inner{ g }{ g } \br
 &amp;= \inner{ f }{ f } + 2 \Re{ \inner{ f }{ g }} + \inner{ g }{ g } \br
@@ -476,43 +450,28 @@ if (!doNotTrack) {
 \leq \inner{ f }{ f } + 2 \norm{ f }_2 \norm{ g }_2 + \inner{ g }{ g } \br
 = (\norm{ f }_2 + \norm{ g }_2)^2
 \end{align}$$</p>
-
 <p>know the definition of</p>
-
 <p>$\inner{ f }{ g } V = C(\R / \Z , \C) $</p>
-
 <p>Know how to compute</p>
-
 <p>$$\inner{ e_n }{ e_m } = \begin{cases}
 \int_{ 0 }^{ 1 } \exp 2 \pi i (n - m)x\d x = \frac{ \exp (2 \pi i (n - m))}{ 2 \pi i (n - m)} \big |^1_0  = \frac{ e_n(1)^2 - e_k(0)}{ 2 \pi i (n - m)}\br
 \int_{ 0 }^{ 1 } 1 \d x
 \end{cases} $$</p>
-
 <p>$e_n (0) = e_n (1) $ by periodicity</p>
-
 <p>$\inner{ f }{ g } = 0 $</p>
-
 <p>$$f+g ^2_2 = \norm{ f }^2_2 + \norm{ g }^2_2$$</p>
-
 <p>Find function sequence such that</p>
-
 <p>$f^{(n)}$ continuous, $f$ continuous.</p>
-
 <ol>
 <li>$f^{(n)} \to f$, $L^2 $ but not uniformly</li>
 <li>$f^{(n)} \to f $ L^2$ but not pointwise</li>
 <li>pointwise but not $L^2 $</li>
 </ol>
-
 <p>Idea:</p>
-
 <p>$L^2 $ convergence measures area between functions
 uniform convergence measures max height diff</p>
-
 <p>if $f $ is analytic find $c_n $</p>
-
 <h2 id="2">2</h2>
-
 
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
@@ -520,64 +479,45 @@ uniform convergence measures max height diff</p>
   <div class="block__content block__content--gray">
     <p>$X$ connected.
 show $\forall, a, b,d(a, b) &gt; 0,  r \in [ 0, d(a, b) ], \exists x_r, d(a, x_r) = r $</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Choose $U = \set{y \in X : d(a, y) &lt; r} = B(a, r)$ open set $U \neq \emptyset$.</p>
-
 <p>Choose $V = \set{y \in X : d(a, y) &gt; r} \neq \emptyset, V$ contains $b$.</p>
-
 <p>Either $V \cup U = X$ or $V \cup U \neq X $.</p>
-
 <p>$U, V$ open disjoint non-empty, contradicts that $X$ is connected.</p>
-
 <p>Thus $\exists x_r \not \in U, x_r \not \in V$.</p>
-
 <p>$d(a, x_r) \geq r$ and $d(a, x_r) \leq r$.</p>
-
 <p>Then $d(a, x_r) = r$</p>
-
   </div>
 </div>
-
 <p>$s(a, r) = u $ open set $u \neq \emptyset $</p>
-
 <p>$V = \set{ y \in X: d(a, y) &gt; r } \neq \emptyset $</p>
-
 <p>New question: Can you show $B(a,r) $ is open?</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Pick $y \in B(a, r), S = d(a, y) $</p>
-
 <p>$r_0 = r - S $</p>
-
 <p>$B(y, r_0) \leq B(a, r) $</p>
-
 <p>$z \in B(y, r_0) $</p>
-
 <p>$d(z, a) &lt; r $</p>
-
 <p>(This shows $z \in B(a, r)$)</p>
-
 <p>$d(z, a) \leq d(z, y) + d(a, y) &lt; s + r_0 = r $</p>
-
   </div>
 </div>
 
@@ -594,107 +534,56 @@ show $\forall, a, b,d(a, b) &gt; 0,  r \in [ 0, d(a, b) ], \exists x_r, d(a, x_r
 
 </div>
 
-
 <h2 id="12">12</h2>
-
 <p>$f: X \to X, k \in [0, 1)$</p>
-
 <p>$$d(f(x), f(y)) \leq k d (x, y) $$</p>
-
 <p>points get &ldquo;closer&rdquo;</p>
-
 <p>Show $\exists$ unique point $x_0 $ such that $f(x_0) = x_0$</p>
-
 <p>Two points such that $f(a) = a &amp; f(b) = b$</p>
-
 <p>$d(f(a), f(b)) \leq kd(a, b)$</p>
-
 <p>$d(a, b) \leq k d(a, b)$</p>
-
 <p>$d(a, b) = c$</p>
-
 <p>Pick $x_0 \in X$</p>
-
 <p>$x_n = f(x_{n - 1})$</p>
-
 <p>$d(x_0, x_1) = d$</p>
-
 <p>$d(x_1, x_2) = d(f(x_0), f(x_1))  \leq k d(x_0, d_1) = k d$</p>
-
 <p>$d(x_2, x_3) = d(f(x_1, f(x_2))) \leq k d(x_1, x_2) \leq k^2 d$</p>
-
 <p>$d(x_n, x_3) = k^n d $</p>
-
 <p>Maybe this is Cauchy $n &lt; m $</p>
-
 <p>$d(x_n, x_m)$</p>
-
 <p>$d(x_n, x_m) \leq k^n d$</p>
-
 <p>$d(x_n, x_{n+2}) \leq d(x_n, x_{n+1}) + d(x_{n+1}, x_{n+2})$</p>
-
 <p>$$\leq k^n d + k^{n +1} d $$</p>
-
 <p>$$d(x_n, x_{n+3}) \leq k^n d + k^{n+1} d + k^{n+2} d $$</p>
-
 <p>$$d(x_n, x_m) \leq k^n d + k^{n+1}d + &hellip; + k^{m - n - 1}d $$</p>
-
 <p>$$\leq d (\sum_{ j = n }^{ \infty } k^j) $$</p>
-
 <p>$\exists N$ such that if $n &gt; N $</p>
-
 <p>$\sum_{ j=n }^{ \infty }k^j &lt; \epsilon / d $</p>
-
 <p>$d(x_n, x_m) &lt; \epsilon $ if $m&gt; n&gt; N$</p>
-
 <p>$x_n $ is Cauchy, so it converges to a point called $x^* $</p>
-
 <p>$f(x^*) = f(\limu{ n }{ \infty } x_n) \br $</p>
-
 <p>$= \limu{ n }{ \infty } f(x_n) $\br</p>
-
 <p>$= \limu{ n }{ \infty } x_{n+1} = x^* $</p>
-
 <h2 id="5">5</h2>
-
 <p>$C_c(\R^ -) =$ function such that $f : \R \to \R $</p>
-
 <p>if $f(x) \neq 0 x \in$ compact set</p>
-
 <p>given $f, \exists M $ such that if</p>
-
 <p>$\abs{ x } \geq M, f(x) = 0 $</p>
-
 <p>$C_0$</p>
-
 <p>bell curve $e^{- \frac{1}{x^2}}$</p>
-
 <p>$C_b(x) $</p>
-
 <p>bounded continuous functions</p>
-
 <p>If $f \in C_c(\R) $ f \in c_0(\R)</p>
-
 <p>$g \in C_0 (\R) show $ show g is bounded.</p>
-
 <p>$\limu{ x}{ \infty } g(x) = 0$ implies</p>
-
 <p>$\exists M_1 $ such that $\abs{ g(x)} \leq 1 $ if $x &gt; M_1 $</p>
-
 <p>$\exists M_2 $ such that $\abs{ g(x)} \leq 1 $ if $x &lt; M_2 $</p>
-
 <p>$g([M_2, M_1]) is compact $</p>
-
 <p>$\abs{ g(x)} \leq M_3 $ on $M_2, M_1 $</p>
-
 <p>$\abs{ g(x)} \leq \max{ \set{ M_3, 1 }} $</p>
-
 <p>$g $ is bounded</p>
-
 <p>$C_c(\R) \leq C_0(\R) \leq C_b (\R) $</p>
-
 <p>let $g(x) = e^{ - \frac{ 1 }{ x^2 }} \in C_0$</p>
-
 <p>$h(x) = 2$</p>
       </div>
     </article>
@@ -1584,13 +1473,13 @@ show $\forall, a, b,d(a, b) &gt; 0,  r \in [ 0, d(a, b) ], \exists x_r, d(a, x_r
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

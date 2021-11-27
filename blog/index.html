@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Blogs - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,19 +36,25 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/jumbotron.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/jumbotron.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="home" >
+  <body class="home" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -58,18 +67,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item selected"><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown ">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -86,7 +96,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -96,15 +106,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item selected"><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown ">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -121,7 +131,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -131,7 +141,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Blog</b>
+        <span class="container-title">Blog</span>
       
       </div>
       
@@ -175,11 +185,10 @@ if (!doNotTrack) {
     {"author":"Jim Zenn","device":"minecraft","title":"The Stone Tower","url":"/images/featured/jpg/minecraft-the-stone-tower.jpg"},
     {"author":"Jim Zenn","device":"minecraft","title":"Temple","url":"/images/featured/jpg/minecraft-temple.jpg"},
     {"author":"Jim Zenn","device":"Pixel XL","title":"San Francisco Museum of Modern Art","url":"/images/featured/jpg/SFMoMA-1.jpg"},
-    {"author":"Jim Zenn","device":"Pixel XL","title":"View from Salesforce Tower","url":"/images/featured/jpg/view_from_salesforce_tower.jpg"},
-    {"author":"Jim Zenn","device":"Pixel XL","title":"Oakland Uptown","url":"/images/featured/jpg/uptown_oakland.jpg"},
+    {"author":"Jim Zenn","device":"Pixel XL","title":"View from Salesforce Tower","url":"/images/featured/jpg/view-from-salesforce-tower.jpg"},
     {"author":"Jim Zenn","device":"Pixel XL","title":"Barzotto","url":"/images/featured/jpg/barzotto.jpg"},
-    {"author":"Jim Zenn","device":"Pixel XL","title":"View from Holly Residential Building","url":"/images/featured/jpg/view_from_holly_residential_building.jpg"},
-    {"author":"Jim Zenn","device":"Pixel XL","title":"Berkeley Marina","url":"/images/featured/jpg/berkeley_marina.jpg"},
+    {"author":"Jim Zenn","device":"Pixel XL","title":"View from Holly Residential Building","url":"/images/featured/jpg/view-from-holly-residential-building.jpg"},
+    {"author":"Jim Zenn","device":"Pixel XL","title":"Berkeley Marina","url":"/images/featured/jpg/berkeley-marina.jpg"},
     
   ]
   numPhotos = featuredPhotos.length;
@@ -190,26 +199,6 @@ if (!doNotTrack) {
   document.getElementById("jumbotron__copyright").innerHTML = `Photo by <b>${photoData['author']}</b> with ${photoData['device']}. All rights reserved`;
 </script>
 
-<script type="text/javascript">
-jumbotronExpanded = false;
-jumbotronOriginalHeight = document.getElementById("jumbotron").scrollHeight;
-jumbotronImage = new Image();
-jumbotronImage.src = photoData['url'];
-expand_jumbotron = function() {
-  jumbotronImageRatio = jumbotronImage.height / jumbotronImage.width;
-  jumbotronImageExpandedHeight = Math.min(500, jumbotronImageRatio * document.documentElement.clientWidth);
-  if (!jumbotronExpanded) {
-    document.getElementById("jumbotron__text").style.bottom = `10px`;
-    document.getElementById("jumbotron__expand-svg").style.transform = 'rotate(180deg)';
-    document.getElementById("jumbotron").style.height = jumbotronImageExpandedHeight + `px`;
-  } else {
-    document.getElementById("jumbotron__text").style.bottom = `4px`;
-    document.getElementById("jumbotron").style.height = jumbotronOriginalHeight + 'px';
-    document.getElementById("jumbotron__expand-svg").style.transform = 'rotate(0)';
-  }
-  jumbotronExpanded = !jumbotronExpanded;
-}
-</script>
 
 
   <main class="content" role="main">
@@ -218,6 +207,30 @@ expand_jumbotron = function() {
       
         
         
+        
+      
+        
+        
+        
+            <article class="article article--list-item">
+    <h1 class="article__title article__title--list-item"><a href="https://jimzenn.com/blog/turning-25/">Turning 25</a></h1>
+    <p class="article__meta">
+  <span>
+    
+    <a href="/volumes/journey" class="article__volume-link">Vol. Journey</a>
+    <small>∙</small>
+    November 2019
+  </span>
+  
+</p>
+
+    <div class="article__summary">
+      After leaving my new bike at Summit Bicycles for some checking, I looked for the nearest library where I can work on my Math homework. That’s how I found Stanford Auxiliary Library.
+The library was on the edge of the campus. There are a few broken furnitures and some canvas-like plastic fabric lying in the front. It seemed to me like they are painted for Halloweens but I couldn’t really tell because there isn’t really any identifiable patterns on them.
+    </div>
+    <p><a class="article__more" href="https://jimzenn.com/blog/turning-25/"> Read the article</a></p>
+  </article>
+
         
       
         
@@ -250,13 +263,13 @@ Now I am back, to my real home, where my family is, where I grew up, where I spe
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

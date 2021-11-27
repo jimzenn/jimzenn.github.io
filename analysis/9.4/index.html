@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Continuity and Connectedness - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -304,20 +314,15 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="connected-spaces">Connected Spaces</span></span>
   <div class="block__content block__content--blue">
     <p>Let $(X,d)$ be a metric space.</p>
-
 <p>We say that $X$ is <strong>disconnected</strong> iff <br>
 there exist disjoint non-empty open sets $V, W \subset X$ such that $V \cup W = X$.</p>
-
 <p>Equivalently, $X$ is <strong>disconnected</strong> iff <br>
 $X$ contains a non-empty proper subset which is simultaneously closed and open.</p>
-
 <p>We say that $X$ is <strong>connected</strong> iff <br>it is <u>non-empty</u> and <u>not disconnected</u>.</p>
-
 <p>The property of connectedness is <u>intrinsic</u>.</p>
 
   </div>
@@ -350,7 +355,6 @@ $X$ contains a non-empty proper subset which is simultaneously closed and open.<
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note: <span class="keyword" id="connectedness-of-the-empty-set">Connectedness of the Empty Set</span>
@@ -391,30 +395,25 @@ $X$ contains a non-empty proper subset which is simultaneously closed and open.<
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>Consider the connectedness of the space $X := [1,2] \cup [3,4]$ with the usual metric.</p>
-
 <p>This set is disconnected because exist open sets $[1,2]$ and $[3,4]$ are open
 relative to $X$.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Let&rsquo;s prove one of them is open.</p>
-
 <p>$[1,2]$ is an open set with regard to $X$, because $x \in X, x \not \in [1, 2] $, then $x$ is exterior point.</p>
-
   </div>
 </div>
 
@@ -430,7 +429,6 @@ relative to $X$.</p>
   </ul>
 
 </div>
-
 
 
 <div class="block block--yellow ">
@@ -452,14 +450,11 @@ relative to $X$.</p>
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="connected-sets">Connected Sets</span></span>
   <div class="block__content block__content--blue">
     <p>Let $(X,d)$ be a metric space, and $Y \subseteq X$.</p>
-
 <p>$Y$ is <strong>connected</strong> iff the metric space $(Y, d|_{Y \times Y})$ is connected;</p>
-
 <p>$Y$ is <strong>disconnected</strong> iff the metric space $(Y, d|_{Y \times Y})$ is disconnected.</p>
 
   </div>
@@ -494,78 +489,52 @@ relative to $X$.</p>
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>Let $X$ be a subset of the real line $\R$.</p>
-
 <ol>
 <li>$X$ is connected.</li>
 <li>$x, y \in X, x &lt; y \implies [x, y]$ is also contained in $X$.</li>
 <li>$X$ is an interval.</li>
 </ol>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$(1 \implies 2)$</p>
-
 <p>Assume on the contrary $\exists x, y \in X, x &lt; y$ such that $[x, y]$ is not contained in $X$.</p>
-
 <p>There exists a real number $x &lt; z &lt; y$ such that $z \not \in X$.</p>
-
 <p>Thus the sets $(- \infty, z) \cap X $ and $(z, +\infty) \cap X $ will cover $X$.</p>
-
 <p>Since these sets are non-empty (because they contain $x$ and $y$) and are open relative to $X$, and so $X$ is disconnected. CONTRADICTION.</p>
-
 <p>$(2 \implies 1)$</p>
-
 <p>Assume on the contradiction, $X$ is disconnected.</p>
-
 <p>Then there exist disjoint non-empty sets $V, W$ which are open relative to $X$,
 such that $V \cup W = X$.</p>
-
 <p>Since $V, W \neq \emptyset$, we choose an $x \in V, y \in W $.</p>
-
 <p>Since $V$ and $W$ are disjoint, we have $x \neq y $.</p>
-
 <p>Without loss of generality, we assume $x &lt; y$.</p>
-
 <p>By (2), the interval $[x, y] $ is contained in $X$.</p>
-
 <p>Consider the set $[x, y] \cap V $ is both bounded, and non-empty (since it contains $x$).</p>
-
 <p>Thus it has a supremum,</p>
-
 <p>$$z := \supr{ [x, y] \cap V } $$</p>
-
 <p>Clearly $z \in [x, y] $, hence $z \in X $. Thus either $z \in V $ or $z \in W $.</p>
-
 <p>Suppose $z \in V $, then $z \neq y $.</p>
-
 <p>However, $V$ is open relative to $X$, which contains $[x, y] $ so there is some
 ball $B_{[x, y], d} (z, r)$ which is contained in $V$.</p>
-
 <p>However, this contradicts the fact that z is the supremium of $[x, y] \cap V $.</p>
-
 <p>Now suppose $z \in W $, then $z \neq x $.</p>
-
 <p>However $W$ is open relative to $X$, which contains $[x, y] $, so there is some
 ball $B_{([x, y], d)} (z, r) $ which is contained in $W$.</p>
-
 <p>But this again contradicts the fact that $z$ is the supremum of $[x, y] \cap V $.</p>
-
 <p>Thus in either case we obtain a contradiction.</p>
-
   </div>
 </div>
 
@@ -580,15 +549,17 @@ ball $B_{([x, y], d)} (z, r) $ which is contained in $W$.</p>
 </div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note: <span class="keyword" id="how-to-prove-x-is-connected">How to Prove $X$ Is Connected</span>
     
   </span>
   <div class="block__content block__content--yellow">
     <ol>
-<li><p>Look at &ldquo;nice&rdquo; parts of $X$(e.g. connected parts)</p></li>
-
-<li><p>Build up $X $ via connected parts</p></li>
+<li>
+<p>Look at &ldquo;nice&rdquo; parts of $X$(e.g. connected parts)</p>
+</li>
+<li>
+<p>Build up $X $ via connected parts</p>
+</li>
 </ol>
 
   </div>
@@ -623,15 +594,12 @@ ball $B_{([x, y], d)} (z, r) $ which is contained in $W$.</p>
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Proposition
   </span>
   <div class="block__content block__content--green">
   <p>If $E \subset X $ is connected, and $X \subset A \cup B $. ($A $ and $B $ disjoint and open).</p>
-
 <p>Then $E \subset A $(and $E \cap B = \emptyset $)</p>
-
 <p>or $E \subset B $(and $E \cap A = \emptyset $)</p>
 
   </div><ul class="block__footer">
@@ -645,36 +613,28 @@ ball $B_{([x, y], d)} (z, r) $ which is contained in $W$.</p>
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>In $\R^2 $ look at (euclidean metric) $X = B((-1, 0), 1) \cup B((1, 0), 1) \cup \set{(0,0)} $. Prove that $X $ is connected.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Use contradiction plus proposition.</p>
-
 <p>Assume $X $ is disconnected, i.e. exists $A $ and $B $ open with $X \subset A \cup B $ and $A \cap B  = \emptyset$(disjoint).</p>
-
 <p>Homework: $B((-1, 0), 1)$ and $B((1, 0), 1)$ are connected.</p>
-
 <p>without loss of generality, assume $(0, 0) \in A $, note $A $ intersect both
 circles. Then since these are connected.</p>
-
 <p>$B((-1, 0), 1)  \cup B((1, 0), 1) \subset A$.</p>
-
 <p>$X \subset A$ This means $X $ is connected.</p>
-
   </div>
 </div>
 
@@ -690,7 +650,6 @@ circles. Then since these are connected.</p>
   </ul>
 
 </div>
-
 
 
 <div class="block block--gray ">
@@ -699,33 +658,24 @@ circles. Then since these are connected.</p>
   </span>
   <div class="block__content block__content--gray">
     <p>Let $X$ be the union of two sets.</p>
-
 <p>$E_1 =$ closed line segment from $(0, -1) $ to $(0 , 1) $</p>
-
 <p>$E_2 =$ graph of $f(x) = \sin (\frac{ 1 }{ x }) $ from $x \in (0, 1] $</p>
-
 <p>Let $X$ be the union of two sets.</p>
-
 <p>Prove that $X$ is connected.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>If $X = A \cup B $  ($A \cap B = \emptyset A$ and $B$ open)</p>
-
 <p>without loss of generality, $A $ contains $(0, 0) $. Then $A $ intersects</p>
-
 <p>$E_1 $ and $E_2 $(which are connected)</p>
-
 <p>$X = E_1 \cup E_2 \subset A $</p>
-
   </div>
 </div>
 
@@ -741,7 +691,6 @@ circles. Then since these are connected.</p>
   </ul>
 
 </div>
-
 
 
 <div class="block block--gray ">
@@ -749,37 +698,32 @@ circles. Then since these are connected.</p>
   </span>
   <div class="block__content block__content--gray">
     <p>$(\R, d_{ \text{disc}})$ is disconnected.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>We choose two sets in $\R$, $A = (- \infty, 0] $ and $B = (0, \infty)$, the two sets are disjoint.</p>
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>In discrete metric space, every subset is both open and closed.</p>
-
   </div>
-
-<p><ul class="block__footer">
+  <ul class="block__footer">
     <li class="block__footer-item">
       <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
     </li>
     <li class="block__footer-item">
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
-  </ul></div></p>
-
-<p></div>
-</div></p>
+  </ul></div>
+  </div>
+</div>
 
   </div>
 
@@ -795,50 +739,35 @@ circles. Then since these are connected.</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="continuity-preserves-connectedness">Continuity Preserves Connectedness</span></span>
   <div class="block__content block__content--green">
   <p>Let $f: X \to Y$ be a function between metric spaces.</p>
-
 <p>If $E \subseteq X$ is connected, and $f$ is continuous.</p>
-
 <p>Then $f(E) \subseteq Y$ is connected.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Since $E$ is connected, $E$ is non-empty. Hence, $f(E)$ is also not empty.</p>
-
 <p>Therefore, $f(E)$ is either connected or disconnected.</p>
-
 <p>Assume $f(E)$, on the contrary, is disconnected.</p>
-
 <p>There exists set $U, V \subseteq Y$ open such that <br>
 $U \cap f(E)$ and $V \cap f(E)$ non-empty, $(U \cap f(E)) \cap (V \cap f(E)) = \emptyset$.</p>
-
 <p>$U \cup V \supseteq f(E)$</p>
-
 <p>We have $W_1 = \inv{f}(U), W_2 = \inv{f}(V)$ such that $f(W_1) = U, f(W_2) = V$.</p>
-
 <p>$W_1, W_2 $ must be disjoint.</p>
-
 <p>$E \cap W_1 \neq \emptyset, E \cap W_2 \neq \emptyset $, both are open.</p>
-
 <p>We also have $E \subseteq W_1 \cup W_2.$</p>
-
 <p>That means $(E \cap W_1) \cup (E \cap W_2) = E $</p>
-
 <p>Hence $ E $ is disconnected. CONTRADICTION.</p>
-
   </div>
 </div>
 
@@ -871,7 +800,6 @@ $U \cap f(E)$ and $V \cap f(E)$ non-empty, $(U \cap f(E)) \cap (V \cap f(E)) = \
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--green ">
@@ -916,42 +844,33 @@ Then there exists $c \in E$ such that $f(c) = y$.</p>
       })();
     </script></div>
 
-
 <p>========================================================================</p>
-
 
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition</span>
   <div class="block__content block__content--blue">
     <p>Let $f: X \to Y $, a function between metric spaces $E \subseteq X $, $x_0 \in X $
 , an adherent point of $E$, and $L \in Y$. (candidate for a limiting value)</p>
-
 <p>We say $L$ is the limit as $X$ of $f$ tends to $x_0$ along $E$. ($\limu{ x }{ x_0 } f(x) = L, x \in E $) iff $\forall \epsilon &gt; 0, \exists \delta &gt; 0 $ such that if $x \in E $ with $d(x, x_0) &lt; \delta $, then $d(f(x), L) &lt; \epsilon $.</p>
-
 <p>Observation: $f(x_0)$ may not be defined, but a limit may still exist.</p>
-
 <p>Observation:</p>
-
 <p>$\limu{ x }{ x_0 } f(x) \to \limu{ x }{ x_0 } f(x), x \in X \ \set{ x_0 }$</p>
-
 <p>$\limu{ x }{ x_0^- } f(x) \to \limu{ x }{ x_0 } f(x), x \in \set{  X &lt; x_0 }$</p>
-
 <p>Observation:</p>
-
 <p>$f$ is continuous at $x_0 $ iff</p>
-
 <p>$\limu{ x }{ x_0 }, x \in X \setminus \set{ x_0 } f(x) = f(x_0) $</p>
-
 <ol>
-<li><p>$\lim f(x)$ exists</p></li>
-
-<li><p>$f$ is defined at $x_0$</p></li>
-
-<li><p>equality between limiting value and function value</p></li>
+<li>
+<p>$\lim f(x)$ exists</p>
+</li>
+<li>
+<p>$f$ is defined at $x_0$</p>
+</li>
+<li>
+<p>equality between limiting value and function value</p>
+</li>
 </ol>
-
 <p>Observation:</p>
-
 <p>If condition (1) holds, then $x_0$ is a removable discontinuity.</p>
 
   </div>
@@ -966,29 +885,30 @@ Then there exists $c \in E$ such that $f(c) = y$.</p>
   </ul></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>Let $f: X \to Y $ be a function between metric spaces. $E \subseteq X, x_0 \in \overline{ E } , L \in Y$</p>
-
 <p>The following 4 statements are equivalent:</p>
-
 <ol>
-<li><p>$\limu{ x }{ x_0 } f(x) = L$, $x \in E $</p></li>
-
-<li><p>$\forall (x^{(n)})^\infty_{ n =1} $ sequences in $E$ such that $(x^{(n)})^\infty_{ n =1} \to x_0 $ we have $(f(x^{(n)}))^\infty_{ n =1} \to L$</p></li>
-
-<li><p>$\forall V \subseteq Y$ open containing $L $, $\exists U \subseteq X $ open
-such that $f(U \cap E) \subseteq V$($U \cap E$ is relatively open in $E$).</p></li>
-
-<li><p>$g : E \cup \set{ x_0 } \to Y$ defined by $g(x) = \begin{cases}
+<li>
+<p>$\limu{ x }{ x_0 } f(x) = L$, $x \in E $</p>
+</li>
+<li>
+<p>$\forall (x^{(n)})^\infty_{ n =1} $ sequences in $E$ such that $(x^{(n)})^\infty_{ n =1} \to x_0 $ we have $(f(x^{(n)}))^\infty_{ n =1} \to L$</p>
+</li>
+<li>
+<p>$\forall V \subseteq Y$ open containing $L $, $\exists U \subseteq X $ open
+such that $f(U \cap E) \subseteq V$($U \cap E$ is relatively open in $E$).</p>
+</li>
+<li>
+<p>$g : E \cup \set{ x_0 } \to Y$ defined by $g(x) = \begin{cases}
 f(x)&amp;\text{ if }x \neq x_0 \br
 L&amp;\text{ if }x = x_0
-\end{cases}$</p></li>
+\end{cases}$</p>
+</li>
 </ol>
-
 <p>is a continuous function. Furthermore, if $x_0 \in E$, then $f(x_0) = L$.</p>
 
   </div><ul class="block__footer">
@@ -1002,13 +922,11 @@ L&amp;\text{ if }x = x_0
 </div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>$(X, d_{disc}) $ be a metric space with the discrete metric. Let $E $ be a
 subset of $X$ which contains at least two elements. Then $E $ is disconnected.</p>
-
 <p>TODO: proof</p>
 
   </div>
@@ -1021,16 +939,13 @@ subset of $X$ which contains at least two elements. Then $E $ is disconnected.</
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul></div>
-
 
 
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>$(X, d) $ connected. $(Y, d_{disc}) $. $f: X \to Y$.</p>
-
 <p>$$f\text{ continuous} \iff f\text{ constant} $$</p>
-
 <p>TODO: proof</p>
 
   </div>
@@ -1045,14 +960,11 @@ subset of $X$ which contains at least two elements. Then $E $ is disconnected.</
   </ul></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>$(X,d)$, and let $(E_ \alpha)_{ \alpha \in I } $ be a collection of connected sets in $X$. Suppose also that $\bigcap_{ \alpha \in I } E_ \alpha$ is non-empty.</p>
-
 <p>$\bigcup_{ \alpha \in I } E_ \alpha$ is connected.</p>
-
 <p>TODO: proof</p>
 
   </div>
@@ -1955,13 +1867,13 @@ subset of $X$ which contains at least two elements. Then $E $ is disconnected.</
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

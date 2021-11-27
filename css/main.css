@@ -48,22 +48,16 @@ body {
   font-family: var(--text-font);
   font-size: 17px;
   line-height: 1.53;
-  letter-spacing: -.021em;
   color: var(--text-color);
-  font-synthesis: none;
-  font-feature-settings: 'kern';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
 .container {
   position: relative;
-  background: white;
+  background: var(--container-color);
   min-height: 100vh;
   z-index: 0;
   transition: transform 0.5s var(--jerk-curve), border-radius 0.5s var(--jerk-curve), box-shadow 0.5s var(--jerk-curve);
-  box-shadow: 0 0 10px rgba(0,0,0, .1), -90vw 80px 0 #D4D4D4, -90vw 80px 10px rgba(0,0,0, .1), -100vw 10px 0 #9F9F9F, -100vw 10px 10px rgba(0,0,0, .1);
 }
 
 a {
@@ -163,6 +157,7 @@ span[note]:hover:after {
   margin-right: auto;
   box-sizing: border-box;
   width: 100%;
+  padding-bottom: 120px;
 }
 
 .message--empty {
@@ -172,7 +167,6 @@ span[note]:hover:after {
   font-weight: 600;
   color: #BBB;
   height: 108px;
-  letter-spacing: 0.128px;
   line-height: 36px;
   text-align: center;
   margin: auto;
@@ -200,8 +194,7 @@ span[note]:hover:after {
 }
 
 /* ===== pagination ===== */
-.pagination {
-}
+.pagination {}
 
 .pagination-wrapper {
   display: flex;
@@ -215,7 +208,7 @@ span[note]:hover:after {
 .pagination__next {
   display: inline-flex;
   font-weight: 500;
-  color:  var(--text-color);
+  color: var(--text-color);
   text-decoration: none;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -263,7 +256,7 @@ span[note]:hover:after {
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
-  border-top: #EEE 1px solid;
+  border-top: rgba(0, 0, 0, .08) 1px solid;
   padding: 15px 0;
   margin-bottom: 10px;
 }
@@ -282,14 +275,14 @@ span[note]:hover:after {
 }
 
 .footer-links a {
-  color: #888;
+  color: rgba(0, 0, 0, .4);
   text-decoration: none;
   transition: color 300ms;
   margin: 0 5px;
 }
 
 .footer-links a:hover {
-  color: #222;
+  color: rgba(0, 0, 0, .2);
 }
 
 .footer-links li:before {
@@ -303,7 +296,7 @@ span[note]:hover:after {
 }
 
 .footer .copyright {
-  color: #888;
+  color: rgba(0, 0, 0, .4);
   text-decoration: none;
   transition: color 300ms;
 }

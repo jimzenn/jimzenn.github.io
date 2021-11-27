@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Resume - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,19 +36,25 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/resume.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/resume.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="resume" >
+  <body class="resume" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -58,18 +67,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown ">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -86,7 +96,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item selected"><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -96,15 +106,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown ">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -121,7 +131,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item selected"><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -131,7 +141,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Resume</b>
+        <span class="container-title">Resume</span>
       
       </div>
       
@@ -164,10 +174,10 @@ if (!doNotTrack) {
       <div id="resume__info">
         <div id="resume__name">
           <span id="resume__legal-name">Qingwei Zeng</span>
-          <span id="resume__expected-graduation">expected graduation: <b>December 2019</b></span>
+          <span id="resume__expected-graduation">graduation: <b>December 2019</b></span>
         </div>
         <div id="resume__contact">
-          <a id="resume__email" href="mailto:zenn@ucla.edu">zenn@ucla.edu</a>
+          <a id="resume__email" href="mailto:"></a>
           <a id="resume__phone" href="tel:&#43;15105082766">&#43;1 (510) 508-2766</a>
           <a id="resume__website" href="mailto:">https://jimzenn.com/</a>
         </div>
@@ -192,9 +202,9 @@ if (!doNotTrack) {
                 
               </span>
               <span class="item__field">
-                <span class="item__field--full">Jun 2018 - 2019</span>
+                <span class="item__field--full">Jun 2018 - Dec 2019</span>
                 
-                  <span class="item__field--abbr">06/18 - 2019</span>
+                  <span class="item__field--abbr">06/18 - 12/19</span>
                 
               </span>
             </div>
@@ -226,7 +236,7 @@ if (!doNotTrack) {
             </div>
             <ul class="item__descriptions">
               
-                <li class="item__description">Structure and Interpretation of Computer Programs, Data Structures, Computational Models of Cognition.</li>
+                <li class="item__description">Data Structures, Structure and Interpretation of Computer Programs.</li>
               
             </ul>
           </li>
@@ -255,7 +265,7 @@ if (!doNotTrack) {
             </li>
           
             <li class="section__item">
-              <span class="item__key" style="font-weight: 500">Parallel Computing: </span>familiar with frameworks such as OpenMP, CUDA, ISPC as well as low-level optimization stratigies.
+              <span class="item__key" style="font-weight: 500">Parallel Computing: </span>Studied OpenMP, CUDA, ISPC and low-level optimization stratigies from CMU 15-618 lecture videos.
             </li>
           
         </ul>
@@ -264,6 +274,25 @@ if (!doNotTrack) {
         
         <h4 class="section__heading">Work Experiences</h4>
         <ul class="section__list">
+          
+          <li class="section__item">
+            <div class="item__heading">
+              <span class="item__field">
+                <span class="text__employer">Google Inc.</span>
+                <span class="text__employer_location" style="color: #555"> | Mountain View, CA</span>
+              </span>
+              <span class="item__field">Software Engineer</span>
+              <span class="item__field">
+                <span class="item__field--full">Feb 2020 - Present</span>
+                
+                  <span class="item__field--abbr">02/20 - Now</span>
+                
+              </span>
+            </div>
+            <ul class="item__descriptions">
+              
+            </ul>
+          </li>
           
           <li class="section__item">
             <div class="item__heading">
@@ -370,6 +399,27 @@ if (!doNotTrack) {
           
           <li class="section__item">
             <div class="item__heading">
+              <span class="item__field">Mavericks - Conversations with risk takers</span>
+              <span class="item__field">
+                
+                <span class="item__field-item">Podcast</span>
+                
+              </span>
+              <span class="item__field">2020 - 2021</span>
+            </div>
+            <ul class="item__descriptions">
+              
+                <li class="item__description">Manages and hosts the podcast alone, with thousands of listeners.</li>
+              
+                <li class="item__description">Talked with folks from Waymo, Credit Suisse, Morgan Stanley, Yale, Stanford, Harvard, people with unique experiences.</li>
+              
+                <li class="item__description">Designed the podcast website singlehandedly.</li>
+              
+            </ul>
+          </li>
+          
+          <li class="section__item">
+            <div class="item__heading">
               <span class="item__field">Drift - Delivery Along the Way</span>
               <span class="item__field">
                 
@@ -446,13 +496,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

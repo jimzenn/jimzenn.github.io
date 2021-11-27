@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Probability Mass Function - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -304,7 +314,6 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: Roulette
     
@@ -314,13 +323,10 @@ if (!doNotTrack) {
 1, 3, &hellip;, 35 are red (odd) <br>
 2, 4, &hellip;, 36 are black (even) <br>
 0, 00 are green. <br>
-Payout on red or black is $1:1$ i.e. if you bet \$1 and win, you win \$1. <br>
-Payout on $a \neq (1, &hellip;, 36)$ is $1:35$ i.e. if you bet \$1 and win you win \$35.</p>
-
+Payout on red or black is $1:1$ i.e. if you bet $1 and win, you win $1. <br>
+Payout on $a \neq (1, &hellip;, 36)$ is $1:35$ i.e. if you bet $1 and win you win $35.</p>
 <p>Let $X$ be the outcome of a roll.</p>
-
 <p>$X(\set{0})= 37, X(\set{00})=38$</p>
-
 <p>A bet is a function of $X$.</p>
 
   </div>
@@ -336,43 +342,31 @@ Payout on $a \neq (1, &hellip;, 36)$ is $1:35$ i.e. if you bet \$1 and win you w
 
 </div>
 
-
-<p>e.g. 1: bet \$10 on red.</p>
-
+<p>e.g. 1: bet $10 on red.</p>
 <p>$G(X) = \begin{cases}
 10 , \if x = 1,3,&hellip;,35 \br
 -10 , \otherwise
 \end{cases}$</p>
-
-<p>2: bet \$10 on 2.</p>
-
+<p>2: bet $10 on 2.</p>
 <p>$W(X) = \begin{cases}
 350, \if x = 2 \br
 -10, \otherwise
 \end{cases}$</p>
-
 <p>We assume it&rsquo;s a fair wheel, i.e.</p>
-
 <p>$\b{P}(X=k) = \begin{cases}
 \frac{1}{ 38 }, \if 1, 2, &hellip;, 38 \br
 0, \otherwise
 \end{cases}$</p>
-
 <p>Let&rsquo;s compute the expected.</p>
-
 <p>Let&rsquo;s compute the expected outcome of each of these bets.</p>
-
 <ol>
 <li>let $Y = g(X)$,
 recall by definition, $E[Z]= \sum_{z}\b{P}(Z=z)$
 also recall theorem E[g(X)] = \sum_{x} g(x)\b{P}(X=x)
 $E[y] = E[g(X)] = \sum_{x} g(x)\b{P}(X=x) = 10 \sum_{ x=1,3,&hellip;,35 } \frac{1}{ 38 } + (-10) \sum_{ x = 2,4, &hellip;, 36,37,38 } \frac{1}{ 38 }$</li>
 </ol>
-
 <p>$ E[h(X)] = \sum_{x} h(x)\b{P}(X=x) = \sum_{ x=2 } 350 \cdot \frac{1}{ 38 } + \sum_{ x \in \set{ 1, 38 }}  (-10) \frac{1}{ 38 }$</p>
-
 <p>try calculating variance and standard deviation.</p>
-
 
 <div class="block block--green ">
   <span class="block__title block__title--green">Properties: <span class="keyword" id="key-properties-of-ex">Key Properties of $E[X]$</span>
@@ -380,13 +374,11 @@ $E[y] = E[g(X)] = \sum_{x} g(x)\b{P}(X=x) = 10 \sum_{ x=1,3,&hellip;,35 } \frac{
   </span>
   <div class="block__content block__content--green">
   <ol>
-<li>$E[X+Y] = E[X] + E[Y]$</li>
-<li>if $a \in R$, then $E[aX] = aE[X]$</li>
+<li>$E[X+Y] = E<input checked="" disabled="" type="checkbox"> + E[Y]$</li>
+<li>if $a \in R$, then $E[aX] = aE<input checked="" disabled="" type="checkbox"> $</li>
 <li>if $a \in R$, then $E[a] = a$</li>
 </ol>
-
 <p>I summarize (2) - (3) as $E[aX + c] = aE[X] + c$</p>
-
 <p>for variance,
 $var(aX + c) = a^2 var(X)$</p>
 
@@ -422,12 +414,10 @@ $var(aX + c) = a^2 var(X)$</p>
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="variance">Variance</span></span>
   <div class="block__content block__content--blue">
     <p>$var(X) = E[(X-E[X])^2]$</p>
-
 <p>Equivalently, $var(X) = E [X^2 -2XE[X] + (E[X])^2]$
 $=E[X^2] - 2E[X]E[X] + E[X]^2 = E[X^2] -2E[X]^2$</p>
 
@@ -462,9 +452,7 @@ $=E[X^2] - 2E[X]E[X] + E[X]^2 = E[X^2] -2E[X]^2$</p>
       })();
     </script></div>
 
-
 <p>One experiment, $2$ random variable $s$.</p>
-
 
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="joint-probability-mass-function">Joint Probability Mass Function</span></span>
@@ -503,7 +491,6 @@ $=E[X^2] - 2E[X]E[X] + E[X]^2 = E[X^2] -2E[X]^2$</p>
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="joint-probability-density-function">Joint Probability Density Function</span></span>
   <div class="block__content block__content--blue">
@@ -538,7 +525,6 @@ $=E[X^2] - 2E[X]E[X] + E[X]^2 = E[X^2] -2E[X]^2$</p>
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--blue ">
@@ -578,7 +564,6 @@ $=E[X^2] - 2E[X]E[X] + E[X]^2 = E[X^2] -2E[X]^2$</p>
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="marginal-distribution-continuous">Marginal Distribution (Continuous)</span></span>
   <div class="block__content block__content--blue">
@@ -615,15 +600,12 @@ $=E[X^2] - 2E[X]E[X] + E[X]^2 = E[X^2] -2E[X]^2$</p>
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>magnetic board, some parts are stronger than others, I throw a metallic object.</p>
-
 <p>I record the probability of objects landing on the each of the squares.</p>
-
 <table>
 <thead>
 <tr>
@@ -632,41 +614,30 @@ $=E[X^2] - 2E[X]E[X] + E[X]^2 = E[X^2] -2E[X]^2$</p>
 <th>1</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><strong>1</strong></td>
-<td><sup>1</sup>&frasl;<sub>2</sub></td>
-<td><sup>1</sup>&frasl;<sub>8</sub></td>
+<td>1/2</td>
+<td>1/8</td>
 </tr>
-
 <tr>
 <td><strong>0</strong></td>
-<td><sup>1</sup>&frasl;<sub>8</sub></td>
-<td><sup>1</sup>&frasl;<sub>4</sub></td>
+<td>1/8</td>
+<td>1/4</td>
 </tr>
 </tbody>
 </table>
-
 <p>Let X be the horizontal grid value,
 y = the vertical grid value.</p>
-
 <p>$\b{P}(X=1)= \b{P}(X=1) = \frac18 + \frac14 = \frac38$</p>
-
 <p>How to find $P_X, P_Y$?</p>
-
 <p>In general, say $X, Y$ have joint probability mass function $ P_{X, Y}$ we can find $P_X$, and $P_Y$(called <strong>marginals</strong>) as follow:
 $P_X(x) = \b{P}(X=x) = \b{P}(\cup_y (X=x \cap Y = y)) = \sum_{y} p_{X,Y}(x,y)$</p>
-
 <p>Similarly,
 $P_Y(y) = P_{X,Y}(x,y)$</p>
-
 <p>$P_X(1) = \sum_{y} P_{1,Y} = \b{P}(X=1, Y=0) + \b{P}(X=1, Y=1) = \frac{1}{4} + \frac{1}{8} = \frac{3}{8}$</p>
-
 <p>$P_X(0) = \sum_{y} P_{0,Y} = \b{P}(X=0, Y=0) + \b{P}(X=0, Y=1) = \frac{1}{8} + \frac{1}{2} = \frac{5}{8}$</p>
-
 <p>$P_Y(1) = \sum_{x} P_{X,1} = \b{P}(X=0, Y=1) + \b{P}(X=1, Y=1) = \frac{1}{2} + \frac{1}{8} = \frac{5}{8}$</p>
-
 <p>$P_Y(0) = \sum_{x} P_{X,0} = \b{P}(X=0, Y=0) + \b{P}(X=1, Y=0) = \frac{1}{8} + \frac{1}{4} = \frac{3}{8}$</p>
 
   </div>
@@ -683,13 +654,11 @@ $P_Y(y) = P_{X,Y}(x,y)$</p>
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>Another example, with same marginals but different probability for each grid.</p>
-
 <table>
 <thead>
 <tr>
@@ -698,28 +667,22 @@ $P_Y(y) = P_{X,Y}(x,y)$</p>
 <th>1</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><strong>1</strong></td>
-<td><sup>25</sup>&frasl;<sub>64</sub></td>
-<td><sup>15</sup>&frasl;<sub>64</sub></td>
+<td>25/64</td>
+<td>15/64</td>
 </tr>
-
 <tr>
 <td><strong>0</strong></td>
-<td><sup>15</sup>&frasl;<sub>64</sub></td>
-<td><sup>9</sup>&frasl;<sub>64</sub></td>
+<td>15/64</td>
+<td>9/64</td>
 </tr>
 </tbody>
 </table>
-
 <p>$P_X(1) = \sum_{y} P_{1,Y} = \b{P}(X=1, Y=0) + \b{P}(X=1, Y=1) = \frac{3}{8}$</p>
-
 <p>$P_X(0) = \sum_{y} P_{0,Y} = \b{P}(X=0, Y=0) + \b{P}(X=0, Y=1) = \frac{5}{8}$</p>
-
 <p>$P_Y(1) = \sum_{x} P_{X,1} = \b{P}(X=0, Y=1) + \b{P}(X=1, Y=1) = \frac{5}{8}$</p>
-
 <p>$P_Y(0) = \sum_{x} P_{X,0} = \b{P}(X=0, Y=0) + \b{P}(X=1, Y=0) = \frac{3}{8}$</p>
 
   </div>
@@ -736,14 +699,12 @@ $P_Y(y) = P_{X,Y}(x,y)$</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>Let $g: \R \times \R \to \R$
 i.e. g is a real-valued function of 2 variables. Let X, Y have joint probability mass function, $P_{X,Y}$.</p>
-
 <p>$$E[g(X,Y)] = \sum_{ x,y } g(x,y) P_{X,Y}(x, y)$$</p>
 
   </div><ul class="block__footer">
@@ -757,27 +718,18 @@ i.e. g is a real-valued function of 2 variables. Let X, Y have joint probability
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>Let $X$ be binomial random variable, with parameters $n, p$ i.e. $X$ is number of $H$ in $n$ tosses of a coin.</p>
-
 <p>Let random variable $X_i$ take the value $1$ if the $i$th toss is $\head $, and $0$ if the $i$th toss is $\tail $.</p>
-
 <p>Note: $X = \sum_{ i=1 }^{n} X_i$</p>
-
 <p>So $E[X] = \sum_{ i=1 }^{n} E[X_i]$</p>
-
 <p>$\forall i, E[X_i] = \sum_{x} x p_X(x) = 10 p + 0(1-p) =p $</p>
-
 <p>so $E[X] = np$</p>
-
 <p>summaries:</p>
-
 <p>if $X$ binomial with parameters $n, p$. New $E[X]= np$.</p>
-
 <p>note: if $p= \frac{ 1 }{ 2 }, E[X] = \frac{n}{2}$</p>
 
   </div>
@@ -794,28 +746,18 @@ i.e. g is a real-valued function of 2 variables. Let X, Y have joint probability
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="poisson-random-variables">Poisson Random Variables</span></span>
   <div class="block__content block__content--blue">
     <p>Let $X$ be number of typos in a book with $n$ letters, where each letter is wrong is $p$. All typos are independent.</p>
-
 <p>$\b{P}(X=k) = \binom{n}{k} p^k (1-p)^{n-k}, k \in \set{ 0, 1, 2, &hellip;, {n}}$</p>
-
 <p>Let $\lambda = np$ for $k \in \set{ 0, &hellip;, n }$</p>
-
 <p>For large $n, p \in [0, 1]$:</p>
-
 <p>$$e^{-\lambda} \frac{ \lambda^k }{ k! } \approx \binom{n}{k} p^k (1-p)^{n-k}$$</p>
-
 <p>Let $Y$ be random variable with probability mass function:</p>
-
 <p>$$p_Y(k) = e^{-\lambda} \frac{ \lambda^k }{ k! }, k= 0,1,2,&hellip;$$</p>
-
 <p>$Y$ is called <strong>Poisson</strong> with parameter $\lambda &gt; 0$.</p>
-
 <p>check:</p>
-
 <p>$\sum_{ k=0 }^{ \infty } p_y(k) = \sum_{ k=0 }^{ \infty } e^{-\lambda} \frac{ \lambda^k }{ k! } =  e^{-\lambda} \sum_{ k=0 }^{ \infty } \frac{ \lambda^k }{ k! } = e^{-\lambda} e^\lambda = 1$</p>
 
   </div>
@@ -1572,13 +1514,13 @@ i.e. g is a real-valued function of 2 variables. Let X, Y have joint probability
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

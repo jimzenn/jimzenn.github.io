@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>The Completeness Axiom - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -288,7 +298,6 @@ if (!doNotTrack) {
   
 
 </div>
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="maximum">Maximum</span></span>
   <div class="block__content block__content--blue">
@@ -324,7 +333,6 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--blue ">
@@ -364,12 +372,10 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="upper-bound">Upper Bound</span></span>
   <div class="block__content block__content--blue">
     <p>$S$ is a subset of a ordered field $F$. If exists an element $m \in F$ such that $\forall s \in S, m \geq S$, then we call $m $ an <strong>upper bound</strong> for $S$.</p>
-
 <p>If $x$ is an upper bound for $S $ and $x \in S $, then $x$ is maximum of $S$.</p>
 
   </div>
@@ -404,12 +410,10 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="lower-bound">Lower Bound</span></span>
   <div class="block__content block__content--blue">
     <p>$S$ is a subset of a ordered field $F$. If exists an element $m \in F$ such that $\forall s \in S, m \leq S$, then we call $m$ an <strong>lower bound</strong> for $S$.</p>
-
 <p>If $x$ is an lower bound for $S $ and $x \in S $, then $x$ is minimum of $S$.</p>
 
   </div>
@@ -442,7 +446,6 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--blue ">
@@ -482,7 +485,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="greatest-lower-bound-infimum">Greatest Lower Bound (Infimum)</span></span>
   <div class="block__content block__content--blue">
@@ -520,14 +522,11 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>By definition,</p>
-
 <p><strong>Maxima</strong> are suprema.</p>
-
 <p><strong>Minima</strong> are infima.</p>
 
   </div>
@@ -540,7 +539,6 @@ if (!doNotTrack) {
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul></div>
-
 
 
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
@@ -560,14 +558,11 @@ if (!doNotTrack) {
   </ul></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>By the definition of supremum and infimum,</p>
-
 <p>$inf(\emptyset) = + \infty$,</p>
-
 <p>$sup(\emptyset) = - \infty$.</p>
 
   </div>
@@ -580,7 +575,6 @@ if (!doNotTrack) {
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul></div>
-
 
 
 <div class="block block--green block--status"><div class="block__status block__status--star"></div>
@@ -622,7 +616,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   </span>
@@ -630,35 +623,25 @@ if (!doNotTrack) {
 
   <div class="block__content block__content--green">
   <p>If $S \subseteq \R, s \neq \emptyset$, $S$ is bounded below, then $S$ has a infinum.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Let $S$ have lower bound $x$. Then $(-S) = \set{ -y \mid y \in S }$.</p>
-
 <p>$x \leq y, \forall y \in S, -x \geq -y$.</p>
-
 <p>$-x$ is an upper bound to $-S$.</p>
-
 <p>$\therefore$ by completeness, there is a $u = \supr{ -s }$.</p>
-
 <p>$u \geq -y, \forall y \in S$.</p>
-
 <p>$\forall z \geq -y, \forall y \in S, z \geq u$.</p>
-
 <p>Then $y \geq -u, \forall y \in S $(lower bound)</p>
-
 <p>$\exists -z \leq y \forall y $</p>
-
 <p>$Then -z \leq -u $</p>
-
   </div>
 </div>
 
@@ -672,7 +655,6 @@ if (!doNotTrack) {
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul></div>
-
 
 
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note: <span class="keyword" id="completeness-axiom-does-not-hold-for-%5Cq">Completeness Axiom Does Not Hold for $\Q $</span>
@@ -713,12 +695,10 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>Showing a number isn&rsquo;t algebraic isn&rsquo;t easy.</p>
-
 <p>e.g. How to show $\pi, e $ are not algebraic?</p>
 
   </div>
@@ -733,21 +713,15 @@ if (!doNotTrack) {
   </ul></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>$\set{ \frac{ 1 }{ n }}_{n \geq 1} $</p>
-
 <p>$0 $ is a lower bound of $S $.</p>
-
 <p>$1 = \supr{ S }$,</p>
-
 <p>$0 = \infi{ S }$.</p>
-
 <p>Could $\infi{ S }$ be some very small $r &gt; 0$?</p>
-
 <p>The completeness axiom is called completeness is because it fills in the &ldquo;gap&rdquo;.</p>
 
   </div>
@@ -764,46 +738,33 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Properties: <span class="keyword" id="archimedean-property">Archimedean Property</span>
   
   </span>
   <div class="block__content block__content--green">
   <p>$a,b &gt; 0.\ \exists n, na &gt; b $.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Assume on the contrary, $\forall n, na \leq b$.</p>
-
 <p>Then, $b$ is an upper bound to $S = \set{ na \mid n \in \N } $.</p>
-
 <p>By completeness axiom, $\exists s_0, s_0 = sup(S)$.</p>
-
 <p>Since $a &gt; 0, s_0 &lt; s_0 + a$.</p>
-
 <p>$\therefore s_0 - a &lt; s_0 $.</p>
-
 <p>$s_0 - a $ is not upper bound to $S$.</p>
-
 <p>$\exists n, s_0 -a &lt; na $.</p>
-
 <p>$s_0 &lt; \pare{n+1} a $.</p>
-
 <p>$s_0 &lt; (n + 1)a \leq s_0 $.</p>
-
 <p>$(n+1) a \in S$, so $s_0 $ is not an upper bound for $S $. CONTRADICTION.</p>
-
 <p>$\therefore a, b &gt; 0.\ na &gt; b. $</p>
-
   </div>
 </div>
 
@@ -839,7 +800,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
@@ -860,24 +820,21 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="denseness-of-%5Cq">Denseness of $\Q$</span></span>
   <div class="block__content block__content--green">
   <p>$$\forall a, b \in \R , a &lt; b, \exists r \in \Q, a &lt; r &lt; b $$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
-    
   </div>
 </div>
 
@@ -1800,13 +1757,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

@@ -76,8 +76,7 @@
   .article__content > p:first-of-type {
     font-size: 22px;
     line-height: 32px;
-    letter-spacing: 0.352px;
-  }
+      }
 }
 
 @media (min-width: 736px) and (max-width: 1068px) {
@@ -85,14 +84,12 @@
   .article__content > p:first-of-type {
     font-size: 20px;
     line-height: 30px;
-    letter-spacing: 0.34px;
-  }
+      }
 }
 
 @media (max-width: 735px) {
   .article__content > p:first-of-type {
     font-size: 19px;
-    letter-spacing: 0.342px;
-    line-height: 28px;
+        line-height: 28px;
   }
 }

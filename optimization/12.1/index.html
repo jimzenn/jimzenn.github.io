@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Least-Squares Analysis - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -301,20 +311,14 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="inconsistent-overdetermined">Inconsistent (Overdetermined)</span></span>
   <div class="block__content block__content--blue">
     <p>Consider a system of linear equations</p>
-
 <p>$$\b{Ax} = \b{b} $$</p>
-
 <p>where $\b{A} \in \R^{m \times n}, \b{b} \in \R^m, m \geq n $, and $\rank{ \b{A}} = n $.</p>
-
 <p>Note that the number of unknowns, $n $, is no larger than the number of equations, $m $.</p>
-
 <p>If $b $ does not belong to the range of $\b{A} $, i.e. $\b{b} \not\in \mathcal{ R }(\b{A})$, then this system of equations is said to be <strong>inconsistant</strong> or <strong>overdetermined</strong>.</p>
-
 <p>In this case, there is no solution to the above set of equations.</p>
 
   </div>
@@ -349,12 +353,10 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="least-squares-solution">Least-Squares Solution</span></span>
   <div class="block__content block__content--blue">
     <p>A vector $\b{ x }^* $ that minimizes $\norm{ \b{Ax} - \b{b}}^2$ is called a <strong>least-squares solution</strong>; that is, $\forall \b{x} \in \R^n $,</p>
-
 <p>$$\norm{ \b{Ax} -\b{b}}^2 \geq \norm{ \b{A x^*} - \b{b}}^2 $$</p>
 
   </div>
@@ -389,7 +391,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   
@@ -397,60 +398,43 @@ if (!doNotTrack) {
   </span>
   <div class="block__content block__content--green">
   <p>Let $\b{A} \in \R^{m \times n}, m \geq n. $ Then,</p>
-
 <p>$$\rank{ \b{A}} = n \iff \rank{ \transpose{ \b{A}} \b{A}}= n\ \text{(the square matrix }\transpose{ \b{A}}\b{A}\text{ is non singular)}$$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Suppose that $\rank{ \b{A}} = n $.</p>
-
 <p>To show $\rank{ \transpose{ \b{A}} \b{A}}= n$, it is equivalent to show $\nullity{ \transpose{ \b{A}} \b{A}} = \set{ \b{0}} $.</p>
-
 <p>Fix $\b{x} \in \mathcal{ N }(\transpose{ \b{A}}\b{A})$, then $\transpose{\b{A}} \b{A} \b{x} = \b{0}$.</p>
-
 <p>That implies</p>
-
 <p>$$\norm{ \b{Ax}}^2 = \transpose{ \b{x}} \transpose{ \b{A}} \b{A} \b{x} = \b{0} $$</p>
-
 <p>Therefore,</p>
-
 <p>$$\norm{ \b{Ax}}^2 = \b{0} $$</p>
-
 <p>that is,</p>
-
 <p>$$\b{Ax} = \b{0}$$</p>
-
 <p>$\rank{ \b{A}}  = n \implies \b{x} = \b{0} $.</p>
-
   </div>
 </div>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Suppose that rank $\transpose{ \b{A}} \b{A} = n $, that is, $\mathcal{ N } (\transpose{ \b{A}} \b{A}) = \set{ \b{0}}.$</p>
-
 <p>To show $\rank{ \b{A}} = n$. It is equivalent to show that $\mathcal{ N } (\b{A}) = \set{ \b{0}}. $</p>
-
 <p>Fix $\b{x} \in \mathcal{ N } (\b{A})$, then $\b{Ax} = \b{0} $.</p>
-
 <p>Then, $\transpose{ \b{A}} \b{Ax} = \b{0}$. Hence, $\b{x} = \b{0} $.</p>
-
   </div>
 </div>
 
@@ -466,13 +450,11 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green block--status"><div class="block__status block__status--star"></div>
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>The unique vector $\b{x}^* $ that minimizes $\norm{ \b{Ax} - \b{b}}^2$ is given by the solution to the equation $\transpose{ \b{A}} \b{A} \b{x} = \transpose{ \b{A}} \b{b}$ i.e.</p>
-
 <p>$$\b{x}^* = \inv{(\transpose{ \b{A}} \b{A})} \transpose{ \b{A}} \b{b} $$</p>
 
   </div><ul class="block__footer">
@@ -484,7 +466,6 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--green ">
@@ -1422,13 +1403,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

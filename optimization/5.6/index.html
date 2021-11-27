@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Taylor Series - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -301,12 +311,10 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="%5Cnone%5Cmathcalck-function">$\None\mathcal{C}^k$ Function</span></span>
   <div class="block__content block__content--blue">
     <p>A function with $k$ continuous derivatives is called a $\mathcal{C}^k$ function.</p>
-
 <p>In order to specify a $\mathcal{C}^k $ function on a domain $X $, the notation $\mathcal{C}^k(X) $ is used.</p>
 
   </div>
@@ -341,19 +349,14 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="taylors-theorem">Taylor&#39;s Theorem</span></span>
   <div class="block__content block__content--green">
   <p>Assume that a function $f: \R \to \R $ is $m $ times continuously differentiable (i.e. $f \in \mathcal{C}^m$) on an interval $[a, b] $. Denote $h = b - a $. Then,</p>
-
 <p>$$f(b) = f(a) + \frac{ h }{ 1! } f^{(1)}(a) + \frac{ h^2 }{ 2! }f^{(2)}(a) + &hellip; + \frac{ h^m }{ m! } f^{(m)}(a) + o(h^m)$$</p>
-
 <p>In particular, if $ f \in \mathcal{ C }^{m+1} $,</p>
-
 <p>$$f(b) = f(a) + \frac{ h }{ 1! } f^{(1)}(a) + \frac{ h^2 }{ 2! }f^{(2)}(a) + &hellip; + \frac{ h^m }{ m! } f^{(m)}(a) + O(h^{m+1})$$</p>
-
 <p>where $f^{\pare{i}} $ is the $i$th derivative of $f$.</p>
 
   </div><script>
@@ -387,26 +390,17 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--blue block--status"><div class="block__status block__status--warning"></div>
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="order-symbols">Order Symbols</span></span>
   <div class="block__content block__content--blue">
     <p>Let $g $ be a real-valued function defined in some neighborhood of $\b{0} \in \R^n$, with $g(\b{x}) \neq 0 $ if $x \neq \b{0}$.</p>
-
 <p>Let $\b{f} : \Omega \to \R^m$ be defined in a domain $\Omega \subseteq \R^n $ that includes $\b{0}$.</p>
-
 <p>$f(\b{x}) = O(g(x))$ means that $\norm{ f(\b{x})} / \abs{ g(\b{x})} $ is bounded near $\b{0}$. i.e.</p>
-
 <p>$$\underset{x \to 0, x \in \Omega}{\lim} \frac{ \norm{ f(\b{x})}}{ \abs{ g(\b{x})}} \leq K$$</p>
-
 <p>$f(\b{x}) = o(g(x))$ means that</p>
-
 <p>$$\underset{x \to 0, x \in \Omega}{\lim} \frac{ \norm{ f(\b{x})}}{ \abs{ g(\b{x})}} = 0$$</p>
-
 <p>Note that:</p>
-
 <p>$$f(\b{x}) = o(g(x)) \implies f(\b{x}) = O(g(x)) $$</p>
-
 <p>However the converse is not necessarily true.</p>
 
   </div>
@@ -439,7 +433,6 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
@@ -1377,13 +1370,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

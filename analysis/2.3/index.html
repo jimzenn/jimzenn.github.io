@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Limit Theorems for Sequences - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -292,48 +302,36 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   9.1<span class="keyword" id="9.1" style="visibility: hidden;">9.1</span></span>
   <div class="block__content block__content--green">
   <p>Convergent sequences are bounded.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Let $(s_n) $ be a convergent sequence, and let $s = \lim s_n$.</p>
-
 <p>Arbitrarily choose an $\epsilon &gt; 0 $. Here we choose $\epsilon = 1 $.</p>
-
 <p>Since $(s_n) $ is convergent, exists $N \in \N$ so that</p>
-
 <p>$$n &gt; N \implies \abs{ s_n - s } &lt; 1 $$</p>
-
 <p>$$\begin{align*}
 \abs{(s_n - s) + s } &amp;\leq \abs{ s_n - s } + \abs{ s } \br
 \abs{ s_n } &amp;\leq \abs{ s_n - s } + \abs{ s } \br
 \abs{ s_n } - \abs{ s } &amp;\leq \abs{ s_n - s } \br
 \end{align*}$$</p>
-
 <p>$\because \abs{ s_n - s } &lt; 1 $</p>
-
 <p>$$\abs{ s_n } - \abs{ s } &lt; 1 $$</p>
-
 <p>i.e. For all $n &gt; N $, $\abs{ s_n }  &lt; 1 + \abs{ s } $.</p>
-
 <p>Define $M = \max{ \set{ \abs{ s } + 1, \abs{ s_1 }, \abs{ s_2 }, &hellip;, \abs{ s_N }}}$.</p>
-
 <p>$M$ is an upper bound of $(s_n)$.</p>
-
   </div>
 </div>
 
@@ -368,20 +366,16 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>Show that $\frac{ 2n + 1 }{ 3n -1 } \to \frac{ 2 }{ 3 }$.</p>
-
 <p>Fix $\epsilon &gt; 0 $, want to find $ N $ s.t. $n &gt; N \implies \abs{ \frac{ 2n+1 }{ 3n-1 } - \frac{ 2 }{ 3 }} &lt; \epsilon$.</p>
-
 <p>$\begin{align*}
 \abs{ \frac{ 2n+1 }{ 3n-1 } - \frac{ 2 }{ 3 }} &amp;&lt; \epsilon \br
 \frac{ 5 }{ 3n-1 } &amp;&lt; \epsilon
 \end{align*}$</p>
-
 <p>$N = \frac{5 + \epsilon}{3 \epsilon}$.</p>
 
   </div>
@@ -396,7 +390,6 @@ if (!doNotTrack) {
   </ul>
 
 </div>
-
 
 
 <div class="block block--green ">
@@ -416,51 +409,35 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green block--status"><div class="block__status block__status--warning"></div>
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="the-subsequence-theorem">The Subsequence Theorem</span></span>
   <div class="block__content block__content--green">
   <p>Let $\set{ t_n } $ be a subsequence of $\set{ s_n } $.</p>
-
 <p>$s_n \to s $, $t_n \to s \implies t_n = s_{f(n)}$.</p>
-
 <p>where $f(n)$ is an increasing function from $\N $ to $\N$ called the <strong>selection function</strong>.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Consider $\epsilon &gt; 0 $, then $\exists N , \abs{s_n - s} &lt; \epsilon$.</p>
-
 <p>$n \geq N$, some $f(n)$ is increasing, then $f(n) \geq n$.</p>
-
 <p>$f(1) \geq 1$, assume $f(n) \geq n $.</p>
-
 <p>$f(n + 1) &gt; f(n) \because f$ is increasing.</p>
-
 <p>$\therefore f(n + 1) &gt; n $</p>
-
 <p>$\therefore f(n + 1) \geq n +1 $(because $n$ is an integer)</p>
-
 <p>$\abs{ s_n - s } &lt; \epsilon, n &gt; N $</p>
-
 <p>$t_n = s_{f(n)} $</p>
-
 <p>since f(n) &gt; n, then</p>
-
 <p>$n \geq N \implies f(n) \geq N$</p>
-
 <p>$\therefore \abs{ t_n - s } = \abs{ s_{f(n)} - s } &lt; \epsilon $</p>
-
 <p>$\therefore t_n \to s $ is true $\forall s_n n \geq N$</p>
-
   </div>
 </div>
 
@@ -495,37 +472,24 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>$s_n \to s $, then $\set{ s_n } $ is bounded.</p>
-
 <p>Can know this just like the $inf \set{ \abs{ s_n }}$ problem</p>
-
 <p>assume false</p>
-
 <p>Then $\set{ s_n } $ either has no upper bound (-sup \set{ s_n } = \infty)
 or has no lower bound.</p>
-
 <p>Consider $\abs{ S_n } $ we know $\abs{ s_n } \to s $</p>
-
 <p>so $\set{ \abs{ s_n }}$ has no upper bound.</p>
-
 <p>Then for any $M $, there is some $n $ with $\abs{s_n} &gt; M $</p>
-
 <p>Take a subsequence</p>
-
 <p>$t_1 $ where $t_1 = s_{n_1} $ where $\abs{ s_{n_1}} $
 $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
-
 <p>$\abs{ t_k } &gt; k $</p>
-
 <p>Then $t_1, t_2, t_3 &hellip; $</p>
-
 <p>is subseq</p>
-
 <p>that does not $\to s $</p>
 
   </div>
@@ -542,13 +506,11 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="binomial-theorem">Binomial Theorem</span></span>
   <div class="block__content block__content--green">
   <p>$$\binom{ n }{ k } = \frac{ n! }{ k! (n - k)! } $$</p>
-
 <p>where $n! = n(n-1) &hellip; 3 \times 2 \times 1 $</p>
 
   </div><script>
@@ -582,24 +544,16 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
 </div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>It&rsquo;s obvious that $\binom{ n }{ k }  \in \Q$, how prove that it is also in $\Z $.</p>
-
 <p>$n!$</p>
-
 <p>step 1: choose $k $ from $n$ : $\binom{ n }{ k } $</p>
-
 <p>step 2: order them : $k! $</p>
-
 <p>step 3: order the rest : $(n - k)! $</p>
-
 <p>step 4: Put $k $ first than $n-k $ second</p>
-
 <p>$n! =  \binom{ n }{ k } k! \pare{n-k}! $</p>
-
 <p>Hence, $\frac{ n! }{ k! (n - k)! }$ is an integer, because it is the ways to choose $k $ from $n $.</p>
 
   </div>
@@ -612,7 +566,6 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul></div>
-
 
 
 <div class="block block--green ">
@@ -632,32 +585,25 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="binomial-theorem">Binomial Theorem</span></span>
   <div class="block__content block__content--blue">
     <p>$$(1 + x)^n = \sum_{ k=0 }^{ n } \binom{ n }{ k }x^k$$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$$P(n): (1 + x)^n = \binom{ n }{ 0 } + \binom{ n }{ 1 }x + \binom{ n }{ 2 }x^2 + &hellip; + \binom{ n }{ n }x^n$$</p>
-
 <p><strong>The basis:</strong></p>
-
 <p>When $n = 0, (1 + x)^0 = \binom{ 0 }{ 0 } = 1$</p>
-
 <p>When $n = 1, (1 + x)^1 = \binom{ 1 }{ 0 } + \binom{ 1 }{ 1 }x = 1 + x$</p>
-
 <p><strong>The Inductive step:</strong></p>
-
 <p>$\begin{align*}
 (1 + x)^{n + 1} &amp;= (1+ x)^n (1 + x) \br
 &amp;= (1 + x)\pare{\binom{ n }{ 0 } + \binom{ n }{ 1 }x + \binom{ n }{ 2 }x^2 + &hellip; + \binom{ n }{ n }x^n} \br
@@ -666,7 +612,6 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
 &amp;= \binom{ n+1 }{ 0} + \binom{ n+1 }{ 1 }x  + &hellip; + \binom{ n+1 }{ n }x^n + \binom{ n+1 }{ n+1 } x^{n+1} \br
 &amp;= \sum_{ k=0 }^{ n+1 } \binom{ n + 1 }{ k } x^k
 \end{align*}$</p>
-
   </div>
 </div>
 
@@ -702,12 +647,10 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="infinity-limits">Infinity Limits</span></span>
   <div class="block__content block__content--blue">
     <p>For a sequence $(s_n) $, we write lim $s_n = + \infty$ provided for each $M &gt; 0 $ there is a number $N $ s.t. $n &gt; N $ implies $s_n &gt; M $.</p>
-
 <p>Henceforth we will say $(s_n)$ <u>HAS a limit</u> or <u>the limit exists</u> provided $(s_n)$ converges or diverges to $+\infty $ or diverges to $-\infty $.</p>
 
   </div>
@@ -742,31 +685,20 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>$s, t$ are not $ +\infty$ or $-\infty$.</p>
-
 <p><strong>1.</strong> $s_n \to s \implies \set{ s_n } $ is bounded.</p>
-
 <p><strong>2.</strong> $s_n \to s  \implies k s_n \to ks $.</p>
-
 <p><strong>3.</strong> $s_n \to s, t_n \to t \implies s_n + t_n \to s + t$.</p>
-
 <p><strong>4.</strong> $s_n \to s, t_n \to t \implies s_nt_n \to st$.</p>
-
 <p><strong>5.</strong> $s_n \to s, s_n \neq 0,  s \neq 0 \implies \inv{\pare{s_n}} \to \inv{ s }$.</p>
-
 <p><strong>6.</strong> $s_n \to s, t_n \to t, s_n, s \neq 0 \implies \frac{ t_n }{ s_n } \to \frac{ t }{ s } $.</p>
-
 <p><strong>7a.</strong> $If p &gt; 0, \frac{ 1 }{ n^p} \to 0 $.</p>
-
 <p><strong>7b.</strong> $If \abs{ a } &lt; 1, a^n \to 0$.</p>
-
 <p><strong>7c.</strong> $\sqrt[ n ]{ n } \to 1$.</p>
-
 <p><strong>7d.</strong> $If a &gt; 0, \sqrt[ n ]{ a } \to 1 $.</p>
 
   </div><ul class="block__footer">
@@ -778,7 +710,6 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--green ">
@@ -819,14 +750,12 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   9.10<span class="keyword" id="9.10" style="visibility: hidden;">9.10</span></span>
   <div class="block__content block__content--green">
   <p>Let $(s_n)$ be a sequence where $ s_n &gt; 0, s_n \in \R $.</p>
-
 <p>$$\lim s_n = +\infty \iff \lim \frac{ 1 }{ s_n } = 0 $$</p>
 
   </div><script>
@@ -1748,13 +1677,13 @@ $t_2 $ where $t_2 = s_{n_2} $ where $\abs{ s_{n_2}} &gt; 2$</p>
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

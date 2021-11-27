@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Cauchy Sequences and Complete Metric Spaces - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -305,14 +315,11 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="subsequences">Subsequences</span></span>
   <div class="block__content block__content--blue">
     <p>Suppose that $(x^{(n)})^\infty_{ n =1} $ is a sequence of points in a metric space $(X, d)$. Suppose that $n_1, n_2, &hellip; $ is an increasing sequence of integers which are at least as large as $m$, thus</p>
-
 <p>$$1 \leq n_1 &lt; n_2 &lt; n_3 &lt; &hellip; $$</p>
-
 <p>Then we call the sequence $(x^{(n_j)})^\infty_{ j =1} $ a <strong>subsequence</strong> of the original sequence $(x^{(n)})^\infty_{ n =1} $.</p>
 
   </div>
@@ -347,7 +354,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   
@@ -367,12 +373,10 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="limit-points">Limit Points</span></span>
   <div class="block__content block__content--blue">
     <p>Suppose that $(x^{(n)})^\infty_{ n =1} $ is a sequence of points in a metric space $(X, d)$, and let $L \in X$.</p>
-
 <p>We say that $L$ is a <strong>limit point</strong> of $(x^{(n)})^\infty_{n=1}$ iff for every $N \geq 1$ and $\epsilon &gt; 0 $ there exists an $n \geq N $ such that $d(x^{(n)}, L) \leq \epsilon$.</p>
 
   </div>
@@ -407,17 +411,18 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Proposition
   </span>
   <div class="block__content block__content--green">
   <p>Let $(x^{(n)})^\infty_{ n =1} $ be a sequence of points in a metric space $(X,d) $, and let $L \in X $. Then the following are equivalent:</p>
-
 <ul>
-<li><p>$L $ is a limit point of $(x^{(n)})^\infty_{ n =1} $.</p></li>
-
-<li><p>There <u>exists</u> a subsequence $(x^{(n_j)})^\infty_{j=1}$ of the original sequence $(x^{(n)})^\infty_{ n =1}$ which converges to $L$.</p></li>
+<li>
+<p>$L $ is a limit point of $(x^{(n)})^\infty_{ n =1} $.</p>
+</li>
+<li>
+<p>There <u>exists</u> a subsequence $(x^{(n_j)})^\infty_{j=1}$ of the original sequence $(x^{(n)})^\infty_{ n =1}$ which converges to $L$.</p>
+</li>
 </ul>
 
   </div><ul class="block__footer">
@@ -431,14 +436,11 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="cauchy-sequences">Cauchy Sequences</span></span>
   <div class="block__content block__content--blue">
     <p>Let $(x^{(n)})^\infty_{ n =1} $ be as sequence of points in a metric space $(X, d)$.</p>
-
 <p>$(x^{(n)})^\infty_{ n =1} $ is a <strong>Cauchy sequence</strong> if</p>
-
 <p>$$\forall \epsilon &gt;0, \exists N \geq 1, \forall j, k \geq N, d(x^{(j)}, x^{(k)}) &lt; \epsilon $$</p>
 
   </div>
@@ -473,7 +475,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   : Convergent Sequences Are Cauchy Sequences
@@ -492,7 +493,6 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--green">
@@ -514,7 +514,6 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   
@@ -534,14 +533,12 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   
   </span>
   <div class="block__content block__content--green">
   <p>Let $(x^{(n)})^\infty_{ n =1} $ be a Cauchy sequence in $(X,d)$.</p>
-
 <p>Suppose that there is some subsequences $(x^{(n_j)})^\infty_{ j =1}$ of this sequence which converges to a limit $x_0$ in $X$. Then the original sequence $(x^{(n)})^\infty_{ n =1} $ also converges to $x_0$.</p>
 
   </div>
@@ -554,7 +551,6 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--blue ">
@@ -594,7 +590,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Proposition
   </span>
@@ -610,7 +605,6 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--green ">
@@ -630,12 +624,10 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>An incomplete metric space such as $(\Q,d) $ may be considered closed in some spaces ($\Q$ is closed in $\Q$) but not in others. (for instance, $\Q $ is not closed in $\R $).</p>
-
 <p>It turns out that given any incomplete metric space $(X,d)$, there exists a <strong>completion</strong> $(\overline{X}, \overline{d})$, which is a larger metric space containing $(X,d)$ which is complete, and such that $X $ is not closed in $\overline{X} $(indeed, the closure of $X$ in $(\overline{X}, \overline{d})$ will be all of $\overline{X}$).</p>
 
   </div>
@@ -1538,13 +1530,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

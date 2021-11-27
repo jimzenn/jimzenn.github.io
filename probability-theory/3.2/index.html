@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Cummulative Distribution Functions - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -304,12 +314,10 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="cumulative-distribution-function-cdf">Cumulative Distribution Function (CDF)</span></span>
   <div class="block__content block__content--blue">
     <p>The <strong>cumulative distribution function (CDF)</strong> of an random variable $X $ is denoted $F_X $ and is defined as:</p>
-
 <p>$$F_X(x)=\b{P}(X \leq X) = \b{P}(\set{ \omega \in \Omega \mid X(\omega) \leq x})$$</p>
 
   </div>
@@ -344,23 +352,20 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Properties
   </span>
   <div class="block__content block__content--green">
   <p>Let $F $ be a cumulative distribution function (CDF), $f $ be the corresponding probability distribution function (PDF).</p>
-
 <ol>
 <li>$F $ is <u>non-decreasing</u>.</li>
 <li>$\limu{x}{ -\infty } F(x) = 0$.</li>
 <li>$\limu{x}{ +\infty } F(x) =1$.</li>
 <li>If $X$ is discrete, then $X$ is piecewise constant and continuous from the left.</li>
 <li>If $X$ is continuous and $f_X$ is continuous, then $F$ is differentiable.</li>
-<li>If $X$ is continuous, $F&rsquo;_X(x) = f_X(x)$.</li>
+<li>If $X$ is continuous, $F'_X(x) = f_X(x)$.</li>
 <li>if $X$ is discrete and $X$ is integer-valued, then</li>
 </ol>
-
 <p>$$\begin{align*}
 \b{P}(X=n) &amp;= \b{P}(X \leq n) - \b{P}(X \leq n-1) \br
 &amp;= F_X(n) - F_X(n-1)
@@ -376,7 +381,6 @@ if (!doNotTrack) {
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul></div>
-
 
 
 <div class="block block--blue ">
@@ -415,7 +419,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="exponential-distribution">Exponential Distribution</span></span>
   <div class="block__content block__content--blue">
@@ -450,7 +453,6 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--blue ">
@@ -490,16 +492,14 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>For any $B \subseteq R $, 2 e.g. condition on value of $X$.</p>
-
 <p>$ f_{X \mid \set{ X \in E }}(x) = \begin{cases}
-  \frac{ f_X(x)}{ \b{P}(x \in E)}, \if x \in E \br
-  0, \otherwise
+\frac{ f_X(x)}{ \b{P}(x \in E)}, \if x \in E \br
+0, \otherwise
 \end{cases} $</p>
 
   </div>
@@ -516,27 +516,21 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>The time $T$ until a call comes into a call center is modeled by an exponential random variable with parameter $\lambda &gt; 0$, you turn on phone, leave for $t$ units of time and return. The phone didn&rsquo;t ring that time. Let $X$ be additional time until phone rings. Let&rsquo;s find CDF of $X$ given $T&gt;t$,</p>
-
 <p>$$f_T(s) = \begin{cases}
 e^{- \lambda s}, s \geq 0 \br
 0 , \otherwise
 \end{cases} $$</p>
-
 <p>$$f_T(s) = \begin{cases}
 1-e^{- \lambda s}, s \geq 0 \br
 0 , \otherwise
 \end{cases} $$</p>
-
 <p>We seek $F_{X| T &gt; t} (x) = \b{P}(X \leq x | T &gt; t)$</p>
-
 <p>Note: $t + X = T = \b{P}(T - t \leq x | T &gt; t) $</p>
-
 <p>$$\begin{align*}
 F_{X| T &gt; t} (x) &amp;= \b{P}(X \leq x | T &gt; t) \br
 &amp;= 1- \b{P}(X &gt; x | T &gt; t) \br
@@ -547,11 +541,8 @@ F_{X| T &gt; t} (x) &amp;= \b{P}(X \leq x | T &gt; t) \br
 &amp;= 1 - \frac{ e^{- \lambda (x + t)}}{ e^{- \lambda t}} \br
 &amp;= 1 - e^{- \lambda x }
 \end{align*}$$</p>
-
 <p>This is the CDF of an exponential with parameter $\lambda$ !</p>
-
 <p>Note: doesn&rsquo;t depend on $t$. This property is special to exponential.</p>
-
 <p>This property is special to exponential, and is called &ldquo;memoryless&rdquo;.</p>
 
   </div>
@@ -567,16 +558,13 @@ F_{X| T &gt; t} (x) &amp;= \b{P}(X \leq x | T &gt; t) \br
 
 </div>
 
-
 <p>Recall: By definition, $E[X | A] = \int_{ -\infty }^{ +\infty }  x f_X|A(x) \d x $</p>
-
 
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="total-probability-theorem">Total Probability Theorem</span></span>
   <div class="block__content block__content--green">
   <p>Let $A_1, &hellip; , A_n$ be a partition of sample space. Then,</p>
-
 <p>1.$f_X(x) = \sum_{ i=1 }^{ n } f_{X \mid A_i}(x) \b{P}(A_i)$</p>
 
   </div><script>
@@ -610,37 +598,23 @@ F_{X| T &gt; t} (x) &amp;= \b{P}(X \leq x | T &gt; t) \br
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>Your arrival time at train stop is uniformly distributed between 7:10 to 7:30am. Trains arrive at 7:15am and 7:30am. Let $y $ be amount of time you wait for train. Let&rsquo;s find PDF of $Y $ and $E[Y]$.</p>
-
 <p>Let $A $ be the event that you arrive between 7:10 &amp; 7:15am.</p>
-
 <p>$f_Y(y) = f_{y \mid A}(y)\b{P}(A) + f_{y \mid A^c}(y)\b{P}(A^c)$</p>
-
 <p>$f_\set{Y|A}$ is uniform in $[0, 5]$.</p>
-
 <p>$f_\set{Y|A^c}$ is uniform in $[0, 15]$.</p>
-
 <p>so $f_{y|A}(Y) = \begin{cases}  \frac{ 1 }{ 5 }, \if y \in[0, 5] \br  0, \otherwise \end{cases}$</p>
-
 <p>so $f_{y|A^c}(Y) = \begin{cases}  \frac{ 1 }{ 15 }, \if y \in[0, 15] \br  0, \otherwise \end{cases}$</p>
-
 <p>$\b{P}(A) = \frac{ 5 }{ 20 } = \frac{ 1 }{ 4 }$</p>
-
 <p>For, $y \in [0, 5]$,</p>
-
 <p>$f_Y(y) = \frac{ 1 }{ 5 } \cdot \frac{ 1 }{ 4 } + \frac{ 1 }{ 15 } \frac{ 3 }{ 4 } = \frac{ 1 }{ 10 }$</p>
-
 <p>For, $y \in (5, 15]$,</p>
-
 <p>$f_Y(y) = 0 + \frac{ 1 }{ 15 } \frac{ 3 }{ 4 } = \frac{  1 }{ 20 }$</p>
-
 <p>so</p>
-
 <p>$$ f_Y(y) = \begin{cases}
 \frac{ 1 }{ 10 },  y \in [ 0, 5 ] \br
 \frac{ 1 }{ 20 },  y \in [5, 15]
@@ -661,35 +635,28 @@ F_{X| T &gt; t} (x) &amp;= \b{P}(X \leq x | T &gt; t) \br
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="total-expectation-theorem">Total Expectation Theorem</span></span>
   <div class="block__content block__content--green">
   <p>Let $A_1, &hellip;, A_n$ partitions sample space. Then,</p>
-
 <p>$E[X] \sum_{ i=1 }^{ n } E[X|A_i] \b{P}(A)$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Integrate the equality in total expectation theorem.</p>
-
 <p>$\b{P}(X \leq x) = \sum_{ i=1 }^{ n }\b{P}(X \leq x | A_i)\b{P}(A_i)$</p>
-
 <p>$\begin{align*}
 \int_{ -fin }^{ x } f_X(y) \d y = \sum_{ i=1 }^{ n } \int_{ -\infty }^{ x } f_{X \mid A}(y)\b{P}(A) \d y
 \end{align*}$</p>
-
 <p>take  d/dx to get 1.</p>
-
   </div>
 </div>
 
@@ -724,7 +691,6 @@ F_{X| T &gt; t} (x) &amp;= \b{P}(X \leq x | T &gt; t) \br
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: continued
     
@@ -751,7 +717,6 @@ F[y] &amp;= E[Y|A]\b{P}(A) + E[Y|A^c]\b{P}(A^c) \br
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
@@ -772,18 +737,13 @@ F[y] &amp;= E[Y|A]\b{P}(A) + E[Y|A^c]\b{P}(A^c) \br
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition</span>
   <div class="block__content block__content--blue">
     <p>For any $y$ with $f_Y(y) &gt; 0$. The conditional PDF of $X$ given $Y=y$ is</p>
-
 <p>$$f_{X \mid Y}(x \mid y) = \frac{f_{X,Y}(x,y)}{ f_Y(y)}$$</p>
-
 <p>To justify this, can consider for $\delta \approx 0 $</p>
-
 <p>$$\b{P}(x \leq X \leq x + \delta \mid y \leq Y \leq y+ \delta) $$</p>
-
 <p>Apply old definition, and take $\delta \to 0$.</p>
 
   </div>
@@ -798,28 +758,25 @@ F[y] &amp;= E[Y|A]\b{P}(A) + E[Y|A^c]\b{P}(A^c) \br
   </ul></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="total-probability-theorem">Total Probability Theorem</span></span>
   <div class="block__content block__content--green">
   <p>$f_X(x) = \int_{ -\infty }^{ +\infty } f_{X \mid Y}(x|y)f_Y(y) \d y$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$$\begin{align*}
 f_X(x) &amp;= \int_{ -\infty }^{ +\infty } f_{X, Y}(x, y) \d y \br
 &amp;= \int_{ -\infty }^{ +\infty } f_{X \mid Y}(x \mid y) f_Y(y) \d y\ (definition)
 \end{align*}$$</p>
-
   </div>
 </div>
 
@@ -853,43 +810,29 @@ f_X(x) &amp;= \int_{ -\infty }^{ +\infty } f_{X, Y}(x, y) \d y \br
   </ul>
 </div>
 
-
 <ul>
 <li>In examples or modeling, it can be natural to define one random variable and then describe a second one in terms of the first.</li>
 </ul>
-
 <p>i.e. know $f_X, f_{y|X}$.</p>
-
 <p>Can use this to find $f_{X,Y}, f_y, etc. $</p>
-
 <p>e.g. The speed of a typical vehicle driving put a police officer is modeled by an exponential random variable $X$ with mean $50$ mph.</p>
-
 <p>The radar&rsquo;s measurement of the speed $y$ has an error that&rsquo;s normal with mean $0 $ and speed equal to $\frac{ 1 }{ 10 }$ of vehicle&rsquo;s speed. Find $f_{X, Y}$(From this case find $f_Y$)</p>
-
 <p>We see if speed is $x $, then $y = x + N$</p>
-
 <p>note:</p>
-
 <p>$x+N $ is also normal, with mean $x$ and variance (= speed^2)</p>
-
 <p>$$f_{Y \mid X}(y \mid x) = \frac{ 1 }{ \sqrt{2 \pi} \frac{ x }{ 10 }} e^{ \frac{ -(y-x)^2 }{ x^2 /50 }}$$</p>
-
 <p>Since $X $ exponential means,</p>
-
 <p>$$ f_X(x) = \begin{cases}
 \lambda e^{- \lambda x}a, \if x \geq o \br
 0, \otherwise
 \end{cases} $$</p>
-
 <p>In our situation,
 $E[X] = 50$, hence, $\frac{ 1 }{ \lambda } = 50$ and $\lambda = \frac{ 1 }{ 50 }$</p>
-
 <p>so $f_X(x) =
 \begin{cases}
 \frac{ 1 }{ 50 }e^{-x /50}, \if x \geq 0 \br
 0, \otherwise
 \end{cases}</p>
-
 <p>f_{X, Y}(x,y) = \frac{ 1 }{ sqrt{2 \pi} \frac{ x }{ 10 }} e^{-50 (y-x)^2 / x^2} \frac{ 1 }{ 50 }
 $</p>
       </div>
@@ -1616,13 +1559,13 @@ $</p>
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

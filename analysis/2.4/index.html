@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Monotone Sequences and Cauchy Sequences - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -289,7 +299,6 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="monotonic-sequences">Monotonic Sequences</span></span>
   <div class="block__content block__content--blue">
@@ -327,41 +336,30 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>All bounded monotone sequences converge.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Let $(s_n) $ be a bounded increasing sequence.</p>
-
 <p>Let $S $ denote the set $\set{ s_n : n \in \N } $.</p>
-
 <p>Want to show $\lim s_n = u$.</p>
-
 <p>Let $\epsilon &gt; 0 $. Since $\supr{ S } - \epsilon $ is not an upper bound for $S $, there exists $N $ such that $s_N &gt; u - \epsilon $.</p>
-
 <p>Since $(s_n) $ is increasing, we have $s_N \leq s_n $ for all $n \geq \N $.</p>
-
 <p>Also, $s_n \leq \supr{ S } $ for all $n $.</p>
-
 <p>$\therefore \supr{ S } - \epsilon &lt; s_n \leq u $, which implies $\abs{ s_n - u } &lt; \epsilon$.</p>
-
 <p>This shows $\lim s_n = u$.</p>
-
 <p>Similar for decreasing sequences.</p>
-
   </div>
 </div>
 
@@ -374,7 +372,6 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--green ">
@@ -383,23 +380,19 @@ if (!doNotTrack) {
   <div class="block__content block__content--green">
   <p>If $(s_n)$ is an unbounded increasing sequence, then $\lim s_n = +\infty $.
 If $(s_n)$ is an unbounded decreasing sequence, then $\lim s_n = -\infty $.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Let $(s_n) $ be an unbounded increasing sequence. Let $M &gt; 0 $.</p>
-
 <p>Since the set $\set{ s_n: n \in \N }$ is unbounded above, for some $N $ in $\N $ we have $s_N &gt; M $.</p>
-
 <p>Clearly  $n &gt; N$ implies $s_n \geq s_N &gt; M $, so $\lim s_n = +\infty$.</p>
-
   </div>
 </div>
 
@@ -412,7 +405,6 @@ If $(s_n)$ is an unbounded decreasing sequence, then $\lim s_n = -\infty $.</p>
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--green ">
@@ -435,14 +427,11 @@ If $(s_n)$ is an unbounded decreasing sequence, then $\lim s_n = -\infty $.</p>
   </ul></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition</span>
   <div class="block__content block__content--blue">
     <p>Let $(s_n) $ be a sequence in $\R $. We define</p>
-
 <p>$\lim \supr{ s_n } = \limu{ N }{ \infty } \supr{ \set{ s_n : n &gt; N }} $</p>
-
 <p>$\lim \infi{ s_n } = \limu{ N }{ \infty } \infi{ \set{ s_n : n &gt; N }} $</p>
 
   </div>
@@ -457,12 +446,10 @@ If $(s_n)$ is an unbounded decreasing sequence, then $\lim s_n = -\infty $.</p>
   </ul></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>In this definition we do not restrict $(s_n) $ to be bounded. However, we adopt the following conventions. If $(s_n) $ is not bounded above, $\supr{ s_n : n &gt; N } = +\infty$ for all $N $ and we decree $\lim \supr{ s_n } = +\infty$. Likewise, if $(s_n) $ is not bounded below, $\infi{ \set{ s_n : n &gt; N }} = -\infty $ for all $N $ and we decree $\lim \infi{ s_n } = -\infty $.</p>
-
 <p>$\lim \supr{ s_n }$ may not equal $\supr{ s_n : n \in \N } $, but $\lim \supr{ s_n } \leq \supr{ \set{ s_n : n \in \N }}$.</p>
 
   </div>
@@ -477,16 +464,19 @@ If $(s_n)$ is an unbounded decreasing sequence, then $\lim s_n = -\infty $.</p>
   </ul></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>Let $(s_n) $ be a sequence in $\R $.</p>
-
-<p>1) If $\lim s_n $ exists, then $\lim \infi{ s_n } = \lim s_n = \lim \supr{ s_n } $.</p>
-
-<p>2) If $\lim s_n = \lim \supr{ s_n }$, then $\lim s_n$ exists and $\lim s_n = \lim \infi{ s_n } = \lim \supr{ s_n } $.</p>
+<ol>
+<li>
+<p>If $\lim s_n $ exists, then $\lim \infi{ s_n } = \lim s_n = \lim \supr{ s_n } $.</p>
+</li>
+<li>
+<p>If $\lim s_n = \lim \supr{ s_n }$, then $\lim s_n$ exists and $\lim s_n = \lim \infi{ s_n } = \lim \supr{ s_n } $.</p>
+</li>
+</ol>
 
   </div><ul class="block__footer">
     <li class="block__footer-item">
@@ -499,14 +489,11 @@ If $(s_n)$ is an unbounded decreasing sequence, then $\lim s_n = -\infty $.</p>
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition</span>
   <div class="block__content block__content--blue">
     <p>A sequence $(s_n) $ of real numbers is called a <strong>Cauchy sequence</strong> if</p>
-
 <p>for each $\epsilon &gt; 0 $ there exists a number $N $ such that</p>
-
 <p>$$m,n &gt; N \implies \abs{ s_n - s_m } &lt; \epsilon $$</p>
 
   </div>
@@ -521,40 +508,30 @@ If $(s_n)$ is an unbounded decreasing sequence, then $\lim s_n = -\infty $.</p>
   </ul></div>
 
 
-
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   
   </span>
   <div class="block__content block__content--green">
   <p>Convergent sequences are Cauchy sequences.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Suppose $\lim s_n = s$.</p>
-
 <p>$$\abs{ s_n - s_m } = \abs{ s_n - s + s - s_m } \leq \abs{ s_n - s } + \abs{ s - s_m }$$</p>
-
 <p>Let $\epsilon &gt; 0 $, then there exists $N$ such that</p>
-
 <p>$n &gt; N $ implies $\abs{ s_n - s } &lt; \epsilon /2 $</p>
-
 <p>$m &gt; N $ implies $\abs{ s_m - s } &lt; \epsilon /2 $</p>
-
 <p>so</p>
-
 <p>$m, n &gt; N $ implies $\abs{ s_n - s_m } \leq \abs{ s_n - s } + \abs{ s - s_m } &lt; \frac{ \epsilon }{ 2 } + \frac{ \epsilon }{ 2 } = \epsilon$</p>
-
 <p>Thus $(s_n)$ is a Cauchy sequence.</p>
-
   </div>
 </div>
 
@@ -568,7 +545,6 @@ If $(s_n)$ is an unbounded decreasing sequence, then $\lim s_n = -\infty $.</p>
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--green">
@@ -577,23 +553,19 @@ If $(s_n)$ is an unbounded decreasing sequence, then $\lim s_n = -\infty $.</p>
   </span>
   <div class="block__content block__content--green">
   <p>Cauchy sequences are bounded.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Applying definition of Cauchy sequence with $\epsilon = 1 $ we obtain $N $ in $\N $ so that</p>
-
 <p>$$m, n &gt; N \implies \abs{ s_n - s_m } &lt; 1 $$</p>
-
 <p>In particular, $\abs{ s_n - s_{N+1}} &lt; 1$ for $n &gt; N $, so $\abs{ s_n } &lt; \abs{ s_{N+1} + 1}$ for $n &gt; N $. If $M = \max{ \set{ \abs{ s_{N+1} + 1}, \abs{ s_1 }, \abs{ s_2 }, &hellip;, \abs{ s_N }}}$ for all $n \in \N $.</p>
-
   </div>
 </div>
 
@@ -609,47 +581,33 @@ If $(s_n)$ is an unbounded decreasing sequence, then $\lim s_n = -\infty $.</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>Let $(s_n) $ be a sequence in $\R $.</p>
-
 <p>$(s_n)$ is a convergent sequence if and only if it is a Cauchy sequence.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>We have already proved that A convergent sequence is a Cauchy sequence.</p>
-
 <p>Now we need to prove that a Cauchy sequence is a convergent sequence.</p>
-
 <p>We have also proved that Cauchy sequences are bounded, we now only need to prove that $$\lim \infi{ s_n } = \lim \supr{ s_n }$$ by theorem 10.7.</p>
-
 <p>Let $\epsilon &gt; 0 $. Since $(s_n) $ is a Cauchy sequence, there exists $N $ so that $m,n &gt; N $ implies $\abs{ s_n - s_m } &lt; \epsilon $.</p>
-
 <p>In particular, $s_n &lt; s_m + \epsilon$ for all $m, n &gt; N$.</p>
-
 <p>Then $s_m + \epsilon $ is an upper bound for $\set{ s_n : n &gt; N }$, so $v_N = \supr{ s_n : n &gt; N } \leq s_m + \epsilon $ for $m &gt; N $.</p>
-
 <p>Since $s_m &gt; \supr{ s_n : n &gt; N } - \epsilon $,  $u_N = v_N - \epsilon $ is a lower bound for $\set{ s_m : m &gt; N }$.</p>
-
 <p>Thus,</p>
-
 <p>$$\lim \supr{ s_n } \leq v_N \leq u_N + \epsilon \leq \lim \infi{ s_n } + \epsilon $$.</p>
-
 <p>Since this holds for all $\epsilon &gt; 0 $, we have $\lim \supr{ s_n } \leq \lim \infi{ s_n } $. By switching $m $ and $n $ in this proof, the opposite of this inequality also holds, then we have</p>
-
 <p>$$\lim \infi{ s_n } = \lim \supr{ s_n }$$</p>
-
   </div>
 </div>
 
@@ -1552,13 +1510,13 @@ If $(s_n)$ is an unbounded decreasing sequence, then $\lim s_n = -\infty $.</p>
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

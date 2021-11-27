@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Introduction - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -295,29 +305,20 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="optimization-problems">Optimization Problems</span></span>
   <div class="block__content block__content--blue">
     <p>In the optimization problem</p>
-
 <p>$$\begin{align*}
 \text{minimize } &amp;f(\b{x})  \br
 \text{subject to } &amp; \b{x} \in \Omega
 \end{align*}$$</p>
-
 <p>The function $f:\R^n\to\R$ that we wish to minimize is a real-valued function, and is called the <strong>objective function</strong>, or <strong>cost function</strong>.</p>
-
 <p>The vector $\b{x} $ is an $n$-vector of independent variables, that is, $\b{x} = \transpose{(x_1, x_2, &hellip;, x_{ n })} \in \R^n$. This vector is called the <strong>minimizer</strong> of $f $ over $\Omega $.</p>
-
 <p>The variables $x_1, x_2, &hellip;, x_{ n } $ are often referred to as <strong>decision variables</strong>.</p>
-
 <p>The set $\Omega$ is a subset of $\R^n$ called the <strong>constraint set</strong> of <strong>feasible set</strong>.</p>
-
-<p><br></p>
-
+<br>
 <p>If $\Omega = \R^n$, then the problem is referred to as an <strong>unconstrained optimization problem</strong>.</p>
-
 <p>Otherwise, the problem is referred to as an <strong>constrained optimization problem</strong>.</p>
 
   </div>
@@ -352,20 +353,14 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="local-minimizer">Local Minimizer</span></span>
   <div class="block__content block__content--blue">
     <p>$f: \R^n \to \R , \Omega \subseteq \R^n $.</p>
-
 <p>A point $\b{x}^* \in \Omega$ is a <strong>local minimizer</strong> of $f $ over $\Omega $ if</p>
-
 <p>$\exists \epsilon &gt; 0 $ such that $\forall \b{x} \in \Omega \setminus \set{ \b{x}^* }, \norm{ \b{x} - \b{x}^* } &lt; \epsilon$ implies $f(\b{x}) \geq f(\b{x}^*)$.</p>
-
 <p>In particular, if</p>
-
 <p>$\norm{ \b{x} - \b{x}^* } &lt; \epsilon$ implies $f(\b{x}) &gt; f(\b{x}^*)$.</p>
-
 <p>The point $\b{x}^* $ is a <strong>strict local minimizer</strong>.</p>
 
   </div>
@@ -400,18 +395,13 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="global-minimizer">Global Minimizer</span></span>
   <div class="block__content block__content--blue">
     <p>A point $\b{x}^* \in \Omega $ is a <strong>global minimizer</strong> of $f $ over $\Omega $ if</p>
-
 <p>$$\forall \b{x} \in \Omega \setminus \set{ \b{x}^* }, f(\b{x}) \geq f(\b{x}^*) .$$</p>
-
 <p>In particular, if</p>
-
 <p>$$f(\b{x}) &gt; f(\b{x}^*).$$</p>
-
 <p>$\b{x}^*$ is a <strong>strict global minimizer</strong>.</p>
 
   </div>
@@ -445,8 +435,7 @@ if (!doNotTrack) {
       })();
     </script></div>
 
-
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fw3xdnv6bnj31d60qy424.jpg" alt="global and local minimizers" /></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fw3xdnv6bnj31d60qy424.jpg" alt="global and local minimizers"></p>
       </div>
     </article>
     <aside class="navigation--side">
@@ -1367,13 +1356,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

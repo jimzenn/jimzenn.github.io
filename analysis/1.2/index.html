@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>The Set Q of Rational Numbers - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -284,12 +294,10 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="rational-numbers-%5Cq">Rational Numbers $\Q$</span></span>
   <div class="block__content block__content--blue">
     <p>A rational number is a number of the form $\frac{ m }{ n } $ where $m, n \in \Z $ and $n \neq 0 $.</p>
-
 <p>The <u>space</u> of all rational numbers is denoted by $\Q $.</p>
 
   </div>
@@ -324,14 +332,11 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="algebraic-number">Algebraic Number</span></span>
   <div class="block__content block__content--blue">
     <p>A number is called an <strong>algebraic number</strong> if it satisfies a polynomial equation</p>
-
 <p>$$c_nx^n + c_{n-1}x^{n-1} + &hellip; + c_1x + c_0 = 0 $$</p>
-
 <p>where the coefficients $c_0, c_1, &hellip;, c_n$ are integers, $c_n \neq 0$ and $n \geq 1 $.</p>
 
   </div>
@@ -366,7 +371,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
@@ -384,31 +388,25 @@ if (!doNotTrack) {
   </ul></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>Prove $\frac{ 4 }{ 17 }, \sqrt{ 3 }, \sqrt[ 3 ]{ 17 }, \sqrt[  ]{ 2 + \sqrt[ 3 ]{ 5 }}, $ and $\sqrt[  ]{ \frac{ 4 - 2 \sqrt[  ]{ 3 }}{ 7 }} $ are algebraic numbers.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$\frac{ 4 }{ 17 }$ is a solution of $17x - 4 = 0 $.</p>
-
 <p>$\sqrt[  ]{ 3 } $ is a solution of $x^2 = 3 $.</p>
-
 <p>$\sqrt[  ]{ 2 + \sqrt[ 3 ]{ 5 }} $ is a solution of $x^6 - 6x^4 + 12 x^2 -13 = 0 $.</p>
-
 <p>$\sqrt[  ]{  \frac{  4 - 2 \sqrt[  ]{ 3 }}{ 7 }} $ is a solution of $49x^4 - 56x^2 + 4 = 0 $.</p>
-
   </div>
 </div>
 
@@ -424,7 +422,6 @@ if (!doNotTrack) {
   </ul>
 
 </div>
-
 
 
 <div class="block block--blue ">
@@ -464,54 +461,37 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="rational-zeros-theorem">Rational Zeros Theorem</span></span>
   <div class="block__content block__content--green">
   <p>Suppose $c_1, _2, &hellip;, _{ n } $ are integers and $r $ is a rational number satisfying the polynomial equation</p>
-
 <p>$$c_nx^n + c_{n-1}x^{n-1} + &hellip; + c_1x + c_0 = 0 $$</p>
-
 <p>where $n \geq 1, c_n \neq 0 $ and $c_0 \neq 0 $. Let $r = \frac{ c }{ d } $ where $c, d $ are integeres having no common factors and $d \neq 0 $. Then $c $ divides $c_0 $ and $d $ divdes $c_n $.</p>
-
 <p>In other words, the only rational <u>candidates</u> for solutions of the equation have the form $\frac{ c }{ d } $ where $c $ divides $c_0 $ and $d $ divides $c_n $.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Want to prove that for any rational number $r = \frac{ c }{ d } $ satisfying the polynomial</p>
-
 <p>$$c_nx^n + c_{n-1}x^{n-1} + &hellip; + c_1x + c_0 = 0 $$</p>
-
 <p>$c$ divides $c_0 $, $d $ divides $c_n$.</p>
-
 <p>Since $r $ satisfies the equation, we have</p>
-
 <p>$$c_n \pare{\frac{ c }{ d }}^n + c_{n-1} \pare{\frac{ c }{ d }}^{n-1} + &hellip; + c_1 \pare{\frac{ c }{ d }} + c_0 = 0 $$</p>
-
 <p>Multiply through by $d^n $,</p>
-
 <p>$$c_nc^n + c_{n-1}c^{n-1}d + &hellip; + c_1cd^{n-1} + c_0d^n = 0 $$
 Solve for $c_0d^n $, we obtain</p>
-
 <p>$$c_0d^n = -c \times [c_nc^{n-1} + c_{n-1}c^{n-2}d + c_{n-2}c^{n-3}d^2 + &hellip; + c_2cd^{n-2} + c_1 d^{n-1}] $$</p>
-
 <p>Since $c $ and $d^n $ have no common factors, so $c $ divides $c_0 $.</p>
-
 <p>Similarly solve for $c_nc^n $ and obtain</p>
-
 <p>$$c_nc^n = -d \times [c_{n-1}c^{n-1} + c_{n-2}c^{n-2}d + &hellip; + c_2c^2d^{n-3} + c_1 cd^{n-2} + c_0d^{n-1}] $$</p>
-
 <p>Again, since $c $ and $d^n $ have no common factors, so $d $ divides $c_nc^n $.</p>
-
   </div>
 </div>
 
@@ -546,7 +526,6 @@ Solve for $c_0d^n $, we obtain</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   </span>
@@ -554,23 +533,19 @@ Solve for $c_0d^n $, we obtain</p>
 
   <div class="block__content block__content--green">
   <p>Consider the polynomial equation</p>
-
 <p>$$x^n + c_{n-1}x^{n-1} + &hellip; + c_1x + c_0 = 0 $$</p>
-
 <p>where the coefficients $c_1, c_2, &hellip;, c_{ n-1 }$ are integers and $c_0 \neq 0 $. Any rational solution of this equation must be an integer that divides $c_0$.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>In the Ration Zeros Theorem, the denominator of $r$ must divide the coefficient of $x^n$, which is $1$ in this case. Thus $r$ is an integer and it divides $c_0$.</p>
-
   </div>
 </div>
 
@@ -584,7 +559,6 @@ Solve for $c_0d^n $, we obtain</p>
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul></div>
-
 
 
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
@@ -604,29 +578,24 @@ Solve for $c_0d^n $, we obtain</p>
   </ul></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>Prove that $\sqrt[  ]{ 2 } $ is not a rational number.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Let $x = \sqrt{ 2 }$, then we $x^2 - 2 = 0$.</p>
-
 <p>By the corollary, the only rational numbers that could possibly be solutions of $x^2 - 2 = 0$ are $\pm 1, \pm 2$, which does not include $\sqrt[  ]{ 2 } $.</p>
-
 <p>Hence, $x $ is not a rational number.</p>
-
   </div>
 </div>
 
@@ -1532,13 +1501,13 @@ Solve for $c_0d^n $, we obtain</p>
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

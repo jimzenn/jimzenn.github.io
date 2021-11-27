@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Newton&#39;s Method for Nonlinear Least-Squares - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -303,14 +313,11 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="nonlinear-least-squares-problem">Nonlinear Least-Squares Problem</span></span>
   <div class="block__content block__content--blue">
     <p>$$\text{minimize} \sum_{ i=1 }^{ m } (r_i(\b{x}))^2 $$</p>
-
 <p>where $r_i : \R^n \to \R, i = 1, &hellip;, m $, are given functions.</p>
-
 <p>This particular problem is called a <strong>nonlinear least-squares problem</strong>.</p>
 
   </div>
@@ -343,7 +350,6 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note: <span class="keyword" id="linear-least-squares-problem">Linear Least-Squares Problem</span>
@@ -384,56 +390,36 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>Suppose we are given $m $ measurements of a process at m points in time. Let $t_1, _2, &hellip;, _{ m } $ denote the measurement times, and $y_1, _2, &hellip;, _{ m } $ the mesurement values. Note that $t_1 = 0 $ while $t_{21} = 10 $. We wish to fit a sinusoid to the measurement data. The equation of the sinusoid is $y= A \sin (\omega t + \phi) $ with appropriate choices of the parameters $A, \omega, $ and $\phi $.</p>
-
 <p>To formulate the data-fitting problem, we construct the objective function</p>
-
 <p>$$\sum_{ i=1 }^{ m } (y_i - A \sin (\omega t_i + \phi))^2 $$</p>
-
 <p>representing the sum of the squared errors between the measurement values and the function values at the corresponding points in time. Let $\b{x} = \transpose{ [A, \omega, \phi] } $ represent the vector of decision variables. We therefore obtain a nonlinear least-squares problem with</p>
-
 <p>$$r_i(\b{x}) = y_i - A sin(\omega t_i + \phi) $$</p>
-
 <p>Defining $\b{r} = \transpose{ [r_1, &hellip;, r_m] } $, we write the objective function as $f(\b{x}) = \transpose{ \b{r}(\b{x})} \b{r}(\b{x})$. To apply Newton&rsquo;s method, we need to compute the gradient and the Hessian of $f $. The $j$th component of $\nabla f(\b{x}) $ is</p>
-
 <p>$$\begin{align*}
 (\nabla f(\b{x}))_j &amp;= \pder{ f }{ x_j }(\b{x}) \br
 &amp;= 2 \sum_{ i=1 }^{ m } r_i(\b{x}) \pder{ r_i }{ x_j }(\b{x})
 \end{align*}$$</p>
-
 <p>Denote the Jacobian matrix of $\b{r} $ by</p>
-
 <p>$$\b{J}(\b{x}) = {\Mee{ \pder{ r_1 }{ x_1 }(\b{x})}{ &hellip; }{ \pder{ r_1 }{ x_n } (\b{x})}{ \vdots }{  }{ \vdots }{ \pder{ r_m }{ x_1 }(\b{x})}{ &hellip; }{ \pder{ r_m }{ x_n } (\b{x})}} $$</p>
-
 <p>Then, the gradient of $f $ can be represented as</p>
-
 <p>$$\nabla f(\b{x}) = 2 \transpose{ \b{J}(\b{x})} \b{r}(\b{x}) $$</p>
-
 <p>Next, we compute the Hessian matrix of $\b{f} $. The $(k, j)$th component of the Hessian is given by</p>
-
 <p>$$\begin{align*}
 \pderws{f}{x_k}{x_j}(\b{x}) &amp;= \pder{  }{ x_k }\pare{\pder{ f }{ x_j }(\b{x})} \br
 &amp;= \pder{  }{ x_k }\pare{2 \sum_{ i=1 }^{ m } r_i(\b{x}) \pder{ r_i }{ x_j }(\b{x})} \br
 &amp;= 2\sum_{ i=1 }^{ m }\pare{\pder{ r_i }{ x_k }(\b{x}) \pder{ r_i }{ x_j }(\b{x}) + r_i(\b{x}) \pderws{r_i}{x_k}{x_j}(\b{x})}
 \end{align*}$$</p>
-
 <p>Letting $\b{S}(\b{x}) $ be the matrix whose $(k, j) $th component is</p>
-
 <p>$$r_i(\b{x}) \pderws{r _i}{x_k}{x_j}(\b{x}) $$</p>
-
 <p>we write the Hessian matrix as</p>
-
 <p>$$\b{F}(\b{x}) = 2(\transpose{\b{J}(\b{x})} \b{J}(\b{x}) + \b{S}(\b{x})) $$</p>
-
 <p>Therefore, Newton&rsquo;s method applied to the nonlinear least-squares problem is given by</p>
-
 <p>$$\b{x}^{(k+1)} = \b{x}^{(k)} - \inv{(\transpose{ \b{J}(\b{x})}\b{J}(\b{x}) + \b{S}(\b{x}))} \transpose{ \b{J}(\b{x})}\b{r}(\b{x})$$</p>
-
 <p>In some applications, the matrix $\b{S}(\b{x}) $ involving the second derivatives of the function $\b{r} $ can be ignored because its components are negligibly small. In this case, the above Newton&rsquo;s algorithm reduces to what is commonly called the <strong>Gauss-Newton method</strong> does not require calculation of the second derivatives of $\b{r}$.</p>
 
   </div>
@@ -1368,13 +1354,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

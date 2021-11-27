@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Markov and Chevyshev Inequalities - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -304,63 +314,44 @@ if (!doNotTrack) {
   
 
 </div>
-
 <p>We derive some important inequalities in this section, which use the mean and
 sometimes the variance of a random variable to draw conclusions on the probabilities of certain events.</p>
-
 <p>They are primarily useful in situations where <strong>exact values or bounds for the mean and variance of a random variable $X $ are easily computable, but the distribution of $X $ is either unavailable or hard to calculate.</strong> Essentially, they provide us
 with a range approximation of the probability.</p>
-
 
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="markovs-inequality">Markov&#39;s Inequality</span></span>
   <div class="block__content block__content--blue">
     <p><strong>Markov inequality</strong> asserts that if a <strong>nonnegative</strong> random variable has a
 small mean, then the probability that it takes a large value must also be small.</p>
-
 <p>If a random variable $X $ can only take nonnegative values, then</p>
-
 <p>$$P(X \geq a) \leq \frac{ E [X] }{ a }, \forall a &gt; 0$$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Fix a positive number $a$ and consider the random variable $Y_a$ defined by</p>
-
 <p>$$Y_a = \begin{cases}
 0 &amp;,\text{ if }X &lt; a \br
 a &amp;,\text{ if }X \geq a
 \end{cases} $$</p>
-
 <p>It is seen that the relation</p>
-
 <p>$$Y_a \leq X $$</p>
-
 <p>always holds and therefore,</p>
-
 <p>$$E[Y_a] \leq E [ X ]$$.</p>
-
 <p>Notice the fact that by definition</p>
-
 <p>$P(Y_a = 0) = P(X &lt; a)$</p>
-
 <p>$P(Y_a = a) = P(X \geq a)$</p>
-
 <p>Therefore,</p>
-
 <p>$$E [ Y_a ] = 0P(Y_a = 0) + aP(Y_a = a) = aP(Y_a = a) = a P(X \geq a)$$</p>
-
 <p>from which we obtain</p>
-
 <p>$$aP(X \geq a) \leq E[X] $$</p>
-
   </div>
 </div>
 
@@ -396,7 +387,6 @@ a &amp;,\text{ if }X \geq a
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   </span>
@@ -404,30 +394,29 @@ a &amp;,\text{ if }X \geq a
 
   <div class="block__content block__content--green">
   <p>Let $X$ be a random variable. Then $\forall a &gt; 0$</p>
-
 <p>$$\begin{align*}
 P(\abs{ X } \geq a) &amp;\leq \frac{ E [ \abs{ X } ] }{ a } \br
 P(\abs{ X } \geq a) &amp;\leq \frac{ E [ \abs{ X }^n ] }{ a^n }
 \end{align*}$$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <ol>
-<li><p>follows directly from Markov&rsquo;s inequality on the random variable $\abs{X}$.</p></li>
-
-<li><p>Let $X = \abs{ X }^n, a = a^n $. Markov implies that</p></li>
+<li>
+<p>follows directly from Markov&rsquo;s inequality on the random variable $\abs{X}$.</p>
+</li>
+<li>
+<p>Let $X = \abs{ X }^n, a = a^n $. Markov implies that</p>
+</li>
 </ol>
-
 <p>$$P(\abs{ X } \geq a) = P(\abs{ X }^n \geq a^n) \leq \frac{ E [ \abs{ X }^n ] }{ a^n }$$</p>
-
   </div>
 </div>
 
@@ -443,28 +432,23 @@ P(\abs{ X } \geq a) &amp;\leq \frac{ E [ \abs{ X }^n ] }{ a^n }
   </ul></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="chebyshev-inequality">Chebyshev Inequality</span></span>
   <div class="block__content block__content--blue">
     <p>If $X$ is a random variable with mean $\mu$ and variance $\sigma^2$, then</p>
-
 <p>$$\forall c &gt; 0, P(\abs{ X - \mu } \geq c) \leq \frac{ \sigma^2 }{ c^2 }$$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Set $Y = X - \mu$, let $n = 2$, using Markov inequality corollary 2.</p>
-
 <p>$$P(\abs{ X - E [ X ] } \geq c) \leq \frac{E[(X-E[X])^2]}{c^2}$$</p>
-
   </div>
 </div>
 
@@ -500,7 +484,6 @@ P(\abs{ X } \geq a) &amp;\leq \frac{ E [ \abs{ X }^n ] }{ a^n }
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   </span>
@@ -508,21 +491,18 @@ P(\abs{ X } \geq a) &amp;\leq \frac{ E [ \abs{ X }^n ] }{ a^n }
 
   <div class="block__content block__content--green">
   <p>If $X$ is a random variable with mean $\mu$ and variance $\sigma^2$, then</p>
-
 <p>$$\forall s&gt;0, P(\abs{X- \mu} \geq s \sigma) \leq \frac{1}{s^2}$$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>set $c = s \sigma $ in Chebyshev inequality.</p>
-
   </div>
 </div>
 
@@ -538,14 +518,12 @@ P(\abs{ X } \geq a) &amp;\leq \frac{ E [ \abs{ X }^n ] }{ a^n }
   </ul></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>The Chebyshev inequality tends to be more powerful than the Markov inequality,
 since it provides more accurate bounds using the information on the variance of
 $X$.</p>
-
 <p>Still, the mean and the variance of a random variable are only a rough summary
 of its properties, and we cannot expect the bounds to be closed aproximations
 of the exact probabilities.</p>
@@ -562,7 +540,6 @@ of the exact probabilities.</p>
   </ul></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: Uninformative Chebyshev Bounds
     
@@ -570,9 +547,7 @@ of the exact probabilities.</p>
   <div class="block__content block__content--gray">
     <p>Let $X$ be uniformly distributed in $[0, 4] $. Use Chebyshev inequality to
 bound the probability that $\abs{ X - 2 } \geq 1 $. We have</p>
-
 <p>$$P(\abs{ X - 2 } \geq 1) \leq \frac{ 4 }{ 3 } $$</p>
-
 <p>This example shows that Chebyshev inequality sometimes provides bounds that are so loose that it provides no information at all.</p>
 
   </div>
@@ -589,15 +564,12 @@ bound the probability that $\abs{ X - 2 } \geq 1 $. We have</p>
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>Let $X $ be exponentially distributed with parameter $\lambda = 1 $, so that $E[X] = \var{ X } = 1 $. For $c &gt; 1 $, using the Chebyshev inequality, we obtain</p>
-
 <p>$$P(X \geq c) = P(X - 1 \geq c - 1) \leq P(\abs{ X - 1 } \geq c - 1) \leq \frac{ 1 }{(c - 1)^2 }$$</p>
-
 <p>Comparing to the exact answer $P(X \geq c) = e^{-c} $, this is a very conservative estimation.</p>
 
   </div>
@@ -614,7 +586,6 @@ bound the probability that $\abs{ X - 2 } \geq 1 $. We have</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   : <span class="keyword" id="upper-bounds-in-the-chebyshev-inequality">Upper Bounds in the Chebyshev Inequality</span></span>
@@ -622,33 +593,24 @@ bound the probability that $\abs{ X - 2 } \geq 1 $. We have</p>
 
   <div class="block__content block__content--green">
   <p>When $X $ is known to take values in a range $[a, b] $ we claim that</p>
-
 <p>$$\sigma^2 \leq (b-a)^2 / 4$$</p>
-
 <p>Thus if $\sigma^2$ is unknown, we may use the bound $(b -a)^2 /4 $ in place of $\sigma^2 $ in the Chebyshev inequality, and obtain</p>
-
 <p>$$P(\abs{ X - \mu } \geq c) \leq \frac{(b - a)^2 }{ 4 c^2 }, \forall c &gt; 0 $$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Note that for any constant $\gamma $ we have</p>
-
 <p>$$E[(X - \gamma)^2] = E[X^2] -2 E[X] \gamma + \gamma^2 $$</p>
-
 <p>The quadratic is minimized when $\gamma = E[X]$. It follows that</p>
-
 <p>$$\sigma^2 = E[(X - E[X])^2] \leq E[(X - \gamma)^2], \forall \gamma$$</p>
-
 <p>By letting $\gamma = (a + b) / 2 $, we obtain</p>
-
 <p>$$\begin{align*}
 \sigma^2 &amp;\leq E[(X - \frac{ a+ b }{ 2 })^2]  \br
 &amp;= E[X^2 - (a+b)X + \frac{(a+b)^2 }{ 4 }] \br
@@ -656,13 +618,9 @@ bound the probability that $\abs{ X - 2 } \geq 1 $. We have</p>
 &amp;= E[(X -a)(X -b)] + \frac{(b-a)^2 }{ 4 } \br
 &amp;\leq \frac{(b-a)^2 }{ 4 }
 \end{align*}$$</p>
-
 <p>Since $x \in [a, b], E[(X -a)(X - b)] \leq 0 $.</p>
-
 <p>The bound $\sigma^2 \leq (b -a)^2 /4 $ may be quite conservative, <strong>but in the absence of further information about $X$, it cannot be improved.</strong></p>
-
 <p>When $X $ is the random variable that takes the $a $ and $b $ with equal probability $\frac{ 1 }{ 2 } $, $\sigma^2 = \frac{(b -a)^2 }{ 4 } $.</p>
-
   </div>
 </div>
 
@@ -698,28 +656,23 @@ bound the probability that $\abs{ X - 2 } \geq 1 $. We have</p>
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="the-chernoff-bound">The Chernoff Bound</span></span>
   <div class="block__content block__content--blue">
     <p>Let $X $ be a random variable. Then, $\forall s &gt; 0, \forall a \in R $.</p>
-
 <p>$$P(X \geq a) \leq e^{ - sa } M_X(s)$$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Substitute $X = e^{sX} $ and $a = e^{sa} $ in the Markov inequality</p>
-
 <p>$$P(X \geq a) = P(e^{sx} \geq e^{sa}) \leq \frac{ E [ e^{sX} ] }{ e^{sa}} = \frac{ M_X(s)}{ e^{sa}} $$</p>
-
   </div>
 </div>
 
@@ -1477,13 +1430,13 @@ bound the probability that $\abs{ X - 2 } \geq 1 $. We have</p>
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

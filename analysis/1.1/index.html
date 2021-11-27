@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>The Set N of Natural Numbers - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -284,7 +294,6 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="natural-numbers-%5Cn">Natural Numbers $\N$</span></span>
   <div class="block__content block__content--blue">
@@ -322,20 +331,15 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green block--status"><div class="block__status block__status--warning"></div>
   <span class="block__title block__title--green">Axioms: <span class="keyword" id="peano-axioms-peano-postulates">Peano Axioms (Peano Postulates)</span>
   
   </span>
   <div class="block__content block__content--green">
   <p><strong>N1.</strong> $1$ belongs to $\N $.</p>
-
 <p><strong>N2.</strong> If $n$ belongs to $\N$ then its successor $n + 1$ belongs to $\N$.</p>
-
 <p><strong>N3.</strong> $1$ is not the successor of any element in $\N$.</p>
-
 <p><strong>N4.</strong> If $n$ and $m$ in $\N$ have the same successor, then $n = m$.</p>
-
 <p><strong>N5. (Principal of Induction)</strong> A subset of $\N $ which contains $1$, and which contains $n + 1$ whenever it contains $n $, must equal $\N $.</p>
 
   </div>
@@ -370,12 +374,10 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="proposition">Proposition</span></span>
   <div class="block__content block__content--blue">
     <p>A <strong>proposition</strong> is a mathematical statement, usually denoted by $P$.</p>
-
 <p>$P(n) $ is a proposition about $n$.</p>
 
   </div>
@@ -410,51 +412,37 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green block--status"><div class="block__status block__status--warning"></div>
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="well-ordering-principle-of-natural-numbers">Well-Ordering Principle of Natural Numbers</span></span>
   <div class="block__content block__content--green">
-  <p><strong>N5&rsquo;.</strong> Every nonempty subset of $\N$ has a minimal element.</p>
-
+  <p><strong>N5'.</strong> Every nonempty subset of $\N$ has a minimal element.</p>
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-        by strong induction
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>    by strong induction
+    
+  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Let $A$ be a non-empty subset of $\N $. Want to know that $A $ has a minimal element, that is, there is an element $a \in A $ such that $a \leq n $ for all $n \in A $. We will do this by strong induction on the following predicate:</p>
-
 <p>$$P(n): \text{If }n \in A\text{, then }A\text{ has a minimal element.} $$</p>
-
 <p><strong>the base case:</strong> $P(0)$ is clearly true, since $0 \leq n \forall n \in N $.</p>
-
 <p><strong>the inductive step:</strong> Want to show that $[P(0) \land P(1) \land P(2) \land &hellip; \land P(n)] \to P(n + 1)$.</p>
-
 <p>To this end, suppose that $P(0), P(1), &hellip;, P(n) $ are all true and that $n + 1 \in A$. We consider two cases.</p>
-
 <p><em>CASE 1</em>: $\neg \exists m (m \in A \land m &lt; n + 1) $</p>
-
 <p>In this case,  $n + 1$ is the least element of $A$.</p>
-
 <p><em>CASE 2</em>: $\exists m (m \in A \land m &lt; n + 1) $</p>
-
 <p>In this case, since $P(m)$ is true, $A$ has a least element.</p>
-
 <p>Either way, we conclude that $P(n + 1)$ is true.</p>
-
 <p>So, by strong mathematical induction, we obtain that $P(n) $ is true for all $n \in N$. Since $A $ is not empty, we can pick an $n \in A $. Moreover, since $P(n) $ is true, this implies that $A $ has a least element.</p>
-
   </div>
 </div>
-
-<p><strong>N1</strong> - <strong>N4</strong>, <strong>N5</strong> $\iff$ <strong>N1</strong> - <strong>N4</strong>, <strong>N5&rsquo;</strong></p>
+<p><strong>N1</strong> - <strong>N4</strong>, <strong>N5</strong> $\iff$ <strong>N1</strong> - <strong>N4</strong>, <strong>N5'</strong></p>
 
   </div><script>
       
@@ -487,7 +475,6 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   </span>
@@ -495,9 +482,7 @@ if (!doNotTrack) {
 
   <div class="block__content block__content--green">
   <p><strong>O1.</strong> For $a,b \in \N, a \leq b $ or $b \leq a $.</p>
-
 <p><strong>O2.</strong> $a \leq b, b \leq a \implies a = b $.</p>
-
 <p><strong>O3.</strong> $a \leq b, b \leq c \implies a \leq c $.</p>
 
   </div>
@@ -512,31 +497,25 @@ if (!doNotTrack) {
   </ul></div>
 
 
-
 <div class="block block--gray block--status"><div class="block__status block__status--warning"></div>
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>Prove that <strong>N1</strong> - <strong>N4</strong>, <strong>N5</strong> $\implies$  $\forall x \in X, x \neq 1$ is a successor in $X $.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Let $X$ be a subset of $\N$,</p>
-
 <p>Assume that $x \neq 1$ and $x$ not a successor.</p>
-
 <p>Let $X$ be a set of $\set{ 1 } \cup \set{ \text{all successors}} = \N$ by <strong>N5</strong>.</p>
-
 <p>Then $x \in X , x \neq 1$ is CONTRADICTION; $x$ is a successor.</p>
-
   </div>
 </div>
 
@@ -554,19 +533,15 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="mathematical-induction">Mathematical Induction</span></span>
   <div class="block__content block__content--blue">
     <p><strong>Mathematical induction</strong> is a mathematical proof technique used to prove that a property $P(n)$ holds for every natural number $n$.</p>
-
 <p>The proof consists of <u>two steps</u>:</p>
-
 <ol>
 <li>The <strong>base case</strong>: prov that the statement holds for the first natural number $n_1 $.</li>
 <li>The <strong>inductive step</strong>: assume the statement holds for some natural number $n $, and prove that then the statement holds for $n + 1 $.</li>
 </ol>
-
 <p>The hypothesis in the inductive step, that the statement holds for some $n$, is called the <strong>induction hypothesis</strong> or <strong>inductive hypothesis</strong>.</p>
 
   </div>
@@ -601,26 +576,18 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: Mathematical induction
     
   </span>
   <div class="block__content block__content--gray">
     <p>$P(n) = 1 + 3 + 5 + &hellip; + 2n - 1 =  n^2$</p>
-
 <p>$P(1) = 1 = 1^2$</p>
-
 <p>$P(2) = 1 + 3 = 4 = 2^2 $</p>
-
 <p>Assume $P(n)$:</p>
-
 <p>Then $1 + 3 + 5 + &hellip; + 2n -1  = n^2 $</p>
-
 <p>$1 + 3 + 5 + &hellip; + 2n + 1 = n^2 + 2n + 1 $</p>
-
 <p>$1 + 3 + 5 + &hellip; + (2(n+1) - 1) = (n+1)^2 $</p>
-
 <p>So $\P(n) \implies \P(n+1) $.</p>
 
   </div>
@@ -637,14 +604,11 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="complete-induction-strong-induction">Complete Induction (Strong Induction)</span></span>
   <div class="block__content block__content--blue">
     <p><strong>Complete induction</strong> is a variant of mathematical induction which has a stronger inductive hypothesis. The hypothesis assumes that $P(n) $ holds for <strong>all</strong> natural $n $ less than or equals to $n$.</p>
-
 <p>The proof still consists of <u>two steps</u>:</p>
-
 <ol>
 <li>The <strong>base case</strong>: prov that the statement holds for the first natural number $n_1 $.</li>
 <li>The <strong>inductive step</strong>: assume the statement holds for all natural numbers $\leq n$, and prove that then the statement holds for $n + 1 $.</li>
@@ -682,12 +646,11 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
-    <p>Try to prove that $N1 - N4, N5 \iff N1, &hellip;, N4, N5&rsquo; $</p>
+    <p>Try to prove that $N1 - N4, N5 \iff N1, &hellip;, N4, N5' $</p>
 
   </div>
 
@@ -703,34 +666,22 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: Prime factorization
     
   </span>
   <div class="block__content block__content--gray">
     <p>Every $n \in \N$ is a product of primes.</p>
-
 <p>Let $P(n)$: $n$ is a product of primes.</p>
-
 <p>Assume $P(m)$ is product of primes for all $m \leq n $.</p>
-
 <p>For $n + 1$,</p>
-
 <p>if $n+1$ prime, then $n + 1$ is a product of prime.</p>
-
 <p>if $n+1$ not prime (composite), then $n + 1 = a \cdot b$ for some $a, b  \in \N$, $a,b  &gt; 1$.</p>
-
 <p>$\therefore$ by complete induction</p>
-
 <p>$$a = p_1, p_2, &hellip;, p_{ k } $$</p>
-
 <p>$$b = q_1, q_2, &hellip;, q_{ l } $$</p>
-
 <p>$\therefore n + 1 = ab = p_1 p_2 &hellip; p_{ k } q_1 q_2 &hellip; q_{ l } $</p>
-
 <p>$\therefore P(n + 1)$</p>
-
 <p>Note: For $P(1)$, allow $1 $ to be a prime.</p>
 
   </div>
@@ -747,30 +698,22 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>$P(n): \abs{ \sin(nx)} \leq n \abs{ \sin(x)} $</p>
-
 <p>If $n = 1$, $\abs{ \sin (1 x)} \leq 1 \abs{ \sin x }$</p>
-
 <p>Assume $P(n)$ consider</p>
-
 <p>$\abs{ \sin ((n + 1) x)} = \abs{ \sin nx \cos x + \cos nx \sin x}$</p>
-
 <p>$\abs{ a + b } \leq \abs{ a } + \abs{ b }$(triangle inequality)</p>
-
 <p>$\therefore $</p>
-
 <p>$\begin{align*}
 \abs{ \sin((n+1)x)} &amp;\leq \abs{ \sin nx \cos x } + \abs{ \cos nx \sin x } \br
 &amp; \leq \abs{ \sin nx } \abs{ \cos x } + \abs{ \cos nx } \abs{ \sin x } \br
 &amp; \leq \abs{ \sin nx } \cdot 1 + 1 \cdot \abs{ \sin x } \br
 &amp; \leq n \abs{ \sin x } + \abs{  \sin x } = (n+1) \abs{ \sin x }
 \end{align*}$</p>
-
 <p>$\therefore P(n + 1)$.</p>
 
   </div>
@@ -1669,13 +1612,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

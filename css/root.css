@@ -2,25 +2,29 @@
   font-size: 16px;
 
   /* fonts */
-  --display-font: "SF Pro Display", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  --text-font: "SF Pro Text", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --display-font: "Inter", "SF Pro Display", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --text-font: "Inter", "SF Pro Text", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   --math-font: "CMU Serif", serif;
   --serif-font: "Untitled Serif", serif;
   --monospaced-font: "SF Mono", 'Pragmata Pro', 'source-code-pro', monospace;
 
-  /* color */
-  --backdrop-color: #262626;
+  /* color */ 
   --text-color: #333;
   --link-color: #0070c9;
+  --container-color: #EEEAE1;
 
   /* curve */
   --jerk-curve: cubic-bezier(.8, 0, .2, 1);
+
+  /* length variables */
+  --header-height: 64px;
+  --container-width: 88vw;
 
   /* Bootstrap Colors */
   --blue-text-color: #004085;
   --blue-background-color: #CCE6FF;
   --blue-border-color: #b8daff;
-  --green-text-color: #0c5460;
+  --green-text-color: #202020;
   --green-background-color: #d1ecf1;
   --green-border-color: #bee5eb;
   --green-saturated-color: #00AB22;
@@ -36,4 +40,3 @@
   --red-border-color: #f5c6cb;
   --red-saturated-color: #FC1509;
 }
-

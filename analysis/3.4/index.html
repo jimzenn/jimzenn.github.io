@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Limits of Functions - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -291,35 +301,27 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="limits-of-functions">Limits of Functions</span></span>
   <div class="block__content block__content--blue">
     <p>Let $S \subseteq \R, a, L \in \R \cup \set{ \infty, -\infty }$.</p>
-
 <p>$\limu{ x }{ a } f(x) = L $ if</p>
-
 <p>$f $ is a function defined on $S $.</p>
-
 <p>$\forall (x_n) \in S, (x_n) \in S, \limu{ n }{ \infty } x_n = a$. We have $\limu{ n }{ \infty }f(x_n) = L $.</p>
-
 <p>$\limu{ x }{ a } f(x) $ is the limit of $f(x)$ as $x$ tends to $a$ along $S$.</p>
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>$f $ does not need to be defined at $a $. i.e. $a $ is not necessarily in $S $.</p>
-
   </div>
-
-<p><ul class="block__footer">
+  <ul class="block__footer">
     <li class="block__footer-item">
       <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
     </li>
     <li class="block__footer-item">
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
-  </ul></div></p>
+  </ul></div>
 
   </div>
 
@@ -353,14 +355,12 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks: 17.1
   
   </span>
   <div class="block__content block__content--yellow">
   <p>The definition of continuity can now be expressed as $f $ is continuous at $x_0 $ if and only if $\limu{ x }{ a } f(x) = f(a)$.</p>
-
 <p>The limits of functions, when they exist, are unique.</p>
 
   </div>
@@ -376,14 +376,12 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   20.4<span class="keyword" id="20.4" style="visibility: hidden;">20.4</span></span>
   <div class="block__content block__content--green">
   <p>Let $f_1 $ and $f_2 $ be functions for which the limits $L_1 = \limu{ x }{ a } f_1(x) $ and $L_2 = \limu{ x }{ a } f_2 (x) $ exist and are finite. Then</p>
-
 <ol>
 <li>$\limu{ x }{ a }(f_1 + f_2)(x) $ exists and equals $L_1 + L_2 $.</li>
 <li>$\limu{ x }{ a }(f_1f_2)(x) $ exists and equals $L_1L_2 $.</li>
@@ -419,7 +417,6 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--green ">
@@ -460,14 +457,12 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   20.6<span class="keyword" id="20.6" style="visibility: hidden;">20.6</span></span>
   <div class="block__content block__content--green">
   <p>Let $f $ be a function, $S = \dom{ f } \subseteq \R $, $\forall (x_n) \in S, \limu{ x }{ \infty }x_n = a$. Let $L $ be a real number, then $\limu{ x }{ a }f(x) = L $ if and only if</p>
-
 <p>$$\forall \epsilon &gt; 0, \exists \delta &gt; 0, x \in S \text{ and } \abs{ x - a } &lt; \delta \implies \abs{ f(x) - L } &lt; \epsilon $$</p>
 
   </div><script>
@@ -501,7 +496,6 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   
@@ -510,7 +504,6 @@ if (!doNotTrack) {
 
   <div class="block__content block__content--green">
   <p>Let $f $ be a function defined on $J \setminus \set{  a } $ for some open interval $J $ containing $a $, and let $L $ be a real number. Then $\limu{ x }{ a } f(x) =L$  if and only if</p>
-
 <p>$$\forall \epsilon &gt; 0, \exists \delta &gt; 0, x \in S \text{ and } 0 &lt; \abs{ x - a } &lt; \delta \implies \abs{ f(x) - L } &lt; \epsilon $$</p>
 
   </div>
@@ -545,7 +538,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   
@@ -554,7 +546,6 @@ if (!doNotTrack) {
 
   <div class="block__content block__content--green">
   <p>Let $f $ be a function defined on some interval $(a, b) $, and let $L $ be a real number. Then $\limu{ x }{ a^+ } f(x) = L$ if and only if</p>
-
 <p>$$\forall \epsilon &gt; 0, \exists \delta &gt; 0, x \in S \text{ and }  &lt; a + \delta \implies \abs{ f(x) - L } &lt; \epsilon $$</p>
 
   </div>
@@ -587,7 +578,6 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--green ">
@@ -1516,13 +1506,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

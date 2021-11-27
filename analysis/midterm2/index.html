@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Midterm Review - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -304,287 +314,148 @@ if (!doNotTrack) {
   
 
 </div>
-
 <p>Important problems</p>
-
 <h1 id="3">3</h1>
-
 <p>(important!!)</p>
-
 <p>Show $\Q \cup \bdry{\Q} = \R$</p>
-
 <p>Show if $x \in \R$ $x$ is an adherent point of $\Q$.</p>
-
 <p>i.e. there exists a sequence of rational $E$&rsquo;s $(q^{(n)})^\infty_{n=1}$ in $Q $.</p>
-
 <p>$q^{(n)} \to X_0 $ $d_(q^{(n)}, x_0) \to 0$</p>
-
 <p>Consider</p>
-
 <p>$(x_0 - 1, x_0 + 1) \subseteq \R, B(x_0, 1) \subseteq \R$</p>
-
 <p>$\exists$ rational here $q^{(1)}$</p>
-
 <p>$(x_0 - \frac{ 1 }{ n }, x_0 + \frac{ 1 }{ n })$ has a rational $q^{(n)}$</p>
-
 <p>$d(x_0, q^{(n)}) &lt; \frac{ 1 }{ n }$</p>
-
 <p>$\limu{ n }{ \infty } d(x_0, q^{(n)}) = 0 $</p>
-
 <p>$q^{(n)} \to x_0, x_0 \in \overline{\Q}$</p>
-
 <p>What to take away from it? What is a closure?</p>
-
 <p>Remember</p>
-
 <p>$E$ is closed iff $\overline{ E } = E $ iff $x^{(n)} \in E$ &amp; $(x^{(n)})^{ \infty }_{n=1} \to x_0 \in X$ then $x_0 \in E$.</p>
-
 <h1 id="7">7</h1>
-
 <p>(not in exam!)</p>
-
 <p>Show $X = (a^{(n)})^\infty_{ n =1}: a_n \in \set{ 0, 1 }$</p>
-
 <p>view each entry as vectors</p>
-
 <p>Take a Cauchy sequence in $X$.</p>
-
 <p>$X^{(1)} = (X^{(2)}_1, X^{(2)}_2, &hellip;)$</p>
-
 <p>$X^{(1)} = (X^{(1)}_1, X^{(2)}_2, &hellip;)$</p>
-
 <p>lower index = entry of the vector
 upper index = term of sequence</p>
-
 <p>If $(x^{(n)})^\infty_{ n =1} $ is cauchy</p>
-
 <p>$\exists N $ such that if $n, m &gt; N $</p>
-
 <p>then $d(x^{(n), x^{(m)}}) &lt; 2 $ then $x_0 = y_0 $</p>
-
 <p>$\sum_{ j=0 }^{ \infty } \frac{ 1 }{ 2^j } \abs{ x_j - y_j } &lt; 2$</p>
-
 <p>$\frac{ 1 }{ 2^0 } \abs{ x_0 - y_0 }  + \sum_{ j=0 }^{ \infty } \abs{ x_0 - y_0 } &lt; 1$</p>
-
 <p>contradiction because:</p>
-
 <p>if $x_0 \neq y_0 $, $d(x, y) \geq 1 $</p>
-
 <p>If n &gt; N</p>
-
 <p>The zeroth entry</p>
-
 <p>$x_0^{(n)} = x_0^{(N+1)} $</p>
-
 <p>0th entry of a possible by $(x_0^{n+1})$</p>
-
 <h1 id="8">8</h1>
-
 <p>$K_1 \subseteq K_2 \subseteq K_3 $ compact sets</p>
-
 <p>$\bigcap_{ n=1 }^ \infty \neq \emptyset$.</p>
-
 <p>We will work in the space $X = K$, ($X$ is compact).jo</p>
-
 <p>$K_n $ compact $\implies$ closed</p>
-
 <p>Notice $X \setminus K_n = O_n$ is open in $X$.</p>
-
 <p>Assume</p>
-
 <p>$\cap K_n = \emptyset $</p>
-
 <p>Take complement</p>
-
 <p>$\bigcup_{ n=1 }^ \infty (X \setminus K_n) = X$</p>
-
 <p>$\bigcup_{ n=1 } ^ \infty O_n = X$ Compact</p>
-
 <p>We can find</p>
-
 <p>$O_1, _2, &hellip;, _n_k $ such that</p>
-
 <p>$O_{n_1} \cup O_{n_2} \cup &hellip; \cup O_{n_k} \subseteq X$</p>
-
 <p>Notice $X \setminus K_n = O_n $ is open in $X_0$.</p>
-
 <p>$m = \max{ n_1, n_2, &hellip;, n__k }$</p>
-
 <p>$O_m \subseteq X $</p>
-
 <p>$K_m = \emptyset$</p>
-
 <p>If $K$ is compact then $K$ is closed.</p>
-
 <p>If $K$ is compact then $K$ is complete.</p>
-
 <p>If $K$ complete \implies $K$ is closed.</p>
-
 <p>If $E \subseteq K $, $K  $ complete and $E $ closed, then $E $ is complete.</p>
-
 <h1 id="12">12</h1>
-
 <p>$f: S \to X $ injective. Show $d_s(s_1, s_2) = d_X(f(s_1), f_(s_2)) $ is a metric.</p>
-
 <p>step 0:</p>
-
 <p>Show $0 \leq d_s(s_1, s_2) &lt; \infty $</p>
-
 <p>$f(s_1) \in x_1, f(s_2) \in x_2 $.</p>
-
 <p>$o \leq d_X(x_1, x_2)  \leq \infty $</p>
-
 <p>$o \leq d_X(f(s_1), f(s_2))  \leq \infty $</p>
-
 <p>$o \leq d_s(s_1, s_2)  \leq \infty $</p>
-
 <p>step 1:</p>
-
 <p>$d_s(s, s) = d_X(f(s), f(s)) = 0$</p>
-
 <p>step 2:</p>
-
 <p>If $s_1 \neq s_2 $, show $d_s(s_1, s_2) &gt; 0$</p>
-
 <p>step 3:</p>
-
 <p>$d_s(s_1, s_2) = d_s(s_2, s_1)$</p>
-
 <h1 id="13">13</h1>
-
 <p>Show if $r_n &gt; 0 $ such that $r_n \to 0 $ with the prop</p>
-
 <p>$d(f(x), f^{(n)}(x)) &lt; r^n $ then $f^{(n)} \to f $ uniformly.</p>
-
 <p>$r_n \to 0 $ if $\forall \epsilon &gt; 0, \exists  $ such that $\abs{ r_n -0 } &lt; \epsilon$ if $n &gt; N , r_n &lt; \epsilon$.</p>
-
 <p>$d(f^{(n)}(x), f(x)) &lt; r_n &lt; \epsilon, \forall x \in X$.</p>
-
 <p>Suppose $f^{(n)} \to f $ uniformly, build $r_n \to 0 $</p>
-
 <p>if you want to build a sequence, try $\frac{ 1 }{n} $</p>
-
 <h1 id="14">14</h1>
-
 <p>(!! important)</p>
-
 <p>Recall $d_ \infty (r, g) = \supr_{x \in X} d(f(x), g(x))$</p>
-
 <p>Assume $\limu{ n }{ \infty } d_ \infty(f^{(n)}, f) = 0 $</p>
-
 <p>Let $\epsilon &gt; 0 $, $\exists N $ such that if $n &gt; N $</p>
-
 <p>$\abs{ d_ \infty(f^{(n)}, f) - 0 } &lt; \epsilon $</p>
-
 <p>$d_i \infty(f^{(n)}, f) &lt; \epsilon $</p>
-
 <p>$\supr_{x \in V}{ d(f^{(n)}(x), f(x)) &lt; \epsilon} $</p>
-
 <p>Thus,</p>
-
 <p>$d(f^{(n)}(x), f(x)) &lt; \epsilon, \forall x \in X $</p>
-
 <p>Assume $f^{(n)} \to f $ uniformly show $\forall \epsilon &gt; 0, \exists N$  such that if $n &gt; N $</p>
-
 <p>$d_ \infty(f ^{(n)}, f)  &lt; \epsilon$</p>
-
 <p>Let $\epsilon &gt; 0 $</p>
-
 <p>$d(f^{(n)}(x), f(x)) &lt; \epsilon $\forall x \in X$</p>
-
 <p>$\supr_{x \in V}{ d(f^{(n)}(n), f(x))} \leq \epsilon /2 &lt; \epsilon $</p>
-
 <h1 id="15">15</h1>
-
 <p>!!! note If $x &lt; S$, $\forall x \in E \subseteq \R$ $\supr{ E } \leq S$</p>
-
 <p>if $d(f^{(n)}(x), f(x)) &lt; \epsilon $</p>
-
 <p>then $\supr{ d(f^{(n)}(x), f(x))} \leq \epsilon $</p>
-
 <p>$f, g $ are bounded, show $0 \leq d_ \infty(f, g) &lt; \infty $</p>
-
 <p>Notice $0 \leq d(f(x), g(x)), \forall x \in X$, $0 \leq \supr{ x \in V } $</p>
-
 <p>$f $ is bounded, $\exists y_1, r_1 $</p>
-
 <p>$f(x) \subseteq B(y_1, r_1)$</p>
-
 <p>$g \to  g(x) \subseteq B(y_2, r_2)$</p>
-
 <p>$d(f(x), g(x)) \leq d(f(x), y_1) + d(g(x), y_2) + d(y_1, y_2) \leq r_1 + r_2 + (y_1, y_2) &lt; \infty$</p>
-
 <p>$\supr_{x \in X}{ d(f(x), g(x))} \leq r_1 + r_2 + d(y_1, y_2) &lt; \infty  $</p>
-
 <p>step 1:</p>
-
 <p>$d(f, f) $</p>
-
 <p>$= \supr{ d(f(x), f(x))} $</p>
-
 <p>$= \supr 0 $</p>
-
 <p>$= 0 $</p>
-
 <p>!!!</p>
-
 <p>If $f \neq g $ then $\exists x_0 \in X $ such that $f(x_0) \neq g(x_0) $</p>
-
 <p>$0 &lt; d_Y(f(x_0), g(x_0)) \leq \supr _{x \in X}{ d(f(x), g(x))} $</p>
-
 <h1 id="16">16</h1>
-
 <p>By problem 14, we are done.</p>
-
 <h1 id="17">17</h1>
-
 <p>$f^{(n)}(-1) = (-1^n) $ no convergence</p>
-
 <p>If $x_0 \in (-1, 1)  \limu{ n }{ \infty } x_0^{(n)} = 0$</p>
-
 <p>I partially define $f $ $f(x_0) = 0 $</p>
-
 <p>If $x_0 = 1 $</p>
-
 <p>$f^{(n)}(1) = 1^n = 1 $</p>
-
 <p>$\limu{ n }{ \infty } 1 = 1 $</p>
-
 <p>Define $f (1) = 1 $</p>
-
 <p>$ f(x) = \begin{cases}
-  0 &amp; if x \in (-1, 1) \br
-  1 &amp; if x  = 1
+0 &amp; if x \in (-1, 1) \br
+1 &amp; if x  = 1
 \end{cases}$</p>
-
 <p>Is a pointwise limit of $f^{(n)} $</p>
-
 <p>But $f^{(n)} \to f$ uniformly</p>
-
 <p>$f^{(n)} $ is cont, $f $ is not cont</p>
-
 <h1 id="21">21</h1>
-
 <p>!!!! important</p>
-
 <p>Look at your notes online!</p>
-
 <p>state a version of weistrass M-test</p>
-
 <p>$f^{(n)}: X \to R $(complete) $\to f^{(n)} \in B(X, \R^5) $</p>
-
 <p>$\abs{ f^{(n)}(x)} \leq M_n $(bounded)</p>
-
 <p>$\sum_{ n=0 }^{ \infty  } M_n &lt; \infty $</p>
-
 <p>$ f(x) + g(x) $</p>
-
 <p>step 1</p>
-
 <p>If $ g^{(n)} $ is Cauchy is  $B(X,Y)$ and $ Y $ is complete then $\exists g $ such that $ g^{(n)} \to g$ in $ d_ \infty $ metric</p>
-
 <p>$B(X, Y)$ is complete if $ Y $ is complete</p>
-
 
 <div class="proof">
   <div class="proof__heading">
@@ -597,95 +468,54 @@ upper index = term of sequence</p>
   </div>
   <div class="proof__content hide">
     <p>$g^{(n)} \in B(X, Y)$ be cauchy</p>
-
 <p>$\forall \epsilon &gt; 0, \exists N $ such that $ n, m &gt; N \implies d_ \infty(g^{(n)}, g^{(m)}) &lt; \epsilon$</p>
-
 <p>What might $ g(x_0) = ? $ should be $\limu{ n }{ \infty  } g^{(n)}(x_0) = g(x_0) $</p>
-
 <p>Does $ g^{(n)}(x_0) $ converge?</p>
-
 <p>points in $Y, Y is complete</p>
-
 <p>show $ g^{(n)}(x_0) $ is cauchy in $ Y $</p>
-
 <p>$ d(g^{(n)}(x_0), g^{(m)}(x_0)) \leq d_ \infty (g^{(n)}, g^{(m)}) &lt; \epsilon$</p>
-
 <p>Thus $ g^{(n)}(x_0) is cauchy in $ Y $</p>
-
 <p>Hence $ g^{(n)} (x_0)$ converges $ y_0 $</p>
-
 <p>Define $ g(x_0)  = y_0 = \limu{  n }{ \infty } g^{(n)}(x_0)$</p>
-
 <p>Notice $ g^{(n)} \to g$ pairwise</p>
-
 <p>Is this convergence uniform?</p>
-
 <p>Let $\epsilon &gt; 0 , \exists N $ such that if $ n, m &gt; N $</p>
-
 <p>$ d(g^{(n)}(x), g^{(m)}(x)) &lt; \epsilon  \forall x \in X$</p>
-
 <p>$\limu{ m  }{ 0 } d(g^{(n)}(x), g^{(m)}(x)) \leq \epsilon $</p>
-
 <p>$ d(g^{(n)}(x), g(x)) \leq \epsilon $</p>
-
 <p>$\supr{(g^{(n)}(x), g(x))} \leq \epsilon$</p>
 
   </div>
 </div>
 
-
 <h1 id="22">22</h1>
-
 <h1 id="23">23</h1>
-
 <h1 id="24">24</h1>
-
 <p>$\sum_{ n=1 }^{ \infty } f^{(n)} $ converges uniformly</p>
-
 <p>Need is an upper bound</p>
-
 <p>on $f(n) = \frac{  }{ x^2 + y^2 + n^2 }, \frac{  }{ x^2 + y^2 + n^2 } $</p>
-
 <p>$\norm{ f^{(n)}(x, y)} \leq \frac{ 1 }{ x^2 + y^2 + n^2 }, \frac{ 1 }{ x^2 + y^2 + n^2 } $</p>
-
 <p>$\leq \abs{ \frac{ 1 }{ n^2 } + \frac{ 1 }{ n^2 }} $</p>
-
 <p>Show $e^x = \sum_{ n=0 }^{ \infty } \frac{ x^n }{ n! } $ converges uniformly on $[- R, R] $ pointwise convergence</p>
-
 <p>To show $\sum_{ n=0 }^{ \frac{ x^n }{ n! }}$ converges uniformly on $[- R, R] $.</p>
-
 <p>$f^{(n)}(x) = \frac{ x^n }{ n! } $</p>
-
 <p>$\abs{ f^{(n)}(x)} = \abs{ \frac{ x^n }{ n! }} \leq \frac{ R^n }{ n! } = \norm{ f }_ \infty$</p>
-
 <p>$\abs{ f^{(n)}(x)} \leq \frac{ R^n }{ n! } (= M_n) $</p>
-
 <p>$\sum_{ n=0 }^{ \infty } M_n &lt; \infty$ M_n real #?</p>
-
 <p>Ratio test</p>
-
 <p>$\sum_{ n=0 }^{ \infty } \frac{ R^n }{ n! } \to \limu{ n }{ \infty } \frac{ M_n }{ m_{n-1}} &lt; 1$</p>
-
 <p>$\frac{ M_n }{ M_{n-1}} = \frac{ R^n }{ n! } \frac{(n-1)! }{ R^{n-1}} = \frac{ R }{ n }$</p>
-
 <p>$\limu{ n }{ \infty } \frac{ M_n }{ M_{n-1}} = 0 &lt; 1$</p>
-
 <p>Yes the series converges.</p>
-
 <p>By the weierstrass M-test, $\sum_{ n=0 }^{ \infty } \frac{ x^n }{ n! } $ converges uniformly on $[-R, R] $.</p>
-
 <p>Ignore below &mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</p>
-
 <p>Pointwise convergence on $[- \infty, \infty] $.</p>
-
 <p>$\sum_{ n=0 }^{ \infty } \abs{ \frac{ c_n }{ c_{n-1}}} = L$</p>
-
 <p>The radius of convergence is $ R = \begin{cases}
-  0 &amp;, if L = \infty \br
-  \frac{ 1 }{ L } &amp;, if 0 &lt; L &lt; \infty \br
-  \infty &amp;, if L = 0
+0 &amp;, if L = \infty \br
+\frac{ 1 }{ L } &amp;, if 0 &lt; L &lt; \infty \br
+\infty &amp;, if L = 0
 \end{cases} $</p>
-
 <p>Ignore above &mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</p>
       </div>
     </article>
@@ -1577,13 +1407,13 @@ upper index = term of sequence</p>
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

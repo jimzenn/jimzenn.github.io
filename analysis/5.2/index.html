@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>The Mean Value Theorem - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -291,13 +301,12 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   29.1<span class="keyword" id="29.1" style="visibility: hidden;">29.1</span></span>
   <div class="block__content block__content--green">
-  <p>If $f $ is defined on an <u>open interval</u> containing $x_0 $, if $f $ assumes its maximum or minimum at $x_0 $ and $f$ is differentiable at $x_0 $, then $f&rsquo;(x_0) = 0$.</p>
+  <p>If $f $ is defined on an <u>open interval</u> containing $x_0 $, if $f $ assumes its maximum or minimum at $x_0 $ and $f$ is differentiable at $x_0 $, then $f'(x_0) = 0$.</p>
 
   </div><script>
       
@@ -330,15 +339,13 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   29.2: <span class="keyword" id="rolles-theorem">Rolle&#39;s Theorem</span><span class="keyword" id="29.2" style="visibility: hidden;">29.2</span></span>
   <div class="block__content block__content--green">
   <p>$f$ is continuous on $[ a, b ]$ and differentiable on $(a, b)$ and $f(a) = f(b)$</p>
-
-<p>$$\exists x \in (a, b)\text{ s.t. }f&rsquo;(x) = 0 $$</p>
+<p>$$\exists x \in (a, b)\text{ s.t. }f'(x) = 0 $$</p>
 
   </div><script>
       
@@ -371,15 +378,13 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   29.3: <span class="keyword" id="mean-value-theorem">Mean Value Theorem</span><span class="keyword" id="29.3" style="visibility: hidden;">29.3</span></span>
   <div class="block__content block__content--green">
   <p>$f$ is continuous on $[ a, b ]$ and differentiable on $(a, b)$</p>
-
-<p>$$\exists x \in (a, b)\text{ s.t. } f&rsquo;(x) = \frac{ f(b) - f(a)}{ b - a } $$</p>
+<p>$$\exists x \in (a, b)\text{ s.t. } f'(x) = \frac{ f(b) - f(a)}{ b - a } $$</p>
 
   </div><script>
       
@@ -412,7 +417,6 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   
@@ -420,7 +424,7 @@ if (!doNotTrack) {
 
 
   <div class="block__content block__content--green">
-  <p>Let $f$ be a differentiable function on $(a, b) $ such that $f&rsquo;(x) = 0 $ for all $x \in (a, b)$. Then $f $ is a constant function on $(a, b)$.</p>
+  <p>Let $f$ be a differentiable function on $(a, b) $ such that $f'(x) = 0 $ for all $x \in (a, b)$. Then $f $ is a constant function on $(a, b)$.</p>
 
   </div>
 
@@ -454,18 +458,13 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="increasing-decreasing-strictly-increasing-strictly-decreasing">Increasing, Decreasing, Strictly Increasing, Strictly Decreasing</span></span>
   <div class="block__content block__content--blue">
     <p>Let $f$ be a real-valued function defined on an interval $I $. We say $f $ is strictly increasing on $I$ if</p>
-
 <p>$x_1, x_2 \in I $ and $x_1 &lt; x_2 $ imply $f(x_1) &lt; f(x_2)$</p>
-
 <p>$x_1, x_2 \in I $ and $x_1 &gt; x_2 $ imply $f(x_1) &gt; f(x_2)$</p>
-
 <p>$x_1, x_2 \in I $ and $x_1 &lt; x_2 $ imply $f(x_1) \leq f(x_2)$</p>
-
 <p>$x_1, x_2 \in I $ and $x_1 &gt; x_2 $ imply $f(x_1) \geq f(x_2)$</p>
 
   </div>
@@ -500,18 +499,19 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   </span>
 
 
   <div class="block__content block__content--green">
-  <p>Let $f $ be a differentiable function on an interval $(a, b)$. Then
-1. $f $ is strictly increasing if $f&rsquo;(x) &gt; 0 $ for all $x(a, b)$
-2. $f $ is strictly decreasing if $f&rsquo;(x) &lt; 0 $ for all $x(a, b)$
-3. $f $ is decreasing if $f&rsquo;(x) \geq 0 $ for all $x(a, b)$
-4. $f $ is decreasing if $f&rsquo;(x) \leq 0 $ for all $x(a, b)$</p>
+  <p>Let $f $ be a differentiable function on an interval $(a, b)$. Then</p>
+<ol>
+<li>$f $ is strictly increasing if $f'(x) &gt; 0 $ for all $x(a, b)$</li>
+<li>$f $ is strictly decreasing if $f'(x) &lt; 0 $ for all $x(a, b)$</li>
+<li>$f $ is decreasing if $f'(x) \geq 0 $ for all $x(a, b)$</li>
+<li>$f $ is decreasing if $f'(x) \leq 0 $ for all $x(a, b)$</li>
+</ol>
 
   </div>
 
@@ -525,13 +525,12 @@ if (!doNotTrack) {
   </ul></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   29.8: <span class="keyword" id="intermediate-value-theorem-for-derivatives">Intermediate Value Theorem for Derivatives</span><span class="keyword" id="29.8" style="visibility: hidden;">29.8</span></span>
   <div class="block__content block__content--green">
-  <p>Let $f $ be a differentiable function on $(a, b) $. If $a&lt; x_1 &lt; x_2 &lt; b $ and if $c$ lies between $f&rsquo;(x_1) $ and $f&rsquo;(x_2) $, there exists (at least one) $x $ in $(x_1, x_2) $ such that $f&rsquo;(x) = c$.</p>
+  <p>Let $f $ be a differentiable function on $(a, b) $. If $a&lt; x_1 &lt; x_2 &lt; b $ and if $c$ lies between $f'(x_1) $ and $f'(x_2) $, there exists (at least one) $x $ in $(x_1, x_2) $ such that $f'(x) = c$.</p>
 
   </div><script>
       
@@ -564,15 +563,13 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   29.9<span class="keyword" id="29.9" style="visibility: hidden;">29.9</span></span>
   <div class="block__content block__content--green">
-  <p>Let $f $ be a one-to-one continuous function on an open interval $I $, and let $J = f(I) $. If $f $ is differentiable at $x_0 \in I$ and if $f&rsquo;(x_0) \neq 0 $, then $\inv{ f } $ is differentiable at $y_0 = f(x_0) $ and</p>
-
-<p>$$(\inv{ f })^\prime (y_0) = \frac{ 1 }{ f&rsquo;(x_0)} $$</p>
+  <p>Let $f $ be a one-to-one continuous function on an open interval $I $, and let $J = f(I) $. If $f $ is differentiable at $x_0 \in I$ and if $f'(x_0) \neq 0 $, then $\inv{ f } $ is differentiable at $y_0 = f(x_0) $ and</p>
+<p>$$(\inv{ f })^\prime (y_0) = \frac{ 1 }{ f'(x_0)} $$</p>
 
   </div><script>
       
@@ -1493,13 +1490,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

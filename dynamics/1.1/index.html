@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Introduction to Dynamic Systems - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -209,7 +219,6 @@ if (!doNotTrack) {
           keywordsCounter = 0;
         </script>
         <p>In this note we discuss what dynamic systems are, different types of dynamical systems.</p>
-
 <div class="latex-macros">
   
     $\newcommand{\br}{\\}$
@@ -295,12 +304,10 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="dynamics">Dynamics</span></span>
   <div class="block__content block__content--blue">
     <p>The mathematical study of systems that evolve in time.</p>
-
 <p>Whether the system in question <u>settles down to equilibrium</u>, <u>keeps repeating in cycles</u>, or <u>does something more complicated</u>.</p>
 
   </div>
@@ -334,9 +341,7 @@ if (!doNotTrack) {
       })();
     </script></div>
 
-
-<p><img src="/images/dynamical-systems.png" alt="Dynamic Systems" /></p>
-
+<p><img src="/images/dynamical-systems.png" alt="Dynamic Systems"></p>
 
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note: <span class="keyword" id="general-framework-for-ordinary-differential-equations">General Framework for Ordinary Differential Equations</span>
     
@@ -347,7 +352,6 @@ if (!doNotTrack) {
 &amp;\vdots \br
 \dot{ x_n } &amp;= f_n(x_1, x_2, &hellip;, x_{ n }) \br
 \end{align*}$$</p>
-
 <p>If all the $x_i $ on the right-hand side appear to the first power only, then this system is <strong>linear</strong>. Otherwise, the system would be <strong>nonlinear</strong>. Typical nonlinear terms are products, powers, and functions of the $x_i $, such as $x_1 x_2 $, $(x_1)^3 $, or $\cos x_2 $.</p>
 
   </div>
@@ -382,14 +386,12 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: The Heat Equation
     
   </span>
   <div class="block__content block__content--gray">
     <p>$\frac{\partial u}{\partial t} = D\frac{\partial^2 u}{{\partial x}^2} $</p>
-
 <p><strong>This is a partial differential equation.</strong></p>
 
   </div>
@@ -406,14 +408,12 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: Damped Harmonic Oscillator
     
   </span>
   <div class="block__content block__content--gray">
     <p>$$m \frac{ \d ^2 x }{ \d t^2 } + b \frac{ \d x }{ \d t } + kx = 0$$</p>
-
 <p><strong>This is a 2nd order linear ordinary differential equation.</strong></p>
 
   </div>
@@ -430,14 +430,12 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: Swinging pendulum
     
   </span>
   <div class="block__content block__content--gray">
     <p>$$\ddot{ x } + \frac{ g }{ L } \sin x = 0 $$</p>
-
 <p><strong>This is a 2nd order nonlinear ordinary differential equation.</strong></p>
 
   </div>
@@ -452,7 +450,6 @@ if (!doNotTrack) {
   </ul>
 
 </div>
-
 
 
 <div class="block block--blue ">
@@ -492,7 +489,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
@@ -510,14 +506,12 @@ if (!doNotTrack) {
   </ul></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: Logistic equation
     
   </span>
   <div class="block__content block__content--gray">
     <p>$$N^\prime = rN(1 - \frac{ N }{ k }) $$</p>
-
 <p><strong>This is a 1st order nonlinear.</strong></p>
 
   </div>
@@ -534,14 +528,12 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: RC Circuit
     
   </span>
   <div class="block__content block__content--gray">
     <p>$$Q^\prime = \frac{ v_0 }{ R } - \frac{ Q }{ RC }$$</p>
-
 <p><strong>This is a 1st order linear.</strong></p>
 
   </div>
@@ -558,7 +550,6 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: Dynamics of love affairs
     
@@ -566,7 +557,6 @@ if (!doNotTrack) {
   <div class="block__content block__content--gray">
     <p>$$R^\prime = a R + b J$$
 $$J^\prime = b R + a J$$</p>
-
 <p><strong>This is a 2nd order linear.</strong></p>
 
   </div>
@@ -583,7 +573,6 @@ $$J^\prime = b R + a J$$</p>
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: Lotka-Volterra Model (Species competition)
     
@@ -591,7 +580,6 @@ $$J^\prime = b R + a J$$</p>
   <div class="block__content block__content--gray">
     <p>$$x^\prime = x(3 - x - 2y) $$
 $$y^\prime = y(2 - x - y) $$</p>
-
 <p><strong>This is a 2nd order nonlinear.</strong></p>
 
   </div>
@@ -608,14 +596,12 @@ $$y^\prime = y(2 - x - y) $$</p>
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: Forced RC circuit
     
   </span>
   <div class="block__content block__content--gray">
     <p>$$x^{\prime} + x = A \sin(\omega t) $$</p>
-
 <p>(non-autonomous equation since it depends on $t$)
 j
 <strong>This is a 2nd order nonlinear.</strong></p>
@@ -634,14 +620,12 @@ j
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: Skydiver falling w/ air resistance
     
   </span>
   <div class="block__content block__content--gray">
     <p>$$mv^\prime = mg - kv^2$$</p>
-
 <p><strong>This is a 1nd order nonlinear.</strong></p>
 
   </div>
@@ -658,21 +642,15 @@ j
 </div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note: <span class="keyword" id="write-the-damped-oscillator-equation-so-it-looks-like-a-2nd-order-system">Write the Damped Oscillator Equation So It Looks Like a 2nd Order System</span>
     
   </span>
   <div class="block__content block__content--yellow">
     <p>$$m \ddot{ x } + b \dot{ x } + kx = 0 $$</p>
-
 <p>Introduce new variables:</p>
-
 <p>$x_1 = x \implies \dot{ x_1 } = x_2 $</p>
-
 <p>$x_2 = \dot{ x } \implies \dot{ x_2 } = \ddot{ x } $</p>
-
 <p>$\dot{ mx_2 } + bx_2 + kx_1 = 0 $</p>
-
 <p>$$\begin{cases}
 \dot{ x_2 } &amp;= - \frac{ b }{ m } x_2 - \frac{ k }{ m } x_1 \br
 \dot{ x_1 } &amp;= x_2
@@ -842,13 +820,13 @@ j
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

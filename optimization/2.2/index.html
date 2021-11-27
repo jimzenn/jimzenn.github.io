@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Rank of a Matrix - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -295,12 +305,10 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>We do not discuss basic knowledge of matrices in great detail here since everything has been discussed in <a href="/math-115a/2.1/">MATH 115A Chapter 2</a>. This note merely serves as a quick review.</p>
-
 <p>Still, readers should pay attention to determinants of the matrices, and $p $th order-minor of matrices, since they are new contents in this class.</p>
 
   </div>
@@ -315,14 +323,11 @@ if (!doNotTrack) {
   </ul></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="matrix">Matrix</span></span>
   <div class="block__content block__content--blue">
     <p>A <strong>matrix</strong> is a rectangular array of numbers. A matrix $\b{ A } $ with $m $ rows and $n $ columns is called an $m \times n $ matrix, and we write</p>
-
 <p>$$\b{ A } = {\Mqr{{\vcr{ a_{11}}{ a_{21}}{ &hellip; }{ a_{m1}}}}{{\vcr{ a_{12}}{ a_{22}}{ &hellip; }{ a_{2n}}}}{{\vcr{ &hellip; }{ \vdots }{ \ddots }{ \vdots }}}{{\vcr{ a_{1n}}{ a_{m2}}{ &hellip; }{ a_{mn}}}}} $$</p>
-
 <p>For convenience, we denote the $i $th column of $\b{ A } $ as $\b{ a }_i $ in this note.</p>
 
   </div>
@@ -355,7 +360,6 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--blue ">
@@ -395,19 +399,21 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Properties
   </span>
   <div class="block__content block__content--green">
   <p>The rank of a matrix $\b{ A } $ is invariant under the following operations:</p>
-
 <ol>
-<li><p>Multiplication of the columns or rows of $\b{ A } $ by nonzero scalars.</p></li>
-
-<li><p>Interchange of the columns or rows.</p></li>
-
-<li><p>Addition to a given column (row) a linear combination of other columns (rows).</p></li>
+<li>
+<p>Multiplication of the columns or rows of $\b{ A } $ by nonzero scalars.</p>
+</li>
+<li>
+<p>Interchange of the columns or rows.</p>
+</li>
+<li>
+<p>Addition to a given column (row) a linear combination of other columns (rows).</p>
+</li>
 </ol>
 
   </div>
@@ -420,7 +426,6 @@ if (!doNotTrack) {
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul></div>
-
 
 
 <div class="block block--green ">
@@ -465,7 +470,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Properties: <span class="keyword" id="other-properties-of-determinants">Other Properties of Determinants</span>
   
@@ -479,22 +483,20 @@ if (!doNotTrack) {
 <li>The determinant does not change if one column is added with another column&rsquo;s multiple.</li>
 <li>$p \det \left [ {\vce{ \mid }{ \b{ a }_1 }{ \mid }}, &hellip;, {\vce{ \mid }{ \b{ a }_j}{ \mid }},&hellip;, {\vce{ \mid }{ \b{ a }_n }{ \mid }} \right ] = \det \left [ {\vce{ \mid }{ \b{ a }_1 }{ \mid }}, &hellip;, {\vce{ \mid }{ p\b{ a }_j}{ \mid }},&hellip;, {\vce{ \mid }{ \b{ a }_n }{ \mid }} \right ]$</li>
 </ol>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$$\begin{align*}
 &amp; \det \left [ {\vce{ \mid }{ \b{ a }_1 }{ \mid }}, &hellip;, {\vce{ \mid }{ \b{ a }_{k-1}}{ \mid }}, {\vce{ \mid }{ \pare{\b{ a }_{k} + p \b{ a }_j}}{ \mid }}, {\vce{ \mid }{ \b{ a }_{k+1}}{ \mid }},&hellip; , {\vce{ \mid }{ \b{ a }_{j}}{ \mid }}, &hellip;, {\vce{ \mid }{ \b{ a }_n }{ \mid }} \right ] \br
 &amp;=  \det \left [ {\vce{ \mid }{ \b{ a }_1 }{ \mid }}, &hellip;,  {\vce{ \mid }{ \b{ a }_{k}}{ \mid }}, &hellip;, {\vce{ \mid }{ a_n }{ \mid }} \right ] + p \det \left [ {\vce{ \mid }{ \b{ a }_1 }{ \mid }}, &hellip;, {\vce{ \mid }{ \b{ a }_j}{ \mid }},&hellip; , {\vce{ \mid }{ \b{ a }_{j}}{ \mid }}, &hellip; , {\vce{ \mid }{ \b{ a }_n }{ \mid }} \right ]
 \end{align*}$$</p>
-
   </div>
 </div>
 
@@ -528,7 +530,6 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--blue ">
@@ -568,7 +569,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
@@ -584,7 +584,6 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--blue ">
@@ -1542,13 +1541,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

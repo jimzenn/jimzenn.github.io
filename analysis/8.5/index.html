@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Compact Metric Spaces - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -315,14 +325,11 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="compactness">Compactness</span></span>
   <div class="block__content block__content--blue">
     <p>A metric space $(X,d)$ is <strong>compact</strong> iff every sequence in $(X,d)$ has at least one convergent subsequence. i.e.</p>
-
 <p>$$\forall (x^{(n)})^\infty_{n =1} \in X, \exists \limu{ j }{ \infty}(x^{(n_j)})^\infty_{ j =1} = L $$</p>
-
 <p>A subset $Y \subseteq X$ is <strong>compact</strong> iff the subspace $(Y,d|_{Y\times Y})$ is compact.</p>
 
   </div>
@@ -357,13 +364,11 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks
   </span>
   <div class="block__content block__content--yellow">
   <p>Compactness of a set $Y$ is an <strong>intrinsic</strong> property, since it <strong>only depends on the metric function $d|_{(Y, d|_{Y \times Y})}$ restricted to $Y$</strong>, and not on the choice of the ambient space $X$.</p>
-
 <p>The notions of completeness and of boundedness are also intrinsic, but the notions of open and closed are not.</p>
 
   </div>
@@ -379,12 +384,10 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="bounded-sets">Bounded Sets</span></span>
   <div class="block__content block__content--blue">
     <p>Let $(X,d)$ be a metric space, and let $Y \subseteq X$.</p>
-
 <p>$Y$ is <strong>bounded</strong> iff
 $$\exists B(x, r), Y \subseteq B(x, r) \subseteq X $$</p>
 
@@ -420,54 +423,39 @@ $$\exists B(x, r), Y \subseteq B(x, r) \subseteq X $$</p>
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Proposition
   </span>
   <div class="block__content block__content--green">
   <p>A compact metric space is both <u>complete</u> and <u>bounded</u>.</p>
-
 <p>Let $(X, d)$ be a compact metric space. Let $(x^{(n)})^\infty_{ n =1}$ be a Cauchy sequence in $X$.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p><strong>Completeness:</strong></p>
-
 <p>Since $(X, d)$ is compact, $(x^{(n)})^\infty_{ n =1}$ has a convergent subsequence.</p>
-
 <p>Therefore $(x^{(n)})^\infty_{ n =1}$ is convergent.</p>
-
 <p><strong>Boundedness:</strong></p>
-
 <p>Assume on the contrary, $(X, d)$ is not bounded.</p>
-
 <p>Then we can construct a sequence as follows.</p>
-
 <p>Choose $x_0 \in X$, <br>
 choose $x_1 \in X, d(x_0, x_1) &gt; 1 $, <br>
 choose $x_2 \in X, d(x_0, x_2) &gt; 2 $, <br>
 choose $x_n \in X, d(x_0, x_n) &gt; n $.</p>
-
 <p>Since $(X, d) $ is not bounded, we can construct such a sequence with infinite
 elements, and this sequence does not converge to any specific point, because if
 a limit $L$ exists, $\limu{ n }{ \infty } d(x_n, L) = 0 $</p>
-
 <p>However, $d(x_0, x_n) \leq d(x_0, L) + d(L, x_n)$.</p>
-
 <p>Since $\limu{ n }{ \infty }d(x_0, x_n) = \infty $ by construction, $\limu{ n }{ \infty } d(x_n, L) \to \infty $.</p>
-
 <p>CONTRADICTION.</p>
-
 <p>Hence $(X, d) $ must be bounded.</p>
-
   </div>
 </div>
 
@@ -482,7 +470,6 @@ a limit $L$ exists, $\limu{ n }{ \infty } d(x_n, L) = 0 $</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   : <span class="keyword" id="compact-sets-are-closed-and-bounded">Compact Sets Are Closed and Bounded</span></span>
@@ -490,34 +477,26 @@ a limit $L$ exists, $\limu{ n }{ \infty } d(x_n, L) = 0 $</p>
 
   <div class="block__content block__content--green">
   <p>Let $(X,d)$ be a metric space, and let $Y$ be a compact subset of $X$. Then $Y$ is closed and bounded.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$Y$ is a compact subset of $X$.</p>
-
 <p><strong>Closedness:</strong></p>
-
 <p>Assume on the contrary, $Y$ is not closed.
 Then exists $x_0 \in \bdry{ Y }, x_0 \not \in Y$.
 Since $x_0$ is an adherent point of $Y$, there must exist a sequence $(y^{(n)})^\infty_{ n =1} $ in $Y$, such that $\limu{ n }{ \infty } (y^{(n)})^\infty_{ n =1} = x_0$.</p>
-
 <p>However, if $(y^{(n)})^\infty_{ n =1} $ does exist, since $Y$ is compact.
 The limit $x_0 $ must be inside $Y $ as well.</p>
-
 <p>Then $x_0$ is an interior point of $Y$. CONTRADICTION.</p>
-
 <p><strong>Boundedness:</strong></p>
-
 <p>Since $X$ is compact, then $X$ is bounded. Hence $Y$ is bounded.</p>
-
   </div>
 </div>
 
@@ -553,13 +532,11 @@ The limit $x_0 $ must be inside $Y $ as well.</p>
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="heine-borel-theorem">Heine-Borel Theorem</span></span>
   <div class="block__content block__content--green">
   <p>$(R^n, d)$ where $d = d_{l^2}$, or $d = d_{l^1}$, or $d = d_{l^\infty}$. $E \subseteq \R^n $.</p>
-
 <p>Then $E$ is compact $\iff $ $E$ closed and bounded.</p>
 
   </div><script>
@@ -593,127 +570,79 @@ The limit $x_0 $ must be inside $Y $ as well.</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="every-open-cover-of-a-compact-set-has-a-finite-subcover">Every Open Cover of a Compact Set Has a Finite Subcover</span></span>
   <div class="block__content block__content--green">
   <p>Let $(X,d)$ be a metric space, and let $Y \subseteq X$ is compact.</p>
-
 <p>Let $(V_ \alpha)_ { \alpha \in I}$ be a collection of open sets in $X$, and suppose that</p>
-
 <p>$$Y \subseteq \bigcup_{ \alpha \in I } V_ \alpha $$</p>
-
 <p>Then there exists a finite <strong>subset</strong> $F$ of $I$ such that</p>
-
 <p>$$Y \subseteq \bigcup_{ \alpha \in F } V_ \alpha$$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$r(y) = \supr{\set{ r&gt; 0 : B(y ,r) \subseteq V_ \alpha }}. r(y) &gt; 0, \forall y \in X$.</p>
-
 <p>($V_\alpha$s are open)</p>
-
 <p>$r_0 = \infi{\set{ r(y) : y \in Y }} $</p>
-
 <p>$r_0 \geq 0$</p>
-
 <p><strong>step 1</strong></p>
-
 <p>$r_0 \neq 0$</p>
-
 <p>Assume $r_0 = 0, \exists r(y ^{(n)}) \in \set{ r(y), y \in Y }$</p>
-
 <p>$0 &lt; r(y^{(n)}) &lt; \frac{ 1 }{ n }$($\limu{ n }{ \infty } r(y^{(n)}) = 0 $)</p>
-
 <p>$(y^{(n)})^\infty_{ n =1} $ is a sequence in $Y $(compact)</p>
-
 <p>$\exists y_0 \in Y$ and subsequence $(y^{(n_j)})^\infty_{ j =1} $</p>
-
 <p>$(y^{(n_j)})^\infty_{ j =1} \to y_0$</p>
-
 <p>$y_0 \in Y, r(y_0) &gt; 0$</p>
-
 <p>This then shows</p>
-
 <p>$$r(y^{(n_0)}) \geq \frac{ r(y_0)}{ 2 }$$</p>
-
 <p>Triangle inequality to show that</p>
-
 <p>$B(y^{(n_j)}, \frac{ r(y_0)}{ 2 }) \subset B(y_0, r(y_0)) $</p>
-
 <p>$s^{(n)} \geq K $</p>
-
 <p>$\limu{ n }{ \infty } s^{(n)} \geq k $</p>
-
 <p>$r(y^{(n_j)}) \geq \frac{ r(y_0)}{ 2 } &gt; 0 $</p>
-
 <p>$\limu{ j }{ \infty } r(y^{(n_j)}) \geq \frac{ r(y_0)}{ 2 }$</p>
-
 <p>$(\limu{ n }{ \infty } r(y^{(n)}) = 0) $</p>
-
 <p>$r_0 &gt; 0 $ Let&rsquo;s assume $\forall F \subset I $ finite $Y \not \subset \bigcup_{ \alpha \in F } V_ \alpha $</p>
-
 <p>Let $K = \frac{ r_0 }{ 2 } &gt; 0 $</p>
-
 <p>Pick $y^{(i)} \in Y $</p>
-
 <p>$r(y^{(i)}) \geq r_0 &gt; \frac{ r_0 }{ 2 }$</p>
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>$y^{(1)} \in V_ \alpha_1 $</p>
-
 <p>$B(y^{(1)}, r(y^{(1)})) \leq V_ \alpha_1 $</p>
-
 <p>Is $Y \subset V_ \alpha_1 $</p>
-
 <p>No, by assumption.</p>
-
   </div>
-
-<p><ul class="block__footer">
+  <ul class="block__footer">
     <li class="block__footer-item">
       <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
     </li>
     <li class="block__footer-item">
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
-  </ul></div></p>
-
+  </ul></div>
 <p>$\exists y^{(2)} \in Y \setminus V_ \alpha_1$</p>
-
 <p>$d(y^{(1)}, y^{(2)}) &gt; K, y^{(2)} \in V_ \alpha _2$</p>
-
 <p>Is $Y \subset V_ \alpha_1 \cup \alpha_2 $ ?</p>
-
 <p>No $\exists y^{(3)} \in Y \setminus (V _ \alpha _1 \cup V _ \alpha _2) $</p>
-
 <p>$d(y^{(3)}, y^{(2)}) &gt; K $</p>
-
 <p>$d(y^{(3)}, y^{(1)}) &gt; K $</p>
-
 <p>$y^{(3)} \in V_ \alpha _3 $</p>
-
 <p>Sequence $(y^{(n)})^ \infty _{n = 1} $ in $Y $</p>
-
 <p>$d(y^{(n)}, y^{(m)}) &gt; K &gt; 0 $</p>
-
 <p>So  no subseq can converge. HW.</p>
-
 <p>$Y $ is not compact. contradiction.</p>
-
-<p></div>
-</div></p>
+  </div>
+</div>
 
   </div><script>
       
@@ -746,7 +675,6 @@ The limit $x_0 $ must be inside $Y $ as well.</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
@@ -764,7 +692,6 @@ The limit $x_0 $ must be inside $Y $ as well.</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   </span>
@@ -772,41 +699,28 @@ The limit $x_0 $ must be inside $Y $ as well.</p>
 
   <div class="block__content block__content--green">
   <p>??????</p>
-
 <p>Let $(X,d)$ be a metric space, and let $K_1, K_2, K_3, &hellip;$ be a sequence of non-empty <u>compact</u> subsets of $X$ such that</p>
-
 <p>$$K_1 \subset K_2 \subset K_3 \subset &hellip; $$</p>
-
 <p>Then the intersection $\bigcap_{ n=1 }^ \infty K_n $ is non-empty.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$\forall n$, since $K_n$ is compact, $K_n$ is closed.</p>
-
 <p>First we look at the space $X = K_1$.</p>
-
 <p>Assume on the contrary $\bigcap K_n = \emptyset $.</p>
-
 <p>Take complement $\bigcup_{ n= 1 }^ \infty (X \setminus K_n) = X = \bigcup_{ n= 1 }^ \infty O_n $, which is compact.</p>
-
 <p>We can find $O_{n_1}, O_{n_2}, &hellip;, O_{n_k}$ such that</p>
-
 <p>$$\bigcup_{ k= 1 }^ \infty O_{n_k} \subseteq X $$</p>
-
 <p>Notice that $X \setminus K_n = O_n$ is open in $X$.</p>
-
 <p>let $m = \max{ n_1, n_2, &hellip;, n_k } $</p>
-
 <p>$O_m = X \setminus X_m = \subseteq X, K_m = \emptyset $.</p>
-
   </div>
 </div>
 
@@ -822,21 +736,23 @@ The limit $x_0 $ must be inside $Y $ as well.</p>
   </ul></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>Let $(X,d) $ be a metric space.</p>
-
 <ol>
-<li><p>$Y \subseteq X$, $Y$ compact, and $Z \subseteq Y$, then
-$$Z\text{ is compact}\iff Z\text{ is closed}$$</p></li>
-
-<li><p>If $Y_1, Y_2, &hellip;, Y_n \subseteq X$ are a finite collection of compact subsets
-$$\bigcup_{ n=0 }^ \infty Y_n\text{ is also compact}$$</p></li>
-
-<li><p>Every finite subset of $X$  (including the empty set) is compact.</p></li>
+<li>
+<p>$Y \subseteq X$, $Y$ compact, and $Z \subseteq Y$, then
+$$Z\text{ is compact}\iff Z\text{ is closed}$$</p>
+</li>
+<li>
+<p>If $Y_1, Y_2, &hellip;, Y_n \subseteq X$ are a finite collection of compact subsets
+$$\bigcup_{ n=0 }^ \infty Y_n\text{ is also compact}$$</p>
+</li>
+<li>
+<p>Every finite subset of $X$  (including the empty set) is compact.</p>
+</li>
 </ol>
 
   </div><ul class="block__footer">
@@ -1738,13 +1654,13 @@ $$\bigcup_{ n=0 }^ \infty Y_n\text{ is also compact}$$</p></li>
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

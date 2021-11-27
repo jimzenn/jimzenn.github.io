@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>The Poisson Process - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -316,29 +326,28 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="poisson-process">Poisson Process</span></span>
   <div class="block__content block__content--blue">
     <p>An arrival process is called a Poisson process with rate $\lambda$ if it has the
 following properties:</p>
-
 <ol>
-<li><p><strong>(Time-homogeneity)</strong> The probability $P(k, \tau) $ of $k $ arrivals is the same for all intervals of the same length $\tau $.</p></li>
-
-<li><p><strong>(Independence)</strong> The number of arrivals during a particular interval is independent of the history of arrivals outside this interval.</p></li>
-
-<li><p><strong>(Small interval probabilities)</strong> The probabilities $P(k, \tau) $ satisfy</p></li>
+<li>
+<p><strong>(Time-homogeneity)</strong> The probability $P(k, \tau) $ of $k $ arrivals is the same for all intervals of the same length $\tau $.</p>
+</li>
+<li>
+<p><strong>(Independence)</strong> The number of arrivals during a particular interval is independent of the history of arrivals outside this interval.</p>
+</li>
+<li>
+<p><strong>(Small interval probabilities)</strong> The probabilities $P(k, \tau) $ satisfy</p>
+</li>
 </ol>
-
 <p>$$\begin{align*}
 P(0, \tau) &amp;= 1 - \lambda \tau + o(\tau), \br
 P(1, \tau) &amp;= \lambda \tau + o_1(\tau), \br
 P(k, \tau) &amp;= o_k(\tau),\text{ for } k = 2, 3, &hellip;
 \end{align*}$$</p>
-
 <p>Here, $o(\tau) $ and $o_k(\tau) $ are functions of $\tau $ that satisfy</p>
-
 <p>$$\limu{ \tau }{ o } \frac{ o(\tau)}{ \tau } = 0, \limu{ \tau }{ o } \frac{ o_k(\tau)}{ \tau } = 0 $$</p>
 
   </div>
@@ -373,7 +382,6 @@ P(k, \tau) &amp;= o_k(\tau),\text{ for } k = 2, 3, &hellip;
     </script></div>
 
 
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks
   </span>
@@ -381,11 +389,9 @@ P(k, \tau) &amp;= o_k(\tau),\text{ for } k = 2, 3, &hellip;
   <p>The first property states that arrivals are &ldquo;equally likely&rdquo; at all times. <br>
 The arrivals during any time interval of length $\tau$ have the same distribution. <br>
 This a counterpart to the assumption that the success probability $p$ in a Bernoulli process is the same for all trials.</p>
-
-<p>The second property, consider a particular interval $[t, t&rsquo;]$, of length $t&rsquo; - t$. <br>
-The unconditional probability of $k$ arrivals during that interval is $P(k, t&rsquo;-t)$. <br>
-Suppose now that we are given complete or partial information on the arrivals outside this interval, property $2$ states that this information is irrelevant: the conditional probability of $k$ arrivals during $[t, t&rsquo;]$ remains equal to the unconditional probability $P(k,t&rsquo;-t)$. This property is analogous to the independence of trials in a Bernoulli process.</p>
-
+<p>The second property, consider a particular interval $[t, t']$, of length $t' - t$. <br>
+The unconditional probability of $k$ arrivals during that interval is $P(k, t'-t)$. <br>
+Suppose now that we are given complete or partial information on the arrivals outside this interval, property $2$ states that this information is irrelevant: the conditional probability of $k$ arrivals during $[t, t']$ remains equal to the unconditional probability $P(k,t'-t)$. This property is analogous to the independence of trials in a Bernoulli process.</p>
 <p>The third property is critical. The $o(\tau) $ and $o_k(\tau) $ terms are meant to be negligible in comparison to $\tau $, when the interval length $\tau $ is very small. They can be thought of as the $O(\tau^2) $ terms in a Taylor series expansion of $P(k, \tau) $. <br>
 Thus for small $\tau $, the probability of a single arrival is roughly $\lambda \tau $, plus a negligible term. Similarly, for small $\tau $, the probability of zero arrivals is roughly $1 - \lambda \tau $. <br>
 Finally, the probability of two or more arrivals is negligible in comparison to $P(1, \tau) $, as $\tau $ becomes smaller.</p>
@@ -403,38 +409,25 @@ Finally, the probability of two or more arrivals is negligible in comparison to 
 </div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note: <span class="keyword" id="number-of-arrivals-in-an-interval">Number of Arrivals in an Interval</span>
     
   </span>
   <div class="block__content block__content--yellow">
     <p>Consider a fixed time interval of length $\tau $, and partition it into $\tau / \delta $ periods of length $\delta $, where $\delta $ is a very small number. The probability of more than two arrivals during any period can be neglected, because of property $(3)$ and the preceding discussion.</p>
-
 <p>Different periods are independent, by property $(2)$.</p>
-
 <p>Furthermore, each period has one arrival with probability approximately equal to $\lambda \delta$, or zero arrivals with probability approximately equal to $1 - \lambda \delta $.</p>
-
 <p>Therefore, the process being studied can be <strong>approximated by a Bernoulli process</strong>, with the approximation becoming more and more accurate as $\delta $ becomes smaller.</p>
-
 <p>The probability $P(k, \tau) $ of $k $ arrivals in time $\tau $ is approximately the same as the (binomial) probability of $k$ successes in $n = r / \delta $ independent Bernoulli trials with success probability $p = \lambda \delta$ at each trial. While keeping the length $\tau $ of the number $n$ of periods goes to infinity, while the product $np$ remains constant and equal to $\lambda \tau$.</p>
-
 <p>Under these, circustances, we saw in the previous section that the binomial PMF converges to a Poisson PMF with parameter $\lambda \tau $. We are then led to the important conclusion that</p>
-
 <p>$$P(k, \tau) = e^{- \lambda \tau} \frac{(\lambda \tau)^k }{ k! }, k = 0, 1, 2, &hellip;  $$</p>
-
 <p>Note that a Taylor series expansion of $e^{- \lambda \tau} $ yields</p>
-
 <p>$$\begin{align*}
 P(0, \tau) &amp;= e^{- \lambda \tau} = 1 - \lambda \tau + o(\tau) \br
 P(1, \tau) &amp;= \lambda \tau e^{- \lambda \tau} = \lambda \tau - \lambda^2 \tau^2 + O(\tau^3) = \lambda \tau + o_1(\tau)
 \end{align*}$$</p>
-
 <p>consistent with property $(3)$.</p>
-
 <p>We already know the mean and variance of the Poisson PMF.</p>
-
 <p>$$E[N_ \tau] = \lambda \tau, \var{ N_ \tau } = \lambda \tau$$</p>
-
 <p>where $N_ \tau $ denotes the number of arrivals during a time interval of length $\tau $.</p>
 
   </div>
@@ -469,7 +462,6 @@ P(1, \tau) &amp;= \lambda \tau e^{- \lambda \tau} = \lambda \tau - \lambda^2 \ta
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Properties: <span class="keyword" id="random-variables-associated-with-the-poisson-process-and-their-properties">Random Variables Associated With the Poisson Process and Their Properties</span>
   
@@ -478,17 +470,12 @@ P(1, \tau) &amp;= \lambda \tau e^{- \lambda \tau} = \lambda \tau - \lambda^2 \ta
   <ul>
 <li><strong>The Poisson with parameter $\lambda \tau$</strong>, the number $N_ \tau $ of arrivals in a Poisson process with rate $\lambda $, over an interval of length $\tau $.</li>
 </ul>
-
 <p>$$p_{N_ \tau}(k) = P(k, \tau) = e^{ - \lambda \tau } \frac{(\lambda \tau)^k }{ k! }, k = 0, 1, 2, &hellip;  $$</p>
-
 <p>$$E[N_ \tau] = \lambda \tau, \var{ N_ \tau } = \lambda \tau $$</p>
-
 <ul>
 <li><strong>The exponential with parameter $\lambda$</strong>, the time $T$ until the first arrival.</li>
 </ul>
-
 <p>$$f_T(t) = \lambda e^{ - \lambda t }, t \geq 0$$</p>
-
 <p>$$E [ T ] = \frac{ 1 }{ \lambda }, \var{ T } = \frac{ 1 }{ \lambda^2 } $$</p>
 
   </div>
@@ -523,16 +510,13 @@ P(1, \tau) &amp;= \lambda \tau e^{- \lambda \tau} = \lambda \tau - \lambda^2 \ta
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: 0 or 1 arrivals
     
   </span>
   <div class="block__content block__content--gray">
     <p>You get email according to a Poisson process at a rate of $\lambda = 0.2 $ messages per hour. You check your email every hour. What is the probability of finding $0$ and $1$ new messages?</p>
-
 <p>The probabilities can be found using the Poisson PMF $\frac{ e^{ - \lambda \tau } (\lambda \tau)^k }{ k! } $. We have $\tau=1$.</p>
-
 <p>$$P(0, 1) = e^{-0.2} = 0.819, P(1,1) = 0.2 e^{ -0.2 } = 0.164 $$</p>
 
   </div>
@@ -547,7 +531,6 @@ P(1, \tau) &amp;= \lambda \tau e^{- \lambda \tau} = \lambda \tau - \lambda^2 \ta
   </ul>
 
 </div>
-
 
 
 <div class="block block--gray ">
@@ -1291,13 +1274,13 @@ P(1, \tau) &amp;= \lambda \tau e^{- \lambda \tau} = \lambda \tau - \lambda^2 \ta
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

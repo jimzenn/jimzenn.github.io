@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>The Matrix Representation of a Linear Transformation - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -277,7 +287,6 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="ordered-basis">Ordered Basis</span></span>
   <div class="block__content block__content--blue">
@@ -313,7 +322,6 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--blue ">
@@ -353,7 +361,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: $\R^2$
     
@@ -375,14 +382,11 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="coordinate-vector">Coordinate Vector</span></span>
   <div class="block__content block__content--blue">
     <p>Let $\beta = \set{u_1, u_2, \dots, u_{n}}$ be an ordered basis of a <u>finite-dimensional</u> vector space, $V$ is a vector space over a field $F$. For $x \in V$, exists unique scalars $a_1, a_2, \dots, a_{n} \in F$ s.t. $x= a_1u_1 + a_2u_2 + \dots + a_{n} u_{n}$.</p>
-
 <p>We define the <strong>coordinate vector</strong> of $x $ relative to $\beta $, denoted $[x]_ \beta $, by</p>
-
 <p>$$[x]_\beta = {\Vcr{a_1}{a_2}{\dots}{a_n}}$$</p>
 
   </div>
@@ -417,15 +421,12 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>$\P_2(x)/ \R, \beta = \set{1, x, x^2}$ is an ordered basis.</p>
-
 <p>$f(x) = -5x^2 + x - \frac{1}{2} = -\frac{1}{2} \cdot 1 + 1 \cdot x - 5 \cdot x^2$</p>
-
 <p>$[f(x)]_\beta = {\Vce{- \frac{1}{2}}{1}{-5}}$</p>
 
   </div>
@@ -442,22 +443,15 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="matrix-representation-of-linear-transformations">Matrix Representation of Linear Transformations</span></span>
   <div class="block__content block__content--blue">
     <p>Let $T: V \to W, \dim V = n, \dim W = m$. Let $\beta = \set{v_1, v_2, \dots, v_{n}}, \gamma = \set{w_1, w_2, \dots, w_{m}}$ be ordered basis of $V$ and $W$ respectively.</p>
-
 <p>Now choose $x_j \in \beta$ and consider $T(v_j)$. Since $\gamma$ is a basis of $W , \exists a_{1j}, a_{2j}, \dots, a_{mj} \in F$ s.t. $T(v_j) = a_{1j}w_1 + a_{2j}w_2 + \dots + a_{mj}w_{m}= \sum_{i=1}^{m} a_{ij}w_i$.</p>
-
 <p>$$[T(v_j)]_\gamma = {\Vcr{ a_{1j}}{ a_{2j}}{ \dots }{ a_{mj}}}$$</p>
-
 <p>Let $A$ be a matrix s.t. Its columns are the coordinates vector $[T(v_1)]_\gamma, [T(v_2)]_\gamma, \ldots, [T(v_n)]_\gamma$.</p>
-
 <p>$$A = \Mqr{\vce{\mid}{[T(v_1)]_\gamma}{\mid}}{\vce{\mid}{[T(v_2)]_\gamma}{\mid}}{\dots}{\vce{\mid}{[T(v_n)]_\gamma}{\mid}}$$</p>
-
 <p>This matrix $A$ is called the <strong>matrix representation of $T$ in the ordered basis $\beta$ and $\gamma$</strong> and write $A = [T]^\gamma_\beta$.</p>
-
 <p>In particular, if $V = W$ and $\beta = \gamma$, then we write $A = [T]_\beta$.</p>
 
   </div>
@@ -492,28 +486,19 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: $T: \R^3 \to \R^2$
     
   </span>
   <div class="block__content block__content--gray">
     <p>Find the matrix representation of $T(x, y, z) = (2x-y, x+z)$.</p>
-
-<p>Let $\beta = \set{e_1, e_2, e_3}, \gamma = \set{e_1&rsquo;, e_2&rsquo;}$.</p>
-
-<p>$T(e_1) = (2, 1) = 2e_1&rsquo; +1 e_2&rsquo;$</p>
-
-<p>$T(e_2) = (-1, 0) = -1e_1&rsquo; + 0e_2&rsquo;$</p>
-
-<p>$T(e_3) = (0, 1) = 0e_1&rsquo; + 1e_2&rsquo;$</p>
-
+<p>Let $\beta = \set{e_1, e_2, e_3}, \gamma = \set{e_1', e_2'}$.</p>
+<p>$T(e_1) = (2, 1) = 2e_1' +1 e_2'$</p>
+<p>$T(e_2) = (-1, 0) = -1e_1' + 0e_2'$</p>
+<p>$T(e_3) = (0, 1) = 0e_1' + 1e_2'$</p>
 <p>$\therefore  $ the matrix representation of $T $ in $\beta $ and $\gamma $ is</p>
-
 <p>$$[ T ]_{ \beta }^{ \gamma } = {\Mee{ \mid }{ \mid }{ \mid }{ [ T(e_1) ]_{ \gamma }}{ [ T(e_2) ]_{ \gamma }}{ [ T(e_3) ]_{ \gamma }}{ \mid }{ \mid }{ \mid }} = {\Mwe{ 2 }{ -1 }{ 0 }{ 1 }{ 0 }{ 1 }} $$</p>
-
 <p>with which we have:</p>
-
 <p>$$v \in V, [ T ]_{ \beta }^{ \gamma } [v]_ \beta = [v]_ \gamma $$</p>
 
   </div>
@@ -530,25 +515,18 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: $T: \R^3 \to \R^2$
     
   </span>
   <div class="block__content block__content--gray">
     <p>Find the matrix representation of $T(x, y, z) = (2x-y, x+z)$.</p>
-
-<p>Let $\beta&rsquo; = \set{(1,-1, 0), (1,0, 3), (1,1,-2)}, \gamma = \set{(1, 0), (0, 1)}$.</p>
-
-<p>$T(\beta_1&rsquo;) = (3,1) = 3e_1&rsquo; + 1e_2&rsquo;$</p>
-
-<p>$T(\beta_2&rsquo;) = (2,4)  = 2e_1&rsquo; + 4e_2&rsquo;$</p>
-
-<p>$T(\beta_3&rsquo;) = (1,-1) = 1e_1&rsquo; + -1e_2&rsquo;$</p>
-
-<p>$\therefore  $ the matrix representation of $T $ in $\beta&rsquo; $ and $\gamma $ is</p>
-
-<p>$$[ T ]_{ \beta&rsquo; }^{ \gamma } = {\Mee{ \mid }{ \mid }{ \mid }{ [ T(\beta&rsquo;_1) ]_{ \gamma }}{ [ T(\beta&rsquo;_2) ]_{ \gamma }}{ [ T(\beta&rsquo;_3) ]_{ \gamma }}{ \mid }{ \mid }{ \mid }} = {\Mwe{ 3 }{ 2 }{ 1 }{ 1 }{ 4 }{ -1 }} $$</p>
+<p>Let $\beta' = \set{(1,-1, 0), (1,0, 3), (1,1,-2)}, \gamma = \set{(1, 0), (0, 1)}$.</p>
+<p>$T(\beta_1') = (3,1) = 3e_1' + 1e_2'$</p>
+<p>$T(\beta_2') = (2,4)  = 2e_1' + 4e_2'$</p>
+<p>$T(\beta_3') = (1,-1) = 1e_1' + -1e_2'$</p>
+<p>$\therefore  $ the matrix representation of $T $ in $\beta' $ and $\gamma $ is</p>
+<p>$$[ T ]_{ \beta' }^{ \gamma } = {\Mee{ \mid }{ \mid }{ \mid }{ [ T(\beta'_1) ]_{ \gamma }}{ [ T(\beta'_2) ]_{ \gamma }}{ [ T(\beta'_3) ]_{ \gamma }}{ \mid }{ \mid }{ \mid }} = {\Mwe{ 3 }{ 2 }{ 1 }{ 1 }{ 4 }{ -1 }} $$</p>
 
   </div>
 
@@ -564,12 +542,10 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="addition-and-scalar-multiplication-of-linear-transformations">Addition and Scalar Multiplication of Linear Transformations</span></span>
   <div class="block__content block__content--blue">
     <p>Let $T: V \to W$ and $U: V \to W$ be two linear transformations, where V and W be vector spaces over a field $F $, we then define:</p>
-
 <p>$$\begin{align*}
 (T + U)(x) &amp;:= T(x) + U(x) &amp; \forall x \in V \br
 (cT)(x) &amp;:= cT(x) &amp; \forall c \in F, x \in V
@@ -607,12 +583,10 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="vector-space-of-all-linear-transformations-from-v-to-w">Vector Space of All Linear Transformations From $V$ to $W$</span></span>
   <div class="block__content block__content--blue">
     <p>Let $V$ and $W$ be two vector spaces over $F$. We denote the vector space of all linear transformations from $V$ into $W$ by $\L (V, W)$.</p>
-
 <p>In particular, if $V = W $, we simply write $\L(V) $ instead of $\L(V, W) $.</p>
 
   </div>
@@ -647,26 +621,23 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   2.7<span class="keyword" id="2.7" style="visibility: hidden;">2.7</span></span>
   <div class="block__content block__content--green">
   <p>Let $V$ and $W$ be vector spaces over $F$. $\L(V, W)$ is a vector space over $F$.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>exercise. Verify the 8 axioms.</p>
-
   </div>
 </div>
 
@@ -701,7 +672,6 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks
   </span>
@@ -721,61 +691,48 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   2.8<span class="keyword" id="2.8" style="visibility: hidden;">2.8</span></span>
   <div class="block__content block__content--green">
   <p>$T: V \to W, U:V \to W$. Let $\beta$ and $\gamma$ be two ordered basis of $V$ and $W$ respectively, then:</p>
-
 <ol>
 <li>$[T+U]^\gamma_\beta = [T]^\gamma_\beta + [U]^\gamma_\beta $</li>
 <li>$c \in F, [cT]^\gamma_\beta = c[T]^\gamma_\beta$</li>
 </ol>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Let $\dim V = n, \dim W = m$.
 $\beta = \set{v_1, v_2, &hellip;, v_{n}}, \gamma = \set{w_1, w_2, &hellip;, w_{m}}$.</p>
-
 <p>$T(v_j) = \sum_{i=1}^{m} a_{ij}w_i$, since $T(v_j) \in R(T) $.</p>
-
 <p>$$[T]^\gamma_\beta = {{\Mqe{{\vcr{ \dots }{ \dots }{ \dots }{ \dots }}}{{\vcr{a_{1j}}{a_{2j}}{a_{3j}}{a_{4j}}}}{{\vcr{ \dots }{ \dots }{ \dots }{ \dots }}}}} = (a_{ij})_{m \times n}$$</p>
-
 <p>Similarly,</p>
-
 <p>$U(v_j) = \sum_{i=1}^{m} b_{ij}w_i$, since $T(v_j) \in R(T) $.</p>
-
 <p>$$[U]^\gamma_\beta = {{\Mqe{{\vcr{ \dots }{ \dots }{ \dots }{ \dots }}}{{\vcr{b_{1j}}{b_{2j}}{b_{3j}}{b_{4j}}}}{{\vcr{ \dots }{ \dots }{ \dots }{ \dots }}}}} = (b_{ij})_{m \times n}$$</p>
-
 <p>$\begin{align*}
-  (T+U)(v_j) &amp;= T(v_j) + U(v_j) \br
-  &amp;= \sum_{i=1}^{m} a_{ij}w_i + \sum_{i=1}^{w} b_{ij}w_i \br
-  &amp;= \sum_{i=1}^{m} (a_{ij} + b_{ij})w_i
+(T+U)(v_j) &amp;= T(v_j) + U(v_j) \br
+&amp;= \sum_{i=1}^{m} a_{ij}w_i + \sum_{i=1}^{w} b_{ij}w_i \br
+&amp;= \sum_{i=1}^{m} (a_{ij} + b_{ij})w_i
 \end{align*}$</p>
-
 <p>$\therefore$</p>
-
 <p>$\begin{align*}
 [T+U]^\gamma_\beta &amp;= (a_{ij} + b_{ij})_{m \times n} \br
 &amp;= [T]^\gamma_\beta + [U]^\gamma_\beta
 \end{align*}$</p>
-
 <p>$\begin{align*}
 [cT]^\gamma_\beta &amp;= (ca_{ij})_{m \times n} \br
 &amp;= c(a_{ij})_{m \times n} \br
 &amp;= c[T]^\gamma_\beta
 \end{align*}$</p>
-
   </div>
 </div>
 
@@ -1168,13 +1125,13 @@ $\beta = \set{v_1, v_2, &hellip;, v_{n}}, \gamma = \set{w_1, w_2, &hellip;, w_{m
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

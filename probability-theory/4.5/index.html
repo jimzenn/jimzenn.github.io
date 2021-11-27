@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Sum of a Random Number of Independent Random Variables - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -304,77 +314,60 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="expectation-and-variance-of-the-sum-of-a-random-number-of-independent-random-variables">Expectation and Variance of the Sum of a Random Number of Independent Random Variables</span></span>
   <div class="block__content block__content--green">
   <p>Consider the sum, where $N$ is a random variable that takes nonnegative integer values, and $X_1, X_2, &hellip;, X_n$ are identically distributed random variables. Assume that $N, X_1, X_2, &hellip;, X_n$ are independent.</p>
-
 <p>$$Y = X_1, X_2, &hellip;, X_N$$</p>
-
 <p>Then</p>
-
 <p>$$E[Y] = E[N] E[X] $$</p>
-
 <p>$$\var{Y} = E[N] \var{X} + (E[X])^2 \var{N} $$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Fix a $n &gt; 0$. The random variable $X_1 + &hellip; + X_n$ is independent of $N$ and, therefore, independent of $\set{ N = n } $. Hence,</p>
-
 <p>$$\begin{align*}
 E [ Y | N = n ] &amp;= E [ X_1 + &hellip; + X_N | N = n] \br
 &amp;= E [ X_1 + &hellip; + X_n | N = n ] \br
 &amp;= E [ X_1 + &hellip; + X_n ] \br
 &amp;= n E [ X ]
 \end{align*}$$</p>
-
 <p>This is true for all $n &gt; 0$, so</p>
-
 <p>$$E [ Y | N ] = N E [ X ] $$</p>
-
 <p>Using the law of iterated expectations, we obtain</p>
-
 <p>$$E[Y] = E[E[Y|N]] = E[NE[X]] = E[N]E[X]$$</p>
-
   </div>
 </div>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Similarly,</p>
-
 <p>$$\begin{align*}
 \var{ Y | N = n } &amp;= \var{ X_1 + &hellip; + X_N | N = n } \br
 &amp;= \var{ X_1 + &hellip; + X_n } \br
 &amp;= n \var{ X }
 \end{align*}$$</p>
-
 <p>This is true for all $n &gt; 0$, so</p>
-
 <p>$$\begin{align*}
 \var{ Y } &amp;= E [ \var{ Y | N } ] + \var{ E [ Y | N ] } \br
 &amp;= E [ N \var{ X } ] + \var{ N E[X] } \br
 &amp;= E [ N ] \var{ X } + \pare{E [ X ]}^2 \var{ N }
 \end{align*}$$</p>
-
   </div>
 </div>
 
@@ -407,7 +400,6 @@ E [ Y | N = n ] &amp;= E [ X_1 + &hellip; + X_N | N = n] \br
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--green ">
@@ -449,24 +441,17 @@ E [ Y | N = n ] &amp;= E [ X_1 + &hellip; + X_N | N = n] \br
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: Sum of a geometric number of independent geometric random variables
     
   </span>
   <div class="block__content block__content--gray">
     <p>We let $N$ be geometrically distributed with parameter $p$. We also let each random variable $X_i$ be geometrically distributed with parameter $q$. We assume that all of these random variables are independent. Let $Y = X_1, X_2, &hellip;, X_n$. We have</p>
-
 <p>$$M_N(s) = \frac{ p e^s }{ 1 - (1 - p) e^s }, M_X(s) = \frac{ q e^s }{ 1 - (1 - q) e^s }$$</p>
-
 <p>To determine $M_Y(s)$, we start with the formula for $M_N(s)$ and replace each occurrence of $e^s$ with $M_X(s)$. This yields</p>
-
 <p>$$M_Y(s) = \frac{ p M_X(s)}{ 1 - (1 - p) M_X(s)} $$</p>
-
 <p>and, after some algebra,</p>
-
 <p>$$M_Y(s) = \frac{ pq e^s }{ 1 - (1 - pq) e^s } $$</p>
-
 <p>We conclude that $Y $ is geometrically distributed, with parameter $pq$.</p>
 
   </div>
@@ -1205,13 +1190,13 @@ E [ Y | N = n ] &amp;= E [ X_1 + &hellip; + X_N | N = n] \br
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

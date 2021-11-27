@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Derived Distributions - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -300,19 +310,14 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="derived-distribution">Derived Distribution</span></span>
   <div class="block__content block__content--blue">
     <p>Let $X$ be a continuous random variable with PDF $f_X(x) : \R \to [0, +\infty)$, and $g: \R \to \R$ be a function.
 Want to determine the <strong>derived distribution</strong> $Y = g(X)$.</p>
-
 <p>We first calculate the CDF $F_Y(y)$</p>
-
 <p>$$F_Y(y) = \int_{\set{ x : g(x) \leq y}} f_X(x) \d x$$</p>
-
 <p>Assuming $F_Y(y)$ is differentiable, then</p>
-
 <p>$$f_Y(y) = \der{F_Y}{y}(y)$$</p>
 
   </div>
@@ -347,28 +352,24 @@ Want to determine the <strong>derived distribution</strong> $Y = g(X)$.</p>
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>$X \tilde \text{Uniform}(-1, 1]$, $Y= X^3$. Find the distribution of $Y$.</p>
-
 <p>$$f_X(x) = \begin{cases}
-  \frac{ 1 }{ 2 } &amp; x \in (-1, 1] \br
-  0 &amp; x \not \in (-1, 1]
+\frac{ 1 }{ 2 } &amp; x \in (-1, 1] \br
+0 &amp; x \not \in (-1, 1]
 \end{cases}$$</p>
-
 <p>$$\begin{align}
-  F_Y(y) =&amp; \int_\set{ x: x^3 \leq y } f_X(x) \d x
-  = \int_{ -\infty }^{ \sqrt[ 3 ]{y}} f_X(x) \d x \br
-  =&amp; \begin{cases}
-  0&amp; y &lt; -1 \br
-  \frac{ 1 }{ 2 } \sqrt[ 3 ]{ y } + \frac{ 1 }{ 2 } &amp; y \in (-1, 1] \br
-  1 &amp; y &gt; 1
-  \end{cases}
+F_Y(y) =&amp; \int_\set{ x: x^3 \leq y } f_X(x) \d x
+= \int_{ -\infty }^{ \sqrt[ 3 ]{y}} f_X(x) \d x \br
+=&amp; \begin{cases}
+0&amp; y &lt; -1 \br
+\frac{ 1 }{ 2 } \sqrt[ 3 ]{ y } + \frac{ 1 }{ 2 } &amp; y \in (-1, 1] \br
+1 &amp; y &gt; 1
+\end{cases}
 \end{align}$$</p>
-
 <p>$$f_Y(y) =\der{ }{ y }  F_Y(y) = \begin{cases}
 \frac{ 1 }{ 2 } \abs{ \frac{ 1 }{ 3 } y ^{ - \frac{ 2 }{ 3 }}}=\frac{ 1 }{ 6 } y ^{ - \frac{ 2 }{ 3 }} &amp; y \in (-1, 1] \br
 0 &amp; y \not \in (-1, 1]
@@ -388,18 +389,14 @@ Want to determine the <strong>derived distribution</strong> $Y = g(X)$.</p>
 </div>
 
 
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks: Monotonic
   
   </span>
   <div class="block__content block__content--yellow">
   <p>$f: I \to J. I, J \subseteq \R $.</p>
-
 <p>$f$ is <strong>strictly increasing</strong> if $f(x) &lt; f(y), \forall x &lt; y$.</p>
-
 <p>$f$ is <strong>strictly decreasing</strong> if $f(x) &gt; f(y), \forall x &lt; y$.</p>
-
 <p>$f$ is <strong>strictly monotonic</strong> if it is either strictly increasing or strictly decreasing.</p>
 
   </div>
@@ -415,20 +412,15 @@ Want to determine the <strong>derived distribution</strong> $Y = g(X)$.</p>
 </div>
 
 
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks
   </span>
   <div class="block__content block__content--yellow">
   <p>$g: I \to J$ is a strictly monotonic function, $\exists h: J \to I$, such that $g(h(y))  = y, y \in J$.</p>
-
 <p>By chain rule, we get</p>
-
-<p>$$g&rsquo;(h(y)) h&rsquo;(y) = 1, y \in J$$</p>
-
+<p>$$g'(h(y)) h'(y) = 1, y \in J$$</p>
 <p>and therefore</p>
-
-<p>$$h&rsquo;(y) = \frac{ 1 }{ g&rsquo;(h(y))}$$</p>
+<p>$$h'(y) = \frac{ 1 }{ g'(h(y))}$$</p>
 
   </div>
 
@@ -443,22 +435,16 @@ Want to determine the <strong>derived distribution</strong> $Y = g(X)$.</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="derived-distribution-of-monotonic-function">Derived Distribution of Monotonic Function</span></span>
   <div class="block__content block__content--green">
   <p>Let $X$ be a continuous random variable such that $F_X$ is differentiable.</p>
-
 <p>Let $I, J$ be open intervals in $\R$, $g: I \to J$ be a strictly monotonic differentiable function. That is</p>
-
-<p>$$g&rsquo;(x) &gt; 0\text{ or } g&rsquo;(x) &lt; 0, \forall x \in I$$</p>
-
+<p>$$g'(x) &gt; 0\text{ or } g'(x) &lt; 0, \forall x \in I$$</p>
 <p>Let $h: J \to I$ be the inverse of $g$. Notice that $h$ is also differentiable.</p>
-
 <p>Then, the PDF of $Y$ in the region where $f_Y(y) &gt; 0$ is given by</p>
-
-<p>$$f_Y(y) = f_X(h(y)) \abs{h&rsquo;(y)} = f_X(h(y)) \frac{ 1 }{ \abs{ g&rsquo;(h(y))}}, \forall y \in J$$</p>
+<p>$$f_Y(y) = f_X(h(y)) \abs{h'(y)} = f_X(h(y)) \frac{ 1 }{ \abs{ g'(h(y))}}, \forall y \in J$$</p>
 
   </div><script>
       
@@ -491,28 +477,22 @@ Want to determine the <strong>derived distribution</strong> $Y = g(X)$.</p>
 </div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>If $g$ is increasing,</p>
-
 <p>$$\begin{align*}
 F_Y(y) &amp;= \b{P}(Y \leq y) = \b{P}(g(X) \leq y) = \b{P}(X \leq h(y)) \br
 &amp;= \int_{-\infty}^{h(y)}f_X(x)\d x \br
 &amp;= F_X(h(y))
 \end{align*}$$</p>
-
-<p>$f_Y(y) = \der{}{y}F_X(h(y)) = f_X(h(y))h&rsquo;(y)$.</p>
-
+<p>$f_Y(y) = \der{}{y}F_X(h(y)) = f_X(h(y))h'(y)$.</p>
 <p>If $g$ is decreasing,</p>
-
 <p>$$\begin{align*}
 F_Y(y) &amp;= \b{P}(Y \leq y) = \b{P}(g(X) \leq y) = \b{P}(X \geq h(y)) \br
 &amp;= 1 - F_X(h(y))
 \end{align*}$$</p>
-
-<p>$f_Y(y) = \der{}{y} (1- F_X(h(y))) = - f_X(h(y))h&rsquo;(y)$.</p>
+<p>$f_Y(y) = \der{}{y} (1- F_X(h(y))) = - f_X(h(y))h'(y)$.</p>
 
   </div>
 
@@ -526,13 +506,11 @@ F_Y(y) &amp;= \b{P}(Y \leq y) = \b{P}(g(X) \leq y) = \b{P}(X \geq h(y)) \br
   </ul></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>$T_A \tilde \text{Exp}(\lambda), T_B \tilde \text{Exp}(\mu). \lambda, \mu &gt; 0.$ Suppose $T_A, T_B$ are independent. $X = \max{ T_A, T_B }, Y = \min{ T_A, T_B }$. Want to know $F_X, F_Y $.</p>
-
 <p>$\begin{align*}
 F_X(y)=&amp; \b{P}(\max{ T_A, T_B } \leq y) \br
 =&amp; \b{P}(T_A \leq y, T_B \leq y) \br
@@ -540,9 +518,7 @@ F_X(y)=&amp; \b{P}(\max{ T_A, T_B } \leq y) \br
 =&amp; F_{T_A}(y)F_{T_B}(y) \br
 =&amp; (1 - e^{- \lambda y})(1 - e^{ - \mu y })
 \end{align*}$</p>
-
 <p>$f_X(y) = \der{  }{ y }F_X(y) $</p>
-
 <p>$\begin{align*}
 &amp;\b{P}(\min{ T_A, T_B } \leq y) \br
 =&amp; 1 - \b{P}(\min{ T_A, T_B } \geq y) \br
@@ -550,24 +526,16 @@ F_X(y)=&amp; \b{P}(\max{ T_A, T_B } \leq y) \br
 =&amp; 1 - P (T_A \geq y) P (T_B \geq y) \br
 =&amp; 1 - (1 - F_{T_A}(y))(1 - F_{T_B}(y)) \br
 =&amp; \begin{cases}
-  1 - e^{-y \lambda}e^{-y \mu} = 1 - e ^{- (\lambda + \mu)y}, y \geq 0
+1 - e^{-y \lambda}e^{-y \mu} = 1 - e ^{- (\lambda + \mu)y}, y \geq 0
 \end{cases}
 \end{align*}$</p>
-
 <p>Note, $Min (T_A, T_B) ~ Exponential (\lambda + \mu)$</p>
-
 <p>$E(X) = E(T_A + T_B - \min{ T_A, T_B }) = \frac{ 1 }{ \lambda } + \frac{ 1 }{ \mu } - \frac{ 1 }{ \lambda + \mu }$</p>
-
 <p>$E(Y) = \frac{ 1 }{ \lambda + \mu } $</p>
-
 <p>$X = \max{ T_A, T_B }$</p>
-
 <p>$Y = \min{ T_A, T_B } $</p>
-
 <p>$T_A - T_B - independent $</p>
-
 <p>$F_Y(y) = \iint_{ \set{(a, b): \min{(a, b)} \leq y }} f_{T_AT_B}(a, b) \d a \d b  = \iint_{ \set{(a, b): \min{(a, b)} \leq y }}f_{T_A}(a) f_{T_B}(b) \d a \d  b$</p>
-
 <p>$\begin{cases}
 F_Y(y) &amp;= \b{P}(\min{ T_A T_B } \leq y)  = 1 - \b{P}(\min{  T_A, T_B } \geq y) \br
 &amp;= 1 - \b{P}(T_A \geq y, T_B \geq y) = 1- \b{P}(T_A \geq y)\b{P}(T_B \geq y) \br
@@ -588,15 +556,12 @@ F_Y(y) &amp;= \b{P}(\min{ T_A T_B } \leq y)  = 1 - \b{P}(\min{  T_A, T_B } \geq 
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>Suppose $X,Y $ are two independent integratable random variable. Then the probability mass function of $x + y $ is given by</p>
-
 <p>for $t \in \Z,$</p>
-
 <p>$\begin{align*}
 P_{X+Y}(t)  \br
 =&amp; \b{P}(X+Y = t)  \br
@@ -620,29 +585,24 @@ P_{X+Y}(t)  \br
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>Let $X, Y $ be two independent random variable, such that$F_{X+Y}(t)$ is differentiable $\forall t \in R$. Then</p>
-
 <p>$$f_{X+Y}(t) = f_X *f_Y(t) \forall t \in \R $$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$F_{X+Y}(t) = \b{P}(X +Y \leq t) = \iint_{ \set{(x, y) \in \R, x + y \leq t }} f_{X, Y}(x, y) \d x \d  y == \iint_{ \set{(x, y) \in \R, x + y \leq t }} f_X(x)f_Y(y) \d x \d y = \int_{ x \in \R } \int_{ -\infty }^{ t - x } f_X(x) f_Y(y) \d y \d x$</p>
-
 <p>$f_{X+Y}(t) = \der{  }{ t } F_{X+Y} (t) = \der{  }{ t } \int_{ x \in \R } \int_{ -\infty }^{ t - x } f_X(x) f_Y(y) \d y \d x = \int_{ x \in \R } f_X(x) \der{  }{ t } \int_{ -\infty }^{ t - x } f_Y(y) \d y \d x=  \int_{ x \in \R } f_X(x) f_Y(t - x) \der{  }{ t }(t - x) \d x =  \int_{ x \in \R } f_X(x)  f_Y(t - x) \d x  = f_X*f_Y(t)$</p>
-
   </div>
 </div>
 
@@ -657,43 +617,32 @@ P_{X+Y}(t)  \br
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="convolution">Convolution</span></span>
   <div class="block__content block__content--blue">
     <p><strong>(discrete case)</strong></p>
-
 <p>Let $Z = X + Y $, where $X$ and $Y$ are independent integer-valued random variables with PMFs $p_X $ and $p_Y $, respectively. Then, for any integer $z $,</p>
-
 <p>$$\begin{align*}
-  p_Z(z) &amp;= \b{P}(X + Y = z) \br
-  &amp;= \sum_{ \set{(x, y) | x + y = z }} \b{P}(X = x, Y = y) \br
-  &amp;= \sum_{ x } \b{P}(X = x, Y = z - x) \br
-  &amp;= \sum_{ x } p_X(x)p_Y(z - x)
+p_Z(z) &amp;= \b{P}(X + Y = z) \br
+&amp;= \sum_{ \set{(x, y) | x + y = z }} \b{P}(X = x, Y = y) \br
+&amp;= \sum_{ x } \b{P}(X = x, Y = z - x) \br
+&amp;= \sum_{ x } p_X(x)p_Y(z - x)
 \end{align*}$$</p>
-
 <p>The resulting PMF $p_z $ is called the <strong>convolution</strong> of the PMFs of $X  $ and $Y $.</p>
-
 <p><strong>(continuous case)</strong></p>
-
 <p>Suppose now that $X $ and $Y $ are independent continuous random variables with PDFs $f_X$ and $f_Y $, respectively. Then, to find the PDF of $Z $, we first note that</p>
-
 <p>$$\begin{align*}
-  \b{P}(Z \leq z | X = x) =&amp; \b{P}(X + Y \leq z | X = x) \br
-  =&amp; \b{P}(x + Y \leq z | X = x) \br
-  =&amp; \b{P}(x + Y \leq z) \br
-  =&amp; \b{P}(Y \leq z - x)
+\b{P}(Z \leq z | X = x) =&amp; \b{P}(X + Y \leq z | X = x) \br
+=&amp; \b{P}(x + Y \leq z | X = x) \br
+=&amp; \b{P}(x + Y \leq z) \br
+=&amp; \b{P}(Y \leq z - x)
 \end{align*}$$</p>
-
 <p>By differentiating both sides with respect to $z$, we see that $f_{Z|X}(z|x) = f_Y(z - x) $. Using the multiplication rule, we have</p>
-
 <p>$$\begin{align*}
 f_{X, Z}(x, z)  =&amp; f_X(x) f_{Z|X}(z|x) \br
 =&amp; f_X(x)f_Y(z- x)
 \end{align*}$$</p>
-
 <p>Then,</p>
-
 <p>$$\begin{align*}
 f_Z(z) =&amp; \int_{ -\infty }^{ +\infty } f_{X, Z} (x, z) \d x \br
 =&amp; \int_{ -\infty }^{ +\infty } f_X(x) f_Y(z - x) \d x
@@ -1453,13 +1402,13 @@ f_Z(z) =&amp; \int_{ -\infty }^{ +\infty } f_{X, Z} (x, z) \d x \br
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

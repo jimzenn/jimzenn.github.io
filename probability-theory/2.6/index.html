@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Conditioning - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -305,16 +315,12 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="conditional-pmf-on-an-event">Conditional PMF on an Event</span></span>
   <div class="block__content block__content--blue">
     <p>The <strong>conditional PMF</strong> of a random variable $X$, conditioned on a particular event $A$ with $\b{P}(A) \neq 0$, is defined by</p>
-
 <p>$$P_{X|A}(x) = \b{P}(X = x | A) = \frac{ \b{P}({ X= x } \cap A)}{ \b{P}(A)}$$</p>
-
 <p>and satisfies</p>
-
 <p>$$\sum_{ x } p_{X|A}(x) = 1$$</p>
 
   </div>
@@ -349,17 +355,13 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="total-probability-theorem-for-conditional-pmfs">Total Probability Theorem for Conditional PMFs</span></span>
   <div class="block__content block__content--green">
   <p>If $A_1, A_2, &hellip;, A_n$ form a partition of the sample space $\Omega. \forall i, \b{P}(A_i) \neq 0$. Then</p>
-
 <p>$$P_X(x) = \sum_{ i=1 }^{n}\b{P}(A_i) p_{X|A_i}(x)$$</p>
-
 <p>Furthermore, for $B \subseteq \Omega$, and $\forall i,  \b{P}(A_i \cap B) \neq 0 $, we have</p>
-
 <p>$$P_{X|B}(x) = \sum_{ i = 1 }^{ n } \b{P}(A_i | B) p_{X|A_i \cap B}(x) $$</p>
 
   </div><script>
@@ -393,18 +395,13 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="conditioning-pmf-of-x-given-y">Conditioning PMF of $X$ Given $Y$</span></span>
   <div class="block__content block__content--blue">
     <p>The <strong>conditional PMF</strong> of a random variable $X$ given $Y$, which is defined by specializing the definition of $p_{X|A}$ to events $A$ of the form $\set{Y = y}$:</p>
-
 <p>$$p_{X|Y}(x|y) = \b{P}(X=x|Y=y)$$</p>
-
 <p>Using the definition of conditional probabilities, we have</p>
-
 <p>$$p_(X|Y)(x|y)=\frac{\b{P}(X=x,Y=y)}{\b{P}(Y=y)}=\frac{p_{X, Y}(x, y)}{p_Y(y)}$$</p>
-
 <p>where $\b{P}(X,Y)$ is the joint PMF.</p>
 
   </div>
@@ -439,17 +436,13 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>The conditional PMF of $X$ given $Y = y$ is related to the joint PMF by</p>
-
 <p>$$p_{X, Y} (x, y) = p_Y(y) p_{X|Y} (x | y) $$</p>
-
 <p>The conditional PMF of $X $ given $Y $ can be used to calculate the marginal PMF of $X$ through the formula</p>
-
 <p>$$p_X(x) = \sum_{ y } p_Y(y) p_{X|Y} (x | y)$$</p>
 
   </div><ul class="block__footer">
@@ -463,18 +456,13 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="conditional-expectation-of-discrete-random-variables">Conditional Expectation of Discrete Random Variables</span></span>
   <div class="block__content block__content--blue">
     <p>Let $X$ be a random variables.</p>
-
 <p>The conditional expectation of $X$ given $A$ with $\b{P}(A) \neq 0$ is defined by</p>
-
 <p>$$E\brac{ X|A } = \sum_{x} x p_{X|A}(x)$$</p>
-
 <p>For a function $g(X)$, we have</p>
-
 <p>$$E\brac{ g(X)|A } = \sum_{x} g(x) p_{X|A}(x)$$</p>
 
   </div>
@@ -509,25 +497,17 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="total-expectation-theorem">Total Expectation Theorem</span></span>
   <div class="block__content block__content--green">
   <p>The conditional expectation of $X$ given a value $y$ of $Y$ is defined by</p>
-
 <p>$$E\brac{ X|Y=y } = \sum_{ x } x p_{X|Y} (x|y)$$</p>
-
 <p>If $A_1, A_2, &hellip;, A_n $ be disjoint events that form a partition of the sample space, with $\b{P}(A_i) &gt; 0 $ for all $i$, then</p>
-
 <p>$$E\brac{ X } = \sum_{ i=1 }^{ n } \b{P}(A_i) E\brac{ X|A_i } $$</p>
-
 <p>Furthermore, for any event $B$ with $\b{P}(A_i \cap B) \neq 0, \forall i$, we have</p>
-
 <p>$$E\brac{ X|B } = \sum_{ i=1 }^{ n } \b{P}(A_i |B) E\brac{ X| A_i \cap B } $$</p>
-
 <p>We have</p>
-
 <p>$$E\brac{ X } = \sum_{ y } p_Y(y) E\brac{ X | Y = y } $$</p>
 
   </div><script>
@@ -1283,13 +1263,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

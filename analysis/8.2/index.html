@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Some Point-Set Topology of Metric Spaces - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -309,12 +319,10 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="balls">Balls</span></span>
   <div class="block__content block__content--blue">
     <p>Let $(X, d) $ be a metric space, $x_0 \in X, r&gt; 0 $.</p>
-
 <p>The (open) ball of radius $r $ centered at $x_0 $ relative to $d $ in $X $ is the set $B_{(X, d)}(x_0, r) = \set{ x \in X : d (x_0, x) &lt; r } $</p>
 
   </div>
@@ -349,23 +357,18 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>$X = \R, f: \R \to \R f(x) = \begin{cases}
-  1 &amp; x = 0 \br
-  0 &amp; if x = 1 \br
-  x &amp; \otherwise
+1 &amp; x = 0 \br
+0 &amp; if x = 1 \br
+x &amp; \otherwise
 \end{cases}$</p>
-
 <p>Define $d: \R \times \R \to [0, \infty)$ by $d(x, y) = \abs{  f(x) - f(y)} $</p>
-
 <p>Does $(x_n)^ \infty _{n = 1 } $ defined by $x_n = \frac{ 1 }{ n } $ converge? If so, to what value.</p>
-
 <p>Claim: $(x_n)_{n = 1} ^ \infty \to 1$</p>
-
 <p>Check!</p>
 
   </div>
@@ -382,16 +385,12 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>$\R^n = \set{ xo = (x_1, &hellip;, x_n): x_i \in \R } $</p>
-
 <p>If $(_k)^\infty_{k=1} $ is a sequence in $\R^n$  then we write</p>
-
 <p>$x^{(k)} = (x^{(k)}_1, x^{(k)}_2, &hellip;, x^{(k)}_n) $</p>
-
 <p>Notice that if you fix an index $i $, then $(x_i^{(k)})^\infty_{k=1} $ is a sequence.</p>
 
   </div>
@@ -406,7 +405,6 @@ if (!doNotTrack) {
   </ul></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
@@ -414,72 +412,46 @@ if (!doNotTrack) {
   <div class="block__content block__content--green">
   <p>o
 Let $X = \R^n $, $(x^{(k)})^\infty_{k=1} $ is a sequence in $\R^n$ and $x_0 = (x_1, x_2, &hellip;, x_n) $ a point in $\R^n $</p>
-
 <p>The following statements are <strong>equivalent</strong>.</p>
-
 <ol>
 <li>$(x^{(k)})^\infty_{k=1} \to x_0 $ in $l^1 $ metric.</li>
 <li>$(x^{(k)})^\infty_{k=1} \to x_0 $ in $l^2$ metric.</li>
 <li>$(x^{(k)})^\infty_{k=1} \to x_0$ in $l^\infty $ metric.</li>
 <li>for every $j \in \set{ 1, 2, &hellip;, n } $, $(x^{(k)}_j)^\infty_{k=1} \to x_j $.</li>
 </ol>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$(1 \implies 2)$</p>
-
 <p>Assume $(x^{(k)})^\infty_{k=1} \to x_0 $ in $d_{l^1}$,</p>
-
 <p>$$\limu{ k }{ \infty } d_{l^1}(x^{(k)}, x_0) \to 0 $$</p>
-
 <p>Since $\forall i, d_{l^1}(x^{(k)}_i, x_0) &gt;= d_{l^2} (x^{(k)}_i, x_0) $, by squeeze theorem,</p>
-
 <p>$$\limu{ k }{ \infty } d_{l^2}(x^{(k)}, x_0)= 0$$</p>
-
 <p>$\therefore (x^{(k)})^ \infty _{k = 0} \to x_0 $ in $d_{l^2}$.</p>
-
 <p>$(2 \implies 1) $</p>
-
 <p>Assume $(x^{(k)})^\infty_{k=1} \to x_0 $ in $d_{l^2} $,</p>
-
 <p>$$\limu{ k }{ \infty } d_{l^2}(x^{(k)}, x_0) = 0$$</p>
-
 <p>Since $d_{l^1}(x^{(k)}, x_0) \leq \sqrt[  ]{ n } d_{l^2}(x ^{(k)}, x_0) $, by squeeze theorem,</p>
-
 <p>$$\limu{ k }{ \infty } d_{l^1} (x^{(k)}, x_0) = 0 $$</p>
-
 <p>$\therefore (x^{(k)})^\infty_{k=1} \to x_0 $ in $d_{l^1} $.</p>
-
 <p>$(1 \implies 3, 3 \implies 1) $ follow from a similar computation.</p>
-
 <p>$(1 \implies 4) $</p>
-
 <p>Fix $i \in \set{ 1, 2, &hellip;, n } $ to show $x^{(k)}_i  \to x_i$; we prove $\limu{ k }{ \infty } \abs{ x_i^{(k)} \to x_i } = 0 $.</p>
-
 <p>Since $0 \leq \abs{  x_i^{(k)} - x_i } \leq \sum_{ i = 1 }^{ n }\abs{ x_i^{(k)} - x_i } $, by squeeze theorem,</p>
-
 <p>$$\limu{ k }{ \infty } \abs{ x^{(k)}_i - x_i } = 0 $$</p>
-
 <p>$\therefore (x_i^{(k)}) \to x_i, \forall i$.</p>
-
 <p>$(4 \implies 1)$</p>
-
 <p>Assume $(x_i^{(k)}) \to x_i \forall i$,</p>
-
 <p>$$\limu{ k }{ \infty } \abs{ x_i^{(k)} -x_i } =0,  \forall i$$</p>
-
 <p>$d_{l^1} (x^{(k)}, x_0) = \sum_{ i = 1 }^{ n } \abs{ x_i^{(k)} - x_i }$</p>
-
 <p>$\therefore (x^{(k)})^\infty_{k=1} \to (x_0)$ in $d_{l^1} $.</p>
-
   </div>
 </div>
 
@@ -514,18 +486,14 @@ Let $X = \R^n $, $(x^{(k)})^\infty_{k=1} $ is a sequence in $\R^n$ and $x_0 = (x
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="interior-exterior-and-boundary">Interior, Exterior and Boundary</span></span>
   <div class="block__content block__content--blue">
     <p>Let $(X, d)$ a metric space, let $E \subseteq X$.</p>
-
 <p>$x \in X$ is an <strong>interior point</strong> of $E$, if
 $$\exists r &gt; 0 \text{ s.t. } B(x, r) \cap E = E\text{ i.e. }B(x, r) \subseteq E$$</p>
-
 <p>$x \in X $ is an <strong>exterior point</strong> of $E$ if
 $$\exists r &gt; 0 \text{ s.t. } B(x, r) \cap E = \emptyset$$</p>
-
 <p>$x \in X $ is a <strong>boundary point</strong> if $x$ is neither an interior point nor an exterior point.</p>
 
   </div>
@@ -560,12 +528,10 @@ $$\exists r &gt; 0 \text{ s.t. } B(x, r) \cap E = \emptyset$$</p>
     </script></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>$(X, d) $ metric space $E \subseteq X, x_0 \in X $.</p>
-
 <ol>
 <li>$x_0 \in \ite{E} \iff \exists r &gt;0$ such that $B(x_0, r) \subseteq E$</li>
 <li>$\ite{E} \cap \ext{E} = \emptyset$</li>
@@ -586,17 +552,13 @@ $$\exists r &gt; 0 \text{ s.t. } B(x, r) \cap E = \emptyset$$</p>
   </ul></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>$X = \R, d_{l^2}, E = (0, 1]. $</p>
-
 <p>$\ite{E} = (0, 1)$</p>
-
 <p>$\ext{E} = (-\infty, 0) \cup (1, +\infty) $</p>
-
 <p>$\bdry{E} = \set{0, 1} $</p>
 
   </div>
@@ -613,19 +575,14 @@ $$\exists r &gt; 0 \text{ s.t. } B(x, r) \cap E = \emptyset$$</p>
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>$X= \R, E = [0, 1] d_{l^1}. \forall x \in X$, If $0 &lt; r \leq 1, B(x, r) = \set{ x } $. Why?</p>
-
 <p>$B(x,r) = \set{ y \in R: d(x, y) &lt; r } $</p>
-
 <p>$\ite{E} = (0, 1]$</p>
-
 <p>$\ext{E} = (-\infty, 0] \cup [1, \infty)$</p>
-
 <p>$\bdry{E} = \emptyset$</p>
 
   </div>
@@ -642,13 +599,11 @@ $$\exists r &gt; 0 \text{ s.t. } B(x, r) \cap E = \emptyset$$</p>
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>$0 \not \in E = (0, 1], $ but $0 $ is &ldquo;close&rdquo; to $E $.</p>
-
 <p>Use language of open balls.</p>
 
   </div>
@@ -665,17 +620,13 @@ $$\exists r &gt; 0 \text{ s.t. } B(x, r) \cap E = \emptyset$$</p>
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="adherent-point-and-closure">Adherent Point and Closure</span></span>
   <div class="block__content block__content--blue">
     <p>Let $(X,d)$ be a metric space, let $E \subseteq X$, and let $x_0 $ be a point in $X $.</p>
-
 <p>$x_0 $ is an <strong>adherent point</strong> of $E$ if
 $$\forall r &gt; 0, B(x_0, r) \cap E \neq \emptyset$$</p>
-
 <p>The set of all adherent points of $E$ is called the <strong>closure</strong> of $E$, and is denoted $\overline{ E }$.</p>
-
 <p>$E $ is the collection of all adherent points of $E_0$. This set is called the <strong>closure</strong> of $E$.</p>
 
   </div>
@@ -710,63 +661,43 @@ $$\forall r &gt; 0, B(x_0, r) \cap E \neq \emptyset$$</p>
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>Let $(X, d)$ metric space, let $E \subset X$, and let $x_0 \in X$.</p>
-
 <p>The following statements are logically equivalent.</p>
-
 <ol>
 <li>$x_0$ is an adherent point.</li>
 <li>$x_0$ is $\ite{E} \cup \bdry{E}$.</li>
 <li>there exists a sequence in $E$, $(x^{(n)})^\infty_{n=1}$ such that $(x^{(n)})^\infty_{n=1} \to x_0$.</li>
 </ol>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p><strong>(1 -&gt; 3)</strong></p>
-
 <p>Since $x_0 $ is an adherent point, $\forall r &gt; 0, B(x_0, r) \cap E \neq \emptyset$.</p>
-
 <p>Choose $x^{(1)} \in B(x_0, 1) \cap E$, since $B(x_0, 1) \cap E \neq \emptyset$.</p>
-
 <p>Choose $x^{(2)} \in B(x, \frac{ 1 }{ 2 }) \cap E \neq \emptyset$.</p>
-
 <p>Similarly we choose $(x^{(n)})^\infty_{n=1}$ such that</p>
-
 <p>1. $x^{(n)} \in E, \forall n \in N$</p>
-
 <p>2. $d(x^{(n)},x_0) &lt; \frac{ 1 }{ n } $</p>
-
 <p>Hence, $x^{(n)} \in B(x_0, \frac{ 1 }{ n })$ i.e. $d(x^{(n)}, x_0) &lt; \frac{ 1 }{ n } $.</p>
-
 <p>By squeeze theorem, $\limu{ n }{ \infty } d(x^{(n)}, x_0) = 0$.</p>
-
 <p><strong>(3 -&gt; 1)</strong></p>
-
 <p>Suppose $(x^{(n)})^\infty_{n=1} \to x_0$.</p>
-
 <p>Need to show $\forall r &gt; 0, B(x_0, r) \cap E \neq \emptyset$.</p>
-
 <p>Since $\limu{n}{\infty} d(x^{(n)}, x_0) = 0, \exists N $ such that if $n &gt; N  \implies d(x^{(n)}, x_i) &lt; r$.</p>
-
 <p>Pick some $n_0 &gt;N $, $d(x^{(n_0)}, x_0) &lt; r $.</p>
-
 <p>Hence $x^{(n_0)} \in B(x_0, r), x^{(n_0)} \in E$.</p>
-
 <p>$x^{(n_0)} \in B(x_0, r) \cap E$.</p>
-
   </div>
 </div>
 
@@ -781,16 +712,12 @@ $$\forall r &gt; 0, B(x_0, r) \cap E \neq \emptyset$$</p>
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="open-and-closed-sets">Open and Closed Sets</span></span>
   <div class="block__content block__content--blue">
     <p>Let $(X,d)$ be a metric space, and let $E \subseteq X$.</p>
-
 <p>$E$ is <strong>closed</strong> if $E \cap \bdry{E} = \bdry{E}$, i.e. $\bdry{ E } \subseteq E$.</p>
-
 <p>$E$ is <strong>open</strong> if $E \cap \bdry{E}= \emptyset$.</p>
-
 <p>$E$ is <strong>neither open nor closed</strong> if $E \cap \bdry{E} \neq \emptyset$</p>
 
   </div>
@@ -825,22 +752,15 @@ $$\forall r &gt; 0, B(x_0, r) \cap E \neq \emptyset$$</p>
     </script></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>Is $\bdry{ \R } \subseteq \R $?</p>
-
 <p>Yes, $\emptyset \subseteq \R$</p>
-
 <p>So $\R$ is closed?</p>
-
 <p>Now, let $E = \emptyset $, $\bdry{ \emptyset } = \emptyset$</p>
-
 <p>$\bdry{ \emptyset } = \emptyset $</p>
-
 <p>$\bdry{ \emptyset } \cap \emptyset = \emptyset$</p>
-
 <p>$\emptyset $ is both open and closed.</p>
 
   </div>
@@ -855,14 +775,11 @@ $$\forall r &gt; 0, B(x_0, r) \cap E \neq \emptyset$$</p>
   </ul></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>For every metric space $(X, d)$.</p>
-
 <p>$X $ is open and closed.</p>
-
 <p>$\emptyset $ is open and closed.</p>
 
   </div>
@@ -877,20 +794,14 @@ $$\forall r &gt; 0, B(x_0, r) \cap E \neq \emptyset$$</p>
   </ul></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>$\ite{ X } = X $</p>
-
 <p>Since $\forall E, \ite{ E } \subseteq E $</p>
-
 <p>so $\ite{ X } \subseteq X $.</p>
-
 <p>Let $x_0 \in X$, pick any $r &gt; 0 $</p>
-
 <p>$B(x_0, r) = \set{ x \in X: d(x_0, x) &lt; r } \subseteq X$</p>
-
 <p>Thus $x_0 $ is an interior point of $X $ and hence $X \subseteq \ite{ X } $.</p>
 
   </div>
@@ -905,12 +816,10 @@ $$\forall r &gt; 0, B(x_0, r) \cap E \neq \emptyset$$</p>
   </ul></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>Let $X $ be a set and $d $ the discrete metric on $X_0 $.</p>
-
 <p>Every subset $E \subseteq X $ is always open and closed.</p>
 
   </div>
@@ -925,14 +834,12 @@ $$\forall r &gt; 0, B(x_0, r) \cap E \neq \emptyset$$</p>
   </ul></div>
 
 
-
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   
   </span>
   <div class="block__content block__content--green">
   <p>Let $(X, d) $ be a metric space.</p>
-
 <ol>
 <li>Let $E \subseteq X $. $E$ is open $\iff E = \ite{ E }$.</li>
 <li>Let $E \subseteq X$. $E $ is closed $\iff E = \overline{ E }$.</li>
@@ -947,47 +854,31 @@ Let $F_1, F_2, &hellip;, F_n \subseteq X$ be a finite number of closed sets. $F_
 If $\set{ E_ \alpha }_ { \alpha \in I } $, $E_ \alpha $ open $\forall \alpha \in I, \bigcup_ { \alpha \in I } E_ \alpha $ is still open. <br>
 If $\set{ F_ \alpha }_ { \alpha \in I }$, $F_ \alpha$ closed $\forall \alpha \in I,  \bigcap_ { \alpha \in I } F_ \alpha$ is still closed.</li>
 </ol>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$(1) $</p>
-
 <p>Assume $E $ is open $\bdry{ E } \cap E = \emptyset$. Pick a point in $E $,</p>
-
 <p>$x_0 $ need to find $r &gt; 0 $.</p>
-
 <p>$B(x_0, r) \subseteq E, x_0 \in \ite{ E } $  or  $x_0 \in \bdry{ E }$ or $x_0 \in \ext{ E } $.</p>
-
 <p>Since $\bdry{ E } \cap E  = \emptyset, x_0 \in E$  is nnot in $\bdry{  E } $.</p>
-
 <p>$x_0 \in E \implies x_0 \not \in \ext{ E }$</p>
-
 <p>$\forall r &gt; 0, B(x_0, r) contains x_0$</p>
-
 <p>so $B(x, r) \cap E \forall r $</p>
-
 <p>Thus $x_0 $ must be in $\ite{ E } $</p>
-
 <p>To show $E = \ite{ E } $ implies $E  $ is open.</p>
-
 <p>$(2)$</p>
-
 <p>suppose $E = \overline{ E } $, $\overline{ E } = E \cup \bdry{ E } $</p>
-
 <p>$\bdry{ E } \subseteq \overline{ E } = E $.</p>
-
 <p>Now suppose $E $ is closed. $\bdry{ E } \subseteq E $</p>
-
 <p>$\overline{  E } = E \subseteq E $.</p>
-
   </div>
 </div>
 
@@ -1891,13 +1782,13 @@ If $\set{ F_ \alpha }_ { \alpha \in I }$, $F_ \alpha$ closed $\forall \alpha \in
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Conditioning - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -304,31 +314,21 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="conditioning-a-random-variable-on-an-event">Conditioning a Random Variable on an Event</span></span>
   <div class="block__content block__content--blue">
     <p>The <strong>conditional PDF</strong> of a continuous random variable $X $, given an event $A $ with $\b{P}(A) &gt; 0 $, is defined as a nonnegative function $f_{X|A} $ that satisfies</p>
-
 <p>$$\b{P}(X \in B | A) = \int_{ B } f_{X|A}(x) \d x $$</p>
-
 <p>for any subset $B $ of the real line.</p>
-
 <p>$$\int_{ -\infty }^{ +\infty } f_{X|A}(x) \d x = 1$$</p>
-
 <p>In particular, we condition an event of the form $\set{ X \in A } $, with $\b{P}(X \in A) &gt; 0 $, the definition of conditional probabilities yields</p>
-
 <p>$$\b{P}(X \in B | X \in A) = \frac{ \b{P}(X \in B, X \in A)}{ \b{P}(X \in A)} = \frac{ \int_{ A \cap B } f_X(x) \d x }{ \b{P}(X \in A)} $$</p>
-
 <p>We conclude that</p>
-
 <p>$$ f_{X  | \set{ X \in A }}(x) = \begin{cases}
-  \frac{ f_X(x)}{ \b{P}(X \in A)}, \if x \in A \br
-  0, \otherwise
+\frac{ f_X(x)}{ \b{P}(X \in A)}, \if x \in A \br
+0, \otherwise
 \end{cases} $$</p>
-
 <p>Let $A_1, A_2, &hellip;, A_{ n } $ be disjoint events that form a partition of the sample space, and assume that $\b{P}(A_i) &gt; 0 $ for all $i $, then</p>
-
 <p>$f_X(x) = \sum_{ i=1 }^{ n } \b{P}(A_i)f_{X|A_i}(x)$(total probability theorem)</p>
 
   </div>
@@ -363,23 +363,17 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="conditional-pdf-given-a-random-variable">Conditional PDF Given a Random Variable</span></span>
   <div class="block__content block__content--blue">
     <p>Let $X $ and $Y $ be jointly continuous random variables with joint PDF $f_{X,Y} $.</p>
-
 <p>The joint, marginal, and conditional PDFs are related to each other by the formulas:</p>
-
 <p>$$\begin{align*}
 f_{X, Y}(x, y) &amp;= f_Y(y)f_{X|Y}(x|y)
 f_X(x) &amp;= \int_{ -\infty }^{ +\infty } f_Y(y) f_{X|Y}(x | y) \d y
 \end{align*}$$</p>
-
 <p>The conditional PDF $f_{X|Y}(x|y)$ is defined only for those $y $ for which $f_Y(y) &gt; 0 $</p>
-
 <p>We have</p>
-
 <p>$$\b{P}(X \in A | Y = y) = \int_{ A } f_{X|Y}(x|y) \d x$$</p>
 
   </div>
@@ -414,18 +408,13 @@ f_X(x) &amp;= \int_{ -\infty }^{ +\infty } f_Y(y) f_{X|Y}(x | y) \d y
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="conditional-expectations">Conditional Expectations</span></span>
   <div class="block__content block__content--blue">
     <p>Let $X $ and $Y $ be jointly continuous random variables, and let $A $ be an event with $\b{P}(A) &gt; 0 $.</p>
-
 <p>The conditional expectation of $X $ given the event $A $ is defined by</p>
-
 <p>$$E[X|A] = \int_{ -\infty }^{ +\infty } x f_{X|A}(x) \d x $$</p>
-
 <p>The conditional expectation of $X $ given that $Y = y$ is defined by</p>
-
 <p>$E[X|Y = y] = \int_{ -\infty }^{ +\infty } x f_{X|Y} (x | y) \d x$</p>
 
   </div>
@@ -460,19 +449,14 @@ f_X(x) &amp;= \int_{ -\infty }^{ +\infty } f_Y(y) f_{X|Y}(x | y) \d y
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="the-expected-value-rule">The Expected Value Rule</span></span>
   <div class="block__content block__content--green">
   <p>Let $X $ and $Y $ be jointly continuous random variables, and let $A $ be an event with $\b{P}(A) &gt; 0 $. For a function $g(X)$, we have</p>
-
 <p>The expectation of $g(X)$ given the event $A $ is defined by</p>
-
 <p>$$E[g(X)|A] = \int_{ -\infty }^{ +\infty } g(x) f_{X|A}(x) \d x $$</p>
-
 <p>The expectation of $g(X)$ given that $Y = y$ is defined by</p>
-
 <p>$E[g(X)|Y = y] = \int_{ -\infty }^{ +\infty } g(x) f_{X|Y} (x | y) \d x$</p>
 
   </div><script>
@@ -506,37 +490,33 @@ f_X(x) &amp;= \int_{ -\infty }^{ +\infty } f_Y(y) f_{X|Y}(x | y) \d y
 </div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note: <span class="keyword" id="tail-sum-formula">Tail Sum Formula</span>
     
   </span>
   <div class="block__content block__content--yellow">
     <p><strong>Discrete case</strong> let&rsquo;s assume $X $ takes non-negative integer values then</p>
-
 <p>$$E[X] = \sum_{ k = 1 }^{ \infty } \b{P}(X \geq k) = \sum_{ k = 0 }^{ \infty } \b{P}(X &gt; k) $$</p>
-
 <p><strong>Continuous case</strong> if $X &gt; 0 $, then</p>
-
 <p>$E[X] = \int_{  -\infty }^{ \infty } \b{P}(X &gt; x) \d x = 1 - F_X(x)$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$\begin{align*}
 \b{P}(X = 1)  + \b{P}(X = 2) + \b{P}(X = 3)  + \b{P}(X = 4) + &amp;&hellip; \br
 +\b{P}(X = 2) + \b{P}(X = 3)  + \b{P}(X = 4) + &amp;&hellip; \br
 +\b{P}(X = 3)  + \b{P}(X = 4) + &amp;&hellip; \br
-+\b{P}(X = 4) + &amp;&hellip; \br
-+ &amp;&hellip;
-\end{align*}$</p>
-
++\b{P}(X = 4) + &amp;&hellip; \br</p>
+<ul>
+<li>&amp;&hellip;
+\end{align*}$</li>
+</ul>
   </div>
 </div>
 
@@ -572,17 +552,13 @@ f_X(x) &amp;= \int_{ -\infty }^{ +\infty } f_Y(y) f_{X|Y}(x | y) \d y
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="total-expectation-theorem">Total Expectation Theorem</span></span>
   <div class="block__content block__content--green">
   <p>Let $A_1, A_2, &hellip;, A_{ n } $ be disjoint events that form a partition of the sample space, and assume that $\b{P}(A_i) &gt; 0$ for all $i$. Then,</p>
-
 <p>$$E[X] = \sum_{ i=1 }^{ n } \b{P}(A_i) E[X | A_i]$$</p>
-
 <p>Similarly,</p>
-
 <p>$$E[X] = \int_{ -\infty }^{ +\infty } E[X | Y = y] f_Y(y) \d y $$</p>
 
   </div><script>
@@ -1338,13 +1314,13 @@ f_X(x) &amp;= \int_{ -\infty }^{ +\infty } f_Y(y) f_{X|Y}(x | y) \d y
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

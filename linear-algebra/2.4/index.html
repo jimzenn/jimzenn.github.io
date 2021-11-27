@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Invertibility and Isomorphisms - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -270,16 +280,12 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="invertibility-of-linear-transformation">Invertibility of Linear Transformation</span></span>
   <div class="block__content block__content--blue">
     <p>Let $V $ and $W $ be vector spaces, and let $T: V \to W $ be linear. A function $U: W \to V$ is said to be an <strong>inverse</strong> of $T $ if $TU = I_W $ and $UT = I_V $. If $T$ has an inverse, then $T $ is said to be <strong>invertible</strong>.</p>
-
 <p>If $T$ is invertible, then the inverse of $T $ is <u>unique</u> and is denoted by $\inv{T} $.</p>
-
 <p>The following facts hold for invertible functions $T $ and $U $.</p>
-
 <ol>
 <li>$\inv{(TU)} = \inv{ U } \inv{ T } $</li>
 <li>$\inv{(\inv{ T })} = T $ <br>
@@ -320,7 +326,6 @@ $T $ is invertible $\iff  \rank{ T } = \dim V$</li>
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
@@ -359,12 +364,10 @@ $T $ is invertible $\iff  \rank{ T } = \dim V$</li>
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="invertiblility-of-matrices">Invertiblility of Matrices</span></span>
   <div class="block__content block__content--blue">
     <p>Let $A $ an $n \times n $ matrix. Then $A $ is <strong>invertible</strong> if there exists an $n \times n $ matrix $B $ such that $AB = BA = I $.</p>
-
 <p>If $A $ is invertible, then the matrix $B $ such that $AB = BA = I $ is unique. (If $C $ were another such matrix, then $C = CI = C(AB) = (CA)B = IB = B $.) The matrix $B $ is called the <strong>inverse</strong> of $A $ and is denoted by $\inv{ A } $.</p>
 
   </div>
@@ -399,7 +402,6 @@ $T $ is invertible $\iff  \rank{ T } = \dim V$</li>
     </script></div>
 
 
-
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   
@@ -417,7 +419,6 @@ $T $ is invertible $\iff  \rank{ T } = \dim V$</li>
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--green ">
@@ -456,7 +457,6 @@ $T $ is invertible $\iff  \rank{ T } = \dim V$</li>
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--green ">
@@ -500,7 +500,6 @@ $T $ is invertible $\iff  \rank{ T } = \dim V$</li>
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   
@@ -542,7 +541,6 @@ $T $ is invertible $\iff  \rank{ T } = \dim V$</li>
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="isomorphism">Isomorphism</span></span>
   <div class="block__content block__content--blue">
@@ -578,7 +576,6 @@ $T $ is invertible $\iff  \rank{ T } = \dim V$</li>
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--green block--status"><div class="block__status block__status--star"></div>
@@ -619,7 +616,6 @@ $T $ is invertible $\iff  \rank{ T } = \dim V$</li>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   </span>
@@ -640,14 +636,12 @@ $T $ is invertible $\iff  \rank{ T } = \dim V$</li>
   </ul></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   2.20<span class="keyword" id="2.20" style="visibility: hidden;">2.20</span></span>
   <div class="block__content block__content--green">
   <p>Let $V $ and $W $ be finite-dimensional vector spaces over $F $ of dimensions $n $ and $m $, respectively, and let $\beta $ and $\gamma $ be ordered bases for $V $ and $W $, respectively, then</p>
-
 <p>the function $\Phi: \L(V, W) \to M_{m \times n}(F)$, defined by $\Phi(T) = [ T ]_{ \beta }^{ \gamma } $ for $T \in \L(V, W) $, is an isomorphism.</p>
 
   </div><script>
@@ -681,7 +675,6 @@ $T $ is invertible $\iff  \rank{ T } = \dim V$</li>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   </span>
@@ -700,7 +693,6 @@ $T $ is invertible $\iff  \rank{ T } = \dim V$</li>
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul></div>
-
 
 
 <div class="block block--blue ">
@@ -738,7 +730,6 @@ $T $ is invertible $\iff  \rank{ T } = \dim V$</li>
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--green ">
@@ -1137,13 +1128,13 @@ $T $ is invertible $\iff  \rank{ T } = \dim V$</li>
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Linear Combinations and Systems of Linear Equations - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -211,7 +221,6 @@ if (!doNotTrack) {
         <p class="hide">
   Linear Combination, Span, Generating Set.
 </p>
-
 <div class="latex-macros">
   
     $\newcommand{\br}{\\}$
@@ -272,7 +281,6 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="linear-combination">Linear Combination</span></span>
   <div class="block__content block__content--blue">
@@ -311,15 +319,12 @@ Furthermore, in this case, we say that $v$ is a linear combination of $v_1, v_2,
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="span">Span</span></span>
   <div class="block__content block__content--blue">
     <p>$V/F, S$ is a non-empty subset of $V$.
 The <strong>span</strong> of $S$ or the <strong>linear span</strong> of $S$ denoted by $\spa{S}$ is the set of <u>all possible</u> linear combination of vectors of $S$.</p>
-
 <p>We define $\spa{\emptyset} = \set{0}$.</p>
-
 <p><small>$\abs S$ could be finite or infinite.</small></p>
 
   </div>
@@ -354,57 +359,43 @@ The <strong>span</strong> of $S$ or the <strong>linear span</strong> of $S$ deno
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   1.5<span class="keyword" id="1.5" style="visibility: hidden;">1.5</span></span>
   <div class="block__content block__content--green">
   <p>$V/F$. If $S \subseteq V$, then $\spa{S} \leq V$.</p>
-
 <p>Moreover, if $W \leq V, S\subseteq W$, then $\spa{S} \leq W$.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p><strong>case 1</strong>:
 if $S$ is $\emptyset, y$ definition $\spa{s} = {0} \leq V$.</p>
-
 <p><strong>case 2</strong>:
 $S$ is non-empty $(S \neq \emptyset)$
 $\exists V \in S$</p>
-
 <p>(W1).$0 = 0\cdot v \in \spa{S}$</p>
-
 <p>(W2).$x, y \in \spa{S}$</p>
-
 <p>$x \in \spa{S} \implies \exists v_1, v_2, &hellip;, v_m \in S$ and $a_1, a_2, &hellip;, a_n \in F$ s.t.
 $x = a_1v_1 + a_2v_2 + &hellip; + a_nv_n$</p>
-
 <p>$y \in \spa{S} \implies \exists w_1, w_2, &hellip;, w_n \in S$ and $b_1, b_2, &hellip;, b_n \in F$ s.t.
 $y = b_1w_1 + b_2w_2 + &hellip; + b_nw_n$</p>
-
 <p>$x + y = a_1v_1 + a_2v_2 + &hellip; + a_mv_m + b_1w_1 + b_2w_2 + &hellip; + b_nw_n$</p>
-
 <p>$\set{v_1, v_2, &hellip;,v_n, w_1, w_2, &hellip;, w_n}$ at most $m+n$ elements</p>
-
 <p>$x+ y \in \spa{S}$</p>
-
 <p>(W3).$x\in \spa{S}$ and $\lambda \in F$
 $\lambda x \in \spa{S}$
 $x = a_1v_1 + a_2v_2 + &hellip; + a_nv_n$
 $\lambda x = \lambda a_1v_1 + \lambda a_2v_2 + &hellip; + \lambda a_nv_n$
 $\lambda x \in \spa{S}$</p>
-
 <p>Q.E.D.</p>
-
   </div>
 </div>
 
@@ -439,40 +430,30 @@ $\lambda x \in \spa{S}$</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>$V/F$. If $S \subseteq V$, then $\spa{S} \leq V$ and $\spa{S}$ is the <u>smallest</u> subspace containing $S$.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>To prove $\spa{S}$ is the smallest subspace, we need to prove that $$\forall W \leq V, W \supseteq S \implies \spa{S} \leq W$$</p>
-
 <p>Since $x\in \spa{S}, \exists x_1, x_2,&hellip;, x_n \in S$ and $a_1, a_2, &hellip;, a_n \in F$ s.t.</p>
-
 <p>$$x = a_1x_2 + a_2x_2 + &hellip; + a_nx_n$$</p>
-
 <p>$S\subseteq W$
 $\therefore x_i \in S \implies x_i \in W$</p>
-
 <p>$x_i \in S \implies x_i \in W \implies a_ix_i \in W$</p>
-
 <p>i.e. $a_1x_1 + a_2x_2 + &hellip; + a_nx_n \in W$</p>
-
 <p>$\implies x\in W$</p>
-
 <p>$\therefore \spa{S} \leq W$</p>
-
   </div>
 </div>
 
@@ -487,12 +468,10 @@ $\therefore x_i \in S \implies x_i \in W$</p>
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="generating-set">Generating Set</span></span>
   <div class="block__content block__content--blue">
     <p>Let $V$ be a vector space over a field $F$. a subset $S \subseteq V$ is called a <strong>generating set</strong> if $\spa{S} = V$.</p>
-
 <p>In this case we say $S$ <strong>generates</strong> $V$.</p>
 
   </div>
@@ -527,34 +506,27 @@ $\therefore x_i \in S \implies x_i \in W$</p>
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: $\R^2/\R$
     
   </span>
   <div class="block__content block__content--gray">
     <p>$S= \set{(1,0), (0,1)}$, then $S$ generates $\R^2$.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$a,b \in \R,$ then $(a,b) \in \R^2.$</p>
-
 <p>$(a, b) = a(1,0) + b(0,1).$</p>
-
 <p>$\R^2 \subseteq \spa{S}$.</p>
-
 <p>Also, $\spa{S} \subseteq \R^2$, since $S \subseteq R^2$(Theorem 1.5)</p>
-
 <p>$\spa{S} = \R^2$, i.e. $S$ generates $\R^2$.</p>
-
   </div>
 </div>
 
@@ -570,7 +542,6 @@ $\therefore x_i \in S \implies x_i \in W$</p>
   </ul>
 
 </div>
-
 
 
 <div class="block block--gray ">
@@ -578,40 +549,30 @@ $\therefore x_i \in S \implies x_i \in W$</p>
   </span>
   <div class="block__content block__content--gray">
     <p>Prove that $T=\set{(1, -1), (2, 3)}$ is a generating set.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$a, b \in \R^2$.</p>
-
 <p>$(a,b) = x(1, -1) + y (2,3) = (x+2y, -x+ 3y)$</p>
-
 <p>$$
 \begin{align}
 x+2y = a \br
 -x+3y = b
 \end{align}
 $$</p>
-
 <p>solve these equations and we get:</p>
-
 <p>$(a,b) = \frac{3a-2b}5 (1, -1) + \frac{a+b}5(2,3)$</p>
-
 <p>$(a,b) \in \spa{T}$</p>
-
 <p>$\R^2 \subseteq \spa{T}$</p>
-
 <p>$T \subseteq \R^2$, then $\spa{T} \subseteq \R^2$(Theorem 1.5)</p>
-
 <p>$\therefore \spa{T} = \R^2 $ i.e. $T$ generates $\R^2 $.</p>
-
   </div>
 </div>
 
@@ -627,7 +588,6 @@ $$</p>
   </ul>
 
 </div>
-
 
 
 <div class="block block--gray ">
@@ -636,15 +596,14 @@ $$</p>
   </span>
   <div class="block__content block__content--gray">
     <p>$S= \set{1, x-x^2, x^2, x^3+x^2}$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$$
@@ -655,15 +614,13 @@ f(x) &amp;= ax^3 + bx^2 + cx + d \br
 &amp;= z_4x^3 + (z_4+z_3-z_2) x^2 +z_2x+z_1
 \end{align*}
 $$</p>
-
-<p><br>
+<br>
 $$
-z_1 = d,
-z_2 = c,
-z_3 = b -a +c,
-z_4 = a
-$$</p>
-
+z\_1 = d,
+z\_2 = c,
+z\_3 = b -a +c,
+z\_4 = a
+$$
   </div>
 </div>
 
@@ -681,34 +638,27 @@ $$</p>
 </div>
 
 
-
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   
   </span>
   <div class="block__content block__content--green">
   <p>$V / F$,</p>
-
 <p>$$\spa{S}=V, S \subseteq T, T \subseteq V \implies \spa{T}=V$$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$S \subseteq T \implies \spa{S} \subseteq \spa{T}$</p>
-
 <p>$\because \spa{S} = V, \spa{T} \leq V$</p>
-
 <p>$\therefore \spa{S} \leq V \subseteq \spa{T} \subseteq V$</p>
-
 <p>$\spa{T} = V$ i.e. $T$ is also a generating set of $V$.</p>
-
   </div>
 </div>
 
@@ -1082,13 +1032,13 @@ $$</p>
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Introduction - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -301,7 +311,6 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="level-set">Level Set</span></span>
   <div class="block__content block__content--blue">
@@ -339,12 +348,10 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>$\nabla f(x_0)$, if it is not a zero vector, is orthogonal to the tangent vector to an arbitrary smooth curve passing through $\b{x}_0$ on the level set $f(\b{x}) = c$.</p>
-
 <p>Thus, the direction of maximum rate of increase of a real-valued differentiable function at a point is orthogonal to the level set of the function through the point.</p>
 
   </div>
@@ -359,36 +366,28 @@ if (!doNotTrack) {
   </ul></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>In other words, the gradient acts in such a direction that for a given small displacement, the function $f $ increases more in the direction of the gradient than in any other direction.</p>
-
 <p>Thus, the direction in which $\nabla f(\b{x})$ points is the direction of maximum rate of increase of $f$ at $\b{x}$. The direction in which $- \nabla f(\b{x})$ points is the direction of maximum rate of decrease of $f$ at $\b{x}$. Hence, the direction of negative gradient is a good direction to search if we want to find a function minimizer.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-        by the Cauchy-Schwarz inequality
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>    by the Cauchy-Schwarz inequality
+    
+  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>By the Cauchy-Schwarz inequality, when $\norm{ d } = 1$, $\inner{ \nabla f(x)}{ \b{d}} \leq \norm{ \nabla f(\b{x})}$</p>
-
 <p>where $\inner{ \nabla f(\b{x})}{ \b{d}}$ is the rate of increase of $f$ in the direction $\b{d}$ at the point $\b{x}$.</p>
-
 <p>When $\b{d}$ is the direction of $\nabla f(\b{x}) $, that is $\b{d} = \frac{ \nabla f(\b{x})}{ \norm{ \nabla f(\b{x})}}$, then</p>
-
 <p>$$\inner{ \nabla f(x)}{ \frac{ \nabla f(\b{x})}{ \norm{ \nabla f(\b{x})}}} = \norm{ \nabla f(\b{x})}$$</p>
-
 <p>Q.E.D.</p>
-
   </div>
 </div>
 
@@ -404,18 +403,13 @@ if (!doNotTrack) {
   </ul></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>Let $\b{x}_\pare{0} $ be a starting point, and consider the point $\b{x}^{(0)} - \alpha \nabla f(\b{x}^{(0)}) $. Then by Taylor&rsquo;s theorem we obtain</p>
-
 <p>$$f(\b{x}^{(0)} - \alpha \nabla f(\b{x}^{\pare{0}})) = f(x^{(0)}) - \alpha \norm{ \nabla f(\b{x}^{(0)})}^2 + o(\alpha)$$</p>
-
 <p>Thus, if $\nabla f(\b{x}^{(0)}) \neq \b{0}$, then for sufficiently small $\alpha &gt; 0 $, we have</p>
-
 <p>$$f(\b{x}^{(0)} - \alpha \nabla f(\b{x}^{(0)})) &lt; f(\b{x}^{(0)})$$</p>
-
 <p>This means that the point $\b{x}^{(0)} - \alpha \nabla f(\b{x} ^{(0)})$ is an improvement over the point $\b{x}^{(0)}$ if we are searching for a minimizer.</p>
 
   </div>
@@ -430,14 +424,11 @@ if (!doNotTrack) {
   </ul></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="gradient-descent-algorithm">Gradient Descent Algorithm</span></span>
   <div class="block__content block__content--blue">
     <p>Suppose that we are given a point $\b{x}^{(k)} $. To find the next point $\b{x}^{(k+1)} $, we start at $\b{x}^{(k)} $ and move by an amount $- \alpha_k \nabla f(\b{x}^{(k)}) $, where $\alpha_k $ is a positive scalar called the <strong>step size</strong>. The above procedure leads to the following iterative algorithm:</p>
-
 <p>$\b{x}^{(k+1)} = \b{x}^{(k)} - \alpha_k \nabla f(\b{x}^{(k)})$</p>
-
 <p>We refer to the above as a <strong>gradient descent algorithm</strong>.</p>
 
   </div>
@@ -1390,13 +1381,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Gram-Schmidt Orthogonalization Process - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -283,12 +293,10 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="orthonormal-basis">Orthonormal Basis</span></span>
   <div class="block__content block__content--blue">
     <p>Let $V $ be an inner product vector space over a field $F = \R $ or $\C$.</p>
-
 <p>Then a basis $\beta $ of $V $ is called an <strong>orthonormal basis</strong> of $V $ if $\beta $ is an ordered basis and $\beta $ is an <strong>orthonormal set</strong> .</p>
 
   </div>
@@ -323,57 +331,42 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   6.3<span class="keyword" id="6.3" style="visibility: hidden;">6.3</span></span>
   <div class="block__content block__content--green">
   <p>Let $V $ be an inner product vector space over a field $F = \R $ or $\C$.</p>
-
 <p>Let $S = \set{   v_1,  v_2, &hellip;,  v_{ k }} $ be a orthogonal set of non-zero vectors. Let $v $ be an vector in $V $ s.t. $v \in \spa{ S } $. Then</p>
-
 <p>$$v = \sum_{i = 1}^{k} \frac{ \inner{ v }{ v_i }}{ \norm{ v_i }^2 } v_i$$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$\because v \in \spa{ S } \exists $</p>
-
 <p>$a_1, _2, &hellip;, _{ k } \in s.t. $</p>
-
 <p>$\begin{align*}
 v &amp;= a_1v_1 + a_2v_2 + &hellip; + a_{ n }v_{ n } \br
 &amp;= \sum_{ i=1 }^{ n }a_iv_i \br
 \end{align*}$</p>
-
 <p>Solve for $a_1 $ of both sides:</p>
-
 <p>Take inner product $\inner{ \cdot }{ v_1 } $</p>
-
 <p>$\inner{ v_1 }{ v_1 } = \inner{ \sum_{ i=1 }^{ k }a_iv_i }{ v_1 }$</p>
-
 <p>$\begin{align*}
 \inner{ v_1 }{ v_1 } &amp;= \sum_{ i=1 }^{ k } \inner{ v_i }{ v_1 } \br
 &amp;= a_1 \inner{ v_1 }{ v_1 } (\because S \text{ is orthogonal}) \br
 &amp;= a_1 \norm{ v_1 }^2
 \end{align*}$</p>
-
 <p>$\implies a_1 = \frac{ \inner{ v_1 }{ v_1 }}{ \norm{ v_1 }^2 } (\because v_1 \neq 0)$</p>
-
 <p>Similarly, to solve for $a_i$, take inner product $\inner{ \cdot }{ v_i } $.</p>
-
 <p>$$a_i = \frac{ v, v_i }{ \norm{ v_i }^2 }, \forall i = 1, 2, &hellip;, k $$</p>
-
 <p>Now, $v = \sum_{ i-1 }^{ k } a_iv_i = \sum_{ i=1 }^{ k } (\frac{ \inner{ v }{ v_i }}{ \norm{ v_i }^2 })v_i $</p>
-
   </div>
 </div>
 
@@ -408,7 +401,6 @@ v &amp;= a_1v_1 + a_2v_2 + &hellip; + a_{ n }v_{ n } \br
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   </span>
@@ -416,23 +408,19 @@ v &amp;= a_1v_1 + a_2v_2 + &hellip; + a_{ n }v_{ n } \br
 
   <div class="block__content block__content--green">
   <p>If $S = \set{ v_1, v_2, &hellip;, v_{ k }}$ is an orthonormal set, then for any $v \in \spa{ S }$,</p>
-
 <p>$$v = \sum_{ i = 1 }^{ k } \inner{ v }{ v_i }v_i $$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>since $S = \set{ v_1, v_2, &hellip;, v_{ k }}$ is an orthonormal set, $\norm{ v_i } = \norm{ v_i } = 1, 2, &hellip;, k $</p>
-
 <p>$\therefore$ it follows from $(1) $</p>
-
   </div>
 </div>
 
@@ -446,7 +434,6 @@ v &amp;= a_1v_1 + a_2v_2 + &hellip; + a_{ n }v_{ n } \br
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul></div>
-
 
 
 <div class="block block--green ">
@@ -456,33 +443,26 @@ v &amp;= a_1v_1 + a_2v_2 + &hellip; + a_{ n }v_{ n } \br
 
   <div class="block__content block__content--green">
   <p>Let $V $ be an inner product vector space over a field $F = \R $ or $\C$, and $S$ is a orthogonal set of non-zero vectors. Then $S $ is linearly independent.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Let $v_1, _2, &hellip;, _{ k } $ be same arbitrary vectors in $S $. Consider the equation $a_1v_1 + a_2v_2 + &hellip; + a_{ k }v_{ k } = 0 $.</p>
-
 <p>$$\begin{align*}
 \inner{ a_1v_1 + a_2v_2 + &hellip; + a_{ k }v_{ k }}{ v_1 } &amp;= \inner{ 0 }{ v_1 } \br
 a_1 \inner{ v _1} {v_1}+ a_2 \inner{ v _2}{v_1} + &hellip; + a_{ k } \inner{ v _{ k }}{v_1} &amp;= 0 \br
 a_1 \norm{ v_1 }^2 &amp;= 0
 \end{align*}$$</p>
-
 <p>$\because $ the vectors in $S $ are non-zero vectors by hypotheses $\norm{ v_1 } \neq 0 $</p>
-
 <p>$\therefore a_1 = 0 $</p>
-
 <p>Similarly, $a_2 = 0 , &hellip;,  a_k = 0$</p>
-
 <p>$\therefore, S $ is linearly independent.</p>
-
   </div>
 </div>
 
@@ -498,70 +478,46 @@ a_1 \norm{ v_1 }^2 &amp;= 0
   </ul></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="gram-schmidt-orthogonalization-process">Gram-Schmidt Orthogonalization Process</span></span>
   <div class="block__content block__content--green">
   <p>Let $V $ be an inner product vector space over a field $F = \R $ or $\C$, and $S = \set{ w_1, w_2, &hellip;, w_{ n }}$  be a linearly independent set.</p>
-
-<p>Define a set $S&rsquo; = \set{ v_1, v_2, &hellip;, v_{ n }} $ in the following way:</p>
-
+<p>Define a set $S' = \set{ v_1, v_2, &hellip;, v_{ n }} $ in the following way:</p>
 <p>$$\begin{align*}
 v_1 &amp;= w_1 \br
 v_k &amp;= w_k - \sum_{ i=1 }^{ k-1 } \frac{ \inner{ w_k }{ v_i }}{ \norm{ v_i }^2 } v_i, \forall k = 2,3,&hellip;n
 \end{align*}$$</p>
-
-<p>Then $S&rsquo; $ is an <u>orthogonal set of non-zero vectors</u> and $\spa{ S&rsquo; } = \spa{S} $.</p>
-
+<p>Then $S' $ is an <u>orthogonal set of non-zero vectors</u> and $\spa{ S' } = \spa{S} $.</p>
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
-    <p>For $n = 1, S =  \set{ w_1 } ,  S&rsquo; = \set{ v_1 } = \set{ w_1 }$</p>
-
-<p>Then $S&rsquo;$ is orthogonal and $\spa{ S } = \spa{ S&rsquo; } $.</p>
-
-<p>Assume that the statement is true for $n = k - 1 $, i.e. $S&rsquo;_{k -1} = \set{ v_1 &hellip; v_k }$ is constructed using the algorithm satisfies the conclusion.</p>
-
+    <p>For $n = 1, S =  \set{ w_1 } ,  S' = \set{ v_1 } = \set{ w_1 }$</p>
+<p>Then $S'$ is orthogonal and $\spa{ S } = \spa{ S' } $.</p>
+<p>Assume that the statement is true for $n = k - 1 $, i.e. $S'_{k -1} = \set{ v_1 &hellip; v_k }$ is constructed using the algorithm satisfies the conclusion.</p>
 <p>$S_k = \set{ w_1, w_2, &hellip;, w_{ k }} = S_{k-1} \cup \set{ w_k } $,</p>
-
-<p>$S&rsquo;_k  = \set{ v_1, v_2, &hellip;, v_{ k }} = s&rsquo;_{k-1} \cup \set{ v_k } $.</p>
-
+<p>$S'_k  = \set{ v_1, v_2, &hellip;, v_{ k }} = s'_{k-1} \cup \set{ v_k } $.</p>
 <p>$v_k = w_k - \sum_{ i=1 }^{ k-1 } \frac{ \inner{ w_k }{ v_i }}{ \norm{ v_i }^2 } v_i $</p>
-
 <p>If $v_k = 0 $, then $w_k = \sum_{ i=1 }^{ k-1 } \frac{ \inner{ w_k }{ v_i }}{ \norm{ v_i }^2 } v_i $</p>
-
-<p>$\implies w_k \in \spa{ v_1, v_2, &hellip;, v_{ k-1 }} = \spa{ S&rsquo;_{k-1}} = \spa{ S_{k-1}} $</p>
-
+<p>$\implies w_k \in \spa{ v_1, v_2, &hellip;, v_{ k-1 }} = \spa{ S'_{k-1}} = \spa{ S_{k-1}} $</p>
 <p>i.e. $w_k \in \spa{ S_{k-1}} $</p>
-
 <p>A contradiction, since $s_k = s_{k-1} \cup \set{ w_k }$ is linearly independent.</p>
-
-<p>$v_j \in S&rsquo;_{k -1} = \set_{ v_1, v_2, &hellip;, v_{ k-1 }} $</p>
-
+<p>$v_j \in S'_{k -1} = \set_{ v_1, v_2, &hellip;, v_{ k-1 }} $</p>
 <p>$\inner{ v_k }{ v_j } = \inner{ w_k }{ v_j } - \sum_{ i = 1 }^{ k } \frac{ \inner{ w_k }{  v_i }}{ \norm{ v_i }^2 } \inner{ v_i }{ v_j } =  \inner{ w_k }{ v_j } - \frac{ \inner{ w_k }{ v_i }}{ \norm{ v_i }^2 } \norm{ v_i }^2 \br= \inner{ w_k }{ v_j } - \inner{ w_k }{ v_j } = 0$</p>
-
 <p>We know</p>
-
 <p>$v_1 = w_1 \in \spa{ S_k } $</p>
-
 <p>$v_2 = w_2 - \frac{ \inner{ w_2  }{ v_1 }}{ \norm{ v_1 }^2 } v_1 \in \spa{ S_k } $</p>
-
 <p>Since $S_k $ is linearly independent, \dim \spa{ S_k } = k.</p>
-
-<p>Since $S&rsquo;_k $ is an orthogonal set of non-zero vectors and $\abs{ S&rsquo;_k } = k $</p>
-
-<p>$\therefore \dim \spa{ S&rsquo;_k } = k = \dim \spa{ S_k } $</p>
-
-<p>$\implies \spa{S&rsquo;_k} = \spa{ S_k } $</p>
-
+<p>Since $S'_k $ is an orthogonal set of non-zero vectors and $\abs{ S'_k } = k $</p>
+<p>$\therefore \dim \spa{ S'_k } = k = \dim \spa{ S_k } $</p>
+<p>$\implies \spa{S'_k} = \spa{ S_k } $</p>
   </div>
 </div>
 
@@ -596,25 +552,19 @@ v_k &amp;= w_k - \sum_{ i=1 }^{ k-1 } \frac{ \inner{ w_k }{ v_i }}{ \norm{ v_i }
 </div>
 
 
-
 <div class="block block--yellow block--status"><div class="block__status block__status--extra"></div> <span class="block__title block__title--yellow">Note: <span class="keyword" id="what-happens-in-an-induction-if-we-dont-check-the-base-case">What Happens in an Induction if We Don&#39;t Check the Base Case?</span>
     
   </span>
   <div class="block__content block__content--yellow">
     <p>Prove that $n^2 + 5n + 6 $ is an odd integer for all $n \geq 1 $.</p>
-
 <p>Suppose we do not check the base case.</p>
-
 <p>Assume for $n = k, k^2 + 5k + 6 $ is odd. Then</p>
-
 <p>$$\begin{align*}
 (k+1)^2 + 5(k +1) + 6 &amp;= K^2 +2k +1 + 5k + 5 + 6 \br
 &amp;= (k^2 +5k + 6) + 2k + 6 \br
 &amp;= m + 2(k +3)
 \end{align*}$$</p>
-
 <p>Since $m$ is odd, $2(k +3) $ is even, $(k+1)^2 + 5(k +1) + 6 $ is therefore odd?</p>
-
 <p>NO, because the base case is <strong>FALSE</strong>.</p>
 
   </div>
@@ -649,21 +599,15 @@ v_k &amp;= w_k - \sum_{ i=1 }^{ k-1 } \frac{ \inner{ w_k }{ v_i }}{ \norm{ v_i }
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>$\R^3 $. $S = \set{(1, -1, 0), (1, 0, 1), (0, -1, 1)} $ is a basis of $\R^3 $, Starting from $S $, and apply Gram-Schmidt process to construct an orthonormal basis of $\R^3 $.</p>
-
 <p>$w_1 = (1, -1, 0), w_2 = (1, 0, 1), w_3 = (0, -1, 1) $</p>
-
 <p>$v_1 = w_1 = (1, -1, 0) $</p>
-
 <p>$v_2 = w_2 - \frac{ \inner{ w_2 }{ v_1 }}{ \norm{ v_1 }^2 } v_1 = (\frac{ 1 }{ 2 }, \frac{ 1 }{ 2 }, 1)$</p>
-
 <p>$v_3 = w_3 - \frac{ \inner{ w_3 }{ v_1 }}{ \norm{ v_1 }^2 } v_1 - \frac{ \inner{ w_3 }{ v_2 }}{ \norm{ v_2 }^2 } v_2 = (- \frac{ 2 }{ 3 }, - \frac{ 2 }{ 3 }, \frac{ 2 }{ 3 })$</p>
-
 <p>$\beta = \set{ \frac{ v_1 }{ \norm{ v_1 }}, \frac{ v_2 }{ \norm{ v_2 }}, \frac{ v_3 }{ \norm{ v_3 }}} $</p>
 
   </div>
@@ -1036,13 +980,13 @@ v_k &amp;= w_k - \sum_{ i=1 }^{ k-1 } \frac{ \inner{ w_k }{ v_i }}{ \norm{ v_i }
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

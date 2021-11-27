@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Convergence in Probability - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -311,20 +321,14 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="convergence-in-probability">Convergence in Probability</span></span>
   <div class="block__content block__content--blue">
     <p>Let $Y_1, Y_2, &hellip; $ be a sequence of random variables. We say that $Y_n$ converge to a random variable $Y$ in probability denoted by $Y_n \to Y $ if</p>
-
 <p>$$\limu{ n }{ \infty } = P(\abs{ Y_n - Y } \geq \epsilon) = 0, \forall \epsilon &gt; 0 \tag{1}$$</p>
-
 <p>Or, $\forall \epsilon &gt; 0, \forall \delta &gt; 0, \exists n_0$ such that</p>
-
 <p>$$P(\abs{ Y_n - a } \geq \epsilon) \leq \delta, \forall n \geq n_0 \tag{2}$$</p>
-
 <p>We refer to $\epsilon$ as the <strong>accuracy</strong> level, and $\delta$ as the <strong>confidence</strong> level. Then we can restate the second definition as follows:</p>
-
 <p>For any given level of accuracy and confidence. $Y_n $ will be equal to $a$,
 within these levels of accuracy and confidence, provided that $n $ is large enough.</p>
 
@@ -360,28 +364,21 @@ within these levels of accuracy and confidence, provided that $n $ is large enou
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>Consider a sequence of independent random variables $X_n $ that are uniformly
 distributed in the interval $[0,1 ] $, and let</p>
-
 <p>$$Y_n = \min{ X_1, X_2, &hellip;, X_n } $$</p>
-
 <p>Observe that the sequence of values of $Y_n $ cannot increase as $n $ increases, and it will occasionally decrease. Thus we intuitively expect that $Y_n $ converges to zero. Indeed, for $\epsilon &gt; 0 $, we have using the independence of the $X_n $,</p>
-
 <p>$$\begin{align*}
 P(\abs{ Y_n - 0 } &gt; \epsilon) &amp;= P(X_1 \geq \epsilon, &hellip;, X_n \geq \epsilon) \br
 &amp;= P(X_1 \geq \epsilon) &hellip; P(X_n \geq \epsilon) \br
 &amp;= (1 - \epsilon)^n
 \end{align*}$$</p>
-
 <p>In particular,</p>
-
 <p>$$\limu{ n }{ \infty } P(\abs{ Y_n - 0 } \geq \epsilon) = \limu{ n }{ \infty } (1 - \epsilon)^n = 0 $$</p>
-
 <p>Since this is true for every $\epsilon &gt; 0 $, we conclude that $P \ipto 0 $.</p>
 
   </div>
@@ -398,22 +395,16 @@ P(\abs{ Y_n - 0 } &gt; \epsilon) &amp;= P(X_1 \geq \epsilon, &hellip;, X_n \geq 
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>$Y \expdist{ 1 }$. <br>
 For any positive integer $n $, let $Y_n = Y/ n $. (Note that these random variables are dependent.) Prove $Y_n \ipto 0$.</p>
-
 <p>For $\epsilon &gt; 0 $. We have</p>
-
 <p>$$P(\abs{ Y_n - 0 } \geq \epsilon) = P(Y_n \geq \epsilon) = P(Y \geq n \epsilon) = e^{ -n \epsilon }$$</p>
-
 <p>In particular,</p>
-
 <p>$$\limu{ n }{ \infty } P(\abs{ Y_n - 0 } \geq \epsilon) = \limu{ n }{ \infty } e^{-n \epsilon} = 0$$</p>
-
 <p>Since this is the case for every $\epsilon &gt; 0 $, $Y_n \ipto 0$.</p>
 
   </div>
@@ -430,13 +421,11 @@ For any positive integer $n $, let $Y_n = Y/ n $. (Note that these random variab
 </div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>One might be tempted to believe that if a sequence $Y_n $ converges to a
 number $a $, then $E[Y_n] $ must also converge to $a $.</p>
-
 <p><strong>This is not necessarily true.</strong></p>
 
   </div>
@@ -451,7 +440,6 @@ number $a $, then $E[Y_n] $ must also converge to $a $.</p>
   </ul></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: Limit vs. Expectation
     
@@ -459,19 +447,14 @@ number $a $, then $E[Y_n] $ must also converge to $a $.</p>
   <div class="block__content block__content--gray">
     <p>Consider a sequence of discrete random variables $Y_n $ with the following
 distribution:</p>
-
 <p>$$P(Y_n = y) = \begin{cases}
 1 - \frac{ 1 }{ n }&amp; y = 0 \br
 \frac{ 1 }{ n }&amp; y = n^2 \br
 0 &amp;\text{ otherwise}
 \end{cases}$$</p>
-
 <p>$$\limu{n}{\infty} P(\abs{ Y_n } \geq \epsilon) = \limu{ n  }{ \infty } \frac{ 1 }{ n } = 0$$</p>
-
 <p>However,</p>
-
 <p>$$E[Y_n] = \frac{ n^2 }{ n } = n $$</p>
-
 <p>which goes to infinity as $n$ increases.</p>
 
   </div>
@@ -1210,13 +1193,13 @@ distribution:</p>
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>The Central Limit Theorem - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -312,20 +322,14 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="the-central-limit-theorem">The Central Limit Theorem</span></span>
   <div class="block__content block__content--blue">
     <p>Let $X_1, X_2, &hellip; $ be a sequence of i.i.d. random variables with mean $\mu $ and variance $\sigma^2 $, and define</p>
-
 <p>$$Z_n = \frac{ X_1, X_2, &hellip;, X_n - n \mu }{ \sigma \sqrt[  ]{ n }} $$</p>
-
 <p>Then, the CDF of $Z_n $ converges to the standard normal CDF</p>
-
 <p>$$\Phi(z) = \frac{ 1 }{ \sqrt[  ]{ 2 \pi }} \int_{ - \infty }^{ z } e^{- x^2 /2} \d x $$</p>
-
 <p>in the sense that</p>
-
 <p>$$\limu{ n }{ \infty } P(Z_n \leq z) = \Phi(z), \forall z$$</p>
 
   </div>
@@ -360,20 +364,15 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>The central limit theorem is surprisingly general.</p>
-
 <p>Besides independence and the implicit assumption that the mean and variance are
 finite, there are really no other restrictions on the distribution of $X_i$.</p>
-
 <p>$X_i $ can be <strong>discrete</strong>, <strong>continuous</strong>, or <strong>mixed</strong>.</p>
-
 <p>On the conceptual side, central limit theorem indicates that the sum of a large number of
 independent random variables is <strong>approximately normal</strong>.</p>
-
 <p>On the practical side, central limit theorem eliminates the need for detailed probabilistic models.</p>
 
   </div>
@@ -388,21 +387,17 @@ independent random variables is <strong>approximately normal</strong>.</p>
   </ul></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="normal-approximation-based-on-the-central-limit-theorem">Normal Approximation Based on the Central Limit Theorem</span></span>
   <div class="block__content block__content--green">
   <p>Let $S_n = X_1, X_2, &hellip;, X_n $, where the $X_i $ are i.i.d. random variables with mean $\mu $ and variance $\sigma^2 $. If $n $ is large, the probability $P(S_n \leq C) $ can be approximated by treating $S_n $ as if it were normal, according to the following procedure.</p>
-
 <ol>
 <li>Calculate the mean $n \mu $ and the variance $n \sigma^2 $ of $S_n $.</li>
 <li>Calculate the normalized value $z = (c - n \mu) / \sigma \sqrt[  ]{ n } $</li>
 <li>Use the approximation</li>
 </ol>
-
 <p>$$P(S_n \leq c) \approx \Phi(z) $$</p>
-
 <p>where $\phi(z) $ is available from standard normal CDF tables.</p>
 
   </div><script>
@@ -436,7 +431,6 @@ independent random variables is <strong>approximately normal</strong>.</p>
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
@@ -457,23 +451,16 @@ independent random variables is <strong>approximately normal</strong>.</p>
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>A machine processes parts, one at a time. The processing times we wish to approximate the probability that the number of parts processed within $320$ time units, denoted by $N_{320}$, is at least $100$.</p>
-
 <p>Let $S_{100} = X_1, X_2, &hellip;, X_100 $ be the total processing time of the first $100$ parts. The event $\set{ N_{320} \geq 100}$ is the same as the event $\set{ S_100 \leq 320 }$, and we can now use a normal approximation to the distribution o $S_100 $. Note that</p>
-
 <p>$$\mu = E[X_i] = 3, \sigma^2 = \var{ X_i } = \frac{ 4 }{ 3 }$$</p>
-
 <p>We calculate the normalized value</p>
-
 <p>$$z = \frac{ 320 - n \mu }{ \sigma \sqrt[  ]{ n }} = \frac{ 320 - 300 }{ \sqrt[  ]{ 100 \cdot 4 / 3 }} = 1.73$$</p>
-
 <p>and use the approximation</p>
-
 <p>$$P(S_{100} \leq 320) \approx \Phi(1.73) = 0.9582$$</p>
 
   </div>
@@ -490,63 +477,38 @@ independent random variables is <strong>approximately normal</strong>.</p>
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: Evaluating bounds of the probabilities of interest based on bounds
     
   </span>
   <div class="block__content block__content--gray">
     <p>We poll $n$ voters and record the fraction $M_n$ of those polled who are in favor of a particular candidate.</p>
-
 <p>If $p$ is the fraction of the entire voter population that supports this candidate, then</p>
-
 <p>$$M_n = \frac{ X_1, X_2, &hellip;, X_n }{ n }$$</p>
-
 <p>where the $X_i \berndist{ p }$. In particular, $M_n $ has mean $p$ and variance $p(1- p)/ n $.</p>
-
 <p>By the normal approximation, $X_1, X_2, &hellip;, X_n $ is approximately normal, and therefore $M_n $ is also approximately normal.</p>
-
 <p>We are interested in probability $P(\abs{ M_n - p } \geq \epsilon) $ that the polling error is larger than some desired accuracy $\epsilon $.</p>
-
 <p>Because of the symmetry of the normal PDF around the mean, we have</p>
-
 <p>$$P(\abs{ M_n - p } \geq \epsilon) \approx 2P(M_n - p \geq \epsilon) $$</p>
-
 <p>The variance $p(1 - p) / n$ of $M_n - p$ depends on $p $ and is therefore unknown. We note that the probability of a large deviation from the mean increases with the variance. Thus, we can obtain an upper bound on $P(M_n - p  \geq \epsilon) $ by assuming that $M_n - p $ has the largest possible variance, namely $\frac{ 1 }{ 4n } $ which corresponds to $p = \frac{ 1 }{ 2 } $. To calculate this upper bound, we evaluate the standardized value</p>
-
 <p>$$z = \frac{ \epsilon }{ 1/ (2 \sqrt[  ]{ n })}$$</p>
-
 <p>and use the normal approximation</p>
-
 <p>$$P(M_n - p \geq \epsilon) \leq 1 - \Phi(z) = 1 - \Phi(2 \epsilon \sqrt[  ]{ n }) $$</p>
-
 <p>For instance, consider the case where $n = 100$ and $\epsilon= 0.1$. Assuming the worst-case variance, and treating $M_n$ as if it were normal, we obtain</p>
-
 <p>$$\begin{align*}
 P(\abs{ M_{100} - p } \geq 0.1) &amp;\approx 2P(M_n - p \geq 0.1) \br
 &amp; \leq 2 - 2 \Phi(2 \cdot 0.1 \cdot \sqrt[  ]{ 100 }) = 2 - 2 \Phi(2) = 0.046
 \end{align*}$$</p>
-
 <p>This is much smaller (and more accurate) than the estimate of $0.25$ that was obtained using Chebychev inequality.</p>
-
 <p>We now consider a reverse problem. How large a sample size $n $ is needed if we wish our estimate $M_n $ to be within $0.01 $ of $p $ with probability at least $0.95 $?</p>
-
 <p>Assuming again the wort possible variance, we are led to the condition</p>
-
 <p>$$ 2- 2 \Phi(2 \cdot 0.01 \cdot \sqrt[  ]{ n }) \leq 0.05 $$</p>
-
 <p>or</p>
-
 <p>$$\Phi(2 \cdot 0.01 \cdot \sqrt[  ]{ n }) \geq 0.975 $$</p>
-
 <p>From the normal tables, we see that $\Phi(1.96) = 0.975 $ which leads to</p>
-
 <p>$$  2 \cdot 0.01 \cdot \sqrt[  ]{ n } \geq 1.96 $$</p>
-
 <p>or</p>
-
 <p>$$ n \geq \frac{(1.96)^2 }{ 4 \cdot (0.01)^2 } = 9604 $$</p>
-
 <p>This is significantly better than the sample size of $ 50,000 $ that we found using Chebyshev&rsquo;s inequality.</p>
 
   </div>
@@ -1285,13 +1247,13 @@ P(\abs{ M_{100} - p } \geq 0.1) &amp;\approx 2P(M_n - p \geq 0.1) \br
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

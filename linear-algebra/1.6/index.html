@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Bases and Dimensions - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -211,7 +221,6 @@ if (!doNotTrack) {
         <p class="hide">
   Basis, Dimensions of Vector Spaces.
 </p>
-
 <div class="latex-macros">
   
     $\newcommand{\br}{\\}$
@@ -272,12 +281,10 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="basis">Basis</span></span>
   <div class="block__content block__content--blue">
     <p>$V/F$, a subset $\beta\subseteq V$ is called a <strong>basis</strong> of $V$ if</p>
-
 <ol>
 <li>$\beta$ generates $V$, i.e. $\spa{\beta}=V$.</li>
 <li>$\beta$ is linearly independent.</li>
@@ -315,36 +322,35 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>Prove that $\beta=\set{(1,0), (0,1)}$ is a basis of $\R^2$.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <ol>
-<li><p>need to prove $\beta$ generates $V$.<br>
+<li>
+<p>need to prove $\beta$ generates $V$.<br>
 $\forall (a,b) \in \R^2,$<br>
-$(a, b)=a(1,0)+b(0,1)$ i.e. $\spa{\beta}=\R^2$.</p></li>
-
-<li><p>need to prove $\beta$ is linearly independent.<br>
+$(a, b)=a(1,0)+b(0,1)$ i.e. $\spa{\beta}=\R^2$.</p>
+</li>
+<li>
+<p>need to prove $\beta$ is linearly independent.<br>
 $x(1,0) + y(0,1) = (0,0)$<br>
 $(x,y) = (0,0)$<br>
-$x = 0, y = 0$</p></li>
+$x = 0, y = 0$</p>
+</li>
 </ol>
-
 <p>$\therefore$ $\beta$ is a basis of $\R^2$.</p>
-
   </div>
 </div>
 
@@ -360,7 +366,6 @@ $x = 0, y = 0$</p></li>
   </ul>
 
 </div>
-
 
 
 <div class="block block--gray ">
@@ -372,40 +377,31 @@ $e_2=(0,1,0, &hellip;)$,
 $e_3=(0,0,1, &hellip;)$, <br>
 $e_n=(0,0,&hellip;,1, 0, &hellip;)$. <br>
 Is $S= \set{e_1, e_2, e_3, &hellip;}$abasis of $\R^\infty$?</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p><strong>No.</strong> it is not.</p>
-
 <p>Let $e = (1, 1, 1, 1, &hellip;), e \in \R^\infty$. <br></p>
-
 <p>$e \notin \spa{S}$, but $e \in \R^\infty$.</p>
-
 <p>$\spa{\beta} \neq R^\infty$ i.e. $\spa{\beta}$ cannot generate $\R^\infty$.</p>
-
 <p>Hence, $\beta$ is not a basis of $\R$.</p>
-
   </div>
 </div>
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks
   </span>
   <div class="block__content block__content--yellow">
   <p>$R^\infty$ does have a basis, although we don&rsquo;t know what it is.<br>
-  <strong>Every vector space have a basis.</strong></p>
-
+<strong>Every vector space have a basis.</strong></p>
   </div>
-
-<p><ul class="block__footer">
+  <ul class="block__footer">
     <li class="block__footer-item">
       <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
     </li>
@@ -413,7 +409,7 @@ Is $S= \set{e_1, e_2, e_3, &hellip;}$abasis of $\R^\infty$?</p>
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul>
-</div></p>
+</div>
 
   </div>
 
@@ -427,7 +423,6 @@ Is $S= \set{e_1, e_2, e_3, &hellip;}$abasis of $\R^\infty$?</p>
   </ul>
 
 </div>
-
 
 
 <div class="block block--gray ">
@@ -440,30 +435,31 @@ $e_2=(0,1,0, &hellip;)$,
 $e_3=(0,0,1, &hellip;)$, <br>
 $e_n=(0,0,&hellip;,1, &hellip;, 0)$.<br>
 $S= \set{e_1, e_2, e_3, &hellip;, e_n}$ is a basis of $\R^n$.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <ol>
-<li><p>need to prove that $S$ generates $\R^n$. <br>
+<li>
+<p>need to prove that $S$ generates $\R^n$. <br>
 $(a_1, a_2, &hellip;, a_{n}) \in \R^n$ <br>
 $(a_1, a_2, &hellip;, a_{n}) = a_1e_1 + a_2e_2 + &hellip; + a_{n} e_{n}$ <br>
-$\spa{S} = R $ i.e. $S$ generates $\R^n$.</p></li>
-
-<li><p>need to prove $S$ is linearly independent. <br>
+$\spa{S} = R $ i.e. $S$ generates $\R^n$.</p>
+</li>
+<li>
+<p>need to prove $S$ is linearly independent. <br>
 $a_1e_1 + a_2e_2 + &hellip; + a_{n} e_{n} = 0$ <br>
 $(a_1, a_2, &hellip;, a_{n}) = 0$ <br>
 $a_i = 0,  i = 1, 2, &hellip;, n $
-$\therefore, S$ linearly independent.</p></li>
+$\therefore, S$ linearly independent.</p>
+</li>
 </ol>
-
   </div>
 </div>
 
@@ -479,7 +475,6 @@ $\therefore, S$ linearly independent.</p></li>
   </ul>
 
 </div>
-
 
 
 <div class="block block--gray ">
@@ -503,21 +498,22 @@ $\therefore, S$ linearly independent.</p></li>
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: $\P(X)/\R$
     
   </span>
   <div class="block__content block__content--gray">
     <p>Prove that $\beta = \set{1, x, x^2, &hellip;}$ is a basis of $\P(x) / \R$.</p>
-
 <ol>
-<li><p>need to prove that $\beta$ generates $\P(x) $. <br>
+<li>
+<p>need to prove that $\beta$ generates $\P(x) $. <br>
 $a_0 + a_1x + a_2x^2 + &hellip; + a_{n} x^{n} \in \P(x)$
-$\spa{\beta} = \P(x) $</p></li>
-
-<li><p>need to prove that $\beta$ is linearly independent. <br>
-<small>To prove an infinite set is linearly independent, we only need to prove its every finite subset&rsquo;s only solution is the trivial representation.</small> <br></p></li>
+$\spa{\beta} = \P(x) $</p>
+</li>
+<li>
+<p>need to prove that $\beta$ is linearly independent. <br>
+<small>To prove an infinite set is linearly independent, we only need to prove its every finite subset&rsquo;s only solution is the trivial representation.</small> <br></p>
+</li>
 </ol>
 
   </div>
@@ -532,7 +528,6 @@ $\spa{\beta} = \P(x) $</p></li>
   </ul>
 
 </div>
-
 
 
 <div class="block block--yellow ">
@@ -541,15 +536,14 @@ $\spa{\beta} = \P(x) $</p></li>
   </span>
   <div class="block__content block__content--yellow">
   <p>The empty set $\emptyset$ is the basis of $V=\set{0}/F$.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <ol>
@@ -558,7 +552,6 @@ Trivial. It is defined that $\spa{\emptyset} = \set{0}$.</li>
 <li>need to prove that $\emptyset $ is linearly independent. <br>
 Trivial.</li>
 </ol>
-
   </div>
 </div>
 
@@ -573,7 +566,6 @@ Trivial.</li>
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--green ">
@@ -585,50 +577,41 @@ Trivial.</li>
 $\beta$ is a basis of $V \iff $
 $\forall v \in V, \exists v_1, v_2, &hellip;, v_n \in \beta$ and <u>unique</u> $a_1, a_2, &hellip;, a_n \in F$ s.t.
 $$v = \sum^n_{i=1}a_iv_i$$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$\implies$</p>
-
 <p>$\spa{\beta} = V$, since $\beta$ is a basis of $V$.</p>
-
 <p>Assume that for $v\in V, \exists a_1, a_2, &hellip;, a_n, b_1, b_2, &hellip;, b_n$ s.t.</p>
-
 <p>$$v = \sum_{i=1}^na_iv_i= \sum_{i=1}^nb_iv_i$$</p>
-
 <p>then we have</p>
-
 <p>$$\sum_{i=1}^n(a_i-b_i)v_i= 0$$</p>
-
 <p>$\because \beta$ linearly independent $\therefore a_i-b_i = 0, \forall i = 1 &hellip; n$.</p>
-
 <p>$\therefore \forall i, a_i=b_i$, the coefficients are unique.</p>
-
 <p>$\impliedby$</p>
-
 <ol>
-<li><p>need to prove $\spa{\beta} = V$.<br>
+<li>
+<p>need to prove $\spa{\beta} = V$.<br>
 Since $\forall v \in V, v \in \spa{\beta}, V\subseteq \spa{\beta}$.<br>
 $\beta \subseteq V \implies \spa{\beta} \subseteq V$.<br>
-$\therefore V = \spa{\beta}$.</p></li>
-
-<li><p>need to prove $\beta$ is linearly independent.<br>
+$\therefore V = \spa{\beta}$.</p>
+</li>
+<li>
+<p>need to prove $\beta$ is linearly independent.<br>
 Choose $v = 0$, then
 $\forall v_1, v_2, &hellip;, v_k (k \leq n)$, there exist unique $a_1, a_2, &hellip;, a_k$ s.t.<br>
 $$a_1v_1 + a_2v_2 + &hellip; + a_kv_k = 0$$<br>
-then $a_i$ must be all zero. Hence $\beta$ is linearly dependent.</p></li>
+then $a_i$ must be all zero. Hence $\beta$ is linearly dependent.</p>
+</li>
 </ol>
-
 <p>$\therefore$ by definition, $\beta$ is a basis of $V$.</p>
-
   </div>
 </div>
 
@@ -663,64 +646,44 @@ then $a_i$ must be all zero. Hence $\beta$ is linearly dependent.</p></li>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   1.9: <span class="keyword" id="deletion-theorem">Deletion Theorem</span><span class="keyword" id="1.9" style="visibility: hidden;">1.9</span></span>
   <div class="block__content block__content--green">
   <p>$V/F, S$ is a <u>finite</u> generating subset of $V$. Then $\exists T \subseteq S, T$ is a basis of $V$.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p><strong>case 1</strong>:
 If $S=\emptyset$ or $S= \set{0}$, then $\spa{S} = \set{0} = V.$</p>
-
 <p>Then $\emptyset \subseteq S$ is the basis of $V = \set{0}, T = \emptyset.$</p>
-
-<p><br></p>
-
+<br>
 <p><strong>case 2</strong>:
 If $S \neq \emptyset$ and $S \neq \set{0}$, then $\exists v_1 \in S$, s.t. $v_1 \neq 0, \set{v_1}$ linearly independent.</p>
-
 <p>Step 1: Is $\spa{{v_1}} = V$?</p>
-
 <p>If yes, then stop and set $T=\set{v_1}$.</p>
-
 <p>Otherwise, we claim that  $S \setminus \spa{\set{v_1}} \neq \emptyset$</p>
-
-<p><br></p>
-
+<br>
 <p>Indeed $S\setminus \spa{\set{v_1}} \neq \emptyset$.</p>
-
 <p>Assume that $S\setminus \spa{\set{v_1}} = \emptyset$.</p>
-
 <p>then $S \subseteq \spa{v_1}$</p>
-
 <p>then $\spa{S} \subseteq \spa{v_1}$</p>
-
 <p>then $V \subseteq \spa{v_1}$</p>
-
-<p><br></p>
-
+<br>
 <p>$v_2\in V \setminus \spa{\set{v_1}}$. Thus $\set{v_1,v_2} = \set{v_1}\cup\set{v_2}$ linearly independent by Theorem 1.7.</p>
-
-<p><br></p>
-
+<br>
 <p>Step 2: check if $\spa{\set{v_1, v_2}} = V$?
 If yes, then stop&hellip;
 otherwise &hellip;.</p>
-
 <p>Repeat this way after finitely many steps  (since S is a finite) we will get a set $T=\set{v_1, v_2, &hellip;, v_k}$ s.t. $T$ is linearly independent $\subset S$ and $\spa{T} = V$.</p>
-
   </div>
 </div>
 
@@ -755,59 +718,40 @@ otherwise &hellip;.</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   1.10: <span class="keyword" id="replacement-theorem">Replacement Theorem</span><span class="keyword" id="1.10" style="visibility: hidden;">1.10</span></span>
   <div class="block__content block__content--green">
   <p>Let $V/F$ and $\beta = \set{v_1, v_2, &hellip;, v_n}$ be a basis of $V$.</p>
-
 <p>Let $v \in V$ be a non-zero vector and $v=c_1v_1 + c_2v_2 + &hellip; + c_jv_j + &hellip; + a_nv_n$ s.t. $c_j \neq 0$ Then $\set{v_1, v_2, &hellip;, v_{j-1}, v, v_{j+1}, &hellip;, v_n}$ is a basis of $V$. i.e. the $j$th vector of $\beta$ can be replaced by $v$.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
-    <p>Denote $\set{v_1, v_2, &hellip;, v_{j-1}, v, v_{j+1}, &hellip;, v_n}$ by $\beta&rsquo;$.</p>
-
-<p>want to prove: $\spa{\beta&rsquo;} = V, \beta&rsquo;$ is linearly independent.</p>
-
+    <p>Denote $\set{v_1, v_2, &hellip;, v_{j-1}, v, v_{j+1}, &hellip;, v_n}$ by $\beta'$.</p>
+<p>want to prove: $\spa{\beta'} = V, \beta'$ is linearly independent.</p>
 <p>let $u \in V, since \beta = \set{v_1, v_2, &hellip;, v_j, &hellip;, v_n}$ is a basis of $V, \exists a_1, a_2, a_n \in F$ s.t. $u = \set{v_1, v_2, &hellip;, v_{j} &hellip;, v_n}$</p>
-
 <p>We are given that $v = c_1v_1+ c_2v_2+ &hellip;+ c_jv_j, &hellip;+ c_nv_n$, and $c_j \neq 0$</p>
-
 <p>Solve for $v_j$:
 $c_jv_j = c_1v_1 + &hellip; + c_{j-1}v_{j-1} -v + c_{j+1}v_{j+1} + &hellip; + c_nv_n$</p>
-
 <p>$\because c_j \neq 0, \frac1{c_j}$ exists</p>
-
 <p>$v_j = \sum^n_{i=1}(-\frac{-c_i}{c_j}v_i + \frac{1}{c_j} v)   (i\neq j)$</p>
-
 <p>$u = \sum^n_{i=1}a_iv_i + \sum^n_{i=1}(-\frac{-c_i}{c_j})a_jv_i + \frac{1}{c_j} a_jv (i\neq j)$</p>
-
 <p>$u = \sum^n_{i=1}(a_i-\frac{-c_i}{c_j}c_i)v_i + \frac{1}{c_j} v (i\neq j)$</p>
-
 <p>$b_1v_1 +b_2v_2 + &hellip; + b_{j-1}v_{j-1} + bv + b{j+1}v_{j+1} + &hellip; + b_nv_n = 0</p>
-
 <p>$b_1v_1 +b_2v_2 + &hellip; + b_{j-1}v_{j-1} + b(c_1v_1 + &hellip; + c_nv_n) + b{j+1}v_{j+1} + &hellip; + b_nv_n = 0</p>
-
 <p>$(b_1 + bc_1)v_1 +(b_2 + bc_2)v_2 + &hellip; + (b_{j-1} + bc_{j-1})v_{j-1}  + bc_jv_j + &hellip;+ (b_n + bc_n) v_n = 0</p>
-
 <p>(c_j \neq 0)$</p>
-
 <p>since $\beta = \set {v_1, v_2, &hellip;, v_j, &hellip;, v_n}$ is a basis. It is linearly dependent.</p>
-
 <p>$\therefore b_c_j = 0 \implies b = 0,c &hellip;..</p>
-
 <p>lol, cant catch up</p>
-
   </div>
 </div>
 
@@ -842,17 +786,14 @@ $c_jv_j = c_1v_1 + &hellip; + c_{j-1}v_{j-1} -v + c_{j+1}v_{j+1} + &hellip; + c_
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: $\R^3$
     
   </span>
   <div class="block__content block__content--gray">
     <p>$\beta= \set{e_1,e_2,e_3}$, standard basis.</p>
-
 <p>$u = (-1, 0, \frac12) = -1e_1 + 0e_2+ \frac12 e_3$</p>
-
-<p>$\beta&rsquo; = \set{u, e_2, e_3}$ is a basis.</p>
+<p>$\beta' = \set{u, e_2, e_3}$ is a basis.</p>
 
   </div>
 
@@ -868,7 +809,6 @@ $c_jv_j = c_1v_1 + &hellip; + c_{j-1}v_{j-1} -v + c_{j+1}v_{j+1} + &hellip; + c_
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   
@@ -877,47 +817,33 @@ $c_jv_j = c_1v_1 + &hellip; + c_{j-1}v_{j-1} -v + c_{j+1}v_{j+1} + &hellip; + c_
 
   <div class="block__content block__content--green">
   <p>$V/F, V$ is finite-dimensional,</p>
-
 <p>Then any two basis of $V$ has exactly same number of elements, namely, $\dim V$.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>let $\beta = \set{v_1, v_2, &hellip;, v_n}$ and $\gamma = \set{u_1, u_2, &hellip;, u_n}$ be two basis of $V$.</p>
-
 <p>need to prove $\abs{\beta} \geq \abs{\gamma}$ and $\abs{\gamma} \geq \abs{\beta}$</p>
-
 <p>$u_1 \neq 0$</p>
-
 <p>write $u_1 = a_1v_1 + a_2v_2 + &hellip; + a_mv_m$ one of the $a_i$ is  non-zero without loss of generality we may assume that $a_1 \neq 0$. Then by the replacement theorem, $\set{v_1,v_2, &hellip;, v_n}$ is a basis of $V$.
 $\delta_1 = \set{u_1, v_2, v_3, &hellip;, v_m}$ is a basis of V.</p>
-
 <p>write $u_2 \in \delta$ is a linear combination from $\delta$,
 i.e. $u_2 = b_1u_1 + b_2v_2 + b_3v_3 + &hellip; = b_mv_m$</p>
-
 <p>$u_2 \neq 0$</p>
-
 <p>Claim At least that one of $b_2, b_3, &hellip;, b_m$ is non-zero</p>
-
 <p>If not,  then assume they are all zeor i.e. b_2=b_3=&hellip;= b_m =0</p>
-
 <p>Then u_2= b_1u_1 = $\set{u_1, u_2}$ is linearly dependent.
 This is a contradiction since \delta is a basis if $b_i \neq 0$</p>
-
 <p>Aussume W.L.G. that $b2 \neq = 0$.</p>
-
 <p>Then by Reprlacement theorem applied to $\delta_1, \delta_2 = \set{u_1, u_2, v_3, v_n, &hellip;, v_m}$ is a basis.</p>
-
 <p>Continue this way until $\set{u_1, u_2, u_3, &hellip;, u_n, v_{n+1}, v_{n+2}, &hellip;,  v_m}$
 Similarly, $\abs{m}\leq n$</p>
-
   </div>
 </div>
 
@@ -953,12 +879,10 @@ Similarly, $\abs{m}\leq n$</p>
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="dimensions-of-vector-spaces">Dimensions of Vector Spaces</span></span>
   <div class="block__content block__content--blue">
     <p>$V/F$. If $V$ is generated by a finite subset, then $V$ is called a <strong>finite-dimensional vector space</strong>. In this case the number of vectors in a basis of $V$ is called the <strong>dimension</strong> of $V$ denoted by $\dim V$.</p>
-
 <p>If $V$ is NOT a finite-dimensional vector space, or alternatively if there exists an infinite linearly independent subset $S$ of $V$, i.e. $\abs{S} = \infty$ and $S$ is linearly independent, Then $V$ is called an <strong>infinite-dimensional</strong> vector space, and we write $\dim V = \infty$.</p>
 
   </div>
@@ -993,14 +917,12 @@ Similarly, $\abs{m}\leq n$</p>
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: $P(x) / \R$
     
   </span>
   <div class="block__content block__content--gray">
     <p>$\beta = \set{1, x, x^2, x^3, &hellip;}$</p>
-
 <p>$\dim_\R \P(x) = \infty$</p>
 
   </div>
@@ -1015,7 +937,6 @@ Similarly, $\abs{m}\leq n$</p>
   </ul>
 
 </div>
-
 
 
 <div class="block block--gray ">
@@ -1039,18 +960,14 @@ Similarly, $\abs{m}\leq n$</p>
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: $\R^n/\R$
     
   </span>
   <div class="block__content block__content--gray">
     <p>$e_1 = (1, 0, &hellip;, 0)$</p>
-
 <p>$e_2 = (0, 1, &hellip;, 0)$</p>
-
 <p>$e_n = (0, 1, &hellip;, n)$</p>
-
 <p>$\beta = \set{e_1, e_2, &hellip;, e_n}, \dim_\R R^n = n$.</p>
 
   </div>
@@ -1065,7 +982,6 @@ Similarly, $\abs{m}\leq n$</p>
   </ul>
 
 </div>
-
 
 
 <div class="block block--gray ">
@@ -1089,14 +1005,12 @@ Similarly, $\abs{m}\leq n$</p>
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: $W \subseteq M\_{2\times 2}(\R)$
     
   </span>
   <div class="block__content block__content--gray">
     <p>$W = \set{A \in M_{2\times 2}(\R) | tr(A) = 0}$</p>
-
 <p>$\dim_\R W = 3$</p>
 
   </div>
@@ -1113,16 +1027,13 @@ Similarly, $\abs{m}\leq n$</p>
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: $\R/\R$
     
   </span>
   <div class="block__content block__content--gray">
     <p>$\dim_\R \R = 1$</p>
-
 <p>In fact,</p>
-
 <p>$\dim_F F = 1$</p>
 
   </div>
@@ -1137,7 +1048,6 @@ Similarly, $\abs{m}\leq n$</p>
   </ul>
 
 </div>
-
 
 
 <div class="block block--gray ">
@@ -1161,13 +1071,12 @@ Similarly, $\abs{m}\leq n$</p>
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: $\C^2/\R$
     
   </span>
   <div class="block__content block__content--gray">
-    <ol>
+    <ol start="2">
 <li>$V = \C^2, \F = \C, \dim_\C \C^2 = 1$<br>
 $\beta_1 = \set{(1, 0), (0, 1)}/\C$</li>
 <li>$V = \C^2, \F = \R, \dim_\R \C^2 = 2$<br>
@@ -1187,7 +1096,6 @@ $\beta_2 = \set{(1, 0), (i, 0), (0, 1), (0, -i)}/\C$</li>
   </ul>
 
 </div>
-
 
 
 <div class="block block--yellow ">
@@ -1210,7 +1118,6 @@ $\beta_2 = \set{(1, 0), (i, 0), (0, 1), (0, -i)}/\C$</li>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   
@@ -1219,118 +1126,93 @@ $\beta_2 = \set{(1, 0), (i, 0), (0, 1), (0, -i)}/\C$</li>
 
   <div class="block__content block__content--green">
   <p>Let $V$ be a $n$ dimension vector space over a field $F$.</p>
-
 <p>i.e. $\dim V = n$</p>
-
 <ol>
-<li><p>(a) Any finite generating set of $V$ must contain at least $n$ elements.<br>
+<li>
+<p>(a) Any finite generating set of $V$ must contain at least $n$ elements.<br>
 $\forall S \subseteq V, \spa{S} = V \implies \abs{S} \geq n.$<br>
 (b) Any finite generating set of $V$ containing exactly $n$ elements is a basis.<br>
-$\forall S \subseteq V, \spa{S} = V, \abs{S} = n \implies S$ is a basis of $V$.</p></li>
-
-<li><p>Any linearly independent subset of $V$ containing exactly $n$ elements is a basis.<br>
-$\forall S \subseteq V, S$ is linearly independent, $\abs{S} = n \implies S$ is a basis of $V$.</p></li>
-
-<li><p>Every linearly independent subset of $V$ can be extended to a basis of $V$.</p></li>
+$\forall S \subseteq V, \spa{S} = V, \abs{S} = n \implies S$ is a basis of $V$.</p>
+</li>
+<li>
+<p>Any linearly independent subset of $V$ containing exactly $n$ elements is a basis.<br>
+$\forall S \subseteq V, S$ is linearly independent, $\abs{S} = n \implies S$ is a basis of $V$.</p>
+</li>
+<li>
+<p>Every linearly independent subset of $V$ can be extended to a basis of $V$.</p>
+</li>
 </ol>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Let $S$ be a finite set and $\spa{S} = V$.</p>
-
 <p><strong>On the contrary</strong>, assume that $\abs{S} &lt; n$.</p>
-
 <p>Since $S$ is finite and $\spa{S} = V$, <br>
 by possibly remaining same vector from $S$, let $T$ be a subset of $S$ s.t. $T$ is a basis. (theorem 1.9)</p>
-
 <p>$\dim V = \abs{T} \leq \abs{S} &lt; n = \dim V$. <strong>Contradiction</strong>.</p>
-
 <p>$\therefore \abs{S} \geq \dim V. $</p>
-
   </div>
 </div>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$\abs{S} = n$ and $\spa{S} = V$. We try to prove that $S$ is not a basis.</p>
-
 <p><strong>On the contrary</strong> assume that $S$ is not a basis. Then, $S$ must be linearly dependent.</p>
-
 <p>Let $T \subset S$ s.t. $T$ is a basis.</p>
-
 <p>Then $\dim V = \abs{T} &lt; \abs{S} = n = \dim{V}$. <strong>Contradiction</strong>.</p>
-
 <p>$\therefore S $ must be a basis.</p>
-
   </div>
 </div>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Let $S$ be a linearly independent, $\abs{S} = n = \dim V$.</p>
-
 <p>Let $\beta = \set{v_1, v_2, &hellip;, v_n}$ be a basis of $V$.</p>
-
 <p>Let $S = \set{u_1, u_2, &hellip;, u_n}$. Since $S$ is linearly independent. $u_i \neq 0, \forall i = 1, 2, &hellip;, n$.</p>
-
 <p>Then by theorem 1.10,
 we can replace $v_1, v_2, v_3, &hellip;, v_n$ with $u_1, u_2, &hellip;, u_n$  one by one.</p>
-
 <p>$\therefore u_1, u_2, &hellip;, u_n$ is a basis.</p>
-
   </div>
 </div>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Let $S = {v_1, v_2, &hellip;, v_k}$ be a linearly independent set in $V$.</p>
-
 <p>if $\spa{S} = V$, then $S$ is already a basis. (definition of basis)<br></p>
-
 <p>If not, there exist a vector $w_{k+1} \in V \setminus S$ s.t.</p>
-
 <p>$T_{k + 1} = S \cup \set{w_{k+1}}$ is linearly independent.</p>
-
 <p>Check if $\spa{T_{k+1}} = V$?</p>
-
 <p>If yes, then stop. and $T_{k + 1}$ is a basis.</p>
-
 <p>If not, continue is a basis.</p>
-
 <p>Continuing this way, we will stop after a finitely many steps and with $T_n = S \cup \set{w_{k+1}, w_{k+2}, w_{k+3}, &hellip;  w_{n}}$   since $\dim V = n$.</p>
-
   </div>
 </div>
 
@@ -1366,49 +1248,39 @@ we can replace $v_1, v_2, v_3, &hellip;, v_n$ with $u_1, u_2, &hellip;, u_n$  on
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>Let $V$ be a finite dimension vector space over a field $F$, and $W$ a subspace of $V$, then $\dim W \leq \dim V$.</p>
-
 <p>Moreover, if $\dim W = \dim V$, then $W = V$.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>DOUBLE CHECK</p>
-
 <p>let $\dim V = n \geq 0$,</p>
-
 <p>If  $W = \set{0}, \dim W = 0 \leq n = \dim V$<br>
 so assume that $W \neq \set{0}$.</p>
-
 <p>Then $\exists w_1 \in w$ s.t.  $w_1 \neq 0$</p>
-
 <p>continuing this way, let $\set{w_1, w_2, &hellip;, w_k}$ be a linearly independent subset of $W$ s.t. if $w$ is any other vector in $W$ s.t. $w \notin \set{w_1, w_2, &hellip;, w_k}$, then $\set{w_1, w_2, &hellip;, w_k}\cup \set{w}$ is linearly dependent.</p>
-
 <p>But $w_1, w_2, &hellip;, w_k$ is also linearly independent in V, since $W \subseteq V \implies$</p>
-
   </div>
 </div>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Assume that $\dim W = \dim V = n$
@@ -1418,7 +1290,6 @@ and $w_1, w_2, &hellip;, w_n$ is a linearly independent set in $V$, since $W\sub
 This implies that $w_1, w_2, &hellip;, w_n$ is a bais of $V$, since $\dim V = n$, \therefore, $\spa{w_1, w_2, &hellip;, w_n}= V$
 i.e. $\spa{\beta} = V$
 We get $W=V$</p>
-
   </div>
 </div>
 
@@ -1791,13 +1662,13 @@ We get $W=V$</p>
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

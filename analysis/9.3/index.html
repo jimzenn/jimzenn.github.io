@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Continuity and Compactness - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -305,112 +315,81 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="continuous-maps-preserve-compactness">Continuous Maps Preserve Compactness</span></span>
   <div class="block__content block__content--green">
   <p>$(X, d_X), (Y, d_Y). f: X \to Y$ continuous.</p>
-
 <p>$K \subseteq X$, $K$ compact.</p>
-
 <p>Then the image $f(K) := \set{ f(x) : x \in K }$ of $K$ is also compact.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>If $\set{U_\alpha}$ is some open cover of $f(K)$,</p>
-
 <p>then exists a finite subcover.</p>
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>Since f is continuous, we have all the set $\inv{ f }(U_ \alpha) $ are open.</p>
-
 <p>Thus $\set{ \inv{ f } (U_\alpha)} $ is an open cover of $K$.</p>
-
   </div>
-
-<p><ul class="block__footer">
+  <ul class="block__footer">
     <li class="block__footer-item">
       <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
     </li>
     <li class="block__footer-item">
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
-  </ul></div></p>
-
+  </ul></div>
 <p>By compactness, exists some finite subcover.</p>
-
 <p>$\inv{ f } (U_1), \inv{ f }(U_2) &hellip;, \inv{ f }(U_n)$</p>
-
 <p>But then (pushing forward) we got $U_1, U_2, &hellip;, U_n $ is a finite subcover.</p>
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>Q: Why is $\set{ \inv{ f } (U_ \alpha)}$ a cover for $K$.</p>
-
 <p>Note $f(k) \subset \bigcup_{ \alpha } U_ \alpha$</p>
-
 <p>Apply $\inv{ f } $ we get</p>
-
 <p>$K \subset \inv{ f } (f (K)) \subset \inv{ f } (\bigcup_ \alpha) = \bigcup_{ \alpha } \inv{ f } (U_ \alpha)$</p>
-
   </div>
-
-<p><ul class="block__footer">
+  <ul class="block__footer">
     <li class="block__footer-item">
       <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
     </li>
     <li class="block__footer-item">
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
-  </ul></div></p>
-
-<p></div>
-</div></p>
-
+  </ul></div>
+  </div>
+</div>
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Fix $\epsilon &gt; 0$.</p>
-
 <p>Since $f$ is continuous at every $x_0 \in X $,</p>
-
 <p>there exists $\delta_{ x_0 } &gt; 0 $, such that $d(x, x_0) &lt; \delta _ {x_0} \implies d(f(x), f(x_0)) &lt; \frac{ \epsilon }{ 2 }$.</p>
-
 <p>Notice $X \subseteq \bigcup_{ x_0 \in X } B(x_0, \delta_{x_0}) $</p>
-
 <p>$X \subseteq \bigcup_{ x_0 \in X } B(x_0, \frac{\delta_{x_0}}{ 2 }) $</p>
-
 <p>$\delta = \min{ \frac{ \delta_{x_1}}{ 2 }, \frac{ \delta_{x_2}}{ 2 }, &hellip;, \frac{ \delta_{x_n}}{ 2 }}$</p>
-
 <p>If $x, y \in X $, $d(x, y) &lt; \delta $, $(\delta \leq \frac{ \delta_{x_i}}{ 2 } \forall i)$</p>
-
 <p>$x \in B(x_i, \delta _{ \frac{ x_i }{ 2 }})$ for some $i$.</p>
-
 <p>$d(x, x_0) &lt; \frac{ \delta_{x_i}}{ 2 } $ and $d(y, x_i) &lt; \delta_{x_i} $</p>
-
 <p>$x, y \in B(x_i, \delta_{x_i}) $</p>
-
 <p>$d(f(x), f(y)) &lt; \epsilon$</p>
-
   </div>
 </div>
 
@@ -445,14 +424,12 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Proposition
   : <span class="keyword" id="maximum-principle">Maximum Principle</span></span>
   <div class="block__content block__content--green">
   <p>Let $(X, d) $ be a compact metric space, and $f: X \to \R$ continuous.<br>
 Then $f$ is bounded.</p>
-
 <p>Furthermore, <br>
 $f $ attains its maximum at some point $x_{ \text{max}} \in X$, <br>
 and attains its minimum at some point $x_{ \text{min}} \in X$.</p>
@@ -488,15 +465,12 @@ and attains its minimum at some point $x_{ \text{min}} \in X$.</p>
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="uniform-continuity">Uniform Continuity</span></span>
   <div class="block__content block__content--blue">
     <p>$(X, d_X) $, $(Y, d_Y) $, $f: X \to Y $.</p>
-
 <p>We say that $f $ is <strong>uniformly continuous</strong> iff</p>
-
-<p>$$\forall \epsilon &gt; 0, \exists \delta &gt; 0\text{ s.t. }\forall x, x&rsquo; \in X, d_X(x, x&rsquo;) &lt; \delta\text{ implies }d_Y(f(x), f(x&rsquo;)) &lt; \epsilon $$</p>
+<p>$$\forall \epsilon &gt; 0, \exists \delta &gt; 0\text{ s.t. }\forall x, x' \in X, d_X(x, x') &lt; \delta\text{ implies }d_Y(f(x), f(x')) &lt; \epsilon $$</p>
 
   </div>
 
@@ -530,7 +504,6 @@ and attains its minimum at some point $x_{ \text{min}} \in X$.</p>
     </script></div>
 
 
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks
   </span>
@@ -550,67 +523,48 @@ and attains its minimum at some point $x_{ \text{min}} \in X$.</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>$(X, d_X), (Y, d_Y)$. Suppose that $(X, d_X) $ is compact. $f: X \to Y$.</p>
-
 <p>$$f\text{ is continuous }\iff f \text{ is uniformly continuous}$$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p><strong>(necessity)</strong></p>
-
 <p>$f$ is uniformly continuous, then $f$ is continuous.</p>
-
 <p><strong>(sufficiency)</strong></p>
-
 <p>$f$ is continuous.</p>
-
 <p>$\forall x_0 \in X$, $f$ is continuous at $x_0$.</p>
-
 <p>Fix $\epsilon &gt; 0$. There exists a $\delta(x_0) &gt; 0 $, depending on $x_0 $, <br>
 such that $d_Y(f(x), f(x_0)) &lt; \epsilon / 2$ whenever $d_X(x, x_0) &lt; \delta(x_0)$.</p>
-
-<p>By the triangle inequality, this implies that $d_Y(f(x), f(x&rsquo;)) &lt; \epsilon$
-whenever $x \in B_{(X, d_X)}(x_0, \delta(x_0) / 2)$ and $d_X(x&rsquo;, x) &lt; \delta(x_0) / 2$.</p>
-
+<p>By the triangle inequality, this implies that $d_Y(f(x), f(x')) &lt; \epsilon$
+whenever $x \in B_{(X, d_X)}(x_0, \delta(x_0) / 2)$ and $d_X(x', x) &lt; \delta(x_0) / 2$.</p>
 <p>Now consider the (possibly infinite) collection of balls <br>
 $$\set{ B_{(X, d_X)}(x_0, \delta(x_0) / 2): x_0 \in X } $$
 Each ball in this collection is of course open, and the union of all these balls
 covers $X$, since each point $x_0$ in $X$ is contained in its own ball
 $B_{(X, d_X)}(x_0, \delta(x_0) / 2)$.</p>
-
 <p>Since $X$ is compact, there exist a finite number of points $x_1, x_2, &hellip;, x_n $ such that the balls $B_{(X, d_X)}(x_j, \delta(x_j) / 2) $ for $j = 1, &hellip;, n $ cover $X$:</p>
-
 <p>$$X \subseteq \bigcup_{ j = 1 }^n B_{(X, d_X)}(x_j, \delta(x_j) / 2)$$</p>
-
 <p>Now let $\delta := \min{ \delta(x_j) / 2} $.</p>
-
 <p>Since each of the $\delta(x_j) $ are positive
 and there are only a finite number of $j$, we see that $\delta &gt; 0$.</p>
-
-<p>Now let $x, x&rsquo;$ be any two points in $X$ such that $d_X(x, x&rsquo;) &lt; \delta$.</p>
-
+<p>Now let $x, x'$ be any two points in $X$ such that $d_X(x, x') &lt; \delta$.</p>
 <p>Since the balls $B_{(X, d_X)}(x_j, \delta(x_j) / 2)$ cover $X$, we see that
 there must exist $1 \leq j \leq n $ such that $x \in B_{(X, d_X)}(x_j, \delta(x_j) / 2)$.</p>
-
-<p>Since $d_X(x, x&rsquo;) &lt; \delta$, we have $d_X(x, x&rsquo;) &lt; \delta(x_j) / 2 $, and so
-by the previous discussion we have $d_Y(f(x), f(x&rsquo;)) &lt; \epsilon$.</p>
-
-<p>Thus, we found a $\delta$ that $d_Y(f(x), f(x&rsquo;)) &lt; \epsilon$ whenever $d(x, x&rsquo;)&lt; \delta$
+<p>Since $d_X(x, x') &lt; \delta$, we have $d_X(x, x') &lt; \delta(x_j) / 2 $, and so
+by the previous discussion we have $d_Y(f(x), f(x')) &lt; \epsilon$.</p>
+<p>Thus, we found a $\delta$ that $d_Y(f(x), f(x')) &lt; \epsilon$ whenever $d(x, x')&lt; \delta$
 and this proves uniform continuity as desired.</p>
-
   </div>
 </div>
 
@@ -625,35 +579,27 @@ and this proves uniform continuity as desired.</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="uniform-continuity-preserved-by-composition">Uniform Continuity Preserved by Composition</span></span>
   <div class="block__content block__content--green">
   <p>$(X, d_X), (Y, d_Y), (Z, d_Z)$. $f: X \to Y, g: Y \to Z$.</p>
-
 <p>$$f, g \text{ uniformly continuous }\implies g \circ f : X \to Z\text{ uniformly continuous}$$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Since $f$ is uniformly continuous,</p>
-
-<p>$\forall \delta &gt; 0, \exists \alpha &gt; 0$ such that $\forall x, x&rsquo; \in X, d_X(x, x&rsquo;) &lt; \alpha$ implies $d_Y(f(x), f(x)^\prime) &lt;\delta$.</p>
-
+<p>$\forall \delta &gt; 0, \exists \alpha &gt; 0$ such that $\forall x, x' \in X, d_X(x, x') &lt; \alpha$ implies $d_Y(f(x), f(x)^\prime) &lt;\delta$.</p>
 <p>Since $g$ is also uniformly continuous,</p>
-
-<p>Then fix $\epsilon &gt; 0, \exists \delta &gt; 0$ such that $\forall x, x&rsquo; \in X$, $d_Y(f(x), f(x&rsquo;)) &lt; \delta$ implies $d_Z(g(f(x)), g(f(x&rsquo;))) &lt; \epsilon$.</p>
-
-<p>That means for $\epsilon$, there exists some $\alpha$ such that $\forall x, x&rsquo; \in X, d_X(x, x&rsquo;) &lt; \alpha $ implies $d_Z(g(f(x)), g(f(x&rsquo;))) &lt; \epsilon$.</p>
-
+<p>Then fix $\epsilon &gt; 0, \exists \delta &gt; 0$ such that $\forall x, x' \in X$, $d_Y(f(x), f(x')) &lt; \delta$ implies $d_Z(g(f(x)), g(f(x'))) &lt; \epsilon$.</p>
+<p>That means for $\epsilon$, there exists some $\alpha$ such that $\forall x, x' \in X, d_X(x, x') &lt; \alpha $ implies $d_Z(g(f(x)), g(f(x'))) &lt; \epsilon$.</p>
   </div>
 </div>
 
@@ -688,43 +634,31 @@ and this proves uniform continuity as desired.</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="direct-sum-operation-preserves-uniform-continuity">Direct Sum Operation Preserves Uniform Continuity</span></span>
   <div class="block__content block__content--green">
   <p>$(X, d_X) $, $f: X \to \R, g: X \to \R, f \oplus g : X \to \R^2$. $d_{l^2} $ metric.</p>
-
 <p>$$f, g \text{ uniformly continuous }\implies f \oplus g : X \to \R^2 \text{ uniformly continuous}$$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>If $f$ and $g$ are both uniformly continuous.</p>
-
 <p>$\forall \epsilon &gt; 0, \exists \delta_1 &gt; 0, \delta_2 &gt; 0 $ such that</p>
-
-<p>$\forall x, x&rsquo; \in X,$</p>
-
-<p>$d_X(x, x&rsquo;) &lt; \delta_1$ implies $d(f(x), f(x&rsquo;)) &lt; \frac{ 1 }{ \sqrt[  ]{ 2 }} \epsilon$</p>
-
-<p>$d_X(x, x&rsquo;) &lt; \delta_2$ implies $d(g(x), g(x&rsquo;)) &lt; \frac{ 1 }{ \sqrt[  ]{ 2 }}\epsilon$</p>
-
+<p>$\forall x, x' \in X,$</p>
+<p>$d_X(x, x') &lt; \delta_1$ implies $d(f(x), f(x')) &lt; \frac{ 1 }{ \sqrt[  ]{ 2 }} \epsilon$</p>
+<p>$d_X(x, x') &lt; \delta_2$ implies $d(g(x), g(x')) &lt; \frac{ 1 }{ \sqrt[  ]{ 2 }}\epsilon$</p>
 <p>choose $\delta = \min{ \delta_1, \delta_2 }$,</p>
-
-<p>if $d_X(x, x&rsquo;) &lt; \delta $</p>
-
-<p>$d_{l^2}((f(x), g(x)), (f(x&rsquo;), g(x&rsquo;))) = \sqrt[  ]{ d(f(x), f(x&rsquo;))^2 + d(g(x), g(x&rsquo;))^2 } &lt; \sqrt[  ]{ \frac{ 1 }{ 2 }\epsilon^2 + \frac{ 1 }{ 2 }\epsilon^2 } &lt; \epsilon $</p>
-
+<p>if $d_X(x, x') &lt; \delta $</p>
+<p>$d_{l^2}((f(x), g(x)), (f(x'), g(x'))) = \sqrt[  ]{ d(f(x), f(x'))^2 + d(g(x), g(x'))^2 } &lt; \sqrt[  ]{ \frac{ 1 }{ 2 }\epsilon^2 + \frac{ 1 }{ 2 }\epsilon^2 } &lt; \epsilon $</p>
 <p>$\therefore $, $f \oplus g $ is still uniformly continuous.</p>
-
   </div>
 </div>
 
@@ -759,46 +693,36 @@ and this proves uniform continuity as desired.</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>$x, y \in \R^2 $</p>
-
 <p>The addition function $(x, y) \mapsto x + y $,
 are uniformly continuous from $\R^2$ to $\R$.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
-    <p>$\forall (x, y), (x&rsquo;, y&rsquo;) \in \R^2$, fix $\epsilon &gt; 0$, choose $\delta = \epsilon$.</p>
-
+    <p>$\forall (x, y), (x', y') \in \R^2$, fix $\epsilon &gt; 0$, choose $\delta = \epsilon$.</p>
 <p>Then,</p>
-
-<p>$d_{l^2}((x, y), (x&rsquo;, y&rsquo;)) &lt; \delta $ implies that $\sqrt{(x- x&rsquo;)^2 + (y - y&rsquo;)^2 } &lt; \delta$</p>
-
+<p>$d_{l^2}((x, y), (x', y')) &lt; \delta $ implies that $\sqrt{(x- x')^2 + (y - y')^2 } &lt; \delta$</p>
 <p>$$\begin{align*}
-(x- x&rsquo;)^2 + (y - y&rsquo;)^2  &amp;&lt; \delta^2 \br
-2(x - x&rsquo;)(y - y&rsquo;) &amp;&lt; \delta^2 \br
-(x- x&rsquo;)^2 + (y - y&rsquo;)^2 + 2(x - x&rsquo;)(y - y&rsquo;) &amp;&lt; 2 \delta^2 \br
-((x - x&rsquo;) + (y - y&rsquo;))^2 &amp;&lt; 2 \delta^2 \br
-\abs{(x + y) - (x&rsquo; + y&rsquo;)} &amp;&lt; \sqrt{ 2 }\delta
+(x- x')^2 + (y - y')^2  &amp;&lt; \delta^2 \br
+2(x - x')(y - y') &amp;&lt; \delta^2 \br
+(x- x')^2 + (y - y')^2 + 2(x - x')(y - y') &amp;&lt; 2 \delta^2 \br
+((x - x') + (y - y'))^2 &amp;&lt; 2 \delta^2 \br
+\abs{(x + y) - (x' + y')} &amp;&lt; \sqrt{ 2 }\delta
 \end{align*}$$</p>
-
 <p>Hence, given $\epsilon &gt; 0 $, choose $\delta = \frac{ \epsilon }{ \sqrt{ 2 }}$.</p>
-
-<p>We have $d_{l^2}((x, y), (x&rsquo;, y&rsquo;)) &lt; \delta $ implies $d((x + y), (x&rsquo; + y&rsquo;)) &lt; \epsilon$.</p>
-
+<p>We have $d_{l^2}((x, y), (x', y')) &lt; \delta $ implies $d((x + y), (x' + y')) &lt; \epsilon$.</p>
 <p>Hence the addition function $(x, y) \mapsto x + y$ is uniformly continuous.</p>
-
   </div>
 </div>
 
@@ -813,32 +737,26 @@ are uniformly continuous from $\R^2$ to $\R$.</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>$x, y \in \R^2 $</p>
-
 <p>The subtraction function $(x, y) \mapsto x - y$,
 are uniformly continuous from $\R^2$ to $\R$.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>We first prove that $(x, y) \mapsto (x, -y)$ are uniformly continuous.</p>
-
 <p>fix $\epsilon &gt; 0 $</p>
-
-<p>$\forall (x, y), (x&rsquo;, y&rsquo;) \in \R^2$</p>
-
+<p>$\forall (x, y), (x', y') \in \R^2$</p>
   </div>
 </div>
 
@@ -1741,13 +1659,13 @@ are uniformly continuous from $\R^2$ to $\R$.</p>
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Real Vector Spaces - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -295,7 +305,6 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
@@ -313,14 +322,11 @@ if (!doNotTrack) {
   </ul></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="column-vector">Column Vector</span></span>
   <div class="block__content block__content--blue">
     <p>A <strong>column $n$-vector</strong> is an array of $n $ numbers, denoted</p>
-
 <p>$$\b{ a } = {\Vcr{ a_1 }{ a_2 }{ \vdots }{ a_n }} $$</p>
-
 <p>$a_i $ is called the $i $th component of the vector $a$.</p>
 
   </div>
@@ -353,7 +359,6 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--blue ">
@@ -393,12 +398,10 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="transpose">Transpose</span></span>
   <div class="block__content block__content--blue">
     <p>The <strong>transpose</strong> of a given column vector $a $ is a row vector with corresponding elements, denoted</p>
-
 <p>$$\transpose{ \b{ a }} = (a_1, a_2, &hellip;, a_n)$$</p>
 
   </div>
@@ -433,16 +436,12 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="vector-addition">Vector Addition</span></span>
   <div class="block__content block__content--blue">
     <p>$$\b{ a } + \b{ b } = \transpose{ [ a_1 + b_1, a_2 + b_2, &hellip;, a_{ n } + b_n] } $$</p>
-
 <p>Vector addition follows: commutativity, associativity.</p>
-
 <p>Exist a unique <strong>zero vector</strong>.</p>
-
 <p>For each vector $\b{ a } $ exist $- \b{ a } $.</p>
 
   </div>
@@ -477,20 +476,14 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="scalar-multiplication">Scalar Multiplication</span></span>
   <div class="block__content block__content--blue">
     <p>$c \b{ a } = \transpose{(ca_1, ca_2, &hellip;, ca_{ n })}$</p>
-
 <p>Scalar multiplication follows: distributive law, associativity.</p>
-
 <p>The scalar $1$ satisfies: $1 \b{ a } = \b{ a } $.</p>
-
 <p>Any scalar $c$ satisfies: $c \b{ 0 } = \b{ 0 } $.</p>
-
 <p>The scalar $0 $ satisfies: $0 \b{ a } = 0 $.</p>
-
 <p>The scalar $-1 $ satisfies: $-1 \b{ a } = - \b{ a } $.</p>
 
   </div>
@@ -525,12 +518,10 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="linearly-independent">Linearly Independent</span></span>
   <div class="block__content block__content--blue">
     <p>if $c_1 \b{ a }_1 + c_2 \b{ a }_2 + &hellip; + c_{ k } \b{ a }_{ k } = 0 \implies \forall i = 1, &hellip;, k, c_i = 0$, then</p>
-
 <p>$\set{ \b{ a }_1, \b{ a }_2, &hellip;, \b{ a }_{ k }}$ is <strong>linearly independent</strong>. Otherwise, the set is <strong>linearly dependent</strong>.</p>
 
   </div>
@@ -565,7 +556,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
@@ -581,7 +571,6 @@ if (!doNotTrack) {
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul></div>
-
 
 
 <div class="block block--blue ">
@@ -621,7 +610,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   </span>
@@ -640,7 +628,6 @@ if (!doNotTrack) {
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul></div>
-
 
 
 <div class="block block--blue ">
@@ -680,16 +667,12 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="span">Span</span></span>
   <div class="block__content block__content--blue">
     <p>Let $\b{ a }_1, \b{ a }_2, &hellip;, \b{ a }_{ k } $ be arbitrary vectors in $\R^n $. The set of all their linear combinations is called the span of $\b{ a }_1, \b{ a }_2, &hellip;, \b{ a }_{ k } $ and is denoted</p>
-
 <p>$$\spa{ \set{ \b{ a }_1, \b{ a }_2, &hellip;, \b{ a }_{ k }}} $$</p>
-
 <p>or more literally,</p>
-
 <p>$$\set{ \sum_{ i=1 }^{ k } c_i \b{ a }_i \mid \b{ a }_1, \b{ a }_2, &hellip;, \b{ a }_{ k } \in \R } $$</p>
 
   </div>
@@ -722,7 +705,6 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--blue ">
@@ -762,7 +744,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   </span>
@@ -770,7 +751,6 @@ if (!doNotTrack) {
 
   <div class="block__content block__content--green">
   <p>If $\set{ \b{ a }_1, \b{ a }_2, &hellip;, \b{ a }_{ k }} $ is a basis of a vector space $V $, then any vector $\b{ a } $ of $V $ can be represented <u>uniquely</u> as</p>
-
 <p>$$\b{ a } = c_1 \b{ a }_1 + c_2 \b{ a }_2 + &hellip; + c_{ k } \b{ a }_{ k } $$</p>
 
   </div>
@@ -1697,13 +1677,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

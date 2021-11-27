@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Alternating Series and Integral Tests - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -289,45 +299,38 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>We show $\sum\ \frac{ 1 }{ n } = +\infty$.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$\sum\ \frac{ 1 }{ n } \geq \int_{ 1 }^{ n+1 } \frac{ 1 }{ x } \d x = \log_e(n+1)$</p>
-
 <p>Since $\limu{ n }{ \infty } \log_e(n+1) = + \infty , \sum\ \frac{ 1 }{ n } = + \infty$.</p>
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>We use integral test in this case. Notice how we choose the lower limit. It&rsquo;s pretty arbitrary as long as it is larger than $1$ and meet our need. Think about it, why can we do this.</p>
-
   </div>
-
-<p><ul class="block__footer">
+  <ul class="block__footer">
     <li class="block__footer-item">
       <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
     </li>
     <li class="block__footer-item">
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
-  </ul></div></p>
-
-<p></div>
-</div></p>
+  </ul></div>
+  </div>
+</div>
 
   </div>
 
@@ -341,7 +344,6 @@ if (!doNotTrack) {
   </ul>
 
 </div>
-
 
 
 <div class="block block--gray ">
@@ -349,21 +351,18 @@ if (!doNotTrack) {
   </span>
   <div class="block__content block__content--gray">
     <p>We show $\sum \frac{ 1 }{ n^2 }$ converges.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$\sum_{ k=1 }^{ n } \frac{ 1 }{ k^2 } \leq 1 + \int_{ 1 }^{ n } \frac{ 1 }{ x^2 } \d x = 2 - \frac{ 1 }{ n } &lt; 2$.</p>
-
 <p>$\therefore \sum \frac{ 1 }{ n^2 }$ converges.</p>
-
   </div>
 </div>
 
@@ -381,16 +380,12 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="alternating-series">Alternating Series</span></span>
   <div class="block__content block__content--blue">
     <p>Let $a_n &gt;0 $, $\sum_{ n = 1 }^{ \infty } (-1)^{n+1} a_n$ is alternating.</p>
-
 <p>any convergent series has $a_n \to 0 $.</p>
-
 <p>Suppose $a_n &gt; 0 $ and $a_n \to 0 $</p>
-
 <p>suppose $a_n &gt; a_{n+1} \forall n$ i.e. decreasing.</p>
 
   </div>
@@ -425,7 +420,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
@@ -441,7 +435,6 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--blue ">
@@ -481,33 +474,26 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="alternating-series-theorem">Alternating Series Theorem</span></span>
   <div class="block__content block__content--green">
   <p>If $a_1 \geq a_2 \geq &hellip; \geq a_n \geq &hellip; \geq 0 $ and $\lim a_n = 0 $, then the alternating series $\sum\ (-1)^{n +1} a_n $ converges. Moreover, the partial sums $s_n = \sum_{ k=1 }^{ n } (-1)^{k+1} a_k $ satisfy $\abs{ s - s_n } \leq a_n $for all $n $.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>We need to show that the sequence $(s_n)$ converges. Note that the subsequence $(s_{2n}) $ is increasing because $s_{2n+2} - s_{2n} = + a_{2n+1} - a_{ 2n + 2 } \geq 0 $. Similarly, the subsequence $(s_{2n-1}) $ is decreasing since $s_{2n+1} - s_{2n-1} = a_{2n+1} - a_{2n} \leq 0 $. We claim</p>
-
 <p>$$s_{2m} \leq s_{2n+1} \forall m, n \in \N  \tag{1}$$</p>
-
 <p>First note that $s_{2n} \leq s_{2n+1} $ for all $n $, because $s_{2n+1} -s_{2n} = a_{2n+1} \geq 0$. If $m \leq n $, then $(1)$ holds because $s_{2n+1} \geq s_{2m+1} \geq s_{2m} $. Thanks to $(1) $, we see that $(s_{2n}) $ is an increasing subsequence of $(s_n) $ bounded above by each odd partial sum, and $(s_{2n+1}) $ is a decreasing subsequence of $(s_n) $ bounded below by each even partial sum. By theorem 10.2, these subsequences converge, say to $s $ and $t $. Now</p>
-
 <p>$$t - s = \limu{ n  }\infty{ s_{2n+1}} - \limu{ n} \infty { s_{2n}} = \limu{ n} \infty {(s_{2n+1} - s_{2n})} = \limu{ n} \infty { a_{2n+1}} = 0 $$</p>
-
 <p>so $s = t$. It follows that $\lim_n s_n = s$.</p>
-
   </div>
 </div>
 
@@ -1430,13 +1416,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

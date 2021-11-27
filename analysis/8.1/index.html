@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Metrics and Metric Spaces - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -309,15 +319,12 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note: <span class="keyword" id="notation-of-a-sequence">Notation of a Sequence</span>
     
   </span>
   <div class="block__content block__content--yellow">
     <p>Let $X $ be a set. A sequence in $X $ will be denoted by</p>
-
 <p>$$\pare{X^{(n)}}^ \infty_ {n = m} $$</p>
-
 <p>where $m$ is the initial term of the sequence, $n$ is the term of the sequence you are considering.</p>
 
   </div>
@@ -352,18 +359,14 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   
   </span>
   <div class="block__content block__content--green">
   <p>Let $(x_n)^ \infty _{n=m}$ be a sequence of real numbers, and let $x $ be another real number. Then</p>
-
 <p>$$(x_n)^ \infty _ {n=1} \text{ converges to }x \triangleq \limu{ n }{ \infty }d(x_n, x) = 0$$</p>
-
 <p>Equivalently,</p>
-
 <p>$$(x_n)^ \infty _ {n=1} \text{ converges to }x \triangleq \text{Fix }\epsilon &gt; 0, \exists N &gt; 0\text{ s.t. }\forall n &gt; N , d(x^{(n)}, x_0) &lt; \epsilon $$</p>
 
   </div>
@@ -378,21 +381,17 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="metric-spaces">Metric Spaces</span></span>
   <div class="block__content block__content--blue">
     <p>A <strong>metric space</strong> is any space $X$ which has a concept of distance $d(x, y)$ - and this distance should behave in a reasonable manner. More precisely,</p>
-
 <p>A metric space $(X, d)$ is a space $X$ ob objects (called <strong>points</strong>), together with a <strong>distance function</strong> or <strong>metric</strong> $d: X \times X \to [0, +\infty)$, which associates to each pair $x, y$ of points in $X $ a non-negative real number $d(x, y) \geq 0$. Furthermore, the metric must satisfy the following four axioms:</p>
-
 <ol>
 <li>For any $x \in X $, we have $d(x, x) = 0$.</li>
 <li><strong>(Positivity)</strong> For any <u>distinct</u> $x, y \in X$, we have $d(x,y) &gt; 0$.</li>
 <li><strong>(Symmetry)</strong> For any $x, y \in X $, we have $d(x, y) = d(y, x)$.</li>
 <li><strong>(Triangle inequality)</strong> For any $x, y, z \in X$, we have $d(x, z) \leq d(x, y) + d(y, z)$.</li>
 </ol>
-
 <p>In many cases, it will be clear what the metric $d$ is, and we shall abbreviate $(X, d)$ as just $X$.</p>
 
   </div>
@@ -427,13 +426,11 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks
   </span>
   <div class="block__content block__content--yellow">
   <p>The conditions (a) and (b) can be rephrased as follows:</p>
-
 <p>for any $x, y \in X $ we have $d(x, y) = 0 $ if and only if $x= y $.</p>
 
   </div>
@@ -449,7 +446,6 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="discrete-metric">Discrete Metric</span></span>
   <div class="block__content block__content--blue">
@@ -457,21 +453,15 @@ if (!doNotTrack) {
 0 &amp;x = y \br
 1 &amp;x \neq y \br
 \end{cases}$$</p>
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks: Convergence in the discrete metric
-  
   </span>
   <div class="block__content block__content--yellow">
   <p>Let $X $ be any set, and let $d_{ \text{disc}} $ be the discrete metric on $X $.</p>
-
 <p>Let $(x^{(n)})^ \infty _{n = m} $ be a sequence of points in $X $, and let $x $ be a point in $X $.</p>
-
 <p>Then $(x^{(n)}) ^ \infty _{n = m}$ converges to $x $ with respect to the discrete metric $d_{ \text{disc}} $ if and only if there exists an $N \geq m $ such that $x^{(n)} = x $ for all $n \geq N $.</p>
-
   </div>
-
-<p><ul class="block__footer">
+  <ul class="block__footer">
     <li class="block__footer-item">
       <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
     </li>
@@ -479,25 +469,21 @@ if (!doNotTrack) {
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul>
-</div></p>
-
+</div>
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>Let $X $ be any set, $d$ be the discrete metric.</p>
-
 <p>$(X, d) $ is always a metric space.</p>
-
   </div>
-
-<p><ul class="block__footer">
+  <ul class="block__footer">
     <li class="block__footer-item">
       <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
     </li>
     <li class="block__footer-item">
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
-  </ul></div></p>
+  </ul></div>
 
   </div>
 
@@ -531,14 +517,11 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="n-dimensional-euclidean-space-%5Crn">N-Dimensional Euclidean Space (\R^n)</span></span>
   <div class="block__content block__content--blue">
     <p>$\R^n = \set{  x = (x_1, _2, &hellip;, _{ n }) : x_1, x_2, &hellip;, x_{ n } \in \R } $.</p>
-
 <p>Metrics on $\R^n$.</p>
-
 <ol>
 <li>$l^1$ metric, or Taxi-cab metric.</li>
 <li>$l^2$ metric, or Euclidean / Standard metric.</li>
@@ -577,43 +560,41 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="%5Cnonel1-metric-or-tax-cab-metric">$\None{}l^1$ Metric (Or Tax-Cab Metric)</span></span>
   <div class="block__content block__content--blue">
     <p>Let $n \geq 1 $, and let $\R^n $ be as before. $d_{l^ 1} $, the so-called taxicab metric (or {l^ 1} metric), is defined by</p>
-
 <p>$$d_{l^1} ((x_1, _2, &hellip;, _{ n }), (y_1, (y_2, &hellip;, (y_{ n })) \triangleq \abs{ x_1 - y_1 } + &hellip; + \abs{ x_n - y_n } = $$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Want to prove this definition is a valid metric over $\R^n $.</p>
-
 <p>$\forall x, y \in \R^n, 0 \leq \abs{ x - y } &lt; \infty$.</p>
-
 <ol>
-<li><p>$d(x, x) = \sum_{ i = 1 }^{ n } \abs{ x_i - x_i } = 0$</p></li>
-
-<li><p>If $x \neq y $, there exist some $i $ s.t. <br>
+<li>
+<p>$d(x, x) = \sum_{ i = 1 }^{ n } \abs{ x_i - x_i } = 0$</p>
+</li>
+<li>
+<p>If $x \neq y $, there exist some $i $ s.t. <br>
 $$x_i \neq y_i \iff \abs{  x_i - y_i } \neq 0 $$ <br>
-$$o &lt; \abs{ x_i - y_i } \leq \sum_{ i=1 }^{ n } \abs{ x_i - y_i } = d(x, y) \implies$$</p></li>
-
-<li><p>$d(x, y) = \sum_{ i =1 }^{ n } \abs{ x_i -y_i }= \sum_{ i=1 }^{ n } \abs{ y_i - x_i } = d(y, x)$</p></li>
-
-<li><p>For each index $i$,
-$$x_i - y_i \leq \abs{ x_i - z_i } + \abs{  z_i - y_i } \implies$$</p></li>
+$$o &lt; \abs{ x_i - y_i } \leq \sum_{ i=1 }^{ n } \abs{ x_i - y_i } = d(x, y) \implies$$</p>
+</li>
+<li>
+<p>$d(x, y) = \sum_{ i =1 }^{ n } \abs{ x_i -y_i }= \sum_{ i=1 }^{ n } \abs{ y_i - x_i } = d(y, x)$</p>
+</li>
+<li>
+<p>For each index $i$,
+$$x_i - y_i \leq \abs{ x_i - z_i } + \abs{  z_i - y_i } \implies$$</p>
+</li>
 </ol>
-
 <p>$$\sum_{ i=1 }^{ n } \abs{ x_i - y_i } \leq \sum_{ i=1 }^{ n } \abs{ x_i - z_i } + \sum_{ i=1 }^{ n } \abs{ z_i - y_i } $$</p>
-
   </div>
 </div>
 
@@ -649,12 +630,10 @@ $$x_i - y_i \leq \abs{ x_i - z_i } + \abs{  z_i - y_i } \implies$$</p></li>
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="%5Cnonel2-metric-or-euclidean-/-standard-metric">$\None{}l^2$ Metric (Or Euclidean / Standard Metric)</span></span>
   <div class="block__content block__content--blue">
     <p>Let $n \geq 2 $, and let $\R^n $ be as before.</p>
-
 <p>$$d_{l^2}  ((x_1, _2, &hellip;, _{ n }), (y_1, (y_2, &hellip;, (y_{ n })) \triangleq \sqrt[  ]{ \sum_{ i=1 }^{ n } \abs{ x_i - y_i }^2 }$$</p>
 
   </div>
@@ -689,16 +668,12 @@ $$x_i - y_i \leq \abs{ x_i - z_i } + \abs{  z_i - y_i } \implies$$</p></li>
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="%5Cnonel%5Cinfty-metric-or-sup-norm-metric">$\None{}l^\infty$ Metric (Or Sup Norm Metric)</span></span>
   <div class="block__content block__content--blue">
     <p>Let $n \geq 1 $, and let $\R^n $ be as before. But now we use a different metric $d_l^ \infty $, the so-called <strong>sup norm metric</strong>(or $l^ \infty $ metric), defined by</p>
-
 <p>$$d_{l^ \infty} ((x_1, _2, &hellip;, _{ n }), (y_1, (y_2, &hellip;, (y_{ n })) \triangleq \supr{ \abs{ x_i - y_i } : 1 \leq i \leq n }$$</p>
-
 <p>Thus for instance, if $n =2 $, then $d_{l^ \infty} ((1, 6), (4, 2)) = \supr{ 3, 4 } = 4 $. The space $(\R^n, d_{l^ \infty})$ is also a metric space, and is related to the $l^2 $ metric by the inequalities</p>
-
 <p>$\frac{1}{\sqrt{n}}d_{l^ 2} (x, y) \leq d_{l^ \infty} (x, y) \leq d_{l^2} (x, y)$ for all $x, y $.</p>
 
   </div>
@@ -733,19 +708,14 @@ $$x_i - y_i \leq \abs{ x_i - z_i } + \abs{  z_i - y_i } \implies$$</p></li>
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>$x^{(n)} = (\frac{ 1 }{ n }, \frac{ 1 }{ n }).$ Does  $(x^{(n)})^ \infty_ {n = 1}$ converge in $d_{l^1} $?</p>
-
 <p>Guess that $x_0 = (0, 0) $ is a great candidate for a limit.</p>
-
 <p>$d(x^{(n)}, x_0) = \sum_{ i = 1 }^{ 2 } \abs{ \frac{ 1 }{ n } - 0 } = \frac{2}{n} $</p>
-
 <p>$\lim d(x^{(n)}, x_0) = 0 $</p>
-
 <p>Hence, $x^{(n)} = (\frac{ 1 }{ n }, \frac{ 1 }{ n })$ converges.</p>
 
   </div>
@@ -1650,13 +1620,13 @@ $$x_i - y_i \leq \abs{ x_i - z_i } + \abs{  z_i - y_i } \implies$$</p></li>
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

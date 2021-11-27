@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>The Bernoulli Process - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -316,14 +326,11 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="stochastic-process">Stochastic Process</span></span>
   <div class="block__content block__content--blue">
     <p>A stochastic process is a mathematical model of a probabilistic experiment that evolves in time and generates a sequence of numerical values. Each numerical value in the sequence is modeled by a random variable, so a stochastic process is simply a (finite or infinite) sequence of random variables.</p>
-
 <p>However, stochastic process involve some change in emphasis over our earlier models. In particular:</p>
-
 <ol>
 <li>more focus on the <strong>dependencies</strong> in the sequence of values generated by the process. <br>
 e.g. how do future prices of a stock depend on past values?</li>
@@ -365,7 +372,6 @@ e.g. what is the probability that within a given hour all circuits of some telep
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: Stochastic processes
     
@@ -392,16 +398,12 @@ e.g. what is the probability that within a given hour all circuits of some telep
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="arrival-type-processes">Arrival-Type Processes</span></span>
   <div class="block__content block__content--blue">
     <p><strong>Arrival-Type Processes</strong> are processes where occurrences have the character of an &ldquo;arrival&rdquo;.</p>
-
 <p>We will focus on models where the interarrival times (the times between successive arrivals) are independent random variables.</p>
-
 <p>The case where arrivals occur in <strong>discrete</strong> time and the interarrival times are <u>geometrically</u> distributed is the <strong>Bernoulli process</strong>;</p>
-
 <p>The case where arrivals occur in <strong>continuous</strong> time and the interarrival times are <u>exponentially</u> distributed is the <strong>Poisson process</strong>;</p>
 
   </div>
@@ -435,7 +437,6 @@ e.g. what is the probability that within a given hour all circuits of some telep
       })();
     </script></div>
 
-
 <table>
 <thead>
 <tr>
@@ -444,26 +445,22 @@ e.g. what is the probability that within a given hour all circuits of some telep
 <th>Bernoulli</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Times of Arrival</td>
 <td>Continuous</td>
 <td>Discrete</td>
 </tr>
-
 <tr>
 <td>PMF of # of Arrivals</td>
 <td>Poisson</td>
 <td>Binomial</td>
 </tr>
-
 <tr>
 <td>Interarrival Time CDF</td>
 <td>Exponential</td>
 <td>Geometric</td>
 </tr>
-
 <tr>
 <td>Arrival Rate</td>
 <td>$\lambda$ per unit time</td>
@@ -472,13 +469,11 @@ e.g. what is the probability that within a given hour all circuits of some telep
 </tbody>
 </table>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="bernoulli-process">Bernoulli Process</span></span>
   <div class="block__content block__content--blue">
     <p>A sequence of $X_1, X_2, &hellip;, X_n$ of <strong>independent</strong> Bernoulli random variables
 $X_i $ with</p>
-
 <p>$$P(X_i = 1) = P(\text{success at the }i\text{th trial}) = p$$
 $$P(X_i = 0) = P(\text{faiure at the }i\text{th trial}) = 1 - p$$</p>
 
@@ -514,16 +509,13 @@ $$P(X_i = 0) = P(\text{faiure at the }i\text{th trial}) = 1 - p$$</p>
     </script></div>
 
 
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Recall: Binomial Distribution
   
   </span>
   <div class="block__content block__content--yellow">
   <p>The distribution of the number $S $ of successes in $n $ independent trials.</p>
-
 <p>$$p_S(k) = \binom{ n }{ k } p^k (1- pk)^{ n - k }, k = 0, 1, &hellip;, n $$</p>
-
 <p>$$E[S] = np, \var{ S } = np(1 - p)$$</p>
 
   </div>
@@ -539,7 +531,6 @@ $$P(X_i = 0) = P(\text{faiure at the }i\text{th trial}) = 1 - p$$</p>
 </div>
 
 
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Recall: Geometric Distribution
   
@@ -547,9 +538,7 @@ $$P(X_i = 0) = P(\text{faiure at the }i\text{th trial}) = 1 - p$$</p>
   <div class="block__content block__content--yellow">
   <p>The distribution of the number $T $ of trial up to (and including) the first
 success.</p>
-
 <p>$$p_T(t) = (1 - p)^{t -1} p, t = 1,2, &hellip; $$</p>
-
 <p>$$E[T] = \frac{ 1 }{ p }, \var{ T } = \frac{ 1-p }{ p^2 } $$</p>
 
   </div>
@@ -565,14 +554,12 @@ success.</p>
 </div>
 
 
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks: Independence and Memorylessness
   
   </span>
   <div class="block__content block__content--yellow">
   <p>The independence assumption underlying the Bernoulli process implies the memorylessness property, which, in a nutshell, means:</p>
-
 <p><strong>Whatever has happened in past trials provide no information on the outcomes of future trials.</strong></p>
 
   </div>
@@ -588,13 +575,11 @@ success.</p>
 </div>
 
 
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Recall
   </span>
   <div class="block__content block__content--yellow">
   <p>Two random variables $U, V $.</p>
-
 <p>$$U, V\text{ independent } \implies g(U), h(V)\text{ independent}$$</p>
 
   </div>
@@ -608,7 +593,6 @@ success.</p>
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--gray ">
@@ -631,18 +615,14 @@ success.</p>
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Properties: <span class="keyword" id="fresh-start-property-of-the-bernoulli-process">Fresh-Start Property of the Bernoulli Process</span>
   
   </span>
   <div class="block__content block__content--green">
   <p>Suppose a Bernoulli process has been running for $n $ times steps, and that we have observed the value of $X_1, X_2, &hellip;, X_n $. Notice the fact that:</p>
-
 <p>the sequence of future trials $X_{n+1}, X_{n+2}, &hellip; $ are independent Bernoulli trials and therefore form a Bernoulli process. In addition, these future trials are independent from the past ones.</p>
-
 <p>We conclude that starting from any given point in time, the future is also modeled by a Bernoulli process, which is independent of the past. We refer to this loosely as the <strong>fresh-start</strong> property of the Bernoulli process.</p>
-
 <p>More concisely, <br>
 for any given time $n $, the sequence of random variable $X_{n+1}, X_{n+2}, &hellip;$(the future of the process) is also a Bernoulli process, and is independent from $X_1, X_2, &hellip;, X_n $(the past of the process).</p>
 
@@ -678,23 +658,17 @@ for any given time $n $, the sequence of random variable $X_{n+1}, X_{n+2}, &hel
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Properties: <span class="keyword" id="memorylessness-property-of-geometric-distributions">Memorylessness Property of Geometric Distributions</span>
   
   </span>
   <div class="block__content block__content--green">
   <p>Recall that the time $T $ until the first success is a geometric random variable. Suppose that we have been watching the process for $n $ time steps, and no success has been recorded. What can we say about the number $T-n $ of remaining trials until the first success?</p>
-
 <p>Since the future of the process (after time $n $) is independent of the past and
 constitutes a fresh-starting Bernoulli process, the number of future trials until the first success is described by the same geometric PMF.</p>
-
 <p>$$P(T-n = t | T&gt; n) = (1-p)^{t-1} p = P(T = t), t = 1, 2, &hellip; $$</p>
-
 <p>We refer to this as the <strong>memorylessness</strong> property.</p>
-
 <p>Note: this can also be derived algebraically, using the definition of conditional probabilities.</p>
-
 <p>More concisely, <br>
 Let $n $ be a given time and let $\overline{ T } $ be the time of the first success after time $n $. Then $\overline{ T } - n $ has a geometric distribution with parameter $p $, and is independent of the random variables $X_1, X_2, &hellip;, X_n $.</p>
 
@@ -730,7 +704,6 @@ Let $n $ be a given time and let $\overline{ T } $ be the time of the first succ
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
@@ -739,16 +712,15 @@ Let $n $ be a given time and let $\overline{ T } $ be the time of the first succ
 A priority task arrives with probability $p $ at the beginning of each slot, independent of other slots, a nonpriority task is always available and is executed at a given slot if no priority task is available.<br>
 We call a slot <strong>busy</strong> if within the slot, the computer executes a priority task, and otherwise we all it <strong>idle</strong>. <br>
 We call a string of idle slots, <strong>idle period</strong>; and a string of busy slots, <strong>busy period</strong>.<br>
-Want to know the PMF, mean, and variance of the following random variables.<br>
-1. $T=$ the time index of the first idle slot<br>
-2. $B=$ the length (number of slots) of the first busy period<br>
-3. $I=$ the length of the first idle period<br>
-4. $Z=$ the number of slots after the first slot of the first busy period up to and including the first subsequent idle slot</p>
-
+Want to know the PMF, mean, and variance of the following random variables.<br></p>
+<ol>
+<li>$T=$ the time index of the first idle slot<br></li>
+<li>$B=$ the length (number of slots) of the first busy period<br></li>
+<li>$I=$ the length of the first idle period<br></li>
+<li>$Z=$ the number of slots after the first slot of the first busy period up to and including the first subsequent idle slot</li>
+</ol>
 <p>$T\geodist{1-p}$</p>
-
 <p>Consider the first busy period. It starts with the first busy slot, call it slot $L$. $Z = B\geodist{1-p}$.</p>
-
 <p>$I \geodist{p} $</p>
 
   </div>
@@ -763,7 +735,6 @@ Want to know the PMF, mean, and variance of the following random variables.<br>
   </ul>
 
 </div>
-
 
 
 <div class="block block--yellow ">
@@ -785,14 +756,12 @@ Want to know the PMF, mean, and variance of the following random variables.<br>
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: Fresh-start at a Random Time
     
   </span>
   <div class="block__content block__content--gray">
     <p>Let $N $ be the first time that we have a success immediately following a previous success. (That is, $N $ is the first $i $ for which $X_{i - 1} = X_i = 1 $). What is the probability $P(X_{N+1} = X_{N+2} = 0) $ that there are no successes in the two trials that follow?</p>
-
 <p>Intuitively, once the condition $X_{N-1} = X_N = 1 $ is satisfied, and from then on, the future of the process consists of independent Bernoulli trials. Therefore, the probability of an event that refers to the future of the process is the same as in a fresh-starting Bernoulli process, so that $P(X_{N+1} = X_{N+2} = 0) = (1 -p)^2 $.</p>
 
   </div>
@@ -809,20 +778,15 @@ Want to know the PMF, mean, and variance of the following random variables.<br>
 </div>
 
 
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks: Interarrival Times
   
   </span>
   <div class="block__content block__content--yellow">
   <p>An important random variable associated with the Beronoulli process is the time of the $k $th success (or arrival), which we denote by $Y_k $. A related random variable is the $k $th interarrival time, denoted by $T_k $. It is defined by</p>
-
 <p>$$T_1 = Y_1, T_k = Y_k - Y_{k-1}, k = 2, 3, &hellip;$$</p>
-
 <p>and represents the number of trials following the $(k-1) $st success until the next success. Note that</p>
-
 <p>$$Y_k = T_1 + T_2 + &hellip; + T_k $$</p>
-
 <p>Note that $\forall i, j, T_i, T_j $ independent.</p>
 
   </div>
@@ -838,14 +802,16 @@ Want to know the PMF, mean, and variance of the following random variables.<br>
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition</span>
   <div class="block__content block__content--blue">
     <ol>
-<li><p>Start with a sequence of independent geometric random variables $T_1, T_2, &hellip;$ with common parameter $p $, and let these stand for the interval times.</p></li>
-
-<li><p>Record a success (or arrival) at times, $T_1, T_1 + t_2, T_1 + T_2 + T_3$, etc.</p></li>
+<li>
+<p>Start with a sequence of independent geometric random variables $T_1, T_2, &hellip;$ with common parameter $p $, and let these stand for the interval times.</p>
+</li>
+<li>
+<p>Record a success (or arrival) at times, $T_1, T_1 + t_2, T_1 + T_2 + T_3$, etc.</p>
+</li>
 </ol>
 
   </div>
@@ -860,17 +826,13 @@ Want to know the PMF, mean, and variance of the following random variables.<br>
   </ul></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>It is observed that after a rainy day, the number of days until it rains again is geometrically distributed with parameter $p $, independent of the past. Find the probability that it rains on both the $5$th and the $8$th day of the month.</p>
-
 <p>View rainy days as &ldquo;arrivals&rdquo;, then the description of the weather conforms to the alternative description of the Bernoulli process given above.</p>
-
 <p>Any given day is rainy with probability $p$, independent of other days.</p>
-
 <p>In particular, the probability that day $5 $ and $8 $ are rainy is equal to $p^2 $.</p>
 
   </div>
@@ -887,12 +849,10 @@ Want to know the PMF, mean, and variance of the following random variables.<br>
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="the-kth-arrival-time">The Kth Arrival Time</span></span>
   <div class="block__content block__content--blue">
     <p>$Y_k$ of the $k$th success (or arrival) is equal to the sum $Y_k = T_1 + T_2 + &hellip; + T_k$ of $k$ i.i.d. geometric random variables.</p>
-
 <p>With that observation, we can then derive formulas for the mean, variance, and PMF of $Y_k $, which are given in the table that follow.</p>
 
   </div>
@@ -927,18 +887,14 @@ Want to know the PMF, mean, and variance of the following random variables.<br>
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Properties: <span class="keyword" id="properties-of-the-kth-arrival-time">Properties of the Kth Arrival Time</span>
   
   </span>
   <div class="block__content block__content--green">
   <p>$$E[Y_k] = E[T_1] + &hellip; + E[ T_k ] = \frac{ k }{ p }$$</p>
-
 <p>$$\var{ Y_k } = \var{ T_1 } + &hellip; + \var{ T_k } = \frac{ k(1-p)}{ p^2 } $$</p>
-
 <p>$$p_{Y_k}(t) = \binom{ t-1 }{ k-1 } p^k(1-p)^{t-k} , t = k, k+1, &hellip;$$</p>
-
 <p>This is known as the <strong>Pascal PMF of order $k$</strong>.</p>
 
   </div>
@@ -973,12 +929,10 @@ Want to know the PMF, mean, and variance of the following random variables.<br>
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="splitting-of-a-bernoulli-process">Splitting of a Bernoulli Process</span></span>
   <div class="block__content block__content--blue">
     <p>Start with a Bernoulli process in which there is a probability $p$ of an arrival at each time, consider <strong>splitting</strong> it as follows. Whenever there is an arrival. We choose to either keep it (with probability $q$), or to discard it (with probability $1-q$).</p>
-
 <p>Then, the probability of a kept arrival is $pq$, and the probability of a discarded arrival is $p(1-q)$. The sequence of kept arrivals and discarded arrivals are both Bernoulli sequences.</p>
 
   </div>
@@ -1013,12 +967,10 @@ Want to know the PMF, mean, and variance of the following random variables.<br>
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="merging-of-two-bernoulli-process">Merging of Two Bernoulli Process</span></span>
   <div class="block__content block__content--blue">
     <p>Start with two Bernoulli processes with parameter $p $ and $q $ respectively, consider <strong>merging</strong> as follows. An arrival is recorded in the merged process if and only if there is an arrival in at least one of the two original process. The probability $P = 1 - (1-p)(1-q) = p + q - pq$.</p>
-
 <p>Since different time slots in either of the original processes are independent, different slots in the merged process are also <strong>independent</strong>. Thus the merged process is Bernoulli with success probability $p+q-pq $ at each time step.</p>
 
   </div>
@@ -1053,61 +1005,46 @@ Want to know the PMF, mean, and variance of the following random variables.<br>
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="the-poisson-approximation-to-the-binomial">The Poisson Approximation to the Binomial</span></span>
   <div class="block__content block__content--blue">
     <p>The number of successes in $n$ independent Bernoulli trials is a binomial random
 variable with parameters $n$ and $p$, and its mean is $np$.</p>
-
 <p>When $n$ is large but $p$ is small, the mean $np$ has a moderate value. This kind
 of situations can be addressed by keeping the product $np$ at a constant value
 $\lambda$. To do so we let $n$ grow while simultaneously let $p$ decrease.</p>
-
 <p>In the limit, it turns out that the formula for the binomial PMF simplifies to
 Poisson PMF, that is</p>
-
 <p>$\forall k &gt; 0 $
 $$\begin{align*}
 \limu{ n }{ \infty } p_S(k) &amp;= \frac{ n! }{(n-k)!k! } \cdot p^k (1-p)^{ n-k } \br
 &amp;= e^{- \lambda} \frac{ \lambda^k }{ k! } = p_Z(k)
 \end{align*}$$</p>
-
 <p>where $S \binomdist{ n }{ p }, Z \poissondist{ \lambda }, p = \lambda / n$</p>
-
 <p>In general, the Poisson PMF is a good approximation to the binomial as long as
 $\lambda=np $, $n $ is very large, $p $ is very small.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Let $S \binomdist{ n }{ p }, p = \lambda / n $, then</p>
-
 <p>$$\begin{align*}
 p_S(k) &amp;= \frac{ n! }{(n-k)!k! } \cdot p^k(1-p)^{n-k} \br
 &amp;= \frac{n(n-1) &hellip;(n-k+1)}{k!}\cdot\frac{\lambda^k}{n^k}\pare{1-\frac{\lambda}{ n }}^{n-k} \br
 &amp;= \frac{ n }{ n } \cdot \frac{ n-1 }{ n } &hellip; \frac{ n-k+1 }{ n } \cdot \frac{ \lambda^k }{ k! } \cdot \pare{ 1- \frac{ \lambda }{ n }}^{n-k}
 \end{align*}$$</p>
-
 <p>$\limu{ n }{ \infty } \frac{ n - c }{ n } = 1$, given $c$ is constant.</p>
-
 <p>Furthermore,</p>
-
 <p>$$\pare{ 1- \frac{ \lambda }{ n }}^{-k} \to 1 $$</p>
-
 <p>$$\pare{ 1 - \frac{ \lambda }{ n }}^n \to e^{- \lambda} $$</p>
-
 <p>Then, fix $k &gt; 0 $</p>
-
 <p>$$\limu{ n }{ \infty } p_S(k) = e^{- \lambda} \frac{ \lambda^k }{ k! }$$</p>
-
   </div>
 </div>
 
@@ -1141,7 +1078,6 @@ p_S(k) &amp;= \frac{ n! }{(n-k)!k! } \cdot p^k(1-p)^{n-k} \br
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
@@ -1883,13 +1819,13 @@ p_S(k) &amp;= \frac{ n! }{(n-k)!k! } \cdot p^k(1-p)^{n-k} \br
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

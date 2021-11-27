@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Analysis of Gradient Methods - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -300,15 +310,12 @@ if (!doNotTrack) {
   
 
 </div>
-
 <h1 id="convergence">Convergence</h1>
-
 
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="descent-method">Descent Method</span></span>
   <div class="block__content block__content--blue">
     <p>Iterative algorithms in which as each new point is generated by the algorithm, the corresponding value of the objective function decreases in value.</p>
-
 <p>i.e. The algorithm possesses the descent property.</p>
 
   </div>
@@ -343,12 +350,10 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="globally-convergent-locally-convergent">Globally Convergent &amp; Locally Convergent</span></span>
   <div class="block__content block__content--blue">
     <p>An iterative algorithm is <strong>globally convergent</strong> if for <u>any</u> arbitrary starting point the algorithm is guaranteed to generate a sequence of points converging to a point that satisfies the FONC for a minimizer.</p>
-
 <p>When the algorithm is not globally convergent, it may still generate a sequence that converges to a point satisfying the FONC, provided the initial point is sufficiently close to the point. In this case we say that the algorithm is <strong>locally convergent</strong>.</p>
 
   </div>
@@ -381,7 +386,6 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--blue ">
@@ -421,24 +425,17 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   
   </span>
   <div class="block__content block__content--green">
   <p>$$V(\b{x}) = f(\b{x}) + \frac{ 1 }{ 2 } \b{ x }^{*\text{T}} \b{Q} \b{ x^*} = \frac{ 1 }{ 2 } \transpose{(\b{x} - \b{x}^*)} \b{Q} (\b{x} - \b{x}^*) $$</p>
-
 <p>The iterative algorithm</p>
-
 <p>$$\b{x}^{(k+1)} = \b{x}^{(k)} \alpha_k \b{g}^{(k)} $$</p>
-
 <p>with $\b{g}^{(k)} = \b{Q}\b{x}^{(k)} - \b{b}$ satisfies</p>
-
 <p>$$V(\b{x}^{(k+1)}) = (1 - \gamma_k) V(\b{x}^{(k)})$$</p>
-
 <p>where, if $\b{g}^{(k)} = 0$ then $\gamma_k = 1 $, and if $\b{g}^{(k)} \neq 0 $ then</p>
-
 <p>$$\gamma_k = \alpha_k \frac{ \transpose{{g^{(k)}}} \b{Q} \b{g}^{(k)}}{ \transpose{{\b{g}^{(k)}}} \inv{ \b{Q}} \b{g}^{(k)}} \pare{2 \frac{ \transpose{{\b{g}^{(k)}}} \b{g}^{(k)}}{ \transpose{{\b{g}^{(k)}}} \b{Q} \b{g}^{(k)}} - \alpha_k} $$</p>
 
   </div>
@@ -453,13 +450,11 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>let $\set{ \b{x}^{(k)}} $ be the sequence resulting from a gradient algorithm $\b{x}^{(k+1)} = \b{x}^{(k)} - \alpha_k \b{g}^{(k)} $. Let $\gamma_k $ be as defined in the previous lemma, and suppose that $\gamma_k &gt; 0 $ for all $k $. Then, $\set{ \b{x}^{(k)}} $ converges to $\b{x}^{*} $ for any initial condition $\b{x}^{(0)}$ if and only if</p>
-
 <p>$$\sum_{ k =0 }^{ \infty } \gamma_k = \infty $$</p>
 
   </div><ul class="block__footer">
@@ -473,14 +468,12 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   
   </span>
   <div class="block__content block__content--green">
   <p>Let $\b{Q} = \transpose{ \b{Q}} &gt; 0 $ be an $n \times n $ real symmetric positive definite matrix. Then, for any $\b{x} \in \R^n $, we have</p>
-
 <p>$$\frac{ \lambda_{ \text{min}}(\b{Q})}{ \lambda_{ \text{max}}(\b{Q})} \leq \frac{(\transpose{ \b{x}} \b{x})^2 }{(\b{x}^\text{T} \b{Q} \b{x})(\b{x}^\text{T} \inv{ \b{Q}} \b{x})} \leq \frac{ \lambda_\text{max}(\b{Q})}{ \lambda_\text{min}(\b{Q})}$$</p>
 
   </div>
@@ -493,7 +486,6 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--green ">
@@ -513,13 +505,11 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>For the fixed step size gradient algorithm, $\b{x}^{(k)}  \to \b{x}^*$ for any $\b{x}^{(0)} $ if and only if</p>
-
 <p>$$0 &lt; \alpha &lt; \frac{ 2 }{ \lambda_{\text{max}}(\b{Q})} $$.</p>
 
   </div><ul class="block__footer">
@@ -532,16 +522,13 @@ if (!doNotTrack) {
   </ul>
 </div>
 
-
 <h1 id="convergence-rate">Convergence Rate</h1>
-
 
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>In the method of steepest descent applied to the quadratic function, at every step $k$, we have</p>
-
 <p>$$ V(\b{x}^{(k + 1)}) \leq \pare{ \frac{ \lambda_\text{max}(\b{Q}) - \lambda_\text{min}(\b{Q})}{ \lambda_\text{max}(\b{Q})}} V(\b{x}^{(k)}) $$</p>
 
   </div><ul class="block__footer">
@@ -553,7 +540,6 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
@@ -1491,13 +1477,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

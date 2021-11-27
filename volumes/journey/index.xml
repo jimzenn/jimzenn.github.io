@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Journey on Jim Zenn</title>
@@ -6,10 +6,16 @@
     <description>Recent content in Journey on Jim Zenn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 May 2018 17:11:48 +0800</lastBuildDate>
-    
-	<atom:link href="https://jimzenn.com/volumes/journey/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Wed, 13 Nov 2019 12:11:48 +0800</lastBuildDate><atom:link href="https://jimzenn.com/volumes/journey/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Turning 25</title>
+      <link>https://jimzenn.com/blog/turning-25/</link>
+      <pubDate>Wed, 13 Nov 2019 12:11:48 +0800</pubDate>
+      
+      <guid>https://jimzenn.com/blog/turning-25/</guid>
+      <description>After leaving my new bike at Summit Bicycles for some checking, I looked for the nearest library where I can work on my Math homework. That’s how I found Stanford Auxiliary Library.
+The library was on the edge of the campus. There are a few broken furnitures and some canvas-like plastic fabric lying in the front. It seemed to me like they are painted for Halloweens but I couldn’t really tell because there isn’t really any identifiable patterns on them.</description>
+    </item>
     
     <item>
       <title>Shanghai Once Again</title>

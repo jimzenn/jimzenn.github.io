@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Karush-Kuhn-Tucker Condition - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -305,7 +315,6 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="problems-with-equality-and-inequality-constraints">Problems With Equality and Inequality Constraints</span></span>
   <div class="block__content block__content--blue">
@@ -314,7 +323,6 @@ if (!doNotTrack) {
 &amp;\text{subject to }&amp; \b{h}(\b{x}) = \b{0}\br
 &amp;&amp; \b{g}(\b{x}) \leq \b{0}
 \end{align*}$$</p>
-
 <p>where $f:\R^n \to \R$, $\b{h}:\R^n \to \R^m$, $m \leq n $, and $\b{g}: \R^n \to \R^p $.</p>
 
   </div>
@@ -349,18 +357,13 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="regular-point">Regular Point</span></span>
   <div class="block__content block__content--blue">
     <p>Let $\b{x}^* $ satisfy $\b{h}(\b{x}^*) = \b{0} $, $\b{g}(\b{x}^*) \leq \b{0} $, and let $J(\b{x}^*) $ be the index set of active inequality constraints:</p>
-
 <p>$$J(\b{x}^*) \triangleq \set{ j : g_j(\b{x}^*) = 0 } $$</p>
-
 <p>Then, we say that $\b{x}^* $ is a <strong>regular point</strong> if the vectors</p>
-
 <p>$$\nabla h_i(\b{x}^*), \nabla g_j(\b{x}^*), 1 \leq i \leq m, j \in J(\b{x}^*) $$</p>
-
 <p>are linearly independent.</p>
 
   </div>
@@ -393,7 +396,6 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--blue ">
@@ -433,19 +435,16 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="karush-kuhn-tucker-kkt-theorem">Karush-Kuhn-Tucker (KKT) Theorem</span></span>
   <div class="block__content block__content--green">
   <p>Let $f, \b{h}, \b{g} \in \mathcal{ C }^1 $. Let $\b{x}^* $ be a regular point and a local minimizer for the problem of minimizing $f $ subject to $\b{h}(\b{x}) = \b{0} $, $\b{g}(\b{x}) \leq \b{0} $. Then, there exist $\b{\lambda}^* \in \R^m $ and $\b{\mu}^* \in \R^p $ such that:</p>
-
 <ol>
 <li>$\b{\mu}^* \geq \b{0} $</li>
 <li>$Df(\b{x}^*) + \transpose{ \b{\lambda}^* } D \b{h}(\b{x}^*) + \transpose{ \b{\mu}^* } D \b{g}(\b{x}^*) = \transpose{ \b{0}}$</li>
 <li>$\transpose{ \b{\mu}^* } \b{g}(\b{x}^*) = 0$</li>
 </ol>
-
 <p>We call $\b{\lambda}^* $ the <strong>Lagrange multiplier vector</strong> and call $\b{\mu}^*$ the <strong>Karush-Kuhn-Tucker (KKT) multiplier vector</strong>. We refer to their components as the <strong>Lagrange multipliers</strong> and the <strong>Karush-Kuhn-Tucker (KKT) multipliers</strong>, respectively.</p>
 
   </div><script>
@@ -479,14 +478,11 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>Observe that $\b{\mu}_j^* $ and $g_j(\b{x}^*) \leq 0 $. Therefore, the condition</p>
-
 <p>$$\transpose{ \b{\mu}^* } \b{g}(\b{x}^*) = \mu^*_1g_1(\b{x}^*) + \mu^*_2g_2(\b{x}^*) + &hellip; + \mu^*_{ p }g_{ p }(\b{x}^*) = 0$$</p>
-
 <p>implies that if $g_j(\b{x}^*) &lt; 0 $, then $\mu_j^* = 0 $; that is, for all $j \not \in J(\b{x}^*) $, we have $\mu_j^* = 0 $. In other words, the KKT multipliers $\mu_j^* $ corresponding to inactive constraints are zero.</p>
 
   </div>
@@ -1419,13 +1415,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

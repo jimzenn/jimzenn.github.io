@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>First-Order Systems - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -293,14 +303,11 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="first-order-one-dimensional-systems">First-Order (One-Dimensional) Systems</span></span>
   <div class="block__content block__content--blue">
     <p>A single equation of the form</p>
-
 <p>$$\dot{ x } = f(x) $$</p>
-
 <p>is <strong>a first-order system</strong>.</p>
 
   </div>
@@ -335,7 +342,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example:  $\dot{ x } = \sin x $: the analytical way
     
@@ -347,17 +353,11 @@ if (!doNotTrack) {
 t &amp;= \int\ \csc x \d x \br
 t &amp;= - \ln \abs{ x }
 \end{align*}$$</p>
-
 <p>To evaluate the constant $C $, suppose that $x = x_0 $ at $t = 0 $. Then $C = \ln \abs{ \csc x_0 + \cot x_0 } $.</p>
-
 <p>Hence the solution is</p>
-
 <p>$$t = \ln \abs{ \frac{ \csc x_0 + \cot x_0 }{ \csc x + \cot x }}$$</p>
-
 <p>This result is exact, but a headache to interpret.</p>
-
 <p>Try answer the following questions:</p>
-
 <ol>
 <li>Suppose $x_0 = \pi / 4$; describe the qualitative features of the solution $x(t) $ for all $t &gt; 0 $. In particular, what happens as $t \to \infty $.</li>
 <li>For an <u>arbitrary</u> initial condition $x_0$, what is the behavior of $x(t)$ as $ t \to \infty $?</li>
@@ -377,21 +377,19 @@ t &amp;= - \ln \abs{ x }
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>$\dot{x} = \sin x$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Solution
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand">[<a>expand</a>]</span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;[&lt;a&gt;expand&lt;/a&gt;]&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content">
     <p>$$\begin{align}
@@ -401,37 +399,25 @@ t &amp;= - \ln \abs{ x }
 \int_{}  \csc x \d x &amp;= \int\  \d t \br
 t &amp;= - \ln \abs{ \csc x + \cot x } + C
 \end{align}$$</p>
-
 <p>Solve for $C $ using initial condition $x(0) = x_0 $</p>
-
 <p>$C = \ln \abs{ \csc x_0 + \cot x_0 }$</p>
-
 <p>$t = - \ln \abs{ \csc x + \cot x } + \ln \abs{ \csc x_0  + \cot x_0 } $</p>
-
   </div>
 </div>
-
 <ol>
 <li>For IC $x_0 = \frac{ \pi }{ 4 }$, describe the qualitative features of the solution $x(t)$ for all $t $ what happens as $t \to \infty $.</li>
 <li>What is the behavior of $x(t) $ as $t \to \infty $ for arbitrary $x_0 $?</li>
 </ol>
-
 <p>What could happen to the solution as $t \to \infty$ ?</p>
-
 <ol>
 <li>$x(t) \to s $(equilibrium or fixed point)</li>
 <li>$x(t)$ can <em>grow</em> or <em>decrease</em> without bound.</li>
 <li>$x(t)$ oscillates for all time (this actually can&rsquo;t happen in a one-dimensional system)</li>
 </ol>
-
 <p>These are all questions we can relate to the derivative of $x $.</p>
-
 <p>Instead of solving for $x(t) $, let&rsquo;s draw a phase line.</p>
-
 <p>The equalibria $= &hellip;, -2 \pi, - \pi, 0, \pi, 2 \pi, &hellip;$</p>
-
 <p>Open circle: unstable.</p>
-
 <p>Close circle: stable.</p>
 
   </div>
@@ -448,31 +434,25 @@ t &amp;= - \ln \abs{ \csc x + \cot x } + C
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="equilibrium-fixed-point">Equilibrium (Fixed Point)</span></span>
   <div class="block__content block__content--blue">
     <p>Points where $\dot{ x } = 0$.</p>
-
 <p>Fixed points where the velocity vector field points toward them from both directions are called <strong>stable fixed points</strong>, <strong>attractors</strong>, or <strong>sinks</strong>.</p>
-
 <p>Fixed points where the velocity vector field points away them from both directions are called <strong>unstable fixed points</strong>, <strong>repellers</strong>, or <strong>sources</strong>.</p>
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>It might be helpful to imagine placing a particle at $x = x_0$ and watching how it&rsquo;s carried by the &ldquo;flow&rdquo; of the vector field.</p>
-
   </div>
-
-<p><ul class="block__footer">
+  <ul class="block__footer">
     <li class="block__footer-item">
       <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
     </li>
     <li class="block__footer-item">
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
-  </ul></div></p>
+  </ul></div>
 
   </div>
 
@@ -504,7 +484,6 @@ t &amp;= - \ln \abs{ \csc x + \cot x } + C
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--blue ">
@@ -544,7 +523,6 @@ t &amp;= - \ln \abs{ \csc x + \cot x } + C
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: trajectory for $x\_0 = \frac{ \pi }{ 4 } $
     
@@ -566,29 +544,21 @@ t &amp;= - \ln \abs{ \csc x + \cot x } + C
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: Population growth
     
   </span>
   <div class="block__content block__content--gray">
     <p>A simple model for population growth is $\dot{ N } = rN $</p>
-
 <p>where $N(t)$ is population at time $t $ &amp; $r &gt; 0 $ is the growth rate.</p>
-
 <p>This predicts exponential, which is quite unrealistic. Population should be limited by resources, overcrowding etc.</p>
-
 <p>Now suppose the population has a <strong>carrying capacity</strong> $k$, above which there is more death than birth $\implies $ population decrease.</p>
-
 <p>Assuming per capita growth rate decreases linearly with $N$.</p>
-
 <p>$$\begin{align}
 dot{ N } &amp;= rN (1 - \frac{ N }{ k }) \br
 &amp;= rN - \frac{ r }{ k } N^2
 \end{align}$$</p>
-
 <p>This is called <strong>logistic equation</strong>. (VerHurst, 1838)</p>
-
 <p>Draw the phase line to do a qualitative analysis.</p>
 
   </div>
@@ -739,13 +709,13 @@ dot{ N } &amp;= rN (1 - \frac{ N }{ k }) \br
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

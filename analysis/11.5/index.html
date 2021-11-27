@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>The Exponential and Logarithm Functions - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -315,12 +325,10 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="exponential-function">Exponential Function</span></span>
   <div class="block__content block__content--blue">
     <p>$\forall x \in \R $, we define the <strong>exponential function</strong> $\exp(x) $ to be the real number</p>
-
 <p>$$\exp(x) = \sum_{ n=0 }^{ \infty } \frac{ x^n }{ n! } $$</p>
 
   </div>
@@ -355,7 +363,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="basic-properties-of-exponential">Basic Properties of Exponential</span></span>
@@ -365,7 +372,7 @@ if (!doNotTrack) {
 convergent. <br>
 In particular, $\forall x \in \R, \exp (x), \exists \exp(x) \in \R $. <br>
 $\sum_{ n=0 }^{ \infty } \frac{ x^n }{ n! } $ has an infinite radius of convergence, and $\exp $ is a real analytic function on $(- \infty, \infty)$.</li>
-<li>$\exp$ is <strong>differentiable</strong> on $\R $, and for every $x \in \R $, $\exp&rsquo;(x) = \exp (x) $.</li>
+<li>$\exp$ is <strong>differentiable</strong> on $\R $, and for every $x \in \R $, $\exp'(x) = \exp (x) $.</li>
 <li>$\exp$ is <strong>continuous</strong> on $\R $, and for every interval $[a,b] $, we have
 $\int_{ [a,b] } \exp (x) \d x = \exp (b) - \exp (a)$</li>
 <li>$\forall x, y \in \R, \exp (x + y) = \exp (x) \exp (y). $</li>
@@ -404,12 +411,10 @@ $\int_{ [a,b] } \exp (x) \d x = \exp (b) - \exp (a)$</li>
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="eulers-number">Euler&#39;s Number</span></span>
   <div class="block__content block__content--blue">
     <p>The number $e$ is defined to be</p>
-
 <p>$$e \triangleq \exp (1) = \sum_{ n=0 }^{ \infty } = \frac{ 1 }{ 0! } + \frac{ 1 }{ 1! } + \frac{ 1 }{ 2! } + \frac{ 1 }{ 3! } + &hellip; $$</p>
 
   </div>
@@ -444,7 +449,6 @@ $\int_{ [a,b] } \exp (x) \d x = \exp (b) - \exp (a)$</li>
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Proposition
   </span>
@@ -460,7 +464,6 @@ $\int_{ [a,b] } \exp (x) \d x = \exp (b) - \exp (a)$</li>
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--blue ">
@@ -501,13 +504,12 @@ inverse of the exponential function. Thus $\exp \ln x = x $ and $\ln  \exp  x = 
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="logarithm-properties">Logarithm Properties</span></span>
   <div class="block__content block__content--green">
   <ol>
-<li>$\forall x \in (0, \infty), \ln &lsquo; (x) = \frac{ 1 }{ x } $. <br>
+<li>$\forall x \in (0, \infty), \ln ' (x) = \frac{ 1 }{ x } $. <br>
 In particular, by the fundamental theorem of calculus, we have $\int_{ [a, b] } \frac{ 1 }{ x } \d x = \ln (b) - \ln (a)$ for any interval $[a, b] \subseteq (0, \infty)$</li>
 <li>$\forall x, y \in (0, \infty), \ln (xy) = \ln (x) + \ln (y)$.</li>
 <li>$\forall x \in (i, \infty), \ln (1) = 0, \ln (\frac{ 1 }{ x }) = - \ln (x).$</li>
@@ -516,7 +518,6 @@ In particular, by the fundamental theorem of calculus, we have $\int_{ [a, b] } 
 In particular, $\ln$ is analytic at $1$, with the power series expansion
 $$\ln (x) = \sum_{ n=1 }^{ \infty } \frac{(-1)^{n+1}}{ n } (x-1)^n $$</li>
 </ol>
-
 <p>for $x \in (0,2) $, with radius of convergence $1$.</p>
 
   </div><script>
@@ -548,7 +549,6 @@ $$\ln (x) = \sum_{ n=1 }^{ \infty } \frac{(-1)^{n+1}}{ n } (x-1)^n $$</li>
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--gray ">
@@ -1460,13 +1460,13 @@ $$\ln (x) = \sum_{ n=1 }^{ \infty } \frac{(-1)^{n+1}}{ n } (x-1)^n $$</li>
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

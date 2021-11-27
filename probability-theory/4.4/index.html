@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Transforms - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -305,20 +315,14 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="moment-generating-function-mgf">Moment Generating Function (MGF)</span></span>
   <div class="block__content block__content--blue">
     <p>Let $X$ be a random variable, we define the <strong>moment generating function</strong> (or <strong>transform</strong>) of $X$ to be the function $M_X: \R \to \R $ such that</p>
-
 <p>$$M_X(t) = E\brac{ e^{Xt}}, t \in \R $$</p>
-
 <p><strong>Discrete</strong>:</p>
-
 <p>$$M_X(t) = \sum_{x \in \R} e^{xt} p_X(t)$$</p>
-
 <p><strong>Continuous</strong>:</p>
-
 <p>$$M_X(t) = \int_{ \R } e^{xt} f_X(x) \d x$$</p>
 
   </div>
@@ -353,7 +357,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
@@ -364,7 +367,6 @@ if (!doNotTrack) {
 \frac{ 1 }{ 3 } &amp; x = 5 \br
 0 &amp; \otherwise
 \end{align*}$</p>
-
 <p>$M_X(t) = E\brac{ e^{Xt}} = \frac{ 1 }{ 2 } e^{2t} + \frac{ 1 }{ 6 } e^{3t} + \frac{ 1 }{ 3 } e^{5t}$</p>
 
   </div>
@@ -381,7 +383,6 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   : The MGF Associated With a Linear Function of a Random Variable
@@ -389,21 +390,18 @@ if (!doNotTrack) {
   </span>
   <div class="block__content block__content--green">
   <p>Let $M_X(s)$ be the transform associated with a random variable $X$. Consider a new random variable $Y = aX + b$, $ a, b \in \R $.</p>
-
 <p>$$M_Y(t) = e^{bt} M_X(at)$$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$M_Y(t) = E\brac{ e^{yt}} = E\brac{ e^{(aX + b)t}} = E\brac{ e^{(at)x} e^{bt}} = e^{bt} E\brac{ e^{(at)X}}$</p>
-
   </div>
 </div>
 
@@ -419,17 +417,13 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>$Y \text{~} N(\mu, \sigma^2), X \text{~} N(0, 1)$</p>
-
 <p>$Y = \sigma X + \mu $</p>
-
 <p>$f_X(x) = \frac{ 1 }{ \sqrt[  ]{ 2 \pi }} e ^{- \frac{ x^2 }{ 2 }} $</p>
-
 <p>$M_X(t) = \int_{ \R } e^{xt} f_X(x) \d x = \int_{ \R } \frac{ 1 }{ \sqrt[  ]{ 2 \pi } e ^{ - \frac{ x^2 }{ 2 }}} \d x = \int_{ \R } e^{ - (\frac{ x^2 }{ 2 } - xt + \frac{ t^2 }{ 2 })} e^{ \frac{ t^2 }{ 2 }} \d x = e^ { \frac{ t^2 }{ 2 }}$</p>
 
   </div>
@@ -446,16 +440,14 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>$X \text{~} \text{ Poisson}(\lambda) , p_X(k) = \begin{cases}
-  \frac{\lambda^k}{k!} e^{-\lambda} &amp; k = 0, 1, 2, &hellip; \br
-  0 &amp; \otherwise
+\frac{\lambda^k}{k!} e^{-\lambda} &amp; k = 0, 1, 2, &hellip; \br
+0 &amp; \otherwise
 \end{cases}$</p>
-
 <p>$M_X(t) = \sum_{ k = 0 }^{ \infty } e^{kt} \frac{ \lambda^k e^{- \lambda}}{ k! } = e ^{ - \lambda } e^{ e^t \lambda } = e^{ \lambda (e^t - 1)}, \forall t \in \R$</p>
 
   </div>
@@ -472,22 +464,17 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks
   </span>
   <div class="block__content block__content--yellow">
   <p>$M_X(t)$ may not be defined for all $t \in \R $</p>
-
 <p>$f_X(x) = \begin{cases}
-  \frac{ 1 }{ x^2 } &amp; x \geq 1\br
-  0, &amp; x &lt; 1
+\frac{ 1 }{ x^2 } &amp; x \geq 1\br
+0, &amp; x &lt; 1
 \end{cases}$</p>
-
 <p>$M_X(t) = \int_{ 1 }^{ \infty } \frac{ e^{xt}}{ x^2 } \d x $ does not converge for $t &gt; 0 $</p>
-
 <p>$\int_{ \R } x \d x = \int_{ 1 }^{ \infty } \frac{ 1 }{ x^2 } \d x = 1$</p>
-
 <p>Moment generating function is only defined for $(-\infty, 0]$.</p>
 
   </div>
@@ -503,15 +490,12 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks
   </span>
   <div class="block__content block__content--yellow">
   <p>For $t = 0 $, $M_X(0) = E\brac{ e^{0x}} = E\brac{ 1 } = 1$</p>
-
 <p>If $h: \R \to \R $ such that $h(0) \neq 1 $, then $h $ cannot be the MGF function for some random variable $X$.</p>
-
 <p>That is, here is no random variable $X$, such that $M_X(t) = h(t), \forall t \in \R$.</p>
 
   </div>
@@ -527,13 +511,11 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="inversion-theorem">Inversion Theorem</span></span>
   <div class="block__content block__content--green">
   <p>Let $X $ and $Y $ be two random variable with $M_X(t) $ and $M_Y(t) $ defined for all $t \in \R $  (for all $t$ in some open interval $(a, b)$ in $\R$). If $M_X(t) = M_Y(t), \forall t \in \R$($\forall t \in (a, b)$).</p>
-
 <p>Then $F_X(s) = F_Y(s)  \forall s \in R$. $X $ and $Y $ have the same distribution.</p>
 
   </div><script>
@@ -567,23 +549,19 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>Suppose a random variable $X $ has MGF given  as</p>
-
 <p>$$M_X(t) = \frac{ 1 }{ y } e^{-t} + \frac{ 1 }{ 2 } + \frac{ 1 }{ 8 } e^{yt} + \frac{ 1 }{ 8 } e^{5t} $$</p>
-
 <p>What is the distribution of $X $</p>
-
 <p>$$ p_X(x) = \begin{cases}
-  \frac{ 1 }{ 4 } &amp;  x = -1 \br
-  \frac{ 1 }{ 2 } &amp; x= 0 \br
-  \frac{ 1 }{ 8 } &amp; x = 4 \br
-  \frac{ 1 }{ 8 } &amp; x = 5 \br
-  0 &amp; \otherwise
+\frac{ 1 }{ 4 } &amp;  x = -1 \br
+\frac{ 1 }{ 2 } &amp; x= 0 \br
+\frac{ 1 }{ 8 } &amp; x = 4 \br
+\frac{ 1 }{ 8 } &amp; x = 5 \br
+0 &amp; \otherwise
 \end{cases} $$</p>
 
   </div>
@@ -600,20 +578,14 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>Recall that the nth moment of a random variable $X $ is $E\brac{ X^n } $ from MGF to moments.</p>
-
 <p>$\der{  }{ t } M_X(t) = \der{  }{ t } E\brac{ e^{xt}} = E\brac{ \der{  }{ t } e^{xt}} = E\brac{ x e^{xt}} $</p>
-
 <p>$\der{  }{ t } M_X(t) \big |_{t = 0} = E\brac{ X } $</p>
-
 <p>$E\brac{  e^{xt}}  = E\brac{ 1 + \frac{ xt }{ 1 ! } + \frac{ \pare{xt}^2 }{ 2! } + &hellip; } = \sum_{ n = 0 }^{ \infty } E\brac{ \frac{(xt)^n }{ n! }} = \sum_{ n = 0 }^{ \infty } \frac{ E\brac{ X } t^n }{ n! } $</p>
-
 <p>This is the &ldquo;exponential&rdquo; quality function for the sequence $E\brac{ X^2 } \big |^ \infty _{n = 0} $</p>
-
 <p>$\frac{ \d ^n }{ \d t^n  } E\brac{ e^{xt}} \big |_{t = 0} = \frac{ \d ^n }{ \d  t^n } \frac{ \pare{E\brac{ x^n } t^n }}{ n! } \big |_ {t = 0} = E\brac{ X^n } $</p>
 
   </div>
@@ -628,33 +600,26 @@ if (!doNotTrack) {
   </ul></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>If $M_X(t) $ is defined in a neighborhood of $0$ then</p>
-
 <p>$$\frac{ \d ^n }{ \d t^n  } M_X(t) \big | _{t = 0} = E\brac{ X^n }$$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Discrete:</p>
-
 <p>$\der{  }{ t } (M_X(t)) = \der{  }{ t } (\sum_{ x \in \R } e^{xt p_X(x)}) = \sum_{ x \in \R } \der{  }{ t } \pare{e^{xt} p_X(x)} = \sum_{ x \in \R } x e^{xt} p_X(x) $</p>
-
 <p>$\frac{ \d ^n }{ \d t^n  } M_X(t) = \sum_{ r \in \R } x^n e^{xt} p_X(x) $</p>
-
 <p>$\der{  }{ t } M_X(t) \big | _{t = 0} = \sum_{ x \in \R } x p_X(x) = E\brac{ X } $</p>
-
   </div>
 </div>
 
@@ -669,28 +634,20 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>$X \text{~}\text{ Exp}(\lambda), \lambda &gt; 0$</p>
-
 <p>$f_X(x) = \begin{cases}
-  \lambda e^{ - \lambda }x &amp; x \geq 0 \br
-  0 &amp; \otherwise
+\lambda e^{ - \lambda }x &amp; x \geq 0 \br
+0 &amp; \otherwise
 \end{cases}$</p>
-
 <p>$M_X(x) = \int_{ x \in \R } e^{xt} f_X(x) \d x = \int_{ 0 }^{ \infty } e^{xt} (\lambda e^{ - \lambda x }) \d x = \lambda \int_{ 0 }^{ \infty } e^{x (t - \lambda)} \d x $</p>
-
 <p>for $t &lt; \lambda $</p>
-
 <p>$= \frac{ \lambda }{ t - \lambda } e^{x (t - \lambda)} \big | ^ \infty _0 = \frac{ \lambda^0 }{ t - \lambda } (0 - 1) = \frac{  \lambda }{  \lambda - t } $</p>
-
 <p>$\der{  }{ t } M_X(t) \big | _{t = 0} = \frac{ \lambda }{(\lambda - t)^2  } \big | _{t = 0} = \frac{ 1 }{ \lambda } = E\brac{ X } $</p>
-
 <p>$\frac{ \d ^n }{ \d t^n }  M_X(t) \big | _{t = 0} = \frac{ n! }{ \lambda^n }$(by induction)</p>
-
 <p>Note that $\frac{ \lambda }{ \lambda - t } = \frac{ 1 }{ 1 - \frac{ t }{ \lambda }} = 1 + \frac{  t }{ \lambda } + \frac{ t^2 }{  \lambda^2 } + &hellip; = \sum_{ n=0 }^{ \infty } \frac{ t^n }{ \lambda^n }$</p>
 
   </div>
@@ -1429,13 +1386,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

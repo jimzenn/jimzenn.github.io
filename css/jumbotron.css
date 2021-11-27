@@ -4,13 +4,18 @@
   user-select: none;
   pointer-events: none;
   display: block;
+  background-position: center center;
   width: 100%;
   background-repeat: no-repeat;
   background-color: #DDD;
-  background-position: center center;
-  background-size: 100% auto;
-  margin-bottom: 70px;
+  /* background-size: 100.2% auto; */
+  background-size: cover;
   transition: height 0.8s cubic-bezier(0.645, 0.045, 0.355, 1), border-radius 0.42s var(--jerk-curve);
+}
+
+#jumbotron__expand-button {
+  display: none;
+  /* hide by default, should be turned on with the script */
 }
 
 .jumbotron__text {
@@ -53,8 +58,12 @@
 }
 
 @keyframes jumbotron__expand-button-breath {
-  30%   { opacity: .3; }
-  40%   { opacity: .8; }
+  30% {
+    opacity: .3;
+  }
+  40% {
+    opacity: .8;
+  }
 }
 
 #jumbotron__expand-button svg {
@@ -68,20 +77,18 @@
 
 @media (min-width: 1069px) {
   .jumbotron {
-    height: 256px;
+    height: 512px;
   }
 }
 
-
 @media (max-width: 1068px) {
   .jumbotron {
-    height: 256px;
+    height: 380px;
   }
 }
 
 @media (max-width: 735px) {
   .jumbotron {
-    height: 200px;
-    background-size: cover;
+    height: 320px;
   }
 }

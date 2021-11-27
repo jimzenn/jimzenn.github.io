@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Quadratic Forms - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -295,20 +305,14 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="quadratic-form">Quadratic Form</span></span>
   <div class="block__content block__content--blue">
     <p>A <strong>quadratic form</strong> $f: \R^n \to \R $ is a <u>function</u></p>
-
 <p>$$f(x) = \transpose{ x }Qx $$</p>
-
 <p>where $Q $ is an $n \times n$ real matrix. There is no loss of generality in assuming $Q$ to be symmetric, that is, $Q = \transpose{ Q }$. For if the matrix $Q $ is not symmetric, we can always replace it with the symmetric matrix.</p>
-
 <p>$$Q_0 = \transpose{ Q_0 } = \frac{ 1 }{ 2 } (Q + \transpose{ Q }) $$</p>
-
 <p>Note that</p>
-
 <p>$$\transpose{ x } Q x = \transpose{ x } Q_0 x = \transpose{ x } (\frac{ 1 }{ 2 }Q + \frac{ 1 }{ 2 } \transpose{ Q })x $$</p>
 
   </div>
@@ -343,12 +347,10 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="positive-semidefinite-/-negative-semidefinite">Positive (Semi)definite / Negative (Semi)definite</span></span>
   <div class="block__content block__content--blue">
     <p>A quadratic form $\transpose{ \b{x}} \b{Q} \b{x}, \b{Q} = \transpose{ \b{Q}} $, is said to be</p>
-
 <ul>
 <li><strong>positive definite</strong> if $\forall \b{x}, \transpose{ \b{x}} \b{Q} \b{x} &gt; 0 $;</li>
 <li><strong>positive semidefinite</strong> if $\forall \b{x}, \transpose{ \b{x}} \b{Q} \b{x} \geq 0$;</li>
@@ -388,12 +390,10 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="principal-minors">Principal Minors</span></span>
   <div class="block__content block__content--blue">
     <p>The <strong>principle minors</strong> are $\det \b{Q} $ itself and the determinants of matrices obtained by successively removing an $i$th row and an $i$th column. That is, the principal minors are:</p>
-
 <p>$$\det {\Mqr{{\vcr{ q_{i_1i_1}}{ q_{i_2i_1}}{ \vdots }{ q_{i_pi_1}}}}{{\vcr{ q_{i_1i_2}}{ q_{i_2i_2}}{ \vdots }{q_{i_pi_1}}}}{{\vcr{ &hellip; }{ &hellip; }{  }{ &hellip; }}}{{\vcr{ q_{i_1i_p}}{ q_{i_2i_p}}{ \vdots }{q_{i_pi_p}}}}}\ \ , p &lt; n, \forall 1 \leq k \leq p, 1 \leq i_k \leq n $$</p>
 
   </div>
@@ -428,12 +428,10 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="leading-principal-minors">Leading Principal Minors</span></span>
   <div class="block__content block__content--blue">
     <p>The <strong>leading principal minors</strong> are $\det \b{Q} $ and the minors obtained by successively removing the last row and the last column. That is, the leading principal minors are:</p>
-
 <p>$$\Delta_1 = q_{11}, \Delta_2 = \det {\Mww{ q_{11}}{ q_{12}}{ q_{21}}{ q_{22}}}, \Delta_3 = \det {\Mee{ q_{11}}{ q_{12}}{ q_{13}}{ q_{21}}{ q_{22}}{ q_{23}}{ q_{31}}{ q_{32}}{ q_{33}}}, &hellip; , \Delta_n = \det \b{Q} $$</p>
 
   </div>
@@ -468,13 +466,11 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="sylvesters-criterion">Sylvester&#39;s Criterion</span></span>
   <div class="block__content block__content--green">
   <p>A quadratic form $\transpose{\b{x}}\b{Q}\b{x} = \transpose{\b{Q}}$ is positive definite</p>
-
 <p>$\iff$ the leading principal minors of $\b{Q}$ are positive.</p>
 
   </div><script>
@@ -1426,13 +1422,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

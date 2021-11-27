@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Composition of Linear Transformations and Matrix Multiplication - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -208,7 +218,7 @@ if (!doNotTrack) {
           keywordsCollector = [];
           keywordsCounter = 0;
         </script>
-        <p><div class="latex-macros">
+        <div class="latex-macros">
   
     $\newcommand{\br}{\\}$
 
@@ -273,26 +283,23 @@ if (!doNotTrack) {
   2.9<span class="keyword" id="2.9" style="visibility: hidden;">2.9</span></span>
   <div class="block__content block__content--green">
   <p>$T:V \to W, U: W \to Z$. $V, W, Z$ are vector spaces over $F$, then $U \circ T = UT:V \to Z$ is also a linear transformation.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$x, y \in V, a \in F$.</p>
-
 <p>$\begin{align*}
 UT(ax + y) &amp;= U(T(ax + y)) \br
- &amp;=(aT(x) + T(y)) \br
- &amp;=aU(T(x)) + U(T(y)) \br
- &amp;=a(UT)(x) + (UT)(y)
+&amp;=(aT(x) + T(y)) \br
+&amp;=aU(T(x)) + U(T(y)) \br
+&amp;=a(UT)(x) + (UT)(y)
 \end{align*}$</p>
-
   </div>
 </div>
 
@@ -325,7 +332,6 @@ UT(ax + y) &amp;= U(T(ax + y)) \br
     </li>
   </ul>
 </div>
-</p>
 
 
 <div class="block block--green ">
@@ -334,7 +340,6 @@ UT(ax + y) &amp;= U(T(ax + y)) \br
   2.10<span class="keyword" id="2.10" style="visibility: hidden;">2.10</span></span>
   <div class="block__content block__content--green">
   <p>$V$ is a vector space over a field $F$. Let $T, U_1, U_2 \in \L(V)$, then the following holds</p>
-
 <ol>
 <li>$T(U_1 + U_2) = TU_1 + TU_2$</li>
 <li>$(U_1 + U_2)T = U_1T + U_2T$</li>
@@ -342,15 +347,14 @@ UT(ax + y) &amp;= U(T(ax + y)) \br
 <li>$TI = IT = T$(where $I$ is the identity linear transformation)</li>
 <li>$a(U_1U_2) = (aU_1)U_2 = U_1(aU_2), \forall a \in F$</li>
 </ol>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$\begin{align*}
@@ -360,29 +364,23 @@ UT(ax + y) &amp;= U(T(ax + y)) \br
 &amp;=T(U_1(x))+T(U_2(x)) \br
 &amp;=(TU_1)(x)+(TU_2)(x) \forall x \in V
 \end{align*}$</p>
-
 <p>$\therefore T \circ (U_1 + U_2) = TU_1 + TU_2$</p>
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
     <p>This is special to linear transformation and does not apply to general functions.</p>
-
 <p>e.g. $f(x) = x^2, g_1(x) = x^3, g_2(x)=x^4$ does not follow this theorem.</p>
-
   </div>
-
-<p><ul class="block__footer">
+  <ul class="block__footer">
     <li class="block__footer-item">
       <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
     </li>
     <li class="block__footer-item">
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
-  </ul></div></p>
-
-<p></div>
-</div></p>
+  </ul></div>
+  </div>
+</div>
 
   </div><script>
       
@@ -415,59 +413,42 @@ UT(ax + y) &amp;= U(T(ax + y)) \br
 </div>
 
 
-
 <div class="block block--blue block--status"><div class="block__status block__status--star"></div>
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="matrix-multiplication">Matrix Multiplication</span></span>
   <div class="block__content block__content--blue">
     <p>Let $A $ be an $m \times n $ matrix and $B $ be an $n \times p $ matrix. We define the product of $A $ and $B $, denoted $AB $, to be the $m \times p $ matrix s.t.</p>
-
 <p>$$(AB)_{ij} = \sum_{ k=1 }^{ n } A_{ik}B_{kj}, \text{ for } i \leq i \leq m, 1 \leq j \leq p$$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p><strong>Analysis</strong></p>
-
 <p>$T: V \to W, U: W \to Z / F$.</p>
-
 <p>Let
 $\alpha = \set{v_1, v_2, &hellip;, v_{n}},
 \beta = \set{w_1, w_2, &hellip;, w_{m}},
 \gamma = \set{z_1, z_2, &hellip;, z_{p}}$
 be the ordered basis of $V, W, Z$ respectively.</p>
-
 <p>Let $A = [U]^\gamma_\beta$ and $B=[T]^\beta_\alpha$.</p>
-
 <p>Let $A = (a_{ij})_{p \times m}$ and $B = (b_{ij})_{m \times n}$.</p>
-
 <p>We define the product of $A$ and $B$ denoted by $AB$ as the new matrix obtained from the matrix representation of $UT$ with respect to  ordered basis $\alpha$ and $\gamma$, i.e. $AB:= [UT]^\gamma_\alpha$.</p>
-
 <p>We want to find the matrix representation of $UT$.</p>
-
 <p>$UT(v_j) = \sum_{i=1}^{v} (\cdot)_{ij}z_i$</p>
-
 <p><strong>Proof</strong></p>
-
 <p>Let $A=[U]^\gamma_\beta$ and $B=[T]^\beta_\alpha$.</p>
-
 <p>$A = (a_{ij})_{p\times m},$</p>
-
 <p>$B=(b_{ij})_{m \times n}.$</p>
-
 <p>We want to compute the matrix representation of $UT$.</p>
-
 <p>$$\begin{align}
 U(w_j) &amp;= \sum_{i=1}^{p}a_{ij}z_i  &amp; (1)\br
 T(v_j) &amp;= \sum_{i=1}^{m} b_{ij} w_i &amp; (2)
 \end{align}$$</p>
-
 <p>$\begin{align*}
 (UT)(v_j)&amp;=U(T(v_j)) \br
 &amp;= U(\sum_{i=1}^{m}b_{ij}w_i) \br
@@ -476,7 +457,6 @@ T(v_j) &amp;= \sum_{i=1}^{m} b_{ij} w_i &amp; (2)
 &amp;= \sum_{k=1}^{m}b_{kj}(\sum_{i=1}^{p} a_{ik} z_i)\br
 &amp;= \sum_{i=1}^{p} (\sum_{k=1}^{m} a_{ik}b_{kj})z_i
 \end{align*}$</p>
-
   </div>
 </div>
 
@@ -512,30 +492,25 @@ T(v_j) &amp;= \sum_{i=1}^{m} b_{ij} w_i &amp; (2)
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   2.11<span class="keyword" id="2.11" style="visibility: hidden;">2.11</span></span>
   <div class="block__content block__content--green">
   <p>$T:V \to W, U: W \to Z$,</p>
-
 <p>$\alpha, \beta, \gamma$ are ordered basis of $V, W$ and $Z$ respectively, then</p>
-
 <p>$$[UT]^\gamma_\alpha = [U]^\gamma_\beta[T]^\beta_\alpha$$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Follows from the previous computation</p>
-
   </div>
 </div>
 
@@ -570,7 +545,6 @@ T(v_j) &amp;= \sum_{i=1}^{m} b_{ij} w_i &amp; (2)
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   </span>
@@ -578,7 +552,6 @@ T(v_j) &amp;= \sum_{i=1}^{m} b_{ij} w_i &amp; (2)
 
   <div class="block__content block__content--green">
   <p>Let $V $ be a finite-dimensional vector space with an ordered basis $\beta $. Let $T, U \in \L(V)$, then</p>
-
 <p>$$[UT]_ \beta = [U]_ \beta [T]_ \beta $$</p>
 
   </div>
@@ -593,52 +566,36 @@ T(v_j) &amp;= \sum_{i=1}^{m} b_{ij} w_i &amp; (2)
   </ul></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="2.14">2.14</span></span>
   <div class="block__content block__content--green">
   <p>Let $V, W $ be two finite-dimensional vector spaces. $T: V \to W$. Let $\beta$ and $\gamma$ be ordered basis $V $ and $W $, respectively, then</p>
-
 <p>$$[ T ]_{ \beta }^{ \gamma } [ v ]_{ \beta } = [ T(v) ]_{ \gamma }, \forall v \in V$$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Fix $v \in V$, let $f: F \to V $ and $g: F \to W $ be two linear transformation.</p>
-
 <p>defined as $f(a) = av, \forall a \in F$ <br>
 and $g(a) = aT(v), \forall a \in F$</p>
-
 <p>$g(a) = aT(v) = T(av) = T(f(a)) = (T \circ f)(a), \forall a \in F$</p>
-
 <p>$\therefore, g = T \circ f &hellip; (i) $</p>
-
 <p>Let $\alpha = \set{ 1 }$ be the ordered basis over F.</p>
-
 <p>$[ g ]_{ \alpha }^{ \gamma } = $</p>
-
 <p>$g(1) = T(v) \implies [ g ]_{ \alpha }^{ \gamma } = [ T(v) ]_{ \gamma } &hellip; (iii)$</p>
-
 <p>$f(1) = v \implies [ f ]_{ \alpha }^{ \beta } = [ v ]_{ \beta } &hellip; (ii) $</p>
-
 <p>$\underset{ \alpha }{ F } \overset{f}{\to} \underset{ \beta }{ V } \overset{T}{\to} \underset{ \gamma }{ W } $</p>
-
 <p>$g = T \circ f $</p>
-
 <p>$[ g ]_{ \alpha }^{ \gamma } = [ T \circ f ]_{ \alpha }^{ \gamma } $</p>
-
 <p>$[ T(v) ]_{ \gamma }^{ \alpha } = [ T ]_{ \beta }^{ \gamma } [ f ]_{ \alpha }^{ \beta } $</p>
-
 <p>$[ T(v) ]_{ \gamma } =  [ T ]_{ \beta }^{ \gamma } [ v ]_{ \beta } $</p>
-
   </div>
 </div>
 
@@ -671,7 +628,6 @@ and $g(a) = aT(v), \forall a \in F$</p>
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--blue block--status"><div class="block__status block__status--extra"></div>
@@ -711,14 +667,12 @@ and $g(a) = aT(v), \forall a \in F$</p>
     </script></div>
 
 
-
 <div class="block block--green block--status"><div class="block__status block__status--extra"></div>
   <span class="block__title block__title--green">Theorem
   
   2.15<span class="keyword" id="2.15" style="visibility: hidden;">2.15</span></span>
   <div class="block__content block__content--green">
   <p>Let $A $ be an $m \times n $ matrix with entries from $F $. Then the left-multiplication transformation $L_A: F^n \to F^m $ is linear. Furthermore, if $B $ is any other $m \times n $ matrix (with entries from $F $), and $\beta$ and  $\gamma $ are the standard ordered bases for $F^n $ and $F^m $, respectively, then we have the following properties.</p>
-
 <ol>
 <li>$[L_A]^ \gamma _ \beta = A $</li>
 <li>$L_A = L_B $ if and only if $A = B $</li>
@@ -757,7 +711,6 @@ and $g(a) = aT(v), \forall a \in F$</p>
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--green block--status"><div class="block__status block__status--extra"></div>
@@ -1156,13 +1109,13 @@ and $g(a) = aT(v), \forall a \in F$</p>
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

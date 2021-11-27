@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Conditions for Local Minimizers - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -301,16 +311,12 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="the-first-order-derivative-of-%5Cnonef%5Crn%5Cto%5Cr">The First-Order Derivative of $\None{}f:\R^n\to\R$</span></span>
   <div class="block__content block__content--blue">
     <p>The <strong>first-order derivative</strong> of $f $ denoted $Df $ is</p>
-
 <p>$$Df \triangleq  \left[\pder{ f }{ x_1 }, \pder{ f }{ x_2 }, &hellip; ,  \pder{ f }{ x_n }\right]$$</p>
-
 <p>Note that the gradient $\nabla f $ is just the transpose of $Df $; that is</p>
-
 <p>$$\nabla f = \transpose{ Df } $$</p>
 
   </div>
@@ -343,7 +349,6 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--blue ">
@@ -383,12 +388,10 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="feasible-direction">Feasible Direction</span></span>
   <div class="block__content block__content--blue">
     <p>A vector $\b{d} \in \R^n, \b{d} \neq \b{0} $, is a <strong>feasible direction</strong> at $\b{x} \in \Omega$ if</p>
-
 <p>$$\exists \alpha_0 &gt; 0\text{ such that }\forall \alpha \in [0, \alpha_0], \pare{\b{x} + \alpha \b{d}} \in \Omega$$</p>
 
   </div>
@@ -423,20 +426,14 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="directional-derivative">Directional Derivative</span></span>
   <div class="block__content block__content--blue">
     <p>Let $f: \R^n \to \R $ be a real-valued function and let $\b{d} $ be a feasible direction at $\b{x} \in \Omega $. The <strong>directional derivative</strong> of $f$ in the direction $\b{d} $, denoted $\pder{ f }{ \b{d}} $, is the real-valued function defined by</p>
-
 <p>$$\pder{ f }{ \b{d}} (\b{x}) \triangleq \limu{ \alpha }{ 0 } \frac{ f(\b{x} + \alpha \b{d})  -  f(\b{x})}{ \alpha }$$</p>
-
 <p>In particular, if $\norm{ \b{d}} = 1$, then $\pder{ f }{ \b{d}} $ is the rate of increase of $f $ at $\b{x} $ in the direction $\b{d} $.</p>
-
 <p>To compute the above derivative, suppose that $\b{x} $ and $\b{d} $ are given. Then $f(x + \alpha \b{d}) $ is a function of $\alpha $, and</p>
-
 <p>$$\pder{ f }{ \b{d}} (\b{x}) = \der{ }{ \alpha } f(\b{x} + \alpha \b{d}){\biggr\rvert}_{ \alpha = 0 } =  \nabla \transpose{ f(\b{x})} \b{d} =  \inner{ \nabla f(x)}{\b{d}}  = \transpose{ \b{d}} \nabla f(\b{x})$$</p>
-
 <p>In summary, if $\b{d} $ is a unit vector, then $\inner{ \nabla f(x)}{\b{d}} $ is the rate of increase of $f $ at the point $\b{x} $ in the direction $\b{d} $.</p>
 
   </div>
@@ -471,48 +468,36 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="first-order-necessary-condition-fonc">First-Order Necessary Condition (FONC)</span></span>
   <div class="block__content block__content--green">
   <p>$\Omega \subseteq \R^n, f \in \mathcal{C}^1(\Omega)$.</p>
-
 <p>If $\b{x}^{*}$ is a local minimizer of $f$ over $\Omega$, then for <u>any</u> feasible direction $\b{d}$ at $\b{x}^{*}$, we have</p>
-
 <p>$$\inner{ \nabla f(\b{x}^{*})}{ \b{d}} = \transpose{ \b{d}} \nabla f(\b{x}^*) \geq 0$$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Define</p>
-
 <p>$$\b{x}(\alpha) = \b{x}^{*} + \alpha \b{d} \in \Omega $$</p>
-
 <p>Note that $\b{x}(0) = \b{x}^* $. Define the composite function</p>
-
 <p>$$\phi(\alpha) = f(\b{x}(\alpha))$$</p>
-
 <p>Then, by Taylor&rsquo;s theorem,</p>
-
 <p>$$\begin{align*}
 &amp;f(x^* + \alpha \b{d}) - f(x^*) \br
 =&amp; \phi(\alpha) - \phi(0) \br
-=&amp; \phi&rsquo;(0) \alpha + o(\alpha) \tag{Taylor&rsquo;s theorem}\br
+=&amp; \phi'(0) \alpha + o(\alpha) \tag{Taylor&rsquo;s theorem}\br
 =&amp; \alpha \transpose{ \b{d}} \nabla f(\b{x} (0)) + o(\alpha)
 \end{align*}$$</p>
-
 <p>where $\alpha \geq 0 $.</p>
-
 <p>Thus, if $\phi(\alpha) \geq \phi (0) $, that is $f(\b{x}^* + \alpha \b{d}) \geq f(\b{x}^*)$ for sufficiently small values of $\alpha &gt; 0 $  ($\b{x}^*$ is a local minimizer), then we have to have $\transpose{ \b{d}}  \nabla f(\b{x} ^*) \geq 0 $.</p>
-
   </div>
 </div>
 
@@ -547,7 +532,6 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   : <span class="keyword" id="interior-case-of-fonc">Interior Case of FONC</span></span>
@@ -555,29 +539,22 @@ if (!doNotTrack) {
 
   <div class="block__content block__content--green">
   <p>$\Omega \subseteq \R^n, f \in \mathcal{C}^1(\Omega)$.</p>
-
 <p>If $\b{x}^* $ is a local minimizer of $f $ over $\Omega $ and if $\b{x}^* $ is an interior point of $\Omega $, then</p>
-
 <p>$$\nabla f(\b{x}^*) = \b{0} $$</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Suppose that $f $ has a local minimizer $\b{x}^* $ that is an interior point of $\Omega $.</p>
-
 <p>Because $\b{x}^* $ is an interior point of $\Omega $, the set of feasible directions at $\b{x}^* $ is the whole of $\R^n $.</p>
-
 <p>Thus, for any $\b{d} \in \R^n$, $\transpose{ \b{d}} \nabla f(\b{x}^*) \geq 0$ and $-\transpose{ \b{d}} \nabla f(\b{x}^*) \geq 0$.</p>
-
 <p>Hence, $\transpose{ \b{d}} f(\b{x}^*) = 0 $ for all $\b{d} \in \R^n $, which implies that $\nabla f(x ^*) = \b{0}$.</p>
-
   </div>
 </div>
 
@@ -613,51 +590,36 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="second-order-necessary-condition-sonc">Second-Order Necessary Condition (SONC)</span></span>
   <div class="block__content block__content--green">
   <p>Let $\Omega \subseteq \R^n $, $f \in \mathcal{C}^2(\Omega) $, $\b{x}^* $ a local minimizer of $f $ over $\Omega $, and $\b{d} $ a feasible direction at $\b{x}^* $. If $\transpose{ \b{d}} f(\b{x}^*) = 0 $, then</p>
-
 <p>$$\transpose{ \b{d}} \b{F}(\b{x}^*) \b{d} \geq 0$$</p>
-
 <p>where $\b{F} $ is the Hessian of $f$.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-        by contradiction
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>    by contradiction
+    
+  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Suppose there exists a feasible direction $\b{d} $ at $\b{x}^* $ such that $\b{d}^T \nabla f(\b{x}^*) = 0 $ and $\transpose{ \b{d}} \b{F}(\b{x}^*) \b{d} &lt; 0 $.</p>
-
 <p>Let $\b{x}(\alpha) = \b{x}^* + \alpha \b{d}$ and define the composite function $\phi(\alpha) = f(\b{x}^* + \alpha \b{d}) = f(\b{x}(\alpha))$.</p>
-
 <p>Then, by Taylor&rsquo;s theorem</p>
-
 <p>$$\phi(\alpha) = \phi(0) + \phi^{ \prime \prime } (0) \frac{ \alpha^2 }{ 2 } + o(\alpha^2)$$</p>
-
-<p>where by assumption $\phi&rsquo;(0) = \transpose{ \b{d}} \nabla f(\b{x}) = 0$, and $\phi^{ \prime \prime } (0) = \transpose{ \b{d}} \b{F}(\b{x}^*) \b{d} &lt; 0$.</p>
-
+<p>where by assumption $\phi'(0) = \transpose{ \b{d}} \nabla f(\b{x}) = 0$, and $\phi^{ \prime \prime } (0) = \transpose{ \b{d}} \b{F}(\b{x}^*) \b{d} &lt; 0$.</p>
 <p>For sufficiently small $\alpha$,</p>
-
 <p>$$\phi(\alpha) - \phi (0) = \phi^{ \prime \prime }(0) \frac{ \alpha^2 }{ 2 } + o(\alpha^2) &lt; 0 $$</p>
-
 <p>that is,</p>
-
 <p>$$f(x^* + \alpha \b{d}) &lt; f(x^*) $$</p>
-
 <p>which contradicts the assumption that $x^* $ is a local minimizer. Thus,</p>
-
 <p>$$\phi^{ \prime \prime } (0) = \transpose{ \b{d}} \b{F}(\b{x} ^*) \b{d} \geq 0$$</p>
-
   </div>
 </div>
 
@@ -692,7 +654,6 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Corollary
   : <span class="keyword" id="interior-case-of-sonc">Interior Case of SONC</span></span>
@@ -700,11 +661,8 @@ if (!doNotTrack) {
 
   <div class="block__content block__content--green">
   <p>Let $x^* $ be an interior point of $\Omega \subseteq \R^n $. If $\b{x}^* $ is a local minimizer of $f: \Omega \to \R, f \in \mathcal{C}^2 $, then</p>
-
 <p>$$\nabla f(\b{x}^*) = \b{0} $$</p>
-
 <p>and $\b{F}(\b{x}^*) $ is positive semidefinite ($F(\b{x}^*) \geq 0$); that is, for all $\b{d} \in \R^n $</p>
-
 <p>$$\transpose{ \b{d}} \b{F}(\b{x}^*) \b{d} \geq 0 $$</p>
 
   </div>
@@ -739,18 +697,15 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   : <span class="keyword" id="second-order-sufficient-condition-sosc-interior-case">Second-Order Sufficient Condition (SOSC), Interior Case</span></span>
   <div class="block__content block__content--green">
   <p>Let $f\in\mathcal{C}^2$  be defined on a region where $\b{x}^*$ is an interior point. Suppose that</p>
-
 <ol>
 <li>$\nabla f(\b{x}^*) = \b{0}$; and</li>
 <li>$\b{F}(\b{x}^*) &gt; 0$.</li>
 </ol>
-
 <p>Then $\b{x}^*$ is a strict local minimizer of $f$.</p>
 
   </div><script>
@@ -1702,13 +1657,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

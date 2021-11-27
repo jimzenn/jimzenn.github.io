@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Subsequences - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -289,16 +299,12 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition</span>
   <div class="block__content block__content--blue">
     <p>Suppose $(s_n)_{n \in \N} $ is a sequence. A <strong>subsequence</strong> of this sequence is a sequence of the form $(t_k)_{k \in \N} $ where for each $k $ there is a positive integer $n_k $ such that</p>
-
 <p>$$n_1 &lt; n_2 &lt; &hellip; &lt; n_k &lt; n_{k+1} &lt; &hellip; \tag{1}$$</p>
-
 <p>and</p>
-
 <p>$$t_k = s_{n_k} \tag{2}$$</p>
 
   </div>
@@ -313,21 +319,22 @@ if (!doNotTrack) {
   </ul></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>Let $(s_n) $ be a sequence.</p>
-
 <ol>
-<li><p>If $t $ is in $\R $, there is a subsequence of $(s_n)$ converging to $t$ <br>$\iff \forall \epsilon &gt; 0$ the set $\set{n \in \N \mid \abs{ s_n - t } &lt; \epsilon} $ is infinite.</p></li>
-
-<li><p>If the sequence $(s_n) $ is unbounded above, it has a subsequence with limit $+\infty $.</p></li>
-
-<li><p>Similarly, if $(s_n) $ is unbounded below, a subsequence has limit $-\infty$.</p></li>
+<li>
+<p>If $t $ is in $\R $, there is a subsequence of $(s_n)$ converging to $t$ <br>$\iff \forall \epsilon &gt; 0$ the set $\set{n \in \N \mid \abs{ s_n - t } &lt; \epsilon} $ is infinite.</p>
+</li>
+<li>
+<p>If the sequence $(s_n) $ is unbounded above, it has a subsequence with limit $+\infty $.</p>
+</li>
+<li>
+<p>Similarly, if $(s_n) $ is unbounded below, a subsequence has limit $-\infty$.</p>
+</li>
 </ol>
-
 <p>In each case, the subsequence can be taken monotonic.</p>
 
   </div><ul class="block__footer">
@@ -339,7 +346,6 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--green ">
@@ -359,7 +365,6 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
@@ -375,7 +380,6 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--green block--status"><div class="block__status block__status--important"></div>
@@ -415,7 +419,6 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition</span>
   <div class="block__content block__content--blue">
@@ -431,7 +434,6 @@ if (!doNotTrack) {
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul></div>
-
 
 
 <div class="block block--green ">
@@ -451,13 +453,11 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>Let $(s_n) $ be any sequence in $\R $, and let $S $ denote the set of subsequential limits of $(s_n) $.</p>
-
 <ol>
 <li>$S $ is nonempty.</li>
 <li>$\supr{ S } = \lim \supr{ s_n }$ <br>$\infi{ S } = \lim \infi{ s_n }$.</li>
@@ -475,35 +475,27 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>Let $S$ denote the set of subsequential limits of a sequence $(s_n) $. Suppose $(t_n) $ is a sequence in $S \cap \R$  (i.e. the sequence $t$ consists of elements from $S$) and that $t = \lim t_n$. Then $t$ belongs to $S $.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Suppose $t $ is finite.</p>
-
 <p>There exist $t_n \in  (t- \epsilon, t+ \epsilon)$.</p>
-
 <p>Let $\delta = \min{ \set{ \pare{t + \epsilon} - t_n, t_n - \pare{t - \epsilon}}} $ s.t.</p>
-
 <p>$$(t_n - \delta, t_n + \delta) \subseteq (t - \epsilon, t + \epsilon) $$</p>
-
 <p>Since $t_n$ is a subsequential limit, the set $\set{ n \in \N : s_n \in (t_n - \delta, t_n + \delta)} $ is infinite, so the set $n \in \N : s_n \in (t - \epsilon, t + \epsilon) $ is also infinite. Thus $t $ it self is a subsequential limit of $(s_n) $.</p>
-
 <p>If $t = +\infty $, then clearly the sequence $(s_n) $ is unbounded above, so a subsequence of $(s_n) $ has limit $+ \infty$. Thus $+ \infty $ is also in $S $. Similar for $t = -\infty $.</p>
-
   </div>
 </div>
 
@@ -516,7 +508,6 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--blue block--status"><div class="block__status block__status--warning"></div>
@@ -536,12 +527,10 @@ if (!doNotTrack) {
   </ul></div>
 
 
-
 <div class="block block--blue block--status"><div class="block__status block__status--warning"></div>
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="closed-set">Closed Set</span></span>
   <div class="block__content block__content--blue">
     <p>A set is closed $\iff $ the set coincides with its closure.</p>
-
 <p>A set is closed $\iff $ the set contains all its subsequential limits.</p>
 
   </div>
@@ -576,16 +565,12 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="partial-sums">Partial Sums</span></span>
   <div class="block__content block__content--blue">
     <p>$s_n = \sum_{ k = m }^{ n }a_k = a_m + a_{m+1} + &hellip; + a_n $</p>
-
 <p>If $s_n$ converges to a value $s $, then we say $\sum_{ m }^{ \infty } a_n $ converges to $s $.</p>
-
 <p>If no such $s$ exists, then $\sum_{ m }^{ \infty } a_n $ diverges.</p>
-
 <p>If $\sum_{ m }^{ \infty } a_n $ diverges, then $\limu{ n }{ \infty } \sum_{ m }^{ n } \abs{ a_n } = +\infty $.</p>
 
   </div>
@@ -1508,13 +1493,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

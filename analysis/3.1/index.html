@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Continuous Functions - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -290,7 +300,6 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="domain">Domain</span></span>
   <div class="block__content block__content--blue">
@@ -328,7 +337,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
@@ -346,16 +354,12 @@ if (!doNotTrack) {
   </ul></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="continuity">Continuity</span></span>
   <div class="block__content block__content--blue">
     <p>Let $f $ be a real-valued function whose domain is a subset of $\R $. The function $f $ is <strong>continuous</strong> at $x_0 $ in $\dom{ f } $ if</p>
-
 <p>$$\forall (x_n) \in \dom{ f }, \lim (x_n) = x_0 ,\text{ we have }\lim f(x_n) = f(x_0)$$</p>
-
-<p><br></p>
-
+<br>
 <p>If $f $ is continuous at each point of a set $S \subseteq \dom{ f }$, then $f $ is said to be <strong>continuous on</strong> $S $. The function $f $ is said to be <strong>continuous</strong> if it is continuous on $\dom{ f }$.</p>
 
   </div>
@@ -390,16 +394,13 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   17.2<span class="keyword" id="17.2" style="visibility: hidden;">17.2</span></span>
   <div class="block__content block__content--green">
   <p>Let $f $ be a real-valued function with $\dom{ f } \subseteq \R $.</p>
-
 <p>$f $ is continuous at $x_0 $ in $\dom{ f } \iff $</p>
-
 <p>$$\forall \epsilon &gt; 0, \exists \delta &gt; 0\text{ s.t. }x \in \dom{ f }, \abs{ x - x_0 } &lt; \delta \implies \abs{ f(x) - f(x_0)} &lt; \epsilon$$</p>
 
   </div><script>
@@ -433,7 +434,6 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
@@ -441,21 +441,13 @@ if (!doNotTrack) {
     <p>Let $f(x)  = 2x^2 + 1$ for $x \in \R $. Prove $f $ is continuous on $\R$ by <br>
 (a) Using the definition, <br>
 (b) Using the $\epsilon - \delta $ property.</p>
-
 <p>(a) Suppose $\lim x_n = x_0 $. Then we have</p>
-
 <p>$\lim f(x_n) = \lim (2x_n^2 + 1) = 2 \pare{\lim x_n}^2 + 1 = 2 x_0^2 + 1 = f(x_0)$</p>
-
 <p>(b) Fix $x_0 \in \R $, fix $\epsilon &gt; 0 $. We want to show $\exists \delta $ s.t. $\abs{ x - x_0 } &lt; \delta \implies \abs{ f(x) - f(x_0)} &lt; \epsilon$.</p>
-
 <p>$\abs{f(x) - f(x_0)} = \br \abs{ 2x^2 +1 - (2x_0^2 + 1)} = \abs{ 2x^2 - 2x_0^2 } = 2 \abs{ x -x_0 } \abs{ x + x_0 } $</p>
-
 <p>We need to get a bound for $\abs{ x + x_0 }$ that does not depend on $x $. We notice that if $\abs{ x - x_0 }&lt; 1  $, say, then $\abs{ x } &lt; \abs{ x_0 } + 1 $ and hence $\abs{ x + x_0 } \leq \abs{ x } + \abs{ x_0 } &lt; 2 \abs{ x_0 } + 1 $. Thus we have</p>
-
 <p>$\abs{ f(x) - f(x_0)} \leq 2 \abs{ x - x_0 } (2 \abs{ x_0 } + 1) $ provided $\abs{ x - x_0 } &lt; 1$.</p>
-
 <p>To arrange for $2 \abs{ x - x_0 } (2 \abs{ x_0 } + 1) &lt; \epsilon $, it suffices to have $\abs{ x - x_0 } &lt; \frac{ \epsilon }{ 2 (2 \abs{ x_0 } + 1)} $ and also $\abs{ x - x_0 } &lt; 1 $. So we put</p>
-
 <p>$$\delta = \min{ \set{ 1, \frac{ \epsilon }{ 2(2 \abs{ x_0 } + 1)}}} $$</p>
 
   </div>
@@ -472,14 +464,12 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   17.3<span class="keyword" id="17.3" style="visibility: hidden;">17.3</span></span>
   <div class="block__content block__content--green">
   <p>Let $f $ be a real-valued function with $\dom{ f } \subseteq \R $.</p>
-
 <p>If $f $ is continuous at $x_0 $ in $\dom{ f } \implies \abs{ f } $ and $kf $, $k \in \R$, are continuous at $x_0$.</p>
 
   </div><script>
@@ -513,16 +503,13 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
   17.4<span class="keyword" id="17.4" style="visibility: hidden;">17.4</span></span>
   <div class="block__content block__content--green">
   <p>Let $f$ and $g $ be a real-valued function.</p>
-
 <p>$f$ and $g$ are continuous at $x_0 \in \R$. Then</p>
-
 <ol>
 <li>$f+ g $ is continuous at $x_0 $.</li>
 <li>$fg $ is continuous at $x_0$.</li>
@@ -558,7 +545,6 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--green ">
@@ -1487,13 +1473,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

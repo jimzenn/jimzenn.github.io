@@ -21,8 +21,7 @@ body.subject .content {
   min-width: 48%;
   margin-right: 70px;
   font-family: var(--text-font);
-  letter-spacing: -0.37px;
-  line-height: 1.5625;
+    line-height: 1.5625;
 }
 
 .subject-info {
@@ -40,16 +39,14 @@ body.subject .content {
 .subject-info__field {
   font-family: var(--text-font);
   font-size: 13.5px;
-  letter-spacing: -0.29px;
-  line-height: 22px;
+    line-height: 22px;
 }
 
 .subject-info__value {
   font-family: var(--display-font);
   font-weight: 500;
   font-size: 18.9px;
-  letter-spacing: 0.19px;
-  line-height: 23px;
+    line-height: 23px;
   color: var(--text-color);
   text-decoration: none;
   transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -108,8 +105,7 @@ body.subject .content {
 }
 
 .subject-syllabus td.date sup {
-  letter-spacing: -.1em;
-}
+  }
 
 .subject-syllabus td.date .slash {
   font-style: italic;
@@ -130,8 +126,7 @@ body.subject .content {
 .subject-resources__title {
   font-family: var(--display-font);
   padding-top: 30px;
-  letter-spacing: 0.2px;
-}
+  }
 
 .subject-resources__list {
 }
@@ -141,8 +136,7 @@ body.subject .content {
   margin-top: .75em;
   line-height: 1.52947;
   font-weight: 400;
-  letter-spacing: -.021em;
-  word-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .subject-resources__item b {

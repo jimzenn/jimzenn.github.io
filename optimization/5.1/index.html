@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Sequences and Limits - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -295,7 +305,6 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--yellow "> <span class="block__title block__title--yellow">Note
   </span>
   <div class="block__content block__content--yellow">
@@ -313,12 +322,10 @@ if (!doNotTrack) {
   </ul></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="frobenius-norm">Frobenius Norm</span></span>
   <div class="block__content block__content--blue">
     <p>The <strong>Frobenius norm</strong> is defined as:</p>
-
 <p>$$\norm{ A }_F = \sqrt[  ]{ \sum_{ i=1 }^{ m } \sum_{ j = 1 }^{ m } \abs{ a_{ij}}^2 } $$</p>
 
   </div>
@@ -353,12 +360,10 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="limit-of-matrices-sequence">Limit of Matrices Sequence</span></span>
   <div class="block__content block__content--blue">
     <p>We say that a sequence $\set{ \b{ A }_k }$ of $m \times n $ matrices converges to the $m \times n $ matrix $\b{ A } $ if</p>
-
 <p>$$\limu{ k }{ \infty } \norm{ \b{ A } - \b{ A }_k } = 0$$</p>
 
   </div>
@@ -393,24 +398,18 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="jordan-normal-form">Jordan Normal Form</span></span>
   <div class="block__content block__content--blue">
     <p>A <strong>Jordan normal form</strong> of a linear operator on a finite-dimensional vector space is an <u>upper triangular matrix</u> of a particular form called a Jordan matrix, representing the operator with respect to some basis.</p>
-
 <p>Consider the following matrix:</p>
-
 <p>$$A=\left[{\begin{array}{*{20}{r}}5&amp;4&amp;2&amp;1\br0&amp;1&amp;-1&amp;-1\br-1&amp;-1&amp;3&amp;0\br1&amp;1&amp;-1&amp;2\end{array}}\right]$$</p>
-
 <p>Including multiplicity, the eigenvalues of $\b{ A } $ are $λ = 1, 2, 4, 4$. The dimension of the eigenspace corresponding to the eigenvalue $4$ is $1$(and not $2$), so $\b{ A }$ is not diagonalizable. However, there is an invertible matrix $\b{ P } $ such that $\b{ A } = \b{ PJP }^{-1}$, where</p>
-
 <p>$$ J = \begin{bmatrix}
 1 &amp; 0 &amp; 0 &amp; 0 \br[2pt]
 0 &amp; 2 &amp; 0 &amp; 0 \br[2pt]
 0 &amp; 0 &amp; 4 &amp; 1 \br[2pt]
 0 &amp; 0 &amp; 0 &amp; 4 \end{bmatrix}. $$</p>
-
 <p>The matrix $\b{ J } $ is almost diagonal. This is the Jordan normal form of $\b{ A }$.</p>
 
   </div>
@@ -445,7 +444,6 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   
@@ -453,7 +451,6 @@ if (!doNotTrack) {
   </span>
   <div class="block__content block__content--green">
   <p>Let $\b{ A} \in \R ^{n \times n}.$</p>
-
 <p>$$\limu{ k }{ \infty } \b{ A }_k = \b{ O } \iff\abs{ \lambda_i(\b{ A })} &lt; 1, i = 1, &hellip;, n$$</p>
 
   </div>
@@ -468,7 +465,6 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   
@@ -476,11 +472,8 @@ if (!doNotTrack) {
   </span>
   <div class="block__content block__content--green">
   <p>The series of $n \times n $ matrices</p>
-
 <p>$$\b{ I }_n + \b{ A } + \b{ A }^2 + &hellip; + \b{ A }^k + &hellip; $$</p>
-
 <p>converges if and only if $\limu{ k }{ \infty } \b{ A }^k = \b{ O } $.</p>
-
 <p>In this case, the sum of the series equals $\inv{(\b{ I }_n - \b{ A })} $.</p>
 
   </div>
@@ -493,7 +486,6 @@ if (!doNotTrack) {
     </li>
   </ul>
 </div>
-
 
 
 <div class="block block--green">
@@ -1433,13 +1425,13 @@ if (!doNotTrack) {
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>

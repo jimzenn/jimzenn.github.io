@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.89.4" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
 
 
   <title>Eigenvalues and Eigenvectors - Jim Zenn</title>
@@ -14,6 +15,8 @@
 
 
 
+<meta name="theme-color" 
+      content="#01261b">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -33,20 +36,26 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/fonts.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/root.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/main.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/header.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/article.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/list.css?v=3.0.1">
     
-    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=2.9.9.9.8">
-    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/note.css?v=3.0.1">
+    <link rel="stylesheet" href="https://jimzenn.com/css/navigation.css?v=3.0.1">
 
-    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=2.9.9.9.8">
+    <link rel="stylesheet" href="https://jimzenn.com/css/responsive.css?v=3.0.1">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
   </head>
 
-  <body class="note wide" >
+  <body class="note wide" style="--backdrop-color: #01261b;">
     <header class="header" id="header">
   
   <img class="header__menu-icon" id="header__menu-icon" src="/images/UI/menu.svg">
@@ -59,18 +68,19 @@ if (!doNotTrack) {
     </a>
   </div>
   <nav class="header-menu" id="header-menu">
+      
       <ul class="header-menu__list">
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
           
         
           
-            <li class="header-menu__item header-menu__item--dropdown">
+            <li class="header-menu__item header-menu__item--dropdown selected">
               <a class="header-menu__link">Notes</a>
               <ul class="header-menu__item-menu">
                 
@@ -87,7 +97,7 @@ if (!doNotTrack) {
           
         
           
-            <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+            <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
           
         
       </ul>
@@ -97,15 +107,15 @@ if (!doNotTrack) {
   <ul class="header-menu__list--collapsable">
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/">Home</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/">Home</a></li>
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/blog/">Blog</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/blog/">Blog</a></li>
       
     
       
-        <li class="header-menu__item header-menu__item--dropdown">
+        <li class="header-menu__item header-menu__item--dropdown selected">
           <a class="header-menu__link">Notes</a>
           <ul class="header-menu__item-menu">
             
@@ -122,7 +132,7 @@ if (!doNotTrack) {
       
     
       
-    <li class="header-menu__item"><a class="header-menu__link" href="/resume/">Resume</a></li>
+    <li class="header-menu__item "><a class="header-menu__link" href="/resume/">Resume</a></li>
       
     
   </ul>
@@ -132,7 +142,7 @@ if (!doNotTrack) {
     <div class="container" id="container">
       <div class="container-tag">
       
-        <b class="container-title">Notes</b>
+        <span class="container-title">Notes</span>
       
       </div>
       
@@ -270,14 +280,11 @@ if (!doNotTrack) {
 
 </div>
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="eigenvalues-and-eigenvectors-of-linear-operators">Eigenvalues and Eigenvectors of Linear Operators</span></span>
   <div class="block__content block__content--blue">
     <p>$T: V \to V $ is a linear operator on $V$.</p>
-
 <p>A scalar $\lambda \in F $ is called an <strong>eigenvalue</strong> of $T $ if there exists a non-zero vector $x \in V$ s.t. $T(x) = \lambda x$.</p>
-
 <p>The non-zero vector $x$ is called an <strong>eigenvector</strong> of $T$ associated to the eigenvalue $\lambda $.</p>
 
   </div>
@@ -310,7 +317,6 @@ if (!doNotTrack) {
         keywordsCollector.push(keywordItemDOM);
       })();
     </script></div>
-
 
 
 <div class="block block--blue ">
@@ -350,25 +356,17 @@ if (!doNotTrack) {
     </script></div>
 
 
-
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example
   </span>
   <div class="block__content block__content--gray">
     <p>Let $T \R^2  \to \R^2 $,</p>
-
 <p>$T(x,y) = (x + 3y, 4x + 2y)$</p>
-
 <p>$v_1 = (1, -1), v_2 = (3,4)$</p>
-
 <p>Are $v_1$ and $v_2$ eigenvectors?</p>
-
 <p>$T(v_1) = (-2, 2) = -2(-1, 1) = -2v_1 $</p>
-
 <p>$\therefore -2$ is an eigenvalue, $v_1$ is the corresponding eigenvector.</p>
-
 <p>$T(v_2) = (15, 20) = 5(3, 4) = 5v_2$</p>
-
 <p>$5$ is an eigenvalue and $v_2 $ is a corresponding eigenvector.</p>
 
   </div>
@@ -385,59 +383,38 @@ if (!doNotTrack) {
 </div>
 
 
-
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   
   </span>
   <div class="block__content block__content--green">
   <p>Let $T:V \to V$,</p>
-
 <p>Fix an eigenvalue $\lambda$ and an eigenvector $v$ corresponding to $\lambda $, then $av$ is also an eigenvector of T corresponding to $\lambda  \forall a \neq 0, a \in F$ .</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>$Tv = \lambda v$</p>
-
 <p>$T(av) = \lambda(av)$</p>
-
 <p>First, $\because v \neq 0 $ and $a \neq 0 , \therefore av \neq 0$.</p>
-
 <p>Now, $\begin{align*}
 T(av) &amp;= aT(v) \br
 &amp;=a(Tv) \br
 &amp;=\lambda (av)
 \end{align*}$</p>
-
   </div>
 </div>
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks
   </span>
   <div class="block__content block__content--yellow">
   <p>Eigenvectors are not unique.</p>
-
-  </div>
-
-<p><ul class="block__footer">
-    <li class="block__footer-item">
-      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
-    </li>
-    <li class="block__footer-item">
-    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
-    </li>
-  </ul>
-</div></p>
-
   </div>
   <ul class="block__footer">
     <li class="block__footer-item">
@@ -449,6 +426,16 @@ T(av) &amp;= aT(v) \br
   </ul>
 </div>
 
+  </div>
+  <ul class="block__footer">
+    <li class="block__footer-item">
+      <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
+    </li>
+    <li class="block__footer-item">
+    <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
+    </li>
+  </ul>
+</div>
 
 
 <div class="block block--blue ">
@@ -489,7 +476,6 @@ The <strong>characteristic polynomial</strong> of $A$ is the degree n-polynomial
     </script></div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   
@@ -497,76 +483,51 @@ The <strong>characteristic polynomial</strong> of $A$ is the degree n-polynomial
   <div class="block__content block__content--green">
   <p>$A_{n \times n} \in M_{n \times n}(F)$,
 Then $\lambda \in F $ is an eigenvalue of $A$ $\iff$ $\lambda$ is a root of the character polynomial of $A_{i \times j} f(\lambda) = 0$ i.e. $\det{A - \lambda I_n} = 0 $</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Assume that $\det(A- \lambda I_n) = 0$</p>
-
 <p>$\implies A - \lambda n $ is not an invertible matrix</p>
-
 <p>$\implies \rank{ A- \lambda I_n } &lt; n$</p>
-
 <p>$\implies \nullity{ A - \lambda I_n } &gt; 0 $</p>
-
 <p>By dimension theorem, $\nullity{ A- \lambda I_n } + \rank{  A- \lambda I_n  } = n$</p>
-
 <p>$\implies \nullity{ A - \lambda I_n } &gt; 0$</p>
-
 <p>$\implies \exists v \in N(A- \lambda I_n) s.t. v \neq 0$</p>
-
 <p>$\implies v \in N(A - \lambda \lambda I_n) $ s.t. $v \neq 0$</p>
-
 <p>$\implies (A- \lambda I_n)(v) = 0 = {\Vcr{ 0 }{ 0 }{ \vdots }{ 0 }}$</p>
-
 <p>$\implies Av - \lambda I_n(v) = 0 $</p>
-
 <p>$\implies Av = \lambda v, when v \neq 0$</p>
-
 <p>$\therefore v$ is an eigenvector and $\lambda$ is an eigenvalue of $A$.</p>
-
   </div>
 </div>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>assume that $\lambda \in F $ is a eigenvalue.</p>
-
 <p>Then by definition , $\exists v \in F^n$ s.t. $v \neq {\Vcr{ 0 }{ 0 }{ \vdots }{ 0 }}$ and $Av = \lambda v $</p>
-
 <p>$\implies (A- \lambda I_n) v = 0$</p>
-
 <p>$v \neq 0 $</p>
-
 <p>$\implies N (A - \lambda I_n) \neq \set{0} $</p>
-
 <p>$\implies (A - \lambda I_n) &gt; 0 $</p>
-
 <p>Then again by dimension thoerem,</p>
-
 <p>$\because v \in N(A - \lambda I_n) $ and $v \neq 0 $</p>
-
 <p>Then, $\rank{ A - \lambda I_n } &lt; 0$</p>
-
 <p>$\implies A - \lambda I_n$ is not invertible.</p>
-
 <p>$\implies \det(A- \lambda I_n) = 0$</p>
-
   </div>
 </div>
 
@@ -601,40 +562,30 @@ Then $\lambda \in F $ is an eigenvalue of $A$ $\iff$ $\lambda$ is a root of the 
 </div>
 
 
-
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   
   </span>
   <div class="block__content block__content--green">
   <p>Similar matrices have have same characteristic polynomial.</p>
-
 <div class="proof">
   <div class="proof__heading">
     <span class="proof__title">Proof
       <span class="proof__method">
-        
-      </span>
-    </span>
-    <span class="proof__expand"><a>[expand]</a></span>
+<pre><code>  &lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;proof__expand&quot;&gt;&lt;a&gt;[expand]&lt;/a&gt;&lt;/span&gt;
+</code></pre>
   </div>
   <div class="proof__content hide">
     <p>Let $A_{n \times n }, B_{n \times n } $ are similar, then $\exists $ an invertible matrix $Q$ s.t. $B = \inv{ Q } A Q $</p>
-
 <p>We need to prove $\det(B - t I_n) = \det(A - tI_n) $</p>
-
 <p>$\det(B - tI_n) $</p>
-
 <p>$=\det(\inv{ Q }A Q - tI_n) $</p>
-
 <p>$=\det(\inv{ Q }A Q - t \inv{ Q } I_n Q) $</p>
-
 <p>$=\det(\inv{ Q }(A - tI_n)Q) $</p>
-
 <p>$\det(M_{n \times n} N_{n \times n} = (\det M) (\det N))$</p>
-
 <p>\det(\inv{ P} = \frac{ 1 }{ \det P })</p>
-
   </div>
 </div>
 
@@ -650,16 +601,13 @@ Then $\lambda \in F $ is an eigenvalue of $A$ $\iff$ $\lambda$ is a root of the 
 </div>
 
 
-
 <div class="block block--green">
   <span class="block__title block__title--green">Lemma
   
   </span>
   <div class="block__content block__content--green">
   <p>If $A_{n \times n}, B_{n \times n} \in M_{n \times n}(F)$.</p>
-
 <p>If $A$ and $B$ are similar, i.e.. $\exists$ an $Q $ s.t. $B = \inv{ Q } A Q$ then</p>
-
 <p>$$\det(A - tI_n)  = \det (B - t I_n)$$</p>
 
   </div>
@@ -674,25 +622,19 @@ Then $\lambda \in F $ is an eigenvalue of $A$ $\iff$ $\lambda$ is a root of the 
 </div>
 
 
-
 <div class="block block--blue ">
   <span class="block__title block__title--blue">Definition: <span class="keyword" id="characteristic-polynomial-of-linear-operators">Characteristic Polynomial of Linear Operators</span></span>
   <div class="block__content block__content--blue">
     <p>Let $T $ be a linear operator on $V $ and $\dim V = n$. The characteristic polynomial of $T $ is defined as the characteristic polynomial of $[ T ]_{ \beta } $ with same ordered basis of $V $.</p>
-
 <div class="block block--yellow ">
   <span class="block__title block__title--yellow">Remarks
   </span>
   <div class="block__content block__content--yellow">
-  <p>If $B&rsquo; $ is another ordered basis of $V $, then $\exists a_{n \times n}$ invertible s.t. $[ T ]_{ \beta&rsquo; } = \inv{ Q } [ T ]_{ \beta } Q$.</p>
-
+  <p>If $B' $ is another ordered basis of $V $, then $\exists a_{n \times n}$ invertible s.t. $[ T ]_{ \beta' } = \inv{ Q } [ T ]_{ \beta } Q$.</p>
 <p>Then by the previous lemma,</p>
-
-<p>$$\det([ T ]_{ \beta&rsquo; } - t I_n) = \det ([ T ]_{ \beta } - t I_n) $$.</p>
-
+<p>$$\det([ T ]_{ \beta' } - t I_n) = \det ([ T ]_{ \beta } - t I_n) $$.</p>
   </div>
-
-<p><ul class="block__footer">
+  <ul class="block__footer">
     <li class="block__footer-item">
       <a class="block__footer-link block__ask-question" href='mailto:zenn@ucla.edu?subject=Hello! I have a question&body=Hi, I have a question about ...'>ask a question</a>
     </li>
@@ -700,7 +642,7 @@ Then $\lambda \in F $ is an eigenvalue of $A$ $\iff$ $\lambda$ is a root of the 
     <a class="block__footer-link block__error-report" href='mailto:zenn@ucla.edu?subject=Hello! I found an error!&body=Hi, I found an error on page...'>report an error</a>
     </li>
   </ul>
-</div></p>
+</div>
 
   </div>
 
@@ -733,9 +675,7 @@ Then $\lambda \in F $ is an eigenvalue of $A$ $\iff$ $\lambda$ is a root of the 
       })();
     </script></div>
 
-
 <p>WILL APPEAR ON EXAM: FINDING eigenvector and eigenvalue, DIAGONALIZABILITY</p>
-
 
 <div class="block block--gray ">
   <span class="block__title block__title--gray">Example: IMPORTANT
@@ -743,59 +683,40 @@ Then $\lambda \in F $ is an eigenvalue of $A$ $\iff$ $\lambda$ is a root of the 
   </span>
   <div class="block__content block__content--gray">
     <p>$T: \P_2(x)/ \R \to \P_2 (x)  $</p>
-
-<p>$T(f(x)) = f(x) + (x+1) f&rsquo;(x) $</p>
-
+<p>$T(f(x)) = f(x) + (x+1) f'(x) $</p>
 <p>Find all eigenvalues and eigenvectors.</p>
-
 <p>$\beta = \set{ 1, x, x^2 }$</p>
-
 <p>$$
 T(1) = 1 + (x+1) \cdot 0 = 1 = 1 \cdot x + 0x + 0x^2
 T(x) = x + (x+1) \cdot 1 = 1+2x = 1 \cdot 1 + 2x + 0x^2
 T(x^2) = x^2 + (x+1) \cdot 2x = 3x^2+2x = 0 \cdot 1  + 2x + 3x^2
 $$</p>
-
 <p>$$A = [ T ]_{ \beta } = {\Mee{ 1 }{ 1 }{ 0 }{ 0 }{ 2 }{ 2 }{ 0 }{ 0 }{ 3 }} $$</p>
-
 <p>Characteristic polynomial of T is:</p>
-
 <p>$$\begin{align*}
 &amp;=\det (A - t I_3) \br
 &amp;= \det {\Mee{ 1-t }{ 1 }{ 0 }{ 0 }{ 2-t }{ 2 }{ 0 }{ 0 }{ 3-t }} \br
 &amp;= (1-t)(2-t)(3-t)
 \end{align*}$$</p>
-
 <p>solve $\det (A - t I_3) = 0 $</p>
-
 <p>$t = 1, 2,$ or $3 $</p>
-
 <p>The eigenvalue of $T$ are 1,2 and 3.</p>
-
 <p>$t= 1$, Let $v = {\Vce{ x_1 }{ x_2 }{ x_3 }}$ be a eigenvector of $A $ with respect to $t = 1$.</p>
-
 <p>$$\begin{align*}
 Av &amp;= 1v \br
 {\Mee{ 1 }{ 1 }{ 0 }{ 0 }{ 2 }{ 2 }{ 0 }{ 0 }{ 3 }} {\Vce{ x_1 }{ x_2 }{ x_3 }} &amp;= {\Vce{ x_1 }{ x_2 }{ x_3 }} \br
 {\Vce{ x_1 + x_2 }{ 2 x_1 + 2 x_3 }{ 3x_3 }} &amp;= {\Vce{ x_1 }{ x_2 }{ x_3 }}
 \end{align*}$$</p>
-
 <p>$\implies \begin{cases}
 x_1 = x_1 \br
 x_2 = 0 \br
 x_3 = 0
 \end{cases} $</p>
-
 <p>$v = {\Vce{ x_1 }{ x_2 }{ x_3 }} = {\Vce{ x_1 }{ 0 }{ 0 }} = x_1{\Vce{ 1 }{ 0 }{ 0 }} $</p>
-
 <p>${\Vce{ 1 }{ 0 }{ 0 }}$ is an eigenvector of A with respect to $t = 1 $.</p>
-
 <p>$1 \cdot + 0 \cdot x + 0 \cdot x^2 = 1 $</p>
-
 <p>$\therefore f(x) = 1$ is an eigenvector of $T$ with respect to $t = 1 $.</p>
-
 <p>$t = 2, v = {\Vce{ 1 }{ 1 }{ 0 }} \implies 1 \cdot 1 + 1 \cdot x + 0 \cdot x^2 = 1 + x$</p>
-
 <p>$t=3, v = {\Vce{ 1 }{ 2 }{ 1 }} \implies 1 \cdot + 2 \cdot x + 1 \cdot x^2 = 1 + 2x + x^2 $</p>
 
   </div>
@@ -812,15 +733,12 @@ x_3 = 0
 </div>
 
 
-
 <div class="block block--green ">
   <span class="block__title block__title--green">Theorem
   </span>
   <div class="block__content block__content--green">
   <p>Let $T $ be a linear operator on $V $, and $\lambda$ is a eigenvalue of $T $.</p>
-
 <p>Then a vector $v \in V $ is an eigenvector of T with respect to $\lambda \iff v \neq 0$  and $v \in N(T - \lambda I_v) $</p>
-
 <p>$$\begin{align*}
 &amp;\iff v \neq 0, T(v) = \lambda v \br
 &amp; \iff Tv = \lambda v = 0\br
@@ -1197,13 +1115,13 @@ x_3 = 0
 
   <footer class="footer">
   <div class="footer__wrapper">
-    <span class="copyright">Copyright 2019 Jim Zenn All rights reserved.</span>
+    <span class="copyright">Copyright 2021 Jim Zenn All rights reserved.</span>
     <ul class="footer-links">
       <li>
         <a href="/resume">resume</a>
       </li>
       <li>
-        <a href="https://github.com/Jim-Zenn">github</a>
+        <a href="https://github.com/jimzenn">github</a>
       </li>
       <li>
         <a href="mailto:zenn@ucla.edu">email</a>
