@@ -9,10 +9,10 @@ googleAnalytics = "UA-83942334-3"
 [params]
   github = "https://github.com/jimzenn"
   CV = "/Jim_Zenn-CV.pdf"
-  email = "zenn@ucla.edu"
   version = "3.0.1"
   themeColor = "#01261b"
   [params.resume]
+    email = "hi@zenn.in"
     myLegalName = "Qingwei Zeng"
     myPreferredName = "Jim"
     myEducation = "University of California, Los Angeles"
