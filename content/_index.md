@@ -45,7 +45,3 @@ content-only: true
   <span>now</span>
   <div></div>
 </div>
-
-**2022**, Found a startup to empower others.
-
-**2024**, Enrolled in Stanford GSB.
