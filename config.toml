@@ -11,6 +11,10 @@ googleAnalytics = "UA-83942334-3"
   CV = "/Jim_Zenn-CV.pdf"
   version = "3.0.1"
   themeColor = "#01261b"
+  [params.author]
+    hello_line = "Hello, I'm Jim Zenn."
+    hello_subline = "Software engineer. I do graphic design for fun."
+    hello_p = "he / him.<br>Lives in Foster City, California.<br><br>Also known as 曾庆伟."
   [params.resume]
     email = "hi@zenn.in"
     myLegalName = "Qingwei Zeng"
