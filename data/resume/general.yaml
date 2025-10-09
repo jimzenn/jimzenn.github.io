@@ -23,31 +23,63 @@
 
 "Skills":
   -
-    key: "Programming Languages"
-    value: <span class="prof-1">Java</span> <span class="prof-1">Python</span> <span class="prof-2">C++</span> <span class="prof-1">Typescript</span> <span class="prof-1">Javascript</span> <span class="prof-1">Go</span> <span class="prof-1">C</span> <span class="prof-1">HTML & CSS</span> <span class="prof-2">SQL</span> <span class="prof-2">ISPC</span>.
+    key: "Languages"
+    skills:
+      "Python": 1
+      "C++": 2
+      "Go": 1
+      "Java": 1
+      "JavaScript/TypeScript": 1
+      "Starlark": 2
   -
-    key: "Frameworks & Tools"
-    value: <span class="prof-1">Angular</span> <span class="prof-2">React</span> <span class="prof-1">Flutter</span> <span class="prof-2">Tensorflow</span> <span class="prof-2">CUDA</span> <span class="prof-1">OpenMP</span> <span class="prof-1">Django</span> <span class="prof-3">D3.js</span>.
+    key: "AI/ML"
+    skills:
+      "Large Language Models (LLMs)": 2
+      "Generative AI": 2
+      "Agentic Systems": 2
+      "Reinforcement Learning (RL)": 2
+      "Retrieval-Augmented Generation (RAG)": 2
+      "Transformer Architecture": 2
+      "libclang": 2
   -
-    key: "Design and Prototyping"
-    value: <span class="prof-1">Sketch</span> <span class="prof-2">Photoshop</span> <span class="prof-2">After Effects</span> <span class="prof-3">Processing</span> <span class="prof-4">Indesign</span> <span class="prof-4">Principle</span>.
+    key: "Cloud & Infrastructure"
+    skills:
+      "Google Cloud Platform (GCP)": 2
+      "ML Infrastructure": 2
+      "Model Evaluation": 2
+      "Data Processing": 2
+      "Distributed Systems": 2
+      "Microservices": 2
   -
-    key: "Data Mining & Machine Learning"
-    value: classification, clustering, prediction, pattern mining, similarity search, etc.
+    key: "Frameworks & Libraries"
+    skills:
+      "TensorFlow": 2
+      "React": 2
+      "ipywidgets": 2
   -
-    key: "Parallel Computing"
-    value: Studied OpenMP, CUDA, ISPC and low-level optimization stratigies from CMU 15-618 lecture videos.
+    key: "Developer Tools"
+    skills:
+      "Git": 2
+      "Docker": 2
+      "Google Cloud SDK": 2
+      "CI/CD": 2
 
 "Work Experiences":
   -
     employer: Google Inc.
-    title: Software Engineer
+    title: Senior Software Engineer
     from: Feb 2020
     fromAbbr: 02/20
     to: Present
     toAbbr: Now
     location: Mountain View, CA
     descriptions:
+      - Designed and built multiple agentic AI systems and LLM-based developer tools from the ground up to enforce coding conventions and automate large-scale refactoring.
+      - Restored an AI code commenter's recall from 0.44 to 0.89 and collaborated to improve its precision to 1.00 by implementing advanced C++ parsing with libclang and iterative prompt engineering.
+      - Architected and delivered a standardized ML evaluation framework to provide a common interface for offline testing, quality assessment, and triaging for all team DevAI tools, significantly improving the reliability and reusability of team ML infrastructure.
+      - Spearheaded a "zero to one" project to build a generic, configuration-driven load testing framework (Battlecruiser) in C++ and Kotlin. The framework was adopted by 5 product teams (Marketplace, UMIS, SPS, Shipping, Pricing) and was critical in ensuring system stability for the high-traffic Buy-on-YouTube launch.
+      - Led a large-scale AI-assisted code cleanup initiative using a novel hybrid approach combining Abstract Syntax Trees (AST) and LLMs. The resulting tool was designed to reduce a 30-hour data processing pipeline to 1.5 hours and successfully removed thousands of lines of obsolete test code and configurations.
+      - Drove a multi-quarter infrastructure modernization initiative, migrating a critical integration test suite to a new framework, which reduced P50 test runtime by 12 minutes and P95 runtime by 26 minutes, directly improving developer velocity for the entire Commerce Data Store (CDS) team.
   -
     employer: Google Inc.
     title: Software Engineer Intern
@@ -82,20 +114,15 @@
     location: Berkeley, CA
     descriptions:
       - Covered classic data structures and algorithms topics such as lists, trees, graphs, runtime analysis, etc.
-  -
-    employer: IO Design Group
-    title: Founder
-    from: Sep 2014
-    fromAbbr: "04/14"
-    to: "Aug 2015"
-    toAbbr: "08/15"
-    location: Harbin, China
-    descriptions:
-      - Drafted the design guideline for Harbin Institute of Technology Model United Nations and other major events.
-      - Managed design and production of 6th HIT Model United Nations materials.
-      - Recruited over 100 members in the first year.
 
 "Projects":
+  -
+    name: Sumi - Multi-Agent AI Assistant
+    year: 2025
+    skills: ["Python", "Go", "Gemini 2.5", "RAG", "Microservices", "Telegram Bot API"]
+    descriptions:
+      - Developed a multi-agent AI assistant powered by Gemini 2.5 and a Retrieval-Augmented Generation (RAG) system to create a personalized, persistent memory layer for automated task completion.
+      - Engineered a microservice architecture to support scalable agentic workflows, enabling the system to perform complex actions such as managing calendars and summarizing documents via a Telegram bot interface.
   -
     name: Mavericks - Conversations with risk takers
     year: 2020 - 2021
@@ -104,22 +131,6 @@
       - Manages and hosts the podcast alone, with thousands of listeners.
       - Talked with folks from Waymo, Credit Suisse, Morgan Stanley, Yale, Stanford, Harvard, people with unique experiences.
       - Designed the podcast website singlehandedly.
-  -
-    name: Drift - Delivery Along the Way
-    year: 2018
-    skills: ["Go", "Python", "JavaScript"]
-    descriptions:
-      - Designed a delivery system that utilizes existing traffic to delivery packages with maximized efficiency.
-      - Designed algorithms to match deliveries and deliverers at low time and distance cost.
-      - Implemented a Go server that uses channels to handle communications among end users.
-      - Developed a real-time visualization of the algorithm simulation using Google Maps API and Google Firebase.
-  -
-    name: Math Notes
-    year: 2018
-    skills: ["HTML5", "CSS3", "Javascript"]
-    descriptions:
-      - Built and designed a website that displays LaTeX notes with clear legible layout optimized for both desktop and mobile.
-      - Designed efficient navigation flow through all the notes with anotations and collapsable proofs and solutions.
 
 "Interests":
   - "Cooking,"
