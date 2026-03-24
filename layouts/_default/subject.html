@@ -1,0 +1,83 @@
+{{- define "type" -}} subject wide {{- end -}}
+
+{{ define "links" }}
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/subject.css?v={{ .Site.Params.version }}">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/navigation.css?v={{ .Site.Params.version }}">
+{{ end }}
+
+{{ define "menu-title" }}
+  {{- with ($.Param "menuTitle") -}}
+    {{- . -}}
+  {{- else -}}
+    Notes
+  {{- end -}}
+{{ end }}
+
+{{ define "body" }}
+
+  {{ $subjectData := index (where $.Site.Data.subjects "subject-title" $.Title) 0 }}
+  {{ partial "navigation.html" (dict "supTitle" "" "title" (index $subjectData "subject-title") "navigation" (index $subjectData "navigation") "emphColor" (index $subjectData "subject-color")) }}
+
+  <main class="content" role="main">
+    {{ range where $.Site.Data.subjects "subject-title" (.Title) }}
+    <div class="subject-introduction">
+      <div class="subject-information">
+         {{ index . "subject-introduction" | safeHTML }}
+      </div>
+      <div class="subject-info">
+        {{ range ( index . "subject-info" ) }}
+        <div class="subject-info__group">
+          <span class="subject-info__field">{{ index . "field" }}</span>
+          <a class="subject-info__value {{ with index . "icon" }} link--{{- . -}} {{ end }}" {{ with index . "url" }} href="{{ . }}" {{ else }} disabled="true" {{ end }} target="_blank">{{ index . "value" }}</a>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    <div class="subject-syllabus page-link-position-fixer" id="syllabus">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th class="mobile-hide">Date</th>
+            <th align="left">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range where $.Site.Pages.Reverse "Section" ((index . "subject-title") | urlize) }}
+            {{ $is_section := eq .Kind "section" }}
+            {{ $is_hide := and (isset .Params "hide") (.Param "hide") }}
+            {{ if (not (or $is_hide $is_section)) }}
+              {{ if eq .Section ($.Title | urlize) }}
+                <tr>
+                  <td align="center">{{- index (.Param "Volumes") 0 -}}.{{- .Param "Issue" -}}</td>
+                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>{{ .PublishDate.Format "1" }}</sup><span class="slash">/</span><sub>{{ .PublishDate.Format "2" }}</sub></td>
+                  <td class="wrap"><b>{{ .Title | title }}</b><br>{{ (strings.TrimSuffix "<p></p>" .Summary) | safeHTML }}[<a href="{{ .Permalink }}">Notes</a>]</td>
+                </tr>
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+    <div class="subject-resources page-link-position-fixer" id="resources">
+      <h2 class="subject-resources__title">Resources</h2>
+      <ul class="subject-resources__list">
+        {{ range $index, $element := (index . "resources") }}
+        <li class="subject-resources__item">
+          <span class="subject-resources__numbering">[{{ add $index 1 }}]</span>
+          {{- with (index . "author") -}} {{- . -}}. {{ end }}
+          <b>{{- with (index . "title") -}} {{- . -}}. {{ end }}</b>
+          <i>{{- with (index . "source") -}} {{- . -}}. {{ end }}</i>
+          URL: <a href="{{ index . "url" }}" class="subject-resources__link" target="_blank">
+            {{ index . "url" }}
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+  </main>
+
+  {{ partial "footer.html" . }}
+
+{{ end }}
