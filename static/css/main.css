@@ -3,7 +3,7 @@
 .link--map:after,
 .link--calendar:after {
   display: inline-block;
-  text-indent: -999jpx;
+  text-indent: -999px;
   color: transparent;
   vertical-align: baseline;
   background-size: 1.2em 1.2em;
