@@ -17,7 +17,7 @@ theme = "zealoft"
     myEducation = "University of California, Los Angeles"
     phone = "+1 (510) 508-2766"
     tel = "+15105082766"
-    expectedGraduation = "December 2019"
+    graduation = "December 2019"
     myMajor = "Math of Computation"
 
 [taxonomies]
