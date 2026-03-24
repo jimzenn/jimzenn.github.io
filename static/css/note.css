@@ -540,9 +540,6 @@
   font-weight: 600;
   }
 
-.navigation--side__item--current .navigation--side__index  {
-}
-
 @media (max-width: 735px) {
   .article {
     width: 100%;

@@ -104,9 +104,6 @@ body.subject .content {
   margin: 0;
 }
 
-.subject-syllabus td.date sup {
-  }
-
 .subject-syllabus td.date .slash {
   font-style: italic;
 }
@@ -128,9 +125,6 @@ body.subject .content {
   padding-top: 30px;
   }
 
-.subject-resources__list {
-}
-
 .subject-resources__item {
   list-style: none;
   margin-top: .75em;
@@ -145,9 +139,6 @@ body.subject .content {
 
 .subject-resources__link {
   white-space: normal;
-}
-
-@media (min-width: 1069px) {
 }
 
 @media (max-width: 1068px) {

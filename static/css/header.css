@@ -383,5 +383,3 @@ header-menu--collapsable .header-menu__item:hover .header-menu__item-menu-link  
     padding-left: 1rem;
   }
 }
-
-@media (max-width: 420px) {}

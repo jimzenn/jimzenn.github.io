@@ -133,9 +133,6 @@ body.course .content {
   letter-spacing: 0.2px;
 }
 
-.course-resources__list {
-}
-
 .course-resources__item {
   list-style: none;
   margin-top: .75em;
@@ -151,9 +148,6 @@ body.course .content {
 
 .course-resources__link {
   white-space: normal;
-}
-
-@media (min-width: 1069px) {
 }
 
 @media (max-width: 1068px) {
