@@ -39,7 +39,7 @@
           <tr>
             <th>#</th>
             <th class="mobile-hide">Date</th>
-            <th align="left">Description</th>
+            <th style="text-align: left">Description</th>
           </tr>
         </thead>
         <tbody>
@@ -49,8 +49,8 @@
             {{ if (not (or $is_hide $is_section)) }}
               {{ if eq .Section ($.Title | urlize) }}
                 <tr>
-                  <td align="center">{{- index (.Param "Volumes") 0 -}}.{{- .Param "Issue" -}}</td>
-                  <td align="center" class="date mobile-hide" style="font-weight: 500"><sup>{{ .PublishDate.Format "1" }}</sup><span class="slash">/</span><sub>{{ .PublishDate.Format "2" }}</sub></td>
+                  <td style="text-align: center">{{- index (.Param "Volumes") 0 -}}.{{- .Param "Issue" -}}</td>
+                  <td class="date mobile-hide" style="text-align: center; font-weight: 500"><sup>{{ .PublishDate.Format "1" }}</sup><span class="slash">/</span><sub>{{ .PublishDate.Format "2" }}</sub></td>
                   <td class="wrap"><b>{{ .Title | title }}</b><br>{{ (strings.TrimSuffix "<p></p>" .Summary) | safeHTML }}[<a href="{{ .Permalink }}">Notes</a>]</td>
                 </tr>
               {{ end }}
