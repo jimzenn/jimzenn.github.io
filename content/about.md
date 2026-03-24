@@ -28,12 +28,8 @@ about: true
 
 2019, studied remotely from Stanford in my senior year.
 
-2020, volunteered at **X lab** and met **Z**.
+2020, graduated from UCLA as a B.S. in Math.
 
-2020, graduated from UCLA as a B.S. in Math with no honor.
+2020, started working at Google in Mountain View, CA.
 
-2020, started working at X, the moonshot factory.
-
-2021, co-founded Quest with **Z**.
-
-In 2023 **(Age 29)**, my company went IPO in New York.
+2021, studying part-time at Stanford.
