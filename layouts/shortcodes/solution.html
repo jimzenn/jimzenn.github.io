@@ -1,0 +1,16 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+<div class="proof">
+  <div class="proof__heading">
+    <span class="proof__title">Solution
+      <span class="proof__method">
+        {{ with .Get "method" }}
+        by {{ . }}
+        {{ end }}
+      </span>
+    </span>
+    <span class="proof__expand"><a>[expand]</a></span>
+  </div>
+  <div class="proof__content hide">
+    {{ .Inner }}
+  </div>
+</div>
