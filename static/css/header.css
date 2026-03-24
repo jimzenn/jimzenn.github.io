@@ -284,7 +284,7 @@ header-menu--collapsable .header-menu__item:hover .header-menu__item-menu-link  
   }
 
   .header {
-    width: --var(--container-width);
+    width: var(--container-width);
     padding-left: calc(var(--container-width) / 2 - 420px);
     padding-right: calc(var(--container-width) / 2 - 420px);
   }
