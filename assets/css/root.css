@@ -1,0 +1,42 @@
+:root {
+  font-size: 16px;
+
+  /* fonts */
+  --display-font: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  --text-font: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  --math-font: "CMU Serif", serif;
+  --serif-font: "Untitled Serif", serif;
+  --monospaced-font: "SF Mono", 'Pragmata Pro', 'source-code-pro', monospace;
+
+  /* color */
+  --text-color: #333;
+  --link-color: #0070c9;
+  --container-color: #EEEAE1;
+
+  /* curve */
+  --jerk-curve: cubic-bezier(.8, 0, .2, 1);
+
+  /* length variables */
+  --header-height: 64px;
+  --container-width: 88vw;
+
+  /* Bootstrap Colors */
+  --blue-text-color: #004085;
+  --blue-background-color: #CCE6FF;
+  --blue-border-color: #b8daff;
+  --green-text-color: #202020;
+  --green-background-color: #d1ecf1;
+  --green-border-color: #bee5eb;
+  --green-saturated-color: #00AB22;
+  --gray-text-color: #312e37;
+  --gray-background-color: #f6f6f7;
+  --gray-border-color: #f1f0f3;
+  --yellow-text-color: #856404;
+  --yellow-background-color: #fff3cd;
+  --yellow-border-color: #ffeeba;
+  --yellow-saturated-color: #FECD0A;
+  --red-text-color: #721c24;
+  --red-background-color: #f8d7da;
+  --red-border-color: #f5c6cb;
+  --red-saturated-color: #FC1509;
+}
