@@ -1,0 +1,19 @@
+<div class="jumbotron" id="jumbotron">
+  <div class="jumbotron__text" id="jumbotron__text">
+    <span class="jumbotron__title" id="jumbotron__title"></span>
+    <span class="jumbotron__copyright" id="jumbotron__copyright"></span>
+  </div>
+</div>
+<script type="text/javascript">
+  var featuredPhotos = [
+    {{ range $.Site.Data.featured_photos }}
+      {{- . -}},
+    {{ end }}
+  ];
+  var numPhotos = featuredPhotos.length;
+  var idx = Math.floor(Math.random() * numPhotos);
+  var photoData = featuredPhotos[idx];
+  document.getElementById("jumbotron").style.backgroundImage = 'url(' + photoData['url'] + ')';
+  document.getElementById("jumbotron__title").innerHTML = photoData['title'];
+  document.getElementById("jumbotron__copyright").innerHTML = 'Photo by <b>' + photoData['author'] + '</b> with ' + photoData['device'] + '. All rights reserved';
+</script>
