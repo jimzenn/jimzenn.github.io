@@ -1,0 +1,157 @@
+{{- define "type" -}} resume {{- end -}}
+
+{{ define "links" }}
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/resume.css?v={{ .Site.Params.version }}">
+{{ end }}
+
+{{ define "body" }}
+
+  {{ $data := index $.Site.Data.resume .Params.resumeData }}
+
+  <main class="content content--resume" role="main">
+    <button id="print-button" onclick="cleanPrint()">Print</button>
+    <script charset="utf-8">
+      function cleanPrint() {
+        $("#header").hide();
+        $("#collapsable-menu").hide();
+        $(".footer").hide();
+        $(".container-tag").hide();
+        $(".resume").css("font-size", "12px");
+        $("html").css("background", "#FFF");
+        $("#container").css("box-shadow", "none");
+        $("#container").css("border-radius", "0");
+        $(".content").attr("style", "padding-top: 20px !important; margin-bottom: 0 !important;");
+        $("span[note]").css("border-bottom", "0");
+        $(".item__field--full").addClass("item__field--print");
+        $(".item__field--abbr").addClass("item__field--print");
+        $(".print-hide").hide();
+        $(".container-tag").hide();
+        $("#print-button").hide();
+        window.print();
+      }
+    </script>
+    <div class="resume-content">
+      <div id="resume__info">
+        <div id="resume__name">
+          <span id="resume__legal-name">{{ .Site.Params.resume.myLegalName }}</span>
+          <span id="resume__expected-graduation">graduation: <b>{{ .Site.Params.resume.expectedGraduation }}</b></span>
+        </div>
+        <div id="resume__contact">
+          <a id="resume__email" href="mailto:{{ .Site.Params.resume.email }}">{{ .Site.Params.resume.email }}</a>
+          <a id="resume__phone" href="tel:{{ .Site.Params.resume.tel }}">{{ .Site.Params.resume.phone }}</a>
+          <a id="resume__website" href="{{ .Site.BaseURL }}">{{ .Site.BaseURL }}</a>
+        </div>
+      </div>
+      <div class="resume__section" id="resume__section-education">
+        {{ $data_education := index $data "Education" }}
+        <h4 class="section__heading">Education</h4>
+        <ul class="section__list">
+          {{ range $data_education }}
+          <li class="section__item">
+            <div class="item__heading">
+              <span class="item__field">
+                <span class=" {{ with .collegeAbbr }}item__field--full{{ end }}">{{ .college | safeHTML }}</span>
+                {{ with .collegeAbbr }}
+                <span class="item__field--abbr">{{ . | safeHTML }}</span>
+                {{ end }}
+              </span>
+              <span class="item__field">
+                <span class=" {{ with .majorAbbr }}item__field--full{{ end }}">{{ .major | safeHTML }}</span>
+                {{ with .majorAbbr }}
+                <span class="item__field--abbr">{{ . | safeHTML }}</span>
+                {{ end }}
+              </span>
+              <span class="item__field">
+                <span class="{{ with .toAbbr }}item__field--full{{ end }}">{{ .from | safeHTML }} - {{ .to | safeHTML }}</span>
+                {{ if (isset . "fromAbbr") }}
+                  <span class="item__field--abbr">{{ .fromAbbr | safeHTML }} - {{ .toAbbr | safeHTML }}</span>
+                {{ end }}
+              </span>
+            </div>
+            <ul class="item__descriptions">
+              {{ range .descriptions }}
+                <li class="item__description">{{ . | safeHTML }}</li>
+              {{ end }}
+            </ul>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="resume__section" id="resume__skills">
+        {{ $data_skills := index $data "Skills" }}
+        <h4 class="section__heading">Skills<div class="proficiency-scale">more proficient <span class="prof-1"></span><span class="prof-2"></span><span class="prof-3"></span><span class="prof-4"></span> less proficient</div></h4>
+        <ul class="section__list">
+          {{ range $data_skills }}
+            <li class="section__item">
+              <span class="item__key" style="font-weight: 500">{{ (index . "key") | safeHTML }}: </span>{{ (index . "value") | safeHTML }}
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="resume__section" id="resume__section-work-experiences">
+        {{ $data_experiences := index $data "Work Experiences" }}
+        <h4 class="section__heading">Work Experiences</h4>
+        <ul class="section__list">
+          {{ range $data_experiences }}
+          <li class="section__item">
+            <div class="item__heading">
+              <span class="item__field">
+                <span class="text__employer">{{ .employer | safeHTML }}</span>
+                <span class="text__employer_location" style="color: #555">{{ with .location }} | {{ . | safeHTML }}{{ end }}</span>
+              </span>
+              <span class="item__field">{{ .title | safeHTML }}</span>
+              <span class="item__field">
+                <span class="{{ with .toAbbr }}item__field--full{{ end }}">{{ .from | safeHTML }} - {{ .to | safeHTML }}</span>
+                {{ if (isset . "toAbbr") }}
+                  <span class="item__field--abbr">{{ .fromAbbr | safeHTML }} - {{ .toAbbr | safeHTML }}</span>
+                {{ end }}
+              </span>
+            </div>
+            <ul class="item__descriptions">
+              {{ range .descriptions }}
+                <li class="item__description">{{ . | safeHTML }}</li>
+              {{ end }}
+            </ul>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="resume__section" id="resume__section-projects">
+        {{ $data_projects := index $data "Projects" }}
+        <h4 class="section__heading">Personal Projects</h4>
+        <ul class="section__list">
+          {{ range $data_projects }}
+          <li class="section__item">
+            <div class="item__heading">
+              <span class="item__field">{{ .name | safeHTML }}</span>
+              <span class="item__field">
+                {{ range .skills }}
+                <span class="item__field-item">{{ . | safeHTML }}</span>
+                {{ end }}
+              </span>
+              <span class="item__field">{{ .year | safeHTML }}</span>
+            </div>
+            <ul class="item__descriptions">
+              {{ range .descriptions }}
+                <li class="item__description">{{ . | safeHTML }}</li>
+              {{ end }}
+            </ul>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="resume__section" id="resume__interests">
+        {{ $data_interests := index $data "Interests" }}
+        <h4 class="section__heading">Interests</h4>
+        <ul class="section__list">
+          {{ range $data_interests }}
+              {{ . | safeHTML }}
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  {{ partial "footer.html" . }}
+
+{{ end }}
