@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    {{ partial "head.html" . }}
+    {{ $root := resources.Get "css/root.css" }}
+    {{ $main := resources.Get "css/main.css" }}
+    {{ $header := resources.Get "css/header.css" }}
+    {{ $article := resources.Get "css/article.css" }}
+    {{ $list := resources.Get "css/list.css" }}
+    {{ $responsive := resources.Get "css/responsive.css" }}
+    <link rel="stylesheet" href="{{ $root.Permalink }}">
+    <link rel="stylesheet" href="{{ $main.Permalink }}">
+    <link rel="stylesheet" href="{{ $header.Permalink }}">
+    <link rel="stylesheet" href="{{ $article.Permalink }}">
+    <link rel="stylesheet" href="{{ $list.Permalink }}">
+    {{ block "links" . }} {{ end }}
+    <link rel="stylesheet" href="{{ $responsive.Permalink }}">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
+  </head>
+
+  <body class="{{- block "type" . -}} {{- end -}}" style="--backdrop-color: {{ .Site.Params.themeColor }};">
+    {{ partial "header.html" . }}
+    <div class="container" id="container">
+      <div class="container-tag">
+      {{ with ($.Param "menuLogo") }}
+        <img class="container-logo" src="{{ . }}" alt="{{ $.Section }}">
+      {{ else }}
+        <span class="container-title">
+          {{- block "menu-title" . -}}
+            {{- with ($.Param "menuTitle") -}}
+              {{- . -}}
+            {{- else -}}
+              {{- $.Section | humanize -}}
+            {{- end -}}
+          {{- end -}}
+        </span>
+      {{ end }}
+      </div>
+      {{ block "body" . }} {{ end }}
+    </div>
+  </body>
+
+  {{ partial "scripts.html" . }}
+
+</html>
