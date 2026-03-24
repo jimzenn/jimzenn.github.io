@@ -1,0 +1,31 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{ hugo.Generator }}
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+{{ if eq .RelPermalink "/" }}
+  <title>{{ .Title | title }}</title>
+  <meta property="og:title" content="{{ .Title }}">
+  <meta property="og:type" content="website">
+  <meta property="description" content="{{ .Site.Params.description }}">
+{{ else }}
+  <title>{{ .Title | title }} - {{ .Site.Title }}</title>
+  <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
+  {{ if .Description }}
+    <meta property="description" content="{{ .Description }}">
+  {{ end }}
+{{ end }}
+
+{{ if .Keywords }}
+  <meta property="keywords" content ="{{ delimit .Keywords ", " }}">
+{{ end }}
+<meta name="theme-color"
+      content="{{ .Site.Params.themeColor }}">
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous"></script>
+
+{{ template "_internal/google_analytics.html" . }}

@@ -1,0 +1,122 @@
+{{- define "type" -}} note wide {{- end -}}
+
+{{ define "links" }}
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/note.css?v={{ .Site.Params.version }}">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/navigation.css?v={{ .Site.Params.version }}">
+{{ end }}
+
+{{ define "menu-title" }}
+  {{- with ($.Param "menuTitle") -}}
+    {{- . -}}
+  {{- else -}}
+    Notes
+  {{- end -}}
+{{ end }}
+
+{{ define "body" }}
+
+{{ $subjectTitle := ( .Section | humanize | title ) }}
+{{ $subjectData := (index (where $.Site.Data.subjects "subject-title" $subjectTitle) 0) }}
+{{ $volume := index (.Param "Volumes") 0 }}
+{{ $issue := .Param "Issue" }}
+{{ $supTitle := (printf "%s, Section %s" $subjectTitle $volume) }}
+{{ if (isset .Params "issue") }}
+  {{ $supTitle = (printf "%s, Section %s.%d" $subjectTitle $volume $issue) }}
+{{ end }}
+
+{{ partial "navigation.html" ( dict "supTitle" $supTitle "title" .Title "navigation" (dict) "emphColor" (index $subjectData "subject-color") ) }}
+
+
+  <main class="content" role="main">
+    <article class="article">
+      <div class="article__content">
+        <script>
+          keywordsCollector = [];
+          keywordsCounter = 0;
+        </script>
+        {{ .Content }}
+      </div>
+    </article>
+    <aside class="navigation--side">
+      <div class="navigation--side__selector">
+        <button class="navigation--side__button navigation--side__button--active" id="navigation--side__button--section" onclick="navigationSideSwitchToSection()">subject Nav.</button>
+        <button class="navigation--side__button" id="navigation--side__button--page" onclick="navigationSideSwitchToPage()">Page Nav.</button>
+        <script>
+          function navigationSideSwitchToSection() {
+            document.getElementById("page-navigation").setAttribute("style","display: none;");
+            document.getElementById("section-navigation").setAttribute("style","display: block;");
+            document.getElementById("navigation--side__button--section").classList.add("navigation--side__button--active");
+            document.getElementById("navigation--side__button--page").classList.remove("navigation--side__button--active");
+          }
+
+          function navigationSideSwitchToPage() {
+            document.getElementById("section-navigation").setAttribute("style","display: none;");
+            document.getElementById("page-navigation").setAttribute("style","display: block;");
+            document.getElementById("navigation--side__button--section").classList.remove("navigation--side__button--active");
+            document.getElementById("navigation--side__button--page").classList.add("navigation--side__button--active");
+          }
+        </script>
+      </div>
+      <ul class="navigation--side__list" id="section-navigation">
+      {{ $uid := "" }}{{ with .File }}{{ $uid = .UniqueID }}{{ end }}
+      {{ $.Scratch.Set "prev_volume" -1 }}
+      {{ range sort (where $.Site.Pages "Section" (.Section | urlize)) "Weight" "asc" }}
+        {{ $is_section := eq .Kind "section" }}
+        {{ $is_hide := and (isset .Params "hide") (.Param "hide") }}
+        {{ $is_current := false }}{{ with .File }}{{ $is_current = eq .UniqueID $uid }}{{ end }}
+        {{ if (not (or $is_hide $is_section)) }}
+          {{ if eq .Section ($subjectTitle | urlize) }}
+            {{ $volume := (index (.Param "Volumes") 0) }}
+            {{ if (index $subjectData "subject-chapters") }}
+              {{ if (not (or (eq $volume "D") (eq ($.Scratch.Get "prev_volume") $volume))) }} {{ $.Scratch.Set "prev_volume" (index (.Param "Volumes") 0) }}
+                <li class="navigation--side__heading"><span class="navigation--side__heading-index">{{ $volume }}</span>{{ (index (index $subjectData "subject-chapters") (add (int $volume) -1)) | title }}</li>
+              {{ end }}
+            {{ end }}
+            {{ $issue := (.Param "Issue") }}
+            {{ $index := printf "%s" $volume }}
+            {{ if (isset .Params "issue") }}
+              {{ $index = printf "%s.%d" $volume $issue }}
+            {{ end }}
+            <li class="navigation--side__item {{ if $is_current }}navigation--side__item--current{{ end }}">
+              <a href="{{ .Permalink }}"><span class="navigation--side__index">{{ $index }}</span> {{ .Title | title }}</a>
+            </li>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+      </ul>
+      <ul class="navigation--side__list" id="page-navigation">
+        <script>
+          var pageNavigationListDOM = document.getElementById("page-navigation");
+          for (var i = 0; i < keywordsCollector.length; i ++) {
+            pageNavigationListDOM.appendChild(keywordsCollector[i]);
+          }
+        </script>
+      </ul>
+    </aside>
+  </main>
+
+  {{ if eq .Kind "page" }}
+  <div class="pagination">
+    <div class="pagination-wrapper">
+      {{ with .NextInSection }}
+        {{ $is_section := eq .Kind "section" }}
+        {{ $is_hide := and (isset .Params "hide") (.Param "hide") }}
+        {{ if (not (or $is_hide $is_section)) }}
+          <a href="{{ .Permalink }}" class="pagination__prev">{{ with .Param "volumes" }}{{ index . 0 }}{{ end }}.{{ with .Param "issue" }}{{ . }}{{ end }} {{ .Title | title }}</a>
+        {{ end }}
+      {{ end }}
+      {{ with .PrevInSection }}
+        {{ $is_section := eq .Kind "section" }}
+        {{ $is_hide := and (isset .Params "hide") (.Param "hide") }}
+        {{ if (not (or $is_hide $is_section)) }}
+          <a href="{{ .Permalink }}" class="pagination__next">{{ with .Param "volumes" }}{{ index . 0 }}{{ end }}.{{ with .Param "issue" }}{{ . }}{{ end }} {{ .Title | title }}</a>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+
+  {{ partial "footer.html" . }}
+
+{{ end }}
