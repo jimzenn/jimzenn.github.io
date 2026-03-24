@@ -17,8 +17,8 @@
 
 {{ $subjectTitle := ( .Section | humanize | title ) }}
 {{ $subjectData := (index (where $.Site.Data.subjects "subject-title" $subjectTitle) 0) }}
-{{ $volume := index (.Param "Volumes") 0 }}
-{{ $issue := .Param "Issue" }}
+{{ $volume := index (.Param "volumes") 0 }}
+{{ $issue := .Param "issue" }}
 {{ $supTitle := (printf "%s, Section %s" $subjectTitle $volume) }}
 {{ if (isset .Params "issue") }}
   {{ $supTitle = (printf "%s, Section %s.%d" $subjectTitle $volume $issue) }}
@@ -66,13 +66,13 @@
         {{ $is_current := false }}{{ with .File }}{{ $is_current = eq .UniqueID $uid }}{{ end }}
         {{ if (not (or $is_hide $is_section)) }}
           {{ if eq .Section ($subjectTitle | urlize) }}
-            {{ $volume := (index (.Param "Volumes") 0) }}
+            {{ $volume := (index (.Param "volumes") 0) }}
             {{ if (index $subjectData "subject-chapters") }}
-              {{ if (not (or (eq $volume "D") (eq ($.Scratch.Get "prev_volume") $volume))) }} {{ $.Scratch.Set "prev_volume" (index (.Param "Volumes") 0) }}
+              {{ if (not (or (eq $volume "D") (eq ($.Scratch.Get "prev_volume") $volume))) }} {{ $.Scratch.Set "prev_volume" (index (.Param "volumes") 0) }}
                 <li class="navigation--side__heading"><span class="navigation--side__heading-index">{{ $volume }}</span>{{ (index (index $subjectData "subject-chapters") (add (int $volume) -1)) | title }}</li>
               {{ end }}
             {{ end }}
-            {{ $issue := (.Param "Issue") }}
+            {{ $issue := (.Param "issue") }}
             {{ $index := printf "%s" $volume }}
             {{ if (isset .Params "issue") }}
               {{ $index = printf "%s.%d" $volume $issue }}
