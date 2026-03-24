@@ -1,0 +1,23 @@
+.article-list {
+  width: 100%;
+}
+
+.article--list-item:first-of-type {
+  margin-top: 0;
+}
+
+.article--list-item {
+  margin-top: 75px;
+}
+
+.article__more {
+  text-decoration: none;
+}
+
+.article__more:after {
+  display: inline-block;
+  content: "›";
+  font-weight: 500;
+  padding-left: 5px;
+  transform-origin: center;
+}
