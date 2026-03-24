@@ -13,7 +13,7 @@
   -
     college: University of California, Berkeley
     collegeAbbr: UC Berkeley
-    major: Cross Enrollment</span>
+    major: Cross Enrollment
     from: Jan 2017
     fromAbbr: 01/17
     to: Aug 2017
@@ -36,7 +36,7 @@
     value: classification, clustering, prediction, pattern mining, similarity search, etc.
   -
     key: "Parallel Computing"
-    value: Studied OpenMP, CUDA, ISPC and low-level optimization stratigies from CMU 15-618 lecture videos.
+    value: Studied OpenMP, CUDA, ISPC and low-level optimization strategies from CMU 15-618 lecture videos.
 
 "Work Experiences":
   -
