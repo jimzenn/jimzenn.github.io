@@ -5,7 +5,132 @@ MathJax = {
     displayMath: [['$$', '$$']],
     processEscapes: true,
     processEnvironments: true,
-    tags: 'ams'
+    tags: 'ams',
+    macros: {
+      // Number sets and calligraphic letters
+      R: '\\mathbb{R}',
+      Q: '\\mathbb{Q}',
+      Z: '\\mathbb{Z}',
+      N: '\\mathbb{N}',
+      C: '\\mathbb{C}',
+      P: '\\mathbb{P}',
+      F: '\\mathbb{F}',
+      L: '\\mathcal{L}',
+      B: '\\mathcal{B}',
+      U: '\\mathcal{U}',
+
+      // Utility
+      br: '\\\\',
+      emptyset: '\\varnothing',
+      union: '\\cup',
+      intercept: '\\cap',
+      proj: '\\text{proj}',
+      head: '\\text H',
+      tail: '\\text T',
+      d: '\\text d',
+      tilde: '\\text{~}',
+      oto: '\\text{ one-to-one }',
+      ot: '\\text{ onto }',
+      otherwise: '\\text{ otherwise }',
+
+      // Text and conditionals
+      'if': '\\text{ if }',
+      t: ['\\text{ #1 }', 1],
+      None: ['', 1],
+
+      // Delimiters
+      abs: ['\\left| #1 \\right|', 1],
+      norm: ['\\left\\lVert#1\\right\\rVert', 1],
+      pare: ['\\left(#1\\right)', 1],
+      set: ['\\left\\{#1\\right\\}', 1],
+      brac: ['\\left[#1\\right]', 1],
+      inner: ['\\langle #1, #2 \\rangle', 2],
+      floor: ['\\lfloor#1\\rfloor', 1],
+      ceil: ['\\lceil#1\\rceil', 1],
+
+      // Operators
+      spa: ['\\text{span}(#1)', 1],
+      dist: ['\\text{dist}(#1)', 1],
+      dom: ['\\text{dom}(#1)', 1],
+      ite: ['\\text{int}(#1)', 1],
+      ext: ['\\text{ext}(#1)', 1],
+      bdry: ['\\partial #1', 1],
+      rank: ['\\text{rank }#1', 1],
+      nullity: ['\\text{nullity}(#1)', 1],
+      tr: ['\\text{tr}(#1)', 1],
+      'var': ['\\text{var}(#1)', 1],
+      cov: ['\\text{cov}(#1, #2)', 2],
+      inv: ['{#1}^{-1}', 1],
+      transpose: ['{#1}^{\\text{T}}', 1],
+      Re: ['\\text{Re}(#1)', 1],
+      Im: ['\\text{Im}(#1)', 1],
+      fnext: ['\\overset{\\sim}{#1}', 1],
+      b: ['\\boldsymbol{#1}', 1],
+      supr: ['\\text{sup}(#1)', 1],
+      infi: ['\\text{inf}(#1)', 1],
+      max: ['\\text{max}(#1)', 1],
+      min: ['\\text{min}(#1)', 1],
+      argmax: ['\\underset{#1}{\\text{argmax }}', 1],
+      argmin: ['\\underset{#1}{\\text{argmin }}', 1],
+
+      // Limits
+      limu: ['\\underset{#1 \\to #2}\\lim', 2],
+      limd: ['\\underset{#1 \\to #2; #3}\\lim', 3],
+      limsupu: ['\\underset{#1 \\to #2}{\\lim\\text{sup}}', 2],
+      liminfu: ['\\underset{#1 \\to #2}{\\lim\\text{inf}}', 2],
+
+      // Derivatives
+      der: ['\\frac{\\d #1}{\\d #2}', 2],
+      derw: ['\\frac{\\d #1^2}{\\d^2 #2}', 2],
+      pder: ['\\frac{\\partial #1}{\\partial #2}', 2],
+      pderw: ['\\frac{\\partial^2 #1}{\\partial #2^2}', 2],
+      pderws: ['\\frac{\\partial^2 #1}{\\partial #2 \\partial #3}', 3],
+
+      // Probability distributions
+      unifdist: ['\\text{ ~ Unif}(#1)', 1],
+      poissondist: ['\\text{ ~ Poisson}(#1)', 1],
+      normdist: ['\\text{ ~ N}(#1,#2)', 2],
+      expdist: ['\\text{ ~ Exp}(#1)', 1],
+      geodist: ['\\text{ ~ Geometric}(#1)', 1],
+      berndist: ['\\text{ ~ Bernoulli}(#1,#2)', 2],
+      binomdist: ['\\text{ ~ B}(#1, #2)', 2],
+      ipto: '\\overset{\\text{i.p.}}\\longrightarrow',
+      asto: '\\overset{\\text{a.s.}}\\longrightarrow',
+
+      // Range and nullspace
+      range: ['\\mathcal{R}\\pare{#1}', 1],
+      nullspace: ['\\mathcal{N}\\pare{#1}', 1],
+
+      // Column vectors (bracketed)
+      Vcw: ['\\begin{bmatrix} #1 \\br #2 \\end{bmatrix}', 2],
+      Vce: ['\\begin{bmatrix} #1 \\br #2 \\br #3 \\end{bmatrix}', 3],
+      Vcr: ['\\begin{bmatrix} #1 \\br #2 \\br #3 \\br #4 \\end{bmatrix}', 4],
+      Vct: ['\\begin{bmatrix} #1 \\br #2 \\br #3 \\br #4 \\br #5 \\end{bmatrix}', 5],
+      Vcy: ['\\begin{bmatrix} #1 \\br #2 \\br #3 \\br #4 \\br #5 \\br #6 \\end{bmatrix}', 6],
+      Vcu: ['\\begin{bmatrix} #1 \\br #2 \\br #3 \\br #4 \\br #5 \\br #6 \\br #7 \\end{bmatrix}', 7],
+
+      // Column vectors (unbracketed)
+      vcw: ['\\begin{matrix} #1 \\br #2 \\end{matrix}', 2],
+      vce: ['\\begin{matrix} #1 \\br #2 \\br #3 \\end{matrix}', 3],
+      vcr: ['\\begin{matrix} #1 \\br #2 \\br #3 \\br #4 \\end{matrix}', 4],
+      vct: ['\\begin{matrix} #1 \\br #2 \\br #3 \\br #4 \\br #5 \\end{matrix}', 5],
+      vcy: ['\\begin{matrix} #1 \\br #2 \\br #3 \\br #4 \\br #5 \\br #6 \\end{matrix}', 6],
+      vcu: ['\\begin{matrix} #1 \\br #2 \\br #3 \\br #4 \\br #5 \\br #6 \\br #7 \\end{matrix}', 7],
+
+      // Row vectors and matrices
+      Mqw: ['\\begin{bmatrix} #1 & #2 \\end{bmatrix}', 2],
+      Mqe: ['\\begin{bmatrix} #1 & #2 & #3 \\end{bmatrix}', 3],
+      Mqr: ['\\begin{bmatrix} #1 & #2 & #3 & #4 \\end{bmatrix}', 4],
+      Mqt: ['\\begin{bmatrix} #1 & #2 & #3 & #4 & #5 \\end{bmatrix}', 5],
+      Mwq: ['\\begin{bmatrix} #1 \\br #2 \\end{bmatrix}', 2],
+      Meq: ['\\begin{bmatrix} #1 \\br #2 \\br #3 \\end{bmatrix}', 3],
+      Mrq: ['\\begin{bmatrix} #1 \\br #2 \\br #3 \\br #4 \\end{bmatrix}', 4],
+      Mtq: ['\\begin{bmatrix} #1 \\br #2 \\br #3 \\br #4 \\br #5 \\end{bmatrix}', 5],
+      Mww: ['\\begin{bmatrix} #1 & #2 \\br #3 & #4 \\end{bmatrix}', 4],
+      Mwe: ['\\begin{bmatrix} #1 & #2 & #3\\br #4 & #5 & #6 \\end{bmatrix}', 6],
+      Mew: ['\\begin{bmatrix} #1 & #2 \\br #3 & #4 \\br #5 & #6 \\end{bmatrix}', 6],
+      Mee: ['\\begin{bmatrix} #1 & #2 & #3 \\br #4 & #5 & #6 \\br #7 & #8 & #9 \\end{bmatrix}', 9]
+    }
   },
   options: {
     skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
