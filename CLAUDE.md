@@ -44,7 +44,7 @@ static/              # Static assets (copied as-is to public/)
 layouts/             # Local template overrides (take precedence over theme)
   _default/          # baseof, note, resume, subject
   partials/          # head, jumbotron, pagination, scripts
-  shortcodes/        # 12 math shortcodes (theorem, proof, etc.)
+  shortcodes/        # Only site-specific overrides (solution.html)
   taxonomy/          # tag.terms
   rss.xml
 themes/zealoft/      # Theme submodule (git@github.com:Jim-Zenn/hugo-theme-zealoft.git)
@@ -97,7 +97,7 @@ volumes: ["Journey"]
 ```
 
 ### Shortcodes
-12 math shortcodes available: `theorem`, `proof`, `solution`, `definition`, `lemma`, `corollary`, `proposition`, `example`, `note`, `recall`, `remarks`, `properties`, `axioms`. All use `{{ .Site.Params.email }}` for contact links.
+11 block-type shortcodes (`theorem`, `definition`, `lemma`, `corollary`, `proposition`, `example`, `note`, `recall`, `remarks`, `properties`, `axioms`) are unified via `themes/zealoft/layouts/partials/shortcodes/block.html`. Each shortcode file is a one-line call passing color, title, and keyword config. Additionally: `proof` and `solution` (expandable/collapsible). All use `{{ .Site.Params.email }}` for contact links.
 
 ## Key Config Values
 
