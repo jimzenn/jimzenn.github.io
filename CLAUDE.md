@@ -21,7 +21,7 @@ Requires Hugo extended v0.151.0+. Install via `brew install hugo`.
 ## Project Structure
 
 ```
-config.toml          # Site config (title, params, taxonomies)
+hugo.toml            # Site config (title, params, taxonomies)
 content/             # Markdown content
   _index.md          # Home page
   about.md, resume.md, journey.md, blog.md  # Top-level pages
@@ -52,8 +52,8 @@ themes/zealoft/      # Theme submodule (git@github.com:Jim-Zenn/hugo-theme-zealo
 
 ## Architecture Decisions
 
-### CSS: All in static/css/, no Hugo Pipes
-All CSS is served from `static/css/` via direct URL links. The theme originally mixed Hugo Pipes (`resources.Get` from `assets/`) with direct URLs — we consolidated to one approach. Do not add an `assets/css/` directory.
+### CSS: All in static/css/, using relURL
+All CSS is served from `static/css/` via `relURL` with `?v=` cache-busting suffix. Both theme and site-level templates use the same pattern: `{{ "css/file.css" | relURL }}?v={{ .Site.Params.version }}`. Theme CSS lives in `themes/zealoft/static/css/`, site overrides in `static/css/`.
 
 ### Theme Overrides
 The zealoft theme is a git submodule. Do not edit files inside `themes/zealoft/` — create local overrides in `layouts/` instead. Hugo's lookup order means project-level layouts take precedence.
@@ -69,7 +69,7 @@ Apple's SF Pro is used via system font keywords (no self-hosted files — Apple'
 MathJax 3 via CDN (`tex-chtml` component). Configured in `layouts/partials/scripts.html`. Supports `$...$` inline and `$$...$$` display math. AMS equation numbering enabled.
 
 ### Taxonomies
-Custom taxonomy names in config.toml:
+Custom taxonomy names in hugo.toml:
 - `category = "volumes"` (chapter/section grouping for notes)
 - `tag = "keywords"` (content tags)
 
@@ -107,7 +107,7 @@ volumes: ["Journey"]
 
 ## External Dependencies (CDN)
 
-- jQuery 3.7.1 slim (code.jquery.com) — Used only for resume print function
+- jQuery 3.7.1 slim (code.jquery.com) — Loaded only on resume page, used for print function
 - MathJax 3 (cdn.jsdelivr.net) — LaTeX rendering
-- Google Fonts: Inter
+- Google Fonts: Inter (weights 400, 500, 600, 700 only)
 - p5.js (cdnjs.cloudflare.com) — Game of Life animation on home page

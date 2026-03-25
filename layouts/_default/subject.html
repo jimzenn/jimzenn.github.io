@@ -1,8 +1,8 @@
 {{- define "type" -}} subject wide {{- end -}}
 
 {{ define "links" }}
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/subject.css?v={{ .Site.Params.version }}">
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/navigation.css?v={{ .Site.Params.version }}">
+    <link rel="stylesheet" href="{{ "css/subject.css" | relURL }}?v={{ .Site.Params.version }}">
+    <link rel="stylesheet" href="{{ "css/navigation.css" | relURL }}?v={{ .Site.Params.version }}">
 {{ end }}
 
 {{ define "menu-title" }}

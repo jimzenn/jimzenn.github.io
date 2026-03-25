@@ -6,6 +6,7 @@ theme = "zealoft"
 # googleAnalytics = "UA-83942334-3"  # TODO: replace with GA4 measurement ID (G-XXXXXXXXXX)
 
 [params]
+  description = "Personal website of Jim Zenn — blog, academic math notes, and resume."
   github = "https://github.com/jimzenn"
   CV = "/Jim_Zenn-CV.pdf"
   email = "zenn@ucla.edu"
